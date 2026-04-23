@@ -358,3 +358,38 @@ img { display: block; max-width: 100%; }
   .detail-hero { padding: 32px 20px 48px; }
   .detail-table th { width: 110px; }
 }
+
+/* ========== LIST PAGE ========== */
+.list-hero {
+  background: linear-gradient(155deg, var(--green-pale) 0%, var(--white) 58%);
+  padding: 72px 32px 56px;
+  border-bottom: 1px solid var(--border);
+}
+.list-h1 {
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-size: clamp(20px, 3vw, 30px); font-weight: 700;
+  color: var(--text); line-height: 1.6; margin-bottom: 16px;
+}
+.list-h1 span { color: var(--green); }
+.list-lead {
+  font-size: 15px; color: var(--text-mid);
+  line-height: 1.9; margin-bottom: 16px;
+}
+.list-meta {
+  display: flex; gap: 8px; align-items: center;
+  font-size: 13px; color: var(--text-muted);
+}
+.list-meta-link { color: var(--green); font-weight: 600; }
+.list-meta-link:hover { text-decoration: underline; }
+.list-grid {
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 20px;
+}
+.r-rank-badge.gray { background: #bbb; }
+
+@media (max-width: 960px) {
+  .list-grid { grid-template-columns: repeat(2,1fr); }
+}
+@media (max-width: 640px) {
+  .list-hero { padding: 48px 20px 40px; }
+  .list-grid { grid-template-columns: 1fr; }
+}
