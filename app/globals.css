@@ -543,3 +543,49 @@ img { display: block; max-width: 100%; }
 .kuchi-why-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
 .kuchi-why-title { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
 .kuchi-why-text { font-size: 13px; color: var(--text-muted); line-height: 1.8; }
+
+/* ========== GUIDELINE PAGE ========== */
+.guide-qa-list { display: flex; flex-direction: column; gap: 16px; }
+.guide-qa-item {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: var(--radius); overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.guide-q {
+  background: var(--green-pale); border-bottom: 1px solid var(--border-green);
+  padding: 18px 24px; font-size: 15px; font-weight: 700; color: var(--text);
+}
+.guide-q::before { content: "Q. "; color: var(--green); }
+.guide-a {
+  padding: 20px 24px;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.guide-a p { font-size: 14px; color: var(--text-mid); line-height: 1.85; }
+.guide-list {
+  list-style: none; display: flex; flex-direction: column; gap: 6px;
+  padding: 12px 16px; background: var(--cream);
+  border-radius: var(--radius-sm); border: 1px solid var(--border);
+}
+.guide-list li {
+  font-size: 13px; color: var(--text-mid);
+  padding-left: 16px; position: relative; line-height: 1.6;
+}
+.guide-list li::before {
+  content: "・"; position: absolute; left: 0; color: var(--green);
+}
+
+.guide-ng-box {
+  background: var(--cream); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 24px 28px;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.guide-ng-item {
+  display: flex; align-items: center; gap: 12px;
+  font-size: 14px; color: var(--text-mid);
+}
+.guide-ng-icon {
+  width: 22px; height: 22px; border-radius: 50%;
+  background: #fee; color: #c44; font-size: 12px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
