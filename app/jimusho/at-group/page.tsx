@@ -1,0 +1,138 @@
+import Link from "next/link";
+
+export const metadata = {
+  title: "アットグループの口コミ・評判【まるみえチャトレ】",
+  description: "アットグループの編集部調査レポートと口コミを掲載。カフェのような居心地。関東57店舗展開の大手。",
+};
+
+export default function Page() {
+  return (
+    <main>
+      <section className="detail-hero">
+        <div className="si">
+          <div className="detail-breadcrumb">
+            <Link href="/">トップ</Link> &gt;
+            <Link href="/jimusho">事務所一覧</Link> &gt;
+            <span>アットグループ</span>
+          </div>
+          <div className="detail-hero-inner">
+            <div className="detail-hero-left">
+              <div className="detail-rank-badge bronze">🥉 3位</div>
+              <h1 className="detail-h1">アットグループ</h1>
+              <p className="detail-catch">カフェのような居心地。関東57店舗展開の大手。</p>
+              <div className="detail-tags">
+                <span className="r-tag">カフェ空間</span>
+                <span className="r-tag">居心地◎</span>
+                <span className="r-tag">関東57店舗</span>
+                <span className="r-tag">体験入店OK</span>
+              </div>
+              <a href="https://at-grp.net/" target="_blank" rel="noopener noreferrer" className="detail-apply-btn">
+                アットグループの公式サイトを見る →
+              </a>
+            </div>
+            <div className="detail-hero-right">
+              <div className="detail-score-card">
+                <div className="detail-score-total">
+                  <span className="detail-score-num">80</span>
+                  <span className="detail-score-sub">/ 100点</span>
+                </div>
+                <div className="r-bars">
+              <div className="r-bar-row"><span className="r-bar-label">安全性 /30</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"73%"}}></div></div><span className="r-bar-val">22</span></div>
+              <div className="r-bar-row"><span className="r-bar-label">サポート /25</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"84%"}}></div></div><span className="r-bar-val">21</span></div>
+              <div className="r-bar-row"><span className="r-bar-label">初心者 /20</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"80%"}}></div></div><span className="r-bar-val">16</span></div>
+              <div className="r-bar-row"><span className="r-bar-label">働きやすさ /15</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"87%"}}></div></div><span className="r-bar-val">13</span></div>
+              <div className="r-bar-row"><span className="r-bar-label">稼ぎ /10</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"80%"}}></div></div><span className="r-bar-val">8</span></div>
+                </div>
+                <Link href="/hyoka-kijun" className="detail-score-link">このスコアの根拠を見る →</Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section detail-comment-sec">
+        <div className="si">
+          <div className="detail-comment-box">
+            <div className="detail-comment-label">編集部コメント</div>
+            <p className="detail-comment-text">千葉発祥で関東を中心に57店舗以上を展開。カフェのような居心地の良さをコンセプトにしており、女性がリラックスして働ける空間づくりにこだわっています。応募数が多い大手だからこそネガティブな口コミも目立ちますが、それは規模の大きさゆえ。正直に評価しています。</p>
+            <div className="detail-honest">
+              <span className="detail-honest-label">正直なひとこと</span>
+              <p>応募数が多い分、ネガティブな口コミも多く見受けられます。ただし大手ゆえの口コミ量であり、実態は比較的安定しています。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section diff-sec">
+        <div className="si">
+          <p className="eyebrow">FEATURES</p>
+          <h2 className="sec-h">アットグループ　3つの強み</h2>
+          <div className="diff-grid">
+            <div className="diff-item">
+              <div className="diff-num">01</div>
+              <div className="diff-title">カフェ空間で働きやすい</div>
+              <p className="diff-body">「仕事場」ではなくカフェのような空間。居心地の良さが他社との大きな差別化ポイントです。</p>
+            </div>
+            <div className="diff-item">
+              <div className="diff-num">02</div>
+              <div className="diff-title">関東57店舗・通いやすい</div>
+              <p className="diff-body">関東を中心に57店舗以上展開。都内各所からアクセスしやすい立地が多く、通勤の負担が少ない。</p>
+            </div>
+            <div className="diff-item">
+              <div className="diff-num">03</div>
+              <div className="diff-title">体験入店後にお祝い金あり</div>
+              <p className="diff-body">体験入店後に最大8,000円のお祝い金。まず試してみてから判断できる安心感があります。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section detail-info-sec">
+        <div className="si">
+          <p className="eyebrow">BASIC INFO</p>
+          <h2 className="sec-h">基本情報</h2>
+          <table className="detail-table">
+            <tbody>
+              <tr><th>ジャンル</th><td>アダルト・ノンアダルト選択可</td></tr>
+              <tr><th>在宅</th><td>△（店舗中心）</td></tr>
+              <tr><th>通勤</th><td>OK（関東57店舗）</td></tr>
+              <tr><th>身バレ対策</th><td>○</td></tr>
+              <tr><th>スタッフ</th><td>女性・男性スタッフ在籍</td></tr>
+              <tr><th>特徴</th><td>カフェ空間・体験入店後お祝い金</td></tr>
+              <tr><th>対応エリア</th><td>関東中心・全国展開</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section className="section detail-kuchikomi-sec">
+        <div className="si">
+          <p className="eyebrow">REVIEWS</p>
+          <h2 className="sec-h">実際に働いた方の声</h2>
+          <div className="detail-kuchikomi-empty">
+            <p>アットグループで働いた経験がある方、ぜひ口コミを投稿してください。<br />あなたの本音が、次に選ぶ誰かの安心になります。</p>
+            <Link href="/kuchikomi" className="btn-main">口コミを投稿する →</Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="detail-cta-sec">
+        <div className="si detail-cta-inner">
+          <h2 className="kuchi-h">アットグループが気になったら</h2>
+          <p className="kuchi-p">まずは公式サイトで詳細を確認してみてください。</p>
+          <a href="https://at-grp.net/" target="_blank" rel="noopener noreferrer" className="btn-main">
+            アットグループ公式サイトを見る →
+          </a>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="si" style={{textAlign:"center"}}>
+          <p className="eyebrow">OTHER OFFICES</p>
+          <h2 className="sec-h" style={{marginBottom:"32px"}}>他の事務所も比べてみる</h2>
+          <Link href="/jimusho" className="btn-sub">全12社の比較ランキングを見る →</Link>
+        </div>
+      </section>
+    </main>
+  );
+}
