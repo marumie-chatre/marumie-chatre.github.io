@@ -484,3 +484,62 @@ img { display: block; max-width: 100%; }
   .hyoka-body { padding: 20px; }
   .hyoka-axis-name { font-size: 16px; min-width: 120px; }
 }
+
+/* ========== KUCHIKOMI PAGE ========== */
+.kuchi-flow { margin-bottom: 40px; }
+.kuchi-steps { display: flex; flex-direction: column; gap: 16px; }
+.kuchi-step {
+  display: flex; gap: 20px; align-items: flex-start;
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 22px 24px;
+  box-shadow: var(--shadow-sm);
+}
+.kuchi-step-num {
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-size: 24px; font-weight: 700; color: var(--green-light);
+  line-height: 1; flex-shrink: 0; width: 36px;
+}
+.kuchi-step-title { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+.kuchi-step-text { font-size: 13px; color: var(--text-muted); line-height: 1.7; }
+
+.kuchi-cta-box {
+  background: var(--white); border: 1px solid var(--border-green);
+  border-radius: var(--radius-lg); padding: 40px 32px;
+  text-align: center; margin-bottom: 24px;
+  box-shadow: var(--shadow);
+}
+.kuchi-cta-label {
+  font-size: 13px; color: var(--green); font-weight: 700;
+  margin-bottom: 16px; letter-spacing: .05em;
+}
+.kuchi-cta-note {
+  font-size: 12px; color: var(--text-light);
+  margin-top: 12px;
+}
+
+.kuchi-notes {
+  background: #fffbf0; border: 1px solid #f0e0a0;
+  border-radius: var(--radius); padding: 20px 24px;
+}
+.kuchi-notes-title {
+  font-size: 13px; font-weight: 700; color: #8a6800;
+  margin-bottom: 12px;
+}
+.kuchi-note-item {
+  font-size: 13px; color: #8a6800;
+  padding-left: 16px; position: relative;
+  line-height: 1.7; margin-bottom: 6px;
+}
+.kuchi-note-item::before {
+  content: "・"; position: absolute; left: 0;
+}
+
+.kuchi-why-grid { display: flex; flex-direction: column; gap: 16px; }
+.kuchi-why-item {
+  display: flex; gap: 16px; align-items: flex-start;
+  padding: 20px 24px; background: var(--cream);
+  border: 1px solid var(--border); border-radius: var(--radius);
+}
+.kuchi-why-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+.kuchi-why-title { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+.kuchi-why-text { font-size: 13px; color: var(--text-muted); line-height: 1.8; }
