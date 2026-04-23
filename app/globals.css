@@ -393,3 +393,94 @@ img { display: block; max-width: 100%; }
   .list-hero { padding: 48px 20px 40px; }
   .list-grid { grid-template-columns: 1fr; }
 }
+
+/* ========== HYOKA KIJUN PAGE ========== */
+.hyoka-item {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-sm);
+}
+.hyoka-head {
+  background: var(--green-pale);
+  border-bottom: 1px solid var(--border-green);
+  padding: 20px 28px;
+  display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+}
+.hyoka-axis-name {
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-size: 18px; font-weight: 700; color: var(--text);
+  min-width: 140px;
+}
+.hyoka-axis-score {
+  font-size: 13px; font-weight: 700; color: var(--green);
+  background: var(--white); border: 1px solid var(--border-green);
+  border-radius: 100px; padding: 3px 12px; white-space: nowrap;
+}
+.hyoka-axis-bar {
+  flex: 1; height: 8px; background: var(--white);
+  border-radius: 4px; overflow: hidden; min-width: 80px;
+  border: 1px solid var(--border-green);
+}
+.hyoka-axis-fill {
+  height: 100%; background: var(--green-mid); border-radius: 4px;
+}
+.hyoka-body { padding: 24px 28px; }
+.hyoka-quote {
+  font-size: 15px; color: var(--text-mid);
+  border-left: 3px solid var(--green-light);
+  padding-left: 16px; margin-bottom: 16px;
+  line-height: 1.8; font-style: italic;
+}
+.hyoka-text {
+  font-size: 14px; color: var(--text-mid);
+  line-height: 1.9; margin-bottom: 18px;
+}
+.hyoka-points {
+  display: flex; flex-direction: column; gap: 8px;
+}
+.hyoka-point {
+  font-size: 13px; color: var(--text-mid);
+  padding-left: 18px; position: relative; line-height: 1.6;
+}
+.hyoka-point::before {
+  content: "✓"; position: absolute; left: 0;
+  color: var(--green); font-weight: 700; font-size: 12px;
+}
+
+/* TRANSPARENCY */
+.hyoka-transparency {
+  display: flex; flex-direction: column; gap: 20px;
+}
+.hyoka-trans-item {
+  display: flex; gap: 16px; align-items: flex-start;
+  padding: 20px 24px; background: var(--cream);
+  border: 1px solid var(--border); border-radius: var(--radius);
+}
+.hyoka-trans-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+.hyoka-trans-title {
+  font-size: 15px; font-weight: 700; color: var(--text);
+  margin-bottom: 6px;
+}
+.hyoka-trans-text { font-size: 13px; color: var(--text-muted); line-height: 1.8; }
+
+/* DISCLAIMER */
+.hyoka-disclaimer {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 28px 32px;
+  display: flex; flex-direction: column; gap: 14px;
+  margin-bottom: 24px; text-align: left; max-width: 560px;
+  margin-left: auto; margin-right: auto;
+}
+.hyoka-disclaimer p {
+  font-size: 14px; color: var(--text-mid); line-height: 1.9;
+}
+.hyoka-disclaimer strong { color: var(--text); font-weight: 700; }
+
+@media (max-width: 640px) {
+  .hyoka-head { padding: 16px 20px; }
+  .hyoka-body { padding: 20px; }
+  .hyoka-axis-name { font-size: 16px; min-width: 120px; }
+}
