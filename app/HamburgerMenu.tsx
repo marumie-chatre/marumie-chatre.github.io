@@ -8,7 +8,6 @@ export default function HamburgerMenu() {
   const close = () => setIsOpen(false);
   const toggle = () => setIsOpen((prev) => !prev);
 
-  // メニュー開閉時にbodyのスクロールを制御
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -22,17 +21,46 @@ export default function HamburgerMenu() {
     <>
       {/* 三本線ボタン */}
       <button
-        className={`hamburger${isOpen ? " active" : ""}`}
         aria-label="メニューを開く"
         onClick={toggle}
-        style={{position:"relative", zIndex: 400}}
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          gap: "5px",
+          width: "40px",
+          height: "40px",
+          background: "none",
+          border: "none",
+          cursor: "pointer",
+          padding: "6px",
+          borderRadius: "8px",
+          position: "relative",
+          zIndex: 401,
+        }}
       >
-        <span></span>
-        <span></span>
-        <span></span>
+        <span style={{
+          display: "block", width: "100%", height: "2px",
+          background: "#2d2d2d", borderRadius: "2px",
+          transition: "all .25s ease", transformOrigin: "center",
+          transform: isOpen ? "translateY(7px) rotate(45deg)" : "none",
+        }}/>
+        <span style={{
+          display: "block", width: "100%", height: "2px",
+          background: "#2d2d2d", borderRadius: "2px",
+          transition: "all .25s ease",
+          opacity: isOpen ? 0 : 1,
+          transform: isOpen ? "scaleX(0)" : "none",
+        }}/>
+        <span style={{
+          display: "block", width: "100%", height: "2px",
+          background: "#2d2d2d", borderRadius: "2px",
+          transition: "all .25s ease", transformOrigin: "center",
+          transform: isOpen ? "translateY(-7px) rotate(-45deg)" : "none",
+        }}/>
       </button>
 
-      {/* オーバーレイ（背景暗幕） */}
+      {/* オーバーレイ */}
       {isOpen && (
         <div
           onClick={close}
@@ -40,12 +68,12 @@ export default function HamburgerMenu() {
             position: "fixed",
             inset: 0,
             background: "rgba(0,0,0,0.45)",
-            zIndex: 350,
+            zIndex: 398,
           }}
         />
       )}
 
-      {/* スライドメニュー本体 */}
+      {/* メニュー本体 */}
       <div
         style={{
           position: "fixed",
@@ -54,15 +82,41 @@ export default function HamburgerMenu() {
           width: "280px",
           height: "100vh",
           background: "#fff",
-          zIndex: 400,
+          zIndex: 399,
           transform: isOpen ? "translateX(0)" : "translateX(100%)",
           transition: "transform 0.28s ease",
           overflowY: "auto",
-          boxShadow: "-4px 0 24px rgba(0,0,0,0.15)",
-          paddingTop: "68px",
+          overflowX: "hidden",
+          boxShadow: isOpen ? "-4px 0 24px rgba(0,0,0,0.15)" : "none",
         }}
       >
-        <nav style={{display:"flex", flexDirection:"column"}}>
+        {/* ✕ボタン */}
+        <div style={{
+          display: "flex",
+          justifyContent: "flex-end",
+          padding: "16px 16px 0",
+        }}>
+          <button
+            onClick={close}
+            aria-label="メニューを閉じる"
+            style={{
+              width: "36px", height: "36px",
+              background: "#f4f9ed",
+              border: "1px solid #cce8a0",
+              borderRadius: "50%",
+              cursor: "pointer",
+              fontSize: "16px",
+              color: "#6a9e35",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              fontWeight: 700,
+            }}
+          >✕</button>
+        </div>
+
+        {/* ナビリンク */}
+        <nav style={{display:"flex", flexDirection:"column", marginTop:"8px"}}>
           {[
             { href: "/jimusho", icon: "📊", label: "事務所を探す" },
             { href: "/area/shinjuku", icon: "📍", label: "エリアから探す" },
