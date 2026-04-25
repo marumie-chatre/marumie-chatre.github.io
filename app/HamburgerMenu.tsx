@@ -9,17 +9,13 @@ export default function HamburgerMenu() {
   const toggle = () => setIsOpen((prev) => !prev);
 
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
+    document.body.style.overflow = isOpen ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
   }, [isOpen]);
 
   return (
     <>
-      {/* 三本線ボタン */}
+      {/* 三本線ボタン（×アニメなし・常に三本線） */}
       <button
         aria-label="メニューを開く"
         onClick={toggle}
@@ -39,25 +35,9 @@ export default function HamburgerMenu() {
           zIndex: 401,
         }}
       >
-        <span style={{
-          display: "block", width: "100%", height: "2px",
-          background: "#2d2d2d", borderRadius: "2px",
-          transition: "all .25s ease", transformOrigin: "center",
-          transform: isOpen ? "translateY(7px) rotate(45deg)" : "none",
-        }}/>
-        <span style={{
-          display: "block", width: "100%", height: "2px",
-          background: "#2d2d2d", borderRadius: "2px",
-          transition: "all .25s ease",
-          opacity: isOpen ? 0 : 1,
-          transform: isOpen ? "scaleX(0)" : "none",
-        }}/>
-        <span style={{
-          display: "block", width: "100%", height: "2px",
-          background: "#2d2d2d", borderRadius: "2px",
-          transition: "all .25s ease", transformOrigin: "center",
-          transform: isOpen ? "translateY(-7px) rotate(-45deg)" : "none",
-        }}/>
+        <span style={{display:"block",width:"100%",height:"2px",background:"#2d2d2d",borderRadius:"2px"}}/>
+        <span style={{display:"block",width:"100%",height:"2px",background:"#2d2d2d",borderRadius:"2px"}}/>
+        <span style={{display:"block",width:"100%",height:"2px",background:"#2d2d2d",borderRadius:"2px"}}/>
       </button>
 
       {/* オーバーレイ */}
@@ -65,8 +45,7 @@ export default function HamburgerMenu() {
         <div
           onClick={close}
           style={{
-            position: "fixed",
-            inset: 0,
+            position: "fixed", inset: 0,
             background: "rgba(0,0,0,0.45)",
             zIndex: 398,
           }}
@@ -74,49 +53,47 @@ export default function HamburgerMenu() {
       )}
 
       {/* メニュー本体 */}
-      <div
-        style={{
-          position: "fixed",
-          top: 0,
-          right: 0,
-          width: "280px",
-          height: "100vh",
-          background: "#fff",
-          zIndex: 399,
-          transform: isOpen ? "translateX(0)" : "translateX(100%)",
-          transition: "transform 0.28s ease",
-          overflowY: "auto",
-          overflowX: "hidden",
-          boxShadow: isOpen ? "-4px 0 24px rgba(0,0,0,0.15)" : "none",
-        }}
-      >
-        {/* ✕ボタン */}
+      <div style={{
+        position: "fixed", top: 0, right: 0,
+        width: "280px", height: "100vh",
+        background: "#fff",
+        zIndex: 399,
+        transform: isOpen ? "translateX(0)" : "translateX(100%)",
+        transition: "transform 0.28s ease",
+        overflowY: "auto", overflowX: "hidden",
+        boxShadow: isOpen ? "-4px 0 24px rgba(0,0,0,0.15)" : "none",
+      }}>
+
+        {/* メニューヘッダー */}
         <div style={{
           display: "flex",
-          justifyContent: "flex-end",
-          padding: "16px 16px 0",
+          alignItems: "center",
+          justifyContent: "space-between",
+          padding: "16px 20px",
+          borderBottom: "1px solid #ebebeb",
         }}>
+          <span style={{fontSize:"14px", fontWeight:700, color:"#6a9e35"}}>メニュー</span>
           <button
             onClick={close}
             aria-label="メニューを閉じる"
             style={{
-              width: "36px", height: "36px",
-              background: "#f4f9ed",
-              border: "1px solid #cce8a0",
-              borderRadius: "50%",
+              width: "32px", height: "32px",
+              background: "none",
+              border: "none",
               cursor: "pointer",
-              fontSize: "16px",
-              color: "#6a9e35",
+              fontSize: "20px",
+              color: "#777",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              fontWeight: 700,
+              borderRadius: "50%",
+              lineHeight: 1,
             }}
           >✕</button>
         </div>
 
         {/* ナビリンク */}
-        <nav style={{display:"flex", flexDirection:"column", marginTop:"8px"}}>
+        <nav style={{display:"flex", flexDirection:"column"}}>
           {[
             { href: "/jimusho", icon: "📊", label: "事務所を探す" },
             { href: "/area/shinjuku", icon: "📍", label: "エリアから探す" },
