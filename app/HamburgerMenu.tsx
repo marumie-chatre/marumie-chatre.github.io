@@ -4,13 +4,11 @@ import { useState } from "react";
 
 export default function HamburgerMenu() {
   const [isOpen, setIsOpen] = useState(false);
-
   const close = () => setIsOpen(false);
   const toggle = () => setIsOpen((prev) => !prev);
 
   return (
     <>
-      {/* ハンバーガーボタン */}
       <button
         className={`hamburger${isOpen ? " active" : ""}`}
         aria-label="メニューを開く"
@@ -21,7 +19,6 @@ export default function HamburgerMenu() {
         <span></span>
       </button>
 
-      {/* スマホメニュー */}
       <div className={`sp-menu${isOpen ? " open" : ""}`}>
         <nav className="sp-nav">
           <Link href="/jimusho" onClick={close}>
@@ -45,9 +42,8 @@ export default function HamburgerMenu() {
         </nav>
       </div>
 
-      {/* オーバーレイ */}
       {isOpen && (
-        <div className="sp-overlay" onClick={close} />
+        <div className="sp-overlay visible" onClick={close} />
       )}
     </>
   );
