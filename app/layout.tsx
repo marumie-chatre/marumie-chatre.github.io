@@ -53,9 +53,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <Link href="/guideline">口コミガイドライン</Link>
               </div>
             </div>
-            <div className="footer-pr">
-              本サイトは「フェアリーテイル」の広告を掲載しています。評価スコアは広告掲載と独立して算出しています。
-            </div>
+            
             <div className="footer-bottom">
               <span>© 2025 まるみえチャトレ</span>
               <span>当サイトの評価スコアは独自調査に基づきます</span>

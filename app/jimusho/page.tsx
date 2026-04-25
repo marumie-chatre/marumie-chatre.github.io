@@ -10,7 +10,7 @@ const offices = [
     rank: 1,
     slug: "ft",
     name: "フェアリーテイル",
-    pr: true,
+    
     score: 84,
     bars: [
       { label: "安全性 /30", val: 29, pct: 97 },
@@ -164,7 +164,7 @@ const offices = [
     rank: 12,
     slug: "furari",
     name: "ふらり",
-    pr: true,
+    
     score: 88,
     hidden: true,
     bars: [],
@@ -212,11 +212,8 @@ export default function JimushoPage() {
         </div>
       </section>
 
-      {/* PR表記 */}
       <div className="si" style={{padding:"0 32px"}}>
-        <div className="pr-notice" style={{marginTop:"24px"}}>
-          ※フェアリーテイルは広告（PR）掲載です。評価スコアは広告掲載と独立して算出しています。
-        </div>
+        
       </div>
 
       {/* OFFICE LIST */}
@@ -233,7 +230,7 @@ export default function JimushoPage() {
                 </div>
                 <div className="r-name">
                   {office.name}
-                  {office.pr && <span className="pr-tag">PR</span>}
+                  {office.pr && }
                 </div>
                 <div className="r-score">
                   {office.score}<sub> / 100点</sub>

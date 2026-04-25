@@ -48,7 +48,7 @@ export default function Home() {
             <div className="diff-item">
               <div className="diff-num">02</div>
               <div className="diff-title">実際に働いた人の声だけを載せます</div>
-              <p className="diff-body">事務所側が書いたPRではなく、キャストの本音口コミと編集部の調査コメントだけです。</p>
+              <p className="diff-body">事務所側が書いた情報ではなく、キャストの本音口コミと編集部の調査コメントだけです。</p>
             </div>
             <div className="diff-item">
               <div className="diff-num">03</div>
@@ -63,17 +63,14 @@ export default function Home() {
       <section className="section rank-sec">
         <div className="si">
           <p className="eyebrow">RANKING</p>
-          <div className="rank-head">
-            <h2 className="sec-h">編集部おすすめ事務所</h2>
-            <span className="rank-pr-note">※フェアリーテイルは広告掲載です</span>
-          </div>
+          <h2 className="sec-h">編集部おすすめ事務所</h2>
           <p className="sec-sub">5軸100点満点で採点。スコアの根拠はすべて公開しています。</p>
           <div className="rank-grid">
 
             {/* 1位 FT */}
             <div className="r-card top">
               <div className="r-rank-badge gold">🥇 1位</div>
-              <div className="r-name">フェアリーテイル <span className="pr-tag">PR</span></div>
+              <div className="r-name">フェアリーテイル </div>
               <div className="r-score">84<sub> / 100点</sub></div>
               <div className="r-bars">
                 <div className="r-bar-row"><span className="r-bar-label">安全性 /30</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"97%"}}></div></div><span className="r-bar-val">29</span></div>
@@ -128,13 +125,6 @@ export default function Home() {
             </div>
 
           </div>
-          {/* ふらり：HP公開後にコメントアウトを外す
-          <div className="r-card top">
-            <div className="r-rank-badge gold">🥇 1位</div>
-            <div className="r-name">ふらり <span className="pr-tag">PR</span></div>
-            スコア：88点
-          </div>
-          */}
           <div className="rank-more">
             <Link href="/jimusho" className="btn-main">全12社を比較する →</Link>
           </div>
@@ -188,12 +178,12 @@ export default function Home() {
             </Link>
             <Link href="/column/mibare-taisaku" className="col-card">
               <div className="col-cat">▶ 安全・身バレ対策</div>
-              <div className="col-title">身バレ対策の完全ガイド｜4つのリスク経路と防ぎ方</div>
+              <div className="col-title">配信中に顔がバレる？家族にバレる？チャットレディの身バレ、よくある疑問に答えます</div>
               <div className="col-meta">2025.05.01</div>
             </Link>
             <Link href="/column/hoikushi-baito" className="col-card">
-              <div className="col-cat">▶ 職業別ガイド</div>
-              <div className="col-title">保育士の副業にチャットレディはアリ？リスクと対策を解説</div>
+              <div className="col-cat">▶ 副業・働き方</div>
+              <div className="col-title">チャットレディは副業にアリ？会社・職場にバレないための全対策</div>
               <div className="col-meta">2025.05.01</div>
             </Link>
           </div>

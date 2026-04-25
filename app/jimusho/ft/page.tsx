@@ -22,7 +22,7 @@ export default function FTPage() {
               <div className="detail-rank-badge gold">🥇 総合1位</div>
               <h1 className="detail-h1">
                 フェアリーテイル
-                <span className="detail-pr-tag">PR</span>
+                
               </h1>
               <p className="detail-catch">ノンアダルト専門の先駆者。<br />安全に、自分らしく働ける事務所。</p>
               <div className="detail-tags">
@@ -41,7 +41,7 @@ export default function FTPage() {
               >
                 フェアリーテイルの公式サイトを見る →
               </a>
-              <p className="detail-pr-note">※このボタンはPR（広告）リンクです</p>
+              
             </div>
 
             <div className="detail-hero-right">
@@ -184,7 +184,7 @@ export default function FTPage() {
           >
             フェアリーテイル公式サイトを見る →
           </a>
-          <p className="detail-pr-note">※PR（広告）リンクです</p>
+          
         </div>
       </section>
 

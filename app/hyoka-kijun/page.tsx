@@ -177,8 +177,8 @@ export default function HyokaKijunPage() {
             <div className="hyoka-trans-item">
               <div className="hyoka-trans-icon">📣</div>
               <div>
-                <div className="hyoka-trans-title">広告掲載はスコアに影響しません</div>
-                <p className="hyoka-trans-text">「フェアリーテイル」は広告（PR）掲載ですが、評価スコアは広告掲載の有無とは独立して算出しています。</p>
+                <div className="hyoka-trans-title">掲載事務所との関係はスコアに影響しません</div>
+                <p className="hyoka-trans-text">掲載事務所との関係性はスコアの採点に一切影響しません。すべての事務所を同じ基準で採点しています。</p>
               </div>
             </div>
           </div>

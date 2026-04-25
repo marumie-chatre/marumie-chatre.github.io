@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export const metadata = {
   title: "コラム｜まるみえチャトレ",
-  description: "チャットレディ事務所選びに役立つコラム。身バレ対策・事務所の選び方・職業別ガイドなど、編集部が実際に調査した情報をもとに執筆しています。",
+  description: "チャットレディ事務所選びに役立つコラム。身バレ対策・事務所の選び方・副業ガイドなど、編集部が実際に調査した情報をもとに執筆しています。",
 };
 
 const columns = [
@@ -17,16 +17,16 @@ const columns = [
   {
     slug: "mibare-taisaku",
     cat: "安全・身バレ対策",
-    title: "身バレ対策の完全ガイド｜4つのリスク経路と防ぎ方",
-    desc: "「顔出しなしなら大丈夫」は本当？身バレには4つのリスク経路があります。それぞれの防ぎ方を具体的に解説します。",
+    title: "配信中に顔がバレる？家族にバレる？チャットレディの身バレ、よくある疑問に答えます",
+    desc: "顔出しなしなら大丈夫？家族や職場にバレない？よくある疑問に具体的な対策とともに答えます。",
     date: "2025.05.01",
     readTime: "約6分",
   },
   {
     slug: "hoikushi-baito",
-    cat: "職業別ガイド",
-    title: "保育士の副業にチャットレディはアリ？リスクと対策を解説",
-    desc: "保育士はチャットレディの副業ができるのか。就業規則・身バレリスク・税金まで、同じ経験を持つ運営者が正直に解説します。",
+    cat: "副業・働き方",
+    title: "チャットレディは副業にアリ？会社・職場にバレないための全対策",
+    desc: "本業をしながらチャットレディを始めたい方へ。就業規則の確認から住民税・バレる原因と対策まで解説します。",
     date: "2025.05.01",
     readTime: "約7分",
   },
@@ -35,8 +35,6 @@ const columns = [
 export default function ColumnPage() {
   return (
     <main>
-
-      {/* HERO */}
       <section className="list-hero">
         <div className="si">
           <p className="eyebrow">COLUMN</p>
@@ -51,7 +49,6 @@ export default function ColumnPage() {
         </div>
       </section>
 
-      {/* コラム一覧 */}
       <section className="section" style={{background:"var(--cream)"}}>
         <div className="si">
           <div className="column-list-grid">
@@ -70,7 +67,6 @@ export default function ColumnPage() {
         </div>
       </section>
 
-      {/* 口コミCTA */}
       <section className="kuchi-sec">
         <div className="kuchi-inner">
           <h2 className="kuchi-h">働いた経験がある方へ</h2>
@@ -81,7 +77,6 @@ export default function ColumnPage() {
           <Link href="/kuchikomi" className="btn-main">口コミを投稿する →</Link>
         </div>
       </section>
-
     </main>
   );
 }

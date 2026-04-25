@@ -77,20 +77,10 @@ export default function ProfilePage() {
           <p className="eyebrow">DISCLOSURE</p>
           <h2 className="sec-h" style={{marginBottom:"28px"}}>開示情報</h2>
           <div className="profile-disclosure">
-            <p>本サイトの運営者は、フェアリーテイルに所属する現役チャットレディです。フェアリーテイルは本サイトの広告（PR）掲載事務所です。</p>
-            <p>評価スコアは広告掲載の有無とは独立して算出しています。その他の掲載事務所との関係はありません。</p>
+            <p>本サイトの運営者は、フェアリーテイルに所属する現役チャットレディです。その他の掲載事務所との関係はありません。</p>
           </div>
 
-          <h2 className="sec-h" style={{marginBottom:"28px", marginTop:"40px"}}>参考：フェアリーテイル会社情報</h2>
-          <table className="detail-table">
-            <tbody>
-              <tr><th>会社名</th><td>フェアリーテイル</td></tr>
-              <tr><th>代表者</th><td>北山 香穂</td></tr>
-              <tr><th>設立</th><td>2020年3月（営業開始・2011年4月）</td></tr>
-              <tr><th>事業内容</th><td>web広告業・webコンテンツサービス</td></tr>
-              <tr><th>資本金</th><td>2,500万円</td></tr>
-            </tbody>
-          </table>
+
         </div>
       </section>
 
