@@ -1,11 +1,7 @@
-import type { Metadata } from "next";
+"use client";
 import Link from "next/link";
 import "./globals.css";
 
-export const metadata: Metadata = {
-  title: "まるみえチャトレ｜中身で選ぶチャトレ事務所",
-  description: "事務所選びで失敗したくない初心者のための口コミサイト。",
-};
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
