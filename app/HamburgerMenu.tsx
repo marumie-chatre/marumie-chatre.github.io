@@ -15,7 +15,7 @@ export default function HamburgerMenu() {
 
   return (
     <>
-      {/* 三本線ボタン（×アニメなし・常に三本線） */}
+      {/* 三本線ボタン（メニューが開いたら非表示） */}
       <button
         aria-label="メニューを開く"
         onClick={toggle}
@@ -33,6 +33,9 @@ export default function HamburgerMenu() {
           borderRadius: "8px",
           position: "relative",
           zIndex: 401,
+          opacity: isOpen ? 0 : 1,
+          pointerEvents: isOpen ? "none" : "auto",
+          transition: "opacity 0.2s ease",
         }}
       >
         <span style={{display:"block",width:"100%",height:"2px",background:"#2d2d2d",borderRadius:"2px"}}/>
