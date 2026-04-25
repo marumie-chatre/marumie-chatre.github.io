@@ -230,7 +230,6 @@ export default function JimushoPage() {
                 </div>
                 <div className="r-name">
                   {office.name}
-                  {office.pr && }
                 </div>
                 <div className="r-score">
                   {office.score}<sub> / 100点</sub>
