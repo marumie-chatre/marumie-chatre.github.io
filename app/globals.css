@@ -742,12 +742,17 @@ img { display: block; max-width: 100%; }
 .sp-menu {
   position: fixed; top: 68px; right: 0;
   width: 280px; height: calc(100vh - 68px);
-  background: var(--white); z-index: 199;
-  transform: translateX(100%);
+  background: var(--white); z-index: 300;
+  transform: translateX(110%);
   transition: transform .28s ease;
   overflow-y: auto;
   box-shadow: -4px 0 24px rgba(0,0,0,0.12);
-}.sp-menu.open { transform: translateX(0); }
+  pointer-events: none;
+}
+.sp-menu.open {
+  transform: translateX(0);
+  pointer-events: auto;
+}
 
 .sp-nav {
   display: flex; flex-direction: column;
@@ -764,12 +769,11 @@ img { display: block; max-width: 100%; }
 .sp-nav-icon { font-size: 18px; width: 24px; text-align: center; }
 
 .sp-overlay {
-  display: none;
-  position: fixed; inset: 0; z-index: 198;
+  position: fixed; inset: 0; z-index: 299;
   background: rgba(0,0,0,0.4);
+  display: none;
 }
-.sp-menu.open ~ .sp-overlay,
-.sp-overlay:has(~ .sp-menu.open) { display: block; }
+.sp-overlay.visible { display: block; }
 
 @media (max-width: 960px) {
   .hamburger { display: flex; }
