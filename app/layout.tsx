@@ -1,7 +1,12 @@
-"use client";
+import type { Metadata } from "next";
 import Link from "next/link";
+import HamburgerMenu from "./HamburgerMenu";
 import "./globals.css";
 
+export const metadata: Metadata = {
+  title: "まるみえチャトレ｜中身で選ぶチャトレ事務所",
+  description: "事務所選びで失敗したくない初心者のための口コミサイト。",
+};
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -29,73 +34,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <Link href="/kuchikomi">口コミ</Link>
               <Link href="/column">コラム</Link>
             </nav>
-            {/* ハンバーガーボタン（スマホのみ表示） */}
-            <button
-              className="hamburger"
-              aria-label="メニューを開く"
-              onClick={() => {
-                const menu = document.getElementById("sp-menu");
-                const btn = document.querySelector(".hamburger");
-                if (menu) menu.classList.toggle("open");
-                if (btn) btn.classList.toggle("active");
-              }}
-            >
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
+            {/* ハンバーガーメニュー（スマホのみ） */}
+            <HamburgerMenu />
           </div>
         </header>
-
-        {/* スマホメニュー */}
-        <div id="sp-menu" className="sp-menu">
-          <nav className="sp-nav">
-            <Link href="/jimusho" onClick={() => {
-              document.getElementById("sp-menu")?.classList.remove("open");
-              document.querySelector(".hamburger")?.classList.remove("active");
-            }}>
-              <span className="sp-nav-icon">📊</span>事務所を探す
-            </Link>
-            <Link href="/area/shinjuku" onClick={() => {
-              document.getElementById("sp-menu")?.classList.remove("open");
-              document.querySelector(".hamburger")?.classList.remove("active");
-            }}>
-              <span className="sp-nav-icon">📍</span>エリアから探す
-            </Link>
-            <Link href="/style/zaitaku" onClick={() => {
-              document.getElementById("sp-menu")?.classList.remove("open");
-              document.querySelector(".hamburger")?.classList.remove("active");
-            }}>
-              <span className="sp-nav-icon">💼</span>働き方から探す
-            </Link>
-            <Link href="/q/barebure" onClick={() => {
-              document.getElementById("sp-menu")?.classList.remove("open");
-              document.querySelector(".hamburger")?.classList.remove("active");
-            }}>
-              <span className="sp-nav-icon">🙋</span>お悩みから探す
-            </Link>
-            <Link href="/kuchikomi" onClick={() => {
-              document.getElementById("sp-menu")?.classList.remove("open");
-              document.querySelector(".hamburger")?.classList.remove("active");
-            }}>
-              <span className="sp-nav-icon">💬</span>口コミを投稿する
-            </Link>
-            <Link href="/column" onClick={() => {
-              document.getElementById("sp-menu")?.classList.remove("open");
-              document.querySelector(".hamburger")?.classList.remove("active");
-            }}>
-              <span className="sp-nav-icon">📝</span>コラム
-            </Link>
-          </nav>
-        </div>
-        {/* オーバーレイ */}
-        <div
-          className="sp-overlay"
-          onClick={() => {
-            document.getElementById("sp-menu")?.classList.remove("open");
-            document.querySelector(".hamburger")?.classList.remove("active");
-          }}
-        />
 
         {children}
 
