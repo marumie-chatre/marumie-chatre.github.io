@@ -1,6 +1,17 @@
 "use client";
 import { useState } from "react";
-import type { Review } from "./reviews";
+
+type Review = {
+  id: number;
+  office: string;
+  slug: string;
+  period: string;
+  style: string;
+  rating: number;
+  good: string;
+  bad: string;
+  recommend: string;
+};
 
 function Stars({ rating }: { rating: number }) {
   return (
@@ -29,9 +40,7 @@ export default function ReviewCard({ review }: { review: Review }) {
       boxShadow: "var(--shadow-sm)",
       display: "flex",
       flexDirection: "column",
-      gap: "0",
     }}>
-      {/* ヘッダー */}
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: "6px" }}>
         <div style={{ display: "flex", gap: "6px", alignItems: "center", flexWrap: "wrap" }}>
           <span style={{ fontSize: "11px", fontWeight: 700, color: "var(--green)", background: "var(--green-pale)", border: "1px solid var(--border-green)", borderRadius: "100px", padding: "2px 10px" }}>
@@ -46,7 +55,6 @@ export default function ReviewCard({ review }: { review: Review }) {
 
       <Stars rating={review.rating} />
 
-      {/* 本文 */}
       <div style={{ display: "flex", flexDirection: "column", gap: "8px", marginTop: "8px" }}>
         <div>
           <div style={{ fontSize: "11px", fontWeight: 700, color: "var(--green)", marginBottom: "3px" }}>良かったこと</div>
@@ -58,27 +66,19 @@ export default function ReviewCard({ review }: { review: Review }) {
         </div>
       </div>
 
-      {/* もっと見る */}
       {isLong && (
         <button
           onClick={() => setExpanded(!expanded)}
           style={{
-            marginTop: "12px",
-            background: "none",
-            border: "none",
-            color: "var(--green)",
-            fontSize: "12px",
-            fontWeight: 700,
-            cursor: "pointer",
-            padding: "0",
-            textAlign: "left",
+            marginTop: "10px", background: "none", border: "none",
+            color: "var(--green)", fontSize: "12px", fontWeight: 700,
+            cursor: "pointer", padding: "0", textAlign: "left",
           }}
         >
           {expanded ? "▲ 閉じる" : "▼ もっと見る"}
         </button>
       )}
 
-      {/* 向いている人（展開時のみ） */}
       {expanded && (
         <div style={{ background: "var(--cream)", borderRadius: "8px", padding: "8px 12px", marginTop: "8px" }}>
           <span style={{ fontSize: "11px", fontWeight: 700, color: "var(--text-muted)" }}>向いている人：</span>
