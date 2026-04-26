@@ -134,7 +134,7 @@ export default function Home() {
           <p className="eyebrow">REVIEWS</p>
           <h2 className="sec-h" style={{marginBottom:"8px"}}>良いことだけじゃない、リアルな声を読んでください。</h2>
           <p className="sec-sub">実際に働いた方の体験談を掲載しています。</p>
-          <div style={{display:"grid", gridTemplateColumns:"repeat(2,1fr)", gap:"16px"}}>
+          <div className="review-grid">
             {latestReviews.map(review => (
               <ReviewCard key={review.id} review={review} />
             ))}
