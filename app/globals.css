@@ -780,3 +780,15 @@ img { display: block; max-width: 100%; }
   .hamburger { display: flex; }
   .gnav { display: none; }
 }
+
+/* ========== REVIEW GRID ========== */
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+@media (max-width: 640px) {
+  .review-grid {
+    grid-template-columns: 1fr;
+  }
+}
