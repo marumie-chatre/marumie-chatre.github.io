@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { reviews } from "./reviews";
+import ReviewCard from "./ReviewCard";
 
 export const metadata = {
   title: "まるみえチャトレ｜中身で選ぶチャトレ事務所",
@@ -6,6 +8,8 @@ export const metadata = {
 };
 
 export default function Home() {
+  const latestReviews = reviews.slice(0, 4);
+
   return (
     <main>
       {/* HERO */}
@@ -66,11 +70,9 @@ export default function Home() {
           <h2 className="sec-h">編集部おすすめ事務所</h2>
           <p className="sec-sub">5軸100点満点で採点。スコアの根拠はすべて公開しています。</p>
           <div className="rank-grid">
-
-            {/* 1位 FT */}
             <div className="r-card top">
               <div className="r-rank-badge gold">🥇 1位</div>
-              <div className="r-name">フェアリーテイル </div>
+              <div className="r-name">フェアリーテイル</div>
               <div className="r-score">84<sub> / 100点</sub></div>
               <div className="r-bars">
                 <div className="r-bar-row"><span className="r-bar-label">安全性 /30</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"97%"}}></div></div><span className="r-bar-val">29</span></div>
@@ -85,8 +87,6 @@ export default function Home() {
               <p className="r-comment">完全ノンアダルト専門。身バレゼロ実績。清楚系・初心者に最適な事務所。</p>
               <Link href="/jimusho/ft" className="r-btn">詳細・口コミを見る →</Link>
             </div>
-
-            {/* 2位 ブライトG */}
             <div className="r-card">
               <div className="r-rank-badge silver">🥈 2位</div>
               <div className="r-name">ブライトグループ</div>
@@ -104,8 +104,6 @@ export default function Home() {
               <p className="r-comment">運営20年・全国最大手。顧問税理士あり。初心者でも安心の大手ブランド。</p>
               <Link href="/jimusho/bright-group" className="r-btn">詳細・口コミを見る →</Link>
             </div>
-
-            {/* 3位 アットグループ */}
             <div className="r-card">
               <div className="r-rank-badge bronze">🥉 3位</div>
               <div className="r-name">アットグループ</div>
@@ -123,10 +121,26 @@ export default function Home() {
               <p className="r-comment">カフェのような居心地の良さが特徴。応募数が多い大手。正直な評価で掲載。</p>
               <Link href="/jimusho/at-group" className="r-btn">詳細・口コミを見る →</Link>
             </div>
-
           </div>
           <div className="rank-more">
             <Link href="/jimusho" className="btn-main">全12社を比較する →</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 最新口コミゾーン */}
+      <section className="section" style={{background:"var(--white)"}}>
+        <div className="si">
+          <p className="eyebrow">REVIEWS</p>
+          <h2 className="sec-h" style={{marginBottom:"8px"}}>良いことだけじゃない、リアルな声を読んでください。</h2>
+          <p className="sec-sub">実際に働いた方の体験談を掲載しています。</p>
+          <div style={{display:"grid", gridTemplateColumns:"repeat(2,1fr)", gap:"16px"}}>
+            {latestReviews.map(review => (
+              <ReviewCard key={review.id} review={review} />
+            ))}
+          </div>
+          <div style={{textAlign:"center", marginTop:"28px"}}>
+            <Link href="/kuchikomi" className="btn-sub">口コミをもっと見る →</Link>
           </div>
         </div>
       </section>
