@@ -10,11 +10,12 @@ export type Review = {
   recommend: string;
 };
 
-import reviewsData from "./reviews.json";
+// レビューデータを直接インポート
+const reviewsData = require("./reviews.json");
 export const reviews: Review[] = reviewsData as Review[];
 
 export function getReviewsBySlug(slug: string): Review[] {
-  return reviews.filter(r => r.slug === slug);
+  return reviews.filter((r: Review) => r.slug === slug);
 }
 
 export function getLatestReviews(count: number = 6): Review[] {
