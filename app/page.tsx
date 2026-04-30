@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <main>
       {/* HERO */}
-      <section className="hero">
+      <section className="hero hero-with-photo">
         <div className="hero-inner">
           <div className="hero-badges">
             <span className="hero-badge">評価基準をすべて公開</span>
@@ -33,6 +33,10 @@ export default function Home() {
             <Link href="/hyoka-kijun" className="btn-sub">評価基準を確認する</Link>
           </div>
         </div>
+        <div className="hero-photo-wrap">
+          <div className="hero-photo-gradient" />
+          <img src="/photo-cafe.jpg" alt="" className="hero-photo-img" />
+        </div>
       </section>
 
       {/* DIFFERENCE */}
@@ -45,16 +49,25 @@ export default function Home() {
           </h2>
           <div className="diff-grid">
             <div className="diff-item">
+              <div className="diff-svg-icon">
+                <img src="/icon-ranking.svg" alt="" width={44} height={44} />
+              </div>
               <div className="diff-num">01</div>
               <div className="diff-title">なぜその順位なのか、全部説明します</div>
               <p className="diff-body">採点基準と根拠をすべて公開。「なんとなくおすすめ」のランキングは載せません。</p>
             </div>
             <div className="diff-item">
+              <div className="diff-svg-icon">
+                <img src="/icon-review.svg" alt="" width={44} height={44} />
+              </div>
               <div className="diff-num">02</div>
               <div className="diff-title">実際に働いた人の声だけを載せます</div>
               <p className="diff-body">事務所側が書いた情報ではなく、キャストの本音口コミと編集部の調査コメントだけです。</p>
             </div>
             <div className="diff-item">
+              <div className="diff-svg-icon">
+                <img src="/icon-safety.svg" alt="" width={44} height={44} />
+              </div>
               <div className="diff-num">03</div>
               <div className="diff-title">安全に、長く続けられる事務所を探している人へ</div>
               <p className="diff-body">稼ぎ額より、安全性・サポート・働きやすさを重視する人のための比較サイトです。</p>
@@ -128,7 +141,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 最新口コミゾーン */}
+      {/* 最新口コミ */}
       <section className="section" style={{background:"var(--white)"}}>
         <div className="si">
           <p className="eyebrow">REVIEWS</p>
@@ -207,7 +220,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* KUCHIKOMI CTA */}
+      {/* CTA */}
       <section className="kuchi-sec">
         <div className="kuchi-inner">
           <h2 className="kuchi-h">働いた経験がある方へ</h2>
