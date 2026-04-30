@@ -57,11 +57,18 @@ export default function Page() {
           <div className="detail-comment-box">
             <div className="detail-comment-label">編集部コメント</div>
             <p className="detail-comment-text">時給保証制度あり。稼ぎ重視層向けの事務所。</p>
-            <div className="detail-honest">
+                                    <div className="detail-honest">
               <span className="detail-honest-label">正直なひとこと</span>
-              <p>時給保証の条件が複雑で、体験中と通常で条件が異なる場合があります。事前に条件を細かく確認してから応募することを強くおすすめします。</p>
+              <p>時給保証の仕組みは魅力的ですが、条件が複雑で体験中と通常で異なる場合があります。条件をしっかり確認した上で入るかどうかを判断してください。</p>
             </div>
-          </div>
+            <div className="detail-not-suitable">
+              <span className="detail-not-suitable-label">こんな方には向いていないかも</span>
+              <ul>
+                <li>隙間時間に少しだけ働きたい方</li>
+                <li>シンプルな条件で始めたい方</li>
+                <li>プレッシャーを感じやすい方</li>
+              </ul>
+            </div></div>
         </div>
       </section>
 

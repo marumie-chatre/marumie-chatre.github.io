@@ -58,11 +58,17 @@ export default function Page() {
           <div className="detail-comment-box">
             <div className="detail-comment-label">編集部コメント</div>
             <p className="detail-comment-text">会話テクニック・接客サポートが充実。現役スタッフが教えてくれる事務所。</p>
-            <div className="detail-honest">
+                                    <div className="detail-honest">
               <span className="detail-honest-label">正直なひとこと</span>
-              <p>中堅規模なので大手ほどの集客力はないかもしれません。ただし会話サポートの手厚さは他社と比べて強みがあります。</p>
+              <p>会話テクニックや接客サポートが充実していて、スタッフが実際に配信経験者という点が他にない強みです。ただし中堅規模なので、大手ほどの集客力はありません。</p>
             </div>
-          </div>
+            <div className="detail-not-suitable">
+              <span className="detail-not-suitable-label">こんな方には向いていないかも</span>
+              <ul>
+                <li>稼ぎのスピードを最優先したい方</li>
+                <li>通いやすいエリアに店舗がない方</li>
+              </ul>
+            </div></div>
         </div>
       </section>
 

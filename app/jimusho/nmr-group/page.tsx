@@ -57,11 +57,18 @@ export default function Page() {
           <div className="detail-comment-box">
             <div className="detail-comment-label">編集部コメント</div>
             <p className="detail-comment-text">完全防音個室。関東東北中心の中堅事務所。</p>
-            <div className="detail-honest">
+                                    <div className="detail-honest">
               <span className="detail-honest-label">正直なひとこと</span>
-              <p>店舗によって働く子の雰囲気が異なります。事前に店舗の雰囲気を確認してから応募することをおすすめします。</p>
+              <p>完全防音個室という設備面の強みは本物です。ただし関東・東北中心の展開なので、エリア外の方には選択肢が限られます。</p>
             </div>
-          </div>
+            <div className="detail-not-suitable">
+              <span className="detail-not-suitable-label">こんな方には向いていないかも</span>
+              <ul>
+                <li>関東・東北以外に住んでいる方</li>
+                <li>スタッフとアットホームに関わりたい方</li>
+                <li>大手の安心感を重視する方</li>
+              </ul>
+            </div></div>
         </div>
       </section>
 
