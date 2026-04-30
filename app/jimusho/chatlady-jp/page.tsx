@@ -58,11 +58,18 @@ export default function Page() {
           <div className="detail-comment-box">
             <div className="detail-comment-label">編集部コメント</div>
             <p className="detail-comment-text">新宿・上野に多店舗展開。美容機器無料サービスあり。</p>
-            <div className="detail-honest">
+                                    <div className="detail-honest">
               <span className="detail-honest-label">正直なひとこと</span>
-              <p>通勤前提の事務所という印象が強く、在宅サポートは薄めです。新宿・上野に通える方向けの選択肢です。</p>
+              <p>新宿・上野エリアに通える方には利便性が高い事務所です。ただし通勤前提の事務所という印象が強く、在宅サポートは薄めです。</p>
             </div>
-          </div>
+            <div className="detail-not-suitable">
+              <span className="detail-not-suitable-label">こんな方には向いていないかも</span>
+              <ul>
+                <li>在宅メインで働きたい方</li>
+                <li>新宿・上野エリア以外に住んでいる方</li>
+                <li>稼ぎ方のノウハウをしっかり教えてほしい方</li>
+              </ul>
+            </div></div>
         </div>
       </section>
 

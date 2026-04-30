@@ -58,11 +58,18 @@ export default function Page() {
           <div className="detail-comment-box">
             <div className="detail-comment-label">編集部コメント</div>
             <p className="detail-comment-text">創業22年の老舗。広域展開が強みの事務所。</p>
-            <div className="detail-honest">
+                                    <div className="detail-honest">
               <span className="detail-honest-label">正直なひとこと</span>
-              <p>サポートはやや薄めですが、社会保険加入ができる珍しい事務所です。長期で安定して働きたい方向けの選択肢です。</p>
+              <p>創業22年の老舗で安定感があります。社会保険加入ができる珍しい事務所ですが、サポートは控えめで自分から動く姿勢が必要です。</p>
             </div>
-          </div>
+            <div className="detail-not-suitable">
+              <span className="detail-not-suitable-label">こんな方には向いていないかも</span>
+              <ul>
+                <li>稼ぎ方のノウハウを積極的に教えてほしい方</li>
+                <li>スタッフとの距離感を大切にしたい方</li>
+                <li>対応エリア外に住んでいる方</li>
+              </ul>
+            </div></div>
         </div>
       </section>
 

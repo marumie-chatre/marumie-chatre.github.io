@@ -57,11 +57,18 @@ export default function Page() {
           <div className="detail-comment-box">
             <div className="detail-comment-label">編集部コメント</div>
             <p className="detail-comment-text">全店女性スタッフ。本気で稼ぎたい方向けの事務所。</p>
-            <div className="detail-honest">
+                                    <div className="detail-honest">
               <span className="detail-honest-label">正直なひとこと</span>
-              <p>稼ぎ重視の空気感が強く、ノンアダルトで頑張っていてもアダルトへの期待を感じる場面があります。のんびり働きたい方には向いていません。</p>
+              <p>全店女性スタッフで安全性が高く、稼ぎへのサポートも本物です。ただし稼ぎ重視の空気が強いため、ゆるく働きたい方には合わないかもしれません。</p>
             </div>
-          </div>
+            <div className="detail-not-suitable">
+              <span className="detail-not-suitable-label">こんな方には向いていないかも</span>
+              <ul>
+                <li>のんびり自分のペースで働きたい方</li>
+                <li>ノンアダルト一本でゆるく続けたい方</li>
+                <li>プレッシャーを感じやすい方</li>
+              </ul>
+            </div></div>
         </div>
       </section>
 

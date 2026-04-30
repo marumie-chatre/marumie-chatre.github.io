@@ -57,11 +57,18 @@ export default function Page() {
           <div className="detail-comment-box">
             <div className="detail-comment-label">編集部コメント</div>
             <p className="detail-comment-text">全国8拠点。教えてもらうより自分で動きたい人向けの事務所。</p>
-            <div className="detail-honest">
+                                    <div className="detail-honest">
               <span className="detail-honest-label">正直なひとこと</span>
-              <p>自分でどんどん動ける方には効率的な環境です。ただしノンアダルトでの稼ぎ方はあまり教えてもらえないので、アダルト対応もいとわない方向けです。通勤↔在宅の切替時にはアカウントのリセットが必要な点も事前に確認しておくことをおすすめします。</p>
+              <p>全国8拠点。教えてもらうより自分で動きたい人向けの事務所です。仕組みは整っていますが、ノンアダルトで稼ぐノウハウはあまり教えてもらえません。</p>
             </div>
-          </div>
+            <div className="detail-not-suitable">
+              <span className="detail-not-suitable-label">こんな方には向いていないかも</span>
+              <ul>
+                <li>ノンアダルトで稼ぎを伸ばしたい方</li>
+                <li>スタッフのサポートを重視する方</li>
+                <li>会話力などのスキルも伸ばしたい方</li>
+              </ul>
+            </div></div>
         </div>
       </section>
 

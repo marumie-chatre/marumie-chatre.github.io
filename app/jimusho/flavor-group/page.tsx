@@ -59,11 +59,17 @@ export default function Page() {
           <div className="detail-comment-box">
             <div className="detail-comment-label">編集部コメント</div>
             <p className="detail-comment-text">稼ぎ方のノウハウを具体的に教えてくれる。全国300店舗の老舗。</p>
-            <div className="detail-honest">
+                                    <div className="detail-honest">
               <span className="detail-honest-label">正直なひとこと</span>
-              <p>店舗によってスタッフの質に差があります。稼ぎ重視の空気感が強いので、のんびり働きたい方には少し合わないかもしれません。</p>
+              <p>稼ぎのノウハウを具体的に教えてくれる姿勢は評価できます。ただし店舗によってスタッフの質に差があるため、事前に店舗の口コミを確認することをおすすめします。</p>
             </div>
-          </div>
+            <div className="detail-not-suitable">
+              <span className="detail-not-suitable-label">こんな方には向いていないかも</span>
+              <ul>
+                <li>スタッフとの密なサポートを求める方</li>
+                <li>のんびり自分のペースでやりたい方</li>
+              </ul>
+            </div></div>
         </div>
       </section>
 
