@@ -17,7 +17,7 @@ export default function Home() {
       <HeroImage />
 
       {/* HERO */}
-      <section className="hero hero-with-photo">
+      <section className="hero">
         <div className="hero-inner">
           <div className="hero-badges">
             <span className="hero-badge">評価基準をすべて公開</span>
@@ -36,10 +36,6 @@ export default function Home() {
             <Link href="/jimusho" className="btn-main">事務所ランキングを見る →</Link>
             <Link href="/hyoka-kijun" className="btn-sub">評価基準を確認する</Link>
           </div>
-        </div>
-        <div className="hero-photo-wrap">
-          <div className="hero-photo-gradient" />
-          <img src="/photo-cafe.jpg" alt="" className="hero-photo-img" />
         </div>
       </section>
 
