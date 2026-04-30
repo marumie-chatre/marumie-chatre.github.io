@@ -13,6 +13,7 @@ const columns = [
     desc: "「なんとなく良さそう」で選ぶと後悔します。編集部が実際に調査した、安全な事務所を見極める5つのチェックポイントを解説します。",
     date: "2025.05.01",
     readTime: "約5分",
+    thumb: "/col-jimusho-erabi.png",
   },
   {
     slug: "mibare-taisaku",
@@ -21,6 +22,7 @@ const columns = [
     desc: "顔出しなしなら大丈夫？家族や職場にバレない？よくある疑問に具体的な対策とともに答えます。",
     date: "2025.05.01",
     readTime: "約6分",
+    thumb: "/col-mibare-taisaku.png",
   },
   {
     slug: "hoikushi-baito",
@@ -29,6 +31,7 @@ const columns = [
     desc: "本業をしながらチャットレディを始めたい方へ。就業規則の確認から住民税・バレる原因と対策まで解説します。",
     date: "2025.05.01",
     readTime: "約7分",
+    thumb: "/col-hoikushi-baito.png",
   },
 ];
 
@@ -54,12 +57,17 @@ export default function ColumnPage() {
           <div className="column-list-grid">
             {columns.map((col) => (
               <Link href={`/column/${col.slug}`} key={col.slug} className="column-list-card">
-                <div className="column-list-cat">{col.cat}</div>
-                <h2 className="column-list-title">{col.title}</h2>
-                <p className="column-list-desc">{col.desc}</p>
-                <div className="column-list-meta">
-                  <span>{col.date}</span>
-                  <span>{col.readTime}</span>
+                <div className="column-list-thumb">
+                  <img src={col.thumb} alt={col.title} />
+                </div>
+                <div className="column-list-body">
+                  <div className="column-list-cat">{col.cat}</div>
+                  <h2 className="column-list-title">{col.title}</h2>
+                  <p className="column-list-desc">{col.desc}</p>
+                  <div className="column-list-meta">
+                    <span>{col.date}</span>
+                    <span>{col.readTime}</span>
+                  </div>
                 </div>
               </Link>
             ))}

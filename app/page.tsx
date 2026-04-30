@@ -200,19 +200,34 @@ export default function Home() {
           <h2 className="sec-h">不安なことから、読んでみてください</h2>
           <div className="col-grid">
             <Link href="/column/jimusho-erabi" className="col-card">
-              <div className="col-cat">▶ 事務所の選び方</div>
-              <div className="col-title">チャットレディ事務所の選び方｜失敗しない5つの基準</div>
-              <div className="col-meta">2025.05.01</div>
+              <div className="col-thumb">
+                <img src="/col-jimusho-erabi.png" alt="事務所の選び方" />
+              </div>
+              <div className="col-card-body">
+                <div className="col-cat">▶ 事務所の選び方</div>
+                <div className="col-title">チャットレディ事務所の選び方｜失敗しない5つの基準</div>
+                <div className="col-meta">2025.05.01</div>
+              </div>
             </Link>
             <Link href="/column/mibare-taisaku" className="col-card">
-              <div className="col-cat">▶ 安全・身バレ対策</div>
-              <div className="col-title">配信中に顔がバレる？家族にバレる？チャットレディの身バレ、よくある疑問に答えます</div>
-              <div className="col-meta">2025.05.01</div>
+              <div className="col-thumb">
+                <img src="/col-mibare-taisaku.png" alt="身バレ対策" />
+              </div>
+              <div className="col-card-body">
+                <div className="col-cat">▶ 安全・身バレ対策</div>
+                <div className="col-title">配信中に顔がバレる？家族にバレる？チャットレディの身バレ、よくある疑問に答えます</div>
+                <div className="col-meta">2025.05.01</div>
+              </div>
             </Link>
             <Link href="/column/hoikushi-baito" className="col-card">
-              <div className="col-cat">▶ 副業・働き方</div>
-              <div className="col-title">チャットレディは副業にアリ？会社・職場にバレないための全対策</div>
-              <div className="col-meta">2025.05.01</div>
+              <div className="col-thumb">
+                <img src="/col-hoikushi-baito.png" alt="副業・働き方" />
+              </div>
+              <div className="col-card-body">
+                <div className="col-cat">▶ 副業・働き方</div>
+                <div className="col-title">チャットレディは副業にアリ？会社・職場にバレないための全対策</div>
+                <div className="col-meta">2025.05.01</div>
+              </div>
             </Link>
           </div>
           <div className="col-more">
