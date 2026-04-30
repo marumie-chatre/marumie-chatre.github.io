@@ -30,7 +30,7 @@ export default function Page() {
                 <span className="r-tag">関東57店舗</span>
                 <span className="r-tag">体験入店OK</span>
               </div>
-              <a href="https://at-grp.net/" target="_blank" rel="noopener noreferrer" className="detail-apply-btn">
+              <a href="https://atgroup.jp/" target="_blank" rel="noopener noreferrer" className="detail-apply-btn">
                 アットグループの公式サイトを見る →
               </a>
             </div>
@@ -105,7 +105,7 @@ export default function Page() {
         <div className="si detail-cta-inner">
           <h2 className="kuchi-h">アットグループが気になったら</h2>
           <p className="kuchi-p">まずは公式サイトで詳細を確認してみてください。</p>
-          <a href="https://at-grp.net/" target="_blank" rel="noopener noreferrer" className="btn-main">
+          <a href="https://atgroup.jp/" target="_blank" rel="noopener noreferrer" className="btn-main">
             アットグループ公式サイトを見る →
           </a>
         </div>
