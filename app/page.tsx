@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { reviews } from "./reviews";
 import ReviewCard from "./ReviewCard";
+import HeroImage from "./HeroImage";
 
 export const metadata = {
   title: "まるみえチャトレ｜中身で選ぶチャトレ事務所",
@@ -12,6 +13,9 @@ export default function Home() {
 
   return (
     <main>
+      {/* TOP HERO IMAGE */}
+      <HeroImage />
+
       {/* HERO */}
       <section className="hero hero-with-photo">
         <div className="hero-inner">
@@ -165,25 +169,25 @@ export default function Home() {
           <h2 className="sec-h">あなたに合った探し方で</h2>
           <div className="find-grid">
             <Link href="/jimusho" className="find-item">
-              <div className="find-icon">📊</div>
+              <div className="find-icon-svg"><img src="/icon-recommend.svg" alt="" width={28} height={28} /></div>
               <div className="find-title">どこがいいか比べたい</div>
               <div className="find-sub">12社を一覧でまとめて比較</div>
               <div className="find-arrow">→</div>
             </Link>
             <Link href="/area/shinjuku" className="find-item">
-              <div className="find-icon">📍</div>
+              <div className="find-icon-svg"><img src="/icon-area.svg" alt="" width={28} height={28} /></div>
               <div className="find-title">通える場所で探したい</div>
               <div className="find-sub">新宿・池袋・錦糸町・上野・大宮・福岡</div>
               <div className="find-arrow">→</div>
             </Link>
             <Link href="/style/zaitaku" className="find-item">
-              <div className="find-icon">💼</div>
+              <div className="find-icon-svg"><img src="/icon-work.svg" alt="" width={28} height={28} /></div>
               <div className="find-title">働き方で絞りたい</div>
               <div className="find-sub">在宅・通勤・ノンアダルト・バーチャル</div>
               <div className="find-arrow">→</div>
             </Link>
             <Link href="/q/barebure" className="find-item">
-              <div className="find-icon">🙋</div>
+              <div className="find-icon-svg"><img src="/icon-safe.svg" alt="" width={28} height={28} /></div>
               <div className="find-title">不安なことから調べたい</div>
               <div className="find-sub">身バレ・職場バレ・初心者・本当に稼げる？</div>
               <div className="find-arrow">→</div>

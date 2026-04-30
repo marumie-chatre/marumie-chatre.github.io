@@ -930,3 +930,48 @@ img { display: block; max-width: 100%; }
     background: linear-gradient(to bottom, var(--white) 0%, transparent 30%);
   }
 }
+
+/* ========== HERO IMAGE ========== */
+.hero-img-pc { display: block; }
+.hero-img-sp { display: none; }
+
+/* ボタン領域（PC用・横長画像） */
+.hero-img-btn-pc {
+  position: absolute;
+  bottom: 12%;
+  right: 8%;
+  width: 28%;
+  height: 12%;
+  cursor: pointer;
+  border-radius: 100px;
+  display: block;
+}
+/* ボタン領域（SP用・縦長画像） */
+.hero-img-btn-sp {
+  position: absolute;
+  bottom: 8%;
+  left: 5%;
+  right: 5%;
+  height: 8%;
+  cursor: pointer;
+  border-radius: 100px;
+  display: none;
+}
+
+@media (max-width: 960px) {
+  .hero-img-pc { display: none; }
+  .hero-img-sp { display: block; }
+  .hero-img-btn-pc { display: none; }
+  .hero-img-btn-sp { display: block; }
+}
+
+/* FIND SVG ICON */
+.find-icon-svg {
+  width: 44px; height: 44px;
+  background: var(--green-pale);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 8px;
+  border: 1px solid var(--border-green);
+}
+.find-icon-svg img { object-fit: contain; }
