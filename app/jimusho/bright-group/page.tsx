@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { reviews } from "../../reviews";
-import ReviewCard from "../../ReviewCard";
+import OfficeReviews from "../../OfficeReviews";
 
 export const metadata = {
   title: "ブライトグループの口コミ・評判【まるみえチャトレ】",
@@ -89,25 +89,7 @@ export default function Page() {
         <div className="si">
           <p className="eyebrow">REVIEWS</p>
           <h2 className="sec-h">実際に働いた方の声</h2>
-          {officeReviews.length > 0 ? (
-            <>
-              <div className="review-grid" style={{marginBottom:"28px"}}>
-                {officeReviews.map(review => (
-                  <ReviewCard key={review.id} review={review} />
-                ))}
-              </div>
-              <div style={{textAlign:"center"}}>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeoozsXNP5R5hgyPbxMlVPNPBrc2NOceFtI5f97Lbv3KUATkw/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" className="btn-sub">
-                  ブライトグループの口コミを投稿する →
-                </a>
-              </div>
-            </>
-          ) : (
-            <div className="detail-kuchikomi-empty">
-              <p>ブライトグループで働いた経験がある方、ぜひ口コミを投稿してください。<br />あなたの本音が、次に選ぶ誰かの安心になります。</p>
-              <Link href="/kuchikomi" className="btn-main">口コミを投稿する →</Link>
-            </div>
-          )}
+          <OfficeReviews reviews={officeReviews} officeName="ブライトグループ" />
         </div>
       </section>
 
