@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { OFFICE_COUNT } from "../offices";
 
 export const metadata = {
   title: "チャットレディ事務所 比較ランキング12社｜まるみえチャトレ",

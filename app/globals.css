@@ -56,7 +56,7 @@ img { display: block; max-width: 100%; }
 
 /* HERO */
 .hero {
-  padding: 96px 32px 88px;
+  padding: 48px 32px 64px;
   background: linear-gradient(155deg, var(--green-pale) 0%, var(--white) 58%);
   position: relative; overflow: hidden;
 }
