@@ -1,45 +1,44 @@
 "use client";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function HeroImage() {
+  const [isSp, setIsSp] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsSp(window.innerWidth < 960);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+
   return (
-    <div style={{
-      position: "relative",
-      width: "100%",
-      lineHeight: 0,
-    }}>
-      {/* PC用画像（960px以上） */}
+    <div style={{ position: "relative", width: "100%", lineHeight: 0 }}>
       <img
-        src="/hero-pc.png"
+        src={isSp ? "/hero-sp.png" : "/hero-pc.png"}
         alt="ちょっとだけ余裕がほしいあなたへ"
-        style={{
-          width: "100%",
-          height: "auto",
-          display: "block",
-        }}
-        className="hero-img-pc"
-      />
-      {/* スマホ用画像（960px未満） */}
-      <img
-        src="/hero-sp.png"
-        alt="ちょっとだけ余裕がほしいあなたへ"
-        style={{
-          width: "100%",
-          height: "auto",
-          display: "block",
-        }}
-        className="hero-img-sp"
-      />
-      {/* ボタン領域（画像の上に重ねる） */}
-      <Link
-        href="/jimusho"
-        className="hero-img-btn-pc"
-        aria-label="自分に合う事務所を見てみる"
+        style={{ width: "100%", height: "auto", display: "block" }}
       />
       <Link
         href="/jimusho"
-        className="hero-img-btn-sp"
         aria-label="自分に合う事務所を見てみる"
+        style={{
+          position: "absolute",
+          display: "block",
+          cursor: "pointer",
+          borderRadius: "100px",
+          ...(isSp ? {
+            bottom: "6%",
+            left: "5%",
+            right: "5%",
+            height: "7%",
+          } : {
+            bottom: "14%",
+            right: "5%",
+            width: "26%",
+            height: "14%",
+          })
+        }}
       />
     </div>
   );
