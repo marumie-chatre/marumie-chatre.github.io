@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { reviews } from "../reviews";
+import ReviewCard from "../ReviewCard";
 
 export const metadata = {
   title: "アットグループの口コミ・評判【まるみえチャトレ】",
@@ -6,6 +8,8 @@ export const metadata = {
 };
 
 export default function Page() {
+  const officeReviews = reviews.filter(r => r.slug === "at-group");
+
   return (
     <main>
       <section className="detail-hero">
@@ -37,11 +41,11 @@ export default function Page() {
                   <span className="detail-score-sub">/ 100点</span>
                 </div>
                 <div className="r-bars">
-              <div className="r-bar-row"><span className="r-bar-label">安全性 /30</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"73%"}}></div></div><span className="r-bar-val">22</span></div>
-              <div className="r-bar-row"><span className="r-bar-label">サポート /25</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"84%"}}></div></div><span className="r-bar-val">21</span></div>
-              <div className="r-bar-row"><span className="r-bar-label">初心者 /20</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"80%"}}></div></div><span className="r-bar-val">16</span></div>
-              <div className="r-bar-row"><span className="r-bar-label">働きやすさ /15</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"87%"}}></div></div><span className="r-bar-val">13</span></div>
-              <div className="r-bar-row"><span className="r-bar-label">稼ぎ /10</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"80%"}}></div></div><span className="r-bar-val">8</span></div>
+                  <div className="r-bar-row"><span className="r-bar-label">安全性 /30</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"73%"}}></div></div><span className="r-bar-val">22</span></div>
+                  <div className="r-bar-row"><span className="r-bar-label">サポート /25</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"84%"}}></div></div><span className="r-bar-val">21</span></div>
+                  <div className="r-bar-row"><span className="r-bar-label">初心者 /20</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"80%"}}></div></div><span className="r-bar-val">16</span></div>
+                  <div className="r-bar-row"><span className="r-bar-label">働きやすさ /15</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"87%"}}></div></div><span className="r-bar-val">13</span></div>
+                  <div className="r-bar-row"><span className="r-bar-label">稼ぎ /10</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"80%"}}></div></div><span className="r-bar-val">8</span></div>
                 </div>
                 <Link href="/hyoka-kijun" className="detail-score-link">このスコアの根拠を見る →</Link>
               </div>
@@ -54,34 +58,10 @@ export default function Page() {
         <div className="si">
           <div className="detail-comment-box">
             <div className="detail-comment-label">編集部コメント</div>
-            <p className="detail-comment-text">千葉発祥で関東を中心に57店舗以上を展開。カフェのような居心地の良さをコンセプトにしており、女性がリラックスして働ける空間づくりにこだわっています。応募数が多い大手だからこそネガティブな口コミも目立ちますが、それは規模の大きさゆえ。正直に評価しています。</p>
+            <p className="detail-comment-text">カフェのような居心地。関東57店舗展開の大手。</p>
             <div className="detail-honest">
               <span className="detail-honest-label">正直なひとこと</span>
-              <p>応募数が多い分、ネガティブな口コミも多く見受けられます。ただし大手ゆえの口コミ量であり、実態は比較的安定しています。</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section diff-sec">
-        <div className="si">
-          <p className="eyebrow">FEATURES</p>
-          <h2 className="sec-h">アットグループ　3つの強み</h2>
-          <div className="diff-grid">
-            <div className="diff-item">
-              <div className="diff-num">01</div>
-              <div className="diff-title">カフェ空間で働きやすい</div>
-              <p className="diff-body">「仕事場」ではなくカフェのような空間。居心地の良さが他社との大きな差別化ポイントです。</p>
-            </div>
-            <div className="diff-item">
-              <div className="diff-num">02</div>
-              <div className="diff-title">関東57店舗・通いやすい</div>
-              <p className="diff-body">関東を中心に57店舗以上展開。都内各所からアクセスしやすい立地が多く、通勤の負担が少ない。</p>
-            </div>
-            <div className="diff-item">
-              <div className="diff-num">03</div>
-              <div className="diff-title">体験入店後にお祝い金あり</div>
-              <p className="diff-body">体験入店後に最大8,000円のお祝い金。まず試してみてから判断できる安心感があります。</p>
+              <p>応募数が多い分、ネガティブな口コミも目立ちやすいです。実際に行ってみると印象が違うことも多いので、体験入店から始めるのがおすすめです。</p>
             </div>
           </div>
         </div>
@@ -109,10 +89,25 @@ export default function Page() {
         <div className="si">
           <p className="eyebrow">REVIEWS</p>
           <h2 className="sec-h">実際に働いた方の声</h2>
-          <div className="detail-kuchikomi-empty">
-            <p>アットグループで働いた経験がある方、ぜひ口コミを投稿してください。<br />あなたの本音が、次に選ぶ誰かの安心になります。</p>
-            <Link href="/kuchikomi" className="btn-main">口コミを投稿する →</Link>
-          </div>
+          {officeReviews.length > 0 ? (
+            <>
+              <div className="review-grid" style={{marginBottom:"28px"}}>
+                {officeReviews.map(review => (
+                  <ReviewCard key={review.id} review={review} />
+                ))}
+              </div>
+              <div style={{textAlign:"center"}}>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeoozsXNP5R5hgyPbxMlVPNPBrc2NOceFtI5f97Lbv3KUATkw/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" className="btn-sub">
+                  アットグループの口コミを投稿する →
+                </a>
+              </div>
+            </>
+          ) : (
+            <div className="detail-kuchikomi-empty">
+              <p>アットグループで働いた経験がある方、ぜひ口コミを投稿してください。<br />あなたの本音が、次に選ぶ誰かの安心になります。</p>
+              <Link href="/kuchikomi" className="btn-main">口コミを投稿する →</Link>
+            </div>
+          )}
         </div>
       </section>
 

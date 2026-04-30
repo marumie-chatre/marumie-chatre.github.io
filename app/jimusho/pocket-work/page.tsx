@@ -1,11 +1,15 @@
 import Link from "next/link";
+import { reviews } from "../reviews";
+import ReviewCard from "../ReviewCard";
 
 export const metadata = {
   title: "ポケットワークの口コミ・評判【まるみえチャトレ】",
-  description: "ポケットワークの編集部調査レポートと口コミを掲載。仕組み重視の自動仕分け型。稼ぎやすい環境を整備。",
+  description: "ポケットワークの編集部調査レポートと口コミを掲載。仕組み重視の自動仕分け型事務所。",
 };
 
 export default function Page() {
+  const officeReviews = reviews.filter(r => r.slug === "pocket-work");
+
   return (
     <main>
       <section className="detail-hero">
@@ -19,12 +23,10 @@ export default function Page() {
             <div className="detail-hero-left">
               <div className="detail-rank-badge gray">11位 11位</div>
               <h1 className="detail-h1">ポケットワーク</h1>
-              <p className="detail-catch">仕組み重視の自動仕分け型。稼ぎやすい環境を整備。</p>
+              <p className="detail-catch">仕組み重視の自動仕分け型事務所。</p>
               <div className="detail-tags">
                 <span className="r-tag">仕組み重視</span>
-                <span className="r-tag">全国8拠点</span>
                 <span className="r-tag">バーチャル対応</span>
-                <span className="r-tag">在宅50%</span>
               </div>
               <a href="https://pocket-work.com/" target="_blank" rel="noopener noreferrer" className="detail-apply-btn">
                 ポケットワークの公式サイトを見る →
@@ -37,11 +39,11 @@ export default function Page() {
                   <span className="detail-score-sub">/ 100点</span>
                 </div>
                 <div className="r-bars">
-              <div className="r-bar-row"><span className="r-bar-label">安全性 /30</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"80%"}}></div></div><span className="r-bar-val">24</span></div>
-              <div className="r-bar-row"><span className="r-bar-label">サポート /25</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"48%"}}></div></div><span className="r-bar-val">12</span></div>
-              <div className="r-bar-row"><span className="r-bar-label">初心者 /20</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"65%"}}></div></div><span className="r-bar-val">13</span></div>
-              <div className="r-bar-row"><span className="r-bar-label">働きやすさ /15</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"87%"}}></div></div><span className="r-bar-val">13</span></div>
-              <div className="r-bar-row"><span className="r-bar-label">稼ぎ /10</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"90%"}}></div></div><span className="r-bar-val">9</span></div>
+                  <div className="r-bar-row"><span className="r-bar-label">安全性 /30</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"80%"}}></div></div><span className="r-bar-val">24</span></div>
+                  <div className="r-bar-row"><span className="r-bar-label">サポート /25</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"48%"}}></div></div><span className="r-bar-val">12</span></div>
+                  <div className="r-bar-row"><span className="r-bar-label">初心者 /20</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"65%"}}></div></div><span className="r-bar-val">13</span></div>
+                  <div className="r-bar-row"><span className="r-bar-label">働きやすさ /15</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"87%"}}></div></div><span className="r-bar-val">13</span></div>
+                  <div className="r-bar-row"><span className="r-bar-label">稼ぎ /10</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"90%"}}></div></div><span className="r-bar-val">9</span></div>
                 </div>
                 <Link href="/hyoka-kijun" className="detail-score-link">このスコアの根拠を見る →</Link>
               </div>
@@ -54,34 +56,10 @@ export default function Page() {
         <div className="si">
           <div className="detail-comment-box">
             <div className="detail-comment-label">編集部コメント</div>
-            <p className="detail-comment-text">大手ライブチャットプラットフォームと連携した仕組みが強みの事務所。アダルト・ノンアダルトを機械的に仕分けする仕組みで効率よく稼げます。一方で仕組み重視のため、個別のスタッフサポートは他社より薄めという声もあります。サポートより効率を重視する方向け。</p>
+            <p className="detail-comment-text">仕組み重視の自動仕分け型事務所。</p>
             <div className="detail-honest">
               <span className="detail-honest-label">正直なひとこと</span>
-              <p>仕組みはよくできていますが、個別サポートを求める方には物足りないと感じることがあります。自分でどんどん動ける方向きです。</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section diff-sec">
-        <div className="si">
-          <p className="eyebrow">FEATURES</p>
-          <h2 className="sec-h">ポケットワーク　3つの強み</h2>
-          <div className="diff-grid">
-            <div className="diff-item">
-              <div className="diff-num">01</div>
-              <div className="diff-title">大手プラットフォームと直結</div>
-              <p className="diff-body">国内大手ライブチャットサイトと直接連携。効率的に稼げる仕組みが整っています。</p>
-            </div>
-            <div className="diff-item">
-              <div className="diff-num">02</div>
-              <div className="diff-title">全国8拠点・440室以上</div>
-              <p className="diff-body">全国8か所に440室以上のチャットルームを保有。部屋待ちが少なく効率的に稼働できます。</p>
-            </div>
-            <div className="diff-item">
-              <div className="diff-num">03</div>
-              <div className="diff-title">バーチャル対応・顔出し不要</div>
-              <p className="diff-body">バーチャルキャラクターを使った配信に対応。顔出しなしでも働ける環境が整っています。</p>
+              <p>アダルト対応への誘導が強く、ノンアダルトで稼ぎにくい雰囲気があります。通勤から在宅への切替時にアカウント削除が必要な点も注意が必要です。</p>
             </div>
           </div>
         </div>
@@ -94,11 +72,11 @@ export default function Page() {
           <table className="detail-table">
             <tbody>
               <tr><th>ジャンル</th><td>アダルト・ノンアダルト選択可</td></tr>
-              <tr><th>在宅</th><td>OK（報酬率50%）</td></tr>
+              <tr><th>在宅</th><td>OK</td></tr>
               <tr><th>通勤</th><td>OK（全国8拠点）</td></tr>
               <tr><th>身バレ対策</th><td>○（バーチャル対応）</td></tr>
               <tr><th>スタッフ</th><td>女性スタッフ中心</td></tr>
-              <tr><th>特徴</th><td>自動仕分け型・仕組み重視・440室以上</td></tr>
+              <tr><th>特徴</th><td>自動仕分け型・仕組み重視</td></tr>
               <tr><th>対応エリア</th><td>全国8拠点</td></tr>
             </tbody>
           </table>
@@ -109,10 +87,25 @@ export default function Page() {
         <div className="si">
           <p className="eyebrow">REVIEWS</p>
           <h2 className="sec-h">実際に働いた方の声</h2>
-          <div className="detail-kuchikomi-empty">
-            <p>ポケットワークで働いた経験がある方、ぜひ口コミを投稿してください。<br />あなたの本音が、次に選ぶ誰かの安心になります。</p>
-            <Link href="/kuchikomi" className="btn-main">口コミを投稿する →</Link>
-          </div>
+          {officeReviews.length > 0 ? (
+            <>
+              <div className="review-grid" style={{marginBottom:"28px"}}>
+                {officeReviews.map(review => (
+                  <ReviewCard key={review.id} review={review} />
+                ))}
+              </div>
+              <div style={{textAlign:"center"}}>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeoozsXNP5R5hgyPbxMlVPNPBrc2NOceFtI5f97Lbv3KUATkw/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" className="btn-sub">
+                  ポケットワークの口コミを投稿する →
+                </a>
+              </div>
+            </>
+          ) : (
+            <div className="detail-kuchikomi-empty">
+              <p>ポケットワークで働いた経験がある方、ぜひ口コミを投稿してください。<br />あなたの本音が、次に選ぶ誰かの安心になります。</p>
+              <Link href="/kuchikomi" className="btn-main">口コミを投稿する →</Link>
+            </div>
+          )}
         </div>
       </section>
 
