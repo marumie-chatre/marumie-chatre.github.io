@@ -18,7 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           rel="stylesheet"
         />
       </head>
-      <body>
+      <body style={{paddingTop: "68px"}}>
         {/* HEADER */}
         <header className="site-header">
           <div className="header-inner">
