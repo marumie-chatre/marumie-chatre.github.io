@@ -4,7 +4,7 @@ import OfficeReviews from "../../OfficeReviews";
 
 export const metadata = {
   title: "ポケットワークの口コミ・評判【まるみえチャトレ】",
-  description: "ポケットワークの編集部調査レポートと口コミを掲載。仕組み重視の自動仕分け型事務所。",
+  description: "ポケットワークの編集部調査レポートと口コミを掲載。全国8拠点。教えてもらうより自分で動きたい人向けの事務所。",
 };
 
 export default function Page() {
@@ -23,7 +23,7 @@ export default function Page() {
             <div className="detail-hero-left">
               <div className="detail-rank-badge gray">11位 11位</div>
               <h1 className="detail-h1">ポケットワーク</h1>
-              <p className="detail-catch">仕組み重視の自動仕分け型事務所。</p>
+              <p className="detail-catch">全国8拠点。教えてもらうより自分で動きたい人向けの事務所。</p>
               <div className="detail-tags">
                 <span className="r-tag">仕組み重視</span>
                 <span className="r-tag">バーチャル対応</span>
@@ -56,10 +56,10 @@ export default function Page() {
         <div className="si">
           <div className="detail-comment-box">
             <div className="detail-comment-label">編集部コメント</div>
-            <p className="detail-comment-text">仕組み重視の自動仕分け型事務所。</p>
+            <p className="detail-comment-text">全国8拠点。教えてもらうより自分で動きたい人向けの事務所。</p>
             <div className="detail-honest">
               <span className="detail-honest-label">正直なひとこと</span>
-              <p>アダルト対応への誘導が強く、ノンアダルトで稼ぎにくい雰囲気があります。通勤から在宅への切替時にアカウント削除が必要な点も注意が必要です。</p>
+              <p>自分でどんどん動ける方には効率的な環境です。ただしノンアダルトでの稼ぎ方はあまり教えてもらえないので、アダルト対応もいとわない方向けです。通勤↔在宅の切替時にはアカウントのリセットが必要な点も事前に確認しておくことをおすすめします。</p>
             </div>
           </div>
         </div>
