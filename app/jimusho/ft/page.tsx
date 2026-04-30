@@ -66,9 +66,21 @@ export default function FTPage() {
             <p className="detail-comment-text">
               「ノンアダルト専門」という言葉がまだ珍しかった時代から、アダルトなしでも輝ける場所をつくり続けてきた事務所。チャットレディ歴3年以上の女性スタッフが常駐しているから、はじめての不安もちゃんと話せます。
             </p>
+            <div className="detail-skill-box">
+              <div className="detail-skill-label">フェアリーテイルが選ばれる理由</div>
+              <p>アダルトなしで稼ぐには、会話力がすべてです。ここでは、スタッフ全員がその経験者。ポテンシャルに頼らず、スキルで稼げるようになる環境が整っています。</p>
+            </div>
             <div className="detail-honest">
               <span className="detail-honest-label">正直なひとこと</span>
               <p>稼ぎ重視の方には向いていないかもしれません。でも「安全に、自分のペースで、長く続けたい」という方には業界でトップクラスの環境だと思います。</p>
+            </div>
+            <div className="detail-not-suitable">
+              <span className="detail-not-suitable-label">こんな方には向いていないかも</span>
+              <ul>
+                <li>高収入を最優先したい方</li>
+                <li>アダルト対応も含めて稼ぎたい方</li>
+                <li>自由度よりも強い営業サポートを求める方</li>
+              </ul>
             </div>
           </div>
         </div>

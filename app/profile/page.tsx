@@ -28,6 +28,7 @@ export default function ProfilePage() {
       {/* ストーリー */}
       <section className="section" style={{background:"var(--cream)"}}>
         <div className="si" style={{maxWidth:"680px"}}>
+          <div style={{textAlign:"center", marginBottom:"32px"}}><img src="/photo-cafe.jpg" alt="みなみ" style={{width:"200px", height:"200px", objectFit:"cover", borderRadius:"50%", border:"3px solid var(--green-light)"}}/></div>
           <p className="eyebrow">STORY</p>
           <h2 className="sec-h" style={{marginBottom:"32px"}}>なぜこのサイトを作ったか</h2>
 
@@ -77,7 +78,7 @@ export default function ProfilePage() {
           <p className="eyebrow">DISCLOSURE</p>
           <h2 className="sec-h" style={{marginBottom:"28px"}}>開示情報</h2>
           <div className="profile-disclosure">
-            <p>本サイトの運営者は、フェアリーテイルに所属する現役チャットレディです。その他の掲載事務所との関係はありません。</p>
+            <p>運営者は自身のチャットレディの経験を踏まえて、いい点、気になる点、向かない人に分けて、調査結果を掲載しています。読者が自分に合う事務所を選べることを最優先しています。掲載順位は公開している評価基準にもとづいており、特別な優遇は行っていません。</p>
           </div>
 
 

@@ -1142,3 +1142,81 @@ body > div > main { padding-top: 68px; }
   background: var(--white);
   border-radius: 0 0 var(--radius) var(--radius);
 }
+
+/* ========== NEUTRAL NOTE ========== */
+.neutral-note {
+  background: var(--cream);
+  border-left: 3px solid var(--green);
+  border-radius: 0 8px 8px 0;
+  padding: 12px 16px;
+  margin-bottom: 28px;
+}
+.neutral-note p {
+  font-size: 12px; color: var(--text-muted);
+  line-height: 1.8; margin: 0;
+}
+
+/* NOT SUITABLE */
+.detail-not-suitable {
+  background: #fff8f8;
+  border: 1px solid #f0d0d0;
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  margin-top: 16px;
+}
+.detail-not-suitable-label {
+  font-size: 12px; font-weight: 700;
+  color: #c06060; display: block; margin-bottom: 8px;
+}
+.detail-not-suitable ul {
+  margin: 0; padding-left: 16px;
+}
+.detail-not-suitable li {
+  font-size: 13px; color: var(--text-mid);
+  line-height: 1.8;
+}
+
+/* ========== DIFF EVIDENCE ========== */
+.diff-evidence {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  margin-bottom: 28px;
+}
+.diff-evidence-item {
+  font-size: 12px; font-weight: 700; color: var(--green);
+  background: var(--green-pale); border: 1px solid var(--border-green);
+  border-radius: 100px; padding: 5px 14px;
+}
+
+/* ========== CROWN BADGE ========== */
+.r-crown-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: linear-gradient(135deg, #f5f0c0, #faeaa0);
+  border: 1px solid #d4b800;
+  border-radius: 100px; padding: 5px 14px;
+  font-size: 12px; font-weight: 700; color: #7a6000;
+  margin-bottom: 8px;
+}
+.r-crown-reason {
+  font-size: 11px; color: var(--text-muted);
+  background: var(--cream); border-radius: 6px;
+  padding: 6px 10px; margin: 8px 0;
+  border-left: 2px solid var(--green);
+}
+.r-crown-reason span::before { content: "選定理由："; font-weight: 700; }
+
+/* ========== SKILL BOX ========== */
+.detail-skill-box {
+  background: linear-gradient(135deg, #f0f9e4, #e8f5d0);
+  border: 1px solid var(--border-green);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  margin-bottom: 16px;
+}
+.detail-skill-label {
+  font-size: 12px; font-weight: 700;
+  color: var(--green); margin-bottom: 8px; display: block;
+}
+.detail-skill-box p {
+  font-size: 13px; color: var(--text-mid);
+  line-height: 1.8; margin: 0;
+}

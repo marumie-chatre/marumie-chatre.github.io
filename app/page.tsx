@@ -46,8 +46,14 @@ export default function Home() {
           <h2 className="diff-heading">
             おすすめって書いてあるけど、<br />
             本当のところはどうなの？<br />
-            <span>そう思って、真剣に調べました。</span>
+            <span>そう思って、すべて確認しました。</span>
           </h2>
+          <div className="diff-evidence">
+            <div className="diff-evidence-item">✔ 口コミ・働いた経験を確認</div>
+            <div className="diff-evidence-item">✔ 公式情報・安全性を検証</div>
+            <div className="diff-evidence-item">✔ サポート内容を比較</div>
+            <div className="diff-evidence-item">✔ 採点根拠をすべて公開</div>
+          </div>
           <div className="diff-grid">
             <div className="diff-item">
               <div className="diff-svg-icon">
@@ -83,8 +89,15 @@ export default function Home() {
           <p className="eyebrow">RANKING</p>
           <h2 className="sec-h">編集部おすすめ事務所</h2>
           <p className="sec-sub">5軸100点満点で採点。スコアの根拠はすべて公開しています。</p>
+          <div className="neutral-note">
+            <p>掲載順位は広告費ではなく、公開している評価基準にもとづいて決定しています。同点の場合は、安全性スコア・初心者向け度・口コミ内容の具体性を優先して順位を決定しています。口コミが少ない事務所は公式情報中心の評価になるため、口コミが増え次第スコアを見直します。</p>
+          </div>
           <div className="rank-grid">
             <div className="r-card top">
+              <div className="r-crown-badge">
+                <img src="/icon-crown.svg" alt="" width={20} height={20} />
+                <span>初心者に最もおすすめ</span>
+              </div>
               <div className="r-rank-badge gold">🥇 1位</div>
               <div className="r-name">フェアリーテイル</div>
               <div className="r-score">84<sub> / 100点</sub></div>
@@ -93,9 +106,13 @@ export default function Home() {
                 <div className="r-bar-row"><span className="r-bar-label">サポート /25</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"80%"}}></div></div><span className="r-bar-val">20</span></div>
                 <div className="r-bar-row"><span className="r-bar-label">初心者 /20</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"85%"}}></div></div><span className="r-bar-val">17</span></div>
               </div>
+              <div className="r-crown-reason">
+                <span>安全性・サポートが高評価のため</span>
+              </div>
               <div className="r-tags">
                 <span className="r-tag">ノンアダルト専門</span>
                 <span className="r-tag">身バレ対策◎</span>
+                <span className="r-tag">スキルで稼ぐ環境</span>
                 <span className="r-tag">清楚系向け</span>
               </div>
               <p className="r-comment">完全ノンアダルト専門。身バレゼロ実績。清楚系・初心者に最適な事務所。</p>
@@ -232,10 +249,11 @@ export default function Home() {
         <div className="kuchi-inner">
           <h2 className="kuchi-h">働いた経験がある方へ</h2>
           <p className="kuchi-p">
-            あなたの本音が、次に選ぶ誰かの安心になります。<br />
-            匿名・5分で投稿できます。
+            あなたが感じた違和感や安心感は、次に応募する人の判断材料になります。<br />
+            良かった点だけでなく「ここは事前に知りたかった」という内容も歓迎です。<br />
+            匿名・個人情報不要で投稿できます。
           </p>
-          <Link href="/kuchikomi" className="btn-main">口コミを投稿する →</Link>
+          <Link href="/kuchikomi" className="btn-main">匿名で口コミを書く →</Link>
         </div>
       </section>
     </main>

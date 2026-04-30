@@ -61,7 +61,15 @@ export default function Page() {
             <p className="detail-comment-text">運営20年・全国最大手。初心者でも安心の大手ブランド。</p>
             <div className="detail-honest">
               <span className="detail-honest-label">正直なひとこと</span>
-              <p>店舗によってスタッフの質に差があります。事前に店舗の口コミを確認してから応募することをおすすめします。</p>
+              <p>大手ならではの集客力があり、稼いでいる人の実績がSNSや公式HPで公開されている点は信頼できます。ただし店舗によってスタッフの質に差があるため、事前に口コミで店舗を絞ってから応募することをおすすめします。</p>
+            </div>
+            <div className="detail-not-suitable">
+              <span className="detail-not-suitable-label">こんな方には向いていないかも</span>
+              <ul>
+                <li>スタッフとの距離感を大切にしたい方</li>
+                <li>急ぎの相談に素早く対応してほしい方</li>
+                <li>こぢんまりした環境が好きな方</li>
+              </ul>
             </div>
           </div>
         </div>
