@@ -975,3 +975,27 @@ img { display: block; max-width: 100%; }
   border: 1px solid var(--border-green);
 }
 .find-icon-svg img { object-fit: contain; }
+
+/* ========== COLUMN THUMBNAILS ========== */
+.col-thumb {
+  width: 100%; aspect-ratio: 16/9; overflow: hidden;
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+.col-thumb img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform .3s ease;
+}
+.col-card:hover .col-thumb img { transform: scale(1.03); }
+.col-card-body { padding: 14px 16px 16px; }
+
+.column-list-thumb {
+  width: 100%; aspect-ratio: 16/9; overflow: hidden;
+  border-radius: var(--radius) var(--radius) 0 0;
+  flex-shrink: 0;
+}
+.column-list-thumb img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform .3s ease;
+}
+.column-list-card:hover .column-list-thumb img { transform: scale(1.03); }
+.column-list-body { padding: 16px 20px 20px; }
