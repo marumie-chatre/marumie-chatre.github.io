@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { reviews } from "../reviews";
-import ReviewCard from "../ReviewCard";
+import OfficeReviews from "../OfficeReviews";
 
 export const metadata = {
   title: "口コミ｜まるみえチャトレ",
@@ -10,7 +10,6 @@ export const metadata = {
 const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSeoozsXNP5R5hgyPbxMlVPNPBrc2NOceFtI5f97Lbv3KUATkw/viewform?usp=dialog";
 
 export default function KuchikomiPage() {
-  const latestReviews = reviews.slice(0, 10);
 
   return (
     <main>
@@ -47,11 +46,7 @@ export default function KuchikomiPage() {
           <p className="eyebrow">REVIEWS</p>
           <h2 className="sec-h" style={{marginBottom:"8px"}}>良いことだけじゃない、リアルな声を読んでください。</h2>
           <p className="sec-sub">実際に働いた方の体験談を掲載しています。</p>
-          <div className="review-grid">
-            {latestReviews.map(review => (
-              <ReviewCard key={review.id} review={review} />
-            ))}
-          </div>
+          <OfficeReviews reviews={reviews} officeName="まるみえチャトレ" />
           <div style={{textAlign:"center", marginTop:"32px"}}>
             <Link href="/jimusho" className="btn-sub">
               事務所ごとの口コミを見る →
