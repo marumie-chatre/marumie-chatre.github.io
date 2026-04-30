@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { OFFICE_COUNT } from "./offices";
 import { reviews } from "./reviews";
 import ReviewCard from "./ReviewCard";
 import HeroImage from "./HeroImage";
@@ -21,7 +22,7 @@ export default function Home() {
         <div className="hero-inner">
           <div className="hero-badges">
             <span className="hero-badge">評価基準をすべて公開</span>
-            <span className="hero-badge">キャストの本音を掲載</span>
+            <span className="hero-badge">チャトレの本音を掲載</span>
           </div>
           <h1 className="hero-h1">
             はじめての事務所選び、<br />
@@ -136,7 +137,7 @@ export default function Home() {
             </div>
           </div>
           <div className="rank-more">
-            <Link href="/jimusho" className="btn-main">全12社を比較する →</Link>
+            <Link href="/jimusho" className="btn-main">全{OFFICE_COUNT}社を比較する →</Link>
           </div>
         </div>
       </section>
@@ -167,7 +168,7 @@ export default function Home() {
             <Link href="/jimusho" className="find-item">
               <div className="find-icon-svg"><img src="/icon-recommend.svg" alt="" width={28} height={28} /></div>
               <div className="find-title">どこがいいか比べたい</div>
-              <div className="find-sub">12社を一覧でまとめて比較</div>
+              <div className="find-sub">{OFFICE_COUNT}社を一覧でまとめて比較</div>
               <div className="find-arrow">→</div>
             </Link>
             <Link href="/area/shinjuku" className="find-item">
