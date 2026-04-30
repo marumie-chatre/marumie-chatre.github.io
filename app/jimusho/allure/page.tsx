@@ -1,11 +1,15 @@
 import Link from "next/link";
+import { reviews } from "../reviews";
+import ReviewCard from "../ReviewCard";
 
 export const metadata = {
   title: "アリュールの口コミ・評判【まるみえチャトレ】",
-  description: "アリュールの編集部調査レポートと口コミを掲載。時給保証制度あり。稼ぎ重視層に強い事務所。",
+  description: "アリュールの編集部調査レポートと口コミを掲載。時給保証制度あり。稼ぎ重視層向けの事務所。",
 };
 
 export default function Page() {
+  const officeReviews = reviews.filter(r => r.slug === "allure");
+
   return (
     <main>
       <section className="detail-hero">
@@ -19,11 +23,10 @@ export default function Page() {
             <div className="detail-hero-left">
               <div className="detail-rank-badge gray">7位 7位</div>
               <h1 className="detail-h1">アリュール</h1>
-              <p className="detail-catch">時給保証制度あり。稼ぎ重視層に強い事務所。</p>
+              <p className="detail-catch">時給保証制度あり。稼ぎ重視層向けの事務所。</p>
               <div className="detail-tags">
                 <span className="r-tag">時給保証あり</span>
                 <span className="r-tag">稼ぎ重視向け</span>
-                <span className="r-tag">大手実績あり</span>
               </div>
               <a href="https://allure-group.com/" target="_blank" rel="noopener noreferrer" className="detail-apply-btn">
                 アリュールの公式サイトを見る →
@@ -36,11 +39,11 @@ export default function Page() {
                   <span className="detail-score-sub">/ 100点</span>
                 </div>
                 <div className="r-bars">
-              <div className="r-bar-row"><span className="r-bar-label">安全性 /30</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"80%"}}></div></div><span className="r-bar-val">24</span></div>
-              <div className="r-bar-row"><span className="r-bar-label">サポート /25</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"72%"}}></div></div><span className="r-bar-val">18</span></div>
-              <div className="r-bar-row"><span className="r-bar-label">初心者 /20</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"65%"}}></div></div><span className="r-bar-val">13</span></div>
-              <div className="r-bar-row"><span className="r-bar-label">働きやすさ /15</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"80%"}}></div></div><span className="r-bar-val">12</span></div>
-              <div className="r-bar-row"><span className="r-bar-label">稼ぎ /10</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"90%"}}></div></div><span className="r-bar-val">9</span></div>
+                  <div className="r-bar-row"><span className="r-bar-label">安全性 /30</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"80%"}}></div></div><span className="r-bar-val">24</span></div>
+                  <div className="r-bar-row"><span className="r-bar-label">サポート /25</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"72%"}}></div></div><span className="r-bar-val">18</span></div>
+                  <div className="r-bar-row"><span className="r-bar-label">初心者 /20</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"65%"}}></div></div><span className="r-bar-val">13</span></div>
+                  <div className="r-bar-row"><span className="r-bar-label">働きやすさ /15</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"80%"}}></div></div><span className="r-bar-val">12</span></div>
+                  <div className="r-bar-row"><span className="r-bar-label">稼ぎ /10</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"90%"}}></div></div><span className="r-bar-val">9</span></div>
                 </div>
                 <Link href="/hyoka-kijun" className="detail-score-link">このスコアの根拠を見る →</Link>
               </div>
@@ -53,34 +56,10 @@ export default function Page() {
         <div className="si">
           <div className="detail-comment-box">
             <div className="detail-comment-label">編集部コメント</div>
-            <p className="detail-comment-text">1日5時間以上の勤務で時給2,000円を保証する制度が特徴。「せっかく通ったのに稼げなかった」という初心者の不安を軽減する仕組みです。ただし保証条件（5時間）があるため、がっつり稼ぎたい方向けの事務所です。清楚系・慎重タイプには少し合わないかもしれません。</p>
+            <p className="detail-comment-text">時給保証制度あり。稼ぎ重視層向けの事務所。</p>
             <div className="detail-honest">
               <span className="detail-honest-label">正直なひとこと</span>
-              <p>時給保証は魅力的ですが「1日5時間以上」という条件があります。副業感覚で少しずつ始めたい方より、しっかり稼ぎたい方向きです。</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section diff-sec">
-        <div className="si">
-          <p className="eyebrow">FEATURES</p>
-          <h2 className="sec-h">アリュール　3つの強み</h2>
-          <div className="diff-grid">
-            <div className="diff-item">
-              <div className="diff-num">01</div>
-              <div className="diff-title">時給2,000円保証制度</div>
-              <p className="diff-body">1日5時間以上稼働すれば時給2,000円を保証。稼働日は確実に収入が見込めます。</p>
-            </div>
-            <div className="diff-item">
-              <div className="diff-num">02</div>
-              <div className="diff-title">大手ライブチャットサイトで売上1位実績</div>
-              <p className="diff-body">複数の大手ライブチャットサイトで全国代理店売上1位を獲得。稼ぎやすい環境が整っています。</p>
-            </div>
-            <div className="diff-item">
-              <div className="diff-num">03</div>
-              <div className="diff-title">10年以上の運営実績</div>
-              <p className="diff-body">長年の運営で蓄積されたノウハウが豊富。スタッフからの具体的なアドバイスが受けられます。</p>
+              <p>時給保証の条件が複雑で、体験中と通常で条件が異なる場合があります。事前に条件を細かく確認してから応募することを強くおすすめします。</p>
             </div>
           </div>
         </div>
@@ -97,7 +76,7 @@ export default function Page() {
               <tr><th>通勤</th><td>OK</td></tr>
               <tr><th>身バレ対策</th><td>○</td></tr>
               <tr><th>スタッフ</th><td>女性スタッフ在籍</td></tr>
-              <tr><th>特徴</th><td>時給2,000円保証（5h条件）</td></tr>
+              <tr><th>特徴</th><td>時給保証制度あり（条件あり）</td></tr>
               <tr><th>対応エリア</th><td>都市部中心</td></tr>
             </tbody>
           </table>
@@ -108,10 +87,25 @@ export default function Page() {
         <div className="si">
           <p className="eyebrow">REVIEWS</p>
           <h2 className="sec-h">実際に働いた方の声</h2>
-          <div className="detail-kuchikomi-empty">
-            <p>アリュールで働いた経験がある方、ぜひ口コミを投稿してください。<br />あなたの本音が、次に選ぶ誰かの安心になります。</p>
-            <Link href="/kuchikomi" className="btn-main">口コミを投稿する →</Link>
-          </div>
+          {officeReviews.length > 0 ? (
+            <>
+              <div className="review-grid" style={{marginBottom:"28px"}}>
+                {officeReviews.map(review => (
+                  <ReviewCard key={review.id} review={review} />
+                ))}
+              </div>
+              <div style={{textAlign:"center"}}>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeoozsXNP5R5hgyPbxMlVPNPBrc2NOceFtI5f97Lbv3KUATkw/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" className="btn-sub">
+                  アリュールの口コミを投稿する →
+                </a>
+              </div>
+            </>
+          ) : (
+            <div className="detail-kuchikomi-empty">
+              <p>アリュールで働いた経験がある方、ぜひ口コミを投稿してください。<br />あなたの本音が、次に選ぶ誰かの安心になります。</p>
+              <Link href="/kuchikomi" className="btn-main">口コミを投稿する →</Link>
+            </div>
+          )}
         </div>
       </section>
 

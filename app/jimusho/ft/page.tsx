@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { reviews } from "../reviews";
+import ReviewCard from "../ReviewCard";
 
 export const metadata = {
   title: "フェアリーテイルの口コミ・評判｜ノンアダルト専門の先駆者【まるみえチャトレ】",
@@ -6,6 +8,8 @@ export const metadata = {
 };
 
 export default function FTPage() {
+  const ftReviews = reviews.filter(r => r.slug === "ft");
+
   return (
     <main>
 
@@ -20,10 +24,7 @@ export default function FTPage() {
           <div className="detail-hero-inner">
             <div className="detail-hero-left">
               <div className="detail-rank-badge gold">🥇 総合1位</div>
-              <h1 className="detail-h1">
-                フェアリーテイル
-                
-              </h1>
+              <h1 className="detail-h1">フェアリーテイル</h1>
               <p className="detail-catch">ノンアダルト専門の先駆者。<br />安全に、自分らしく働ける事務所。</p>
               <div className="detail-tags">
                 <span className="r-tag">業界初ノンアダルト専門</span>
@@ -33,17 +34,10 @@ export default function FTPage() {
                 <span className="r-tag">初心者歓迎</span>
                 <span className="r-tag">身バレ対策◎</span>
               </div>
-              <a
-                href="https://livecafefairytale.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="detail-apply-btn"
-              >
+              <a href="https://livecafefairytale.com/" target="_blank" rel="noopener noreferrer" className="detail-apply-btn">
                 フェアリーテイルの公式サイトを見る →
               </a>
-              
             </div>
-
             <div className="detail-hero-right">
               <div className="detail-score-card">
                 <div className="detail-score-total">
@@ -51,35 +45,13 @@ export default function FTPage() {
                   <span className="detail-score-sub">/ 100点</span>
                 </div>
                 <div className="r-bars">
-                  <div className="r-bar-row">
-                    <span className="r-bar-label">安全性 /30</span>
-                    <div className="r-bar-track"><div className="r-bar-fill" style={{width:"97%"}}></div></div>
-                    <span className="r-bar-val">29</span>
-                  </div>
-                  <div className="r-bar-row">
-                    <span className="r-bar-label">サポート /25</span>
-                    <div className="r-bar-track"><div className="r-bar-fill" style={{width:"80%"}}></div></div>
-                    <span className="r-bar-val">20</span>
-                  </div>
-                  <div className="r-bar-row">
-                    <span className="r-bar-label">初心者 /20</span>
-                    <div className="r-bar-track"><div className="r-bar-fill" style={{width:"85%"}}></div></div>
-                    <span className="r-bar-val">17</span>
-                  </div>
-                  <div className="r-bar-row">
-                    <span className="r-bar-label">働きやすさ /15</span>
-                    <div className="r-bar-track"><div className="r-bar-fill" style={{width:"80%"}}></div></div>
-                    <span className="r-bar-val">12</span>
-                  </div>
-                  <div className="r-bar-row">
-                    <span className="r-bar-label">稼ぎ /10</span>
-                    <div className="r-bar-track"><div className="r-bar-fill" style={{width:"60%"}}></div></div>
-                    <span className="r-bar-val">6</span>
-                  </div>
+                  <div className="r-bar-row"><span className="r-bar-label">安全性 /30</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"97%"}}></div></div><span className="r-bar-val">29</span></div>
+                  <div className="r-bar-row"><span className="r-bar-label">サポート /25</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"80%"}}></div></div><span className="r-bar-val">20</span></div>
+                  <div className="r-bar-row"><span className="r-bar-label">初心者 /20</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"85%"}}></div></div><span className="r-bar-val">17</span></div>
+                  <div className="r-bar-row"><span className="r-bar-label">働きやすさ /15</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"80%"}}></div></div><span className="r-bar-val">12</span></div>
+                  <div className="r-bar-row"><span className="r-bar-label">稼ぎ /10</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"60%"}}></div></div><span className="r-bar-val">6</span></div>
                 </div>
-                <Link href="/hyoka-kijun" className="detail-score-link">
-                  このスコアの根拠を見る →
-                </Link>
+                <Link href="/hyoka-kijun" className="detail-score-link">このスコアの根拠を見る →</Link>
               </div>
             </div>
           </div>
@@ -140,7 +112,7 @@ export default function FTPage() {
         </div>
       </section>
 
-      {/* 基本情報テーブル */}
+      {/* 基本情報 */}
       <section className="section detail-info-sec">
         <div className="si">
           <p className="eyebrow">BASIC INFO</p>
@@ -164,10 +136,30 @@ export default function FTPage() {
         <div className="si">
           <p className="eyebrow">REVIEWS</p>
           <h2 className="sec-h">実際に働いた方の声</h2>
-          <div className="detail-kuchikomi-empty">
-            <p>まだ口コミが集まっていません。<br />フェアリーテイルで働いた経験がある方、ぜひ投稿してください。</p>
-            <Link href="/kuchikomi" className="btn-main">口コミを投稿する →</Link>
-          </div>
+          {ftReviews.length > 0 ? (
+            <>
+              <div className="review-grid" style={{marginBottom:"28px"}}>
+                {ftReviews.map(review => (
+                  <ReviewCard key={review.id} review={review} />
+                ))}
+              </div>
+              <div style={{textAlign:"center"}}>
+                <a
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSeoozsXNP5R5hgyPbxMlVPNPBrc2NOceFtI5f97Lbv3KUATkw/viewform?usp=dialog"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-sub"
+                >
+                  フェアリーテイルの口コミを投稿する →
+                </a>
+              </div>
+            </>
+          ) : (
+            <div className="detail-kuchikomi-empty">
+              <p>まだ口コミが集まっていません。<br />フェアリーテイルで働いた経験がある方、ぜひ投稿してください。</p>
+              <Link href="/kuchikomi" className="btn-main">口コミを投稿する →</Link>
+            </div>
+          )}
         </div>
       </section>
 
@@ -176,19 +168,13 @@ export default function FTPage() {
         <div className="si detail-cta-inner">
           <h2 className="kuchi-h">フェアリーテイルが気になったら</h2>
           <p className="kuchi-p">まずは公式サイトで詳細を確認してみてください。<br />無料見学・相談から始められます。</p>
-          <a
-            href="https://livecafefairytale.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-main"
-          >
+          <a href="https://livecafefairytale.com/" target="_blank" rel="noopener noreferrer" className="btn-main">
             フェアリーテイル公式サイトを見る →
           </a>
-          
         </div>
       </section>
 
-      {/* 他の事務所を見る */}
+      {/* 他の事務所 */}
       <section className="section">
         <div className="si" style={{textAlign:"center"}}>
           <p className="eyebrow">OTHER OFFICES</p>

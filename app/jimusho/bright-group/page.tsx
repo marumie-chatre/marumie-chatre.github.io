@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { reviews } from "../reviews";
+import ReviewCard from "../ReviewCard";
 
 export const metadata = {
   title: "ブライトグループの口コミ・評判【まるみえチャトレ】",
@@ -6,6 +8,8 @@ export const metadata = {
 };
 
 export default function Page() {
+  const officeReviews = reviews.filter(r => r.slug === "bright-group");
+
   return (
     <main>
       <section className="detail-hero">
@@ -37,11 +41,11 @@ export default function Page() {
                   <span className="detail-score-sub">/ 100点</span>
                 </div>
                 <div className="r-bars">
-              <div className="r-bar-row"><span className="r-bar-label">安全性 /30</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"83%"}}></div></div><span className="r-bar-val">25</span></div>
-              <div className="r-bar-row"><span className="r-bar-label">サポート /25</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"80%"}}></div></div><span className="r-bar-val">20</span></div>
-              <div className="r-bar-row"><span className="r-bar-label">初心者 /20</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"90%"}}></div></div><span className="r-bar-val">18</span></div>
-              <div className="r-bar-row"><span className="r-bar-label">働きやすさ /15</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"87%"}}></div></div><span className="r-bar-val">13</span></div>
-              <div className="r-bar-row"><span className="r-bar-label">稼ぎ /10</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"80%"}}></div></div><span className="r-bar-val">8</span></div>
+                  <div className="r-bar-row"><span className="r-bar-label">安全性 /30</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"83%"}}></div></div><span className="r-bar-val">25</span></div>
+                  <div className="r-bar-row"><span className="r-bar-label">サポート /25</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"80%"}}></div></div><span className="r-bar-val">20</span></div>
+                  <div className="r-bar-row"><span className="r-bar-label">初心者 /20</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"90%"}}></div></div><span className="r-bar-val">18</span></div>
+                  <div className="r-bar-row"><span className="r-bar-label">働きやすさ /15</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"87%"}}></div></div><span className="r-bar-val">13</span></div>
+                  <div className="r-bar-row"><span className="r-bar-label">稼ぎ /10</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"80%"}}></div></div><span className="r-bar-val">8</span></div>
                 </div>
                 <Link href="/hyoka-kijun" className="detail-score-link">このスコアの根拠を見る →</Link>
               </div>
@@ -54,34 +58,10 @@ export default function Page() {
         <div className="si">
           <div className="detail-comment-box">
             <div className="detail-comment-label">編集部コメント</div>
-            <p className="detail-comment-text">2005年設立、全国70店舗以上を展開する業界最大手。顧問税理士によるサポートが充実しており、確定申告など稼いだあとの不安にも対応しています。フランチャイズ展開のため店舗によってサポートに差があるのが正直なところですが、大手ならではの安心感は業界トップクラス。</p>
+            <p className="detail-comment-text">運営20年・全国最大手。初心者でも安心の大手ブランド。</p>
             <div className="detail-honest">
               <span className="detail-honest-label">正直なひとこと</span>
-              <p>店舗によってスタッフの質に差があります。面接前に口コミで店舗ごとの評判を確認することをおすすめします。</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section diff-sec">
-        <div className="si">
-          <p className="eyebrow">FEATURES</p>
-          <h2 className="sec-h">ブライトグループ　3つの強み</h2>
-          <div className="diff-grid">
-            <div className="diff-item">
-              <div className="diff-num">01</div>
-              <div className="diff-title">運営20年・全国70店舗以上</div>
-              <p className="diff-body">北海道から沖縄まで全国展開。駅から徒歩5分圏内の店舗が多く、通勤のしやすさが魅力です。</p>
-            </div>
-            <div className="diff-item">
-              <div className="diff-num">02</div>
-              <div className="diff-title">顧問税理士によるサポート</div>
-              <p className="diff-body">チャットレディとして稼いだ後の確定申告や節税対策まで相談できます。長く続けるための安心感があります。</p>
-            </div>
-            <div className="diff-item">
-              <div className="diff-num">03</div>
-              <div className="diff-title">90%以上が未経験からスタート</div>
-              <p className="diff-body">未経験者向けのマニュアルやノウハウが充実。初心者でも固定客を作りながら稼ぎ方を学べます。</p>
+              <p>店舗によってスタッフの質に差があります。事前に店舗の口コミを確認してから応募することをおすすめします。</p>
             </div>
           </div>
         </div>
@@ -109,10 +89,25 @@ export default function Page() {
         <div className="si">
           <p className="eyebrow">REVIEWS</p>
           <h2 className="sec-h">実際に働いた方の声</h2>
-          <div className="detail-kuchikomi-empty">
-            <p>ブライトグループで働いた経験がある方、ぜひ口コミを投稿してください。<br />あなたの本音が、次に選ぶ誰かの安心になります。</p>
-            <Link href="/kuchikomi" className="btn-main">口コミを投稿する →</Link>
-          </div>
+          {officeReviews.length > 0 ? (
+            <>
+              <div className="review-grid" style={{marginBottom:"28px"}}>
+                {officeReviews.map(review => (
+                  <ReviewCard key={review.id} review={review} />
+                ))}
+              </div>
+              <div style={{textAlign:"center"}}>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeoozsXNP5R5hgyPbxMlVPNPBrc2NOceFtI5f97Lbv3KUATkw/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" className="btn-sub">
+                  ブライトグループの口コミを投稿する →
+                </a>
+              </div>
+            </>
+          ) : (
+            <div className="detail-kuchikomi-empty">
+              <p>ブライトグループで働いた経験がある方、ぜひ口コミを投稿してください。<br />あなたの本音が、次に選ぶ誰かの安心になります。</p>
+              <Link href="/kuchikomi" className="btn-main">口コミを投稿する →</Link>
+            </div>
+          )}
         </div>
       </section>
 
