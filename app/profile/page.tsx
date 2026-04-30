@@ -28,7 +28,7 @@ export default function ProfilePage() {
       {/* ストーリー */}
       <section className="section" style={{background:"var(--cream)"}}>
         <div className="si" style={{maxWidth:"680px"}}>
-          <div style={{textAlign:"center", marginBottom:"32px"}}><img src="/photo-cafe.jpg" alt="みなみ" style={{width:"200px", height:"200px", objectFit:"cover", borderRadius:"50%", border:"3px solid var(--green-light)"}}/></div>
+          <div style={{textAlign:"center", marginBottom:"32px"}}><img src="/photo-minami.png" alt="みなみ" style={{width:"200px", height:"200px", objectFit:"cover", borderRadius:"50%", border:"3px solid var(--border-green)"}}/></div>
           <p className="eyebrow">STORY</p>
           <h2 className="sec-h" style={{marginBottom:"32px"}}>なぜこのサイトを作ったか</h2>
 
