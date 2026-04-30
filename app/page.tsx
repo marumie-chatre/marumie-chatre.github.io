@@ -202,29 +202,23 @@ export default function Home() {
             <Link href="/column/jimusho-erabi" className="col-card">
               <div className="col-thumb">
                 <img src="/col-jimusho-erabi.png" alt="事務所の選び方" />
-                <div className="col-thumb-overlay">
-                  <span className="col-tag">▶ 事務所の選び方</span>
-                  <span className="col-arrow">→</span>
-                </div>
+                <span className="col-arrow">→</span>
               </div>
+              <div className="col-tag">▶ 事務所の選び方</div>
             </Link>
             <Link href="/column/mibare-taisaku" className="col-card">
               <div className="col-thumb">
                 <img src="/col-mibare-taisaku.png" alt="身バレ対策" />
-                <div className="col-thumb-overlay">
-                  <span className="col-tag">▶ 安全・身バレ対策</span>
-                  <span className="col-arrow">→</span>
-                </div>
+                <span className="col-arrow">→</span>
               </div>
+              <div className="col-tag">▶ 安全・身バレ対策</div>
             </Link>
             <Link href="/column/hoikushi-baito" className="col-card">
               <div className="col-thumb">
                 <img src="/col-hoikushi-baito.png" alt="副業・働き方" />
-                <div className="col-thumb-overlay">
-                  <span className="col-tag">▶ 副業・働き方</span>
-                  <span className="col-arrow">→</span>
-                </div>
+                <span className="col-arrow">→</span>
               </div>
+              <div className="col-tag">▶ 副業・働き方</div>
             </Link>
           </div>
           <div className="col-more">

@@ -59,11 +59,9 @@ export default function ColumnPage() {
               <Link href={`/column/${col.slug}`} key={col.slug} className="column-list-card">
                 <div className="column-list-thumb">
                   <img src={col.thumb} alt={col.title} />
-                  <div className="column-list-overlay">
-                    <span className="column-list-cat">{col.cat}</span>
-                    <span className="column-list-arrow">→</span>
-                  </div>
+                  <span className="column-list-arrow">→</span>
                 </div>
+                <div className="column-list-cat">{col.cat}</div>
               </Link>
             ))}
           </div>
