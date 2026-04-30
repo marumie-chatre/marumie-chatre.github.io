@@ -21,6 +21,9 @@ export default function Page() {
           </div>
           <div className="detail-hero-inner">
             <div className="detail-hero-left">
+              <div className="detail-office-logo">
+                <img src="/logo-pocket-work.png" alt="" />
+              </div>
               <div className="detail-rank-badge gray">11位 11位</div>
               <h1 className="detail-h1">ポケットワーク</h1>
               <p className="detail-catch">全国8拠点。教えてもらうより自分で動きたい人向けの事務所。</p>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import HamburgerMenu from "./HamburgerMenu";
+import FloatingCTA from "./FloatingCTA";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -41,6 +42,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </header>
 
         {children}
+
+        {/* スマホ固定CTA */}
+        <FloatingCTA />
 
         {/* FOOTER */}
         <footer className="site-footer">
