@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { reviews } from "../reviews";
-import ReviewCard from "../ReviewCard";
+import { reviews } from "../../reviews";
+import ReviewCard from "../../ReviewCard";
 
 export const metadata = {
   title: "フェアリーテイルの口コミ・評判｜ノンアダルト専門の先駆者【まるみえチャトレ】",

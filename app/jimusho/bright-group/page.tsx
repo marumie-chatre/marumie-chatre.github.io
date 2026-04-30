@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { reviews } from "../reviews";
-import ReviewCard from "../ReviewCard";
+import { reviews } from "../../reviews";
+import ReviewCard from "../../ReviewCard";
 
 export const metadata = {
   title: "ブライトグループの口コミ・評判【まるみえチャトレ】",
