@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { reviews } from "../../reviews";
-import ReviewCard from "../../ReviewCard";
+import OfficeReviews from "../../OfficeReviews";
 
 export const metadata = {
   title: "フェアリーテイルの口コミ・評判｜ノンアダルト専門の先駆者【まるみえチャトレ】",
@@ -8,7 +8,7 @@ export const metadata = {
 };
 
 export default function FTPage() {
-  const ftReviews = reviews.filter(r => r.slug === "ft");
+  const officeReviews = reviews.filter(r => r.slug === "ft");
 
   return (
     <main>
@@ -136,30 +136,7 @@ export default function FTPage() {
         <div className="si">
           <p className="eyebrow">REVIEWS</p>
           <h2 className="sec-h">実際に働いた方の声</h2>
-          {ftReviews.length > 0 ? (
-            <>
-              <div className="review-grid" style={{marginBottom:"28px"}}>
-                {ftReviews.map(review => (
-                  <ReviewCard key={review.id} review={review} />
-                ))}
-              </div>
-              <div style={{textAlign:"center"}}>
-                <a
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSeoozsXNP5R5hgyPbxMlVPNPBrc2NOceFtI5f97Lbv3KUATkw/viewform?usp=dialog"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-sub"
-                >
-                  フェアリーテイルの口コミを投稿する →
-                </a>
-              </div>
-            </>
-          ) : (
-            <div className="detail-kuchikomi-empty">
-              <p>まだ口コミが集まっていません。<br />フェアリーテイルで働いた経験がある方、ぜひ投稿してください。</p>
-              <Link href="/kuchikomi" className="btn-main">口コミを投稿する →</Link>
-            </div>
-          )}
+          <OfficeReviews reviews={officeReviews} officeName="フェアリーテイル" />
         </div>
       </section>
 
