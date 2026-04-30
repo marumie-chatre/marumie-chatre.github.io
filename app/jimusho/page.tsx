@@ -199,15 +199,13 @@ export default function JimushoPage() {
           <p className="eyebrow">RANKING</p>
           <h1 className="list-h1">
             「なんとなくおすすめ」じゃ、選べない。<br />
-            <span>12社を5軸で採点した比較ランキングです。</span>
+            <span>5軸で採点した比較ランキングです。</span>
           </h1>
           <p className="list-lead">
             安全性・サポート・初心者おすすめ度など5つの軸で採点。<br />
             なぜその順位なのか、根拠をすべて公開しています。
           </p>
           <div className="list-meta">
-            <span>掲載：{visibleOffices.length}社</span>
-            <span>・</span>
             <Link href="/hyoka-kijun" className="list-meta-link">評価基準についてはこちら →</Link>
           </div>
         </div>
