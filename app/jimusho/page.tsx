@@ -261,6 +261,67 @@ export default function JimushoPage() {
         </div>
       </section>
 
+      {/* 比較表 */}
+      <section className="section" style={{background:"var(--cream)"}}>
+        <div className="si">
+          <p className="eyebrow">COMPARE</p>
+          <h2 className="sec-h">全社を一覧で比較する</h2>
+          <p className="sec-sub">横にスクロールして比較できます。</p>
+          <div className="compare-wrap">
+            <table className="compare-table">
+              <thead>
+                <tr>
+                  <th className="compare-th-name">事務所名</th>
+                  <th className="compare-th">総合</th>
+                  <th className="compare-th">安全性<br/><span>/30</span></th>
+                  <th className="compare-th">サポート<br/><span>/25</span></th>
+                  <th className="compare-th">初心者<br/><span>/20</span></th>
+                  <th className="compare-th">ノンアダ</th>
+                  <th className="compare-th">通勤エリア</th>
+                  <th className="compare-th">詳細</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  { name:"フェアリーテイル", slug:"ft", total:84, safe:29, support:20, beginner:17, nonadult:"専門", area:"池袋・上野", top:true },
+                  { name:"ブライトグループ", slug:"bright-group", total:84, safe:25, support:20, beginner:18, nonadult:"選択可", area:"全国" },
+                  { name:"チャットスタイル", slug:"chatstyle", total:81, safe:23, support:21, beginner:17, nonadult:"選択可", area:"都市部" },
+                  { name:"アットグループ", slug:"at-group", total:80, safe:22, support:21, beginner:16, nonadult:"選択可", area:"関東" },
+                  { name:"フレイバーグループ", slug:"flavor-group", total:80, safe:23, support:20, beginner:17, nonadult:"選択可", area:"全国" },
+                  { name:"アリュール", slug:"allure", total:76, safe:24, support:18, beginner:13, nonadult:"選択可", area:"都市部" },
+                  { name:"NMRグループ", slug:"nmr-group", total:74, safe:23, support:18, beginner:15, nonadult:"選択可", area:"関東・東北" },
+                  { name:"チャットレディJP", slug:"chatlady-jp", total:71, safe:22, support:17, beginner:14, nonadult:"選択可", area:"新宿・上野" },
+                  { name:"アスタリスク", slug:"asterisk", total:71, safe:25, support:18, beginner:9, nonadult:"選択可", area:"全国" },
+                  { name:"ポケットワーク", slug:"pocket-work", total:71, safe:24, support:12, beginner:13, nonadult:"選択可", area:"全国8拠点" },
+                  { name:"ライバーサポートG", slug:"liver-support", total:69, safe:21, support:16, beginner:14, nonadult:"選択可", area:"広域" },
+                ].map((o) => (
+                  <tr key={o.slug} className={o.top ? "compare-tr-top" : ""}>
+                    <td className="compare-td-name">
+                      {o.top && <span className="compare-crown">👑</span>}
+                      {o.name}
+                    </td>
+                    <td className="compare-td-score">{o.total}</td>
+                    <td className="compare-td">{o.safe}</td>
+                    <td className="compare-td">{o.support}</td>
+                    <td className="compare-td">{o.beginner}</td>
+                    <td className={`compare-td ${o.nonadult === "専門" ? "compare-td-best" : ""}`}>
+                      {o.nonadult}
+                    </td>
+                    <td className="compare-td compare-td-area">{o.area}</td>
+                    <td className="compare-td">
+                      <Link href={`/jimusho/${o.slug}`} className="compare-btn">見る →</Link>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p style={{fontSize:"11px", color:"var(--text-light)", marginTop:"12px", textAlign:"center"}}>
+            ※掲載順位は広告費ではなく評価基準にもとづいています
+          </p>
+        </div>
+      </section>
+
       {/* 評価基準CTA */}
       <section className="kuchi-sec">
         <div className="kuchi-inner">
