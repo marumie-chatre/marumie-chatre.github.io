@@ -29,7 +29,7 @@ export default function Page() {
                 <span className="r-tag">現役スタッフ在籍</span>
                 <span className="r-tag">バーチャル対応</span>
               </div>
-              <a href="https://chatstyle.jp/" target="_blank" rel="noopener noreferrer" className="detail-apply-btn">
+              <a href="https://chatstyle.net/" target="_blank" rel="noopener noreferrer" className="detail-apply-btn">
                 チャットスタイルの公式サイトを見る →
               </a>
             </div>
@@ -102,7 +102,7 @@ export default function Page() {
         <div className="si detail-cta-inner">
           <h2 className="kuchi-h">チャットスタイルが気になったら</h2>
           <p className="kuchi-p">まずは公式サイトで詳細を確認してみてください。</p>
-          <a href="https://chatstyle.jp/" target="_blank" rel="noopener noreferrer" className="btn-main">
+          <a href="https://chatstyle.net/" target="_blank" rel="noopener noreferrer" className="btn-main">
             チャットスタイル公式サイトを見る →
           </a>
         </div>

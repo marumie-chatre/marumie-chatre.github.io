@@ -28,7 +28,7 @@ export default function Page() {
                 <span className="r-tag">全店女性スタッフ</span>
                 <span className="r-tag">安全性◎</span>
               </div>
-              <a href="https://asterisk-chatlady.com/" target="_blank" rel="noopener noreferrer" className="detail-apply-btn">
+              <a href="https://asterisk.network/" target="_blank" rel="noopener noreferrer" className="detail-apply-btn">
                 アスタリスクの公式サイトを見る →
               </a>
             </div>
@@ -102,7 +102,7 @@ export default function Page() {
         <div className="si detail-cta-inner">
           <h2 className="kuchi-h">アスタリスクが気になったら</h2>
           <p className="kuchi-p">まずは公式サイトで詳細を確認してみてください。</p>
-          <a href="https://asterisk-chatlady.com/" target="_blank" rel="noopener noreferrer" className="btn-main">
+          <a href="https://asterisk.network/" target="_blank" rel="noopener noreferrer" className="btn-main">
             アスタリスク公式サイトを見る →
           </a>
         </div>

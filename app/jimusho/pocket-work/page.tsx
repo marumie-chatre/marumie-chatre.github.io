@@ -28,7 +28,7 @@ export default function Page() {
                 <span className="r-tag">仕組み重視</span>
                 <span className="r-tag">バーチャル対応</span>
               </div>
-              <a href="https://pocket-work.com/" target="_blank" rel="noopener noreferrer" className="detail-apply-btn">
+              <a href="https://pokewaku.jp/" target="_blank" rel="noopener noreferrer" className="detail-apply-btn">
                 ポケットワークの公式サイトを見る →
               </a>
             </div>
@@ -102,7 +102,7 @@ export default function Page() {
         <div className="si detail-cta-inner">
           <h2 className="kuchi-h">ポケットワークが気になったら</h2>
           <p className="kuchi-p">まずは公式サイトで詳細を確認してみてください。</p>
-          <a href="https://pocket-work.com/" target="_blank" rel="noopener noreferrer" className="btn-main">
+          <a href="https://pokewaku.jp/" target="_blank" rel="noopener noreferrer" className="btn-main">
             ポケットワーク公式サイトを見る →
           </a>
         </div>

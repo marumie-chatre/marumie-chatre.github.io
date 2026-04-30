@@ -28,7 +28,7 @@ export default function Page() {
                 <span className="r-tag">時給保証あり</span>
                 <span className="r-tag">稼ぎ重視向け</span>
               </div>
-              <a href="https://allure-group.com/" target="_blank" rel="noopener noreferrer" className="detail-apply-btn">
+              <a href="https://allure.work/" target="_blank" rel="noopener noreferrer" className="detail-apply-btn">
                 アリュールの公式サイトを見る →
               </a>
             </div>
@@ -102,7 +102,7 @@ export default function Page() {
         <div className="si detail-cta-inner">
           <h2 className="kuchi-h">アリュールが気になったら</h2>
           <p className="kuchi-p">まずは公式サイトで詳細を確認してみてください。</p>
-          <a href="https://allure-group.com/" target="_blank" rel="noopener noreferrer" className="btn-main">
+          <a href="https://allure.work/" target="_blank" rel="noopener noreferrer" className="btn-main">
             アリュール公式サイトを見る →
           </a>
         </div>
