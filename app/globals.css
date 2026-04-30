@@ -61,7 +61,7 @@ body > div > main { padding-top: 68px; }
 /* HERO */
 .hero {
   padding: 20px 32px 48px;
-  background: linear-gradient(180deg, #eef7e4 0%, var(--white) 100%);
+  background: var(--white);
   position: relative; overflow: hidden;
 }
 .hero::before {
