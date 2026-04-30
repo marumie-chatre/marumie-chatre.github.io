@@ -3,12 +3,12 @@ import { reviews } from "../../reviews";
 import OfficeReviews from "../../OfficeReviews";
 
 export const metadata = {
-  title: "NMRグループの口コミ・評判【まるみえチャトレ】",
-  description: "NMRグループの編集部調査レポートと口コミを掲載。完全防音個室。関東東北中心の中堅事務所。",
+  title: "アスタリスクの口コミ・評判【まるみえチャトレ】",
+  description: "アスタリスクの編集部調査レポートと口コミを掲載。全店女性スタッフ。本気で稼ぎたい方向けの事務所。",
 };
 
 export default function Page() {
-  const officeReviews = reviews.filter(r => r.slug === "nmr-group");
+  const officeReviews = reviews.filter(r => r.slug === "asterisk");
 
   return (
     <main>
@@ -17,36 +17,33 @@ export default function Page() {
           <div className="detail-breadcrumb">
             <Link href="/">トップ</Link> &gt;
             <Link href="/jimusho">事務所一覧</Link> &gt;
-            <span>NMRグループ</span>
+            <span>アスタリスク</span>
           </div>
           <div className="detail-hero-inner">
             <div className="detail-hero-left">
-              <div className="detail-office-logo">
-                <img src="/logo-nmr-group.png" alt="" />
-              </div>
-              <div className="detail-rank-badge gray">8位 8位</div>
-              <h1 className="detail-h1">NMRグループ</h1>
-              <p className="detail-catch">完全防音個室。関東東北中心の中堅事務所。</p>
+              <div className="detail-rank-badge gray">10位 10位</div>
+              <h1 className="detail-h1">アスタリスク</h1>
+              <p className="detail-catch">全店女性スタッフ。本気で稼ぎたい方向けの事務所。</p>
               <div className="detail-tags">
-                <span className="r-tag">完全防音個室</span>
-                <span className="r-tag">関東東北</span>
+                <span className="r-tag">全店女性スタッフ</span>
+                <span className="r-tag">安全性◎</span>
               </div>
-              <a href="https://recruit-chat-lady.com/" target="_blank" rel="noopener noreferrer" className="detail-apply-btn">
-                NMRグループの公式サイトを見る →
+              <a href="https://asterisk.network/" target="_blank" rel="noopener noreferrer" className="detail-apply-btn">
+                アスタリスクの公式サイトを見る →
               </a>
             </div>
             <div className="detail-hero-right">
               <div className="detail-score-card">
                 <div className="detail-score-total">
-                  <span className="detail-score-num">74</span>
+                  <span className="detail-score-num">71</span>
                   <span className="detail-score-sub">/ 100点</span>
                 </div>
                 <div className="r-bars">
-                  <div className="r-bar-row"><span className="r-bar-label">安全性 /30</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"77%"}}></div></div><span className="r-bar-val">23</span></div>
+                  <div className="r-bar-row"><span className="r-bar-label">安全性 /30</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"83%"}}></div></div><span className="r-bar-val">25</span></div>
                   <div className="r-bar-row"><span className="r-bar-label">サポート /25</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"72%"}}></div></div><span className="r-bar-val">18</span></div>
-                  <div className="r-bar-row"><span className="r-bar-label">初心者 /20</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"75%"}}></div></div><span className="r-bar-val">15</span></div>
-                  <div className="r-bar-row"><span className="r-bar-label">働きやすさ /15</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"73%"}}></div></div><span className="r-bar-val">11</span></div>
-                  <div className="r-bar-row"><span className="r-bar-label">稼ぎ /10</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"70%"}}></div></div><span className="r-bar-val">7</span></div>
+                  <div className="r-bar-row"><span className="r-bar-label">初心者 /20</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"45%"}}></div></div><span className="r-bar-val">9</span></div>
+                  <div className="r-bar-row"><span className="r-bar-label">働きやすさ /15</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"67%"}}></div></div><span className="r-bar-val">10</span></div>
+                  <div className="r-bar-row"><span className="r-bar-label">稼ぎ /10</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"90%"}}></div></div><span className="r-bar-val">9</span></div>
                 </div>
                 <Link href="/hyoka-kijun" className="detail-score-link">このスコアの根拠を見る →</Link>
               </div>
@@ -59,17 +56,17 @@ export default function Page() {
         <div className="si">
           <div className="detail-comment-box">
             <div className="detail-comment-label">編集部コメント</div>
-            <p className="detail-comment-text">完全防音個室。関東東北中心の中堅事務所。</p>
+            <p className="detail-comment-text">全店女性スタッフ。本気で稼ぎたい方向けの事務所。</p>
                                     <div className="detail-honest">
               <span className="detail-honest-label">正直なひとこと</span>
-              <p>完全防音個室という設備面の強みは本物です。ただし関東・東北中心の展開なので、エリア外の方には選択肢が限られます。</p>
+              <p>全店女性スタッフで安全性が高く、稼ぎへのサポートも本物です。ただし稼ぎ重視の空気が強いため、ゆるく働きたい方には合わないかもしれません。</p>
             </div>
             <div className="detail-not-suitable">
               <span className="detail-not-suitable-label">こんな方には向いていないかも</span>
               <ul>
-                <li>関東・東北以外に住んでいる方</li>
-                <li>スタッフとアットホームに関わりたい方</li>
-                <li>大手の安心感を重視する方</li>
+                <li>のんびり自分のペースで働きたい方</li>
+                <li>ノンアダルト一本でゆるく続けたい方</li>
+                <li>プレッシャーを感じやすい方</li>
               </ul>
             </div></div>
         </div>
@@ -84,10 +81,10 @@ export default function Page() {
               <tr><th>ジャンル</th><td>アダルト・ノンアダルト選択可</td></tr>
               <tr><th>在宅</th><td>OK</td></tr>
               <tr><th>通勤</th><td>OK</td></tr>
-              <tr><th>身バレ対策</th><td>◎（完全防音個室）</td></tr>
-              <tr><th>スタッフ</th><td>女性スタッフ在籍</td></tr>
-              <tr><th>特徴</th><td>完全防音個室・ブログコンテンツ充実</td></tr>
-              <tr><th>対応エリア</th><td>関東・東北中心</td></tr>
+              <tr><th>身バレ対策</th><td>◎</td></tr>
+              <tr><th>スタッフ</th><td>全店女性スタッフのみ</td></tr>
+              <tr><th>特徴</th><td>全女性スタッフ・稼ぎノウハウ充実</td></tr>
+              <tr><th>対応エリア</th><td>全国展開</td></tr>
             </tbody>
           </table>
         </div>
@@ -97,16 +94,16 @@ export default function Page() {
         <div className="si">
           <p className="eyebrow">REVIEWS</p>
           <h2 className="sec-h">実際に働いた方の声</h2>
-          <OfficeReviews reviews={officeReviews} officeName="NMRグループ" />
+          <OfficeReviews reviews={officeReviews} officeName="アスタリスク" />
         </div>
       </section>
 
       <section className="detail-cta-sec">
         <div className="si detail-cta-inner">
-          <h2 className="kuchi-h">NMRグループが気になったら</h2>
+          <h2 className="kuchi-h">アスタリスクが気になったら</h2>
           <p className="kuchi-p">まずは公式サイトで詳細を確認してみてください。</p>
-          <a href="https://recruit-chat-lady.com/" target="_blank" rel="noopener noreferrer" className="btn-main">
-            NMRグループ公式サイトを見る →
+          <a href="https://asterisk.network/" target="_blank" rel="noopener noreferrer" className="btn-main">
+            アスタリスク公式サイトを見る →
           </a>
         </div>
       </section>
