@@ -33,7 +33,7 @@ export default function Home() {
             そんな疑問に、編集部が実際に調査した情報でちゃんと答えます。
           </p>
           <div className="hero-btns">
-            <Link href="/jimusho" className="btn-main">事務所ランキングを見る →</Link>
+            <Link href="/jimusho" className="btn-main">自分に合う事務所を見てみる →</Link>
             <Link href="/hyoka-kijun" className="btn-sub">評価基準を確認する</Link>
           </div>
         </div>
