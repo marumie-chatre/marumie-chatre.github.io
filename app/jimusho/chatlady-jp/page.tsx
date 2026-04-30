@@ -29,7 +29,7 @@ export default function Page() {
                 <span className="r-tag">美容機器無料</span>
                 <span className="r-tag">バーチャル対応</span>
               </div>
-              <a href="https://chatlady-jp.com/" target="_blank" rel="noopener noreferrer" className="detail-apply-btn">
+              <a href="https://chat-lady.jp/" target="_blank" rel="noopener noreferrer" className="detail-apply-btn">
                 チャットレディJPの公式サイトを見る →
               </a>
             </div>
@@ -103,7 +103,7 @@ export default function Page() {
         <div className="si detail-cta-inner">
           <h2 className="kuchi-h">チャットレディJPが気になったら</h2>
           <p className="kuchi-p">まずは公式サイトで詳細を確認してみてください。</p>
-          <a href="https://chatlady-jp.com/" target="_blank" rel="noopener noreferrer" className="btn-main">
+          <a href="https://chat-lady.jp/" target="_blank" rel="noopener noreferrer" className="btn-main">
             チャットレディJP公式サイトを見る →
           </a>
         </div>

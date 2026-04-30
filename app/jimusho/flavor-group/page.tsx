@@ -30,7 +30,7 @@ export default function Page() {
                 <span className="r-tag">固定給選択可</span>
                 <span className="r-tag">24h対応</span>
               </div>
-              <a href="https://flavorgroup.jp/" target="_blank" rel="noopener noreferrer" className="detail-apply-btn">
+              <a href="https://www.find-job.jp/" target="_blank" rel="noopener noreferrer" className="detail-apply-btn">
                 フレイバーグループの公式サイトを見る →
               </a>
             </div>
@@ -103,7 +103,7 @@ export default function Page() {
         <div className="si detail-cta-inner">
           <h2 className="kuchi-h">フレイバーグループが気になったら</h2>
           <p className="kuchi-p">まずは公式サイトで詳細を確認してみてください。</p>
-          <a href="https://flavorgroup.jp/" target="_blank" rel="noopener noreferrer" className="btn-main">
+          <a href="https://www.find-job.jp/" target="_blank" rel="noopener noreferrer" className="btn-main">
             フレイバーグループ公式サイトを見る →
           </a>
         </div>
