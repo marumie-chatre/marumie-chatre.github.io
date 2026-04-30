@@ -13,7 +13,7 @@ export default function HeroImage() {
   }, []);
 
   return (
-    <div style={{ position: "relative", width: "100%", lineHeight: 0 }}>
+    <div style={{ position: "relative", width: "100%", lineHeight: 0, marginBottom: 0 }}>
       <img
         src={isSp ? "/hero-sp.png" : "/hero-pc.png"}
         alt="ちょっとだけ余裕がほしいあなたへ"

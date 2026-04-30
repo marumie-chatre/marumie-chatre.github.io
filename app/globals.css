@@ -56,8 +56,8 @@ img { display: block; max-width: 100%; }
 
 /* HERO */
 .hero {
-  padding: 48px 32px 64px;
-  background: linear-gradient(155deg, var(--green-pale) 0%, var(--white) 58%);
+  padding: 32px 32px 48px;
+  background: linear-gradient(180deg, #eef7e4 0%, var(--white) 100%);
   position: relative; overflow: hidden;
 }
 .hero::before {
@@ -67,7 +67,7 @@ img { display: block; max-width: 100%; }
   pointer-events: none;
 }
 .hero-inner { position: relative; z-index: 1; max-width: 680px; }
-.hero-badges { display: flex; gap: 8px; margin-bottom: 28px; flex-wrap: wrap; animation: fadeUp .5s ease both; }
+.hero-badges { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; animation: fadeUp .5s ease both; }
 .hero-badge {
   display: inline-flex; align-items: center; gap: 5px;
   background: var(--white); border: 1px solid var(--border-green);
@@ -78,8 +78,8 @@ img { display: block; max-width: 100%; }
 .hero-badge::before { content: "✓"; }
 .hero-h1 {
   font-family: "Zen Maru Gothic", sans-serif;
-  font-size: clamp(28px, 4.2vw, 46px); font-weight: 700;
-  line-height: 1.5; color: var(--text); margin-bottom: 24px;
+  font-size: clamp(24px, 4.2vw, 46px); font-weight: 700;
+  line-height: 1.5; color: var(--text); margin-bottom: 16px;
   animation: fadeUp .5s .08s ease both;
 }
 .hero-h1 em {
@@ -87,8 +87,8 @@ img { display: block; max-width: 100%; }
   background: linear-gradient(180deg, transparent 68%, rgba(122,181,72,.18) 68%);
 }
 .hero-lead {
-  font-size: 15px; color: var(--text-mid);
-  line-height: 2.1; margin-bottom: 40px;
+  font-size: 14px; color: var(--text-mid);
+  line-height: 2.0; margin-bottom: 28px;
   animation: fadeUp .5s .16s ease both;
 }
 .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; animation: fadeUp .5s .24s ease both; }
