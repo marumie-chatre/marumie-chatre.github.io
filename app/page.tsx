@@ -21,21 +21,21 @@ export default function Home() {
       <section className="hero">
         <div className="hero-inner">
           <div className="hero-badges">
-            <span className="hero-badge">評価基準をすべて公開</span>
-            <span className="hero-badge">チャトレの本音を掲載</span>
+            <span className="hero-badge">良い点も気になる点も掲載</span>
+            <span className="hero-badge">採点根拠をすべて公開</span>
           </div>
           <h1 className="hero-h1">
-            はじめての事務所選び、<br />
-            <em>中身がわかる</em>から、安心して選べる。
+            チャットレディ事務所の<br />
+            <em>「良いところ」と「気になるところ」</em>を、<br />
+            両方見て選べる。
           </h1>
           <p className="hero-lead">
-            事務所選びで失敗したくない。<br />
-            安全か、サポートは充実しているか——。<br />
-            そんな疑問に、編集部が実際に調査した情報でちゃんと答えます。
+            口コミ・公式情報・編集部調査をもとに、<br />
+            安全性・サポート・初心者向け度を100点満点で比較しています。
           </p>
           <div className="hero-btns">
-            <Link href="/jimusho" className="btn-main">自分に合う事務所を見てみる →</Link>
-            <Link href="/hyoka-kijun" className="btn-sub">評価基準を確認する</Link>
+            <Link href="/jimusho" className="btn-main">事務所を比較する →</Link>
+            <Link href="/kuchikomi" className="btn-sub">口コミを見る</Link>
           </div>
         </div>
       </section>
