@@ -21,6 +21,9 @@ export default function Page() {
           </div>
           <div className="detail-hero-inner">
             <div className="detail-hero-left">
+              <div className="detail-office-logo">
+                <img src="/logo-liver-support.png" alt="" />
+              </div>
               <div className="detail-rank-badge gray">12位 12位</div>
               <h1 className="detail-h1">ライバーサポートグループ</h1>
               <p className="detail-catch">創業22年の老舗。広域展開が強みの事務所。</p>
