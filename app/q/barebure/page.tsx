@@ -70,14 +70,14 @@ export default function QBarebure() {
           <p>✓ 業界初・ノンアダルト専門店として運営<br />✓ 運営4年で身バレゼロ実績<br />✓ スタッフ全員女性（チャットレディ歴3年以上）<br />✓ ノンアダルト配信のため、アダルト動画として流出するリスクがそもそもない</p>
         </div>
         <p>「ノンアダ専門だから、流出しても致命傷になりにくい」と感じて選ぶ方が多い事務所です。口コミでも「ネットの評判が良すぎて逆に不安だったが、実際そのままだった」という声があります。</p>
-        <p><Link href="/jimusho/fairy-tale" className="btn-main">フェアリーテイルの詳細を見る →</Link></p>
+        <p><Link href="/jimusho/ft" className="btn-main">フェアリーテイルの詳細を見る →</Link></p>
 
         <h3>🥈 チャットスタイル（安全性 23/30点）</h3>
         <div className="col-article-box">
           <p>✓ バーチャル配信で顔出しなしOK<br />✓ 会話テクニック・接客サポートが充実<br />✓ 現役経験者スタッフが直接指導</p>
         </div>
         <p>「バーチャル顔出しなしOK」と口コミにも書かれており、顔出ししたくない方の選択肢として現実的です。身バレ対策をテクノロジーで解決したい方に。</p>
-        <p><Link href="/jimusho/chat-style" className="btn-main">チャットスタイルの詳細を見る →</Link></p>
+        <p><Link href="/jimusho/chatstyle" className="btn-main">チャットスタイルの詳細を見る →</Link></p>
 
         <h3>🥉 ブライトグループ（安全性 25/30点）</h3>
         <div className="col-article-box">
