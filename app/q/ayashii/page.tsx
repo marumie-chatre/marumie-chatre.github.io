@@ -117,7 +117,7 @@ export default function QAyashii() {
           <p>✓ ノンアダルト専門店としてはっきり明言している運営方針<br />✓ 業界で最初にノンアダルト専門店を出したパイオニア<br />✓ 「嫌なことはしない」「自分のできる範囲で一緒に見つける」が運営方針<br />✓ スタッフ全員女性（チャットレディ歴3年以上）<br />✓ 稼ぎ方を「センス」ではなく「やり方」としてマニュアル化</p>
         </div>
         <p>「ノンアダで始めたい」「無理なく続けたい」という希望を尊重してくれることが、初心者の方に支持されている理由です。</p>
-        <p><Link href="/jimusho/fairy-tale" className="btn-main">フェアリーテイルの詳細を見る →</Link></p>
+        <p><Link href="/jimusho/ft" className="btn-main">フェアリーテイルの詳細を見る →</Link></p>
 
         <h3>🥈 ブライトグループ（安全性 25/30点）</h3>
         <div className="col-article-box">

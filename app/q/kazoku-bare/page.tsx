@@ -87,7 +87,7 @@ export default function QKazokuBare() {
           <p>✓ 業界初・ノンアダルト専門店として運営<br />✓ 家族バレ・税金などの心配ごとも相談に乗ってくれる<br />✓ 顔出しなし・マスク配信OK<br />✓ 通勤型なので家族との同居状況に左右されにくい</p>
         </div>
         <p>万一バレた時に「アダルト動画として出回っていた」となると、家族関係に深刻なダメージが出ます。ノンアダ専門なら、<strong>最悪の事態が起きても「健全な仕事」として説明できる</strong>安心感があります。</p>
-        <p><Link href="/jimusho/fairy-tale" className="btn-main">フェアリーテイルの詳細を見る →</Link></p>
+        <p><Link href="/jimusho/ft" className="btn-main">フェアリーテイルの詳細を見る →</Link></p>
 
         <h3>🥈 アットグループ（安全性 22/30点）</h3>
         <div className="col-article-box">

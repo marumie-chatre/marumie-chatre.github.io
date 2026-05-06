@@ -80,14 +80,14 @@ export default function QShoshinsha() {
           <p>✓ スタッフ全員女性（チャットレディ歴3年以上）<br />✓ ノンアダルト専門店としてはっきり明言<br />✓ 稼ぎ方を「センスではなくやり方」としてマニュアル化<br />✓ 「自分のできる範囲で、ちゃんと成果が出るやり方を一緒に見つける」スタンス<br />✓ 「がんばり続ける前提」ではなく「続けやすい形に調整する前提」で考えてくれる</p>
         </div>
         <p>「最初の3ヶ月は稼げなかったけど、コツを教えてもらってから伸びた」という声が多い事務所です。未経験者がよくつまずく「会話の出し方」「プロフィール作り」「お客様への好かれ方」を、ノウハウ集・トーク例として整理してくれています。</p>
-        <p><Link href="/jimusho/fairy-tale" className="btn-main">フェアリーテイルの詳細を見る →</Link></p>
+        <p><Link href="/jimusho/ft" className="btn-main">フェアリーテイルの詳細を見る →</Link></p>
 
         <h3>🥈 チャットスタイル（サポート 21/25・初心者向け 17/20）</h3>
         <div className="col-article-box">
           <p>✓ 会話テクニック・接客サポートが業界トップクラス<br />✓ 現役経験者スタッフが直接指導<br />✓ LINE相談が丁寧<br />✓ バーチャル対応で顔出しなしも可</p>
         </div>
         <p>「具体的なアドバイスをくれる」「指導が体系的」という評価が高い事務所です。</p>
-        <p><Link href="/jimusho/chat-style" className="btn-main">チャットスタイルの詳細を見る →</Link></p>
+        <p><Link href="/jimusho/chatstyle" className="btn-main">チャットスタイルの詳細を見る →</Link></p>
 
         <h3>🥉 アットグループ（サポート 21/25・初心者向け 16/20）</h3>
         <div className="col-article-box">

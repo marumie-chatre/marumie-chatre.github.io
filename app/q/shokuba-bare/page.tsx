@@ -92,7 +92,7 @@ export default function QShokubaBare() {
           <p>✓ ノンアダルト専門店としてはっきり明言している運営方針（バレた時の被害最小化）<br />✓ 業界で最初のノンアダルト専門店として運営<br />✓ 「自分のできる範囲で、ちゃんと成果が出るやり方を一緒に見つける」スタンス<br />✓ 顔出しなし・マスク配信OKでバレるリスクの全体を下げやすい</p>
         </div>
         <p>「副業がバレた時のショックを最小化したい」と考える方に。ノンアダルトを軸にしている事務所なら、最悪の事態が起きても説明がつきます。</p>
-        <p><Link href="/jimusho/fairy-tale" className="btn-main">フェアリーテイルの詳細を見る →</Link></p>
+        <p><Link href="/jimusho/ft" className="btn-main">フェアリーテイルの詳細を見る →</Link></p>
 
         <h3>🥉 アットグループ（安全性 22/30点）</h3>
         <div className="col-article-box">
