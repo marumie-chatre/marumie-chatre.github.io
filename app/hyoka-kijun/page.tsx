@@ -216,7 +216,7 @@ export default function HyokaKijunPage() {
           <h2 className="sec-h" style={{marginBottom:"32px"}}>
             評価基準がわかったら、ランキングを見てみましょう
           </h2>
-          <Link href="/jimusho" className="btn-main">全12社の比較ランキングを見る →</Link>
+          <Link href="/jimusho" className="btn-main">掲載事務所の比較ランキングを見る →</Link>
         </div>
       </section>
 
