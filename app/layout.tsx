@@ -32,7 +32,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <Link href="/jimusho">事務所を探す</Link>
               <Link href="/area/shinjuku">エリアから探す</Link>
               <Link href="/style/zaitaku">働き方から探す</Link>
-              <Link href="/q/barebure">お悩みから探す</Link>
+              <Link href="/q/">お悩みから探す</Link>
               <Link href="/kuchikomi">口コミ</Link>
               <Link href="/column">コラム</Link>
             </nav>

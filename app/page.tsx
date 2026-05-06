@@ -200,7 +200,7 @@ export default function Home() {
               <div className="find-sub">在宅・通勤・ノンアダルト・バーチャル</div>
               <div className="find-arrow">→</div>
             </Link>
-            <Link href="/q/barebure" className="find-item">
+            <Link href="/q/" className="find-item">
               <div className="find-icon-svg"><img src="/icon-safe.svg" alt="" width={28} height={28} /></div>
               <div className="find-title">不安なことから調べたい</div>
               <div className="find-sub">身バレ・職場バレ・初心者・本当に稼げる？</div>
