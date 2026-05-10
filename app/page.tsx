@@ -40,6 +40,34 @@ export default function Home() {
         </div>
       </section>
 
+      {/* 実績バナー（HERO直下） */}
+      <section className="stats-banner-sec">
+        <div className="si">
+          <div className="stats-banner">
+            <div className="stats-banner-img">
+              <img src="/top-stats-banner.jpg" alt="実績：11社・54件・4年" />
+            </div>
+            <div className="stats-banner-grid">
+              <div className="stats-item">
+                <div className="stats-num">{OFFICE_COUNT}</div>
+                <div className="stats-label">掲載事務所</div>
+                <div className="stats-unit">社</div>
+              </div>
+              <div className="stats-item">
+                <div className="stats-num">{reviews.length}</div>
+                <div className="stats-label">実体験口コミ</div>
+                <div className="stats-unit">件</div>
+              </div>
+              <div className="stats-item">
+                <div className="stats-num">4</div>
+                <div className="stats-label">運営者の現役歴</div>
+                <div className="stats-unit">年</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* DIFFERENCE */}
       <section className="section diff-sec">
         <div className="si">
@@ -56,6 +84,9 @@ export default function Home() {
           </div>
           <div className="diff-grid">
             <div className="diff-item">
+              <div className="diff-illust">
+                <img src="/top-diff-1-ranking.jpg" alt="ランキング比較" />
+              </div>
               <div className="diff-svg-icon">
                 <img src="/icon-ranking.svg" alt="" width={44} height={44} />
               </div>
@@ -64,6 +95,9 @@ export default function Home() {
               <p className="diff-body">採点基準と根拠をすべて公開。「なんとなくおすすめ」のランキングは載せません。</p>
             </div>
             <div className="diff-item">
+              <div className="diff-illust">
+                <img src="/top-diff-2-review.jpg" alt="口コミ" />
+              </div>
               <div className="diff-svg-icon">
                 <img src="/icon-review.svg" alt="" width={44} height={44} />
               </div>
@@ -72,6 +106,9 @@ export default function Home() {
               <p className="diff-body">事務所側が書いた情報ではなく、キャストの本音口コミと編集部の調査コメントだけです。</p>
             </div>
             <div className="diff-item">
+              <div className="diff-illust">
+                <img src="/top-diff-3-safety.jpg" alt="安全性" />
+              </div>
               <div className="diff-svg-icon">
                 <img src="/icon-safety.svg" alt="" width={44} height={44} />
               </div>
@@ -94,6 +131,9 @@ export default function Home() {
           </div>
           <div className="rank-grid">
             <div className="r-card top">
+              <div className="r-logo-wrap">
+                <img src="/logo-ft.png" alt="フェアリーテイル" className="r-logo" />
+              </div>
               <div className="r-crown-badge">
                 <img src="/icon-crown.svg" alt="" width={20} height={20} />
                 <span>初心者に最もおすすめ</span>
@@ -119,6 +159,9 @@ export default function Home() {
               <Link href="/jimusho/ft" className="r-btn">詳細・口コミを見る →</Link>
             </div>
             <div className="r-card">
+              <div className="r-logo-wrap">
+                <img src="/logo-bright-group.png" alt="ブライトグループ" className="r-logo" />
+              </div>
               <div className="r-rank-badge silver">🥈 2位</div>
               <div className="r-name">ブライトグループ</div>
               <div className="r-score">84<sub> / 100点</sub></div>
@@ -136,6 +179,9 @@ export default function Home() {
               <Link href="/jimusho/bright-group" className="r-btn">詳細・口コミを見る →</Link>
             </div>
             <div className="r-card">
+              <div className="r-logo-wrap">
+                <img src="/logo-at-group.png" alt="アットグループ" className="r-logo" />
+              </div>
               <div className="r-rank-badge bronze">🥉 3位</div>
               <div className="r-name">アットグループ</div>
               <div className="r-score">80<sub> / 100点</sub></div>
@@ -160,11 +206,14 @@ export default function Home() {
       </section>
 
       {/* 最新口コミ */}
-      <section className="section" style={{background:"var(--white)"}}>
+      <section className="section reviews-sec" style={{background:"var(--white)"}}>
         <div className="si">
           <p className="eyebrow">REVIEWS</p>
           <h2 className="sec-h" style={{marginBottom:"8px"}}>良いことだけじゃない、リアルな声を読んでください。</h2>
           <p className="sec-sub">実際に働いた方の体験談を掲載しています。</p>
+          <div className="reviews-lead-img">
+            <img src="/top-reviews-lead.jpg" alt="リアルな声" />
+          </div>
           <div className="review-grid">
             {latestReviews.map(review => (
               <ReviewCard key={review.id} review={review} />
@@ -183,24 +232,36 @@ export default function Home() {
           <h2 className="sec-h">あなたに合った探し方で</h2>
           <div className="find-grid">
             <Link href="/jimusho" className="find-item">
+              <div className="find-thumb">
+                <img src="/top-find-1-compare.jpg" alt="比較する" />
+              </div>
               <div className="find-icon-svg"><img src="/icon-recommend.svg" alt="" width={28} height={28} /></div>
               <div className="find-title">どこがいいか比べたい</div>
               <div className="find-sub">{OFFICE_COUNT}社を一覧でまとめて比較</div>
               <div className="find-arrow">→</div>
             </Link>
             <Link href="/area" className="find-item">
+              <div className="find-thumb">
+                <img src="/top-find-2-area.jpg" alt="エリアで探す" />
+              </div>
               <div className="find-icon-svg"><img src="/icon-area.svg" alt="" width={28} height={28} /></div>
               <div className="find-title">通える場所で探したい</div>
               <div className="find-sub">新宿・池袋・錦糸町・上野・福岡</div>
               <div className="find-arrow">→</div>
             </Link>
             <Link href="/style/zaitaku" className="find-item">
+              <div className="find-thumb">
+                <img src="/top-find-3-style.jpg" alt="働き方で探す" />
+              </div>
               <div className="find-icon-svg"><img src="/icon-work.svg" alt="" width={28} height={28} /></div>
               <div className="find-title">働き方で絞りたい</div>
               <div className="find-sub">在宅・通勤・ノンアダルト・バーチャル</div>
               <div className="find-arrow">→</div>
             </Link>
             <Link href="/q/" className="find-item">
+              <div className="find-thumb">
+                <img src="/top-find-4-worry.jpg" alt="お悩みで探す" />
+              </div>
               <div className="find-icon-svg"><img src="/icon-safe.svg" alt="" width={28} height={28} /></div>
               <div className="find-title">不安なことから調べたい</div>
               <div className="find-sub">身バレ・職場バレ・初心者・本当に稼げる？</div>
@@ -244,8 +305,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="kuchi-sec">
+      {/* CTA（背景画像対応） */}
+      <section className="kuchi-sec kuchi-sec-with-bg">
+        <div className="kuchi-bg-img">
+          <img src="/top-cta-bg.jpg" alt="" />
+        </div>
         <div className="kuchi-inner">
           <h2 className="kuchi-h">働いた経験がある方へ</h2>
           <p className="kuchi-p">
