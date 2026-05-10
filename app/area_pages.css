@@ -1,0 +1,237 @@
+/* ============================================ */
+/* エリアページ専用CSS（globals.css末尾に追加） */
+/* ============================================ */
+
+/* ───── エリアハブ：カードグリッド ───── */
+
+.area-grid-section {
+  margin: 48px 0;
+}
+
+.area-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.area-card {
+  display: block;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border: 1px solid #f0e9e3;
+}
+
+.area-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.area-card-image-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 5 / 3;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f8e8d8 0%, #e8d4c0 100%);
+}
+
+.area-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.area-card:hover .area-card-image {
+  transform: scale(1.05);
+}
+
+.area-card-icon {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 6px 12px;
+  border-radius: 24px;
+  font-size: 1.4rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.area-card-body {
+  padding: 20px;
+}
+
+.area-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+
+.area-card-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+  color: #3d2c1e;
+}
+
+.area-card-count {
+  font-size: 0.85rem;
+  color: #a08570;
+  background: #faf3ed;
+  padding: 2px 10px;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+
+.area-card-catch {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #c08858;
+  margin: 8px 0 12px 0;
+  line-height: 1.5;
+}
+
+.area-card-summary {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: #5e4a3a;
+  margin: 0 0 16px 0;
+}
+
+.area-card-target {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: #fdf8f4;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.area-card-target-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #a08570;
+  white-space: nowrap;
+}
+
+.area-card-target-value {
+  font-size: 0.85rem;
+  color: #3d2c1e;
+}
+
+.area-card-link {
+  display: inline-block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #c08858;
+}
+
+/* タブレット */
+@media (max-width: 1024px) {
+  .area-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* スマホ */
+@media (max-width: 640px) {
+  .area-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .area-card-image-wrap {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+/* ───── エリア各ページ：ヒーロー画像 ───── */
+
+.area-page-hero {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  margin-bottom: 32px;
+}
+
+.area-page-hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+}
+
+.area-page-hero-overlay {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.55) 100%);
+  padding: 32px 0;
+}
+
+.area-page-hero-overlay .col-article-inner {
+  color: #ffffff;
+}
+
+.area-page-hero-overlay .col-article-cat {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.9);
+  color: #3d2c1e;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.area-page-hero-overlay .col-article-h1 {
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  margin-bottom: 12px;
+}
+
+.area-page-hero-overlay .col-article-meta {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+@media (max-width: 640px) {
+  .area-page-hero {
+    height: 280px;
+  }
+}
+
+/* ───── エリア各ページ：本文中の画像 ───── */
+
+.area-section-figure {
+  margin: 24px 0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #faf3ed;
+}
+
+.area-section-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.area-section-figure figcaption {
+  padding: 12px 16px;
+  font-size: 0.85rem;
+  color: #7a6452;
+  background: #faf3ed;
+  text-align: center;
+  line-height: 1.6;
+}
