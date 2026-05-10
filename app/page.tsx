@@ -2,7 +2,7 @@ import Link from "next/link";
 import { OFFICE_COUNT } from "./offices";
 import { reviews } from "./reviews";
 import ReviewCard from "./ReviewCard";
-
+import HeroImage from "./HeroImage";
 
 export const metadata = {
   title: "まるみえチャトレ｜中身で選ぶチャトレ事務所",
@@ -14,6 +14,9 @@ export default function Home() {
 
   return (
     <main>
+      {/* TOP HERO IMAGE */}
+      <HeroImage />
+
       {/* HERO */}
       <section className="hero">
         <div className="hero-inner">
