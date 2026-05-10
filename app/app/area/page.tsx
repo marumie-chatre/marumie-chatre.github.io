@@ -85,7 +85,7 @@ export default function AreaHub() {
         </div>
 
         {/* エリアカードグリッド */}
-        <section className="area-grid-section">
+        <section className="area-hub-section">
           <h2>エリア一覧</h2>
           <div className="area-grid">
             {areas.map((area) => (
