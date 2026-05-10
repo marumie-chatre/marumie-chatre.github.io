@@ -2,7 +2,7 @@ import Link from "next/link";
 import { OFFICE_COUNT } from "./offices";
 import { reviews } from "./reviews";
 import ReviewCard from "./ReviewCard";
-import HeroImage from "./HeroImage";
+
 
 export const metadata = {
   title: "まるみえチャトレ｜中身で選ぶチャトレ事務所",
@@ -14,9 +14,6 @@ export default function Home() {
 
   return (
     <main>
-      {/* TOP HERO IMAGE */}
-      <HeroImage />
-
       {/* HERO */}
       <section className="hero">
         <div className="hero-inner">
@@ -147,7 +144,7 @@ export default function Home() {
               <div className="r-tags">
                 <span className="r-tag">カフェ空間</span>
                 <span className="r-tag">居心地◎</span>
-                <span className="r-tag">関東57店舗</span>
+                <span className="r-tag">全国95店舗</span>
               </div>
               <p className="r-comment">カフェのような居心地の良さが特徴。応募数が多い大手。正直な評価で掲載。</p>
               <Link href="/jimusho/at-group" className="r-btn">詳細・口コミを見る →</Link>
@@ -188,10 +185,10 @@ export default function Home() {
               <div className="find-sub">{OFFICE_COUNT}社を一覧でまとめて比較</div>
               <div className="find-arrow">→</div>
             </Link>
-            <Link href="/area/shinjuku" className="find-item">
+            <Link href="/area" className="find-item">
               <div className="find-icon-svg"><img src="/icon-area.svg" alt="" width={28} height={28} /></div>
               <div className="find-title">通える場所で探したい</div>
-              <div className="find-sub">新宿・池袋・錦糸町・上野・大宮・福岡</div>
+              <div className="find-sub">新宿・池袋・錦糸町・上野・福岡</div>
               <div className="find-arrow">→</div>
             </Link>
             <Link href="/style/zaitaku" className="find-item">
