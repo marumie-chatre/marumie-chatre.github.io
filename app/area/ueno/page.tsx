@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata = {
   title: "上野のチャットレディ事務所｜選び方と評価が高い3社｜まるみえチャトレ",
@@ -8,13 +9,23 @@ export const metadata = {
 export default function AreaUeno() {
   return (
     <main>
-      <section className="col-article-hero">
-        <div className="col-article-inner">
-          <div className="col-article-cat">エリア｜上野</div>
-          <h1 className="col-article-h1">上野のチャットレディ事務所｜<br />「少し落ち着いた大人のエリア」で働く</h1>
-          <div className="col-article-meta">
-            <span>2026.05.08</span>
-            <span>約7分で読めます</span>
+      <section className="area-page-hero">
+        <Image
+          src="/area-ueno.jpg"
+          alt="上野の街並み"
+          width={1600}
+          height={500}
+          className="area-page-hero-image"
+          priority
+        />
+        <div className="area-page-hero-overlay">
+          <div className="col-article-inner">
+            <div className="col-article-cat">エリア｜上野</div>
+            <h1 className="col-article-h1">上野のチャットレディ事務所｜<br />選び方と評価が高い3社</h1>
+            <div className="col-article-meta">
+              <span>2026.05.08</span>
+              <span>約7分で読めます</span>
+            </div>
           </div>
         </div>
       </section>
@@ -30,6 +41,17 @@ export default function AreaUeno() {
         </div>
 
         <h2>上野は新宿・池袋とは違う「大人の落ち着いた雰囲気」のエリア</h2>
+
+        <figure className="area-section-figure">
+          <Image
+            src="/area-ueno-station.jpg"
+            alt="上野駅前・アメ横方面の街並み"
+            width={800}
+            height={450}
+            className="area-section-image"
+          />
+          <figcaption>上野は「文化と賑わいが共存する大人の街」</figcaption>
+        </figure>
         <p>上野エリアのチャットレディ事務所は、新宿（約50店舗）・池袋（18店舗以上）と比べると数は少なめです。ただし、上野には<strong>他エリアにはない独自の魅力</strong>があります。</p>
         <p>上野エリアを選ぶ女性は、<strong>山手線・常磐線・京浜東北線沿線</strong>にお住まい・お勤めの方、<strong>新宿・池袋の慌ただしさ</strong>が苦手な方、「<strong>大人の落ち着いた雰囲気</strong>」で集中して働きたい方、アメ横・上野公園などで<strong>観光客が多く、自分が目立たない</strong>安心感を求める方、美術館・博物館も近く<strong>文化的な街並みが好き</strong>な方が多い傾向にあります。</p>
         <p>上野は美術館・博物館・上野公園・アメ横などが集まる<strong>「文化と賑わいが共存する大人の街」</strong>です。新宿の歌舞伎町や池袋の繁華街のような派手さがなく、<strong>観光客・買い物客・通勤客が入り混じる中で目立たずに働ける</strong>のが上野ならではの強みです。</p>
@@ -48,6 +70,17 @@ export default function AreaUeno() {
         <p>各事務所の詳細スコアは <Link href="/jimusho">掲載事務所の比較ランキング</Link> でご確認ください。</p>
 
         <h2>「報酬率最大40%」「最大時給○○円」に騙されないで</h2>
+
+        <figure className="area-section-figure">
+          <Image
+            src="/area-warning-rate.jpg"
+            alt="派手な数字に注意"
+            width={800}
+            height={450}
+            className="area-section-image"
+          />
+          <figcaption>「最大40%」「最大時給○○円」の派手な数字には3つのカラクリがあります</figcaption>
+        </figure>
         <p>上野エリアの事務所サイトを見ると、新宿・池袋と同様に「<strong>報酬率最大40%</strong>」「<strong>最大時給○○円</strong>」「<strong>年12回賞与</strong>」のような数字が並んでいます。これらは確かに大きな数字ですが、応募前に知っておきたい落とし穴があります。</p>
 
         <h3>業界標準は通勤30%・在宅40%</h3>
@@ -185,6 +218,7 @@ export default function AreaUeno() {
           <li><Link href="/area/ikebukuro">池袋エリアの事務所を見る</Link></li>
           <li><Link href="/area/kinshicho">錦糸町エリアの事務所を見る</Link></li>
           <li><Link href="/area/fukuoka">福岡エリアの事務所を見る</Link></li>
+          <li><Link href="/area">エリア一覧に戻る</Link></li>
         </ul>
 
         <h2>もっと詳しく知りたい方へ</h2>

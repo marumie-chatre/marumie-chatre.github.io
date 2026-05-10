@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata = {
   title: "福岡のチャットレディ事務所｜選び方と評価が高い3社｜まるみえチャトレ",
@@ -8,13 +9,23 @@ export const metadata = {
 export default function AreaFukuoka() {
   return (
     <main>
-      <section className="col-article-hero">
-        <div className="col-article-inner">
-          <div className="col-article-cat">エリア｜福岡</div>
-          <h1 className="col-article-h1">福岡のチャットレディ事務所｜<br />九州最大級の激戦区での選び方</h1>
-          <div className="col-article-meta">
-            <span>2026.05.08</span>
-            <span>約7分で読めます</span>
+      <section className="area-page-hero">
+        <Image
+          src="/area-fukuoka.jpg"
+          alt="福岡の街並み"
+          width={1600}
+          height={500}
+          className="area-page-hero-image"
+          priority
+        />
+        <div className="area-page-hero-overlay">
+          <div className="col-article-inner">
+            <div className="col-article-cat">エリア｜福岡</div>
+            <h1 className="col-article-h1">福岡のチャットレディ事務所｜<br />選び方と評価が高い3社</h1>
+            <div className="col-article-meta">
+              <span>2026.05.08</span>
+              <span>約7分で読めます</span>
+            </div>
           </div>
         </div>
       </section>
@@ -30,6 +41,17 @@ export default function AreaFukuoka() {
         </div>
 
         <h2>福岡は天神・博多に130店舗以上が集中する九州最大の激戦区</h2>
+
+        <figure className="area-section-figure">
+          <Image
+            src="/area-fukuoka-station.jpg"
+            alt="福岡天神・博多の街並み"
+            width={800}
+            height={450}
+            className="area-section-image"
+          />
+          <figcaption>福岡は天神・博多に130店舗以上が集中する九州最大の激戦区</figcaption>
+        </figure>
         <p>福岡県のチャットレディ事務所は、同グループの店舗を含めると<strong>県内全体で130店舗以上</strong>あるといわれています。天神・博多が二大エリアで、薬院・姪浜・小倉・久留米などにも展開する大手事務所が多数あります。</p>
         <p>福岡エリアを選ぶ女性は、福岡市内（天神・博多）にお住まい・お勤めの方、西鉄・JR・地下鉄空港線沿線から通う方、久留米・北九州など福岡市外から通勤する方、関東・関西の事務所と比較して<strong>福岡で働きたい方</strong>、学生・主婦・OL・マダム層など<strong>幅広い年代の方</strong>が多い傾向にあります。</p>
         <p>福岡は18歳〜50代まで活躍する方がいる<strong>年齢層の幅広いエリア</strong>です。ただし、<strong>「ノンアダルト」と求人に書きながら現場ではアダルトを勧める事務所</strong>も混在するため、<strong>事務所選びを慎重にすべきエリア</strong>でもあります。</p>
@@ -48,6 +70,17 @@ export default function AreaFukuoka() {
         <p>このほか、福岡密着型のチャットチュチュ・ファシモ・e-point福岡・ニューステージグループなど、地元密着型の事務所も多数あります。各事務所の詳細スコアは <Link href="/jimusho">掲載事務所の比較ランキング</Link> でご確認ください。</p>
 
         <h2>「報酬率最大40%」「最大時給○○円」に騙されないで</h2>
+
+        <figure className="area-section-figure">
+          <Image
+            src="/area-warning-rate.jpg"
+            alt="派手な数字に注意"
+            width={800}
+            height={450}
+            className="area-section-image"
+          />
+          <figcaption>「最大40%」「最大時給○○円」の派手な数字には3つのカラクリがあります</figcaption>
+        </figure>
         <p>福岡エリアの事務所サイトを見ると、新宿・池袋と同様に「<strong>報酬率最大40%</strong>」「<strong>最大時給9,600円</strong>」「<strong>入店祝い金最大3万円</strong>」のような数字が並んでいます。これらは確かに大きな数字ですが、応募前に知っておきたい落とし穴があります。</p>
 
         <h3>業界標準は通勤30%・在宅40%</h3>
@@ -185,6 +218,7 @@ export default function AreaFukuoka() {
           <li><Link href="/area/ikebukuro">池袋エリアの事務所を見る</Link></li>
           <li><Link href="/area/kinshicho">錦糸町エリアの事務所を見る</Link></li>
           <li><Link href="/area/ueno">上野エリアの事務所を見る</Link></li>
+          <li><Link href="/area">エリア一覧に戻る</Link></li>
         </ul>
 
         <h2>もっと詳しく知りたい方へ</h2>
