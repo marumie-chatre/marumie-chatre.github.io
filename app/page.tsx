@@ -40,34 +40,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 実績バナー（HERO直下） */}
-      <section className="stats-banner-sec">
-        <div className="si">
-          <div className="stats-banner">
-            <div className="stats-banner-img">
-              <img src="/top-stats-banner.jpg" alt="実績：11社・54件・4年" />
-            </div>
-            <div className="stats-banner-grid">
-              <div className="stats-item">
-                <div className="stats-num">{OFFICE_COUNT}</div>
-                <div className="stats-label">掲載事務所</div>
-                <div className="stats-unit">社</div>
-              </div>
-              <div className="stats-item">
-                <div className="stats-num">{reviews.length}</div>
-                <div className="stats-label">実体験口コミ</div>
-                <div className="stats-unit">件</div>
-              </div>
-              <div className="stats-item">
-                <div className="stats-num">4</div>
-                <div className="stats-label">運営者の現役歴</div>
-                <div className="stats-unit">年</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* DIFFERENCE */}
       <section className="section diff-sec">
         <div className="si">
