@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata = {
   title: "新宿のチャットレディ事務所｜選び方と評価が高い3社｜まるみえチャトレ",
@@ -8,13 +9,24 @@ export const metadata = {
 export default function AreaShinjuku() {
   return (
     <main>
-      <section className="col-article-hero">
-        <div className="col-article-inner">
-          <div className="col-article-cat">エリア｜新宿</div>
-          <h1 className="col-article-h1">新宿のチャットレディ事務所｜<br />選び方と評価が高い3社</h1>
-          <div className="col-article-meta">
-            <span>2026.05.08</span>
-            <span>約7分で読めます</span>
+      {/* ヒーローセクション（街並み画像） */}
+      <section className="area-page-hero">
+        <Image
+          src="/area-shinjuku.jpg"
+          alt="新宿の街並み"
+          width={1600}
+          height={500}
+          className="area-page-hero-image"
+          priority
+        />
+        <div className="area-page-hero-overlay">
+          <div className="col-article-inner">
+            <div className="col-article-cat">エリア｜新宿</div>
+            <h1 className="col-article-h1">新宿のチャットレディ事務所｜<br />選び方と評価が高い3社</h1>
+            <div className="col-article-meta">
+              <span>2026.05.08</span>
+              <span>約7分で読めます</span>
+            </div>
           </div>
         </div>
       </section>
@@ -30,6 +42,19 @@ export default function AreaShinjuku() {
         </div>
 
         <h2>新宿は約50店舗ある業界最大の激戦区</h2>
+
+        {/* セクション画像（街並み補足やイラスト） */}
+        <figure className="area-section-figure">
+          <Image
+            src="/area-shinjuku-station.jpg"
+            alt="新宿駅周辺のオフィス街"
+            width={800}
+            height={450}
+            className="area-section-image"
+          />
+          <figcaption>新宿は同グループの店舗を含めると約50店舗が集中する業界最大の激戦区</figcaption>
+        </figure>
+
         <p>新宿のチャットレディ事務所は、<strong>同グループの店舗も含めると約50店舗</strong>あります。9割以上が新宿駅から徒歩10分圏内に集中しているため、選択肢の多さは関東で随一です。</p>
         <p>新宿エリアを選ぶ女性は、関東各方面（千葉・埼玉・神奈川）から通勤する方、ターミナル駅で乗り換えのついでに通える方、大手・知名度のある事務所を選びたい方、仕事帰り・買い物帰りに立ち寄りたい方が多い傾向にあります。</p>
         <p>ただし、<strong>新宿エリアは「稼ぎ重視」「アダルト前提」の事務所も多く混在</strong>しています。「ノンアダルトで安心して始めたい」という方は、事務所選びを慎重にする必要があります。</p>
@@ -52,6 +77,19 @@ export default function AreaShinjuku() {
         <p>各事務所の詳細スコアは <Link href="/jimusho">掲載事務所の比較ランキング</Link> でご確認ください。</p>
 
         <h2>「報酬率最大40%」「最大時給○○円」に騙されないで</h2>
+
+        {/* セクション画像（注意喚起のイラスト） */}
+        <figure className="area-section-figure">
+          <Image
+            src="/area-warning-rate.jpg"
+            alt="派手な数字に注意"
+            width={800}
+            height={450}
+            className="area-section-image"
+          />
+          <figcaption>「最大40%」「最大時給○○円」の派手な数字には3つのカラクリがあります</figcaption>
+        </figure>
+
         <p>新宿エリアの事務所サイトを見ると、「<strong>報酬率最大40%</strong>」「<strong>最大時給○○円</strong>」のような数字が並んでいます。このような数字を前面に出している事務所には、<strong>注意が必要</strong>です。</p>
 
         <h3>業界標準は通勤30%・在宅40%</h3>
@@ -137,7 +175,7 @@ export default function AreaShinjuku() {
         <p>「新宿は稼げる」というのは事実ですが、<strong>それは経験者やランカーの話</strong>です。初心者がいきなり高収入を得られるわけではありません。最初の3ヶ月は常連さんを作る期間と考えてください。新宿で初心者向けのサポートが手厚い事務所を選ぶことが大切です。</p>
 
         <h3>Q. 新宿でアダルト強要されない事務所はありますか？</h3>
-        <p>新宿エリアには<strong>ノンアダルトを軸にしている事務所</strong>もあります。ただし、業界全体には「ノンアダルト」と求人に書きながら現場ではアダルトを勧めてくる事務所も実在します。<strong>ノンアダルト専門店としてはっきり明言している事務所</strong>を選ぶのが、最も確実です。詳しくは <Link href="/q/ayashii">チャトレって怪しくない？危なくない？</Link> で解説しています。</p>
+        <p>新宿エリアには<strong>ノンアダルトを軸にしている事務所</strong>もあります。ただし、業界全体には「ノンアダルト」と求人に書きながら現場でアダルトを勧めてくる事務所も実在します。<strong>ノンアダルト専門店としてはっきり明言している事務所</strong>を選ぶのが、最も確実です。詳しくは <Link href="/q/ayashii">チャトレって怪しくない？危なくない？</Link> で解説しています。</p>
 
         <h2>新宿で事務所を選ぶときに確認したい5つのポイント</h2>
         <p>激戦区の新宿で失敗しない事務所選びのために、応募・面談前に必ず確認してほしいポイントです。</p>
@@ -180,6 +218,7 @@ export default function AreaShinjuku() {
           <li><Link href="/area/kinshicho">錦糸町エリアの事務所を見る</Link></li>
           <li><Link href="/area/ueno">上野エリアの事務所を見る</Link></li>
           <li><Link href="/area/fukuoka">福岡エリアの事務所を見る</Link></li>
+          <li><Link href="/area">エリア一覧に戻る</Link></li>
         </ul>
 
         <h2>もっと詳しく知りたい方へ</h2>

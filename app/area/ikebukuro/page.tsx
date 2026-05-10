@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata = {
   title: "池袋のチャットレディ事務所｜選び方と評価が高い3社｜まるみえチャトレ",
@@ -8,13 +9,23 @@ export const metadata = {
 export default function AreaIkebukuro() {
   return (
     <main>
-      <section className="col-article-hero">
-        <div className="col-article-inner">
-          <div className="col-article-cat">エリア｜池袋</div>
-          <h1 className="col-article-h1">池袋のチャットレディ事務所｜<br />選び方と評価が高い3社</h1>
-          <div className="col-article-meta">
-            <span>2026.05.08</span>
-            <span>約7分で読めます</span>
+      <section className="area-page-hero">
+        <Image
+          src="/area-ikebukuro.jpg"
+          alt="池袋の街並み"
+          width={1600}
+          height={500}
+          className="area-page-hero-image"
+          priority
+        />
+        <div className="area-page-hero-overlay">
+          <div className="col-article-inner">
+            <div className="col-article-cat">エリア｜池袋</div>
+            <h1 className="col-article-h1">池袋のチャットレディ事務所｜<br />選び方と評価が高い3社</h1>
+            <div className="col-article-meta">
+              <span>2026.05.08</span>
+              <span>約7分で読めます</span>
+            </div>
           </div>
         </div>
       </section>
@@ -30,6 +41,17 @@ export default function AreaIkebukuro() {
         </div>
 
         <h2>池袋は18店舗以上のチャトレ事務所が集まる若年層多めのエリア</h2>
+
+        <figure className="area-section-figure">
+          <Image
+            src="/area-ikebukuro-station.jpg"
+            alt="池袋駅前の街並み"
+            width={800}
+            height={450}
+            className="area-section-image"
+          />
+          <figcaption>池袋エリアは18店舗以上のチャトレ事務所が集まる若年層多めのエリア</figcaption>
+        </figure>
         <p>池袋エリアでチャットレディ事務所を募集している店舗は、Web上で確認できるだけで<strong>18店舗以上</strong>あります。同じグループの店舗が複数あるケースも含めると、実数はさらに多くなります。</p>
         <p>池袋エリアを選ぶ女性は、池袋駅利用沿線（東武東上線・西武池袋線・JR埼京線等）から通う方、専門学校・大学が近く学生・専業主婦層が多く、<strong>18〜29歳の若年層が中心</strong>。声優・アイドル志望など副業として時間を使いたい方、池袋駅周辺で買い物・食事ついでに通いたい方が多い傾向にあります。</p>
         <p>池袋は若年層多めなので、<strong>「同年代が多い職場で働きたい」「初心者でも浮かない雰囲気を求めたい」</strong>という方に向いています。</p>
@@ -51,6 +73,17 @@ export default function AreaIkebukuro() {
         <p>各事務所の詳細スコアは <Link href="/jimusho">掲載事務所の比較ランキング</Link> でご確認ください。</p>
 
         <h2>「報酬率最大40%」「入店祝い金最大10万円」に騙されないで</h2>
+
+        <figure className="area-section-figure">
+          <Image
+            src="/area-warning-rate.jpg"
+            alt="派手な数字に注意"
+            width={800}
+            height={450}
+            className="area-section-image"
+          />
+          <figcaption>「最大40%」「最大時給○○円」の派手な数字には3つのカラクリがあります</figcaption>
+        </figure>
         <p>池袋エリアの事務所サイトを見ると、「<strong>報酬率最大45%</strong>」「<strong>入店祝い金最大10万円</strong>」「<strong>日給1万円保証</strong>」のような派手な数字が並んでいます。これらは確かに大きな数字ですが、応募前に知っておきたい落とし穴があります。</p>
 
         <h3>業界標準は通勤30%・在宅40%</h3>
@@ -182,6 +215,7 @@ export default function AreaIkebukuro() {
           <li><Link href="/area/kinshicho">錦糸町エリアの事務所を見る</Link></li>
           <li><Link href="/area/ueno">上野エリアの事務所を見る</Link></li>
           <li><Link href="/area/fukuoka">福岡エリアの事務所を見る</Link></li>
+          <li><Link href="/area">エリア一覧に戻る</Link></li>
         </ul>
 
         <h2>もっと詳しく知りたい方へ</h2>

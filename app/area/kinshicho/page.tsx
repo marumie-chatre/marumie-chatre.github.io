@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata = {
   title: "錦糸町のチャットレディ事務所｜居心地で選ぶ評価が高い3社｜まるみえチャトレ",
@@ -8,13 +9,23 @@ export const metadata = {
 export default function AreaKinshicho() {
   return (
     <main>
-      <section className="col-article-hero">
-        <div className="col-article-inner">
-          <div className="col-article-cat">エリア｜錦糸町</div>
-          <h1 className="col-article-h1">錦糸町のチャットレディ事務所｜<br />「居心地で選ぶ」を叶えられるエリア</h1>
-          <div className="col-article-meta">
-            <span>2026.05.08</span>
-            <span>約7分で読めます</span>
+      <section className="area-page-hero">
+        <Image
+          src="/area-kinshicho.jpg"
+          alt="錦糸町の街並み"
+          width={1600}
+          height={500}
+          className="area-page-hero-image"
+          priority
+        />
+        <div className="area-page-hero-overlay">
+          <div className="col-article-inner">
+            <div className="col-article-cat">エリア｜錦糸町</div>
+            <h1 className="col-article-h1">錦糸町のチャットレディ事務所｜<br />選び方と評価が高い3社</h1>
+            <div className="col-article-meta">
+              <span>2026.05.08</span>
+              <span>約7分で読めます</span>
+            </div>
           </div>
         </div>
       </section>
@@ -30,6 +41,17 @@ export default function AreaKinshicho() {
         </div>
 
         <h2>錦糸町は「居心地で長く続ける」が成立するエリア</h2>
+
+        <figure className="area-section-figure">
+          <Image
+            src="/area-kinshicho-station.jpg"
+            alt="錦糸町アルカキット周辺"
+            width={800}
+            height={450}
+            className="area-section-image"
+          />
+          <figcaption>錦糸町は「数より質」で選ばれる事務所が残るエリア</figcaption>
+        </figure>
         <p>新宿や池袋のチャットレディ業界は、激戦区ゆえに「もっと稼げ」「もっと出勤を」という空気を感じる事務所も少なくありません。一方、錦糸町は事務所数が絞られている分、<strong>「数で押す事務所」より「質と居心地で選ばれる事務所」</strong>が残っているエリアです。</p>
         <p>錦糸町エリアを選ぶ女性は、JR総武線・半蔵門線・都営新宿線（住吉駅）沿線から通う方、千葉方面（市川・船橋等）から通勤する方、<strong>新宿や池袋の慌ただしさを避けたい</strong>方、自分のペースで集中して働きたい方、「<strong>雰囲気が合う事務所で長く続けたい</strong>」という方が多い傾向にあります。</p>
         <p>錦糸町は<strong>北口のアルカキット錦糸町</strong>を中心に商業施設が集中していて、駅周辺で買い物・食事ついでに通えるのも魅力です。</p>
@@ -48,6 +70,17 @@ export default function AreaKinshicho() {
         <p>各事務所の詳細スコアは <Link href="/jimusho">掲載事務所の比較ランキング</Link> でご確認ください。</p>
 
         <h2>「報酬率最大40%」「最大時給○○円」に騙されないで</h2>
+
+        <figure className="area-section-figure">
+          <Image
+            src="/area-warning-rate.jpg"
+            alt="派手な数字に注意"
+            width={800}
+            height={450}
+            className="area-section-image"
+          />
+          <figcaption>「最大40%」「最大時給○○円」の派手な数字には3つのカラクリがあります</figcaption>
+        </figure>
         <p>錦糸町エリアの事務所サイトを見ると、新宿・池袋と同様に「<strong>報酬率最大40%</strong>」「<strong>最大時給○○円</strong>」のような数字が並んでいます。これらは確かに大きな数字ですが、応募前に知っておきたい落とし穴があります。</p>
 
         <h3>業界標準は通勤30%・在宅40%</h3>
@@ -188,6 +221,7 @@ export default function AreaKinshicho() {
           <li><Link href="/area/ikebukuro">池袋エリアの事務所を見る</Link></li>
           <li><Link href="/area/ueno">上野エリアの事務所を見る</Link></li>
           <li><Link href="/area/fukuoka">福岡エリアの事務所を見る</Link></li>
+          <li><Link href="/area">エリア一覧に戻る</Link></li>
         </ul>
 
         <h2>もっと詳しく知りたい方へ</h2>
