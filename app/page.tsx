@@ -221,7 +221,7 @@ export default function Home() {
               <div className="find-sub">新宿・池袋・錦糸町・上野・福岡</div>
               <div className="find-arrow">→</div>
             </Link>
-            <Link href="/style/zaitaku" className="find-item">
+            <Link href="/style" className="find-item">
               <div className="find-thumb">
                 <img src="/top-find-3-style.jpg" alt="働き方で探す" />
               </div>
