@@ -171,7 +171,7 @@ export default function FTPage() {
         <div className="si" style={{textAlign:"center"}}>
           <p className="eyebrow">OTHER OFFICES</p>
           <h2 className="sec-h" style={{marginBottom:"32px"}}>他の事務所も比べてみる</h2>
-          <Link href="/jimusho" className="btn-sub">全12社の比較ランキングを見る →</Link>
+          <Link href="/jimusho" className="btn-sub">全11社の比較ランキングを見る →</Link>
         </div>
       </section>
 
