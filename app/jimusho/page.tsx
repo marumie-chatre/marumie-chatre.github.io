@@ -2,8 +2,8 @@ import Link from "next/link";
 import { OFFICE_COUNT } from "../offices";
 
 export const metadata = {
-  title: "チャットレディ事務所 比較ランキング12社｜まるみえチャトレ",
-  description: "「なんとなくおすすめ」じゃ、選べない。12社を安全性・サポート・初心者おすすめ度など5軸で採点。スコアの根拠をすべて公開しています。",
+  title: "チャットレディ事務所 比較ランキング11社｜まるみえチャトレ",
+  description: "「なんとなくおすすめ」じゃ、選べない。11社を安全性・サポート・初心者おすすめ度など5軸で採点。スコアの根拠をすべて公開しています。",
 };
 
 const offices = [
