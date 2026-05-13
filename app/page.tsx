@@ -26,12 +26,12 @@ export default function Home() {
           </div>
           <h1 className="hero-h1">
             チャットレディ事務所の<br />
-            <em>「良いところ」と「気になるところ」</em>を、<br />
-            両方見て選べる。
+            <em>「良いところ」と「気になるところ」</em>、<br />
+            両方見て選べるんです。
           </h1>
           <p className="hero-lead">
-            口コミ・公式情報・編集部調査をもとに、<br />
-            安全性・サポート・初心者向け度を100点満点で比較しています。
+            口コミ・公式情報・編集部の調査をもとに、<br />
+            安全性・サポート・初心者向け度を100点満点で比較しているサイトです。
           </p>
           <div className="hero-btns">
             <Link href="/jimusho" className="btn-main">事務所を比較する →</Link>
@@ -63,7 +63,7 @@ export default function Home() {
                 <img src="/icon-ranking.svg" alt="" width={44} height={44} />
               </div>
               <div className="diff-num">01</div>
-              <div className="diff-title">なぜその順位なのか、全部説明します</div>
+              <div className="diff-title">なぜその順位なのか、全部お伝えしますね</div>
               <p className="diff-body">採点基準と根拠をすべて公開。「なんとなくおすすめ」のランキングは載せません。</p>
             </div>
             <div className="diff-item">
@@ -74,7 +74,7 @@ export default function Home() {
                 <img src="/icon-review.svg" alt="" width={44} height={44} />
               </div>
               <div className="diff-num">02</div>
-              <div className="diff-title">実際に働いた人の声だけを載せます</div>
+              <div className="diff-title">実際に働いた人の声だけを載せています</div>
               <p className="diff-body">事務所側が書いた情報ではなく、キャストの本音口コミと編集部の調査コメントだけです。</p>
             </div>
             <div className="diff-item">
@@ -86,7 +86,7 @@ export default function Home() {
               </div>
               <div className="diff-num">03</div>
               <div className="diff-title">安全に、長く続けられる事務所を探している人へ</div>
-              <p className="diff-body">稼ぎ額より、安全性・サポート・働きやすさを重視する人のための比較サイトです。</p>
+              <p className="diff-body">稼ぎ額より、安全性・サポート・働きやすさを重視する人にぴったりの比較サイトです。</p>
             </div>
           </div>
         </div>
@@ -99,7 +99,7 @@ export default function Home() {
           <h2 className="sec-h">編集部おすすめ事務所</h2>
           <p className="sec-sub">5軸100点満点で採点。スコアの根拠はすべて公開しています。</p>
           <div className="neutral-note">
-            <p>掲載順位は広告費ではなく、公開している評価基準にもとづいて決定しています。同点の場合は、安全性スコア・初心者向け度・口コミ内容の具体性を優先して順位を決定しています。口コミが少ない事務所は公式情報中心の評価になるため、口コミが増え次第スコアを見直します。</p>
+            <p>掲載順位は広告費ではなく、公開している評価基準で決まります。同点の場合は、安全性・初心者向け度・口コミの具体性を優先。口コミが少ない事務所は公式情報中心の評価になるので、口コミが増え次第スコアを見直します。</p>
           </div>
           <div className="rank-grid">
             <div className="r-card top">
@@ -165,7 +165,7 @@ export default function Home() {
               <div className="r-tags">
                 <span className="r-tag">カフェ空間</span>
                 <span className="r-tag">居心地◎</span>
-                <span className="r-tag">全国95店舗</span>
+                <span className="r-tag">関東57店舗</span>
               </div>
               <p className="r-comment">カフェのような居心地の良さが特徴。応募数が多い大手。正直な評価で掲載。</p>
               <Link href="/jimusho/at-group" className="r-btn">詳細・口コミを見る →</Link>
@@ -181,8 +181,8 @@ export default function Home() {
       <section className="section reviews-sec" style={{background:"var(--white)"}}>
         <div className="si">
           <p className="eyebrow">REVIEWS</p>
-          <h2 className="sec-h" style={{marginBottom:"8px"}}>良いことだけじゃない、リアルな声を読んでください。</h2>
-          <p className="sec-sub">実際に働いた方の体験談を掲載しています。</p>
+          <h2 className="sec-h" style={{marginBottom:"8px"}}>良いことだけじゃない、リアルな声を読んでみてください。</h2>
+          <p className="sec-sub">実際に働いた方の体験談が載っています。</p>
           <div className="reviews-lead-img">
             <img src="/top-reviews-lead.jpg" alt="リアルな声" />
           </div>
