@@ -25,45 +25,73 @@ export default function StyleHubPage() {
 
       {/* 4つの働き方 */}
       <section className="section" style={{background:"var(--cream)"}}>
-        <div className="si" style={{maxWidth:"760px"}}>
+        <div className="si" style={{maxWidth:"1080px"}}>
           <p className="eyebrow">4 STYLES</p>
           <h2 className="sec-h" style={{marginBottom:"40px"}}>チャットレディの4つの働き方</h2>
 
-          <div className="q-hub-list">
+          <div className="area-grid">
 
-            <Link href="/style/zaitaku" className="q-hub-card">
-              <div className="q-hub-card-num">01</div>
-              <div className="q-hub-card-body">
-                <h3 className="q-hub-card-h">在宅型｜お家で気軽にスタート</h3>
-                <p className="q-hub-card-p">おうちのパソコンやスマホでそのまま配信。通勤しなくていいから、副業や育児中の方にもぴったりなんです。ただ、ひとりで稼ぎ方を覚えていくのは、ちょっとハードルが高めかもしれません。</p>
-                <div className="q-hub-card-tag">副業・育児中の方向け</div>
+            <Link href="/style/zaitaku" className="area-card">
+              <div className="area-card-body">
+                <div className="area-card-header">
+                  <h3 className="area-card-name">🏠 在宅型</h3>
+                  <span className="area-card-count">副業向け</span>
+                </div>
+                <p className="area-card-catch">お家で気軽にスタート</p>
+                <p className="area-card-summary">おうちのパソコンやスマホでそのまま配信。通勤しなくていいから、副業や育児中の方にもぴったりなんです。ただ、ひとりで稼ぎ方を覚えていくのは、ちょっとハードルが高めかもしれません。</p>
+                <div className="area-card-target">
+                  <span className="area-card-target-label">こんな方に</span>
+                  <span className="area-card-target-value">育児中・本業がある方</span>
+                </div>
+                <span className="area-card-link">詳しく見る →</span>
               </div>
             </Link>
 
-            <Link href="/style/tsukin" className="q-hub-card">
-              <div className="q-hub-card-num">02</div>
-              <div className="q-hub-card-body">
-                <h3 className="q-hub-card-h">通勤型｜防音個室でのびのび配信</h3>
-                <p className="q-hub-card-p">事務所の防音個室でのびのび配信できて、スタッフから直接サポートがあるから、常連さんが早く着くんです。「本気で稼ぎたい」と思っている方には、まず通勤型がおすすめ。</p>
-                <div className="q-hub-card-tag">本気で稼ぎたい方向け</div>
+            <Link href="/style/tsukin" className="area-card">
+              <div className="area-card-body">
+                <div className="area-card-header">
+                  <h3 className="area-card-name">🏢 通勤型</h3>
+                  <span className="area-card-count">本格派向け</span>
+                </div>
+                <p className="area-card-catch">防音個室でのびのび配信</p>
+                <p className="area-card-summary">事務所の防音個室でのびのび配信できて、スタッフから直接サポートがあるから、常連さんが早く着くんです。「本気で稼ぎたい」と思っている方には、まず通勤型がおすすめ。</p>
+                <div className="area-card-target">
+                  <span className="area-card-target-label">こんな方に</span>
+                  <span className="area-card-target-value">本気で稼ぎたい方</span>
+                </div>
+                <span className="area-card-link">詳しく見る →</span>
               </div>
             </Link>
 
-            <Link href="/style/non-adult" className="q-hub-card">
-              <div className="q-hub-card-num">03</div>
-              <div className="q-hub-card-body">
-                <h3 className="q-hub-card-h">ノンアダルト専門｜お話だけで稼ぐ安心感</h3>
-                <p className="q-hub-card-p">アダルトを勧められる心配がない、ノンアダ専門の事務所。「お話だけで稼ぐ」働き方なので、じっくり長く続けたい方に向いています。</p>
-                <div className="q-hub-card-tag">真面目に長く続けたい方向け</div>
+            <Link href="/style/non-adult" className="area-card">
+              <div className="area-card-body">
+                <div className="area-card-header">
+                  <h3 className="area-card-name">💚 ノンアダルト専門</h3>
+                  <span className="area-card-count">安心・専門</span>
+                </div>
+                <p className="area-card-catch">お話だけで稼ぐ安心感</p>
+                <p className="area-card-summary">アダルトを勧められる心配がない、ノンアダ専門の事務所。「お話だけで稼ぐ」働き方なので、じっくり長く続けたい方に向いています。</p>
+                <div className="area-card-target">
+                  <span className="area-card-target-label">こんな方に</span>
+                  <span className="area-card-target-value">真面目に長く続けたい方</span>
+                </div>
+                <span className="area-card-link">詳しく見る →</span>
               </div>
             </Link>
 
-            <Link href="/style/virtual" className="q-hub-card">
-              <div className="q-hub-card-num">04</div>
-              <div className="q-hub-card-body">
-                <h3 className="q-hub-card-h">バーチャル配信｜顔バレほぼゼロの選択肢</h3>
-                <p className="q-hub-card-p">アバター越しの配信だから、顔バレのリスクはほぼゼロ。集客にちょっと時間がかかる面もあるけれど、副業として安心して続けられる選択肢です。</p>
-                <div className="q-hub-card-tag">顔バレ絶対NGの方向け</div>
+            <Link href="/style/virtual" className="area-card">
+              <div className="area-card-body">
+                <div className="area-card-header">
+                  <h3 className="area-card-name">🎭 バーチャル配信</h3>
+                  <span className="area-card-count">顔バレ対策</span>
+                </div>
+                <p className="area-card-catch">顔バレほぼゼロの選択肢</p>
+                <p className="area-card-summary">アバター越しの配信だから、顔バレのリスクはほぼゼロ。集客にちょっと時間がかかる面もあるけれど、副業として安心して続けられる選択肢です。</p>
+                <div className="area-card-target">
+                  <span className="area-card-target-label">こんな方に</span>
+                  <span className="area-card-target-value">顔バレ絶対NGの方</span>
+                </div>
+                <span className="area-card-link">詳しく見る →</span>
               </div>
             </Link>
 
