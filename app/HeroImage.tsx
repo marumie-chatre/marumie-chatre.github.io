@@ -16,7 +16,7 @@ export default function HeroImage() {
     <div style={{ marginTop: "-68px", marginBottom: 0 }}>
       <div style={{ width: "100%", lineHeight: 0 }}>
         <img
-          src={isSp ? "/hero-sp.png" : "/hero-pc.png"}
+          src={isSp ? "/hero-sp.jpg" : "/hero-pc.jpg"}
           alt="ちょっとだけ余裕がほしいあなたへ"
           style={{ width: "100%", height: "auto", display: "block" }}
         />
