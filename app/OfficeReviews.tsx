@@ -99,8 +99,25 @@ export default function OfficeReviews({
     );
   }
 
+  const average = reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length;
+  const avgDisplay = (Math.round(average * 10) / 10).toFixed(1);
+
   return (
     <div>
+      <div style={{
+        display: "flex", alignItems: "center", gap: "12px", flexWrap: "wrap",
+        background: "var(--cream)", padding: "14px 18px",
+        borderRadius: "var(--radius)", marginBottom: "20px",
+      }}>
+        <Stars rating={Math.round(average)} />
+        <span style={{ fontSize: "20px", fontWeight: 700, color: "var(--text)" }}>
+          {avgDisplay}
+        </span>
+        <span style={{ fontSize: "12px", color: "var(--text-light)" }}>
+          / 5.0（{officeName}の口コミ {reviews.length}件の平均）
+        </span>
+      </div>
+
       <div className="review-grid" style={{ marginBottom: "20px" }}>
         {displayed.map(review => (
           <ReviewCard key={review.id} review={review} />
