@@ -23,9 +23,8 @@ export default function KuchikomiPage() {
           </h1>
           <p className="hero-lead" style={{marginBottom:"32px"}}>
             「実際どうだったか」を知りたい人が、このサイトに来ています。<br />
-            事務所のHPには良いことしか書いていない。<br />
-            ネットの情報は古かったり、信用できなかったり。<br /><br />
-            あなたの本音のひとことが、次に選ぶ誰かの安心になります。
+            事務所のHPには書いていない<strong>本音のひとこと</strong>が、<br />
+            次に選ぶ誰かの安心になります。
           </p>
           {/* 上部投稿ボタン */}
           <a
@@ -44,8 +43,8 @@ export default function KuchikomiPage() {
       <section className="section" style={{background:"var(--cream)"}}>
         <div className="si">
           <p className="eyebrow">REVIEWS</p>
-          <h2 className="sec-h" style={{marginBottom:"8px"}}>良いことだけじゃない、リアルな声を読んでください。</h2>
-          <p className="sec-sub">実際に働いた方の体験談を掲載しています。</p>
+          <h2 className="sec-h" style={{marginBottom:"8px"}}>良いことだけじゃない、リアルな声を読んでみてください。</h2>
+          <p className="sec-sub">実際に働いた方の体験談が載っています。</p>
           <OfficeReviews reviews={reviews} officeName="まるみえチャトレ" />
           <div style={{textAlign:"center", marginTop:"32px"}}>
             <Link href="/jimusho" className="btn-sub">
