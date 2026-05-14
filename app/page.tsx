@@ -20,8 +20,21 @@ export default function Home() {
       {/* ① FV テキスト部分（HTML） */}
       <section style={{background: "#ffffff", padding: "32px 16px 40px"}}>
         <div style={{maxWidth: "720px", margin: "0 auto", textAlign: "center"}}>
-          <h1 className="hero-h1" style={{fontSize: "clamp(22px, 4vw, 34px)", marginBottom: "12px"}}>
-            中身で選ぶ、<br />
+          <h1 className="hero-h1" style={{fontSize: "clamp(22px, 4vw, 34px)", marginBottom: "12px", lineHeight: 1.4}}>
+            <span style={{
+              fontSize: "1.3em",
+              color: "#5a9a30",
+              fontWeight: 900,
+              display: "inline-block",
+            }}>中身</span>
+            で
+            <span style={{
+              fontSize: "1.3em",
+              color: "#5a9a30",
+              fontWeight: 900,
+              display: "inline-block",
+            }}>選</span>
+            ぶ、<br />
             チャトレ事務所の<em>口コミサイト</em>
           </h1>
           <p className="hero-lead" style={{marginBottom: "24px"}}>
@@ -56,6 +69,7 @@ export default function Home() {
                 alignItems: "center",
                 justifyContent: "center",
                 gap: "8px",
+                boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
               }}>
                 <span style={{
                   display: "inline-flex",
@@ -70,7 +84,6 @@ export default function Home() {
                   fontWeight: 900,
                   flexShrink: 0,
                   lineHeight: 1,
-                  boxShadow: "0 3px 8px rgba(90, 154, 48, 0.4)",
                 }}>✓</span>
                 <span>{text}</span>
               </div>
