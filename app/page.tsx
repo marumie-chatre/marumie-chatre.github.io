@@ -45,10 +45,11 @@ export default function Home() {
               "実際に働いた人の声",
             ].map((text) => (
               <div key={text} style={{
-                padding: "10px 14px",
-                background: "var(--cream)",
+                padding: "12px 14px",
+                background: "var(--white)",
+                border: "1.5px solid #7ab548",
                 borderRadius: "100px",
-                fontSize: "12px",
+                fontSize: "13px",
                 color: "var(--text)",
                 fontWeight: 600,
                 display: "flex",
@@ -60,14 +61,15 @@ export default function Home() {
                   display: "inline-flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  width: "18px",
-                  height: "18px",
-                  background: "#7ab548",
+                  width: "22px",
+                  height: "22px",
+                  background: "#5a9a30",
                   color: "#fff",
                   borderRadius: "50%",
-                  fontSize: "11px",
-                  fontWeight: 700,
+                  fontSize: "14px",
+                  fontWeight: 900,
                   flexShrink: 0,
+                  lineHeight: 1,
                 }}>✓</span>
                 <span>{text}</span>
               </div>
