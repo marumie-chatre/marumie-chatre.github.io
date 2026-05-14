@@ -29,13 +29,33 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </Link>
             {/* PC ナビ */}
             <nav className="gnav">
-              <Link href="/jimusho">事務所を探す</Link>
-              <Link href="/area">エリアから探す</Link>
-              <Link href="/style">働き方から探す</Link>
-              <Link href="/q">お悩みから探す</Link>
-              <Link href="/kuchikomi">口コミ</Link>
+              <Link href="/jimusho">ランキング</Link>
+              <Link href="/area">エリア</Link>
+              <Link href="/style">働き方</Link>
+              <Link href="/q">不安から探す</Link>
               <Link href="/column">コラム</Link>
             </nav>
+            {/* 口コミを見るボタン（CTA・常時表示） */}
+            <Link
+              href="/kuchikomi"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "4px",
+                padding: "8px 14px",
+                background: "#7ab548",
+                color: "#fff",
+                textDecoration: "none",
+                borderRadius: "100px",
+                fontSize: "13px",
+                fontWeight: 700,
+                whiteSpace: "nowrap",
+                marginRight: "8px",
+                marginLeft: "auto",
+              }}
+            >
+              💬 口コミを見る
+            </Link>
             {/* ハンバーガーメニュー（スマホのみ） */}
             <HamburgerMenu />
           </div>
