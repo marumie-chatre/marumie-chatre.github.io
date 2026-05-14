@@ -70,6 +70,7 @@ export default function Home() {
                   fontWeight: 900,
                   flexShrink: 0,
                   lineHeight: 1,
+                  boxShadow: "0 3px 8px rgba(90, 154, 48, 0.4)",
                 }}>✓</span>
                 <span>{text}</span>
               </div>
