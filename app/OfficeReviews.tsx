@@ -38,7 +38,10 @@ function ReviewCard({ review }: { review: Review }) {
     }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: "6px" }}>
         <div style={{ display: "flex", gap: "6px", alignItems: "center", flexWrap: "wrap" }}>
-          <span style={{ fontSize: "11px", fontWeight: 700, color: "var(--green)", background: "var(--green-pale)", border: "1px solid var(--border-green)", borderRadius: "100px", padding: "2px 10px" }}>
+          <span style={{ fontSize: "12px", fontWeight: 700, color: "#fff", background: "#5a9a30", borderRadius: "100px", padding: "3px 12px" }}>
+            {review.office}
+          </span>
+          <span style={{ fontSize: "11px", color: "var(--text-muted)", background: "var(--cream)", border: "1px solid var(--border)", borderRadius: "100px", padding: "2px 8px" }}>
             {review.style}
           </span>
         </div>
