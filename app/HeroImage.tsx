@@ -13,11 +13,25 @@ export default function HeroImage() {
   }, []);
 
   return (
-    <div style={{ marginTop: "-68px", marginBottom: 0, width: "100%", lineHeight: 0 }}>
+    <div style={{
+      marginTop: "-68px",
+      marginBottom: 0,
+      width: "100%",
+      lineHeight: 0,
+      overflow: "hidden",
+      background: "#ffffff",
+    }}>
       <img
         src={isSp ? "/hero-sp.jpg" : "/hero-pc.jpg"}
         alt="ちょっとだけ余裕がほしいあなたへ"
-        style={{ width: "100%", height: "auto", display: "block" }}
+        style={{
+          width: "100%",
+          height: "auto",
+          maxHeight: "600px",
+          objectFit: "cover",
+          objectPosition: "center",
+          display: "block",
+        }}
       />
     </div>
   );

@@ -18,8 +18,8 @@ export default function Home() {
       <HeroImage />
 
       {/* ① FV テキスト部分（HTML） */}
-      <section className="hero" style={{padding: "0 16px 40px"}}>
-        <div className="hero-inner" style={{maxWidth: "720px", margin: "0 auto", textAlign: "center"}}>
+      <section style={{background: "#ffffff", padding: "32px 16px 40px"}}>
+        <div style={{maxWidth: "720px", margin: "0 auto", textAlign: "center"}}>
           <h1 className="hero-h1" style={{fontSize: "clamp(22px, 4vw, 34px)", marginBottom: "12px"}}>
             中身で選ぶ、<br />
             チャトレ事務所の<em>口コミサイト</em>
@@ -27,31 +27,50 @@ export default function Home() {
           <p className="hero-lead" style={{marginBottom: "24px"}}>
             良い点だけでなく、気になる点・サポート・身バレ対策まで比較できます。
           </p>
-          <div style={{display: "flex", justifyContent: "center", marginBottom: "24px"}}>
+          <div style={{display: "flex", justifyContent: "center", marginBottom: "28px"}}>
             <Link href="/jimusho" className="btn-main">自分に合う事務所を探す →</Link>
           </div>
           {/* 信頼チップ4つ */}
           <div style={{
             display: "grid",
             gridTemplateColumns: "repeat(2, 1fr)",
-            gap: "8px",
+            gap: "10px",
             maxWidth: "480px",
             margin: "0 auto",
           }}>
             {[
-              "✔ 良い点・気になる点を掲載",
-              "✔ 採点基準を公開",
-              "✔ 初心者向けに比較",
-              "✔ 実際に働いた人の声",
+              "良い点・気になる点を掲載",
+              "採点基準を公開",
+              "初心者向けに比較",
+              "実際に働いた人の声",
             ].map((text) => (
               <div key={text} style={{
-                padding: "10px 12px",
+                padding: "10px 14px",
                 background: "var(--cream)",
                 borderRadius: "100px",
                 fontSize: "12px",
-                textAlign: "center",
-                color: "var(--text-mid)",
-              }}>{text}</div>
+                color: "var(--text)",
+                fontWeight: 600,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: "8px",
+              }}>
+                <span style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  width: "18px",
+                  height: "18px",
+                  background: "#7ab548",
+                  color: "#fff",
+                  borderRadius: "50%",
+                  fontSize: "11px",
+                  fontWeight: 700,
+                  flexShrink: 0,
+                }}>✓</span>
+                <span>{text}</span>
+              </div>
             ))}
           </div>
         </div>
@@ -76,13 +95,14 @@ export default function Home() {
             ].map(({ href, icon, label, span }) => (
               <Link key={href} href={href} style={{
                 display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
-                padding: "24px 12px", background: "var(--white)", borderRadius: "16px",
+                padding: "20px 12px", background: "var(--white)", borderRadius: "16px",
                 textDecoration: "none", color: "var(--text)",
                 boxShadow: "0 2px 8px rgba(0,0,0,0.06)",
-                minHeight: "110px",
+                minHeight: "130px",
                 gridColumn: span ? "span 2" : "auto",
+                lineHeight: "1.4",
               }}>
-                <div style={{fontSize: "36px", marginBottom: "8px"}}>{icon}</div>
+                <div style={{fontSize: "38px", marginBottom: "10px", lineHeight: "1"}}>{icon}</div>
                 <div style={{fontSize: "13px", fontWeight: 700}}>{label}</div>
               </Link>
             ))}
