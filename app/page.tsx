@@ -14,85 +14,83 @@ export default function Home() {
 
   return (
     <main>
-      {/* TOP HERO IMAGE */}
+      {/* ① TOP HERO IMAGE */}
       <HeroImage />
 
-      {/* HERO */}
-      <section className="hero">
-        <div className="hero-inner">
-          <div className="hero-badges">
-            <span className="hero-badge">良い点も気になる点も掲載</span>
-            <span className="hero-badge">採点根拠をすべて公開</span>
-          </div>
-          <h1 className="hero-h1">
-            チャットレディ事務所の<br />
-            <em>「良いところ」と「気になるところ」</em>、<br />
-            両方見て選べるんです。
+      {/* ① FV テキスト部分（HTML） */}
+      <section className="hero" style={{padding: "0 16px 40px"}}>
+        <div className="hero-inner" style={{maxWidth: "720px", margin: "0 auto", textAlign: "center"}}>
+          <h1 className="hero-h1" style={{fontSize: "clamp(22px, 4vw, 34px)", marginBottom: "12px"}}>
+            中身で選ぶ、<br />
+            チャトレ事務所の<em>口コミサイト</em>
           </h1>
-          <p className="hero-lead">
-            口コミ・公式情報・編集部の調査をもとに、<br />
-            安全性・サポート・初心者向け度を100点満点で比較しているサイトです。
+          <p className="hero-lead" style={{marginBottom: "24px"}}>
+            良い点だけでなく、気になる点・サポート・身バレ対策まで比較できます。
           </p>
-          <div className="hero-btns">
-            <Link href="/jimusho" className="btn-main">事務所を比較する →</Link>
-            <Link href="/kuchikomi" className="btn-sub">口コミを見る</Link>
+          <div style={{display: "flex", justifyContent: "center", marginBottom: "24px"}}>
+            <Link href="/jimusho" className="btn-main">自分に合う事務所を探す →</Link>
+          </div>
+          {/* 信頼チップ4つ */}
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(2, 1fr)",
+            gap: "8px",
+            maxWidth: "480px",
+            margin: "0 auto",
+          }}>
+            {[
+              "✔ 良い点・気になる点を掲載",
+              "✔ 採点基準を公開",
+              "✔ 初心者向けに比較",
+              "✔ 実際に働いた人の声",
+            ].map((text) => (
+              <div key={text} style={{
+                padding: "10px 12px",
+                background: "var(--cream)",
+                borderRadius: "100px",
+                fontSize: "12px",
+                textAlign: "center",
+                color: "var(--text-mid)",
+              }}>{text}</div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* DIFFERENCE */}
-      <section className="section diff-sec">
-        <div className="si">
-          <h2 className="diff-heading">
-            おすすめって書いてあるけど、<br />
-            本当のところはどうなの？<br />
-            <span>そう思って、すべて確認しました。</span>
-          </h2>
-          <div className="diff-evidence">
-            <div className="diff-evidence-item">✔ 口コミ・働いた経験を確認</div>
-            <div className="diff-evidence-item">✔ 公式情報・安全性を検証</div>
-            <div className="diff-evidence-item">✔ サポート内容を比較</div>
-            <div className="diff-evidence-item">✔ 採点根拠をすべて公開</div>
-          </div>
-          <div className="diff-grid">
-            <div className="diff-item">
-              <div className="diff-illust">
-                <img src="/top-diff-1-ranking.jpg" alt="ランキング比較" />
-              </div>
-              <div className="diff-svg-icon">
-                <img src="/icon-ranking.svg" alt="" width={44} height={44} />
-              </div>
-              <div className="diff-num">01</div>
-              <div className="diff-title">なぜその順位なのか、全部お伝えしますね</div>
-              <p className="diff-body">採点基準と根拠をすべて公開。「なんとなくおすすめ」のランキングは載せません。</p>
-            </div>
-            <div className="diff-item">
-              <div className="diff-illust">
-                <img src="/top-diff-2-review.jpg" alt="口コミ" />
-              </div>
-              <div className="diff-svg-icon">
-                <img src="/icon-review.svg" alt="" width={44} height={44} />
-              </div>
-              <div className="diff-num">02</div>
-              <div className="diff-title">実際に働いた人の声だけを載せています</div>
-              <p className="diff-body">事務所側が書いた情報ではなく、キャストの本音口コミと編集部の調査コメントだけです。</p>
-            </div>
-            <div className="diff-item">
-              <div className="diff-illust">
-                <img src="/top-diff-3-safety.jpg" alt="安全性" />
-              </div>
-              <div className="diff-svg-icon">
-                <img src="/icon-safety.svg" alt="" width={44} height={44} />
-              </div>
-              <div className="diff-num">03</div>
-              <div className="diff-title">安全に、長く続けられる事務所を探している人へ</div>
-              <p className="diff-body">稼ぎ額より、安全性・サポート・働きやすさを重視する人にぴったりの比較サイトです。</p>
-            </div>
+      {/* ② 探し方メニュー（5入口）★最優先 */}
+      <section className="section" style={{background: "var(--cream)", padding: "40px 16px"}}>
+        <div className="si" style={{maxWidth: "720px"}}>
+          <p className="eyebrow" style={{textAlign: "center"}}>HOW TO FIND</p>
+          <h2 className="sec-h" style={{textAlign: "center", marginBottom: "24px"}}>あなたに合う探し方</h2>
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(3, 1fr)",
+            gap: "12px",
+          }}>
+            {[
+              { href: "/jimusho", icon: "🏆", label: "ランキング" },
+              { href: "/area", icon: "📍", label: "エリア" },
+              { href: "/style", icon: "💼", label: "働き方" },
+              { href: "/q", icon: "💭", label: "不安から探す" },
+              { href: "/kuchikomi", icon: "💬", label: "口コミ", span: true },
+            ].map(({ href, icon, label, span }) => (
+              <Link key={href} href={href} style={{
+                display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
+                padding: "24px 12px", background: "var(--white)", borderRadius: "16px",
+                textDecoration: "none", color: "var(--text)",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.06)",
+                minHeight: "110px",
+                gridColumn: span ? "span 2" : "auto",
+              }}>
+                <div style={{fontSize: "36px", marginBottom: "8px"}}>{icon}</div>
+                <div style={{fontSize: "13px", fontWeight: 700}}>{label}</div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* RANKING */}
+      {/* ③ RANKING */}
       <section className="section rank-sec">
         <div className="si">
           <p className="eyebrow">RANKING</p>
@@ -177,15 +175,89 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 最新口コミ */}
-      <section className="section reviews-sec" style={{background:"var(--white)"}}>
+      {/* ④ できること（4カード） */}
+      <section className="section" style={{background: "var(--white)"}}>
+        <div className="si">
+          <p className="eyebrow" style={{textAlign: "center"}}>WHAT WE DO</p>
+          <h2 className="sec-h" style={{textAlign: "center"}}>まるみえチャトレでできること</h2>
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(2, 1fr)",
+            gap: "16px",
+            maxWidth: "640px",
+            margin: "32px auto 0",
+          }}>
+            {[
+              { icon: "🛡", title: "安全性を比較", desc: "身バレ対策・運営情報・ノンアダ対応をチェック" },
+              { icon: "💬", title: "口コミを確認", desc: "良かった点だけでなく、気になった点も掲載" },
+              { icon: "📊", title: "点数で比較", desc: "安全性・サポート・初心者向け度を見える化" },
+              { icon: "🔍", title: "条件で探す", desc: "エリア・働き方・不安から自分に合う事務所を探せる" },
+            ].map(({ icon, title, desc }) => (
+              <div key={title} style={{
+                padding: "24px 16px",
+                background: "var(--cream)",
+                borderRadius: "16px",
+                textAlign: "center",
+              }}>
+                <div style={{fontSize: "40px", marginBottom: "8px"}}>{icon}</div>
+                <div style={{fontSize: "15px", fontWeight: 700, marginBottom: "6px"}}>{title}</div>
+                <p style={{fontSize: "12px", color: "var(--text-mid)", margin: 0, lineHeight: 1.6}}>{desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ⑤ 5評価基準（横スクロールカード） */}
+      <section className="section" style={{background: "var(--cream)"}}>
+        <div className="si">
+          <p className="eyebrow" style={{textAlign: "center"}}>EVALUATION</p>
+          <h2 className="sec-h" style={{textAlign: "center"}}>5つの基準で公平にチェック</h2>
+          <div style={{
+            display: "flex",
+            gap: "12px",
+            overflowX: "auto",
+            padding: "20px 4px 24px",
+            scrollSnapType: "x mandatory",
+            WebkitOverflowScrolling: "touch",
+          }}>
+            {[
+              { icon: "🛡", name: "安全性", score: 30, desc: "身バレ対策・運営情報・強要の有無" },
+              { icon: "💁", name: "サポート", score: 25, desc: "研修・相談体制・スタッフ対応" },
+              { icon: "🌱", name: "初心者向け", score: 20, desc: "未経験でも始めやすいか" },
+              { icon: "💼", name: "働きやすさ", score: 15, desc: "シフト・在宅/通勤・辞めやすさ" },
+              { icon: "💰", name: "稼ぎやすさ", score: 10, desc: "報酬率・保証・稼げる環境" },
+            ].map(({ icon, name, score, desc }) => (
+              <div key={name} style={{
+                flex: "0 0 150px",
+                padding: "20px 14px",
+                background: "var(--white)",
+                borderRadius: "16px",
+                textAlign: "center",
+                scrollSnapAlign: "start",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.06)",
+              }}>
+                <div style={{fontSize: "32px", marginBottom: "6px"}}>{icon}</div>
+                <div style={{fontSize: "14px", fontWeight: 700}}>{name}</div>
+                <div style={{fontSize: "22px", fontWeight: 700, color: "var(--green)", margin: "6px 0"}}>
+                  {score}<span style={{fontSize: "12px", color: "var(--text-mid)"}}>点</span>
+                </div>
+                <p style={{fontSize: "11px", color: "var(--text-mid)", margin: 0, lineHeight: 1.5}}>{desc}</p>
+              </div>
+            ))}
+          </div>
+          <div style={{textAlign: "center", marginTop: "16px"}}>
+            <Link href="/hyoka-kijun" className="btn-sub">評価基準の詳細を見る →</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ⑥ 最新口コミ */}
+      <section className="section reviews-sec" style={{background: "var(--white)"}}>
         <div className="si">
           <p className="eyebrow">REVIEWS</p>
-          <h2 className="sec-h" style={{marginBottom:"8px"}}>良いことだけじゃない、リアルな声を読んでみてください。</h2>
+          <h2 className="sec-h" style={{marginBottom: "8px"}}>良いことだけじゃない、リアルな声を読んでみてください。</h2>
           <p className="sec-sub">実際に働いた方の体験談が載っています。</p>
-          <div className="reviews-lead-img">
-            <img src="/top-reviews-lead.jpg" alt="リアルな声" />
-          </div>
           <div className="review-grid">
             {latestReviews.map(review => (
               <ReviewCard key={review.id} review={review} />
@@ -197,53 +269,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FIND NAV */}
-      <section className="section find-sec">
-        <div className="si">
-          <p className="eyebrow">HOW TO FIND</p>
-          <h2 className="sec-h">あなたに合った探し方で</h2>
-          <div className="find-grid">
-            <Link href="/jimusho" className="find-item">
-              <div className="find-thumb">
-                <img src="/top-find-1-compare.jpg" alt="比較する" />
-              </div>
-              <div className="find-icon-svg"><img src="/icon-recommend.svg" alt="" width={28} height={28} /></div>
-              <div className="find-title">どこがいいか比べたい</div>
-              <div className="find-sub">{OFFICE_COUNT}社を一覧でまとめて比較</div>
-              <div className="find-arrow">→</div>
-            </Link>
-            <Link href="/area" className="find-item">
-              <div className="find-thumb">
-                <img src="/top-find-2-area.jpg" alt="エリアで探す" />
-              </div>
-              <div className="find-icon-svg"><img src="/icon-area.svg" alt="" width={28} height={28} /></div>
-              <div className="find-title">通える場所で探したい</div>
-              <div className="find-sub">新宿・池袋・錦糸町・上野・福岡</div>
-              <div className="find-arrow">→</div>
-            </Link>
-            <Link href="/style" className="find-item">
-              <div className="find-thumb">
-                <img src="/top-find-3-style.jpg" alt="働き方で探す" />
-              </div>
-              <div className="find-icon-svg"><img src="/icon-work.svg" alt="" width={28} height={28} /></div>
-              <div className="find-title">働き方で絞りたい</div>
-              <div className="find-sub">在宅・通勤・ノンアダルト・バーチャル</div>
-              <div className="find-arrow">→</div>
-            </Link>
-            <Link href="/q/" className="find-item">
-              <div className="find-thumb">
-                <img src="/top-find-4-worry.jpg" alt="お悩みで探す" />
-              </div>
-              <div className="find-icon-svg"><img src="/icon-safe.svg" alt="" width={28} height={28} /></div>
-              <div className="find-title">不安なことから調べたい</div>
-              <div className="find-sub">身バレ・職場バレ・初心者・本当に稼げる？</div>
-              <div className="find-arrow">→</div>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* COLUMN */}
+      {/* ⑦ 不安別コンテンツ（COLUMN） */}
       <section className="section col-sec">
         <div className="si">
           <p className="eyebrow">COLUMN</p>
@@ -277,7 +303,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA（背景画像対応） */}
+      {/* ⑧ CTA（背景画像対応） */}
       <section className="kuchi-sec kuchi-sec-with-bg">
         <div className="kuchi-bg-img">
           <img src="/top-cta-bg.jpg" alt="" />
