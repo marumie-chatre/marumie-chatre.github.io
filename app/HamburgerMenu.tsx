@@ -13,11 +13,11 @@ export default function HamburgerMenu() {
   }, [isOpen]);
 
   const navItems = [
-    { href: "/jimusho", icon: "/icon-recommend.svg", label: "事務所を探す" },
-    { href: "/area", icon: "/icon-area.svg", label: "エリアから探す" },
-    { href: "/style", icon: "/icon-work.svg", label: "働き方から探す" },
-    { href: "/q", icon: "/icon-safe.svg", label: "お悩みから探す" },
-    { href: "/kuchikomi", icon: "/icon-review2.svg", label: "口コミを見る" },
+    { href: "/jimusho", icon: "/icon-recommend.svg", label: "ランキング" },
+    { href: "/area", icon: "/icon-area.svg", label: "エリア" },
+    { href: "/style", icon: "/icon-work.svg", label: "働き方" },
+    { href: "/q", icon: "/icon-safe.svg", label: "不安から探す" },
+    { href: "/kuchikomi", icon: "/icon-review2.svg", label: "口コミ" },
     { href: "/column", icon: "/icon-column.svg", label: "コラム" },
   ];
 
