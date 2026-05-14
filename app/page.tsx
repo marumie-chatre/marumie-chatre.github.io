@@ -147,21 +147,23 @@ export default function Home() {
               <div className="r-rank-badge gold">🥇 1位</div>
               <div className="r-name">フェアリーテイル</div>
               <div className="r-score">84<sub> / 100点</sub></div>
-              <div className="r-bars">
-                <div className="r-bar-row"><span className="r-bar-label">安全性 /30</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"97%"}}></div></div><span className="r-bar-val">29</span></div>
-                <div className="r-bar-row"><span className="r-bar-label">サポート /25</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"80%"}}></div></div><span className="r-bar-val">20</span></div>
-                <div className="r-bar-row"><span className="r-bar-label">初心者 /20</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"85%"}}></div></div><span className="r-bar-val">17</span></div>
-              </div>
-              <div className="r-crown-reason">
-                <span>安全性・サポートが高評価のため</span>
-              </div>
               <div className="r-tags">
                 <span className="r-tag">ノンアダルト専門</span>
                 <span className="r-tag">身バレ対策◎</span>
-                <span className="r-tag">スキルで稼ぐ環境</span>
                 <span className="r-tag">清楚系向け</span>
               </div>
-              <p className="r-comment">完全ノンアダルト専門。身バレゼロ実績。清楚系・初心者に最適な事務所。</p>
+              <div style={{
+                margin: "16px 0",
+                padding: "12px 14px",
+                background: "var(--cream)",
+                borderRadius: "10px",
+                fontSize: "13px",
+                textAlign: "left",
+                lineHeight: 1.5,
+              }}>
+                <span style={{fontSize: "11px", color: "var(--text-muted)", display: "block", marginBottom: "4px", fontWeight: 600}}>こんな方に</span>
+                <strong style={{color: "var(--text)"}}>アダルトなしで安心して始めたい方</strong>
+              </div>
               <Link href="/jimusho/ft" className="r-btn">詳細・口コミを見る →</Link>
             </div>
             <div className="r-card">
@@ -171,17 +173,23 @@ export default function Home() {
               <div className="r-rank-badge silver">🥈 2位</div>
               <div className="r-name">ブライトグループ</div>
               <div className="r-score">84<sub> / 100点</sub></div>
-              <div className="r-bars">
-                <div className="r-bar-row"><span className="r-bar-label">安全性 /30</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"83%"}}></div></div><span className="r-bar-val">25</span></div>
-                <div className="r-bar-row"><span className="r-bar-label">サポート /25</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"80%"}}></div></div><span className="r-bar-val">20</span></div>
-                <div className="r-bar-row"><span className="r-bar-label">初心者 /20</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"90%"}}></div></div><span className="r-bar-val">18</span></div>
-              </div>
               <div className="r-tags">
                 <span className="r-tag">全国140店舗</span>
                 <span className="r-tag">老舗20年</span>
                 <span className="r-tag">24h対応</span>
               </div>
-              <p className="r-comment">運営20年・全国最大手。顧問税理士あり。初心者でも安心の大手ブランド。</p>
+              <div style={{
+                margin: "16px 0",
+                padding: "12px 14px",
+                background: "var(--cream)",
+                borderRadius: "10px",
+                fontSize: "13px",
+                textAlign: "left",
+                lineHeight: 1.5,
+              }}>
+                <span style={{fontSize: "11px", color: "var(--text-muted)", display: "block", marginBottom: "4px", fontWeight: 600}}>こんな方に</span>
+                <strong style={{color: "var(--text)"}}>大手の安心感で長く続けたい方</strong>
+              </div>
               <Link href="/jimusho/bright-group" className="r-btn">詳細・口コミを見る →</Link>
             </div>
             <div className="r-card">
@@ -191,17 +199,23 @@ export default function Home() {
               <div className="r-rank-badge bronze">🥉 3位</div>
               <div className="r-name">アットグループ</div>
               <div className="r-score">80<sub> / 100点</sub></div>
-              <div className="r-bars">
-                <div className="r-bar-row"><span className="r-bar-label">安全性 /30</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"73%"}}></div></div><span className="r-bar-val">22</span></div>
-                <div className="r-bar-row"><span className="r-bar-label">サポート /25</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"84%"}}></div></div><span className="r-bar-val">21</span></div>
-                <div className="r-bar-row"><span className="r-bar-label">初心者 /20</span><div className="r-bar-track"><div className="r-bar-fill" style={{width:"80%"}}></div></div><span className="r-bar-val">16</span></div>
-              </div>
               <div className="r-tags">
                 <span className="r-tag">カフェ空間</span>
                 <span className="r-tag">居心地◎</span>
                 <span className="r-tag">関東57店舗</span>
               </div>
-              <p className="r-comment">カフェのような居心地の良さが特徴。応募数が多い大手。正直な評価で掲載。</p>
+              <div style={{
+                margin: "16px 0",
+                padding: "12px 14px",
+                background: "var(--cream)",
+                borderRadius: "10px",
+                fontSize: "13px",
+                textAlign: "left",
+                lineHeight: 1.5,
+              }}>
+                <span style={{fontSize: "11px", color: "var(--text-muted)", display: "block", marginBottom: "4px", fontWeight: 600}}>こんな方に</span>
+                <strong style={{color: "var(--text)"}}>カフェ空間で居心地よく働きたい方</strong>
+              </div>
               <Link href="/jimusho/at-group" className="r-btn">詳細・口コミを見る →</Link>
             </div>
           </div>
