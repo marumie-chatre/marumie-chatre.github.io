@@ -36,8 +36,57 @@ export default function Home() {
             }}>選</span>
             ぶ、チャトレ事務所の<em>口コミサイト</em>
           </h1>
-          <div style={{display: "flex", justifyContent: "center", marginBottom: "0"}}>
+          <div style={{display: "flex", justifyContent: "center", marginBottom: "16px"}}>
             <Link href="/jimusho" className="btn-main" style={{minHeight: "48px", display: "inline-flex", alignItems: "center"}}>自分に合う事務所を探す →</Link>
+          </div>
+          {/* 信頼チップ（横スクロール1行） */}
+          <div style={{
+            display: "flex",
+            gap: "8px",
+            overflowX: "auto",
+            padding: "4px 0",
+            WebkitOverflowScrolling: "touch",
+            scrollbarWidth: "none",
+            msOverflowStyle: "none",
+          }} className="trust-chips-row">
+            {[
+              "良い点・気になる点を掲載",
+              "採点基準を公開",
+              "初心者向けに比較",
+              "実際に働いた人の声",
+            ].map((text) => (
+              <div key={text} style={{
+                flex: "0 0 auto",
+                padding: "8px 14px",
+                background: "var(--white)",
+                border: "1.5px solid #7ab548",
+                borderRadius: "100px",
+                fontSize: "12px",
+                color: "var(--text)",
+                fontWeight: 600,
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "6px",
+                whiteSpace: "nowrap",
+                boxShadow: "0 2px 6px rgba(0, 0, 0, 0.06)",
+              }}>
+                <span style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  width: "18px",
+                  height: "18px",
+                  background: "#5a9a30",
+                  color: "#fff",
+                  borderRadius: "50%",
+                  fontSize: "11px",
+                  fontWeight: 900,
+                  flexShrink: 0,
+                  lineHeight: 1,
+                }}>✓</span>
+                <span>{text}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -73,55 +122,6 @@ export default function Home() {
               </Link>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* 信頼チップ（探し方メニューの後ろに移動） */}
-      <section style={{background: "var(--white)", padding: "24px 16px"}}>
-        <div style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(2, 1fr)",
-          gap: "10px",
-          maxWidth: "480px",
-          margin: "0 auto",
-        }}>
-          {[
-            "良い点・気になる点を掲載",
-            "採点基準を公開",
-            "初心者向けに比較",
-            "実際に働いた人の声",
-          ].map((text) => (
-            <div key={text} style={{
-              padding: "12px 14px",
-              background: "var(--white)",
-              border: "1.5px solid #7ab548",
-              borderRadius: "100px",
-              fontSize: "13px",
-              color: "var(--text)",
-              fontWeight: 600,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: "8px",
-              boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
-            }}>
-              <span style={{
-                display: "inline-flex",
-                alignItems: "center",
-                justifyContent: "center",
-                width: "22px",
-                height: "22px",
-                background: "#5a9a30",
-                color: "#fff",
-                borderRadius: "50%",
-                fontSize: "14px",
-                fontWeight: 900,
-                flexShrink: 0,
-                lineHeight: 1,
-              }}>✓</span>
-              <span>{text}</span>
-            </div>
-          ))}
         </div>
       </section>
 

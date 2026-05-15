@@ -27,7 +27,7 @@ export default function HeroImage() {
         style={{
           width: "100%",
           height: "auto",
-          maxHeight: isSp ? "320px" : "600px",
+          maxHeight: isSp ? "280px" : "600px",
           objectFit: "cover",
           objectPosition: "center",
           display: "block",
