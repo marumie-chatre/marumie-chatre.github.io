@@ -127,14 +127,14 @@ export default function Home() {
 
       {/* ③ RANKING */}
       <section className="section rank-sec">
-        <div className="si">
+        <div className="si" style={{maxWidth: "720px"}}>
           <p className="eyebrow">RANKING</p>
           <h2 className="sec-h">編集部おすすめ事務所</h2>
           <p className="sec-sub">5軸100点満点で採点。スコアの根拠はすべて公開しています。</p>
           <div className="neutral-note">
             <p>掲載順位は広告費ではなく、公開している評価基準で決まります。同点の場合は、安全性・初心者向け度・口コミの具体性を優先。口コミが少ない事務所は公式情報中心の評価になるので、口コミが増え次第スコアを見直します。</p>
           </div>
-          <div className="rank-grid">
+          <div className="rank-grid" style={{display: "flex", flexDirection: "column", gap: "20px", maxWidth: "560px", margin: "0 auto"}}>
             <div className="r-card top">
               <div className="r-logo-wrap">
                 <img src="/logo-ft.png" alt="フェアリーテイル" className="r-logo" />
@@ -226,7 +226,7 @@ export default function Home() {
 
       {/* ④ できること（4カード） */}
       <section className="section" style={{background: "var(--white)"}}>
-        <div className="si">
+        <div className="si" style={{maxWidth: "720px"}}>
           <p className="eyebrow" style={{textAlign: "center"}}>WHAT WE DO</p>
           <h2 className="sec-h" style={{textAlign: "center"}}>まるみえチャトレでできること</h2>
           <div style={{
@@ -259,7 +259,7 @@ export default function Home() {
 
       {/* ⑤ 5評価基準（横スクロールカード） */}
       <section className="section" style={{background: "var(--cream)"}}>
-        <div className="si">
+        <div className="si" style={{maxWidth: "720px"}}>
           <p className="eyebrow" style={{textAlign: "center"}}>EVALUATION</p>
           <h2 className="sec-h" style={{textAlign: "center", marginBottom: "4px"}}>5つの基準で公平にチェック</h2>
           <p style={{textAlign: "center", fontSize: "12px", color: "var(--text-light)", marginBottom: "12px"}}>← 横にスワイプで全5軸を見る →</p>
@@ -306,7 +306,7 @@ export default function Home() {
 
       {/* ⑥ 最新口コミ */}
       <section className="section reviews-sec" style={{background: "var(--white)"}}>
-        <div className="si">
+        <div className="si" style={{maxWidth: "720px"}}>
           <p className="eyebrow">REVIEWS</p>
           <h2 className="sec-h" style={{marginBottom: "8px"}}>良いことだけじゃない、リアルな声を読んでみてください。</h2>
           <p className="sec-sub">実際に働いた方の体験談が載っています。</p>
@@ -323,7 +323,7 @@ export default function Home() {
 
       {/* ⑦ 不安別コンテンツ（COLUMN） */}
       <section className="section col-sec">
-        <div className="si">
+        <div className="si" style={{maxWidth: "720px"}}>
           <p className="eyebrow">COLUMN</p>
           <h2 className="sec-h">不安なことから、読んでみてください</h2>
           <div className="col-grid">

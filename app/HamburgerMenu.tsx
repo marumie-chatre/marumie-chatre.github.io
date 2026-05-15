@@ -48,52 +48,73 @@ export default function HamburgerMenu() {
         <div onClick={close} style={{ position:"fixed", inset:0, background:"rgba(0,0,0,0.45)", zIndex:398 }} />
       )}
 
-      {/* メニュー本体 */}
+      {/* メニュー本体（中央大展開UI） */}
       <div style={{
-        position:"fixed", top:0, right:0, width:"280px", height:"100vh",
-        background:"#fff", zIndex:399,
-        transform: isOpen ? "translateX(0)" : "translateX(100%)",
-        transition:"transform 0.28s ease",
-        overflowY:"auto", overflowX:"hidden",
-        boxShadow: isOpen ? "-4px 0 24px rgba(0,0,0,0.15)" : "none",
+        position:"fixed", top:0, left:0, width:"100%", height:"100vh",
+        background:"#5a9a30", zIndex:399,
+        transform: isOpen ? "translateY(0)" : "translateY(-100%)",
+        transition:"transform 0.35s ease",
+        overflowY:"auto",
+        display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center",
       }}>
-        {/* ヘッダー */}
-        <div style={{ display:"flex", alignItems:"center", justifyContent:"space-between", padding:"16px 20px", borderBottom:"1px solid #ebebeb" }}>
-          <span style={{ fontSize:"14px", fontWeight:700, color:"#7ab548" }}>メニュー</span>
-          <button onClick={close} aria-label="閉じる" style={{ width:"32px", height:"32px", background:"none", border:"none", cursor:"pointer", fontSize:"20px", color:"#777", display:"flex", alignItems:"center", justifyContent:"center", borderRadius:"50%" }}>✕</button>
+        {/* 閉じるボタン */}
+        <button onClick={close} aria-label="閉じる" style={{
+          position:"absolute", top:"16px", right:"20px",
+          width:"44px", height:"44px",
+          background:"rgba(255,255,255,0.15)", border:"none",
+          cursor:"pointer", fontSize:"22px", color:"#fff", fontWeight:700,
+          display:"flex", alignItems:"center", justifyContent:"center",
+          borderRadius:"50%",
+        }}>✕</button>
+
+        {/* サイトロゴ */}
+        <div style={{marginBottom:"32px", textAlign:"center"}}>
+          <div style={{
+            fontSize:"22px", fontWeight:900, color:"#fff",
+            letterSpacing:"0.1em", marginBottom:"4px",
+          }}>まるみえチャトレ</div>
+          <div style={{fontSize:"12px", color:"rgba(255,255,255,0.8)", letterSpacing:"0.15em"}}>
+            REAL CHATRE REVIEW
+          </div>
         </div>
 
-        {/* ナビ */}
-        <nav style={{ display:"flex", flexDirection:"column" }}>
-          {navItems.map(({ href, icon, label }) => (
+        {/* ナビ（中央・大きく） */}
+        <nav style={{
+          display:"flex", flexDirection:"column",
+          alignItems:"center", gap:"4px",
+          width:"100%", maxWidth:"320px",
+          padding:"0 20px",
+        }}>
+          {navItems.map(({ href, label }) => (
             <Link key={href} href={href} onClick={close} style={{
-              display:"flex", alignItems:"center", gap:"12px",
-              padding:"14px 24px", fontSize:"15px", fontWeight:500,
-              color:"#2d2d2d", textDecoration:"none",
-              borderBottom:"1px solid #f0f0f0",
+              display:"flex", alignItems:"center", justifyContent:"center",
+              padding:"14px 20px",
+              fontSize:"19px", fontWeight:700,
+              color:"#fff", textDecoration:"none",
+              width:"100%",
+              borderBottom:"1px solid rgba(255,255,255,0.2)",
             }}>
-              <img src={icon} alt="" width={22} height={22} style={{objectFit:"contain", flexShrink:0}} />
               {label}
             </Link>
           ))}
         </nav>
 
         {/* 投稿ボタン */}
-        <div style={{ padding:"20px" }}>
-          <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSeoozsXNP5R5hgyPbxMlVPNPBrc2NOceFtI5f97Lbv3KUATkw/viewform?usp=dialog"
-            target="_blank" rel="noopener noreferrer" onClick={close}
-            style={{
-              display:"block", textAlign:"center",
-              background:"#7ab548", color:"#fff",
-              fontWeight:700, fontSize:"14px",
-              padding:"13px 16px", borderRadius:"100px",
-              textDecoration:"none",
-            }}
-          >
-            口コミを投稿する →
-          </a>
-        </div>
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSeoozsXNP5R5hgyPbxMlVPNPBrc2NOceFtI5f97Lbv3KUATkw/viewform?usp=dialog"
+          target="_blank" rel="noopener noreferrer" onClick={close}
+          style={{
+            display:"inline-flex", alignItems:"center", justifyContent:"center",
+            background:"#fff", color:"#5a9a30",
+            fontWeight:700, fontSize:"15px",
+            padding:"14px 32px", borderRadius:"100px",
+            textDecoration:"none",
+            marginTop:"32px",
+            boxShadow:"0 4px 14px rgba(0,0,0,0.15)",
+          }}
+        >
+          ✏️ 匿名で口コミを投稿する
+        </a>
       </div>
     </>
   );
