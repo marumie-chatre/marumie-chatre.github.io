@@ -48,10 +48,10 @@ export default function HamburgerMenu() {
         <div onClick={close} style={{ position:"fixed", inset:0, background:"rgba(0,0,0,0.45)", zIndex:398 }} />
       )}
 
-      {/* メニュー本体（中央大展開UI） */}
+      {/* メニュー本体（中央大展開UI・クリーム背景） */}
       <div style={{
         position:"fixed", top:0, left:0, width:"100%", height:"100vh",
-        background:"#5a9a30", zIndex:399,
+        background:"#fdf8f4", zIndex:399,
         transform: isOpen ? "translateY(0)" : "translateY(-100%)",
         transition:"transform 0.35s ease",
         overflowY:"auto",
@@ -61,8 +61,8 @@ export default function HamburgerMenu() {
         <button onClick={close} aria-label="閉じる" style={{
           position:"absolute", top:"16px", right:"20px",
           width:"44px", height:"44px",
-          background:"rgba(255,255,255,0.15)", border:"none",
-          cursor:"pointer", fontSize:"22px", color:"#fff", fontWeight:700,
+          background:"rgba(122,181,72,0.15)", border:"none",
+          cursor:"pointer", fontSize:"22px", color:"#5a9a30", fontWeight:700,
           display:"flex", alignItems:"center", justifyContent:"center",
           borderRadius:"50%",
         }}>✕</button>
@@ -70,10 +70,10 @@ export default function HamburgerMenu() {
         {/* サイトロゴ */}
         <div style={{marginBottom:"32px", textAlign:"center"}}>
           <div style={{
-            fontSize:"22px", fontWeight:900, color:"#fff",
+            fontSize:"22px", fontWeight:900, color:"#5a9a30",
             letterSpacing:"0.1em", marginBottom:"4px",
           }}>まるみえチャトレ</div>
-          <div style={{fontSize:"12px", color:"rgba(255,255,255,0.8)", letterSpacing:"0.15em"}}>
+          <div style={{fontSize:"12px", color:"#a08570", letterSpacing:"0.15em"}}>
             REAL CHATRE REVIEW
           </div>
         </div>
@@ -90,9 +90,9 @@ export default function HamburgerMenu() {
               display:"flex", alignItems:"center", justifyContent:"center",
               padding:"14px 20px",
               fontSize:"19px", fontWeight:700,
-              color:"#fff", textDecoration:"none",
+              color:"#5a9a30", textDecoration:"none",
               width:"100%",
-              borderBottom:"1px solid rgba(255,255,255,0.2)",
+              borderBottom:"1px solid rgba(122,181,72,0.2)",
             }}>
               {label}
             </Link>
@@ -105,12 +105,12 @@ export default function HamburgerMenu() {
           target="_blank" rel="noopener noreferrer" onClick={close}
           style={{
             display:"inline-flex", alignItems:"center", justifyContent:"center",
-            background:"#fff", color:"#5a9a30",
+            background:"#5a9a30", color:"#fff",
             fontWeight:700, fontSize:"15px",
             padding:"14px 32px", borderRadius:"100px",
             textDecoration:"none",
             marginTop:"32px",
-            boxShadow:"0 4px 14px rgba(0,0,0,0.15)",
+            boxShadow:"0 4px 14px rgba(90,154,48,0.3)",
           }}
         >
           ✏️ 匿名で口コミを投稿する
