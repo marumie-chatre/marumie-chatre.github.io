@@ -18,89 +18,39 @@ export default function Home() {
       <HeroImage />
 
       {/* ① FV テキスト部分（HTML） */}
-      <section style={{background: "#ffffff", padding: "32px 16px 40px"}}>
+      <section style={{background: "#ffffff", padding: "20px 16px 24px"}}>
         <div style={{maxWidth: "720px", margin: "0 auto", textAlign: "center"}}>
-          <h1 className="hero-h1" style={{fontSize: "clamp(22px, 4vw, 34px)", marginBottom: "12px", lineHeight: 1.4}}>
+          <h1 className="hero-h1" style={{fontSize: "clamp(20px, 5vw, 32px)", marginBottom: "16px", lineHeight: 1.4}}>
             <span style={{
-              fontSize: "1.3em",
+              fontSize: "1.25em",
               color: "#5a9a30",
               fontWeight: 900,
               display: "inline-block",
             }}>中身</span>
             で
             <span style={{
-              fontSize: "1.3em",
+              fontSize: "1.25em",
               color: "#5a9a30",
               fontWeight: 900,
               display: "inline-block",
             }}>選</span>
-            ぶ、<br />
-            チャトレ事務所の<em>口コミサイト</em>
+            ぶ、チャトレ事務所の<em>口コミサイト</em>
           </h1>
-          <p className="hero-lead" style={{marginBottom: "24px"}}>
-            良い点だけでなく、気になる点・サポート・身バレ対策まで比較できます。
-          </p>
-          <div style={{display: "flex", justifyContent: "center", marginBottom: "28px"}}>
-            <Link href="/jimusho" className="btn-main">自分に合う事務所を探す →</Link>
-          </div>
-          {/* 信頼チップ4つ */}
-          <div style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(2, 1fr)",
-            gap: "10px",
-            maxWidth: "480px",
-            margin: "0 auto",
-          }}>
-            {[
-              "良い点・気になる点を掲載",
-              "採点基準を公開",
-              "初心者向けに比較",
-              "実際に働いた人の声",
-            ].map((text) => (
-              <div key={text} style={{
-                padding: "12px 14px",
-                background: "var(--white)",
-                border: "1.5px solid #7ab548",
-                borderRadius: "100px",
-                fontSize: "13px",
-                color: "var(--text)",
-                fontWeight: 600,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                gap: "8px",
-                boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
-              }}>
-                <span style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  width: "22px",
-                  height: "22px",
-                  background: "#5a9a30",
-                  color: "#fff",
-                  borderRadius: "50%",
-                  fontSize: "14px",
-                  fontWeight: 900,
-                  flexShrink: 0,
-                  lineHeight: 1,
-                }}>✓</span>
-                <span>{text}</span>
-              </div>
-            ))}
+          <div style={{display: "flex", justifyContent: "center", marginBottom: "0"}}>
+            <Link href="/jimusho" className="btn-main" style={{minHeight: "48px", display: "inline-flex", alignItems: "center"}}>自分に合う事務所を探す →</Link>
           </div>
         </div>
       </section>
 
       {/* ② 探し方メニュー（5入口）★最優先 */}
-      <section className="section" style={{background: "var(--cream)", padding: "40px 16px"}}>
+      <section className="section" style={{background: "var(--cream)", padding: "24px 16px 28px"}}>
         <div className="si" style={{maxWidth: "720px"}}>
-          <p className="eyebrow" style={{textAlign: "center"}}>HOW TO FIND</p>
-          <h2 className="sec-h" style={{textAlign: "center", marginBottom: "24px"}}>あなたに合う探し方</h2>
+          <p className="eyebrow" style={{textAlign: "center", marginBottom: "8px"}}>HOW TO FIND</p>
+          <h2 className="sec-h" style={{textAlign: "center", marginBottom: "20px"}}>あなたに合う探し方</h2>
           <div style={{
             display: "grid",
             gridTemplateColumns: "repeat(3, 1fr)",
-            gap: "12px",
+            gap: "10px",
           }}>
             {[
               { href: "/jimusho", icon: "🏆", label: "ランキング" },
@@ -111,18 +61,67 @@ export default function Home() {
             ].map(({ href, icon, label, span }) => (
               <Link key={href} href={href} style={{
                 display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
-                padding: "20px 12px", background: "var(--white)", borderRadius: "16px",
+                padding: "16px 10px", background: "var(--white)", borderRadius: "14px",
                 textDecoration: "none", color: "var(--text)",
                 boxShadow: "0 2px 8px rgba(0,0,0,0.06)",
-                minHeight: "130px",
+                minHeight: "100px",
                 gridColumn: span ? "span 2" : "auto",
                 lineHeight: "1.4",
               }}>
-                <div style={{fontSize: "38px", marginBottom: "10px", lineHeight: "1"}}>{icon}</div>
+                <div style={{fontSize: "32px", marginBottom: "6px", lineHeight: "1"}}>{icon}</div>
                 <div style={{fontSize: "13px", fontWeight: 700}}>{label}</div>
               </Link>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* 信頼チップ（探し方メニューの後ろに移動） */}
+      <section style={{background: "var(--white)", padding: "24px 16px"}}>
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(2, 1fr)",
+          gap: "10px",
+          maxWidth: "480px",
+          margin: "0 auto",
+        }}>
+          {[
+            "良い点・気になる点を掲載",
+            "採点基準を公開",
+            "初心者向けに比較",
+            "実際に働いた人の声",
+          ].map((text) => (
+            <div key={text} style={{
+              padding: "12px 14px",
+              background: "var(--white)",
+              border: "1.5px solid #7ab548",
+              borderRadius: "100px",
+              fontSize: "13px",
+              color: "var(--text)",
+              fontWeight: 600,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "8px",
+              boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+            }}>
+              <span style={{
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
+                width: "22px",
+                height: "22px",
+                background: "#5a9a30",
+                color: "#fff",
+                borderRadius: "50%",
+                fontSize: "14px",
+                fontWeight: 900,
+                flexShrink: 0,
+                lineHeight: 1,
+              }}>✓</span>
+              <span>{text}</span>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -262,14 +261,17 @@ export default function Home() {
       <section className="section" style={{background: "var(--cream)"}}>
         <div className="si">
           <p className="eyebrow" style={{textAlign: "center"}}>EVALUATION</p>
-          <h2 className="sec-h" style={{textAlign: "center"}}>5つの基準で公平にチェック</h2>
+          <h2 className="sec-h" style={{textAlign: "center", marginBottom: "4px"}}>5つの基準で公平にチェック</h2>
+          <p style={{textAlign: "center", fontSize: "12px", color: "var(--text-light)", marginBottom: "12px"}}>← 横にスワイプで全5軸を見る →</p>
           <div style={{
             display: "flex",
             gap: "12px",
             overflowX: "auto",
-            padding: "20px 4px 24px",
+            padding: "16px 4px 20px",
             scrollSnapType: "x mandatory",
             WebkitOverflowScrolling: "touch",
+            WebkitMaskImage: "linear-gradient(to right, black 92%, transparent)",
+            maskImage: "linear-gradient(to right, black 92%, transparent)",
           }}>
             {[
               { icon: "🛡", name: "安全性", score: 30, desc: "身バレ対策・運営情報・強要の有無" },
