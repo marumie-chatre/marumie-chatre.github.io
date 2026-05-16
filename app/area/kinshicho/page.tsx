@@ -1,14 +1,51 @@
 import Link from "next/link";
 import Image from "next/image";
+import { FAQSchema, ArticleSchema, BreadcrumbSchema } from "../../StructuredData";
 
 export const metadata = {
   title: "錦糸町のチャットレディ事務所｜居心地で選ぶ評価が高い3社｜まるみえチャトレ",
   description: "錦糸町は新宿・池袋ほど事務所が多くないからこそ、「居心地で選んで長く続ける」ができるエリアです。落ち着いた雰囲気の中で安心して働ける事務所を、元保育士の現役チャットレディが解説します。",
 };
 
+const FAQS = [
+  {
+    q: "錦糸町のチャットレディ事務所は何社くらいありますか？",
+    a: "大手・中小を含めて錦糸町駅周辺に8店舗前後の事務所があります。新宿(約50店舗)・池袋(18店舗以上)に比べると少ないですが、大手の主要事務所はほぼカバーされています。",
+  },
+  {
+    q: "錦糸町で「居心地」で選びたいのですが、どの事務所がおすすめですか？",
+    a: "フェアリーテイル錦糸町店(カフェコンセプト)とアットグループ(カフェのような居心地)が、特に店舗の雰囲気で評価が高い事務所です。両社とも面談で実際の店舗を見学できるので、自分の感覚で「居心地が合うか」を確認してから決めると失敗が少なくなります。",
+  },
+  {
+    q: "錦糸町から池袋・新宿の事務所に通うのも考えるべき？",
+    a: "錦糸町から池袋は半蔵門線で約20分、新宿はJR・半蔵門線で約20〜30分です。通勤時間が長くなると続けにくくなるので、原則としてご自宅から最も近いエリアの事務所を選ぶことをおすすめします。",
+  },
+  {
+    q: "錦糸町で顔出しなしで働ける事務所はありますか？",
+    a: "はい、あります。チャットスタイルやポケットワークなどはバーチャル配信に対応しています。アスタリスク錦糸町店ではマスク着用での配信も可能です。",
+  },
+  {
+    q: "錦糸町でノンアダルト専門の事務所はありますか？",
+    a: "はい、あります。フェアリーテイル錦糸町店は業界で最初のノンアダルト専門店として運営しています。アダルトを勧められる空気が組織として存在しないため、初心者の方でも安心してノンアダルト一本で続けられます。",
+  },
+];
+
 export default function AreaKinshicho() {
   return (
     <main>
+      <ArticleSchema
+        title="錦糸町のチャットレディ事務所｜居心地で選ぶ評価が高い3社"
+        description="錦糸町は新宿・池袋ほど事務所が多くないからこそ、「居心地で選んで長く続ける」ができるエリアです。落ち着いた雰囲気の中で安心して働ける事務所を解説します。"
+        url="https://marumie-chatre.vercel.app/area/kinshicho"
+        datePublished="2026-05-08"
+      />
+      <BreadcrumbSchema items={[
+        { name: "トップ", path: "/" },
+        { name: "エリアから探す", path: "/area" },
+        { name: "錦糸町", path: "/area/kinshicho" },
+      ]} />
+      <FAQSchema items={FAQS} />
+
       <section className="area-page-hero">
         <Image
           src="/area-kinshicho.jpg"
@@ -60,7 +97,7 @@ export default function AreaKinshicho() {
         <p>錦糸町エリアに店舗がある主な事務所は以下の通りです：</p>
         <div className="col-article-box">
           <p>・<strong>フェアリーテイル</strong>：錦糸町店あり。<strong>カフェをコンセプトにした店内</strong>・劇場通り沿い・アルカキット近く<br />
-          ・<strong>アットグループ</strong>：全国95店舗のうち錦糸町エリアにも対応。<strong>カフェのような居心地</strong>で人気<br />
+          ・<strong>アットグループ</strong>：関東57店舗のうち錦糸町エリアにも対応。<strong>カフェのような居心地</strong>で人気<br />
           ・<strong>アスタリスク</strong>：錦糸町店。<strong>マンション型・1室1部屋で広め</strong>・宿泊可・2024年8月OPEN<br />
           ・<strong>チャットスタイル</strong>：錦糸町エリア対応。会話テクニック指導が手厚い<br />
           ・<strong>ブライトグループ</strong>：錦糸町店あり。寮完備<br />

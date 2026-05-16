@@ -1,14 +1,51 @@
 import Link from "next/link";
 import Image from "next/image";
+import { FAQSchema, ArticleSchema, BreadcrumbSchema } from "../../StructuredData";
 
 export const metadata = {
   title: "池袋のチャットレディ事務所｜選び方と評価が高い3社｜まるみえチャトレ",
   description: "池袋でチャットレディ事務所を探している方へ。池袋には18店舗以上のチャトレ事務所が集中しています。学生街・若年層が多いエリア特性と、初心者が安心して選べる事務所を、元保育士の現役チャットレディが解説します。",
 };
 
+const FAQS = [
+  {
+    q: "池袋のチャットレディ事務所は何社くらいありますか？",
+    a: "Web上で募集している事務所だけでも18店舗以上あります。全国大手は1社で池袋駅周辺に4〜5店舗を展開しているケースもあり、実数はさらに多くなります。",
+  },
+  {
+    q: "池袋で報酬率の高い事務所はどこですか？",
+    a: "派手な数字を売りにしている事務所には注意が必要です。「最大40%」と書いてあっても、それは月50万円以上稼ぐトップ層の数字。入店直後は20〜30%スタートが業界の実態です。入店直後の数字とランクアップ条件を必ず確認してください。",
+  },
+  {
+    q: "池袋で顔出しなしで働ける事務所はありますか？",
+    a: "はい、あります。チャットスタイルやポケットワークなどはバーチャル配信に対応しています。アスタリスクではマスク着用での配信も可能です。",
+  },
+  {
+    q: "池袋の事務所は副業でも対応してくれますか？",
+    a: "池袋エリアの事務所は副業ユーザーが多く、シフトの自由度が高い事務所が多数あります。特にブライトグループは顧問税理士サポートがあり、住民税対策など副業バレ対策の相談ができます。",
+  },
+  {
+    q: "池袋でノンアダルト専門の事務所はありますか？",
+    a: "はい、あります。フェアリーテイル池袋店は業界で最初のノンアダルト専門店として運営しています。「ノンアダルト選択可」の事務所と異なり、アダルトを勧められる空気が組織として存在しないため、初心者の方でも安心してノンアダルト一本で続けられます。",
+  },
+];
+
 export default function AreaIkebukuro() {
   return (
     <main>
+      <ArticleSchema
+        title="池袋のチャットレディ事務所｜選び方と評価が高い3社"
+        description="池袋でチャットレディ事務所を探している方へ。池袋には18店舗以上のチャトレ事務所が集中しています。学生街・若年層が多いエリア特性と、初心者が安心して選べる事務所を解説します。"
+        url="https://marumie-chatre.vercel.app/area/ikebukuro"
+        datePublished="2026-05-08"
+      />
+      <BreadcrumbSchema items={[
+        { name: "トップ", path: "/" },
+        { name: "エリアから探す", path: "/area" },
+        { name: "池袋", path: "/area/ikebukuro" },
+      ]} />
+      <FAQSchema items={FAQS} />
+
       <section className="area-page-hero">
         <Image
           src="/area-ikebukuro.jpg"
@@ -61,7 +98,7 @@ export default function AreaIkebukuro() {
         <div className="col-article-box">
           <p>・<strong>フェアリーテイル</strong>：池袋店あり。ノンアダルト専門<br />
           ・<strong>ブライトグループ</strong>：池袋店。老舗20年・コスプレ衣装が充実・寮完備<br />
-          ・<strong>アットグループ</strong>：全国95店舗のうち池袋エリアにも複数<br />
+          ・<strong>アットグループ</strong>：関東57店舗のうち池袋エリアにも複数<br />
           ・<strong>チャットレディJP</strong>：池袋TLI店。寮完備・入店祝い金最大10万円<br />
           ・<strong>アスタリスク</strong>：池袋店。池袋エリア最大規模・元チャトレ女性マネージャー<br />
           ・<strong>アリュール</strong>：池袋店。2021年OPEN・防音・宿泊可<br />
