@@ -19,6 +19,16 @@ const areas = [
     target: "選択肢の多さを活かしたい方",
   },
   {
+    slug: "shibuya",
+    name: "渋谷",
+    icon: "🛍️",
+    image: "/area-shibuya.jpg",
+    catchphrase: "東京の中心・若年層の街",
+    summary: "渋谷駅周辺に20店舗以上が集積する激戦区。アクセス抜群で関東圏全域から通える。マンション型店舗が多く、人目につきにくい構造。",
+    storeCount: "20店舗以上",
+    target: "アクセスの良さを重視する方",
+  },
+  {
     slug: "ikebukuro",
     name: "池袋",
     icon: "🛍️",
