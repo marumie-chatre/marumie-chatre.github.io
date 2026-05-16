@@ -1,13 +1,46 @@
 import Link from "next/link";
+import { FAQSchema, ArticleSchema, BreadcrumbSchema } from "../../StructuredData";
 
 export const metadata = {
   title: "チャットレディ事務所の選び方｜失敗しない5つの基準【まるみえチャトレ】",
   description: "「なんとなく良さそう」で選ぶと後悔します。編集部が実際に調査した、安全な事務所を見極める5つのチェックポイントを解説します。",
 };
 
+const FAQS = [
+  {
+    q: "チャットレディ事務所選びで一番重要なポイントは？",
+    a: "「安全性」が最重要です。具体的には(1)運営会社情報の開示、(2)契約書の交付、(3)報酬体系の明示、(4)アダルト強要なし、(5)顧問税理士など信頼性指標があるか、の5点です。報酬率の高さだけで選ぶと失敗します。",
+  },
+  {
+    q: "「最大40%」「最大時給○○円」を売りにする事務所は信用できますか？",
+    a: "派手な数字には注意が必要です。「最大」は月50万円以上稼ぐトップ層の数字で、新人は20-30%スタートが業界実態。応募前に「入店直後の数字」「ランクアップ条件」を必ず確認してください。",
+  },
+  {
+    q: "面談で何を確認すべきですか？",
+    a: "(1)入店直後の報酬率、(2)ノンアダ希望が尊重されるか、(3)シフトの自由度、(4)身バレ対策の具体策、(5)サポート体制、の5点を必ず確認してください。即答してくれる事務所は信頼度◎です。",
+  },
+  {
+    q: "ノンアダルト専門と選択可、どちらがいいですか？",
+    a: "ノンアダ一本で続けたいなら「専門」事務所(フェアリーテイル等)が確実です。「選択可」事務所では現場でアダルトを勧められる可能性があるため、初心者は専門事務所を選ぶ方が安心です。",
+  },
+];
+
 export default function ColJimushoErabiPage() {
   return (
     <main>
+      <ArticleSchema
+        title="チャットレディ事務所の選び方｜失敗しない5つの基準"
+        description="「なんとなく良さそう」で選ぶと後悔します。編集部が実際に調査した、安全な事務所を見極める5つのチェックポイントを解説します。"
+        url="https://marumie-chatre.vercel.app/column/jimusho-erabi"
+        datePublished="2026-05-05"
+      />
+      <BreadcrumbSchema items={[
+        { name: "トップ", path: "/" },
+        { name: "コラム", path: "/column" },
+        { name: "事務所の選び方", path: "/column/jimusho-erabi" },
+      ]} />
+      <FAQSchema items={FAQS} />
+
       <section className="col-article-hero">
         <div className="col-article-inner">
           <div className="col-article-cat">事務所の選び方</div>

@@ -1,13 +1,46 @@
 import Link from "next/link";
+import { FAQSchema, ArticleSchema, BreadcrumbSchema } from "../../StructuredData";
 
 export const metadata = {
   title: "配信中に顔がバレる？家族にバレる？チャットレディの身バレ、よくある疑問に答えます【まるみえチャトレ】",
   description: "顔出しなしなら大丈夫？家族や職場にバレない？チャットレディの身バレに関するよくある疑問を、具体的な対策とともに解説します。",
 };
 
+const FAQS = [
+  {
+    q: "顔出しなしなら身バレしませんか？",
+    a: "顔バレリスクは大幅に下がりますが、声・部屋の物・話の内容など他の要素から特定されるケースもあります。マスク配信・バーチャル配信・地域ブロックなど複数の対策を組み合わせるのが安全です。",
+  },
+  {
+    q: "家族に配信がバレない方法は？",
+    a: "(1)通勤型で防音個室を使う、(2)在宅なら家族が出かけている時間帯に配信、(3)ヘッドセットで音漏れ防止、(4)検索履歴を残さない(シークレットモード)、(5)SNS発信を控える、の5つが基本対策です。",
+  },
+  {
+    q: "職場にバレるのは住民税からですか？",
+    a: "はい、最大の原因は住民税です。確定申告で「普通徴収」を選択すれば、住民税が自宅に直接届くため職場バレを防げます。顧問税理士サポートのある事務所(ブライト等)を選ぶと安心です。",
+  },
+  {
+    q: "知り合いに偶然見つかる確率はどれくらい？",
+    a: "正しい対策(地域ブロック・マスク・バーチャル等)をしていれば、確率は限りなく低くなります。地域ブロック機能で知り合いがいるエリアからのアクセスを遮断できる事務所(アット等)を選ぶと、リスクをほぼゼロにできます。",
+  },
+];
+
 export default function ColMibareTaisakuPage() {
   return (
     <main>
+      <ArticleSchema
+        title="配信中に顔がバレる？家族にバレる？チャットレディの身バレ、よくある疑問に答えます"
+        description="顔出しなしなら大丈夫？家族や職場にバレない？チャットレディの身バレに関するよくある疑問を、具体的な対策とともに解説します。"
+        url="https://marumie-chatre.vercel.app/column/mibare-taisaku"
+        datePublished="2026-05-06"
+      />
+      <BreadcrumbSchema items={[
+        { name: "トップ", path: "/" },
+        { name: "コラム", path: "/column" },
+        { name: "身バレ対策", path: "/column/mibare-taisaku" },
+      ]} />
+      <FAQSchema items={FAQS} />
+
       <section className="col-article-hero">
         <div className="col-article-inner">
           <div className="col-article-cat">安全・身バレ対策</div>
