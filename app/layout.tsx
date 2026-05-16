@@ -84,6 +84,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <Link href="/hyoka-kijun">評価基準について</Link>
                 <Link href="/profile">運営者プロフィール</Link>
                 <Link href="/guideline">口コミガイドライン</Link>
+                <Link href="/privacy">プライバシーポリシー</Link>
+                <Link href="/tokushoho">特定商取引法表記</Link>
+                <Link href="/terms">利用規約</Link>
               </div>
             </div>
             <div className="footer-bottom">
