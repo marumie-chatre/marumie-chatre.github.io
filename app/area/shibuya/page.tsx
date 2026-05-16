@@ -65,20 +65,12 @@ export default function AreaShibuya() {
           <li>大手から中小まで規模はさまざま</li>
         </ul>
 
-        <h2>渋谷で稼げる金額の現実</h2>
+        <h2>渋谷の特性：事務所が多い分、選び方で差がつく</h2>
         <p>渋谷は他のエリアと比べて<strong>事務所の選択肢が多い</strong>分、<MarkerSpan>サポート体制や設備の質に差</MarkerSpan>があります。</p>
 
-        <h3>月収目安（通勤型・週5回・4-5時間）</h3>
-        <ul>
-          <li><strong>最初の3ヶ月</strong>：月10〜20万円</li>
-          <li><strong>半年〜1年</strong>：月30〜50万円（常連がつき始める）</li>
-          <li><strong>1年以降</strong>：月50〜80万円（中堅層）</li>
-          <li><strong>トップ層（2年以上・常連多数）</strong>：月<strong>100万円以上</strong></li>
-        </ul>
-
-        <TipBox title="現役の実感">
-          渋谷の事務所のトップ層には、月100万円超えのキャストも実在します。ただし、最初の3ヶ月は月10〜20万円程度が現実的。「最初から月100万」という訴求は誤りです。
-        </TipBox>
+        <PointBox title="月収目安について">
+          月収目安は<strong>エリアによって大きく変わるものではなく、通勤型全般の目安</strong>になります。詳しい月収目安・働き方の選び方は <Link href="/style/tsukin">通勤型ページ</Link> でまとめています。
+        </PointBox>
 
         <h2>渋谷で事務所を選ぶときの3つの注意点</h2>
 
@@ -107,7 +99,10 @@ export default function AreaShibuya() {
           ✓ <strong>身バレ対策が最強レベル</strong>（地域ブロック・特殊加工・完全個室）<br />
           ✓ 完全自由出勤・副業向き</p>
         </div>
-        <p>「<strong>渋谷で通いやすい場所がいい</strong>」「<strong>身バレが心配</strong>」という方には、<MarkerSpan>カフェ空間の居心地と身バレ対策最強</MarkerSpan>のアットグループが向いています。店舗の場所は完全非公開、配信映像には特殊な加工が施され、<strong>地域ブロック機能</strong>で知り合いがいるエリアからのアクセスを遮断できます。</p>
+        <p>「<strong>渋谷で通いやすい場所がいい</strong>」「<strong>身バレが心配</strong>」という方には、<MarkerSpan>カフェ空間の居心地と身バレ対策最強</MarkerSpan>のアットグループが向いています。</p>
+        <WarningBox title="アット・ブライト共通の注意点">
+          アットグループは<strong>アダ・ノンアダ両対応の大手</strong>のため、店舗・お客さん・目標額によっては<strong>アダルトの選択肢を提示される場合があります</strong>。「ノンアダ一本で迷いなく続けたい」方は、面談時に必ず希望を伝えてください。
+        </WarningBox>
         <TipBox title="こんな方におすすめ">
           身バレ対策が最強の事務所がいい・カフェ空間で居心地よく働きたい方
         </TipBox>
@@ -121,7 +116,10 @@ export default function AreaShibuya() {
           ✓ 副業ユーザーが多い実績<br />
           ✓ 24時間サポート体制</p>
         </div>
-        <p>副業でチャットレディを始める方にとって最大の不安は「<MarkerSpan>職場にバレないか</MarkerSpan>」です。ブライトグループは<strong>顧問税理士サポート</strong>があり、住民税対策・確定申告の相談ができます。渋谷の派手な広告事務所が混在する中で、<strong>老舗20年で運営している実績</strong>は、それだけで「ちゃんと続いている事務所」という証明になります。</p>
+        <p>副業でチャットレディを始める方にとって最大の不安は「<MarkerSpan>職場にバレないか</MarkerSpan>」です。ブライトグループは<strong>顧問税理士サポート</strong>があり、住民税対策・確定申告の相談ができます。</p>
+        <WarningBox title="アット・ブライト共通の注意点">
+          ブライトグループも<strong>アダ・ノンアダ両対応の事務所</strong>です。FANZAノンアダのトップランカーを輩出している実績はある一方、店舗・お客さん次第で<strong>アダルトの提案を受ける可能性</strong>があります。ノンアダ一本で続けたい方は面談時に明示してください。
+        </WarningBox>
         <TipBox title="こんな方におすすめ">
           怪しい事務所は絶対に避けたい・職場バレ対策まで考えてくれる事務所がいい方
         </TipBox>
@@ -139,6 +137,26 @@ export default function AreaShibuya() {
           会話の技術をしっかり身につけたい方
         </TipBox>
         <p><Link href="/jimusho/chatstyle" className="btn-main">チャットスタイルの詳細を見る →</Link></p>
+
+        <h2>「ノンアダルト一本で迷いなく続けたい」方には</h2>
+        <p>上記TOP3はいずれも<strong>アダ・ノンアダ両対応の事務所</strong>です。渋谷エリアで働きたいけれど、<MarkerSpan>「アダルトを勧められる可能性すら避けたい」</MarkerSpan>という方には、<strong>業界初のノンアダルト専門店であるフェアリーテイル</strong>を強くおすすめします。</p>
+
+        <div className="col-article-box">
+          <p>✓ <strong>業界初・業界唯一のノンアダルト専門店</strong>として運営<br />
+          ✓ 在籍チャトレの<strong>98.4%がノンアダルト</strong><br />
+          ✓ アダルトを勧める空気が組織として存在しない<br />
+          ✓ 1,000項目以上のノンアダ専用ノウハウ<br />
+          ✓ マスク配信・バーチャル配信にも対応（顔バレ対策◎）</p>
+        </div>
+
+        <p>渋谷に直営店舗はありませんが、<strong>東京都内に複数店舗</strong>があり、池袋・上野・錦糸町などからの通勤が可能です。<MarkerSpan>「ノンアダ一本でブレずに長く続けたい」</MarkerSpan>方には、エリアで妥協せず<strong>ノンアダ専門で選ぶ</strong>のが最終的に満足度が高い選択肢です。</p>
+
+        <TipBox title="こんな方におすすめ">
+          アダルトを勧められる心配を100%なくしたい・ノンアダで真面目に長く続けたい方
+        </TipBox>
+
+        <p><Link href="/jimusho/ft" className="btn-main">フェアリーテイルの詳細を見る →</Link></p>
+        <p style={{textAlign:"center",marginTop:"12px"}}><Link href="/style/non-adult">→ ノンアダルト専門事務所のページを見る</Link></p>
 
         <h2>渋谷でよく聞かれる不安と答え</h2>
 
