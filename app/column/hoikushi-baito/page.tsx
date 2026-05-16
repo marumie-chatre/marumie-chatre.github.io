@@ -1,13 +1,46 @@
 import Link from "next/link";
+import { FAQSchema, ArticleSchema, BreadcrumbSchema } from "../../StructuredData";
 
 export const metadata = {
   title: "チャットレディは副業にアリ？会社・職場にバレないための全対策【まるみえチャトレ】",
   description: "本業をしながらチャットレディを始めたい方へ。就業規則の確認方法から、住民税・人づて・SNSなどバレる4つの原因と対策を解説します。",
 };
 
+const FAQS = [
+  {
+    q: "副業でチャットレディを始めたいが、就業規則はどう確認すればいい？",
+    a: "就業規則の「副業」「兼業」に関する規定を確認してください。「副業禁止」「許可制」「届出制」の3パターンがあります。許可制・届出制の場合、内容によっては申請が必要なケースもあります。",
+  },
+  {
+    q: "副業でチャトレがバレる4大原因は？",
+    a: "(1)住民税(最大の原因)、(2)SNS・人づて、(3)税務調査、(4)職場での噂、の4つです。住民税対策(普通徴収選択)が最も重要で、これだけで職場バレリスクの大半を防げます。",
+  },
+  {
+    q: "保育士・公務員でもチャトレはできますか？",
+    a: "保育士は私立か公立か・就業規則によって異なります。公立保育士・公務員は法律上副業禁止のため原則として推奨できません。私立保育士は就業規則を確認し、副業OKまたは届出制なら可能です。",
+  },
+  {
+    q: "副業20万円以下なら申告不要？",
+    a: "所得税の確定申告は不要ですが、住民税の申告は必要です。住民税申告で「普通徴収」を選択することで職場バレを防げます。これを忘れると会社経由で住民税が増えて副業がバレます。",
+  },
+];
+
 export default function ColHoikushiBaitoPage() {
   return (
     <main>
+      <ArticleSchema
+        title="チャットレディは副業にアリ？会社・職場にバレないための全対策"
+        description="本業をしながらチャットレディを始めたい方へ。就業規則の確認方法から、住民税・人づて・SNSなどバレる4つの原因と対策を解説します。"
+        url="https://marumie-chatre.vercel.app/column/hoikushi-baito"
+        datePublished="2026-05-07"
+      />
+      <BreadcrumbSchema items={[
+        { name: "トップ", path: "/" },
+        { name: "コラム", path: "/column" },
+        { name: "副業ガイド", path: "/column/hoikushi-baito" },
+      ]} />
+      <FAQSchema items={FAQS} />
+
       <section className="col-article-hero">
         <div className="col-article-inner">
           <div className="col-article-cat">副業・働き方ガイド</div>

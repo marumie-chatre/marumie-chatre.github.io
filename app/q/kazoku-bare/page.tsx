@@ -1,13 +1,50 @@
 import Link from "next/link";
+import { FAQSchema, ArticleSchema, BreadcrumbSchema } from "../../StructuredData";
 
 export const metadata = {
   title: "家族・親・彼氏にバレないチャットレディの始め方｜まるみえチャトレ",
   description: "チャットレディが家族や彼氏にバレるのが不安な方へ。検索履歴・SNS・声漏れ・部屋のバレなど、家庭内で起きやすい身バレの原因と対策をまとめました。元保育士の現役チャットレディが解説します。",
 };
 
+const FAQS = [
+  {
+    q: "家族にチャットレディがバレる原因は？",
+    a: "(1)検索履歴・ブラウザ履歴、(2)SNS発信、(3)配信中の声漏れ、(4)部屋に映る家族の物、(5)スマホ通知、の5つが主な原因です。シークレットモードでの検索・専用デバイス・防音対策などで防げます。",
+  },
+  {
+    q: "実家暮らしでもチャットレディはできますか？",
+    a: "できますが、通勤型がおすすめです。在宅だと家族に声が聞こえるリスクが高く、通勤型なら防音個室で配信できるため家族バレリスクが大幅に下がります。",
+  },
+  {
+    q: "彼氏に内緒でやってもバレない？",
+    a: "完全に内緒は難しいですが、リスクは下げられます。スマホ通知オフ・別アカウント運用・配信時間を彼氏のいない時間に限定するなどで、バレるリスクを最小化できます。",
+  },
+  {
+    q: "配信中の声が家族に聞こえないようにする方法は？",
+    a: "(1)防音カーテン・防音マットの設置、(2)ヘッドセットで自分の声を抑える、(3)家族が出かけている時間帯に配信、の3つが基本対策です。通勤型なら防音個室で完全に解決できます。",
+  },
+  {
+    q: "親に絶対バレたくない場合は？",
+    a: "通勤型で防音個室を使い、検索履歴を残さず、SNS発信を控え、収入を口座に分けるのが鉄則です。家族と同居する場合は特に「シークレットモード」「専用デバイス」を徹底してください。",
+  },
+];
+
 export default function QKazokuBare() {
   return (
     <main>
+      <ArticleSchema
+        title="家族・親・彼氏にバレないチャットレディの始め方"
+        description="チャットレディが家族や彼氏にバレるのが不安な方へ。検索履歴・SNS・声漏れ・部屋のバレなど、家庭内で起きやすい身バレの原因と対策をまとめました。"
+        url="https://marumie-chatre.vercel.app/q/kazoku-bare"
+        datePublished="2026-05-09"
+      />
+      <BreadcrumbSchema items={[
+        { name: "トップ", path: "/" },
+        { name: "不安から探す", path: "/q" },
+        { name: "家族バレ対策", path: "/q/kazoku-bare" },
+      ]} />
+      <FAQSchema items={FAQS} />
+
       <section className="col-article-hero">
         <div className="col-article-inner">
           <div className="col-article-cat">お悩み｜家族バレ</div>

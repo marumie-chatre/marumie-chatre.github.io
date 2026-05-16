@@ -1,13 +1,50 @@
 import Link from "next/link";
+import { FAQSchema, ArticleSchema, BreadcrumbSchema } from "../../StructuredData";
 
 export const metadata = {
   title: "職場・会社にバレないチャットレディの始め方｜まるみえチャトレ",
   description: "副業でチャットレディを始めたい方へ。職場バレの本当の原因と住民税対策、職業に合わせた働き方を提案してくれる事務所をまとめました。元保育士の現役チャットレディが解説します。",
 };
 
+const FAQS = [
+  {
+    q: "チャットレディが職場にバレる原因は何ですか？",
+    a: "最大の原因は「住民税」です。副業の収入が会社に通知される住民税で発覚するケースが大半。確定申告で「普通徴収」を選択すれば、住民税が自宅に直接届くため職場バレを防げます。SNS発信・噂などによるバレもあります。",
+  },
+  {
+    q: "副業20万円以下なら確定申告は不要？",
+    a: "所得税の確定申告は不要ですが、住民税の申告は必要です。住民税の申告で「普通徴収」を選択することで、職場の給与から差し引かれず自宅に届くため、職場バレを防げます。",
+  },
+  {
+    q: "顧問税理士サポートがある事務所はどこですか？",
+    a: "ブライトグループは顧問税理士サポートがあり、住民税対策・確定申告の相談ができます。副業で始める方には特に心強い体制です。",
+  },
+  {
+    q: "公務員でもチャットレディはできますか？",
+    a: "公務員は法律上副業が禁止されているため、原則として推奨できません。ただし、配信内容や雇用形態によってはグレーゾーンの場合もあるため、ご自身の判断・責任で慎重に検討してください。",
+  },
+  {
+    q: "副業がバレやすい職業はありますか？",
+    a: "副業が会社規定で禁止されている方(銀行員/教員/医療関係など)は特に注意が必要です。逆に、副業OKの職場や自営業の方は職場バレリスクが低くなります。",
+  },
+];
+
 export default function QShokubaBare() {
   return (
     <main>
+      <ArticleSchema
+        title="職場・会社にバレないチャットレディの始め方"
+        description="副業でチャットレディを始めたい方へ。職場バレの本当の原因と住民税対策、職業に合わせた働き方を提案してくれる事務所をまとめました。"
+        url="https://marumie-chatre.vercel.app/q/shokuba-bare"
+        datePublished="2026-05-08"
+      />
+      <BreadcrumbSchema items={[
+        { name: "トップ", path: "/" },
+        { name: "不安から探す", path: "/q" },
+        { name: "職場バレ対策", path: "/q/shokuba-bare" },
+      ]} />
+      <FAQSchema items={FAQS} />
+
       <section className="col-article-hero">
         <div className="col-article-inner">
           <div className="col-article-cat">お悩み｜職場バレ</div>
