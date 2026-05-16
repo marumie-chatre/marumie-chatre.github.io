@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import HamburgerMenu from "./HamburgerMenu";
 import FloatingCTA from "./FloatingCTA";
+import { WebSiteSchema, OrganizationSchema } from "./StructuredData";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -21,6 +22,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body style={{paddingTop: "68px"}}>
+        {/* 構造化データ（全ページ共通：WebSite + Organization） */}
+        <WebSiteSchema />
+        <OrganizationSchema />
         {/* HEADER */}
         <header className="site-header">
           <div className="header-inner">

@@ -1,15 +1,48 @@
 import Link from "next/link";
 import Image from "next/image";
 import { QABlock, PointBox, WarningBox, TipBox, MarkerSpan } from "../../ArticleParts";
+import { FAQSchema, ArticleSchema, BreadcrumbSchema } from "../../StructuredData";
 
 export const metadata = {
   title: "渋谷のチャットレディ事務所｜選び方と評価が高い3社｜まるみえチャトレ",
   description: "渋谷でチャットレディ事務所を探したい方へ。渋谷エリアの特性と、評価が高い事務所3社を、現役チャットレディが正直に解説します。",
 };
 
+const FAQS = [
+  {
+    q: "渋谷の事務所は怪しい場所にありませんか？",
+    a: "主要事務所はマンション型・タワーマンション型・オフィスビル型などの店舗で、看板や派手な装飾は外に出ていません。「チャトレ事務所」と分かるような外観はないため、ビルの出入りを見られても自然な理由で説明できます。",
+  },
+  {
+    q: "渋谷駅から店舗までの道で人に会わないか心配です",
+    a: "チャットレディ事務所は看板や派手な装飾を出していないため、ビルの出入りを見られても「チャトレ事務所と分かる」ことはまずありません。仮に知り合いに会っても「美容関連」「事務」「面談」など自然な理由で説明できます。",
+  },
+  {
+    q: "渋谷の事務所は他のエリアと比べて稼げますか？",
+    a: "渋谷は事務所数が多く競合も多いため、サポート・設備の質が高い傾向があります。月収目安は他のエリアと変わりませんが、選択肢が多い分、自分に合う事務所が見つかりやすいメリットがあります。",
+  },
+  {
+    q: "副業バレが心配です",
+    a: "通勤型は配信中の身バレ対策（マスク・ウィッグ・配信フィルター）が手厚く、身バレリスクは在宅と変わらないです。職場バレ（住民税経由）の対策は、ブライトグループの顧問税理士サポートなどが有効です。",
+  },
+];
+
 export default function AreaShibuya() {
   return (
     <main>
+      {/* 構造化データ（SEO・AIO・AEO 最適化） */}
+      <ArticleSchema
+        title="渋谷のチャットレディ事務所｜選び方と評価が高い3社"
+        description="渋谷でチャットレディ事務所を探したい方へ。渋谷エリアの特性と、評価が高い事務所3社を、現役チャットレディが正直に解説します。"
+        url="https://marumie-chatre.vercel.app/area/shibuya"
+        datePublished="2026-05-16"
+      />
+      <BreadcrumbSchema items={[
+        { name: "トップ", path: "/" },
+        { name: "エリアから探す", path: "/area" },
+        { name: "渋谷", path: "/area/shibuya" },
+      ]} />
+      <FAQSchema items={FAQS} />
       <section className="area-page-hero">
         <Image
           src="/area-shibuya.jpg"
