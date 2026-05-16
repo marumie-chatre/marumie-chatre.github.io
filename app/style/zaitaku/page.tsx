@@ -1,13 +1,50 @@
 import Link from "next/link";
+import { FAQSchema, ArticleSchema, BreadcrumbSchema } from "../../StructuredData";
 
 export const metadata = {
   title: "在宅チャットレディ事務所｜選び方と評価が高い3社｜まるみえチャトレ",
   description: "在宅でチャットレディを始めたい方へ。在宅のリアルな現実と、業界標準の報酬率、評価が高い在宅対応事務所3社を、元保育士の現役チャットレディが正直に解説します。",
 };
 
+const FAQS = [
+  {
+    q: "在宅チャットレディの仕事内容を教えてください",
+    a: "自宅のパソコンやスマホでライブチャットサイトにログインし、お客さんと会話するお仕事です。テキストチャット・音声・映像など、様々な配信方法があります。実際にお客さんと会うことはありません。",
+  },
+  {
+    q: "在宅でアダルト強要されない事務所はありますか？",
+    a: "はい、あります。ポケットワーク・チャットスタイルなどはノンアダルト対応で、アダルトを強要されることはありません。ノンアダルト専門での勤務を希望すれば対応してくれます。",
+  },
+  {
+    q: "副業で在宅チャットレディはバレませんか？",
+    a: "住民税の対策をすれば職場バレリスクは下げられます。普通徴収を選択する、顧問税理士サポートのある事務所を選ぶといった対策が有効です。",
+  },
+  {
+    q: "在宅で月10万円稼ぐにはどれくらいの時間が必要ですか？",
+    a: "一般的に、週5回・1日3時間程度の配信で、半年以降に月10万円が現実的な目安です。最初の3ヶ月は時給換算1,000円前後で、月3-5万に届かないことも珍しくありません。",
+  },
+  {
+    q: "在宅と通勤、どちらが先に始めるべき？",
+    a: "「学びたい」「ノウハウを身につけたい」なら通勤、「気軽に始めたい」「通勤圏外」なら在宅が答えです。本気で稼ぎたい場合は最初の3ヶ月だけでも通勤で学ぶことを強くおすすめします。",
+  },
+];
+
 export default function StyleZaitakuPage() {
   return (
     <main>
+      <ArticleSchema
+        title="在宅チャットレディ事務所｜選び方と評価が高い3社"
+        description="在宅でチャットレディを始めたい方へ。在宅のリアルな現実と、業界標準の報酬率、評価が高い在宅対応事務所3社を、元保育士の現役チャットレディが正直に解説します。"
+        url="https://marumie-chatre.vercel.app/style/zaitaku"
+        datePublished="2026-05-14"
+      />
+      <BreadcrumbSchema items={[
+        { name: "トップ", path: "/" },
+        { name: "働き方から探す", path: "/style" },
+        { name: "在宅", path: "/style/zaitaku" },
+      ]} />
+      <FAQSchema items={FAQS} />
+
       <section className="col-article-hero">
         <div className="col-article-inner">
           <div className="col-article-cat">働き方｜在宅型</div>
