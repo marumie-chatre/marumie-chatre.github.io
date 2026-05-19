@@ -1143,6 +1143,13 @@ body > div > main { padding-top: 68px; }
   border-radius: 0 0 var(--radius) var(--radius);
 }
 
+/* COLUMN CARD v3（コンテンツ重視・タイトル＋概要表示） */
+.column-card-v3:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08) !important;
+  border-color: var(--border-green) !important;
+}
+
 /* ========== NEUTRAL NOTE ========== */
 .neutral-note {
   background: var(--cream);
