@@ -1,9 +1,63 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata = {
   title: "お悩み別に事務所を選ぶ｜まるみえチャトレ",
   description: "チャットレディを始めるときの不安は人それぞれ。身バレ・職場バレ・家族バレ・怪しさ・初心者の不安、それぞれの観点から事務所を選べます。元保育士の現役チャットレディが運営しています。",
 };
+
+const worries = [
+  {
+    slug: "barebure",
+    icon: "🛡️",
+    image: "/q-barebure.jpg",
+    cat: "配信中対策",
+    title: "身バレが怖い",
+    catch: "配信を見ている客に特定されないか不安",
+    summary: "配信を見ている客に特定されるのが怖い方へ。実際の身バレ確率と、マスク・ウィッグ・バーチャル配信などの具体的な対策をまとめました。",
+    target: "配信中の身バレが心配な方",
+  },
+  {
+    slug: "shokuba-bare",
+    icon: "💼",
+    image: "/q-shokuba-bare.jpg",
+    cat: "副業バレ対策",
+    title: "職場にバレたくない",
+    catch: "副業がバレるのが何より怖い",
+    summary: "副業でチャットレディを始めたい方へ。職場バレの最大原因「住民税」の対策と、マイナンバー誤解、副業に厳しい職種の判断ポイントをまとめました。",
+    target: "副業として始めたい方",
+  },
+  {
+    slug: "kazoku-bare",
+    icon: "🏠",
+    image: "/q-kazoku-bare.jpg",
+    cat: "家族バレ対策",
+    title: "家族にバレたくない",
+    catch: "同居家族にバレずに続けたい",
+    summary: "同居家族にバレるのが不安な方へ。検索履歴・SNS・声漏れ・部屋など、家庭内で起きやすい身バレの原因と対策をまとめました。",
+    target: "家族にバレたくない方",
+  },
+  {
+    slug: "ayashii",
+    icon: "❓",
+    image: "/q-ayashii.jpg",
+    cat: "業界の実態",
+    title: "業界が怪しく見える",
+    catch: "「怪しくない？危なくない？」への答え",
+    summary: "業界に対する漠然とした不安への答え。アダルト強要・お話だけで稼げるか・怪しい事務所の見分け方を、現役が正直に答えます。",
+    target: "業界に不安がある方",
+  },
+  {
+    slug: "shoshinsha",
+    icon: "🌱",
+    image: "/q-shoshinsha.jpg",
+    cat: "初心者向け",
+    title: "初心者で不安",
+    catch: "これから始める方への総合ガイド",
+    summary: "これから始める方へ。初心者がつまずく5つのポイントと、サポートが手厚い事務所、応募〜配信デビューまでの流れをまとめました。",
+    target: "これから始める初心者",
+  },
+];
 
 export default function QHubPage() {
   return (
@@ -32,87 +86,33 @@ export default function QHubPage() {
           <h2 className="sec-h" style={{marginBottom:"40px"}}>5つのお悩みに応えます</h2>
 
           <div className="area-grid">
-
-            <Link href="/q/barebure" className="area-card">
-              <div className="area-card-body">
-                <div className="area-card-header">
-                  <h3 className="area-card-name">🛡️ 身バレが怖い</h3>
-                  <span className="area-card-count">配信中対策</span>
+            {worries.map((w) => (
+              <Link href={`/q/${w.slug}`} key={w.slug} className="area-card">
+                <div className="area-card-image-wrap">
+                  <Image
+                    src={w.image}
+                    alt={w.title}
+                    width={400}
+                    height={240}
+                    className="area-card-image"
+                  />
+                  <span className="area-card-icon">{w.icon}</span>
                 </div>
-                <p className="area-card-catch">配信を見ている客に特定されないか不安</p>
-                <p className="area-card-summary">配信を見ている客に特定されるのが怖い方へ。実際の身バレ確率と、マスク・ウィッグ・バーチャル配信などの具体的な対策をまとめました。</p>
-                <div className="area-card-target">
-                  <span className="area-card-target-label">こんな方に</span>
-                  <span className="area-card-target-value">配信中の身バレが心配な方</span>
+                <div className="area-card-body">
+                  <div className="area-card-header">
+                    <h3 className="area-card-name">{w.title}</h3>
+                    <span className="area-card-count">{w.cat}</span>
+                  </div>
+                  <p className="area-card-catch">{w.catch}</p>
+                  <p className="area-card-summary">{w.summary}</p>
+                  <div className="area-card-target">
+                    <span className="area-card-target-label">こんな方に</span>
+                    <span className="area-card-target-value">{w.target}</span>
+                  </div>
+                  <span className="area-card-link">詳しく見る →</span>
                 </div>
-                <span className="area-card-link">詳しく見る →</span>
-              </div>
-            </Link>
-
-            <Link href="/q/shokuba-bare" className="area-card">
-              <div className="area-card-body">
-                <div className="area-card-header">
-                  <h3 className="area-card-name">💼 職場にバレたくない</h3>
-                  <span className="area-card-count">副業バレ対策</span>
-                </div>
-                <p className="area-card-catch">副業がバレるのが何より怖い</p>
-                <p className="area-card-summary">副業でチャットレディを始めたい方へ。職場バレの最大原因「住民税」の対策と、マイナンバー誤解、副業に厳しい職種の判断ポイントをまとめました。</p>
-                <div className="area-card-target">
-                  <span className="area-card-target-label">こんな方に</span>
-                  <span className="area-card-target-value">副業として始めたい方</span>
-                </div>
-                <span className="area-card-link">詳しく見る →</span>
-              </div>
-            </Link>
-
-            <Link href="/q/kazoku-bare" className="area-card">
-              <div className="area-card-body">
-                <div className="area-card-header">
-                  <h3 className="area-card-name">🏠 家族にバレたくない</h3>
-                  <span className="area-card-count">家族バレ対策</span>
-                </div>
-                <p className="area-card-catch">同居家族にバレずに続けたい</p>
-                <p className="area-card-summary">同居家族にバレるのが不安な方へ。検索履歴・SNS・声漏れ・部屋など、家庭内で起きやすい身バレの原因と対策をまとめました。</p>
-                <div className="area-card-target">
-                  <span className="area-card-target-label">こんな方に</span>
-                  <span className="area-card-target-value">家族にバレたくない方</span>
-                </div>
-                <span className="area-card-link">詳しく見る →</span>
-              </div>
-            </Link>
-
-            <Link href="/q/ayashii" className="area-card">
-              <div className="area-card-body">
-                <div className="area-card-header">
-                  <h3 className="area-card-name">❓ 業界が怪しく見える</h3>
-                  <span className="area-card-count">業界の実態</span>
-                </div>
-                <p className="area-card-catch">「怪しくない？危なくない？」への答え</p>
-                <p className="area-card-summary">業界に対する漠然とした不安への答え。アダルト強要・お話だけで稼げるか・怪しい事務所の見分け方を、現役が正直に答えます。</p>
-                <div className="area-card-target">
-                  <span className="area-card-target-label">こんな方に</span>
-                  <span className="area-card-target-value">業界に不安がある方</span>
-                </div>
-                <span className="area-card-link">詳しく見る →</span>
-              </div>
-            </Link>
-
-            <Link href="/q/shoshinsha" className="area-card">
-              <div className="area-card-body">
-                <div className="area-card-header">
-                  <h3 className="area-card-name">🌱 初心者で不安</h3>
-                  <span className="area-card-count">初心者向け</span>
-                </div>
-                <p className="area-card-catch">これから始める方への総合ガイド</p>
-                <p className="area-card-summary">これから始める方へ。初心者がつまずく5つのポイントと、サポートが手厚い事務所、応募〜配信デビューまでの流れをまとめました。</p>
-                <div className="area-card-target">
-                  <span className="area-card-target-label">こんな方に</span>
-                  <span className="area-card-target-value">これから始める初心者</span>
-                </div>
-                <span className="area-card-link">詳しく見る →</span>
-              </div>
-            </Link>
-
+              </Link>
+            ))}
           </div>
         </div>
       </section>
