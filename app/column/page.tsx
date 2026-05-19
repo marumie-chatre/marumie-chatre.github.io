@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata = {
   title: "コラム｜まるみえチャトレ",
@@ -9,6 +10,7 @@ const columns = [
   {
     slug: "jimusho-erabi",
     icon: "📋",
+    image: "/col-jimusho-erabi.png",
     cat: "5つの基準",
     title: "事務所の選び方",
     catch: "失敗しない5つのチェックポイント",
@@ -18,6 +20,7 @@ const columns = [
   {
     slug: "mibare-taisaku",
     icon: "🎭",
+    image: "/col-mibare-taisaku.png",
     cat: "身バレ対策",
     title: "身バレ、よくある疑問に答えます",
     catch: "顔バレ・家族バレ・職場バレ",
@@ -27,6 +30,7 @@ const columns = [
   {
     slug: "hoikushi-baito",
     icon: "💼",
+    image: "/col-hoikushi-baito.png",
     cat: "副業ガイド",
     title: "チャトレは副業にアリ？",
     catch: "会社・職場にバレないための全対策",
@@ -62,9 +66,19 @@ export default function ColumnPage() {
           <div className="area-grid">
             {columns.map((col) => (
               <Link href={`/column/${col.slug}`} key={col.slug} className="area-card">
+                <div className="area-card-image-wrap">
+                  <Image
+                    src={col.image}
+                    alt={col.title}
+                    width={400}
+                    height={240}
+                    className="area-card-image"
+                  />
+                  <span className="area-card-icon">{col.icon}</span>
+                </div>
                 <div className="area-card-body">
                   <div className="area-card-header">
-                    <h3 className="area-card-name">{col.icon} {col.title}</h3>
+                    <h3 className="area-card-name">{col.title}</h3>
                     <span className="area-card-count">{col.cat}</span>
                   </div>
                   <p className="area-card-catch">{col.catch}</p>

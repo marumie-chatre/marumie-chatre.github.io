@@ -1,9 +1,53 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata = {
   title: "チャットレディの働き方ガイド｜4つの選択肢と自分に合う事務所の選び方｜まるみえチャトレ",
   description: "チャットレディの「在宅」「通勤」「ノンアダルト専門」「バーチャル」4つの働き方を比較。自分に合う事務所の選び方を、現役チャットレディが解説します。",
 };
+
+const styles = [
+  {
+    slug: "zaitaku",
+    icon: "🏠",
+    image: "/style-zaitaku.jpg",
+    cat: "副業向け",
+    title: "在宅型",
+    catch: "お家で気軽にスタート",
+    summary: "おうちのパソコンやスマホでそのまま配信。通勤しなくていいから、副業や育児中の方にもぴったりなんです。ただ、ひとりで稼ぎ方を覚えていくのは、ちょっとハードルが高めかもしれません。",
+    target: "育児中・本業がある方",
+  },
+  {
+    slug: "tsukin",
+    icon: "🏢",
+    image: "/style-tsukin.jpg",
+    cat: "本格派向け",
+    title: "通勤型",
+    catch: "防音個室でのびのび配信",
+    summary: "事務所の防音個室でのびのび配信できて、スタッフから直接サポートがあるから、常連さんが早く着くんです。「本気で稼ぎたい」と思っている方には、まず通勤型がおすすめ。",
+    target: "本気で稼ぎたい方",
+  },
+  {
+    slug: "non-adult",
+    icon: "💚",
+    image: "/style-nonadult.jpg",
+    cat: "安心・専門",
+    title: "ノンアダルト専門",
+    catch: "お話だけで稼ぐ安心感",
+    summary: "アダルトを勧められる心配がない、ノンアダ専門の事務所。「お話だけで稼ぐ」働き方なので、じっくり長く続けたい方に向いています。",
+    target: "真面目に長く続けたい方",
+  },
+  {
+    slug: "virtual",
+    icon: "🎭",
+    image: "/style-virtual.jpg",
+    cat: "顔バレ対策",
+    title: "バーチャル配信",
+    catch: "顔バレほぼゼロの選択肢",
+    summary: "アバター越しの配信だから、顔バレのリスクはほぼゼロ。集客にちょっと時間がかかる面もあるけれど、副業として安心して続けられる選択肢です。",
+    target: "顔バレ絶対NGの方",
+  },
+];
 
 export default function StyleHubPage() {
   return (
@@ -30,71 +74,33 @@ export default function StyleHubPage() {
           <h2 className="sec-h" style={{marginBottom:"40px"}}>チャットレディの4つの働き方</h2>
 
           <div className="area-grid">
-
-            <Link href="/style/zaitaku" className="area-card">
-              <div className="area-card-body">
-                <div className="area-card-header">
-                  <h3 className="area-card-name">🏠 在宅型</h3>
-                  <span className="area-card-count">副業向け</span>
+            {styles.map((style) => (
+              <Link href={`/style/${style.slug}`} key={style.slug} className="area-card">
+                <div className="area-card-image-wrap">
+                  <Image
+                    src={style.image}
+                    alt={style.title}
+                    width={400}
+                    height={240}
+                    className="area-card-image"
+                  />
+                  <span className="area-card-icon">{style.icon}</span>
                 </div>
-                <p className="area-card-catch">お家で気軽にスタート</p>
-                <p className="area-card-summary">おうちのパソコンやスマホでそのまま配信。通勤しなくていいから、副業や育児中の方にもぴったりなんです。ただ、ひとりで稼ぎ方を覚えていくのは、ちょっとハードルが高めかもしれません。</p>
-                <div className="area-card-target">
-                  <span className="area-card-target-label">こんな方に</span>
-                  <span className="area-card-target-value">育児中・本業がある方</span>
+                <div className="area-card-body">
+                  <div className="area-card-header">
+                    <h3 className="area-card-name">{style.title}</h3>
+                    <span className="area-card-count">{style.cat}</span>
+                  </div>
+                  <p className="area-card-catch">{style.catch}</p>
+                  <p className="area-card-summary">{style.summary}</p>
+                  <div className="area-card-target">
+                    <span className="area-card-target-label">こんな方に</span>
+                    <span className="area-card-target-value">{style.target}</span>
+                  </div>
+                  <span className="area-card-link">詳しく見る →</span>
                 </div>
-                <span className="area-card-link">詳しく見る →</span>
-              </div>
-            </Link>
-
-            <Link href="/style/tsukin" className="area-card">
-              <div className="area-card-body">
-                <div className="area-card-header">
-                  <h3 className="area-card-name">🏢 通勤型</h3>
-                  <span className="area-card-count">本格派向け</span>
-                </div>
-                <p className="area-card-catch">防音個室でのびのび配信</p>
-                <p className="area-card-summary">事務所の防音個室でのびのび配信できて、スタッフから直接サポートがあるから、常連さんが早く着くんです。「本気で稼ぎたい」と思っている方には、まず通勤型がおすすめ。</p>
-                <div className="area-card-target">
-                  <span className="area-card-target-label">こんな方に</span>
-                  <span className="area-card-target-value">本気で稼ぎたい方</span>
-                </div>
-                <span className="area-card-link">詳しく見る →</span>
-              </div>
-            </Link>
-
-            <Link href="/style/non-adult" className="area-card">
-              <div className="area-card-body">
-                <div className="area-card-header">
-                  <h3 className="area-card-name">💚 ノンアダルト専門</h3>
-                  <span className="area-card-count">安心・専門</span>
-                </div>
-                <p className="area-card-catch">お話だけで稼ぐ安心感</p>
-                <p className="area-card-summary">アダルトを勧められる心配がない、ノンアダ専門の事務所。「お話だけで稼ぐ」働き方なので、じっくり長く続けたい方に向いています。</p>
-                <div className="area-card-target">
-                  <span className="area-card-target-label">こんな方に</span>
-                  <span className="area-card-target-value">真面目に長く続けたい方</span>
-                </div>
-                <span className="area-card-link">詳しく見る →</span>
-              </div>
-            </Link>
-
-            <Link href="/style/virtual" className="area-card">
-              <div className="area-card-body">
-                <div className="area-card-header">
-                  <h3 className="area-card-name">🎭 バーチャル配信</h3>
-                  <span className="area-card-count">顔バレ対策</span>
-                </div>
-                <p className="area-card-catch">顔バレほぼゼロの選択肢</p>
-                <p className="area-card-summary">アバター越しの配信だから、顔バレのリスクはほぼゼロ。集客にちょっと時間がかかる面もあるけれど、副業として安心して続けられる選択肢です。</p>
-                <div className="area-card-target">
-                  <span className="area-card-target-label">こんな方に</span>
-                  <span className="area-card-target-value">顔バレ絶対NGの方</span>
-                </div>
-                <span className="area-card-link">詳しく見る →</span>
-              </div>
-            </Link>
-
+              </Link>
+            ))}
           </div>
         </div>
       </section>
