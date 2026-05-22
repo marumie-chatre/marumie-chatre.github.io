@@ -149,58 +149,6 @@ function ScoreBar({ value, max, height = 5, bg, fill }: { value: number; max: nu
   );
 }
 
-function HeroIllustration() {
-  return (
-    <svg viewBox="0 0 360 180" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"
-      style={{ display: "block" }}>
-      <defs>
-        <linearGradient id="hi-bg" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor={G.mint} />
-          <stop offset="1" stopColor={G.sageSoft} />
-        </linearGradient>
-      </defs>
-      <rect width="360" height="180" fill="url(#hi-bg)" />
-      <circle cx="300" cy="40" r="28" fill={G.cream} opacity="0.7" />
-      <circle cx="300" cy="40" r="18" fill={G.accent} opacity="0.35" />
-      <g transform="translate(15, 30)">
-        <path d="M 5 80 C 5 30 25 5 60 0 C 60 50 35 80 5 80 Z" fill={G.sage} />
-        <path d="M 5 80 L 50 20" stroke={G.sageDeep} strokeWidth="1.4" fill="none" opacity="0.4" />
-      </g>
-      <rect x="80" y="125" width="220" height="6" rx="2" fill={G.ink} opacity="0.85" />
-      <rect x="80" y="131" width="220" height="3" rx="1" fill={G.ink} opacity="0.4" />
-      <g transform="translate(140, 70)">
-        <rect x="0" y="0" width="80" height="55" rx="4" fill={G.ink} opacity="0.92" />
-        <rect x="3" y="3" width="74" height="49" rx="2" fill={G.cream} />
-        <rect x="10" y="10" width="32" height="3" rx="1.5" fill={G.sage} />
-        <rect x="10" y="18" width="48" height="2" rx="1" fill={G.inkSofter} opacity="0.6" />
-        <rect x="10" y="24" width="40" height="2" rx="1" fill={G.inkSofter} opacity="0.6" />
-        <rect x="10" y="36" width="20" height="8" rx="2" fill={G.accent} />
-        <rect x="-6" y="55" width="92" height="3" rx="1.5" fill={G.ink} opacity="0.85" />
-      </g>
-      <g transform="translate(85, 95)">
-        <path d="M 0 5 L 0 22 C 0 28 5 30 12 30 C 19 30 24 28 24 22 L 24 5 Z" fill={G.paper} />
-        <path d="M 24 8 C 30 8 30 18 24 18" stroke={G.paper} strokeWidth="3" fill="none" />
-        <path d="M 6 -2 C 4 -8 8 -8 6 -14 M 14 -2 C 12 -8 16 -8 14 -14"
-          stroke={G.inkSofter} strokeWidth="1.4" fill="none" strokeLinecap="round" opacity="0.55" />
-      </g>
-      <g transform="translate(250, 85)">
-        <path d="M 0 18 L 4 40 L 22 40 L 26 18 Z" fill={G.accentDeep} opacity="0.85" />
-        <ellipse cx="13" cy="18" rx="14" ry="3" fill={G.cream} />
-        <path d="M 13 18 C 13 5 5 -5 0 -8 M 13 18 C 13 5 21 -5 26 -8 M 13 18 L 13 -5"
-          stroke={G.sageDeep} strokeWidth="1.5" fill="none" strokeLinecap="round" />
-        <ellipse cx="2" cy="-6" rx="6" ry="3" transform="rotate(-30 2 -6)" fill={G.sage} />
-        <ellipse cx="24" cy="-6" rx="6" ry="3" transform="rotate(30 24 -6)" fill={G.sage} />
-        <ellipse cx="13" cy="-8" rx="5" ry="3" fill={G.sageDeep} />
-      </g>
-      <g fill={G.accent} opacity="0.7">
-        <circle cx="60" cy="130" r="2" />
-        <circle cx="330" cy="120" r="2.5" />
-        <circle cx="115" cy="50" r="1.5" />
-      </g>
-    </svg>
-  );
-}
-
 function RankingCard({ r, idx }: { r: typeof RANKING[0]; idx: number }) {
   const isTop = idx === 0;
   const medalColors = ["#E8B85B", "#C5C0BA", "#D69C71"];
@@ -423,82 +371,114 @@ export default function Home() {
               textDecoration: "none",
             }}>11事務所のランキング</Link>
           </div>
-
-          <div style={{
-            marginTop: 24, position: "relative",
-            background: G.paper, borderRadius: 20, overflow: "hidden",
-            boxShadow: "0 4px 18px rgba(51,45,34,0.06)",
-            height: 180,
-          }}>
-            <HeroIllustration />
-          </div>
         </div>
       </section>
 
-      {/* ===== PILLARS（新構造：kicker＋大見出し＋ピル型カード） ===== */}
-      <section style={{ padding: "16px 20px 0", maxWidth: 760, margin: "0 auto" }}>
-        {/* kicker */}
-        <div style={{ textAlign: "center", marginBottom: 14 }}>
-          <span style={{
-            fontSize: 11, fontWeight: 700, color: G.inkSoft, letterSpacing: 3,
-          }}>編集部の約束</span>
-        </div>
+      {/* ===== PILLARS（重厚版・athomelive クオリティ）===== */}
+      <section style={{
+        marginTop: 40,
+        padding: "48px 20px 56px",
+        background: G.warmYellow,
+      }}>
+        <div style={{ maxWidth: 760, margin: "0 auto" }}>
+          {/* kicker pill */}
+          <div style={{ textAlign: "center", marginBottom: 14 }}>
+            <span style={{
+              display: "inline-block",
+              padding: "6px 18px",
+              background: G.paper,
+              borderRadius: 99,
+              fontSize: 11, fontWeight: 800, color: G.sageDeep,
+              letterSpacing: 2.5,
+              boxShadow: "0 2px 8px rgba(58,50,42,0.06)",
+            }}>編集部の3つの約束</span>
+          </div>
 
-        {/* heading with 圏点（emphasis dots） */}
-        <h2 style={{
-          textAlign: "center",
-          fontSize: "clamp(22px, 5.8vw, 30px)",
-          lineHeight: 1.55,
-          fontWeight: 700,
-          margin: "0 0 26px",
-          color: G.ink,
-        }}>
-          ちゃんと選んでほしいから、<br />
-          <EmphasisWord text="ぜんぶ" color={G.sageDeep} />正直に書いています。
-        </h2>
+          {/* heading with peach underline highlight */}
+          <h2 style={{
+            textAlign: "center",
+            fontSize: "clamp(24px, 6.5vw, 34px)",
+            lineHeight: 1.55,
+            fontWeight: 800,
+            margin: "0 0 36px",
+            color: G.ink,
+          }}>
+            ちゃんと選んでほしいから、<br />
+            <span style={{ position: "relative", display: "inline-block" }}>
+              <span style={{
+                position: "absolute", left: 0, right: 0, bottom: 4,
+                height: 14, background: G.accent, opacity: 0.55, zIndex: 0, borderRadius: 6,
+              }} />
+              <span style={{ position: "relative", color: G.sageDeep }}>ぜんぶ書いてます。</span>
+            </span>
+          </h2>
 
-        {/* 3 pill cards */}
-        <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-          {[
-            { prefix: "良い点・気になる点を", emphasis: "両方掲載" },
-            { prefix: "採点基準を", emphasis: "すべて公開" },
-            { prefix: "広告費で", emphasis: "順位は変えません" },
-          ].map((item, i) => (
-            <div key={i} style={{
-              display: "flex", alignItems: "center", gap: 14,
-              padding: "14px 22px",
-              background: G.sageSoft,
-              borderRadius: 999,
-            }}>
-              <div style={{
-                width: 26, height: 26, borderRadius: 6,
-                background: G.sageDeep, color: "#fff",
-                display: "flex", alignItems: "center", justifyContent: "center",
-                flexShrink: 0,
+          {/* 3 substantial cards with numbers */}
+          <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+            {[
+              {
+                num: "01",
+                title: "良い点も気になる点も両方掲載",
+                body: "事務所の良い面だけでなく、合わなかった人の声もまるっと載せています。",
+              },
+              {
+                num: "02",
+                title: "採点基準をすべて公開",
+                body: "5軸100点満点。各事務所のスコアの根拠まで全部見られます。",
+              },
+              {
+                num: "03",
+                title: "広告費で順位は変えません",
+                body: "事務所からの広告費は順位に反映していません。公平な順位付けです。",
+              },
+            ].map((item) => (
+              <div key={item.num} style={{
+                background: G.paper,
+                borderRadius: 18,
+                padding: "22px 22px",
+                display: "flex", gap: 16, alignItems: "flex-start",
+                boxShadow: "0 4px 14px rgba(58,50,42,0.06)",
+                position: "relative",
               }}>
-                <Icon.Check size={15} />
+                {/* 大番号バッジ */}
+                <div style={{
+                  width: 46, height: 46, borderRadius: "50%",
+                  background: G.sageDeep, color: "#fff",
+                  display: "flex", alignItems: "center", justifyContent: "center",
+                  fontSize: 15, fontWeight: 800, letterSpacing: 0.5,
+                  flexShrink: 0,
+                  boxShadow: "0 4px 12px rgba(79,130,37,0.30)",
+                }}>{item.num}</div>
+                {/* タイトル＋本文 */}
+                <div style={{ flex: 1, minWidth: 0, paddingTop: 2 }}>
+                  <div style={{
+                    fontSize: 15, fontWeight: 800, color: G.ink,
+                    marginBottom: 6, lineHeight: 1.4,
+                  }}>{item.title}</div>
+                  <div style={{
+                    fontSize: 12, lineHeight: 1.75, color: G.inkSoft,
+                  }}>{item.body}</div>
+                </div>
+                {/* 緑チェックバッジ（右上） */}
+                <div style={{
+                  width: 28, height: 28, borderRadius: "50%",
+                  background: G.sageSoft, color: G.sageDeep,
+                  display: "flex", alignItems: "center", justifyContent: "center",
+                  flexShrink: 0, marginTop: 2,
+                }}>
+                  <Icon.Check size={16} />
+                </div>
               </div>
-              <div style={{ fontSize: 14, fontWeight: 600, color: G.ink, lineHeight: 1.5 }}>
-                {item.prefix}
-                <span style={{
-                  color: G.accentDeep,
-                  textDecoration: "underline",
-                  textDecorationColor: G.accentDeep,
-                  textDecorationThickness: 2,
-                  textUnderlineOffset: 3,
-                  fontWeight: 700,
-                }}>{item.emphasis}</span>
-              </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
 
-        {/* signature */}
-        <div style={{
-          marginTop: 18, textAlign: "center",
-          fontSize: 12, color: G.sageDeep, fontWeight: 600, letterSpacing: 0.3,
-        }}>
-          — 編集部 ✎
+          {/* signature */}
+          <div style={{
+            marginTop: 28, textAlign: "center",
+            fontSize: 12.5, color: G.sageDeep, fontWeight: 700, letterSpacing: 0.5,
+          }}>
+            — まるみえチャトレ 編集部 ✎
+          </div>
         </div>
       </section>
 
