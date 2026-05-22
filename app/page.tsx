@@ -95,6 +95,30 @@ const COLUMNS_PREVIEW = [
 
 // ========== サブコンポーネント ==========
 
+// 圏点（けんてん）：各文字の上に小さな丸を表示するヘルパー
+// Natural Kiss 風の女性的タイポグラフィ装飾
+function EmphasisWord({ text, color }: { text: string; color: string }) {
+  return (
+    <span style={{ display: "inline-flex", color, fontWeight: 800 }}>
+      {Array.from(text).map((char, i) => (
+        <span key={i} style={{ position: "relative", display: "inline-block" }}>
+          <span style={{
+            position: "absolute",
+            top: "-0.45em",
+            left: "50%",
+            transform: "translateX(-50%)",
+            width: 6,
+            height: 6,
+            borderRadius: "50%",
+            background: color,
+          }} />
+          {char}
+        </span>
+      ))}
+    </span>
+  );
+}
+
 function SectionHead({ kicker, title, note }: { kicker: string; title: string; note?: string }) {
   return (
     <div>
@@ -411,56 +435,70 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== PILLARS ===== */}
-      <section style={{ padding: "0 20px", position: "relative", maxWidth: 760, margin: "0 auto" }}>
-        <div style={{
-          position: "absolute", top: -18, right: 38, zIndex: 2,
-          transform: "rotate(-4deg)",
-          padding: "4px 12px", background: G.accent, color: G.ink,
-          borderRadius: 99, fontSize: 11, fontWeight: 700,
-          boxShadow: "0 4px 12px rgba(46,42,32,0.12)",
-          display: "inline-flex", alignItems: "center", gap: 5,
-        }}>
-          <svg width="11" height="11" viewBox="0 0 11 11" fill={G.ink}>
-            <path d="M3 1 L4 4 L7 4.3 L4.7 6.3 L5.3 9 L3 7.5 L0.7 9 L1.3 6.3 L-1 4.3 L2 4 Z"
-              transform="translate(2.5,0.5)" />
-          </svg>
-          編集部より
+      {/* ===== PILLARS（新構造：kicker＋大見出し＋ピル型カード） ===== */}
+      <section style={{ padding: "16px 20px 0", maxWidth: 760, margin: "0 auto" }}>
+        {/* kicker */}
+        <div style={{ textAlign: "center", marginBottom: 14 }}>
+          <span style={{
+            fontSize: 11, fontWeight: 700, color: G.inkSoft, letterSpacing: 3,
+          }}>編集部の約束</span>
         </div>
-        <div style={{
-          background: G.paper, borderRadius: 16, padding: "16px 18px",
-          boxShadow: "0 2px 12px rgba(46,42,32,0.05)",
-          display: "flex", flexDirection: "column", gap: 10,
+
+        {/* heading with 圏点（emphasis dots） */}
+        <h2 style={{
+          textAlign: "center",
+          fontSize: "clamp(22px, 5.8vw, 30px)",
+          lineHeight: 1.55,
+          fontWeight: 700,
+          margin: "0 0 26px",
+          color: G.ink,
         }}>
+          ちゃんと選んでほしいから、<br />
+          <EmphasisWord text="ぜんぶ" color={G.sageDeep} />正直に書いています。
+        </h2>
+
+        {/* 3 pill cards */}
+        <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
           {[
-            "良い点・気になる点を両方掲載",
-            "採点基準をすべて公開",
-            "広告費で順位は変えません",
-          ].map((t, i) => (
-            <div key={i} style={{ display: "flex", alignItems: "center", gap: 12 }}>
+            { prefix: "良い点・気になる点を", emphasis: "両方掲載" },
+            { prefix: "採点基準を", emphasis: "すべて公開" },
+            { prefix: "広告費で", emphasis: "順位は変えません" },
+          ].map((item, i) => (
+            <div key={i} style={{
+              display: "flex", alignItems: "center", gap: 14,
+              padding: "14px 22px",
+              background: G.sageSoft,
+              borderRadius: 999,
+            }}>
               <div style={{
-                width: 24, height: 24, borderRadius: "50%",
-                background: G.sageSoft, color: G.sageDeep,
+                width: 26, height: 26, borderRadius: 6,
+                background: G.sageDeep, color: "#fff",
                 display: "flex", alignItems: "center", justifyContent: "center",
                 flexShrink: 0,
               }}>
-                <Icon.Check size={13} />
+                <Icon.Check size={15} />
               </div>
-              <div style={{ fontSize: 12.5, fontWeight: 500, color: G.ink }}>{t}</div>
+              <div style={{ fontSize: 14, fontWeight: 600, color: G.ink, lineHeight: 1.5 }}>
+                {item.prefix}
+                <span style={{
+                  color: G.accentDeep,
+                  textDecoration: "underline",
+                  textDecorationColor: G.accentDeep,
+                  textDecorationThickness: 2,
+                  textUnderlineOffset: 3,
+                  fontWeight: 700,
+                }}>{item.emphasis}</span>
+              </div>
             </div>
           ))}
-          <div style={{
-            marginTop: 6, paddingTop: 12,
-            borderTop: `1px dashed ${G.rule}`,
-            fontSize: 12.5, lineHeight: 1.7, color: G.ink, letterSpacing: 0.3,
-          }}>
-            ちゃんと選んでほしいから、<br />
-            ぜんぶ正直に書いています。
-            <span style={{
-              display: "inline-block", marginLeft: 8,
-              fontSize: 11, color: G.sageDeep, fontWeight: 600,
-            }}>— 編集部 ✎</span>
-          </div>
+        </div>
+
+        {/* signature */}
+        <div style={{
+          marginTop: 18, textAlign: "center",
+          fontSize: 12, color: G.sageDeep, fontWeight: 600, letterSpacing: 0.3,
+        }}>
+          — 編集部 ✎
         </div>
       </section>
 
