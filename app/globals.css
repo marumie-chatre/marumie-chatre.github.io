@@ -1,4 +1,5 @@
 :root {
+  /* ===== レガシートークン（既存ページ互換用・現状維持） ===== */
   --green: #7ab548;
   --green-dark: #5a9030;
   --green-mid: #95c860;
@@ -18,6 +19,74 @@
   --shadow-sm: 0 2px 10px rgba(0,0,0,0.055);
   --shadow: 0 4px 22px rgba(0,0,0,0.085);
   --shadow-lg: 0 12px 44px rgba(0,0,0,0.12);
+
+  /* ===== Design Refresh v2 トークン（5/23 handoff より・新規ページから順次採用） =====
+     Forest Matcha 基調・Peach アクセント・Cream paper background
+     詳細：handoff/docs/01-design-tokens.md 参照 */
+
+  /* Primary palette — Forest Matcha */
+  --color-primary: #2E7038;          /* CTA・ブランド・スコア合計 */
+  --color-primary-deep: #1F5732;     /* 強調・濃いフィル */
+  --color-primary-tint: #DDEDC5;     /* タグ背景・アイコン背景 */
+  --color-primary-mid: #7AAE3A;      /* ドーナツ・グラフ中間色 */
+
+  /* Accent — Lime Matcha（ハイライト用） */
+  --color-highlight: #B5D670;        /* ✓・CTA内丸・小さいバー */
+
+  /* Accent — Peach（小さな差し色のみ・主役にしない） */
+  --color-accent: #F8B5A8;           /* 編集部よりスタンプ・BUTコールアウト */
+  --color-accent-soft: #FCE0DC;      /* ピーチ系コールアウト背景 */
+  --color-accent-deep: #E18B7A;      /* ピーチ背景上の見出し */
+
+  /* Paper & Background */
+  --color-bg: #FCF6E5;               /* メインページ背景（warm cream） */
+  --color-bg-warm: #F5E0CB;          /* セクション帯 */
+  --color-paper: #FFFFFF;            /* カード表面 */
+  --color-cream: #FAF3E0;            /* カード内ソフトフィル */
+
+  /* Ink（テキスト・warm espresso、絶対に #000 にしない） */
+  --color-ink: #2E2A20;              /* 本文・見出し */
+  --color-ink-soft: #75695A;         /* 二次・キャプション */
+  --color-ink-softer: #B5AC9B;       /* 三次・プレースホルダー */
+
+  /* Rules（罫線） */
+  --color-rule: rgba(46, 42, 32, 0.10);
+  --color-rule-strong: rgba(46, 42, 32, 0.20);
+
+  /* Medal（ランキングTOP3バッジ） */
+  --color-medal-gold: #E8B85B;
+  --color-medal-silver: #C5C0BA;
+  --color-medal-bronze: #D69C71;
+
+  /* Typography families */
+  --font-mincho: 'Shippori Mincho', 'Noto Serif JP', serif;
+  --font-sans-jp: 'Noto Sans JP', sans-serif;
+  --font-hand: 'Klee One', 'Shippori Mincho', serif;
+  --font-numeric: 'Manrope', sans-serif;
+
+  /* Radii（新デザインのスケール） */
+  --radius-sm: 4px;
+  --radius-md: 10px;
+  --radius-pill: 99px;
+  --radius-circle: 50%;
+  /* --radius-lg 既存と同じだが新仕様では12px推奨。新規コンポーネントは radius:12px を直書きする */
+
+  /* Shadows（暖かみのある薄めの影） */
+  --shadow-v2-sm: 0 1px 4px rgba(46, 42, 32, 0.05);
+  --shadow-v2-md: 0 2px 10px rgba(46, 42, 32, 0.05);
+  --shadow-v2-lg: 0 4px 16px rgba(46, 42, 32, 0.06);
+  --shadow-cta: 0 6px 18px rgba(46, 112, 56, 0.30);
+  --shadow-top1: 0 4px 16px rgba(46, 112, 56, 0.10);
+
+  /* Spacing（8pxベース・密度高めのUI） */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 32px;
+  --space-8: 40px;
 }
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; overflow-x: hidden; }
