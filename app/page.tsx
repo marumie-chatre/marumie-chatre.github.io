@@ -7,21 +7,24 @@ export const metadata = {
   description: "事務所選びで失敗したくない初心者のための口コミサイト。編集部が実際に調査した情報と評価基準をすべて公開しています。",
 };
 
-// Design Refresh v2 カラーパレット（Palette D: Sage × Peach × Cream）
+// Design Refresh v2 カラーパレット（Palette E: Natural Kiss 風）
+// Fresh Sage × Peach × Warm Yellow × Near-White Cream
 const G = {
-  bg: "#FBF4E6",            // vanilla cream（旧 #FCF6E5）
-  bgWarm: "#FBE0D5",        // peach warm band
+  bg: "#FAFAF5",            // near-white cream（清潔感UP）
+  bgWarm: "#F5E8C8",        // warm yellow band
   paper: "#FFFFFF",
-  ink: "#3A322A",           // warm brown（旧 #2E2A20）
+  ink: "#3A322A",           // warm brown
   inkSoft: "#87796A",
   inkSofter: "#B5AC9B",
-  sage: "#8FB87D",          // soft sage（旧 #2E7038・大幅ソフト化）
-  sageDeep: "#5D8E4E",      // forest（旧 #1F5732）
-  sageSoft: "#D8E5BF",      // light sage bg
-  mint: "#C5DC85",          // light lime（少し warmer）
+  sage: "#7BAA3F",          // fresh forest（明るく爽やかな草緑）
+  sageDeep: "#4F8225",      // vibrant deep
+  sageSoft: "#CDDDB0",      // Natural Kiss mint chip color
+  mint: "#B5D670",          // light lime（戻し）
   cream: "#F8EFE0",         // soft cream
   accent: "#F4B5A0",        // light peach
   accentDeep: "#E89B85",    // coral
+  warmYellow: "#F5E8C8",    // 第3カラー：黄/クリーム
+  warmYellowDeep: "#D5A93C", // 番号バッジ文字色
   rule: "rgba(58,50,42,0.10)",
   ruleStrong: "rgba(58,50,42,0.20)",
 };
@@ -181,7 +184,7 @@ function RankingCard({ r, idx }: { r: typeof RANKING[0]; idx: number }) {
     <div style={{
       background: G.paper, borderRadius: 20, padding: 16, position: "relative",
       boxShadow: isTop
-        ? `0 10px 30px rgba(93,142,78,0.22), 0 0 0 2px ${G.sage}`
+        ? `0 10px 30px rgba(79,130,37,0.25), 0 0 0 2px ${G.sage}`
         : "0 2px 10px rgba(51,45,34,0.05)",
     }}>
       {isTop && (
@@ -191,7 +194,7 @@ function RankingCard({ r, idx }: { r: typeof RANKING[0]; idx: number }) {
           background: G.sageDeep, color: "#fff",
           fontSize: 10.5, fontWeight: 800, letterSpacing: 0.3,
           display: "flex", alignItems: "center", gap: 5,
-          boxShadow: "0 4px 12px rgba(93,142,78,0.35)",
+          boxShadow: "0 4px 12px rgba(79,130,37,0.35)",
         }}>
           <Icon.Crown size={13} />
           初心者に最もおすすめ
@@ -378,7 +381,7 @@ export default function Home() {
               background: G.sageDeep, color: "#fff",
               borderRadius: 14, fontSize: 14, fontWeight: 700,
               display: "flex", alignItems: "center", justifyContent: "space-between",
-              boxShadow: "0 6px 18px rgba(93,142,78,0.35)",
+              boxShadow: "0 6px 18px rgba(79,130,37,0.35)",
               textDecoration: "none",
             }}>
               <span>自分に合う事務所を探す</span>

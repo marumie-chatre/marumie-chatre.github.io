@@ -1,48 +1,54 @@
 :root {
-  /* ===== Palette D 適用済（5/23 ユーザー指示）=====
-     Sage × Peach × Cream
-     方向性：清楚×ナチュラル、Forest Matcha より柔らかく女性向けに */
+  /* ===== Palette E 適用済（5/23 MonPetit Natural Kiss 風）=====
+     Fresh Sage × Peach × Warm Yellow × White-Cream
+     方向性：明るく爽やかな緑・温かい黄をサブに・余白多め
+     参考：MonPetit Natural Kiss（草緑＋水彩葉＋黄バッジ＋淡ミントチップ）*/
 
-  /* ===== レガシートークン（既存ページ互換用・Palette D に整合） ===== */
-  --green: #8FB87D;                  /* soft sage（旧 #7ab548 から柔らかく） */
-  --green-dark: #5D8E4E;             /* forest（旧 #5a9030 から少しソフト） */
-  --green-mid: #A4C77E;              /* mid-tone */
-  --green-light: #C8DCB0;            /* light */
-  --green-pale: #F3F7E8;             /* very pale */
-  --green-bg: #E5EFD2;               /* soft bg */
-  --cream: #FBF4E6;                  /* vanilla cream（旧 #fafaf6 から温かく） */
+  /* ===== レガシートークン（既存ページ互換用・Palette E に整合） ===== */
+  --green: #7BAA3F;                  /* fresh forest（明るく爽やか） */
+  --green-dark: #4F8225;             /* vibrant deep green */
+  --green-mid: #9BC25E;              /* mid-tone */
+  --green-light: #CDDDB0;            /* Natural Kiss 風 mint chip color */
+  --green-pale: #F0F5E2;             /* fresh pale */
+  --green-bg: #DEE9C5;               /* soft bg */
+  --cream: #FAFAF5;                  /* near-white cream（清潔感UP） */
   --white: #ffffff;
-  --text: #3A322A;                   /* warm brown（旧 #2d2d2d から茶系に） */
+  --text: #3A322A;                   /* warm brown（維持） */
   --text-mid: #5A4E40;
   --text-muted: #87796A;
   --text-light: #B5AC9B;
-  --border: #EFE9DC;
-  --border-green: #D2DFB8;
+  --border: #ECEAE0;
+  --border-green: #CFDDB4;
   --radius: 18px;
   --radius-lg: 26px;
   --shadow-sm: 0 2px 10px rgba(58,50,42,0.055);
   --shadow: 0 4px 22px rgba(58,50,42,0.085);
   --shadow-lg: 0 12px 44px rgba(58,50,42,0.12);
 
-  /* ===== Design Refresh v2 トークン（Palette D 適用版） ===== */
+  /* ===== Design Refresh v2 トークン（Palette E 適用版） ===== */
 
-  /* Primary palette — Soft Sage */
-  --color-primary: #8FB87D;          /* CTA・ブランド（旧 #2E7038 から大幅ソフト） */
-  --color-primary-deep: #5D8E4E;     /* 強調・濃いフィル */
-  --color-primary-tint: #D8E5BF;     /* タグ背景・アイコン背景 */
-  --color-primary-mid: #A4C77E;      /* ドーナツ・グラフ中間色 */
+  /* Primary palette — Fresh Sage */
+  --color-primary: #7BAA3F;          /* CTA・ブランド（明るい草緑） */
+  --color-primary-deep: #4F8225;     /* 強調・vibrant deep */
+  --color-primary-tint: #CDDDB0;     /* タグ背景・アイコン背景（Natural Kiss風 mint chip） */
+  --color-primary-mid: #9BC25E;      /* ドーナツ・グラフ中間色 */
 
   /* Accent — Light Lime（ハイライト用） */
-  --color-highlight: #C5DC85;        /* ✓・CTA内丸・小さいバー（少し warmer） */
+  --color-highlight: #B5D670;        /* ✓・CTA内丸・小さいバー */
 
   /* Accent — Peach（やや前面に・女性的差し色） */
   --color-accent: #F4B5A0;           /* 編集部よりスタンプ・コールアウト */
   --color-accent-soft: #FBE0D5;      /* ピーチ系コールアウト背景 */
   --color-accent-deep: #E89B85;      /* coral 強め */
 
+  /* Accent — Warm Yellow（第3カラー・温かさ追加） */
+  --color-warm-yellow: #F5E8C8;      /* 番号バッジ背景・暖かい差し色 */
+  --color-warm-yellow-soft: #FAF1DE; /* yellow band 背景 */
+  --color-warm-yellow-deep: #D5A93C; /* badge text・accent text */
+
   /* Paper & Background */
-  --color-bg: #FBF4E6;               /* メインページ背景（vanilla cream） */
-  --color-bg-warm: #FBE0D5;          /* セクション帯 peach */
+  --color-bg: #FAFAF5;               /* メインページ背景（near-white） */
+  --color-bg-warm: #F5E8C8;          /* セクション帯 warm yellow */
   --color-paper: #FFFFFF;            /* カード表面 */
   --color-cream: #F8EFE0;            /* カード内ソフトフィル */
 
