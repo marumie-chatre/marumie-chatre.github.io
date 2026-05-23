@@ -132,6 +132,111 @@ function EmphasisWord({
   );
 }
 
+// 波線下線（手書き風）：見出しの装飾下線
+// 直線 peach 下線の代わりに使う、athomelive 風の柔らかい曲線
+function WavyUnderline({
+  color,
+  thickness = 2.5,
+  height = 10,
+}: {
+  color: string;
+  thickness?: number;
+  height?: number;
+}) {
+  return (
+    <svg
+      viewBox="0 0 100 10"
+      preserveAspectRatio="none"
+      aria-hidden="true"
+      style={{
+        position: "absolute",
+        left: 0,
+        right: 0,
+        bottom: -6,
+        width: "100%",
+        height: height,
+        pointerEvents: "none",
+      }}
+    >
+      <path
+        d="M 0 6 Q 12.5 1, 25 6 T 50 6 T 75 6 T 100 6"
+        stroke={color}
+        strokeWidth={thickness}
+        fill="none"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+// 単語ピル強調：1単語だけ色付きピル背景で囲む
+// 例：「全部」だけ緑pill。athomelive の「週1出勤…」のような装飾。
+function PillWord({
+  children,
+  bg,
+  color = "#fff",
+  px = "0.5em",
+}: {
+  children: React.ReactNode;
+  bg: string;
+  color?: string;
+  px?: string;
+}) {
+  return (
+    <span style={{
+      display: "inline-block",
+      padding: `0.05em ${px}`,
+      margin: "0 0.1em",
+      background: bg,
+      color: color,
+      borderRadius: 99,
+      lineHeight: 1.25,
+      fontWeight: 800,
+    }}>
+      {children}
+    </span>
+  );
+}
+
+// 斜線ブラケット装飾：\\ TEXT // でキッカーを囲む
+// athomelive の「\\未経験者大歓迎/」のような手作り感
+function BracketKicker({
+  children,
+  color,
+}: {
+  children: React.ReactNode;
+  color: string;
+}) {
+  return (
+    <span style={{
+      display: "inline-flex",
+      alignItems: "center",
+      gap: "0.6em",
+      color,
+      fontWeight: 700,
+      letterSpacing: 2.5,
+    }}>
+      <span style={{
+        display: "inline-block",
+        width: "1.2em",
+        height: "1px",
+        background: color,
+        transform: "rotate(70deg)",
+        transformOrigin: "right center",
+      }} />
+      <span>{children}</span>
+      <span style={{
+        display: "inline-block",
+        width: "1.2em",
+        height: "1px",
+        background: color,
+        transform: "rotate(-70deg)",
+        transformOrigin: "left center",
+      }} />
+    </span>
+  );
+}
+
 function SectionHead({ kicker, title, note }: { kicker: string; title: string; note?: string }) {
   return (
     <div>
@@ -421,8 +526,8 @@ export default function Home() {
 
           <h1 style={{
             margin: "18px 0 0",
-            fontSize: "clamp(22px, 5.6vw, 30px)", lineHeight: 1.4,
-            fontWeight: 700, letterSpacing: -0.4,
+            fontSize: "clamp(24px, 6.8vw, 36px)", lineHeight: 1.4,
+            fontWeight: 800, letterSpacing: -0.4,
           }}>
             中身で選ぶ、<br />
             <span style={{ whiteSpace: "nowrap" }}>
@@ -430,9 +535,10 @@ export default function Home() {
               <span style={{ position: "relative", display: "inline-block" }}>
                 <span style={{
                   position: "absolute", left: 0, right: 0, bottom: 4,
-                  height: 10, background: G.accent, opacity: 0.4, zIndex: 0, borderRadius: 4,
+                  height: 11, background: G.accent, opacity: 0.45, zIndex: 0, borderRadius: 4,
                 }} />
                 <span style={{ position: "relative", color: G.sageDeep }}>口コミサイト。</span>
+                <WavyUnderline color={G.accentDeep} thickness={2.5} />
               </span>
             </span>
           </h1>
@@ -478,28 +584,26 @@ export default function Home() {
         backgroundSize: "16px 16px",
       }}>
         <div style={{ maxWidth: 720, margin: "0 auto" }}>
-          {/* English uppercase kicker */}
-          <div style={{ textAlign: "center", marginBottom: 12 }}>
-            <span style={{
-              fontSize: 11, fontWeight: 700, color: G.inkSoft,
-              letterSpacing: 3.5,
-            }}>EDITOR'S PROMISE</span>
+          {/* Kicker（斜線ブラケット装飾） */}
+          <div style={{ textAlign: "center", marginBottom: 16, fontSize: 11 }}>
+            <BracketKicker color={G.inkSoft}>EDITOR&apos;S PROMISE</BracketKicker>
           </div>
 
-          {/* 大見出し：「選んで」を圏点＋色強調＋少し大きく */}
+          {/* 大見出し：「選んで」圏点・「全部」ピル */}
           <h2 style={{
             textAlign: "center",
-            fontSize: "clamp(22px, 5.6vw, 30px)",
-            lineHeight: 1.4,
-            fontWeight: 700,
+            fontSize: "clamp(24px, 6.8vw, 36px)",
+            lineHeight: 1.55,
+            fontWeight: 800,
             letterSpacing: -0.4,
-            margin: "0 0 24px",
+            margin: "0 0 26px",
             color: G.ink,
           }}>
             ちゃんと
             <EmphasisWord text="選んで" color={G.sageDeep} sizeMultiplier={1.15} />
             ほしいから、<br />
-            全部かいてます。
+            <PillWord bg={G.sageDeep} color="#fff" px="0.6em">全部</PillWord>
+            かいてます。
           </h2>
 
           {/* 3 シンプルピル（リファレンス忠実） */}
