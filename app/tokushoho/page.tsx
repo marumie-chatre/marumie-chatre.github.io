@@ -26,39 +26,39 @@ export default function TokushohoPage() {
         }}>
           <tbody>
             <tr style={{borderBottom: "1px solid #e0d8cc"}}>
-              <th style={{padding: "12px 16px", textAlign: "left", width: "30%", background: "#fdf8f4", fontWeight: 700, color: "#5a9a30"}}>サイト名</th>
+              <th style={{padding: "12px 16px", textAlign: "left", width: "30%", background: "var(--cream)", fontWeight: 700, color: "var(--green-dark)"}}>サイト名</th>
               <td style={{padding: "12px 16px"}}>まるみえチャトレ</td>
             </tr>
             <tr style={{borderBottom: "1px solid #e0d8cc"}}>
-              <th style={{padding: "12px 16px", textAlign: "left", background: "#fdf8f4", fontWeight: 700, color: "#5a9a30"}}>運営責任者</th>
+              <th style={{padding: "12px 16px", textAlign: "left", background: "var(--cream)", fontWeight: 700, color: "var(--green-dark)"}}>運営責任者</th>
               <td style={{padding: "12px 16px"}}>みなみ</td>
             </tr>
             <tr style={{borderBottom: "1px solid #e0d8cc"}}>
-              <th style={{padding: "12px 16px", textAlign: "left", background: "#fdf8f4", fontWeight: 700, color: "#5a9a30"}}>所在地</th>
+              <th style={{padding: "12px 16px", textAlign: "left", background: "var(--cream)", fontWeight: 700, color: "var(--green-dark)"}}>所在地</th>
               <td style={{padding: "12px 16px"}}>ご請求があり次第、遅滞なく開示いたします</td>
             </tr>
             <tr style={{borderBottom: "1px solid #e0d8cc"}}>
-              <th style={{padding: "12px 16px", textAlign: "left", background: "#fdf8f4", fontWeight: 700, color: "#5a9a30"}}>連絡先</th>
+              <th style={{padding: "12px 16px", textAlign: "left", background: "var(--cream)", fontWeight: 700, color: "var(--green-dark)"}}>連絡先</th>
               <td style={{padding: "12px 16px"}}>ご請求があり次第、遅滞なく開示いたします</td>
             </tr>
             <tr style={{borderBottom: "1px solid #e0d8cc"}}>
-              <th style={{padding: "12px 16px", textAlign: "left", background: "#fdf8f4", fontWeight: 700, color: "#5a9a30"}}>提供サービス</th>
+              <th style={{padding: "12px 16px", textAlign: "left", background: "var(--cream)", fontWeight: 700, color: "var(--green-dark)"}}>提供サービス</th>
               <td style={{padding: "12px 16px"}}>チャットレディ事務所の口コミ・比較情報の提供</td>
             </tr>
             <tr style={{borderBottom: "1px solid #e0d8cc"}}>
-              <th style={{padding: "12px 16px", textAlign: "left", background: "#fdf8f4", fontWeight: 700, color: "#5a9a30"}}>料金</th>
+              <th style={{padding: "12px 16px", textAlign: "left", background: "var(--cream)", fontWeight: 700, color: "var(--green-dark)"}}>料金</th>
               <td style={{padding: "12px 16px"}}>無料（ユーザーから料金を徴収しません）</td>
             </tr>
             <tr style={{borderBottom: "1px solid #e0d8cc"}}>
-              <th style={{padding: "12px 16px", textAlign: "left", background: "#fdf8f4", fontWeight: 700, color: "#5a9a30"}}>支払方法</th>
+              <th style={{padding: "12px 16px", textAlign: "left", background: "var(--cream)", fontWeight: 700, color: "var(--green-dark)"}}>支払方法</th>
               <td style={{padding: "12px 16px"}}>該当なし（無料サービス）</td>
             </tr>
             <tr style={{borderBottom: "1px solid #e0d8cc"}}>
-              <th style={{padding: "12px 16px", textAlign: "left", background: "#fdf8f4", fontWeight: 700, color: "#5a9a30"}}>役務の提供時期</th>
+              <th style={{padding: "12px 16px", textAlign: "left", background: "var(--cream)", fontWeight: 700, color: "var(--green-dark)"}}>役務の提供時期</th>
               <td style={{padding: "12px 16px"}}>サイト公開中、随時</td>
             </tr>
             <tr style={{borderBottom: "1px solid #e0d8cc"}}>
-              <th style={{padding: "12px 16px", textAlign: "left", background: "#fdf8f4", fontWeight: 700, color: "#5a9a30"}}>返品・キャンセル</th>
+              <th style={{padding: "12px 16px", textAlign: "left", background: "var(--cream)", fontWeight: 700, color: "var(--green-dark)"}}>返品・キャンセル</th>
               <td style={{padding: "12px 16px"}}>該当なし（無料サービス）</td>
             </tr>
           </tbody>

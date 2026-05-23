@@ -1,6 +1,6 @@
 "use client";
-import Link from "next/link";
 import { useState, useEffect } from "react";
+import { Icon } from "./Icon";
 
 export default function FloatingCTA() {
   const [visible, setVisible] = useState(false);
@@ -32,18 +32,19 @@ export default function FloatingCTA() {
           display: "flex",
           alignItems: "center",
           gap: "8px",
-          background: "#7ab548",
+          background: "var(--green)",
           color: "#fff",
           fontWeight: 700,
           fontSize: "14px",
           padding: "13px 28px",
           borderRadius: "100px",
           textDecoration: "none",
-          boxShadow: "0 4px 20px rgba(122,181,72,0.45)",
+          boxShadow: "0 4px 20px rgba(123,170,63,0.45)",
           whiteSpace: "nowrap",
         }}
       >
-        ✏️ 匿名で口コミを書く
+        <Icon.Pencil size={16} />
+        匿名で口コミを書く
       </a>
     </div>
   );
