@@ -421,17 +421,19 @@ export default function Home() {
 
           <h1 style={{
             margin: "18px 0 0",
-            fontSize: "clamp(24px, 6.2vw, 32px)", lineHeight: 1.4,
-            fontWeight: 700, letterSpacing: -0.2,
+            fontSize: "clamp(22px, 5.6vw, 30px)", lineHeight: 1.4,
+            fontWeight: 700, letterSpacing: -0.4,
           }}>
             中身で選ぶ、<br />
-            チャトレ事務所の
-            <span style={{ position: "relative", display: "inline-block" }}>
-              <span style={{
-                position: "absolute", left: 0, right: 0, bottom: 4,
-                height: 10, background: G.accent, opacity: 0.4, zIndex: 0, borderRadius: 4,
-              }} />
-              <span style={{ position: "relative", color: G.sageDeep }}>口コミサイト。</span>
+            <span style={{ whiteSpace: "nowrap" }}>
+              チャトレ事務所の
+              <span style={{ position: "relative", display: "inline-block" }}>
+                <span style={{
+                  position: "absolute", left: 0, right: 0, bottom: 4,
+                  height: 10, background: G.accent, opacity: 0.4, zIndex: 0, borderRadius: 4,
+                }} />
+                <span style={{ position: "relative", color: G.sageDeep }}>口コミサイト。</span>
+              </span>
             </span>
           </h1>
 
@@ -487,9 +489,10 @@ export default function Home() {
           {/* 大見出し：「選んで」を圏点＋色強調＋少し大きく */}
           <h2 style={{
             textAlign: "center",
-            fontSize: "clamp(26px, 7.5vw, 38px)",
-            lineHeight: 1.55,
-            fontWeight: 800,
+            fontSize: "clamp(22px, 5.6vw, 30px)",
+            lineHeight: 1.4,
+            fontWeight: 700,
+            letterSpacing: -0.4,
             margin: "0 0 24px",
             color: G.ink,
           }}>
