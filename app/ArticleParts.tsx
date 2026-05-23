@@ -17,7 +17,7 @@ export function QABlock({ q, a }: { q: string; a: React.ReactNode }) {
       padding: "20px 24px",
       borderRadius: "12px",
       marginBottom: "20px",
-      borderLeft: "4px solid #5a9a30",
+      borderLeft: "4px solid var(--green-dark)",
     }}>
       <div style={{
         display: "flex",
@@ -149,7 +149,7 @@ export function TipBox({ children, title = "ここがポイント" }: { children
       gap: "12px",
       alignItems: "flex-start",
       marginBottom: "16px",
-      borderLeft: "4px solid #5a9a30",
+      borderLeft: "4px solid var(--green-dark)",
     }}>
       <span style={{
         display: "inline-flex",

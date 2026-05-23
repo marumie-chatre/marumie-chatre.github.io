@@ -61,7 +61,7 @@ export default function ReviewCard({ review }: { review: Review }) {
           <p style={{ fontSize: "13px", color: "var(--text-mid)", lineHeight: "1.75", margin: 0 }}>{goodText}</p>
         </div>
         <div>
-          <div style={{ fontSize: "11px", fontWeight: 700, color: "#c06060", marginBottom: "3px" }}>気になったこと</div>
+          <div style={{ fontSize: "11px", fontWeight: 700, color: "var(--color-accent-deep)", marginBottom: "3px" }}>気になったこと</div>
           <p style={{ fontSize: "13px", color: "var(--text-mid)", lineHeight: "1.75", margin: 0 }}>{badText}</p>
         </div>
       </div>
