@@ -132,12 +132,12 @@ function EmphasisWord({
   );
 }
 
-// 波線下線（手書き風）：見出しの装飾下線
-// 直線 peach 下線の代わりに使う、athomelive 風の柔らかい曲線
+// 波線下線（手書き風・滑らかカーブ）：見出しの装飾下線
+// 三次ベジエで描く滑らかなSタイプ波線
 function WavyUnderline({
   color,
-  thickness = 2.5,
-  height = 10,
+  thickness = 2,
+  height = 8,
 }: {
   color: string;
   thickness?: number;
@@ -145,21 +145,21 @@ function WavyUnderline({
 }) {
   return (
     <svg
-      viewBox="0 0 100 10"
+      viewBox="0 0 100 8"
       preserveAspectRatio="none"
       aria-hidden="true"
       style={{
         position: "absolute",
         left: 0,
         right: 0,
-        bottom: -6,
+        bottom: -4,
         width: "100%",
         height: height,
         pointerEvents: "none",
       }}
     >
       <path
-        d="M 0 6 Q 12.5 1, 25 6 T 50 6 T 75 6 T 100 6"
+        d="M 0 4 C 16 -1, 34 9, 50 4 S 84 -1, 100 4"
         stroke={color}
         strokeWidth={thickness}
         fill="none"
@@ -169,13 +169,12 @@ function WavyUnderline({
   );
 }
 
-// 単語ピル強調：1単語だけ色付きピル背景で囲む
-// 例：「全部」だけ緑pill。athomelive の「週1出勤…」のような装飾。
+// 単語ピル強調：1単語だけ色付きピル背景で囲む（line height 影響最小化）
 function PillWord({
   children,
   bg,
   color = "#fff",
-  px = "0.5em",
+  px = "0.55em",
 }: {
   children: React.ReactNode;
   bg: string;
@@ -185,21 +184,21 @@ function PillWord({
   return (
     <span style={{
       display: "inline-block",
-      padding: `0.05em ${px}`,
-      margin: "0 0.1em",
+      padding: `0.02em ${px} 0.1em`,
+      margin: "0 0.12em",
       background: bg,
       color: color,
       borderRadius: 99,
-      lineHeight: 1.25,
+      lineHeight: 1,
       fontWeight: 800,
+      verticalAlign: "0.04em",
     }}>
       {children}
     </span>
   );
 }
 
-// 斜線ブラケット装飾：\\ TEXT // でキッカーを囲む
-// athomelive の「\\未経験者大歓迎/」のような手作り感
+// 斜線ブラケット装飾：実文字 ＼／ で自然な手作り感
 function BracketKicker({
   children,
   color,
@@ -211,28 +210,26 @@ function BracketKicker({
     <span style={{
       display: "inline-flex",
       alignItems: "center",
-      gap: "0.6em",
+      gap: "0.45em",
       color,
       fontWeight: 700,
-      letterSpacing: 2.5,
+      letterSpacing: 2,
     }}>
       <span style={{
         display: "inline-block",
-        width: "1.2em",
-        height: "1px",
-        background: color,
-        transform: "rotate(70deg)",
-        transformOrigin: "right center",
-      }} />
+        fontSize: "1.3em",
+        opacity: 0.65,
+        transform: "translateY(-1px)",
+        fontWeight: 400,
+      }}>＼</span>
       <span>{children}</span>
       <span style={{
         display: "inline-block",
-        width: "1.2em",
-        height: "1px",
-        background: color,
-        transform: "rotate(-70deg)",
-        transformOrigin: "left center",
-      }} />
+        fontSize: "1.3em",
+        opacity: 0.65,
+        transform: "translateY(-1px)",
+        fontWeight: 400,
+      }}>／</span>
     </span>
   );
 }
@@ -526,8 +523,8 @@ export default function Home() {
 
           <h1 style={{
             margin: "18px 0 0",
-            fontSize: "clamp(24px, 6.8vw, 36px)", lineHeight: 1.4,
-            fontWeight: 800, letterSpacing: -0.4,
+            fontSize: "clamp(22px, 5.8vw, 30px)", lineHeight: 1.4,
+            fontWeight: 800, letterSpacing: -0.5,
           }}>
             中身で選ぶ、<br />
             <span style={{ whiteSpace: "nowrap" }}>
@@ -592,10 +589,10 @@ export default function Home() {
           {/* 大見出し：「選んで」圏点・「全部」ピル */}
           <h2 style={{
             textAlign: "center",
-            fontSize: "clamp(24px, 6.8vw, 36px)",
-            lineHeight: 1.55,
+            fontSize: "clamp(22px, 5.8vw, 30px)",
+            lineHeight: 1.7,
             fontWeight: 800,
-            letterSpacing: -0.4,
+            letterSpacing: -0.5,
             margin: "0 0 26px",
             color: G.ink,
           }}>
