@@ -96,10 +96,18 @@ const COLUMNS_PREVIEW = [
 // ========== サブコンポーネント ==========
 
 // 圏点（けんてん）：各文字の上に小さな丸を表示するヘルパー
-// Natural Kiss 風の女性的タイポグラフィ装飾
-function EmphasisWord({ text, color }: { text: string; color: string }) {
+// Natural Kiss / athomelive 風の女性的タイポグラフィ装飾
+function EmphasisWord({
+  text,
+  color,
+  sizeMultiplier = 1,
+}: { text: string; color: string; sizeMultiplier?: number }) {
   return (
-    <span style={{ display: "inline-flex", color, fontWeight: 800 }}>
+    <span style={{
+      display: "inline-flex", color, fontWeight: 800,
+      fontSize: sizeMultiplier !== 1 ? `${sizeMultiplier}em` : undefined,
+      verticalAlign: "baseline",
+    }}>
       {Array.from(text).map((char, i) => (
         <span key={i} style={{ position: "relative", display: "inline-block" }}>
           <span style={{
@@ -146,6 +154,67 @@ function ScoreBar({ value, max, height = 5, bg, fill }: { value: number; max: nu
     <div style={{ background: bg, borderRadius: 99, height, overflow: "hidden" }}>
       <div style={{ width: `${pct}%`, height: "100%", background: fill, borderRadius: 99 }} />
     </div>
+  );
+}
+
+// HeroIllustration（横長バナー用）
+function HeroIllustration() {
+  return (
+    <svg viewBox="0 0 720 180" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"
+      style={{ display: "block" }}>
+      <defs>
+        <linearGradient id="hi-bg" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor={G.mint} />
+          <stop offset="1" stopColor={G.sageSoft} />
+        </linearGradient>
+      </defs>
+      <rect width="720" height="180" fill="url(#hi-bg)" />
+      {/* sun */}
+      <circle cx="620" cy="42" r="32" fill={G.cream} opacity="0.75" />
+      <circle cx="620" cy="42" r="22" fill={G.accent} opacity="0.35" />
+      {/* leaves left */}
+      <g transform="translate(40, 30)">
+        <path d="M 5 100 C 5 40 30 5 75 0 C 75 60 45 100 5 100 Z" fill={G.sage} />
+        <path d="M 5 100 L 60 25" stroke={G.sageDeep} strokeWidth="1.5" fill="none" opacity="0.4" />
+      </g>
+      {/* table */}
+      <rect x="180" y="135" width="420" height="6" rx="2" fill={G.ink} opacity="0.85" />
+      <rect x="180" y="141" width="420" height="3" rx="1" fill={G.ink} opacity="0.4" />
+      {/* laptop center */}
+      <g transform="translate(300, 70)">
+        <rect x="0" y="0" width="100" height="65" rx="4" fill={G.ink} opacity="0.92" />
+        <rect x="3" y="3" width="94" height="59" rx="2" fill={G.cream} />
+        <rect x="12" y="12" width="40" height="3" rx="1.5" fill={G.sage} />
+        <rect x="12" y="22" width="60" height="2" rx="1" fill={G.inkSofter} opacity="0.6" />
+        <rect x="12" y="30" width="50" height="2" rx="1" fill={G.inkSofter} opacity="0.6" />
+        <rect x="12" y="44" width="24" height="10" rx="2" fill={G.accent} />
+        <rect x="-6" y="65" width="112" height="3" rx="1.5" fill={G.ink} opacity="0.85" />
+      </g>
+      {/* tea cup left of laptop */}
+      <g transform="translate(220, 100)">
+        <path d="M 0 5 L 0 28 C 0 34 6 36 16 36 C 26 36 32 34 32 28 L 32 5 Z" fill={G.paper} />
+        <path d="M 32 10 C 40 10 40 22 32 22" stroke={G.paper} strokeWidth="3" fill="none" />
+        <path d="M 8 -2 C 6 -10 10 -10 8 -18 M 18 -2 C 16 -10 20 -10 18 -18"
+          stroke={G.inkSofter} strokeWidth="1.4" fill="none" strokeLinecap="round" opacity="0.55" />
+      </g>
+      {/* plant right of laptop */}
+      <g transform="translate(440, 85)">
+        <path d="M 0 22 L 5 50 L 28 50 L 33 22 Z" fill={G.accentDeep} opacity="0.85" />
+        <ellipse cx="16" cy="22" rx="18" ry="3.5" fill={G.cream} />
+        <path d="M 16 22 C 16 6 5 -6 0 -10 M 16 22 C 16 6 27 -6 32 -10 M 16 22 L 16 -6"
+          stroke={G.sageDeep} strokeWidth="1.6" fill="none" strokeLinecap="round" />
+        <ellipse cx="2" cy="-8" rx="7" ry="3.5" transform="rotate(-30 2 -8)" fill={G.sage} />
+        <ellipse cx="30" cy="-8" rx="7" ry="3.5" transform="rotate(30 30 -8)" fill={G.sage} />
+        <ellipse cx="16" cy="-10" rx="6" ry="3.5" fill={G.sageDeep} />
+      </g>
+      {/* sparkles */}
+      <g fill={G.accent} opacity="0.7">
+        <circle cx="120" cy="135" r="2.5" />
+        <circle cx="680" cy="125" r="3" />
+        <circle cx="240" cy="50" r="2" />
+        <circle cx="580" cy="60" r="2" />
+      </g>
+    </svg>
   );
 }
 
@@ -295,8 +364,19 @@ export default function Home() {
   return (
     <main style={{ background: G.bg, color: G.ink, paddingBottom: 60 }}>
 
-      {/* ===== HERO ===== */}
-      <section style={{ position: "relative", padding: "16px 20px 28px" }}>
+      {/* ===== HERO IMAGE BANNER（最上部・横長） ===== */}
+      <div style={{
+        width: "100%",
+        height: "clamp(140px, 28vw, 200px)",
+        overflow: "hidden",
+        position: "relative",
+        background: G.sageSoft,
+      }}>
+        <HeroIllustration />
+      </div>
+
+      {/* ===== HERO TEXT ===== */}
+      <section style={{ position: "relative", padding: "20px 20px 28px" }}>
         {/* organic green blob */}
         <svg width="280" height="240" viewBox="0 0 280 240" style={{
           position: "absolute", top: -20, right: -60, opacity: 0.4, zIndex: 0,
@@ -374,110 +454,73 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== PILLARS（重厚版・athomelive クオリティ）===== */}
+      {/* ===== PILLARS（スクショ忠実版・大見出し+ピル3つ）===== */}
       <section style={{
-        marginTop: 40,
-        padding: "48px 20px 56px",
-        background: G.warmYellow,
+        marginTop: 28,
+        padding: "28px 20px 36px",
+        backgroundColor: G.bg,
+        backgroundImage: "radial-gradient(circle, rgba(58,50,42,0.06) 1px, transparent 1px)",
+        backgroundSize: "16px 16px",
       }}>
-        <div style={{ maxWidth: 760, margin: "0 auto" }}>
-          {/* kicker pill */}
-          <div style={{ textAlign: "center", marginBottom: 14 }}>
+        <div style={{ maxWidth: 720, margin: "0 auto" }}>
+          {/* English uppercase kicker */}
+          <div style={{ textAlign: "center", marginBottom: 12 }}>
             <span style={{
-              display: "inline-block",
-              padding: "6px 18px",
-              background: G.paper,
-              borderRadius: 99,
-              fontSize: 11, fontWeight: 800, color: G.sageDeep,
-              letterSpacing: 2.5,
-              boxShadow: "0 2px 8px rgba(58,50,42,0.06)",
-            }}>編集部の3つの約束</span>
+              fontSize: 11, fontWeight: 700, color: G.inkSoft,
+              letterSpacing: 3.5,
+            }}>EDITOR'S PROMISE</span>
           </div>
 
-          {/* heading with peach underline highlight */}
+          {/* 大見出し：「選んで」を圏点＋色強調＋少し大きく */}
           <h2 style={{
             textAlign: "center",
-            fontSize: "clamp(24px, 6.5vw, 34px)",
+            fontSize: "clamp(26px, 7.5vw, 38px)",
             lineHeight: 1.55,
             fontWeight: 800,
-            margin: "0 0 36px",
+            margin: "0 0 24px",
             color: G.ink,
           }}>
-            ちゃんと選んでほしいから、<br />
-            <span style={{ position: "relative", display: "inline-block" }}>
-              <span style={{
-                position: "absolute", left: 0, right: 0, bottom: 4,
-                height: 14, background: G.accent, opacity: 0.55, zIndex: 0, borderRadius: 6,
-              }} />
-              <span style={{ position: "relative", color: G.sageDeep }}>ぜんぶ書いてます。</span>
-            </span>
+            ちゃんと
+            <EmphasisWord text="選んで" color={G.sageDeep} sizeMultiplier={1.15} />
+            ほしいから、<br />
+            全部かいてます。
           </h2>
 
-          {/* 3 substantial cards with numbers */}
-          <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+          {/* 3 シンプルピル（リファレンス忠実） */}
+          <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
             {[
-              {
-                num: "01",
-                title: "良い点も気になる点も両方掲載",
-                body: "事務所の良い面だけでなく、合わなかった人の声もまるっと載せています。",
-              },
-              {
-                num: "02",
-                title: "採点基準をすべて公開",
-                body: "5軸100点満点。各事務所のスコアの根拠まで全部見られます。",
-              },
-              {
-                num: "03",
-                title: "広告費で順位は変えません",
-                body: "事務所からの広告費は順位に反映していません。公平な順位付けです。",
-              },
-            ].map((item) => (
-              <div key={item.num} style={{
-                background: G.paper,
-                borderRadius: 18,
-                padding: "22px 22px",
-                display: "flex", gap: 16, alignItems: "flex-start",
-                boxShadow: "0 4px 14px rgba(58,50,42,0.06)",
-                position: "relative",
+              { prefix: "良い点も気になる点も", emphasis: "両方掲載" },
+              { prefix: "採点基準を", emphasis: "すべて公開" },
+              { prefix: "広告費で", emphasis: "順位は変えません" },
+            ].map((item, i) => (
+              <div key={i} style={{
+                display: "flex", alignItems: "center", gap: 12,
+                padding: "14px 22px",
+                background: G.sageSoft,
+                borderRadius: 999,
               }}>
-                {/* 大番号バッジ */}
                 <div style={{
-                  width: 46, height: 46, borderRadius: "50%",
+                  width: 22, height: 22, borderRadius: 5,
                   background: G.sageDeep, color: "#fff",
                   display: "flex", alignItems: "center", justifyContent: "center",
-                  fontSize: 15, fontWeight: 800, letterSpacing: 0.5,
                   flexShrink: 0,
-                  boxShadow: "0 4px 12px rgba(79,130,37,0.30)",
-                }}>{item.num}</div>
-                {/* タイトル＋本文 */}
-                <div style={{ flex: 1, minWidth: 0, paddingTop: 2 }}>
-                  <div style={{
-                    fontSize: 15, fontWeight: 800, color: G.ink,
-                    marginBottom: 6, lineHeight: 1.4,
-                  }}>{item.title}</div>
-                  <div style={{
-                    fontSize: 12, lineHeight: 1.75, color: G.inkSoft,
-                  }}>{item.body}</div>
-                </div>
-                {/* 緑チェックバッジ（右上） */}
-                <div style={{
-                  width: 28, height: 28, borderRadius: "50%",
-                  background: G.sageSoft, color: G.sageDeep,
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  flexShrink: 0, marginTop: 2,
                 }}>
-                  <Icon.Check size={16} />
+                  <Icon.Check size={14} />
+                </div>
+                <div style={{ fontSize: 14.5, fontWeight: 600, color: G.ink, lineHeight: 1.5 }}>
+                  {item.prefix}
+                  <span style={{
+                    color: G.accentDeep,
+                    textDecoration: "underline",
+                    textDecorationColor: G.accentDeep,
+                    textDecorationThickness: 2,
+                    textUnderlineOffset: 3,
+                    fontWeight: 700,
+                    marginLeft: 2,
+                  }}>{item.emphasis}</span>
                 </div>
               </div>
             ))}
-          </div>
-
-          {/* signature */}
-          <div style={{
-            marginTop: 28, textAlign: "center",
-            fontSize: 12.5, color: G.sageDeep, fontWeight: 700, letterSpacing: 0.5,
-          }}>
-            — まるみえチャトレ 編集部 ✎
           </div>
         </div>
       </section>
