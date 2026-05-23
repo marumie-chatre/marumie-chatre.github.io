@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Icon } from "../Icon";
 
 export const metadata = {
   title: "チャットレディの働き方ガイド｜4つの選択肢と自分に合う事務所の選び方｜まるみえチャトレ",
@@ -9,7 +10,7 @@ export const metadata = {
 const styles = [
   {
     slug: "zaitaku",
-    icon: "🏠",
+    iconName: "Home" as const,
     image: "/style-zaitaku.jpg",
     cat: "副業向け",
     title: "在宅型",
@@ -19,7 +20,7 @@ const styles = [
   },
   {
     slug: "tsukin",
-    icon: "🏢",
+    iconName: "Briefcase" as const,
     image: "/style-tsukin.jpg",
     cat: "本格派向け",
     title: "通勤型",
@@ -29,7 +30,7 @@ const styles = [
   },
   {
     slug: "non-adult",
-    icon: "💚",
+    iconName: "HeartHand" as const,
     image: "/style-nonadult.jpg",
     cat: "安心・専門",
     title: "ノンアダルト専門",
@@ -39,7 +40,7 @@ const styles = [
   },
   {
     slug: "virtual",
-    icon: "🎭",
+    iconName: "Star" as const,
     image: "/style-virtual.jpg",
     cat: "顔バレ対策",
     title: "バーチャル配信",
@@ -74,7 +75,9 @@ export default function StyleHubPage() {
           <h2 className="sec-h" style={{marginBottom:"40px"}}>チャットレディの4つの働き方</h2>
 
           <div className="area-grid">
-            {styles.map((style) => (
+            {styles.map((style) => {
+              const IconComp = Icon[style.iconName];
+              return (
               <Link href={`/style/${style.slug}`} key={style.slug} className="area-card">
                 <div className="area-card-image-wrap">
                   <Image
@@ -84,7 +87,13 @@ export default function StyleHubPage() {
                     height={240}
                     className="area-card-image"
                   />
-                  <span className="area-card-icon">{style.icon}</span>
+                  <span className="area-card-icon" style={{
+                    display: "inline-flex", alignItems: "center", justifyContent: "center",
+                    width: 36, height: 36, borderRadius: "50%",
+                    background: "var(--white)", color: "var(--green-dark)",
+                  }}>
+                    <IconComp size={18} />
+                  </span>
                 </div>
                 <div className="area-card-body">
                   <div className="area-card-header">
@@ -100,7 +109,8 @@ export default function StyleHubPage() {
                   <span className="area-card-link">詳しく見る →</span>
                 </div>
               </Link>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>

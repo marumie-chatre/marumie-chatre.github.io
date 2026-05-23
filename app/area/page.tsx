@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Icon } from "../Icon";
 
 export const metadata = {
   title: "エリア別チャットレディ事務所｜まるみえチャトレ",
@@ -11,7 +12,7 @@ const areas = [
   {
     slug: "shinjuku",
     name: "新宿",
-    icon: "🏢",
+    iconName: "Pin" as const,
     image: "/area-shinjuku.jpg",
     catchphrase: "業界最大の激戦区",
     summary: "約50店舗の中から失敗しない選び方。",
@@ -21,7 +22,7 @@ const areas = [
   {
     slug: "shibuya",
     name: "渋谷",
-    icon: "🛍️",
+    iconName: "Pin" as const,
     image: "/area-shibuya.jpg",
     catchphrase: "東京の中心・若年層多め",
     summary: "20店舗以上。20代キャストが中心で関東圏から通える。",
@@ -31,7 +32,7 @@ const areas = [
   {
     slug: "ikebukuro",
     name: "池袋",
-    icon: "🛍️",
+    iconName: "Pin" as const,
     image: "/area-ikebukuro.jpg",
     catchphrase: "学生街・初心者に優しい",
     summary: "18店舗以上。同年代が多く浮かない雰囲気。",
@@ -41,7 +42,7 @@ const areas = [
   {
     slug: "kinshicho",
     name: "錦糸町",
-    icon: "☕",
+    iconName: "Cafe" as const,
     image: "/area-kinshicho.jpg",
     catchphrase: "居心地で選ぶエリア",
     summary: "新宿・池袋の慌ただしさが苦手な方向け。",
@@ -51,7 +52,7 @@ const areas = [
   {
     slug: "ueno",
     name: "上野",
-    icon: "🎨",
+    iconName: "Pin" as const,
     image: "/area-ueno.jpg",
     catchphrase: "落ち着いた大人のエリア",
     summary: "観光客の人混みに紛れて目立たずに働ける。",
@@ -61,7 +62,7 @@ const areas = [
   {
     slug: "fukuoka",
     name: "福岡",
-    icon: "🌆",
+    iconName: "Pin" as const,
     image: "/area-fukuoka.jpg",
     catchphrase: "九州最大級の激戦区",
     summary: "県内130店舗以上から「数より質」で選ぶ。",
@@ -97,7 +98,9 @@ export default function AreaHub() {
         <section className="area-hub-section">
           <h2>エリア一覧</h2>
           <div className="area-grid">
-            {areas.map((area) => (
+            {areas.map((area) => {
+              const IconComp = Icon[area.iconName];
+              return (
               <Link href={`/area/${area.slug}`} key={area.slug} className="area-card">
                 <div className="area-card-image-wrap">
                   <Image
@@ -107,7 +110,13 @@ export default function AreaHub() {
                     height={240}
                     className="area-card-image"
                   />
-                  <span className="area-card-icon">{area.icon}</span>
+                  <span className="area-card-icon" style={{
+                    display: "inline-flex", alignItems: "center", justifyContent: "center",
+                    width: 36, height: 36, borderRadius: "50%",
+                    background: "var(--white)", color: "var(--green-dark)",
+                  }}>
+                    <IconComp size={18} />
+                  </span>
                 </div>
                 <div className="area-card-body">
                   <div className="area-card-header">
@@ -123,7 +132,8 @@ export default function AreaHub() {
                   <span className="area-card-link">詳しく見る →</span>
                 </div>
               </Link>
-            ))}
+              );
+            })}
           </div>
         </section>
 

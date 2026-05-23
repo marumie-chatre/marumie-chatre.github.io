@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Icon } from "../Icon";
 
 export const metadata = {
   title: "コラム｜まるみえチャトレ",
@@ -9,7 +10,7 @@ export const metadata = {
 const columns = [
   {
     slug: "jimusho-erabi",
-    icon: "📋",
+    iconName: "Crown" as const,
     image: "/col-jimusho-erabi.png",
     cat: "5つの基準",
     title: "事務所の選び方",
@@ -19,7 +20,7 @@ const columns = [
   },
   {
     slug: "mibare-taisaku",
-    icon: "🎭",
+    iconName: "Shield" as const,
     image: "/col-mibare-taisaku.png",
     cat: "身バレ対策",
     title: "身バレ、よくある疑問に答えます",
@@ -29,7 +30,7 @@ const columns = [
   },
   {
     slug: "hoikushi-baito",
-    icon: "💼",
+    iconName: "Briefcase" as const,
     image: "/col-hoikushi-baito.png",
     cat: "副業ガイド",
     title: "チャトレは副業にアリ？",
@@ -64,7 +65,9 @@ export default function ColumnPage() {
           <h2 className="sec-h" style={{marginBottom:"40px"}}>3つのテーマで深掘り</h2>
 
           <div className="area-grid">
-            {columns.map((col) => (
+            {columns.map((col) => {
+              const IconComp = Icon[col.iconName];
+              return (
               <Link href={`/column/${col.slug}`} key={col.slug} className="area-card">
                 <div className="area-card-image-wrap">
                   <Image
@@ -74,7 +77,13 @@ export default function ColumnPage() {
                     height={240}
                     className="area-card-image"
                   />
-                  <span className="area-card-icon">{col.icon}</span>
+                  <span className="area-card-icon" style={{
+                    display: "inline-flex", alignItems: "center", justifyContent: "center",
+                    width: 36, height: 36, borderRadius: "50%",
+                    background: "var(--white)", color: "var(--green-dark)",
+                  }}>
+                    <IconComp size={18} />
+                  </span>
                 </div>
                 <div className="area-card-body">
                   <div className="area-card-header">
@@ -90,7 +99,8 @@ export default function ColumnPage() {
                   <span className="area-card-link">詳しく見る →</span>
                 </div>
               </Link>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
