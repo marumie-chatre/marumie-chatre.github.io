@@ -3,6 +3,7 @@ import Link from "next/link";
 import HamburgerMenu from "./HamburgerMenu";
 import FloatingCTA from "./FloatingCTA";
 import { WebSiteSchema, OrganizationSchema } from "./StructuredData";
+import { Icon } from "./Icon";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -46,9 +47,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               style={{
                 display: "inline-flex",
                 alignItems: "center",
-                gap: "4px",
+                gap: "6px",
                 padding: "8px 14px",
-                background: "#7ab548",
+                background: "var(--green)",
                 color: "#fff",
                 textDecoration: "none",
                 borderRadius: "100px",
@@ -59,7 +60,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 marginLeft: "auto",
               }}
             >
-              💬 口コミを見る
+              <Icon.Chat size={15} />
+              口コミを見る
             </Link>
             {/* ハンバーガーメニュー（スマホのみ） */}
             <HamburgerMenu />

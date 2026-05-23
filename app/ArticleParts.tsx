@@ -13,7 +13,7 @@ import React from "react";
 export function QABlock({ q, a }: { q: string; a: React.ReactNode }) {
   return (
     <div style={{
-      background: "#fdf8f4",
+      background: "var(--cream)",
       padding: "20px 24px",
       borderRadius: "12px",
       marginBottom: "20px",
@@ -31,7 +31,7 @@ export function QABlock({ q, a }: { q: string; a: React.ReactNode }) {
           justifyContent: "center",
           width: "28px",
           height: "28px",
-          background: "#5a9a30",
+          background: "var(--green-dark)",
           color: "#fff",
           borderRadius: "50%",
           fontSize: "14px",
@@ -42,7 +42,7 @@ export function QABlock({ q, a }: { q: string; a: React.ReactNode }) {
         <p style={{
           fontSize: "16px",
           fontWeight: 700,
-          color: "#2d2d2d",
+          color: "var(--text)",
           margin: 0,
           lineHeight: 1.5,
           paddingTop: "3px",
@@ -157,7 +157,7 @@ export function TipBox({ children, title = "ここがポイント" }: { children
         justifyContent: "center",
         width: "22px",
         height: "22px",
-        background: "#5a9a30",
+        background: "var(--green-dark)",
         color: "#fff",
         borderRadius: "50%",
         fontSize: "13px",
@@ -169,7 +169,7 @@ export function TipBox({ children, title = "ここがポイント" }: { children
         <div style={{
           fontSize: "13px",
           fontWeight: 700,
-          color: "#5a9a30",
+          color: "var(--green-dark)",
           marginBottom: "6px",
         }}>{title}</div>
         <div style={{
@@ -195,7 +195,7 @@ export function MarkerSpan({ children }: { children: React.ReactNode }) {
 export function HighlightText({ children }: { children: React.ReactNode }) {
   return (
     <span style={{
-      color: "#5a9a30",
+      color: "var(--green-dark)",
       fontWeight: 700,
     }}>{children}</span>
   );
