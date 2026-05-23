@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { reviews } from "./reviews";
 import { Icon } from "./Icon";
 
@@ -109,14 +110,18 @@ function EmphasisWord({
       verticalAlign: "baseline",
     }}>
       {Array.from(text).map((char, i) => (
-        <span key={i} style={{ position: "relative", display: "inline-block" }}>
+        <span key={i} style={{
+          position: "relative",
+          display: "inline-block",
+          paddingTop: "0.3em",   // 圏点用の余白（行間に余分を作らない最小値）
+        }}>
           <span style={{
             position: "absolute",
-            top: "-0.45em",
+            top: 0,                       // line box の最上部に密着
             left: "50%",
             transform: "translateX(-50%)",
-            width: 6,
-            height: 6,
+            width: 5,
+            height: 5,
             borderRadius: "50%",
             background: color,
           }} />
@@ -364,15 +369,23 @@ export default function Home() {
   return (
     <main style={{ background: G.bg, color: G.ink, paddingBottom: 60 }}>
 
-      {/* ===== HERO IMAGE BANNER（最上部・横長） ===== */}
+      {/* ===== HERO IMAGE BANNER（最上部・横長・実写） ===== */}
       <div style={{
         width: "100%",
-        height: "clamp(140px, 28vw, 200px)",
+        aspectRatio: "16/8",
+        maxHeight: 420,
         overflow: "hidden",
         position: "relative",
         background: G.sageSoft,
       }}>
-        <HeroIllustration />
+        <Image
+          src="/hero-top.jpg"
+          alt="ちょっとだけ余裕が欲しいあなたへ"
+          fill
+          priority
+          sizes="100vw"
+          style={{ objectFit: "cover" }}
+        />
       </div>
 
       {/* ===== HERO TEXT ===== */}
@@ -408,11 +421,11 @@ export default function Home() {
 
           <h1 style={{
             margin: "18px 0 0",
-            fontSize: "clamp(28px, 7vw, 36px)", lineHeight: 1.35,
+            fontSize: "clamp(24px, 6.2vw, 32px)", lineHeight: 1.4,
             fontWeight: 700, letterSpacing: -0.2,
           }}>
             中身で選ぶ、<br />
-            チャトレ事務所の<br />
+            チャトレ事務所の
             <span style={{ position: "relative", display: "inline-block" }}>
               <span style={{
                 position: "absolute", left: 0, right: 0, bottom: 4,
