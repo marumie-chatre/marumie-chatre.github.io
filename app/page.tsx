@@ -234,6 +234,141 @@ function BracketKicker({
   );
 }
 
+// リボンバナー：両側に葉っぱ装飾＋中央テキスト
+// athomelive 風の「EDITOR'S PROMISE」表示
+function RibbonBanner({
+  children,
+  color,
+  bg,
+}: {
+  children: React.ReactNode;
+  color: string;
+  bg: string;
+}) {
+  return (
+    <div style={{
+      display: "inline-flex",
+      alignItems: "center",
+      gap: 12,
+      position: "relative",
+    }}>
+      {/* left leaf */}
+      <svg width="32" height="14" viewBox="0 0 32 14" aria-hidden="true">
+        <path d="M 30 7 C 22 1, 14 1, 4 7 C 14 13, 22 13, 30 7 Z" fill={color} opacity="0.55"/>
+        <path d="M 4 7 L 30 7" stroke={color} strokeWidth="0.8" opacity="0.7"/>
+      </svg>
+      {/* center pill */}
+      <span style={{
+        padding: "8px 24px",
+        background: bg,
+        color,
+        borderRadius: 6,
+        fontSize: 11.5,
+        fontWeight: 800,
+        letterSpacing: 3.5,
+      }}>
+        {children}
+      </span>
+      {/* right leaf */}
+      <svg width="32" height="14" viewBox="0 0 32 14" aria-hidden="true">
+        <path d="M 2 7 C 10 1, 18 1, 28 7 C 18 13, 10 13, 2 7 Z" fill={color} opacity="0.55"/>
+        <path d="M 2 7 L 28 7" stroke={color} strokeWidth="0.8" opacity="0.7"/>
+      </svg>
+    </div>
+  );
+}
+
+// きらめき装飾（⋆）
+function Sparkle({
+  size = 12,
+  color,
+  style,
+}: {
+  size?: number;
+  color: string;
+  style?: React.CSSProperties;
+}) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill={color}
+      aria-hidden="true"
+      style={{ position: "absolute", pointerEvents: "none", ...style }}
+    >
+      <path d="M 12 0 L 13.5 9 L 24 12 L 13.5 15 L 12 24 L 10.5 15 L 0 12 L 10.5 9 Z" />
+    </svg>
+  );
+}
+
+// 水彩風ピル（不規則 border-radius でブロブ感）
+function BlobPill({
+  children,
+  bg,
+  color = "#fff",
+}: {
+  children: React.ReactNode;
+  bg: string;
+  color?: string;
+}) {
+  return (
+    <span style={{
+      display: "inline-block",
+      padding: "0.08em 0.65em 0.15em",
+      margin: "0 0.12em",
+      background: bg,
+      color,
+      borderRadius: "58% 42% 52% 48% / 48% 56% 44% 52%",
+      lineHeight: 1.1,
+      fontWeight: 900,
+      verticalAlign: "0.04em",
+      transform: "rotate(-1deg)",
+    }}>
+      {children}
+    </span>
+  );
+}
+
+// ボタニカル葉SVG（HERO 左端・PILLARS 左端の装飾）
+function BotanicalLeaves({
+  position = "topLeft",
+  size = 100,
+  color,
+}: {
+  position?: "topLeft" | "bottomLeft" | "topRight" | "bottomRight";
+  size?: number;
+  color: string;
+}) {
+  const positionStyle: React.CSSProperties = (() => {
+    switch (position) {
+      case "topLeft": return { top: 0, left: 0 };
+      case "bottomLeft": return { bottom: 0, left: 0, transform: "scaleY(-1)" };
+      case "topRight": return { top: 0, right: 0, transform: "scaleX(-1)" };
+      case "bottomRight": return { bottom: 0, right: 0, transform: "scale(-1)" };
+    }
+  })();
+  return (
+    <svg
+      width={size}
+      height={size * 1.4}
+      viewBox="0 0 100 140"
+      aria-hidden="true"
+      style={{ position: "absolute", pointerEvents: "none", opacity: 0.65, ...positionStyle }}
+    >
+      {/* main stem */}
+      <path d="M 10 0 Q 25 50, 15 140" stroke={color} strokeWidth="1" fill="none" opacity="0.5" />
+      {/* leaves */}
+      <ellipse cx="22" cy="20" rx="14" ry="6" transform="rotate(40 22 20)" fill={color} opacity="0.55" />
+      <ellipse cx="8" cy="40" rx="13" ry="5" transform="rotate(-30 8 40)" fill={color} opacity="0.55" />
+      <ellipse cx="28" cy="58" rx="16" ry="6" transform="rotate(35 28 58)" fill={color} opacity="0.6" />
+      <ellipse cx="10" cy="80" rx="14" ry="5" transform="rotate(-25 10 80)" fill={color} opacity="0.55" />
+      <ellipse cx="32" cy="100" rx="16" ry="6" transform="rotate(40 32 100)" fill={color} opacity="0.6" />
+      <ellipse cx="12" cy="120" rx="13" ry="5" transform="rotate(-30 12 120)" fill={color} opacity="0.5" />
+    </svg>
+  );
+}
+
 function SectionHead({ kicker, title, note }: { kicker: string; title: string; note?: string }) {
   return (
     <div>
@@ -471,173 +606,247 @@ export default function Home() {
   return (
     <main style={{ background: G.bg, color: G.ink, paddingBottom: 60 }}>
 
-      {/* ===== HERO IMAGE BANNER（最上部・横長・実写） ===== */}
-      <div style={{
-        width: "100%",
-        aspectRatio: "16/8",
-        maxHeight: 420,
-        overflow: "hidden",
-        position: "relative",
-        background: G.sageSoft,
-      }}>
-        <Image
-          src="/hero-top.jpg"
-          alt="ちょっとだけ余裕が欲しいあなたへ"
-          fill
-          priority
-          sizes="100vw"
-          style={{ objectFit: "cover" }}
-        />
-      </div>
-
-      {/* ===== HERO TEXT ===== */}
-      <section style={{ position: "relative", padding: "20px 20px 28px" }}>
-        {/* organic green blob */}
-        <svg width="280" height="240" viewBox="0 0 280 240" style={{
-          position: "absolute", top: -20, right: -60, opacity: 0.4, zIndex: 0,
+      {/* ===== HERO（画像と文字を重ねる横並びレイアウト） ===== */}
+      <section style={{ position: "relative", overflow: "hidden", background: G.bg }}>
+        {/* 右側に配置する hero 画像 */}
+        <div style={{
+          position: "absolute",
+          right: 0,
+          top: 0,
+          bottom: 0,
+          width: "52%",
+          maxWidth: 540,
+          zIndex: 0,
         }}>
-          <path d="M 220 30 C 280 80 270 150 200 180 C 130 210 50 180 30 120 C 10 60 60 10 130 20 C 180 25 200 20 220 30 Z" fill={G.sageSoft} />
-        </svg>
-        <svg width="60" height="60" viewBox="0 0 60 60" style={{
-          position: "absolute", top: 30, right: 20, zIndex: 0,
-        }}>
-          <path d="M 10 50 C 10 20 30 5 55 5 C 55 30 35 50 10 50 Z" fill={G.sage} opacity="0.35" />
-          <path d="M 10 50 L 40 20" stroke={G.sageDeep} strokeWidth="1.2" fill="none" opacity="0.4" />
-        </svg>
-
-        <div style={{ position: "relative", zIndex: 1, maxWidth: 720, margin: "0 auto" }}>
+          <Image
+            src="/hero-top.jpg"
+            alt="ちょっとだけ余裕が欲しいあなたへ"
+            fill
+            priority
+            sizes="(max-width:720px) 52vw, 540px"
+            style={{ objectFit: "cover", objectPosition: "left center" }}
+          />
+          {/* 画像右下の手書き「Chat lady / Review site」 */}
           <div style={{
-            display: "inline-flex", alignItems: "center", gap: 8,
-            padding: "6px 12px 6px 8px", borderRadius: 999,
+            position: "absolute",
+            right: 12,
+            bottom: 18,
+            color: "rgba(58,50,42,0.6)",
+            fontFamily: "'Klee One', cursive",
+            fontSize: 14,
+            textAlign: "right",
+            lineHeight: 1.3,
+            zIndex: 2,
+            pointerEvents: "none",
+          }}>
+            <div style={{ fontStyle: "italic" }}>Chat lady</div>
+            <div style={{ fontSize: 11, letterSpacing: 1 }}>Review site</div>
+          </div>
+        </div>
+
+        {/* 左上の葉装飾 */}
+        <BotanicalLeaves position="topLeft" size={90} color={G.sage} />
+
+        {/* きらめき装飾 */}
+        <Sparkle size={16} color={G.accent} style={{ top: 60, left: "48%" }} />
+        <Sparkle size={10} color={G.sage} style={{ top: 120, left: "44%" }} />
+        <Sparkle size={14} color={G.accent} style={{ top: 30, right: "5%" }} />
+        <Sparkle size={11} color={G.sage} style={{ bottom: 130, left: "8%" }} />
+
+        {/* 左側の文字コンテンツ */}
+        <div style={{
+          position: "relative",
+          zIndex: 2,
+          padding: "20px 16px 28px",
+          width: "52%",
+          minWidth: 200,
+        }}>
+          {/* 緑バッジ */}
+          <div style={{
+            display: "inline-flex", alignItems: "center", gap: 7,
+            padding: "5px 12px 5px 7px", borderRadius: 999,
             background: G.paper,
+            border: `1px solid ${G.sageSoft}`,
             boxShadow: "0 2px 8px rgba(51,45,34,0.05)",
-            fontSize: 11, fontWeight: 700, color: G.sageDeep,
+            fontSize: 10.5, fontWeight: 700, color: G.sageDeep,
           }}>
             <span style={{
-              width: 18, height: 18, borderRadius: "50%",
+              width: 16, height: 16, borderRadius: "50%",
               background: G.sage, color: "#fff",
               display: "inline-flex", alignItems: "center", justifyContent: "center",
-            }}><Icon.Check size={11} /></span>
+            }}><Icon.Leaf size={10} /></span>
             編集部が11事務所を実地調査
           </div>
 
+          {/* h1 */}
           <h1 style={{
-            margin: "18px 0 0",
-            fontSize: "clamp(22px, 5.8vw, 30px)", lineHeight: 1.4,
-            fontWeight: 800, letterSpacing: -0.5,
+            margin: "14px 0 0",
+            fontSize: "clamp(20px, 6vw, 30px)",
+            lineHeight: 1.45,
+            fontWeight: 800,
+            letterSpacing: -0.5,
+            color: G.ink,
           }}>
             中身で選ぶ、<br />
-            <span style={{ whiteSpace: "nowrap" }}>
-              チャトレ事務所の
-              <span style={{ position: "relative", display: "inline-block" }}>
-                <span style={{
-                  position: "absolute", left: 0, right: 0, bottom: 4,
-                  height: 11, background: G.accent, opacity: 0.45, zIndex: 0, borderRadius: 4,
-                }} />
-                <span style={{ position: "relative", color: G.sageDeep }}>口コミサイト。</span>
-                <WavyUnderline color={G.accentDeep} thickness={2.5} />
-              </span>
+            チャトレ事務所の<br />
+            <span style={{ position: "relative", display: "inline-block" }}>
+              <span style={{ position: "relative", color: G.sageDeep }}>口コミ</span>サイト。
+              <WavyUnderline color={G.accentDeep} thickness={2.5} />
             </span>
           </h1>
 
-          <p style={{ margin: "16px 0 0", fontSize: 13.5, lineHeight: 1.9, color: G.inkSoft, maxWidth: 360 }}>
+          <p style={{
+            margin: "14px 0 0", fontSize: 11.5, lineHeight: 1.9, color: G.inkSoft,
+          }}>
             初心者でも失敗しないために。<br />
-            良い点も気になる点も、まるっと公開しています。
+            良い点も気になる点も、<br />
+            まるっと公開しています。
           </p>
+        </div>
 
-          <div style={{ marginTop: 22, display: "flex", flexDirection: "column", gap: 10, maxWidth: 420 }}>
-            <Link href="/jimusho" style={{
-              padding: "15px 18px",
-              background: G.sageDeep, color: "#fff",
-              borderRadius: 14, fontSize: 14, fontWeight: 700,
-              display: "flex", alignItems: "center", justifyContent: "space-between",
-              boxShadow: "0 6px 18px rgba(79,130,37,0.35)",
-              textDecoration: "none",
-            }}>
-              <span>自分に合う事務所を探す</span>
-              <span style={{
-                width: 28, height: 28, borderRadius: "50%",
-                background: G.accent, color: "#fff",
-                display: "flex", alignItems: "center", justifyContent: "center",
-              }}><Icon.Arrow size={13} /></span>
-            </Link>
-            <Link href="/jimusho" style={{
-              padding: "13px 18px",
-              background: "transparent", color: G.ink,
-              border: `1.5px solid ${G.ruleStrong}`, borderRadius: 14,
-              fontSize: 13, fontWeight: 700, textAlign: "center",
-              textDecoration: "none",
-            }}>11事務所のランキング</Link>
-          </div>
+        {/* CTAs（画像下のフル幅エリア） */}
+        <div style={{
+          position: "relative",
+          zIndex: 2,
+          padding: "12px 16px 24px",
+          maxWidth: 720,
+          margin: "0 auto",
+          display: "flex", flexDirection: "column", gap: 10,
+        }}>
+          <Link href="/jimusho" style={{
+            padding: "16px 18px",
+            background: G.sageDeep, color: "#fff",
+            borderRadius: 999, fontSize: 15, fontWeight: 800,
+            display: "flex", alignItems: "center", justifyContent: "space-between",
+            boxShadow: "0 6px 18px rgba(79,130,37,0.35)",
+            textDecoration: "none",
+          }}>
+            <span style={{
+              width: 30, height: 30, borderRadius: "50%",
+              background: G.paper, color: G.sage,
+              display: "flex", alignItems: "center", justifyContent: "center",
+              flexShrink: 0,
+            }}><Icon.Leaf size={16} /></span>
+            <span>自分に合う事務所を探す</span>
+            <span style={{
+              width: 30, height: 30, borderRadius: "50%",
+              background: G.accent, color: "#fff",
+              display: "flex", alignItems: "center", justifyContent: "center",
+              flexShrink: 0,
+            }}><Icon.Arrow size={14} /></span>
+          </Link>
+          <Link href="/jimusho" style={{
+            padding: "14px 18px",
+            background: G.paper, color: G.ink,
+            border: `1.5px solid ${G.ruleStrong}`, borderRadius: 999,
+            fontSize: 14, fontWeight: 700,
+            display: "flex", alignItems: "center", justifyContent: "space-between",
+            textDecoration: "none",
+          }}>
+            <span style={{
+              width: 24, height: 24, color: G.accent,
+              display: "flex", alignItems: "center", justifyContent: "center",
+              flexShrink: 0,
+            }}><Icon.Crown size={18} /></span>
+            <span>11事務所のランキング</span>
+            <span style={{
+              width: 26, height: 26, borderRadius: "50%",
+              background: G.sageSoft, color: G.sageDeep,
+              display: "flex", alignItems: "center", justifyContent: "center",
+              flexShrink: 0,
+            }}><Icon.Arrow size={13} /></span>
+          </Link>
         </div>
       </section>
 
-      {/* ===== PILLARS（スクショ忠実版・大見出し+ピル3つ）===== */}
+      {/* ===== PILLARS（リファレンス忠実版・リボン+水彩pill+アウトラインアイコン）===== */}
       <section style={{
-        marginTop: 28,
-        padding: "28px 20px 36px",
+        marginTop: 16,
+        padding: "32px 20px 40px",
         backgroundColor: G.bg,
-        backgroundImage: "radial-gradient(circle, rgba(58,50,42,0.06) 1px, transparent 1px)",
-        backgroundSize: "16px 16px",
+        backgroundImage: "radial-gradient(circle, rgba(58,50,42,0.05) 1px, transparent 1px)",
+        backgroundSize: "18px 18px",
+        position: "relative",
+        overflow: "hidden",
       }}>
-        <div style={{ maxWidth: 720, margin: "0 auto" }}>
-          {/* Kicker（斜線ブラケット装飾） */}
-          <div style={{ textAlign: "center", marginBottom: 16, fontSize: 11 }}>
-            <BracketKicker color={G.inkSoft}>EDITOR&apos;S PROMISE</BracketKicker>
+        {/* 葉装飾 */}
+        <BotanicalLeaves position="bottomLeft" size={110} color={G.sage} />
+        {/* きらめき装飾 */}
+        <Sparkle size={14} color={G.sage} style={{ top: 90, left: "8%" }} />
+        <Sparkle size={11} color={G.accent} style={{ top: 70, right: "10%" }} />
+        <Sparkle size={13} color={G.sage} style={{ top: 140, right: "8%" }} />
+        <Sparkle size={10} color={G.accent} style={{ top: 170, left: "12%" }} />
+
+        <div style={{ maxWidth: 720, margin: "0 auto", position: "relative", zIndex: 1 }}>
+          {/* Kicker（リボンバナー） */}
+          <div style={{ textAlign: "center", marginBottom: 18 }}>
+            <RibbonBanner color={G.sageDeep} bg={G.sageSoft}>EDITOR&apos;S PROMISE</RibbonBanner>
           </div>
 
-          {/* 大見出し：「選んで」圏点・「全部」ピル */}
+          {/* 大見出し：「全部」水彩pill・「かいてます」波線下線 */}
           <h2 style={{
             textAlign: "center",
-            fontSize: "clamp(22px, 5.8vw, 30px)",
+            fontSize: "clamp(22px, 6.2vw, 32px)",
             lineHeight: 1.7,
-            fontWeight: 800,
-            letterSpacing: -0.5,
-            margin: "0 0 26px",
+            fontWeight: 700,
+            letterSpacing: -0.3,
+            margin: "0 0 30px",
             color: G.ink,
           }}>
-            ちゃんと
-            <EmphasisWord text="選んで" color={G.sageDeep} sizeMultiplier={1.15} />
-            ほしいから、<br />
-            <PillWord bg={G.sageDeep} color="#fff" px="0.6em">全部</PillWord>
-            かいてます。
+            ちゃんと選んでほしいから、<br />
+            <BlobPill bg={G.sage} color="#fff">全部</BlobPill>
+            <span style={{ position: "relative", display: "inline-block" }}>
+              かいてます。
+              <WavyUnderline color={G.accentDeep} thickness={2.5} />
+            </span>
           </h2>
 
-          {/* 3 シンプルピル（リファレンス忠実） */}
-          <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+          {/* 3 Promise カード（アウトライン円アイコン+トピック固有アイコン） */}
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             {[
-              { prefix: "良い点も気になる点も", emphasis: "両方掲載" },
-              { prefix: "採点基準を", emphasis: "すべて公開" },
-              { prefix: "広告費で", emphasis: "順位は変えません" },
-            ].map((item, i) => (
-              <div key={i} style={{
-                display: "flex", alignItems: "center", gap: 12,
-                padding: "14px 22px",
-                background: G.sageSoft,
-                borderRadius: 999,
-              }}>
-                <div style={{
-                  width: 22, height: 22, borderRadius: 5,
-                  background: G.sageDeep, color: "#fff",
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  flexShrink: 0,
+              { prefix: "良い点も気になる点も", emphasis: "両方掲載", IconComp: Icon.Pencil },
+              { prefix: "採点基準を", emphasis: "すべて公開", IconComp: Icon.Trophy },
+              { prefix: "広告費で", emphasis: "順位は変えません", IconComp: Icon.Shield },
+            ].map((item, i) => {
+              const I = item.IconComp;
+              return (
+                <div key={i} style={{
+                  display: "flex", alignItems: "center", gap: 14,
+                  padding: "14px 20px",
+                  background: G.paper,
+                  borderRadius: 999,
+                  boxShadow: "0 2px 10px rgba(58,50,42,0.06)",
+                  position: "relative",
                 }}>
-                  <Icon.Check size={14} />
+                  {/* アウトライン円アイコン */}
+                  <div style={{
+                    width: 40, height: 40, borderRadius: "50%",
+                    border: `1.5px solid ${G.sage}`,
+                    color: G.sageDeep,
+                    background: "rgba(143,184,125,0.08)",
+                    display: "flex", alignItems: "center", justifyContent: "center",
+                    flexShrink: 0,
+                  }}>
+                    <I size={20} />
+                  </div>
+                  {/* テキスト */}
+                  <div style={{ fontSize: 14, fontWeight: 600, color: G.ink, lineHeight: 1.5 }}>
+                    {item.prefix}{" "}
+                    <span style={{
+                      position: "relative",
+                      display: "inline-block",
+                      color: G.accentDeep,
+                      fontWeight: 800,
+                    }}>
+                      {item.emphasis}
+                      <WavyUnderline color={G.accentDeep} thickness={2} />
+                    </span>
+                  </div>
+                  {/* 右側きらめき */}
+                  <Sparkle size={10} color={G.accent} style={{ top: 8, right: 14 }} />
                 </div>
-                <div style={{ fontSize: 14.5, fontWeight: 600, color: G.ink, lineHeight: 1.5 }}>
-                  {item.prefix}
-                  <span style={{
-                    color: G.accentDeep,
-                    textDecoration: "underline",
-                    textDecorationColor: G.accentDeep,
-                    textDecorationThickness: 2,
-                    textUnderlineOffset: 3,
-                    fontWeight: 700,
-                    marginLeft: 2,
-                  }}>{item.emphasis}</span>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
