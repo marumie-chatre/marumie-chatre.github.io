@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Icon } from "../Icon";
 
 export const metadata = {
   title: "お悩み別に事務所を選ぶ｜まるみえチャトレ",
@@ -9,7 +10,7 @@ export const metadata = {
 const worries = [
   {
     slug: "barebure",
-    icon: "🛡️",
+    iconName: "Shield" as const,
     image: "/q-barebure.jpg",
     cat: "配信中対策",
     title: "身バレが怖い",
@@ -19,7 +20,7 @@ const worries = [
   },
   {
     slug: "shokuba-bare",
-    icon: "💼",
+    iconName: "Briefcase" as const,
     image: "/q-shokuba-bare.jpg",
     cat: "副業バレ対策",
     title: "職場にバレたくない",
@@ -29,7 +30,7 @@ const worries = [
   },
   {
     slug: "kazoku-bare",
-    icon: "🏠",
+    iconName: "Home" as const,
     image: "/q-kazoku-bare.jpg",
     cat: "家族バレ対策",
     title: "家族にバレたくない",
@@ -39,7 +40,7 @@ const worries = [
   },
   {
     slug: "ayashii",
-    icon: "❓",
+    iconName: "Question" as const,
     image: "/q-ayashii.jpg",
     cat: "業界の実態",
     title: "業界が怪しく見える",
@@ -49,7 +50,7 @@ const worries = [
   },
   {
     slug: "shoshinsha",
-    icon: "🌱",
+    iconName: "Sprout" as const,
     image: "/q-shoshinsha.jpg",
     cat: "初心者向け",
     title: "初心者で不安",
@@ -86,7 +87,9 @@ export default function QHubPage() {
           <h2 className="sec-h" style={{marginBottom:"40px"}}>5つのお悩みに応えます</h2>
 
           <div className="area-grid">
-            {worries.map((w) => (
+            {worries.map((w) => {
+              const IconComp = Icon[w.iconName];
+              return (
               <Link href={`/q/${w.slug}`} key={w.slug} className="area-card">
                 <div className="area-card-image-wrap">
                   <Image
@@ -96,7 +99,13 @@ export default function QHubPage() {
                     height={240}
                     className="area-card-image"
                   />
-                  <span className="area-card-icon">{w.icon}</span>
+                  <span className="area-card-icon" style={{
+                    display: "inline-flex", alignItems: "center", justifyContent: "center",
+                    width: 36, height: 36, borderRadius: "50%",
+                    background: "var(--white)", color: "var(--green-dark)",
+                  }}>
+                    <IconComp size={18} />
+                  </span>
                 </div>
                 <div className="area-card-body">
                   <div className="area-card-header">
@@ -112,7 +121,8 @@ export default function QHubPage() {
                   <span className="area-card-link">詳しく見る →</span>
                 </div>
               </Link>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
