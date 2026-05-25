@@ -1,223 +1,330 @@
 import Link from "next/link";
+import { Icon } from "../Icon";
 
 export const metadata = {
   title: "評価基準について｜まるみえチャトレ",
   description: "まるみえチャトレがなぜその順位をつけたのか、5軸100点満点の採点基準と根拠をすべて公開しています。",
 };
 
+// Palette E カラー（インライン使用用）
+const G = {
+  bg: "#FAFAF5",
+  bgWarm: "#F5E8C8",
+  paper: "#FFFFFF",
+  ink: "#3A322A",
+  inkSoft: "#87796A",
+  inkSofter: "#B5AC9B",
+  sage: "#7BAA3F",
+  sageDeep: "#4F8225",
+  sageSoft: "#CDDDB0",
+  mint: "#B5D670",
+  cream: "#F8EFE0",
+  accent: "#F4B5A0",
+  accentDeep: "#E89B85",
+  rule: "rgba(58,50,42,0.10)",
+};
+
+// 5軸詳細
+type AxisIconName = "Shield" | "HeartHand" | "Sprout" | "Briefcase" | "Coin";
+
+const AXIS_DETAIL: {
+  id: string;
+  label: string;
+  max: number;
+  color: string;
+  iconName: AxisIconName;
+  sub: string;
+  items: { l: string; pt: number }[];
+}[] = [
+  {
+    id: "safety", label: "安全性", max: 30, color: G.sageDeep,
+    iconName: "Shield",
+    sub: "身バレ対策・運営情報・アダルト強要の有無",
+    items: [
+      { l: "身バレ対策の質", pt: 12 },
+      { l: "運営情報の公開度", pt: 10 },
+      { l: "アダルト強要の有無", pt: 8 },
+    ],
+  },
+  {
+    id: "support", label: "サポート", max: 25, color: G.sage,
+    iconName: "HeartHand",
+    sub: "研修・相談体制・スタッフ対応",
+    items: [
+      { l: "研修・マニュアル", pt: 10 },
+      { l: "相談しやすさ", pt: 8 },
+      { l: "スタッフ常駐の体制", pt: 7 },
+    ],
+  },
+  {
+    id: "beginner", label: "初心者向け", max: 20, color: "#9BC25E",
+    iconName: "Sprout",
+    sub: "未経験でも始めやすいか",
+    items: [
+      { l: "未経験者の受け入れ", pt: 8 },
+      { l: "配信デビューまでの導線", pt: 7 },
+      { l: "失敗しにくい設計", pt: 5 },
+    ],
+  },
+  {
+    id: "work", label: "働きやすさ", max: 15, color: G.mint,
+    iconName: "Briefcase",
+    sub: "シフト・在宅/通勤・辞めやすさ",
+    items: [
+      { l: "シフトの自由度", pt: 6 },
+      { l: "在宅／通勤の選択肢", pt: 5 },
+      { l: "辞めやすさ", pt: 4 },
+    ],
+  },
+  {
+    id: "earn", label: "稼ぎやすさ", max: 10, color: G.accent,
+    iconName: "Coin",
+    sub: "報酬率・保証・稼げる環境",
+    items: [
+      { l: "報酬率", pt: 4 },
+      { l: "保証・最低時給", pt: 3 },
+      { l: "稼げる仕組み", pt: 3 },
+    ],
+  },
+];
+
+const PROCESS_STEPS = [
+  { n: 1, l: "応募・問い合わせ", d: "匿名で実際に応募。返信内容・対応速度をチェック。" },
+  { n: 2, l: "面接・体験",       d: "実際に面接 or 体験を受け、強要・契約条件を確認。" },
+  { n: 3, l: "口コミ収集",       d: "匿名フォームで現職・元職の口コミを収集。" },
+  { n: 4, l: "5軸採点",         d: "上記＋公式情報を統合して100点満点で採点。" },
+  { n: 5, l: "公開・改訂",       d: "更新を月次で実施。スコアが変動したら即時反映。" },
+];
+
 export default function HyokaKijunPage() {
   return (
-    <main>
+    <main style={{ background: G.bg, color: G.ink, paddingBottom: 40 }}>
 
-      {/* HERO */}
-      <section className="hero" style={{paddingBottom:"64px"}}>
-        <div className="hero-inner" style={{maxWidth:"720px",margin:"0 auto",textAlign:"left"}}>
-          <p className="eyebrow">EVALUATION CRITERIA</p>
-          <h1 className="hero-h1" style={{fontSize:"clamp(26px,3.5vw,38px)"}}>
-            まるみえチャトレの<br /><em>評価基準</em>
-          </h1>
-          <p className="hero-lead" style={{marginBottom:"0"}}>
-            なぜその順位なのか、全部説明します。<br />
-            「なんとなくおすすめ」のランキングは載せません。<br />
-            編集部が実際に調査した情報をもとに、5つの軸で採点しています。
+      {/* ===== HERO ===== */}
+      <section style={{ padding: "28px 22px 18px", maxWidth: 720, margin: "0 auto" }}>
+        {/* kicker */}
+        <div style={{
+          display: "inline-flex", alignItems: "center", gap: 8,
+          fontSize: 10, letterSpacing: 2.2, fontWeight: 800, color: G.sageDeep,
+          marginBottom: 12,
+        }}>
+          <span style={{ width: 18, height: 1.5, background: G.sage, borderRadius: 1 }} />
+          HOW WE SCORE
+        </div>
+
+        {/* h1 */}
+        <h1 style={{
+          margin: 0,
+          fontSize: "clamp(24px, 6.5vw, 32px)",
+          lineHeight: 1.5,
+          fontWeight: 800,
+          letterSpacing: -0.4,
+          color: G.ink,
+        }}>
+          5軸100点満点。
+        </h1>
+
+        {/* sub */}
+        <p style={{
+          margin: "14px 0 0", fontSize: 12.5, lineHeight: 1.9, color: G.inkSoft,
+        }}>
+          広告費で順位は変えません。編集部が実際に応募・面接・体験まで行った調査結果と、匿名口コミを元に採点しています。配点と採点項目はすべて公開しています。
+        </p>
+      </section>
+
+      {/* ===== 横棒ウェイトグラフ ===== */}
+      <section style={{ padding: "8px 22px 8px", maxWidth: 720, margin: "0 auto" }}>
+        <div style={{
+          display: "flex", height: 32, borderRadius: 6, overflow: "hidden",
+          boxShadow: "inset 0 0 0 1px rgba(58,50,42,0.06)",
+        }}>
+          {AXIS_DETAIL.map(a => (
+            <div key={a.id} style={{
+              flex: a.max,
+              background: a.color,
+              display: "flex", alignItems: "center", justifyContent: "center",
+              fontSize: 11, fontWeight: 800,
+              color: [G.mint, G.accent].includes(a.color) ? G.ink : "#fff",
+            }}>{a.max}</div>
+          ))}
+        </div>
+        <div style={{
+          marginTop: 6, display: "flex",
+          fontSize: 9, color: G.inkSoft, fontWeight: 600,
+        }}>
+          {AXIS_DETAIL.map(a => (
+            <div key={a.id} style={{ flex: a.max, textAlign: "center", whiteSpace: "nowrap" }}>{a.label}</div>
+          ))}
+        </div>
+      </section>
+
+      {/* ===== 5軸詳細カード ===== */}
+      <section style={{
+        padding: "24px 22px 0",
+        maxWidth: 720,
+        margin: "0 auto",
+        display: "flex", flexDirection: "column", gap: 14,
+      }}>
+        {AXIS_DETAIL.map((a, i) => {
+          const IconComp = Icon[a.iconName];
+          return (
+            <div key={a.id} style={{
+              background: G.paper, borderRadius: 14, padding: 16,
+              border: `1px solid ${G.rule}`,
+            }}>
+              {/* header */}
+              <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                <div style={{
+                  width: 42, height: 42, borderRadius: "50%",
+                  background: `${a.color}22`,
+                  color: a.color,
+                  display: "flex", alignItems: "center", justifyContent: "center",
+                  flexShrink: 0,
+                }}>
+                  <IconComp size={22} />
+                </div>
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <div style={{
+                    fontSize: 9.5, letterSpacing: 1.5, fontWeight: 700,
+                    color: G.inkSofter, marginBottom: 1,
+                  }}>0{i + 1} · AXIS</div>
+                  <div style={{ display: "flex", alignItems: "baseline", gap: 8 }}>
+                    <span style={{ fontSize: 17, fontWeight: 700, color: G.ink }}>{a.label}</span>
+                    <span style={{ fontSize: 13, fontWeight: 800, color: a.color }}>
+                      {a.max}pt
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* sub */}
+              <div style={{ fontSize: 11, color: G.inkSoft, marginTop: 8, lineHeight: 1.6 }}>
+                {a.sub}
+              </div>
+
+              {/* 採点項目 */}
+              <div style={{ marginTop: 14, paddingTop: 12, borderTop: `1px dashed ${G.rule}` }}>
+                <div style={{
+                  fontSize: 9.5, letterSpacing: 1.2, fontWeight: 800,
+                  color: G.inkSoft, marginBottom: 8,
+                }}>採点項目</div>
+                {a.items.map((it, j) => (
+                  <div key={j} style={{
+                    display: "flex", alignItems: "center", gap: 8,
+                    padding: "6px 0", fontSize: 12, color: G.ink,
+                  }}>
+                    <span style={{
+                      width: 4, height: 4, borderRadius: "50%",
+                      background: a.color, flexShrink: 0,
+                    }} />
+                    <span style={{ flex: 1 }}>{it.l}</span>
+                    <span style={{
+                      fontSize: 11, fontWeight: 700, color: G.inkSoft,
+                    }}>{it.pt}pt</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          );
+        })}
+      </section>
+
+      {/* ===== 編集プロセスタイムライン ===== */}
+      <section style={{ padding: "32px 22px 0", maxWidth: 720, margin: "0 auto" }}>
+        <div style={{
+          fontSize: 10, letterSpacing: 2.5, fontWeight: 700, color: G.sageDeep,
+          display: "inline-flex", alignItems: "center", gap: 8,
+        }}>
+          <span style={{ width: 20, height: 1.5, background: G.sage }} />
+          PROCESS
+        </div>
+        <h2 style={{
+          margin: "10px 0 16px",
+          fontSize: 20, fontWeight: 700, lineHeight: 1.5, color: G.ink,
+        }}>編集プロセス</h2>
+
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          {PROCESS_STEPS.map((s, i) => (
+            <div key={s.n} style={{
+              display: "grid", gridTemplateColumns: "32px 1fr",
+              gap: 14, alignItems: "flex-start",
+              paddingBottom: i < PROCESS_STEPS.length - 1 ? 16 : 0,
+              position: "relative",
+            }}>
+              <div style={{
+                width: 32, height: 32, borderRadius: "50%",
+                background: G.sage, color: "#fff",
+                display: "flex", alignItems: "center", justifyContent: "center",
+                fontSize: 12, fontWeight: 800, zIndex: 1,
+              }}>{s.n}</div>
+              {i < PROCESS_STEPS.length - 1 && (
+                <div style={{
+                  position: "absolute", top: 32, left: 15, bottom: 0,
+                  width: 2, background: G.sageSoft,
+                }} />
+              )}
+              <div style={{ paddingTop: 5 }}>
+                <div style={{ fontSize: 14, fontWeight: 700, color: G.ink }}>{s.l}</div>
+                <div style={{ fontSize: 11.5, color: G.inkSoft, marginTop: 4, lineHeight: 1.7 }}>{s.d}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ===== NO PR マニフェスト ===== */}
+      <section style={{
+        margin: "28px auto 0",
+        padding: "0 22px",
+        maxWidth: 720,
+      }}>
+        <div style={{
+          padding: "18px 20px",
+          background: G.sageDeep, color: "#fff",
+          borderRadius: 14,
+        }}>
+          <div style={{
+            fontSize: 9.5, letterSpacing: 2, fontWeight: 700,
+            color: G.accent, marginBottom: 6,
+          }}>NO PR</div>
+          <div style={{
+            fontSize: 17, fontWeight: 700, lineHeight: 1.5,
+          }}>広告費で順位は変えません。</div>
+          <p style={{
+            margin: "10px 0 0",
+            fontSize: 11.5, lineHeight: 1.85,
+            color: "rgba(255,255,255,0.80)",
+          }}>
+            事務所からの広告費は順位に反映していません。スコアが上下するのは「採点項目の事実が変わったとき」だけです。
           </p>
-        </div>
-      </section>
-
-      {/* 5軸の説明 */}
-      <section className="section" style={{background:"var(--cream)"}}>
-        <div className="si" style={{maxWidth:"760px"}}>
-          <p className="eyebrow">5 AXES</p>
-          <h2 className="sec-h" style={{marginBottom:"40px"}}>採点の5つの軸</h2>
-
-          {/* 安全性 */}
-          <div className="hyoka-item">
-            <div className="hyoka-head">
-              <div className="hyoka-axis-name">安全性</div>
-              <div className="hyoka-axis-score">30点満点</div>
-              <div className="hyoka-axis-bar">
-                <div className="hyoka-axis-fill" style={{width:"100%"}}></div>
-              </div>
-            </div>
-            <div className="hyoka-body">
-              <p className="hyoka-quote">
-                「ノンアダルトと書いてあるのに、入店後にアダルトを勧められた」
-              </p>
-              <p className="hyoka-text">
-                こういった声を、私たちは実際に耳にしています。公式サイトの記載だけでなく、口コミや体験談と照らし合わせながら「書いてあること」と「実態」が一致しているかを確認して採点しています。
-              </p>
-              <div className="hyoka-points">
-                <div className="hyoka-point">運営会社名・住所が公式サイトに明記されているか</div>
-                <div className="hyoka-point">女性スタッフの在籍が確認できるか</div>
-                <div className="hyoka-point">個人情報・動画流出対策の仕組みがあるか</div>
-                <div className="hyoka-point">身バレ対策の実績・仕組みがあるか</div>
-                <div className="hyoka-point">ノンアダルト対応の実態が確認できるか</div>
-              </div>
-            </div>
-          </div>
-
-          {/* サポート充実度 */}
-          <div className="hyoka-item">
-            <div className="hyoka-head">
-              <div className="hyoka-axis-name">サポート充実度</div>
-              <div className="hyoka-axis-score">25点満点</div>
-              <div className="hyoka-axis-bar">
-                <div className="hyoka-axis-fill" style={{width:"83%"}}></div>
-              </div>
-            </div>
-            <div className="hyoka-body">
-              <p className="hyoka-quote">
-                「面接では丁寧だったのに、入店後はほとんど放置だった」
-              </p>
-              <p className="hyoka-text">
-                口コミに繰り返し登場する不満です。私たちは面接時の印象ではなく、入店後にサポートが続くかどうかを重視しています。スタッフの経験・女性比率・相談しやすい雰囲気かどうかも確認ポイントです。
-              </p>
-              <div className="hyoka-points">
-                <div className="hyoka-point">初回面談・研修の有無</div>
-                <div className="hyoka-point">相談窓口（LINE・電話）の充実度</div>
-                <div className="hyoka-point">スタッフの質・経験・女性比率</div>
-                <div className="hyoka-point">機材・衣装の貸し出しがあるか</div>
-                <div className="hyoka-point">稼ぎ方のノウハウを継続的に提供しているか</div>
-              </div>
-            </div>
-          </div>
-
-          {/* 初心者おすすめ度 */}
-          <div className="hyoka-item">
-            <div className="hyoka-head">
-              <div className="hyoka-axis-name">初心者おすすめ度</div>
-              <div className="hyoka-axis-score">20点満点</div>
-              <div className="hyoka-axis-bar">
-                <div className="hyoka-axis-fill" style={{width:"67%"}}></div>
-              </div>
-            </div>
-            <div className="hyoka-body">
-              <p className="hyoka-text">
-                はじめての方ほど、事務所選びでその後の経験が大きく変わります。やり取りの仕方・配信のコツをちゃんと教えてもらえるか。ノルマや強制がなく、自分のペースで始められるか。「未経験歓迎」の言葉だけでなく、実態として初心者を支える仕組みがあるかを見て採点しています。
-              </p>
-              <div className="hyoka-points">
-                <div className="hyoka-point">未経験歓迎の体制が実態として整っているか</div>
-                <div className="hyoka-point">配信・やり取りのノウハウを基礎から教えてもらえるか</div>
-                <div className="hyoka-point">ノルマ・強制がないか</div>
-                <div className="hyoka-point">ノンアダルト対応があるか</div>
-                <div className="hyoka-point">口コミで「初心者でも安心」の声があるか</div>
-              </div>
-            </div>
-          </div>
-
-          {/* 働きやすさ */}
-          <div className="hyoka-item">
-            <div className="hyoka-head">
-              <div className="hyoka-axis-name">働きやすさ</div>
-              <div className="hyoka-axis-score">15点満点</div>
-              <div className="hyoka-axis-bar">
-                <div className="hyoka-axis-fill" style={{width:"50%"}}></div>
-              </div>
-            </div>
-            <div className="hyoka-body">
-              <p className="hyoka-text">
-                長く続けられるかどうかは、入口だけでは判断できません。シフトの自由度・辞めやすさ・日常のスタッフとの関係性まで含めて「働き続けられる環境かどうか」を見ています。「退会しようとしたら引き止められた」という声も実際にあります。出口の透明さも、私たちの採点基準のひとつです。
-              </p>
-              <div className="hyoka-points">
-                <div className="hyoka-point">出勤ノルマがないか</div>
-                <div className="hyoka-point">シフトの自由度が高いか</div>
-                <div className="hyoka-point">在宅・通勤を選べるか</div>
-                <div className="hyoka-point">退会・辞めやすい手続きが明確か</div>
-              </div>
-            </div>
-          </div>
-
-          {/* 稼ぎやすさ */}
-          <div className="hyoka-item" style={{marginBottom:"0"}}>
-            <div className="hyoka-head">
-              <div className="hyoka-axis-name">稼ぎやすさ</div>
-              <div className="hyoka-axis-score">10点満点</div>
-              <div className="hyoka-axis-bar">
-                <div className="hyoka-axis-fill" style={{width:"33%"}}></div>
-              </div>
-            </div>
-            <div className="hyoka-body">
-              <p className="hyoka-quote">
-                「HPに書かれているほど稼げなかった」
-              </p>
-              <p className="hyoka-text">
-                この声は少なくありません。ただ正直に言うと、稼ぎは事務所の環境だけで決まるものではなく、個人差が大きい部分もあります。だからこそ私たちは「稼げる環境が整っているか」という視点で採点し、稼ぎの数字だけを前面に出す事務所を高く評価しない方針をとっています。まるみえチャトレが安全・サポート・働きやすさを最優先にしているのは、そういう理由からです。
-              </p>
-              <div className="hyoka-points">
-                <div className="hyoka-point">報酬率・時給の明記があるか</div>
-                <div className="hyoka-point">時給保証・ボーナス制度があるか</div>
-                <div className="hyoka-point">提携サイト数が多いか</div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      {/* 採点の透明性 */}
-      <section className="section" style={{background:"var(--white)"}}>
-        <div className="si" style={{maxWidth:"760px"}}>
-          <p className="eyebrow">TRANSPARENCY</p>
-          <h2 className="sec-h" style={{marginBottom:"24px"}}>採点の透明性について</h2>
-          <div className="hyoka-transparency">
-            <div className="hyoka-trans-item">
-              <div className="hyoka-trans-icon">📋</div>
-              <div>
-                <div className="hyoka-trans-title">公式サイト調査＋口コミ調査をもとに採点</div>
-                <p className="hyoka-trans-text">各事務所の公式サイトの記載内容と、実際に働いた方の口コミ・体験談を照らし合わせながら採点しています。</p>
-              </div>
-            </div>
-            <div className="hyoka-trans-item">
-              <div className="hyoka-trans-icon">🔄</div>
-              <div>
-                <div className="hyoka-trans-title">情報が更新されたらスコアも見直します</div>
-                <p className="hyoka-trans-text">事務所の状況は変わることがあります。新しい口コミや情報が集まった際はスコアを随時見直しています。</p>
-              </div>
-            </div>
-            <div className="hyoka-trans-item">
-              <div className="hyoka-trans-icon">📣</div>
-              <div>
-                <div className="hyoka-trans-title">掲載事務所との関係はスコアに影響しません</div>
-                <p className="hyoka-trans-text">掲載事務所との関係性はスコアの採点に一切影響しません。すべての事務所を同じ基準で採点しています。</p>
-              </div>
-            </div>
+          <div style={{
+            marginTop: 14, fontSize: 10,
+            color: "rgba(255,255,255,0.65)", letterSpacing: 0.5,
+            display: "flex", justifyContent: "space-between",
+            paddingTop: 12, borderTop: "1px solid rgba(255,255,255,0.15)",
+          }}>
+            <span>最終更新 2026.05.20</span>
+            <span>次回更新 2026.06</span>
           </div>
         </div>
       </section>
 
-      {/* 免責・口コミ募集 */}
-      <section className="kuchi-sec">
-        <div className="kuchi-inner">
-          <h2 className="kuchi-h">このサイトについて、正直に伝えます</h2>
-          <div className="hyoka-disclaimer">
-            <p>
-              本サイトの評価は、公式サイト調査と集まった口コミをもとに作成しています。
-            </p>
-            <p>
-              まだ口コミが少ない事務所については、調査情報が中心となっており評価の精度が十分でない部分があります。<strong>口コミが増えるほど、評価はより実態に近づきます。</strong>
-            </p>
-            <p>
-              実際の環境は掲載情報と異なる場合もあります。最終的な事務所選びはご自身でご判断いただき、応募・契約後のトラブルについては当サイトは責任を負いかねます。
-            </p>
-            <p>
-              それでも、このサイトが安心して選ぶためのひとつの参考になれたら嬉しいです。
-            </p>
-          </div>
-          <Link href="/kuchikomi" className="btn-main" style={{marginTop:"8px"}}>
-            口コミを投稿して評価精度を上げる →
-          </Link>
-        </div>
-      </section>
-
-      {/* ランキングへ */}
-      <section className="section">
-        <div className="si" style={{textAlign:"center"}}>
-          <p className="eyebrow">RANKING</p>
-          <h2 className="sec-h" style={{marginBottom:"32px"}}>
-            評価基準がわかったら、ランキングを見てみましょう
-          </h2>
-          <Link href="/jimusho" className="btn-main">掲載事務所の比較ランキングを見る →</Link>
-        </div>
+      {/* ===== ランキングへ戻るCTA ===== */}
+      <section style={{
+        margin: "20px auto 0",
+        padding: "0 22px",
+        maxWidth: 720,
+      }}>
+        <Link href="/jimusho" style={{
+          display: "flex", alignItems: "center", justifyContent: "space-between",
+          padding: "14px 18px", borderRadius: 99,
+          background: G.paper, color: G.ink,
+          border: `1.5px solid ${G.rule}`,
+          fontSize: 13, fontWeight: 700, textDecoration: "none",
+        }}>
+          <span>11事務所のランキングを見る</span>
+          <Icon.Arrow size={14} />
+        </Link>
       </section>
 
     </main>
