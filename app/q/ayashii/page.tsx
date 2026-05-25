@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FAQSchema, ArticleSchema, BreadcrumbSchema } from "../../StructuredData";
+import { L3ArticleShell } from "../../L3";
 
 export const metadata = {
   title: "チャットレディって怪しくない？危なくない？現役が正直に答えます｜まるみえチャトレ",
@@ -31,7 +32,7 @@ const FAQS = [
 
 export default function QAyashii() {
   return (
-    <main>
+    <>
       <ArticleSchema
         title="チャットレディって怪しくない？危なくない？現役が正直に答えます"
         description="チャットレディは怪しい・危ない仕事？アダルト強要はない？お話だけで稼げる？業界の実態を、元保育士の現役チャットレディが正直にお答えします。"
@@ -45,17 +46,16 @@ export default function QAyashii() {
       ]} />
       <FAQSchema items={FAQS} />
 
-      <section className="col-article-hero">
-        <div className="col-article-inner">
-          <div className="col-article-cat">お悩み｜怪しさ・危なさ</div>
-          <h1 className="col-article-h1">チャットレディって怪しくない？<br />危なくない？現役が正直に答えます</h1>
-          <div className="col-article-meta">
-            <span>2026.05.07</span>
-            <span>約5分で読めます</span>
-          </div>
-        </div>
-      </section>
-
+      <L3ArticleShell
+        breadcrumb={[
+          { l: "トップ", href: "/" },
+          { l: "不安から探す", href: "/q" },
+          { l: "怪しい？危なくない？" },
+        ]}
+        kicker="お悩み｜怪しさ・危なさ"
+        title={<>チャットレディって怪しくない？<br />危なくない？現役が正直に答えます</>}
+        meta={{ date: "2026.05.07", readTime: "約5分で読めます" }}
+      >
       <article className="col-article-body">
 
         <p>「チャットレディ、興味はあるけど、なんか怪しい…」「『簡単に稼げる』って書いてある時点で逆に不安」「ノンアダって書いてあっても、実際はアダルト強要されるんじゃないか」「お話だけで本当に稼げるの？」</p>
@@ -211,6 +211,7 @@ export default function QAyashii() {
           <Link href="/jimusho" className="btn-main">掲載事務所の比較ランキングを見る →</Link>
         </div>
       </article>
-    </main>
+      </L3ArticleShell>
+    </>
   );
 }

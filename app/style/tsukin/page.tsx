@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FAQSchema, ArticleSchema, BreadcrumbSchema } from "../../StructuredData";
+import { L3ArticleShell } from "../../L3";
 
 export const metadata = {
   title: "通勤型チャットレディ事務所｜選び方と評価が高い3社｜まるみえチャトレ",
@@ -31,7 +32,7 @@ const FAQS = [
 
 export default function StyleTsukinPage() {
   return (
-    <main>
+    <>
       <ArticleSchema
         title="通勤型チャットレディ事務所｜選び方と評価が高い3社"
         description="通勤型のチャットレディを始めたい方へ。通勤型のメリット・選び方・評価が高い事務所3社を、元保育士の現役チャットレディが正直に解説します。"
@@ -45,16 +46,16 @@ export default function StyleTsukinPage() {
       ]} />
       <FAQSchema items={FAQS} />
 
-      <section className="col-article-hero">
-        <div className="col-article-inner">
-          <div className="col-article-cat">働き方｜通勤型</div>
-          <h1 className="col-article-h1">通勤型チャットレディ事務所｜<br />事務所で働く選び方</h1>
-          <div className="col-article-meta">
-            <span>2026.05.14</span>
-            <span>約7分で読めます</span>
-          </div>
-        </div>
-      </section>
+      <L3ArticleShell
+        breadcrumb={[
+          { l: "トップ", href: "/" },
+          { l: "働き方から探す", href: "/style" },
+          { l: "通勤" },
+        ]}
+        kicker="働き方｜通勤型"
+        title={<>通勤型チャットレディ事務所｜<br />事務所で働く選び方</>}
+        meta={{ date: "2026.05.14", readTime: "約7分で読めます" }}
+      >
 
       <article className="col-article-body">
 
@@ -468,6 +469,7 @@ export default function StyleTsukinPage() {
         </p>
 
       </article>
-    </main>
+      </L3ArticleShell>
+    </>
   );
 }

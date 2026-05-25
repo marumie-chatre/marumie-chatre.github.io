@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FAQSchema, ArticleSchema, BreadcrumbSchema } from "../../StructuredData";
+import { L3ArticleShell } from "../../L3";
 
 export const metadata = {
   title: "在宅チャットレディ事務所｜選び方と評価が高い3社｜まるみえチャトレ",
@@ -31,7 +32,7 @@ const FAQS = [
 
 export default function StyleZaitakuPage() {
   return (
-    <main>
+    <>
       <ArticleSchema
         title="在宅チャットレディ事務所｜選び方と評価が高い3社"
         description="在宅でチャットレディを始めたい方へ。在宅のリアルな現実と、業界標準の報酬率、評価が高い在宅対応事務所3社を、元保育士の現役チャットレディが正直に解説します。"
@@ -45,16 +46,16 @@ export default function StyleZaitakuPage() {
       ]} />
       <FAQSchema items={FAQS} />
 
-      <section className="col-article-hero">
-        <div className="col-article-inner">
-          <div className="col-article-cat">働き方｜在宅型</div>
-          <h1 className="col-article-h1">在宅チャットレディ事務所｜<br />自宅で始める働き方の選び方</h1>
-          <div className="col-article-meta">
-            <span>2026.05.14</span>
-            <span>約7分で読めます</span>
-          </div>
-        </div>
-      </section>
+      <L3ArticleShell
+        breadcrumb={[
+          { l: "トップ", href: "/" },
+          { l: "働き方から探す", href: "/style" },
+          { l: "在宅" },
+        ]}
+        kicker="働き方｜在宅型"
+        title={<>在宅チャットレディ事務所｜<br />自宅で始める働き方の選び方</>}
+        meta={{ date: "2026.05.14", readTime: "約7分で読めます" }}
+      >
 
       <article className="col-article-body">
 
@@ -379,6 +380,7 @@ export default function StyleZaitakuPage() {
         </p>
 
       </article>
-    </main>
+      </L3ArticleShell>
+    </>
   );
 }

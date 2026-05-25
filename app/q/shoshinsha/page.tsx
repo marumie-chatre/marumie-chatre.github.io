@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FAQSchema, ArticleSchema, BreadcrumbSchema } from "../../StructuredData";
+import { L3ArticleShell } from "../../L3";
 
 export const metadata = {
   title: "初心者が安心して始められるチャットレディ事務所｜まるみえチャトレ",
@@ -31,7 +32,7 @@ const FAQS = [
 
 export default function QShoshinsha() {
   return (
-    <main>
+    <>
       <ArticleSchema
         title="初心者が安心して始められるチャットレディ事務所"
         description="チャットレディが初めての方へ。初心者がつまずく5つのポイントと、サポートが手厚い事務所、始める前のチェックリストをまとめました。"
@@ -45,17 +46,16 @@ export default function QShoshinsha() {
       ]} />
       <FAQSchema items={FAQS} />
 
-      <section className="col-article-hero">
-        <div className="col-article-inner">
-          <div className="col-article-cat">お悩み｜初心者</div>
-          <h1 className="col-article-h1">初心者が安心して始められる<br />チャットレディ事務所</h1>
-          <div className="col-article-meta">
-            <span>2026.05.07</span>
-            <span>約5分で読めます</span>
-          </div>
-        </div>
-      </section>
-
+      <L3ArticleShell
+        breadcrumb={[
+          { l: "トップ", href: "/" },
+          { l: "不安から探す", href: "/q" },
+          { l: "初心者向け" },
+        ]}
+        kicker="お悩み｜初心者"
+        title={<>初心者が安心して始められる<br />チャットレディ事務所</>}
+        meta={{ date: "2026.05.07", readTime: "約5分で読めます" }}
+      >
       <article className="col-article-body">
 
         <p>「やってみたいけど、本当に自分にできる？」「最初の1ヶ月で挫折しそう」「何から準備すればいいか、全然わからない」</p>
@@ -196,6 +196,7 @@ export default function QShoshinsha() {
           <Link href="/jimusho" className="btn-main">掲載事務所の比較ランキングを見る →</Link>
         </div>
       </article>
-    </main>
+      </L3ArticleShell>
+    </>
   );
 }

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FAQSchema, ArticleSchema, BreadcrumbSchema } from "../../StructuredData";
+import { L3ArticleShell } from "../../L3";
 
 export const metadata = {
   title: "家族・親・彼氏にバレないチャットレディの始め方｜まるみえチャトレ",
@@ -31,7 +32,7 @@ const FAQS = [
 
 export default function QKazokuBare() {
   return (
-    <main>
+    <>
       <ArticleSchema
         title="家族・親・彼氏にバレないチャットレディの始め方"
         description="チャットレディが家族や彼氏にバレるのが不安な方へ。検索履歴・SNS・声漏れ・部屋のバレなど、家庭内で起きやすい身バレの原因と対策をまとめました。"
@@ -45,17 +46,16 @@ export default function QKazokuBare() {
       ]} />
       <FAQSchema items={FAQS} />
 
-      <section className="col-article-hero">
-        <div className="col-article-inner">
-          <div className="col-article-cat">お悩み｜家族バレ</div>
-          <h1 className="col-article-h1">家族・親・彼氏にバレない<br />チャットレディの始め方</h1>
-          <div className="col-article-meta">
-            <span>2026.05.07</span>
-            <span>約5分で読めます</span>
-          </div>
-        </div>
-      </section>
-
+      <L3ArticleShell
+        breadcrumb={[
+          { l: "トップ", href: "/" },
+          { l: "不安から探す", href: "/q" },
+          { l: "家族バレ対策" },
+        ]}
+        kicker="お悩み｜家族バレ"
+        title={<>家族・親・彼氏にバレない<br />チャットレディの始め方</>}
+        meta={{ date: "2026.05.07", readTime: "約5分で読めます" }}
+      >
       <article className="col-article-body">
 
         <p>「実家暮らしだから、親に絶対バレたくない」「同棲中の彼氏にスマホを見られたら、それで全部終わる」「家族との関係を壊さずに、副業を始めたい」</p>
@@ -178,6 +178,7 @@ export default function QKazokuBare() {
           <Link href="/jimusho" className="btn-main">掲載事務所の比較ランキングを見る →</Link>
         </div>
       </article>
-    </main>
+      </L3ArticleShell>
+    </>
   );
 }

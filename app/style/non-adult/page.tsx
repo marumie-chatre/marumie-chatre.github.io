@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FAQSchema, ArticleSchema, BreadcrumbSchema } from "../../StructuredData";
+import { L3ArticleShell } from "../../L3";
 
 export const metadata = {
   title: "ノンアダルト専門チャットレディ事務所｜選び方と評価が高い3社｜まるみえチャトレ",
@@ -31,7 +32,7 @@ const FAQS = [
 
 export default function StyleNonAdultPage() {
   return (
-    <main>
+    <>
       <ArticleSchema
         title="ノンアダルト専門チャットレディ事務所｜選び方と評価が高い3社"
         description="ノンアダルトでチャットレディを始めたい方へ。「対応」と「専門」の違い、ノンアダで稼げる金額の現実、評価が高い専門事務所3社を、元保育士の現役チャットレディが正直に解説します。"
@@ -45,16 +46,16 @@ export default function StyleNonAdultPage() {
       ]} />
       <FAQSchema items={FAQS} />
 
-      <section className="col-article-hero">
-        <div className="col-article-inner">
-          <div className="col-article-cat">働き方｜ノンアダルト専門</div>
-          <h1 className="col-article-h1">ノンアダルト専門チャットレディ事務所｜<br />「対応」と「専門」の違いから選ぶ</h1>
-          <div className="col-article-meta">
-            <span>2026.05.14</span>
-            <span>約7分で読めます</span>
-          </div>
-        </div>
-      </section>
+      <L3ArticleShell
+        breadcrumb={[
+          { l: "トップ", href: "/" },
+          { l: "働き方から探す", href: "/style" },
+          { l: "ノンアダルト" },
+        ]}
+        kicker="働き方｜ノンアダルト専門"
+        title={<>ノンアダルト専門チャットレディ事務所｜<br />「対応」と「専門」の違いから選ぶ</>}
+        meta={{ date: "2026.05.14", readTime: "約7分で読めます" }}
+      >
 
       <article className="col-article-body">
 
@@ -390,6 +391,7 @@ export default function StyleNonAdultPage() {
         </p>
 
       </article>
-    </main>
+      </L3ArticleShell>
+    </>
   );
 }

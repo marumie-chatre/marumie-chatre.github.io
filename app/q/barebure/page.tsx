@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FAQSchema, ArticleSchema, BreadcrumbSchema } from "../../StructuredData";
+import { L3ArticleShell } from "../../L3";
 
 export const metadata = {
   title: "身バレが怖い人のためのチャットレディ事務所選び｜まるみえチャトレ",
@@ -31,7 +32,7 @@ const FAQS = [
 
 export default function QBarebure() {
   return (
-    <main>
+    <>
       <ArticleSchema
         title="身バレが怖い人のためのチャットレディ事務所選び"
         description="チャットレディの配信中の身バレが不安な方へ。実際の身バレ確率と、映像で身バレを防ぐ4つの方法、配信ルームの選び方をまとめました。"
@@ -45,17 +46,16 @@ export default function QBarebure() {
       ]} />
       <FAQSchema items={FAQS} />
 
-      <section className="col-article-hero">
-        <div className="col-article-inner">
-          <div className="col-article-cat">お悩み｜身バレ</div>
-          <h1 className="col-article-h1">身バレが怖い人のための、<br />事務所選び</h1>
-          <div className="col-article-meta">
-            <span>2026.05.07</span>
-            <span>約5分で読めます</span>
-          </div>
-        </div>
-      </section>
-
+      <L3ArticleShell
+        breadcrumb={[
+          { l: "トップ", href: "/" },
+          { l: "不安から探す", href: "/q" },
+          { l: "身バレが怖い" },
+        ]}
+        kicker="お悩み｜身バレ"
+        title={<>身バレが怖い人のための、<br />事務所選び</>}
+        meta={{ date: "2026.05.07", readTime: "約5分で読めます" }}
+      >
       <article className="col-article-body">
 
         <p>「チャットレディ、興味はあるけど、配信を見ている人に知り合いがいたらどうしよう」「保育士なのに、保護者に見られたら？」「彼氏や同僚が、たまたま見てしまったら？」</p>
@@ -161,6 +161,7 @@ export default function QBarebure() {
           <Link href="/jimusho" className="btn-main">掲載事務所の比較ランキングを見る →</Link>
         </div>
       </article>
-    </main>
+      </L3ArticleShell>
+    </>
   );
 }

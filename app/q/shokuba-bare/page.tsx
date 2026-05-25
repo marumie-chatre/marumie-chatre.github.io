@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FAQSchema, ArticleSchema, BreadcrumbSchema } from "../../StructuredData";
+import { L3ArticleShell } from "../../L3";
 
 export const metadata = {
   title: "職場・会社にバレないチャットレディの始め方｜まるみえチャトレ",
@@ -31,7 +32,7 @@ const FAQS = [
 
 export default function QShokubaBare() {
   return (
-    <main>
+    <>
       <ArticleSchema
         title="職場・会社にバレないチャットレディの始め方"
         description="副業でチャットレディを始めたい方へ。職場バレの本当の原因と住民税対策、職業に合わせた働き方を提案してくれる事務所をまとめました。"
@@ -45,17 +46,16 @@ export default function QShokubaBare() {
       ]} />
       <FAQSchema items={FAQS} />
 
-      <section className="col-article-hero">
-        <div className="col-article-inner">
-          <div className="col-article-cat">お悩み｜職場バレ</div>
-          <h1 className="col-article-h1">職場・会社にバレない<br />チャットレディの始め方</h1>
-          <div className="col-article-meta">
-            <span>2026.05.07</span>
-            <span>約5分で読めます</span>
-          </div>
-        </div>
-      </section>
-
+      <L3ArticleShell
+        breadcrumb={[
+          { l: "トップ", href: "/" },
+          { l: "不安から探す", href: "/q" },
+          { l: "職場バレ対策" },
+        ]}
+        kicker="お悩み｜職場バレ"
+        title={<>職場・会社にバレない<br />チャットレディの始め方</>}
+        meta={{ date: "2026.05.07", readTime: "約5分で読めます" }}
+      >
       <article className="col-article-body">
 
         <p>「副業を始めたいけど、本業の会社にバレたら…」「保育士・看護師・公務員…副業に厳しい職種だから、もう諦めるしかない？」「マイナンバーで全部バレるって聞いたけど、本当？」</p>
@@ -178,6 +178,7 @@ export default function QShokubaBare() {
           <Link href="/jimusho" className="btn-main">掲載事務所の比較ランキングを見る →</Link>
         </div>
       </article>
-    </main>
+      </L3ArticleShell>
+    </>
   );
 }

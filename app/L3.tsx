@@ -22,6 +22,82 @@ export const L3G = {
   ruleStrong: "rgba(58,50,42,0.20)",
 };
 
+// 記事系 tier-3 共通：article shell（hero + breadcrumb を統一・article body は children として保持）
+export function L3ArticleShell({
+  breadcrumb,
+  kicker,
+  title,
+  meta,
+  coverImage,
+  children,
+}: {
+  breadcrumb: { l: string; href?: string }[];
+  kicker: string;
+  title: React.ReactNode;
+  meta?: { date?: string; readTime?: string };
+  coverImage?: { src: string; alt: string };
+  children: React.ReactNode;
+}) {
+  return (
+    <main style={{ background: L3G.bg, color: L3G.ink, paddingBottom: 40 }}>
+      {/* full-width cover image（任意） */}
+      {coverImage && (
+        <div style={{
+          width: "100%", aspectRatio: "16/7",
+          background: L3G.sageSoft, overflow: "hidden",
+          position: "relative",
+        }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={coverImage.src}
+            alt={coverImage.alt}
+            style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+          />
+        </div>
+      )}
+
+      <L3Breadcrumb items={breadcrumb} />
+
+      <section style={{ padding: "8px 22px 20px", maxWidth: 720, margin: "0 auto" }}>
+        {/* kicker */}
+        <div style={{
+          display: "inline-flex", alignItems: "center", gap: 8,
+          fontSize: 10, letterSpacing: 2.2, fontWeight: 800, color: L3G.sageDeep,
+          marginBottom: 10,
+        }}>
+          <span style={{ width: 18, height: 1.5, background: L3G.sage, borderRadius: 1 }} />
+          {kicker}
+        </div>
+
+        <h1 style={{
+          margin: 0,
+          fontSize: "clamp(22px, 6vw, 30px)",
+          lineHeight: 1.5, fontWeight: 800, letterSpacing: -0.4,
+          color: L3G.ink,
+        }}>{title}</h1>
+
+        {meta && (
+          <div style={{
+            marginTop: 12, display: "flex", gap: 14, alignItems: "center",
+            fontSize: 11, color: L3G.inkSoft, fontWeight: 500,
+          }}>
+            {meta.date && <span>{meta.date}</span>}
+            {meta.readTime && (
+              <span style={{ display: "inline-flex", alignItems: "center", gap: 4 }}>
+                <Icon.Clock size={11} />
+                {meta.readTime}
+              </span>
+            )}
+          </div>
+        )}
+      </section>
+
+      {/* article body はそのまま渡す（既存 .col-article-body 等のCSSが効く） */}
+      {children}
+    </main>
+  );
+}
+
 // L3 共通：パンくず
 export function L3Breadcrumb({ items }: { items: { l: string; href?: string }[] }) {
   return (
