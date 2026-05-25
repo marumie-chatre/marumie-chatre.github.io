@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { FAQSchema, ArticleSchema, BreadcrumbSchema } from "../../StructuredData";
+import { L3ArticleShell } from "../../L3";
 
 export const metadata = {
   title: "福岡のチャットレディ事務所｜選び方と評価が高い3社｜まるみえチャトレ",
@@ -32,7 +33,7 @@ const FAQS = [
 
 export default function AreaFukuoka() {
   return (
-    <main>
+    <>
       <ArticleSchema
         title="福岡のチャットレディ事務所｜選び方と評価が高い3社"
         description="福岡でチャットレディ事務所を探している方へ。福岡県内には130店舗以上の事務所があり、選択肢が多すぎて選びにくいエリアです。天神・博多を中心とした選び方と評価が高い事務所を解説します。"
@@ -46,28 +47,18 @@ export default function AreaFukuoka() {
       ]} />
       <FAQSchema items={FAQS} />
 
-      <section className="area-page-hero">
-        <Image
-          src="/area-fukuoka.jpg"
-          alt="福岡の街並み"
-          width={1600}
-          height={500}
-          className="area-page-hero-image"
-          priority
-        />
-        <div className="area-page-hero-overlay">
-          <div className="col-article-inner">
-            <div className="col-article-cat">エリア｜福岡</div>
-            <h1 className="col-article-h1">福岡のチャットレディ事務所｜<br />選び方と評価が高い3社</h1>
-            <div className="col-article-meta">
-              <span>2026.05.08</span>
-              <span>約7分で読めます</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <article className="col-article-body">
+      <L3ArticleShell
+        coverImage={{ src: "/area-fukuoka.jpg", alt: "福岡の街並み" }}
+        breadcrumb={[
+          { l: "トップ", href: "/" },
+          { l: "エリアから探す", href: "/area" },
+          { l: "福岡" },
+        ]}
+        kicker="エリア｜福岡"
+        title={<>福岡のチャットレディ事務所｜<br />選び方と評価が高い3社</>}
+        meta={{ date: "2026.05.08", readTime: "約7分で読めます" }}
+      >
+        <article className="col-article-body">
 
         <p>「福岡で通えるチャットレディ事務所を探している」「天神・博多にたくさん事務所があって、どこを選べばいいか分からない」「福岡で安心して始められる事務所を見極めたい」</p>
         <p>福岡は、<strong>九州最大のチャットレディ激戦区</strong>です。天神・博多を中心に、県内全体では130店舗以上の事務所が集中しているといわれています。事務所が多いということは選択肢が豊富ということですが、同時に<strong>「どこを選ぶか」で経験が大きく変わる</strong>エリアでもあります。</p>
@@ -275,6 +266,7 @@ export default function AreaFukuoka() {
           <Link href="/jimusho" className="btn-main">掲載事務所の比較ランキングを見る →</Link>
         </div>
       </article>
-    </main>
+      </L3ArticleShell>
+    </>
   );
 }

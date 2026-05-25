@@ -1,7 +1,7 @@
 import Link from "next/link";
-import Image from "next/image";
 import { QABlock, PointBox, WarningBox, TipBox, MarkerSpan } from "../../ArticleParts";
 import { FAQSchema, ArticleSchema, BreadcrumbSchema } from "../../StructuredData";
+import { L3ArticleShell } from "../../L3";
 
 export const metadata = {
   title: "新宿のチャットレディ事務所｜約50店舗の中から選ぶ4社｜まるみえチャトレ",
@@ -44,7 +44,7 @@ const SHINJUKU_OFFICES = [
 
 export default function AreaShinjuku() {
   return (
-    <main>
+    <>
       {/* 構造化データ（SEO・AIO・AEO 最適化） */}
       <ArticleSchema
         title="新宿のチャットレディ事務所｜約50店舗の中から選ぶ4社"
@@ -59,28 +59,18 @@ export default function AreaShinjuku() {
       ]} />
       <FAQSchema items={FAQS} />
 
-      <section className="area-page-hero">
-        <Image
-          src="/area-shinjuku.jpg"
-          alt="新宿の街並み"
-          width={1600}
-          height={500}
-          className="area-page-hero-image"
-          priority
-        />
-        <div className="area-page-hero-overlay">
-          <div className="col-article-inner">
-            <div className="col-article-cat">エリア｜新宿</div>
-            <h1 className="col-article-h1">新宿のチャットレディ事務所｜<br />約50店舗の中から選ぶ4社</h1>
-            <div className="col-article-meta">
-              <span>2026.05.16</span>
-              <span>約9分で読めます</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <article className="col-article-body">
+      <L3ArticleShell
+        coverImage={{ src: "/area-shinjuku.jpg", alt: "新宿の街並み" }}
+        breadcrumb={[
+          { l: "トップ", href: "/" },
+          { l: "エリアから探す", href: "/area" },
+          { l: "新宿" },
+        ]}
+        kicker="エリア｜新宿"
+        title={<>新宿のチャットレディ事務所｜<br />約50店舗の中から選ぶ4社</>}
+        meta={{ date: "2026.05.16", readTime: "約9分で読めます" }}
+      >
+        <article className="col-article-body">
 
         <p>新宿で事務所を探していると、こんな引っかかりが出てきませんか。</p>
         <p>「<strong>新宿は事務所が多すぎて、どこを選んだらいいか分からない</strong>」「<strong>『最大時給4,500円』って広告に出てるけど、本当にそんなにもらえるの？</strong>」「<strong>新宿は稼げるって聞くけど、初心者でも大丈夫？</strong>」——。</p>
@@ -329,6 +319,7 @@ export default function AreaShinjuku() {
           <Link href="/jimusho" className="btn-main">掲載事務所の比較ランキングを見る →</Link>
         </div>
       </article>
-    </main>
+      </L3ArticleShell>
+    </>
   );
 }

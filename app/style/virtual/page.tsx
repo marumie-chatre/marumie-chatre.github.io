@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FAQSchema, ArticleSchema, BreadcrumbSchema } from "../../StructuredData";
+import { L3ArticleShell } from "../../L3";
 
 export const metadata = {
   title: "バーチャル配信対応チャットレディ事務所｜選び方と評価が高い3社｜まるみえチャトレ",
@@ -31,7 +32,7 @@ const FAQS = [
 
 export default function StyleVirtualPage() {
   return (
-    <main>
+    <>
       <ArticleSchema
         title="バーチャル配信対応チャットレディ事務所｜選び方と評価が高い3社"
         description="顔出しなしで働きたいチャットレディ志望者へ。バーチャル配信のメリット・デメリット、稼げる金額の現実、評価が高い対応事務所3社を、現役チャットレディが正直に解説します。"
@@ -45,16 +46,16 @@ export default function StyleVirtualPage() {
       ]} />
       <FAQSchema items={FAQS} />
 
-      <section className="col-article-hero">
-        <div className="col-article-inner">
-          <div className="col-article-cat">働き方｜バーチャル配信</div>
-          <h1 className="col-article-h1">バーチャル配信対応チャットレディ事務所｜<br />顔出しなしで働く選び方</h1>
-          <div className="col-article-meta">
-            <span>2026.05.14</span>
-            <span>約7分で読めます</span>
-          </div>
-        </div>
-      </section>
+      <L3ArticleShell
+        breadcrumb={[
+          { l: "トップ", href: "/" },
+          { l: "働き方から探す", href: "/style" },
+          { l: "バーチャル配信" },
+        ]}
+        kicker="働き方｜バーチャル配信"
+        title={<>バーチャル配信対応チャットレディ事務所｜<br />顔出しなしで働く選び方</>}
+        meta={{ date: "2026.05.14", readTime: "約7分で読めます" }}
+      >
 
       <article className="col-article-body">
 
@@ -361,6 +362,7 @@ export default function StyleVirtualPage() {
         </p>
 
       </article>
-    </main>
+      </L3ArticleShell>
+    </>
   );
 }

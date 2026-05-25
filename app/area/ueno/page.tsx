@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { FAQSchema, ArticleSchema, BreadcrumbSchema } from "../../StructuredData";
+import { L3ArticleShell } from "../../L3";
 
 export const metadata = {
   title: "上野のチャットレディ事務所｜選び方と評価が高い3社｜まるみえチャトレ",
@@ -32,7 +33,7 @@ const FAQS = [
 
 export default function AreaUeno() {
   return (
-    <main>
+    <>
       <ArticleSchema
         title="上野のチャットレディ事務所｜選び方と評価が高い3社"
         description="上野でチャットレディ事務所を探している方へ。新宿・池袋とは違う「少し落ち着いた大人の雰囲気」が特徴のエリアです。エリア特性と評価が高い事務所を解説します。"
@@ -46,28 +47,18 @@ export default function AreaUeno() {
       ]} />
       <FAQSchema items={FAQS} />
 
-      <section className="area-page-hero">
-        <Image
-          src="/area-ueno.jpg"
-          alt="上野の街並み"
-          width={1600}
-          height={500}
-          className="area-page-hero-image"
-          priority
-        />
-        <div className="area-page-hero-overlay">
-          <div className="col-article-inner">
-            <div className="col-article-cat">エリア｜上野</div>
-            <h1 className="col-article-h1">上野のチャットレディ事務所｜<br />選び方と評価が高い3社</h1>
-            <div className="col-article-meta">
-              <span>2026.05.08</span>
-              <span>約7分で読めます</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <article className="col-article-body">
+      <L3ArticleShell
+        coverImage={{ src: "/area-ueno.jpg", alt: "上野の街並み" }}
+        breadcrumb={[
+          { l: "トップ", href: "/" },
+          { l: "エリアから探す", href: "/area" },
+          { l: "上野" },
+        ]}
+        kicker="エリア｜上野"
+        title={<>上野のチャットレディ事務所｜<br />選び方と評価が高い3社</>}
+        meta={{ date: "2026.05.08", readTime: "約7分で読めます" }}
+      >
+        <article className="col-article-body">
 
         <p>「上野で通えるチャットレディ事務所を探している」「新宿の慌ただしさ・池袋の学生っぽさが苦手」「観光客が多くて、自分が誰かに見られても気にならない場所がいい」</p>
         <p>上野は、JR山手線・京浜東北線・常磐線・東京メトロ銀座線・日比谷線が交差するターミナル駅です。新宿・池袋に比べると事務所数は少なめですが、その分<strong>少し落ち着いた大人の雰囲気</strong>で働けるのが上野エリアの魅力です。</p>
@@ -275,6 +266,7 @@ export default function AreaUeno() {
           <Link href="/jimusho" className="btn-main">掲載事務所の比較ランキングを見る →</Link>
         </div>
       </article>
-    </main>
+      </L3ArticleShell>
+    </>
   );
 }

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { FAQSchema, ArticleSchema, BreadcrumbSchema } from "../../StructuredData";
+import { L3ArticleShell } from "../../L3";
 
 export const metadata = {
   title: "錦糸町のチャットレディ事務所｜居心地で選ぶ評価が高い3社｜まるみえチャトレ",
@@ -32,7 +33,7 @@ const FAQS = [
 
 export default function AreaKinshicho() {
   return (
-    <main>
+    <>
       <ArticleSchema
         title="錦糸町のチャットレディ事務所｜居心地で選ぶ評価が高い3社"
         description="錦糸町は新宿・池袋ほど事務所が多くないからこそ、「居心地で選んで長く続ける」ができるエリアです。落ち着いた雰囲気の中で安心して働ける事務所を解説します。"
@@ -46,28 +47,18 @@ export default function AreaKinshicho() {
       ]} />
       <FAQSchema items={FAQS} />
 
-      <section className="area-page-hero">
-        <Image
-          src="/area-kinshicho.jpg"
-          alt="錦糸町の街並み"
-          width={1600}
-          height={500}
-          className="area-page-hero-image"
-          priority
-        />
-        <div className="area-page-hero-overlay">
-          <div className="col-article-inner">
-            <div className="col-article-cat">エリア｜錦糸町</div>
-            <h1 className="col-article-h1">錦糸町のチャットレディ事務所｜<br />選び方と評価が高い3社</h1>
-            <div className="col-article-meta">
-              <span>2026.05.08</span>
-              <span>約7分で読めます</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <article className="col-article-body">
+      <L3ArticleShell
+        coverImage={{ src: "/area-kinshicho.jpg", alt: "錦糸町の街並み" }}
+        breadcrumb={[
+          { l: "トップ", href: "/" },
+          { l: "エリアから探す", href: "/area" },
+          { l: "錦糸町" },
+        ]}
+        kicker="エリア｜錦糸町"
+        title={<>錦糸町のチャットレディ事務所｜<br />選び方と評価が高い3社</>}
+        meta={{ date: "2026.05.08", readTime: "約7分で読めます" }}
+      >
+        <article className="col-article-body">
 
         <p>「錦糸町で通えるチャットレディ事務所を探している」「新宿や池袋の慌ただしさが苦手」「ガツガツ稼ぐより、自分のペースで長く続けたい」</p>
         <p>錦糸町は、JR総武線・東京メトロ半蔵門線が通るアクセス便利なエリアです。新宿（約50店舗）や池袋（18店舗以上）と比べると事務所数は少なめですが、その分<strong>落ち着いた雰囲気で、居心地のいい事務所を選びやすい</strong>のが錦糸町ならではの魅力です。</p>
@@ -278,6 +269,7 @@ export default function AreaKinshicho() {
           <Link href="/jimusho" className="btn-main">掲載事務所の比較ランキングを見る →</Link>
         </div>
       </article>
-    </main>
+      </L3ArticleShell>
+    </>
   );
 }

@@ -1,7 +1,7 @@
 import Link from "next/link";
-import Image from "next/image";
 import { QABlock, PointBox, WarningBox, TipBox, MarkerSpan } from "../../ArticleParts";
 import { FAQSchema, ArticleSchema, BreadcrumbSchema } from "../../StructuredData";
+import { L3ArticleShell } from "../../L3";
 
 export const metadata = {
   title: "渋谷のチャットレディ事務所｜選び方と評価が高い4社｜まるみえチャトレ",
@@ -43,7 +43,7 @@ const SHIBUYA_OFFICES = [
 
 export default function AreaShibuya() {
   return (
-    <main>
+    <>
       {/* 構造化データ（SEO・AIO・AEO 最適化） */}
       <ArticleSchema
         title="渋谷のチャットレディ事務所｜選び方と評価が高い4社"
@@ -58,28 +58,18 @@ export default function AreaShibuya() {
       ]} />
       <FAQSchema items={FAQS} />
 
-      <section className="area-page-hero">
-        <Image
-          src="/area-shibuya.jpg"
-          alt="渋谷の街並み"
-          width={1600}
-          height={500}
-          className="area-page-hero-image"
-          priority
-        />
-        <div className="area-page-hero-overlay">
-          <div className="col-article-inner">
-            <div className="col-article-cat">エリア｜渋谷</div>
-            <h1 className="col-article-h1">渋谷のチャットレディ事務所｜<br />選び方と評価が高い4社</h1>
-            <div className="col-article-meta">
-              <span>2026.05.16</span>
-              <span>約8分で読めます</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <article className="col-article-body">
+      <L3ArticleShell
+        coverImage={{ src: "/area-shibuya.jpg", alt: "渋谷の街並み" }}
+        breadcrumb={[
+          { l: "トップ", href: "/" },
+          { l: "エリアから探す", href: "/area" },
+          { l: "渋谷" },
+        ]}
+        kicker="エリア｜渋谷"
+        title={<>渋谷のチャットレディ事務所｜<br />選び方と評価が高い4社</>}
+        meta={{ date: "2026.05.16", readTime: "約8分で読めます" }}
+      >
+        <article className="col-article-body">
 
         <p>渋谷で事務所を探していると、こんな引っかかりが出てきませんか。</p>
         <p>「<strong>事務所が多すぎて、どこを選んだらいいか分からない</strong>」「<strong>渋谷っていうと派手なイメージがあるけど、清楚系の自分でも浮かないかな</strong>」「<strong>『最大時給◯◯円』みたいな広告を見ると、逆に怪しく感じる</strong>」——。</p>
@@ -298,6 +288,7 @@ export default function AreaShibuya() {
           <Link href="/jimusho" className="btn-main">掲載事務所の比較ランキングを見る →</Link>
         </div>
       </article>
-    </main>
+      </L3ArticleShell>
+    </>
   );
 }
