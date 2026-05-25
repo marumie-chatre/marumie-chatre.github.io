@@ -1,108 +1,198 @@
 import Link from "next/link";
+import { Icon } from "../Icon";
 
 export const metadata = {
   title: "運営者プロフィール｜まるみえチャトレ",
-  description: "まるみえチャトレの運営者プロフィール。現役チャットレディ・みなみが運営しています。",
+  description: "まるみえチャトレの運営者プロフィール。元保育士・現役チャットレディ4年目のみなみが、編集の3つの約束を守って運営しています。",
 };
+
+// Palette E カラー（インライン使用用）
+const G = {
+  bg: "#FAFAF5",
+  paper: "#FFFFFF",
+  ink: "#3A322A",
+  inkSoft: "#87796A",
+  inkSofter: "#B5AC9B",
+  sage: "#7BAA3F",
+  sageDeep: "#4F8225",
+  sageSoft: "#CDDDB0",
+  cream: "#F8EFE0",
+  accent: "#F4B5A0",
+  accentDeep: "#E89B85",
+  rule: "rgba(58,50,42,0.10)",
+  ruleStrong: "rgba(58,50,42,0.20)",
+};
+
+// 編集ポリシー3カード
+const POLICIES = [
+  { n: "01", t: "広告費で順位を変えない",        d: "事務所からの広告費は、スコアに一切反映していません。" },
+  { n: "02", t: "良い点も気になる点も載せる",   d: "メリットだけのレビューサイトはやめます。両面公開。" },
+  { n: "03", t: "採点根拠を公開する",            d: "配点・採点項目・更新日をすべて見られるようにしています。" },
+];
+
+// セクションタグ helper（kicker風・線付き）
+function SectionTagE({ children }: { children: React.ReactNode }) {
+  return (
+    <div style={{
+      display: "inline-flex", alignItems: "center", gap: 8,
+      fontSize: 10, letterSpacing: 2.5, fontWeight: 700,
+      color: G.sageDeep,
+    }}>
+      <span style={{ width: 20, height: 1.5, background: G.sage, borderRadius: 1 }} />
+      {children}
+    </div>
+  );
+}
 
 export default function ProfilePage() {
   return (
-    <main>
+    <main style={{ background: G.bg, color: G.ink, paddingBottom: 40 }}>
 
-      {/* HERO */}
-      <section className="hero" style={{paddingBottom:"64px"}}>
-        <div className="hero-inner" style={{maxWidth:"680px", margin:"0 auto", textAlign:"left"}}>
-          <p className="eyebrow">PROFILE</p>
-          <h1 className="hero-h1" style={{fontSize:"clamp(24px,3.5vw,36px)"}}>
-            運営者プロフィール
-          </h1>
-          <p className="hero-lead" style={{marginBottom:"0"}}>
-            まるみえチャトレを運営している、みなみです。<br />
-            現役のチャットレディとして<br />
-            ノンアダルトのお仕事をしながら、<br />
-            このサイトを作っています。
-          </p>
-        </div>
-      </section>
+      <div style={{ padding: "32px 22px 0", maxWidth: 720, margin: "0 auto" }}>
 
-      {/* ストーリー */}
-      <section className="section" style={{background:"var(--cream)"}}>
-        <div className="si" style={{maxWidth:"680px"}}>
-          <div style={{textAlign:"center", marginBottom:"32px"}}><img src="/photo-minami.png" alt="みなみ" style={{width:"200px", height:"200px", objectFit:"cover", borderRadius:"50%", border:"3px solid var(--border-green)"}}/></div>
-          <p className="eyebrow">STORY</p>
-          <h2 className="sec-h" style={{marginBottom:"32px"}}>なぜこのサイトを作ったか</h2>
-
-          <div className="profile-story">
-            <div className="profile-story-block">
-              <div className="profile-story-label">4年前まで、保育士をしていました。</div>
-              <p>子どもが好きで選んだ仕事でしたが、本業の合間にできる副業を探し始めたとき、チャットレディという選択肢にたどり着きました。</p>
-              <p>でも、事務所選びは想像以上に大変でした。何を基準に選べばいいのか分からない。公式サイトを見ても、良いことしか書かれていない。口コミを探しても、本当に働いた人の声なのか見分けがつかない。</p>
-              <p>「これで本当に大丈夫かな」「ノンアダって書いてあるけど、本当にそうなのかな」応募ボタンを押す前に、何度も止まりました。</p>
-            </div>
-
-            <div className="profile-story-block">
-              <div className="profile-story-label">3社目で、ようやく安心できる事務所に出会えました。</div>
-              <p>いくつか面談に行って、雰囲気が合わなかった事務所もありました。「稼ぎたいならアダルトなことはしないと」と言われてショックを受けたこともあります。</p>
-              <p>最終的に「ここなら大丈夫そう」と思える場所を見つけたのは、3社目でした。</p>
-              <p>チャットレディを始めて4年。今もノンアダルト専門で続けています。</p>
-            </div>
-
-            <div className="profile-story-block">
-              <div className="profile-story-label">私の働き方は、お話しでファンの方をつかんでいくスタイルです。</div>
-              <p>「会いに行ける」のではなく、「話を聞いてくれる」「ちゃんと向き合ってくれる」存在として、常連さんが少しずつ増えていく。</p>
-              <p>その積み重ねが、稼ぎにも、自分の自信にもなっていく。それが楽しくて、続けています。</p>
-            </div>
-
-            <div className="profile-story-block">
-              <div className="profile-story-label">自分が事務所を選ぶとき、こういうサイトがあったら良かった。</div>
-              <p>怪しくない事務所を、ちゃんと選べる場所。根拠のある情報で、納得して応募できる場所。</p>
-              <p>「ちゃんと調べてから、安心して応募してきてほしい」そう思って、このサイトを作りました。</p>
+        {/* ===== photo + name カード ===== */}
+        <div style={{
+          display: "flex", alignItems: "center", gap: 16,
+          padding: "20px",
+          background: G.paper, borderRadius: 16,
+          border: `1px solid ${G.rule}`,
+        }}>
+          {/* avatar */}
+          <div style={{
+            width: 80, height: 80, borderRadius: "50%",
+            background: G.sageSoft, color: G.sageDeep,
+            display: "flex", alignItems: "center", justifyContent: "center",
+            fontSize: 32, fontWeight: 800,
+            flexShrink: 0,
+            overflow: "hidden",
+          }}>
+            <img
+              src="/photo-minami.png"
+              alt="みなみ"
+              style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            />
+          </div>
+          {/* name + meta */}
+          <div style={{ flex: 1, minWidth: 0 }}>
+            <div style={{
+              fontSize: 9.5, letterSpacing: 2.5, fontWeight: 700, color: G.sageDeep,
+            }}>EDITOR</div>
+            <div style={{
+              marginTop: 4,
+              fontSize: 22, fontWeight: 800, lineHeight: 1.2, color: G.ink,
+            }}>みなみ</div>
+            <div style={{
+              fontSize: 10.5, color: G.inkSoft, marginTop: 5, lineHeight: 1.6,
+            }}>
+              元保育士 / 現役チャットレディ<br />
+              まるみえチャトレ 運営4年目
             </div>
           </div>
         </div>
-      </section>
 
-      {/* 運営者情報 */}
-      <section className="section" style={{background:"var(--white)"}}>
-        <div className="si" style={{maxWidth:"680px"}}>
-          <p className="eyebrow">SITE INFO</p>
-          <h2 className="sec-h" style={{marginBottom:"28px"}}>運営者情報</h2>
-          <table className="detail-table">
-            <tbody>
-              <tr><th>サイト名</th><td>まるみえちゃとれ</td></tr>
-              <tr><th>代表者</th><td>みなみ</td></tr>
-              <tr><th>事業内容</th><td>webコンテンツサービス</td></tr>
-              <tr><th>お問い合わせ</th><td>Googleフォームよりご連絡ください</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
+        {/* ===== WORKSPACE セクション ===== */}
+        <div style={{ marginTop: 26 }}>
+          <SectionTagE>WORKSPACE</SectionTagE>
+          <h2 style={{
+            margin: "8px 0 12px",
+            fontSize: 19, fontWeight: 700, lineHeight: 1.5, color: G.ink,
+          }}>編集部の机から。</h2>
 
-      {/* 関連情報 */}
-      <section className="section" style={{background:"var(--cream)"}}>
-        <div className="si" style={{maxWidth:"680px"}}>
-          <p className="eyebrow">DISCLOSURE</p>
-          <h2 className="sec-h" style={{marginBottom:"28px"}}>開示情報</h2>
-          <div className="profile-disclosure">
-            <p>運営者は自身のチャットレディの経験を踏まえて、いい点、気になる点、向かない人に分けて、調査結果を掲載しています。読者が自分に合う事務所を選べることを最優先しており、特定の事務所への利益誘導は行いません。掲載順位は公開している評価基準にもとづいて決定しています。</p>
+          {/* desk image placeholder */}
+          <div style={{
+            width: "100%", aspectRatio: "16/9",
+            background: `linear-gradient(135deg, ${G.sageSoft}, ${G.cream})`,
+            borderRadius: 12, overflow: "hidden",
+            position: "relative",
+            display: "flex", alignItems: "center", justifyContent: "center",
+          }}>
+            <div style={{
+              fontSize: 11, color: G.inkSoft, opacity: 0.7,
+            }}>編集部 workspace 写真（差し替え予定）</div>
           </div>
 
-
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="kuchi-sec">
-        <div className="kuchi-inner">
-          <h2 className="kuchi-h">働いた経験がある方へ</h2>
-          <p className="kuchi-p">
-            あなたの本音が、次に選ぶ誰かの安心になります。<br />
-            匿名・5分で投稿できます。
+          <p style={{
+            margin: "12px 0 0", fontSize: 11.5, color: G.inkSoft, lineHeight: 1.85,
+          }}>
+            毎月の更新は、ここで作業しています。事務所への応募・面接記録、口コミ整理、採点更新まで、すべて手作業です。
           </p>
-          <Link href="/kuchikomi" className="btn-main">口コミを投稿する →</Link>
         </div>
-      </section>
 
+        {/* ===== BIOGRAPHY セクション ===== */}
+        <div style={{ marginTop: 30 }}>
+          <SectionTagE>BIOGRAPHY</SectionTagE>
+          <h2 style={{
+            margin: "8px 0 14px",
+            fontSize: 19, fontWeight: 700, lineHeight: 1.5, color: G.ink,
+          }}>このサイトを<br />運営している人。</h2>
+
+          <p style={{
+            margin: 0, fontSize: 12.5, lineHeight: 1.95, color: G.ink,
+            fontFamily: "'Klee One', 'Zen Maru Gothic', sans-serif",
+          }}>
+            4年前、保育士の仕事だけでは生活が苦しくて、副業を探していた時にチャットレディに出会いました。
+            何を信じていいか分からなくて、応募ボタンを押すまでに2週間悩んだのを今でも覚えています。
+          </p>
+
+          <p style={{
+            margin: "14px 0 0", fontSize: 12, lineHeight: 1.95, color: G.inkSoft,
+          }}>
+            「ちゃんと選びたい人」が選びやすいサイトを作りたい、という想いで「まるみえチャトレ」を立ち上げました。広告費で順位を変えないこと、良いことも気になることも両面で書くこと、それだけは絶対に守っています。
+          </p>
+        </div>
+
+        {/* ===== EDITORIAL POLICY セクション ===== */}
+        <div style={{ marginTop: 30 }}>
+          <SectionTagE>EDITORIAL POLICY</SectionTagE>
+          <h2 style={{
+            margin: "8px 0 14px",
+            fontSize: 19, fontWeight: 700, lineHeight: 1.5, color: G.ink,
+          }}>編集の3つの約束。</h2>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+            {POLICIES.map(p => (
+              <div key={p.n} style={{
+                background: G.paper, borderRadius: 12, padding: 14,
+                border: `1px solid ${G.rule}`,
+                display: "flex", gap: 14, alignItems: "flex-start",
+              }}>
+                <div style={{
+                  fontSize: 18, fontWeight: 800, color: G.sageDeep, lineHeight: 1,
+                  paddingTop: 2,
+                }}>{p.n}</div>
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <div style={{ fontSize: 14, fontWeight: 800, color: G.ink }}>{p.t}</div>
+                  <div style={{ fontSize: 11, color: G.inkSoft, marginTop: 4, lineHeight: 1.7 }}>{p.d}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* ===== CONTACT セクション ===== */}
+        <div style={{ marginTop: 30 }}>
+          <SectionTagE>CONTACT</SectionTagE>
+          <h2 style={{
+            margin: "8px 0 14px",
+            fontSize: 19, fontWeight: 700, lineHeight: 1.5, color: G.ink,
+          }}>お問い合わせ。</h2>
+
+          <Link href="/kuchikomi" style={{
+            display: "flex", alignItems: "center", justifyContent: "space-between",
+            padding: "14px 16px", borderRadius: 99,
+            background: G.paper, color: G.ink,
+            border: `1px solid ${G.ruleStrong}`,
+            fontSize: 13, fontWeight: 700, textDecoration: "none",
+          }}>
+            <span style={{ display: "inline-flex", alignItems: "center", gap: 10 }}>
+              <Icon.Mail size={16} />
+              編集部にメッセージを送る
+            </span>
+            <Icon.Arrow size={13} />
+          </Link>
+        </div>
+
+      </div>
     </main>
   );
 }
