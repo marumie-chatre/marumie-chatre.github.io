@@ -1,276 +1,197 @@
 import Link from "next/link";
-import Image from "next/image";
 import { Icon } from "../Icon";
 
 export const metadata = {
-  title: "チャットレディの働き方ガイド｜4つの選択肢と自分に合う事務所の選び方｜まるみえチャトレ",
-  description: "チャットレディの「在宅」「通勤」「ノンアダルト専門」「バーチャル」4つの働き方を比較。自分に合う事務所の選び方を、現役チャットレディが解説します。",
+  title: "働き方から探す｜まるみえチャトレ",
+  description: "同じチャットレディでも、在宅/通勤、副業/専業、時間帯で「向いている事務所」がまったく違います。あなたに合う働き方から事務所を選べます。",
 };
 
-const styles = [
-  {
-    slug: "zaitaku",
-    iconName: "Home" as const,
-    image: "/style-zaitaku.jpg",
-    cat: "副業向け",
-    title: "在宅型",
-    catch: "お家で気軽にスタート",
-    summary: "おうちのパソコンやスマホでそのまま配信。通勤しなくていいから、副業や育児中の方にもぴったりなんです。ただ、ひとりで稼ぎ方を覚えていくのは、ちょっとハードルが高めかもしれません。",
-    target: "育児中・本業がある方",
-  },
-  {
-    slug: "tsukin",
-    iconName: "Briefcase" as const,
-    image: "/style-tsukin.jpg",
-    cat: "本格派向け",
-    title: "通勤型",
-    catch: "防音個室でのびのび配信",
-    summary: "事務所の防音個室でのびのび配信できて、スタッフから直接サポートがあるから、常連さんが早く着くんです。「本気で稼ぎたい」と思っている方には、まず通勤型がおすすめ。",
-    target: "本気で稼ぎたい方",
-  },
-  {
-    slug: "non-adult",
-    iconName: "HeartHand" as const,
-    image: "/style-nonadult.jpg",
-    cat: "安心・専門",
-    title: "ノンアダルト専門",
-    catch: "お話だけで稼ぐ安心感",
-    summary: "アダルトを勧められる心配がない、ノンアダ専門の事務所。「お話だけで稼ぐ」働き方なので、じっくり長く続けたい方に向いています。",
-    target: "真面目に長く続けたい方",
-  },
-  {
-    slug: "virtual",
-    iconName: "Star" as const,
-    image: "/style-virtual.jpg",
-    cat: "顔バレ対策",
-    title: "バーチャル配信",
-    catch: "顔バレほぼゼロの選択肢",
-    summary: "アバター越しの配信だから、顔バレのリスクはほぼゼロ。集客にちょっと時間がかかる面もあるけれど、副業として安心して続けられる選択肢です。",
-    target: "顔バレ絶対NGの方",
-  },
+// Palette E カラー（インライン使用用）
+const G = {
+  bg: "#FAFAF5",
+  paper: "#FFFFFF",
+  ink: "#3A322A",
+  inkSoft: "#87796A",
+  inkSofter: "#B5AC9B",
+  sage: "#7BAA3F",
+  sageDeep: "#4F8225",
+  sageSoft: "#CDDDB0",
+  cream: "#F8EFE0",
+  accent: "#F4B5A0",
+  rule: "rgba(58,50,42,0.10)",
+};
+
+type StyleIconName = "Home" | "Briefcase" | "Clock" | "Sprout" | "Coin" | "HeartHand";
+
+type StyleItem = {
+  href: string;
+  l: string;
+  n: number;
+  sub: string;
+  iconName: StyleIconName;
+};
+
+// 6 スタイル（handoff の StylePage に準拠）
+const STYLES: StyleItem[] = [
+  { href: "/style/zaitaku",   l: "在宅で働きたい",   n: 7, sub: "自宅から配信できる事務所",   iconName: "Home" },
+  { href: "/style/tsukin",    l: "通勤で働きたい",   n: 9, sub: "完全個室・設備充実",         iconName: "Briefcase" },
+  { href: "/jimusho",         l: "副業・夜だけ",     n: 6, sub: "本業と両立しやすい",         iconName: "Clock" },
+  { href: "/jimusho",         l: "主婦・スキマで",   n: 5, sub: "短時間 / 日中OK",            iconName: "Sprout" },
+  { href: "/jimusho",         l: "本気で稼ぎたい",   n: 4, sub: "時給保証 / 高還元率",        iconName: "Coin" },
+  { href: "/style/non-adult", l: "ノンアダルト",     n: 3, sub: "お話のみ / 清楚系",          iconName: "HeartHand" },
 ];
 
-export default function StyleHubPage() {
+// その他の働き方（既存ページへの導線維持）
+const OTHER_STYLES = [
+  { href: "/style/virtual", l: "バーチャル配信", sub: "顔バレほぼゼロ" },
+];
+
+export default function StylePage() {
   return (
-    <main>
+    <main style={{ background: G.bg, color: G.ink, paddingBottom: 40 }}>
 
-      {/* HERO */}
-      <section className="hero" style={{paddingBottom:"64px"}}>
-        <div className="hero-inner" style={{maxWidth:"720px", margin:"0 auto", textAlign:"left"}}>
-          <p className="eyebrow">STYLES</p>
-          <h1 className="hero-h1" style={{fontSize:"clamp(26px,3.5vw,38px)"}}>
-            働き方ガイド｜<br /><em>4つの選択肢から自分に合う事務所を選ぶ</em>
-          </h1>
-          <p className="hero-lead" style={{marginBottom:"0"}}>
-            チャットレディには、「在宅」「通勤」「ノンアダルト専門」「バーチャル」の4つの働き方があるんです。<br />
-            ここではそれぞれの違いと、自分に合う働き方を一緒に見ていきましょう。
-          </p>
+      {/* ===== HERO ===== */}
+      <section style={{ padding: "28px 22px 18px", maxWidth: 720, margin: "0 auto" }}>
+        {/* kicker */}
+        <div style={{
+          display: "inline-flex", alignItems: "center", gap: 8,
+          fontSize: 10, letterSpacing: 2.2, fontWeight: 800, color: G.sageDeep,
+          marginBottom: 12,
+        }}>
+          <span style={{ width: 18, height: 1.5, background: G.sage, borderRadius: 1 }} />
+          BY STYLE
+        </div>
+
+        {/* h1 */}
+        <h1 style={{
+          margin: 0,
+          fontSize: "clamp(22px, 6vw, 30px)",
+          lineHeight: 1.5,
+          fontWeight: 800,
+          letterSpacing: -0.4,
+          color: G.ink,
+        }}>
+          どう働きたいかで、<br />選ぶ。
+        </h1>
+
+        {/* sub */}
+        <p style={{
+          margin: "14px 0 0", fontSize: 12.5, lineHeight: 1.9, color: G.inkSoft,
+        }}>
+          同じチャットレディでも、在宅/通勤、副業/専業、時間帯で「向いている事務所」がまったく違います。
+        </p>
+      </section>
+
+      {/* ===== 6スタイル 2列グリッド ===== */}
+      <section style={{
+        padding: "0 22px",
+        maxWidth: 720, margin: "0 auto",
+        display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10,
+      }}>
+        {STYLES.map(s => {
+          const IconComp = Icon[s.iconName];
+          return (
+            <Link href={s.href} key={s.l} style={{
+              background: G.paper, borderRadius: 14, padding: 14,
+              border: `1px solid ${G.rule}`,
+              textDecoration: "none", color: G.ink,
+              display: "flex", flexDirection: "column", gap: 10,
+              minHeight: 150,
+            }}>
+              {/* icon */}
+              <div style={{
+                width: 40, height: 40, borderRadius: 11,
+                background: G.sageSoft, color: G.sageDeep,
+                display: "flex", alignItems: "center", justifyContent: "center",
+              }}>
+                <IconComp size={20} />
+              </div>
+              {/* label + sub */}
+              <div>
+                <div style={{
+                  fontSize: 14, fontWeight: 800, lineHeight: 1.4, color: G.ink,
+                }}>{s.l}</div>
+                <div style={{
+                  fontSize: 10, color: G.inkSoft, marginTop: 4, lineHeight: 1.5,
+                }}>{s.sub}</div>
+              </div>
+              {/* count footer */}
+              <div style={{
+                marginTop: "auto",
+                fontSize: 11, fontWeight: 700, color: G.sageDeep,
+                display: "inline-flex", alignItems: "center", gap: 4,
+              }}>
+                {s.n}社 <Icon.Arrow size={10} />
+              </div>
+            </Link>
+          );
+        })}
+      </section>
+
+      {/* ===== その他の働き方（既存ページ導線維持） ===== */}
+      <section style={{
+        margin: "28px auto 0",
+        padding: "0 22px",
+        maxWidth: 720,
+      }}>
+        <div style={{
+          display: "inline-flex", alignItems: "center", gap: 8,
+          fontSize: 10, letterSpacing: 2.2, fontWeight: 800, color: G.sageDeep,
+          marginBottom: 10,
+        }}>
+          <span style={{ width: 18, height: 1.5, background: G.sage, borderRadius: 1 }} />
+          OTHER
+        </div>
+        <h2 style={{
+          margin: "0 0 12px",
+          fontSize: 16, fontWeight: 800, color: G.ink, lineHeight: 1.5,
+        }}>
+          他の働き方も見てみる
+        </h2>
+
+        <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+          {OTHER_STYLES.map(o => (
+            <Link href={o.href} key={o.l} style={{
+              display: "flex", alignItems: "center", gap: 12,
+              padding: "12px 16px", borderRadius: 12,
+              background: G.paper, color: G.ink,
+              border: `1px solid ${G.rule}`,
+              textDecoration: "none",
+            }}>
+              <div style={{
+                width: 32, height: 32, borderRadius: 8,
+                background: G.sageSoft, color: G.sageDeep,
+                display: "flex", alignItems: "center", justifyContent: "center",
+                flexShrink: 0,
+              }}>
+                <Icon.Star size={16} />
+              </div>
+              <div style={{ flex: 1, minWidth: 0 }}>
+                <div style={{ fontSize: 13, fontWeight: 700 }}>{o.l}</div>
+                <div style={{ fontSize: 10, color: G.inkSoft, marginTop: 1 }}>{o.sub}</div>
+              </div>
+              <Icon.Arrow size={12} />
+            </Link>
+          ))}
         </div>
       </section>
 
-      {/* 4つの働き方 */}
-      <section className="section" style={{background:"var(--cream)"}}>
-        <div className="si" style={{maxWidth:"1080px"}}>
-          <p className="eyebrow">4 STYLES</p>
-          <h2 className="sec-h" style={{marginBottom:"40px"}}>チャットレディの4つの働き方</h2>
-
-          <div className="area-grid">
-            {styles.map((style) => {
-              const IconComp = Icon[style.iconName];
-              return (
-              <Link href={`/style/${style.slug}`} key={style.slug} className="area-card">
-                <div className="area-card-image-wrap">
-                  <Image
-                    src={style.image}
-                    alt={style.title}
-                    width={400}
-                    height={240}
-                    className="area-card-image"
-                  />
-                  <span className="area-card-icon" style={{
-                    display: "inline-flex", alignItems: "center", justifyContent: "center",
-                    width: 36, height: 36, borderRadius: "50%",
-                    background: "var(--white)", color: "var(--green-dark)",
-                  }}>
-                    <IconComp size={18} />
-                  </span>
-                </div>
-                <div className="area-card-body">
-                  <div className="area-card-header">
-                    <h3 className="area-card-name">{style.title}</h3>
-                    <span className="area-card-count">{style.cat}</span>
-                  </div>
-                  <p className="area-card-catch">{style.catch}</p>
-                  <p className="area-card-summary">{style.summary}</p>
-                  <div className="area-card-target">
-                    <span className="area-card-target-label">こんな方に</span>
-                    <span className="area-card-target-value">{style.target}</span>
-                  </div>
-                  <span className="area-card-link">詳しく見る →</span>
-                </div>
-              </Link>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* 自分に合う働き方の選び方 */}
-      <section className="section" style={{background:"var(--white)"}}>
-        <div className="si" style={{maxWidth:"760px"}}>
-          <p className="eyebrow">SELECT</p>
-          <h2 className="sec-h" style={{marginBottom:"24px"}}>自分に合う働き方の選び方</h2>
-          <p style={{marginBottom:"32px"}}>タイプ別に、向いている働き方をまとめました。</p>
-
-          <div style={{marginBottom:"32px"}}>
-            <h3 style={{marginBottom:"12px", fontSize:"18px"}}>「在宅」が向いているのは、こんな方</h3>
-            <p>育児中・本業がある方で、<strong>おうちのすきま時間で働きたい</strong>方。または、近くに通える事務所がない方にも。まずはお小遣い稼ぎから始めてみたい方にもぴったりです。</p>
-          </div>
-
-          <div style={{marginBottom:"32px"}}>
-            <h3 style={{marginBottom:"12px", fontSize:"18px"}}>「通勤」がおすすめなのは、こんな方</h3>
-            <p>本気で稼ぎたい、しっかり技術を身につけたい方。自宅だと集中できない方や、スタッフに直接相談しながら進めたい方にも向いています。</p>
-          </div>
-
-          <div style={{marginBottom:"32px"}}>
-            <h3 style={{marginBottom:"12px", fontSize:"18px"}}>「ノンアダルト専門」を選んでほしいのは、こんな方</h3>
-            <p>アダルトは絶対にしたくない、真面目に長く続けたい方。「ノンアダ対応」と書いてあっても現場でアダルトを勧められる事務所もあるので、最初から<strong>「専門」の事務所</strong>を選ぶと安心です。</p>
-          </div>
-
-          <div>
-            <h3 style={{marginBottom:"12px", fontSize:"18px"}}>「バーチャル配信」が合うのは、こんな方</h3>
-            <p>顔バレが絶対NG、職場バレが何より怖い方。アバター越しに配信するので、容姿に自信がない方も「もう一人の自分」として活躍できます。</p>
-          </div>
-        </div>
-      </section>
-
-      {/* 4つの働き方を比較 */}
-      <section className="section" style={{background:"var(--cream)"}}>
-        <div className="si" style={{maxWidth:"760px"}}>
-          <p className="eyebrow">COMPARE</p>
-          <h2 className="sec-h" style={{marginBottom:"24px"}}>4つの働き方を比較</h2>
-          <p style={{marginBottom:"24px"}}>それぞれの違いを表で整理しました。</p>
-
-          <div style={{overflowX:"auto"}}>
-            <table style={{width:"100%", borderCollapse:"collapse", fontSize:"14px", background:"var(--white)"}}>
-              <thead>
-                <tr>
-                  <th style={{padding:"12px", textAlign:"left", border:"1px solid #ddd"}}></th>
-                  <th style={{padding:"12px", border:"1px solid #ddd"}}>在宅</th>
-                  <th style={{padding:"12px", border:"1px solid #ddd"}}>通勤</th>
-                  <th style={{padding:"12px", border:"1px solid #ddd"}}>ノンアダ専門</th>
-                  <th style={{padding:"12px", border:"1px solid #ddd"}}>バーチャル</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th style={{padding:"12px", textAlign:"left", border:"1px solid #ddd"}}>顔バレリスク</th>
-                  <td style={{padding:"12px", border:"1px solid #ddd"}}>やや低い</td>
-                  <td style={{padding:"12px", border:"1px solid #ddd"}}>低い（防音個室）</td>
-                  <td style={{padding:"12px", border:"1px solid #ddd"}}>低い〜マスクOK</td>
-                  <td style={{padding:"12px", border:"1px solid #ddd"}}>ほぼゼロ</td>
-                </tr>
-                <tr>
-                  <th style={{padding:"12px", textAlign:"left", border:"1px solid #ddd"}}>月収目安（中堅層）</th>
-                  <td style={{padding:"12px", border:"1px solid #ddd"}}>月10〜20万</td>
-                  <td style={{padding:"12px", border:"1px solid #ddd"}}>月50〜80万</td>
-                  <td style={{padding:"12px", border:"1px solid #ddd"}}>月40〜70万</td>
-                  <td style={{padding:"12px", border:"1px solid #ddd"}}>月10〜20万</td>
-                </tr>
-                <tr>
-                  <th style={{padding:"12px", textAlign:"left", border:"1px solid #ddd"}}>サポートの手厚さ</th>
-                  <td style={{padding:"12px", border:"1px solid #ddd"}}>事務所により差</td>
-                  <td style={{padding:"12px", border:"1px solid #ddd"}}>直接対面で手厚い</td>
-                  <td style={{padding:"12px", border:"1px solid #ddd"}}>専門ノウハウあり</td>
-                  <td style={{padding:"12px", border:"1px solid #ddd"}}>事務所により差</td>
-                </tr>
-                <tr>
-                  <th style={{padding:"12px", textAlign:"left", border:"1px solid #ddd"}}>向いている方</th>
-                  <td style={{padding:"12px", border:"1px solid #ddd"}}>副業・地方在住</td>
-                  <td style={{padding:"12px", border:"1px solid #ddd"}}>本気で稼ぎたい</td>
-                  <td style={{padding:"12px", border:"1px solid #ddd"}}>真面目に長く続けたい</td>
-                  <td style={{padding:"12px", border:"1px solid #ddd"}}>顔バレ絶対NG</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      {/* 結論：通勤×ノンアダ専門 */}
-      <section className="section" style={{background:"var(--white)"}}>
-        <div className="si" style={{maxWidth:"720px"}}>
-          <p className="eyebrow">CONCLUSION</p>
-          <h2 className="sec-h" style={{marginBottom:"24px"}}>迷ったら、「通勤×ノンアダ専門」が一番安心</h2>
-
-          <p style={{marginBottom:"20px"}}>迷っている方には、<strong>通勤型のノンアダルト専門事務所</strong>をおすすめします。</p>
-
-          <p style={{marginBottom:"12px"}}>理由はシンプルです。</p>
-          <ul style={{marginBottom:"32px", paddingLeft:"20px", lineHeight:"1.8"}}>
-            <li><strong>通勤型</strong>だから、防音個室でのびのび配信できて、スタッフから直接サポートしてもらえる</li>
-            <li><strong>ノンアダルト専門</strong>だから、アダルトを勧められる心配がなく、真面目に長く続けられる</li>
-            <li>「<strong>学びやすさ × 安心感</strong>」を両立できるのが、この組み合わせなんです</li>
-          </ul>
-
-          <p style={{marginBottom:"20px"}}>業界でこの「通勤×ノンアダ専門」を両立できる代表が、<strong>業界初のノンアダルト専門店であるフェアリーテイル</strong>です。</p>
-
-          <ul style={{marginBottom:"24px", paddingLeft:"20px", lineHeight:"1.8"}}>
-            <li>業界初のノンアダ専門店として運営する<strong>業界の先駆者</strong></li>
-            <li>在籍チャトレの<strong>98.4%がノンアダ</strong></li>
-            <li><strong>1,000項目以上のノンアダ専用ノウハウ</strong>で、未経験者でも段階的に稼げる</li>
-            <li>日本チャットレディ連盟（JCF）から<strong>3年連続最優秀店舗賞</strong>を受賞</li>
-          </ul>
-
-          <p style={{marginBottom:"24px"}}>派手な事務所が苦手で、ノンアダルトで真面目に長く続けたい方には、フェアリーテイルが一番ぴったりかもしれません。</p>
-
-          <div style={{display:"flex", flexDirection:"column", gap:"12px"}}>
-            <Link href="/jimusho/ft" className="btn-main">フェアリーテイルの詳細を見る →</Link>
-            <Link href="/style/non-adult" className="btn-main">ノンアダルト専門事務所のページを見る →</Link>
-          </div>
-        </div>
-      </section>
-
-      {/* エリア */}
-      <section className="section" style={{background:"var(--cream)"}}>
-        <div className="si" style={{maxWidth:"680px"}}>
-          <p className="eyebrow">AREA</p>
-          <h2 className="sec-h" style={{marginBottom:"24px"}}>自分の通えるエリアの店舗を探す</h2>
-          <ul style={{paddingLeft:"20px", lineHeight:"2"}}>
-            <li><Link href="/area/shinjuku">新宿エリアの事務所を見る →</Link></li>
-            <li><Link href="/area/ikebukuro">池袋エリアの事務所を見る →</Link></li>
-            <li><Link href="/area/kinshicho">錦糸町エリアの事務所を見る →</Link></li>
-            <li><Link href="/area/ueno">上野エリアの事務所を見る →</Link></li>
-            <li><Link href="/area/fukuoka">福岡エリアの事務所を見る →</Link></li>
-            <li><Link href="/area">エリア一覧 →</Link></li>
-          </ul>
-        </div>
-      </section>
-
-      {/* 関連ページ */}
-      <section className="section" style={{background:"var(--white)"}}>
-        <div className="si" style={{maxWidth:"680px"}}>
-          <p className="eyebrow">RELATED</p>
-          <h2 className="sec-h" style={{marginBottom:"24px"}}>もっと詳しく知りたい方へ</h2>
-          <ul style={{paddingLeft:"20px", lineHeight:"2"}}>
-            <li><Link href="/q/barebure">配信中に客に特定されるのが怖い →</Link></li>
-            <li><Link href="/q/kazoku-bare">家族・親・彼氏にバレるのが怖い →</Link></li>
-            <li><Link href="/q/shokuba-bare">職場・会社にバレない副業の始め方 →</Link></li>
-            <li><Link href="/q/ayashii">チャトレって怪しくない？危なくない？ →</Link></li>
-            <li><Link href="/q/shoshinsha">初心者が安心して始められる事務所 →</Link></li>
-          </ul>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="kuchi-sec">
-        <div className="kuchi-inner">
-          <h2 className="kuchi-h">自分に合うチャットレディ事務所を見つけたい方へ</h2>
-          <p className="kuchi-p">
-            チャットレディの働き方は、人によって正解が違います。<br />
-            でも、迷ったときは「通勤×ノンアダ専門」を選んでおくと、失敗しにくいですよ。
-          </p>
-          <Link href="/jimusho" className="btn-main">掲載事務所の比較ランキングを見る →</Link>
-        </div>
+      {/* ===== ランキングCTA ===== */}
+      <section style={{
+        margin: "28px auto 0",
+        padding: "0 22px",
+        maxWidth: 720,
+      }}>
+        <Link href="/jimusho" style={{
+          display: "flex", alignItems: "center", justifyContent: "space-between",
+          padding: "14px 18px", borderRadius: 99,
+          background: G.paper, color: G.ink,
+          border: `1.5px solid ${G.rule}`,
+          fontSize: 13, fontWeight: 700, textDecoration: "none",
+        }}>
+          <span>11事務所のランキングを見る</span>
+          <Icon.Arrow size={14} />
+        </Link>
       </section>
 
     </main>
