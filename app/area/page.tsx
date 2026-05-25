@@ -3,164 +3,238 @@ import Image from "next/image";
 import { Icon } from "../Icon";
 
 export const metadata = {
-  title: "エリア別チャットレディ事務所｜まるみえチャトレ",
-  description: "新宿・池袋・錦糸町・上野・福岡のエリア別にチャットレディ事務所を比較。元保育士の現役チャットレディが、各エリアの特性と評価が高い事務所をお伝えします。",
+  title: "エリアから探す｜まるみえチャトレ",
+  description: "通勤・在宅問わず、住んでいる地域からチャットレディ事務所を選びたい方へ。関東・関西・中部・東北・九州・在宅可の6つのエリアから探せます。",
 };
 
-// エリア情報を配列で管理（追加したい時はここに足すだけでOK）
-const areas = [
-  {
-    slug: "shinjuku",
-    name: "新宿",
-    iconName: "Pin" as const,
-    image: "/area-shinjuku.jpg",
-    catchphrase: "業界最大の激戦区",
-    summary: "約50店舗の中から失敗しない選び方。",
-    storeCount: "約50店舗",
-    target: "選択肢の多さを活かしたい方",
-  },
-  {
-    slug: "shibuya",
-    name: "渋谷",
-    iconName: "Pin" as const,
-    image: "/area-shibuya.jpg",
-    catchphrase: "東京の中心・若年層多め",
-    summary: "20店舗以上。20代キャストが中心で関東圏から通える。",
-    storeCount: "20店舗以上",
-    target: "アクセス重視の方",
-  },
-  {
-    slug: "ikebukuro",
-    name: "池袋",
-    iconName: "Pin" as const,
-    image: "/area-ikebukuro.jpg",
-    catchphrase: "学生街・初心者に優しい",
-    summary: "18店舗以上。同年代が多く浮かない雰囲気。",
-    storeCount: "18店舗以上",
-    target: "若年層・初心者の方",
-  },
-  {
-    slug: "kinshicho",
-    name: "錦糸町",
-    iconName: "Cafe" as const,
-    image: "/area-kinshicho.jpg",
-    catchphrase: "居心地で選ぶエリア",
-    summary: "新宿・池袋の慌ただしさが苦手な方向け。",
-    storeCount: "8店舗前後",
-    target: "居心地で選びたい方",
-  },
-  {
-    slug: "ueno",
-    name: "上野",
-    iconName: "Pin" as const,
-    image: "/area-ueno.jpg",
-    catchphrase: "落ち着いた大人のエリア",
-    summary: "観光客の人混みに紛れて目立たずに働ける。",
-    storeCount: "7〜10店舗",
-    target: "大人の雰囲気を求める方",
-  },
-  {
-    slug: "fukuoka",
-    name: "福岡",
-    iconName: "Pin" as const,
-    image: "/area-fukuoka.jpg",
-    catchphrase: "九州最大級の激戦区",
-    summary: "県内130店舗以上から「数より質」で選ぶ。",
-    storeCount: "130店舗以上",
-    target: "九州在住の方",
-  },
+// Palette E カラー（インライン使用用）
+const G = {
+  bg: "#FAFAF5",
+  bgWarm: "#F5E8C8",
+  paper: "#FFFFFF",
+  ink: "#3A322A",
+  inkSoft: "#87796A",
+  inkSofter: "#B5AC9B",
+  sage: "#7BAA3F",
+  sageDeep: "#4F8225",
+  sageSoft: "#CDDDB0",
+  cream: "#F8EFE0",
+  accent: "#F4B5A0",
+  accentDeep: "#E89B85",
+  rule: "rgba(58,50,42,0.10)",
+};
+
+// region データ（6地域）
+const REGIONS = [
+  { id: "kanto",  l: "関東",  n: 11, area: "東京 / 神奈川 / 千葉 / 埼玉", href: "/jimusho" },
+  { id: "kansai", l: "関西",  n: 5,  area: "大阪 / 京都 / 兵庫",          href: "/jimusho" },
+  { id: "chubu",  l: "中部",  n: 4,  area: "愛知 / 静岡 / 岐阜",          href: "/jimusho" },
+  { id: "tohoku", l: "東北",  n: 3,  area: "宮城 / 福島",                 href: "/jimusho" },
+  { id: "kyushu", l: "九州",  n: 4,  area: "福岡 / 鹿児島 / 熊本",        href: "/area/fukuoka" },
+  { id: "home",   l: "在宅可", n: 8, area: "全国どこからでも",            href: "/style/zaitaku" },
 ];
 
-export default function AreaHub() {
+// 既存の都市別ページ（後方互換）
+const CITIES = [
+  { slug: "shinjuku",  name: "新宿",   image: "/area-shinjuku.jpg",  count: "約50店舗" },
+  { slug: "shibuya",   name: "渋谷",   image: "/area-shibuya.jpg",   count: "20店舗以上" },
+  { slug: "ikebukuro", name: "池袋",   image: "/area-ikebukuro.jpg", count: "18店舗以上" },
+  { slug: "kinshicho", name: "錦糸町", image: "/area-kinshicho.jpg", count: "8店舗前後" },
+  { slug: "ueno",      name: "上野",   image: "/area-ueno.jpg",      count: "7〜10店舗" },
+  { slug: "fukuoka",   name: "福岡",   image: "/area-fukuoka.jpg",   count: "130店舗以上" },
+];
+
+export default function AreaPage() {
   return (
-    <main>
-      <section className="col-article-hero">
-        <div className="col-article-inner">
-          <div className="col-article-cat">エリア別ガイド</div>
-          <h1 className="col-article-h1">エリアから探す<br />チャットレディ事務所</h1>
-          <div className="col-article-meta">
-            <span>{areas.length}エリア</span>
-            <span>2026.05.08更新</span>
+    <main style={{ background: G.bg, color: G.ink, paddingBottom: 40 }}>
+
+      {/* ===== HERO ===== */}
+      <section style={{ padding: "28px 22px 18px", maxWidth: 720, margin: "0 auto" }}>
+        {/* kicker */}
+        <div style={{
+          display: "inline-flex", alignItems: "center", gap: 8,
+          fontSize: 10, letterSpacing: 2.2, fontWeight: 800, color: G.sageDeep,
+          marginBottom: 12,
+        }}>
+          <span style={{ width: 18, height: 1.5, background: G.sage, borderRadius: 1 }} />
+          BY REGION
+        </div>
+
+        {/* h1 */}
+        <h1 style={{
+          margin: 0,
+          fontSize: "clamp(22px, 6vw, 30px)",
+          lineHeight: 1.5,
+          fontWeight: 800,
+          letterSpacing: -0.4,
+          color: G.ink,
+        }}>
+          お住まいの近くから、<br />探す。
+        </h1>
+
+        {/* sub */}
+        <p style={{
+          margin: "14px 0 0", fontSize: 12.5, lineHeight: 1.9, color: G.inkSoft,
+        }}>
+          通勤・在宅問わず、住んでいる地域から事務所を選びたい方向け。タップすると該当事務所の一覧へ。
+        </p>
+      </section>
+
+      {/* ===== 6 region 行 ===== */}
+      <section style={{
+        padding: "0 22px",
+        maxWidth: 720, margin: "0 auto",
+        display: "flex", flexDirection: "column", gap: 10,
+      }}>
+        {REGIONS.map(r => (
+          <Link href={r.href} key={r.id} style={{
+            display: "flex", alignItems: "center", gap: 14,
+            background: G.paper, borderRadius: 12, padding: "14px 16px",
+            border: `1px solid ${G.rule}`,
+            textDecoration: "none", color: G.ink,
+          }}>
+            {/* pin icon box */}
+            <div style={{
+              width: 38, height: 38, borderRadius: 10,
+              background: G.sageSoft, color: G.sageDeep,
+              display: "flex", alignItems: "center", justifyContent: "center",
+              flexShrink: 0,
+            }}>
+              <Icon.Pin size={18} />
+            </div>
+            {/* region name + areas */}
+            <div style={{ flex: 1, minWidth: 0 }}>
+              <div style={{ fontSize: 15, fontWeight: 700, color: G.ink }}>{r.l}</div>
+              <div style={{ fontSize: 10.5, color: G.inkSoft, marginTop: 2 }}>{r.area}</div>
+            </div>
+            {/* count + arrow */}
+            <div style={{ textAlign: "right", display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 2 }}>
+              <div style={{
+                fontSize: 16, fontWeight: 800, color: G.sageDeep, lineHeight: 1,
+              }}>
+                {r.n}<span style={{ fontSize: 10, color: G.inkSoft, fontWeight: 500, marginLeft: 1 }}>社</span>
+              </div>
+              <span style={{ color: G.inkSoft }}>
+                <Icon.Arrow size={11} />
+              </span>
+            </div>
+          </Link>
+        ))}
+      </section>
+
+      {/* ===== 30分以内インフォカード ===== */}
+      <section style={{
+        margin: "24px auto 0",
+        padding: "0 22px",
+        maxWidth: 720,
+      }}>
+        <div style={{
+          padding: "16px 18px",
+          background: G.bgWarm, borderRadius: 12,
+          fontSize: 11.5, lineHeight: 1.8, color: G.ink,
+          display: "flex", gap: 10, alignItems: "flex-start",
+        }}>
+          <span style={{
+            width: 22, height: 22, borderRadius: "50%",
+            background: G.accentDeep, color: "#fff", flexShrink: 0,
+            display: "flex", alignItems: "center", justifyContent: "center",
+            fontSize: 11, fontWeight: 800,
+          }}>i</span>
+          <div>
+            通勤前提でも、最寄り駅まで30分以内が現実的なライン。
+            毎週通えるかが、続けられるかの分かれ目になります。
           </div>
         </div>
       </section>
 
-      <article className="col-article-body">
-
-        <p>自分の通えるエリアで、安心して始められる事務所を探したい方へ。</p>
-        <p>同じ事務所でも、エリアによって店舗の雰囲気や働く方の年齢層が変わります。<strong>「どこに通うか」</strong>も含めて選ぶと、より自分に合う場所が見つかりますよ。</p>
-
-        <div className="col-article-box">
-          <p>各エリアページで、地域の特徴・働いた方の声・おすすめ事務所TOP3をまとめています。<br />事務所そのものの比較は <Link href="/jimusho">掲載事務所の比較ランキング</Link> へどうぞ。</p>
+      {/* ===== 都市別の詳細ガイド（既存・後方互換）===== */}
+      <section style={{
+        margin: "36px auto 0",
+        padding: "0 22px",
+        maxWidth: 720,
+      }}>
+        <div style={{
+          display: "inline-flex", alignItems: "center", gap: 8,
+          fontSize: 10, letterSpacing: 2.2, fontWeight: 800, color: G.sageDeep,
+          marginBottom: 12,
+        }}>
+          <span style={{ width: 18, height: 1.5, background: G.sage, borderRadius: 1 }} />
+          BY CITY
         </div>
+        <h2 style={{
+          margin: "0 0 14px",
+          fontSize: "clamp(18px, 5vw, 24px)",
+          lineHeight: 1.5, fontWeight: 800, color: G.ink,
+        }}>
+          都市別に詳しく見る
+        </h2>
+        <p style={{
+          margin: "0 0 16px", fontSize: 12, lineHeight: 1.85, color: G.inkSoft,
+        }}>
+          主要都市は事務所選びのコツ・口コミなどを別記事でまとめています。
+        </p>
 
-        {/* エリアカードグリッド */}
-        <section className="area-hub-section">
-          <h2>エリア一覧</h2>
-          <div className="area-grid">
-            {areas.map((area) => {
-              const IconComp = Icon[area.iconName];
-              return (
-              <Link href={`/area/${area.slug}`} key={area.slug} className="area-card">
-                <div className="area-card-image-wrap">
-                  <Image
-                    src={area.image}
-                    alt={`${area.name}エリアの街並み`}
-                    width={400}
-                    height={240}
-                    className="area-card-image"
-                  />
-                  <span className="area-card-icon" style={{
-                    display: "inline-flex", alignItems: "center", justifyContent: "center",
-                    width: 36, height: 36, borderRadius: "50%",
-                    background: "var(--white)", color: "var(--green-dark)",
-                  }}>
-                    <IconComp size={18} />
-                  </span>
+        {/* city grid */}
+        <div style={{
+          display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10,
+        }}>
+          {CITIES.map(c => (
+            <Link href={`/area/${c.slug}`} key={c.slug} style={{
+              display: "block",
+              background: G.paper, borderRadius: 12, overflow: "hidden",
+              border: `1px solid ${G.rule}`,
+              textDecoration: "none", color: G.ink,
+            }}>
+              {/* image */}
+              <div style={{
+                position: "relative",
+                width: "100%", aspectRatio: "16/10",
+                background: G.sageSoft,
+              }}>
+                <Image
+                  src={c.image}
+                  alt={`${c.name}エリア`}
+                  fill
+                  sizes="(max-width:720px) 50vw, 360px"
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
+              {/* body */}
+              <div style={{ padding: "10px 12px" }}>
+                <div style={{ fontSize: 13, fontWeight: 800, color: G.ink }}>
+                  {c.name}
                 </div>
-                <div className="area-card-body">
-                  <div className="area-card-header">
-                    <h3 className="area-card-name">{area.name}エリア</h3>
-                    <span className="area-card-count">{area.storeCount}</span>
-                  </div>
-                  <p className="area-card-catch">{area.catchphrase}</p>
-                  <p className="area-card-summary">{area.summary}</p>
-                  <div className="area-card-target">
-                    <span className="area-card-target-label">こんな方に</span>
-                    <span className="area-card-target-value">{area.target}</span>
-                  </div>
-                  <span className="area-card-link">詳しく見る →</span>
+                <div style={{
+                  fontSize: 10, color: G.inkSoft, marginTop: 2,
+                  display: "flex", alignItems: "center", justifyContent: "space-between",
+                }}>
+                  <span>{c.count}</span>
+                  <Icon.Arrow size={10} />
                 </div>
-              </Link>
-              );
-            })}
-          </div>
-        </section>
-
-        <h2>エリア選びの3つの基準</h2>
-
-        <h3>① 自宅から30分以内で通えるか</h3>
-        <p>1時間以上かけて通うと、3ヶ月後には負担が増えて辞めるきっかけになりやすいんです。<strong>自宅から最も近いエリア</strong>を選ぶのが原則ですよ。</p>
-
-        <h3>② 自分が浮かない雰囲気か</h3>
-        <p>池袋は若年層多め、上野は大人エリア、錦糸町は落ち着いた雰囲気。「自分が浮かない場所」を選ぶと、長く続けやすくなりますよ。</p>
-
-        <h3>③ 選択肢の多さ</h3>
-        <p>新宿・池袋・福岡は事務所数が多くて比較しやすい反面、迷いやすい。錦糸町・上野は選択肢が絞られる分、決めやすいです。<strong>「比較に疲れたくない」方は、絞られたエリアの方が向いています</strong>。</p>
-
-        <h2>もっと詳しく知りたい方へ</h2>
-        <ul>
-          <li><Link href="/q/barebure">配信中に客に特定されるのが怖い</Link></li>
-          <li><Link href="/q/kazoku-bare">家族・親・彼氏にバレるのが怖い</Link></li>
-          <li><Link href="/q/shokuba-bare">職場・会社にバレない副業の始め方</Link></li>
-          <li><Link href="/q/ayashii">チャトレって怪しくない？危なくない？</Link></li>
-          <li><Link href="/q/shoshinsha">初心者が安心して始められる事務所</Link></li>
-        </ul>
-
-        <div style={{textAlign:"center", marginTop:"48px"}}>
-          <Link href="/jimusho" className="btn-main">掲載事務所の比較ランキングを見る →</Link>
+              </div>
+            </Link>
+          ))}
         </div>
-      </article>
+      </section>
+
+      {/* ===== ランキングCTA ===== */}
+      <section style={{
+        margin: "28px auto 0",
+        padding: "0 22px",
+        maxWidth: 720,
+      }}>
+        <Link href="/jimusho" style={{
+          display: "flex", alignItems: "center", justifyContent: "space-between",
+          padding: "14px 18px", borderRadius: 99,
+          background: G.paper, color: G.ink,
+          border: `1.5px solid ${G.rule}`,
+          fontSize: 13, fontWeight: 700, textDecoration: "none",
+        }}>
+          <span>11事務所のランキングを見る</span>
+          <Icon.Arrow size={14} />
+        </Link>
+      </section>
+
     </main>
   );
 }
