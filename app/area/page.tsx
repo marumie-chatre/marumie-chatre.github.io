@@ -12,16 +12,17 @@ const G = {
   bg: "#FAFAF5",
   bgWarm: "#F5E8C8",
   paper: "#FFFFFF",
-  ink: "#3A322A",
+  ink: "#241E16",
   inkSoft: "#87796A",
   inkSofter: "#B5AC9B",
   sage: "#7BAA3F",
-  sageDeep: "#4F8225",
+  sageDeep: "#587A38",
   sageSoft: "#CDDDB0",
+  sagePastel: "#A8C49A",
   cream: "#F8EFE0",
   accent: "#F4B5A0",
   accentDeep: "#E89B85",
-  rule: "rgba(58,50,42,0.10)",
+  rule: "rgba(36,30,22,0.10)",
 };
 
 // region データ（6地域）
@@ -53,7 +54,7 @@ export default function AreaPage() {
         {/* kicker */}
         <div style={{
           display: "inline-flex", alignItems: "center", gap: 8,
-          fontSize: 10, letterSpacing: 2.2, fontWeight: 800, color: G.sageDeep,
+          fontSize: 10, letterSpacing: 2.2, fontWeight: 800, color: G.ink,
           marginBottom: 12,
         }}>
           <span style={{ width: 18, height: 1.5, background: G.sage, borderRadius: 1 }} />
@@ -110,7 +111,7 @@ export default function AreaPage() {
             {/* count + arrow */}
             <div style={{ textAlign: "right", display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 2 }}>
               <div style={{
-                fontSize: 16, fontWeight: 800, color: G.sageDeep, lineHeight: 1,
+                fontSize: 16, fontWeight: 800, color: G.ink, lineHeight: 1,
               }}>
                 {r.n}<span style={{ fontSize: 10, color: G.inkSoft, fontWeight: 500, marginLeft: 1 }}>社</span>
               </div>
@@ -155,7 +156,7 @@ export default function AreaPage() {
       }}>
         <div style={{
           display: "inline-flex", alignItems: "center", gap: 8,
-          fontSize: 10, letterSpacing: 2.2, fontWeight: 800, color: G.sageDeep,
+          fontSize: 10, letterSpacing: 2.2, fontWeight: 800, color: G.ink,
           marginBottom: 12,
         }}>
           <span style={{ width: 18, height: 1.5, background: G.sage, borderRadius: 1 }} />

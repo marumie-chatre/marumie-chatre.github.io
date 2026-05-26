@@ -4,16 +4,17 @@
      方向性：明るく爽やかな緑・温かい黄をサブに・余白多め
      参考：MonPetit Natural Kiss（草緑＋水彩葉＋黄バッジ＋淡ミントチップ）*/
 
-  /* ===== レガシートークン（既存ページ互換用・Palette E に整合） ===== */
-  --green: #7BAA3F;                  /* fresh forest（明るく爽やか） */
-  --green-dark: #4F8225;             /* vibrant deep green */
+  /* ===== レガシートークン（既存ページ互換用・Palette E refined v3） ===== */
+  --green: #7BAA3F;                  /* fresh sage（細い線・小アクセント・score bar fill） */
+  --green-dark: #587A38;             /* refined moss（限定使用） */
   --green-mid: #9BC25E;              /* mid-tone */
-  --green-light: #CDDDB0;            /* Natural Kiss 風 mint chip color */
+  --green-light: #CDDDB0;            /* mint chip */
+  --green-pastel: #A8C49A;           /* CTA bg（パステル化・ink text と組合せ） */
   --green-pale: #F0F5E2;             /* fresh pale */
   --green-bg: #DEE9C5;               /* soft bg */
-  --cream: #FAFAF5;                  /* near-white cream（清潔感UP） */
+  --cream: #FAFAF5;                  /* near-white cream */
   --white: #ffffff;
-  --text: #3A322A;                   /* warm brown（維持） */
+  --text: #241E16;                   /* deep sumi（warm + 重厚） */
   --text-mid: #5A4E40;
   --text-muted: #87796A;
   --text-light: #B5AC9B;
@@ -27,11 +28,12 @@
 
   /* ===== Design Refresh v2 トークン（Palette E 適用版） ===== */
 
-  /* Primary palette — Fresh Sage */
-  --color-primary: #7BAA3F;          /* CTA・ブランド（明るい草緑） */
-  --color-primary-deep: #4F8225;     /* 強調・vibrant deep */
-  --color-primary-tint: #CDDDB0;     /* タグ背景・アイコン背景（Natural Kiss風 mint chip） */
-  --color-primary-mid: #9BC25E;      /* ドーナツ・グラフ中間色 */
+  /* Primary palette — Fresh Sage（refined v3：narrow usage） */
+  --color-primary: #7BAA3F;          /* score bar fill・kicker line 等の小アクセント */
+  --color-primary-deep: #587A38;     /* refined moss（限定使用） */
+  --color-primary-tint: #CDDDB0;     /* タグ背景・アイコン背景（mint chip） */
+  --color-primary-pastel: #A8C49A;   /* CTA background（pastel + ink text） */
+  --color-primary-mid: #9BC25E;      /* mid-tone */
 
   /* Accent — Light Lime（ハイライト用） */
   --color-highlight: #B5D670;        /* ✓・CTA内丸・小さいバー */
@@ -52,14 +54,14 @@
   --color-paper: #FFFFFF;            /* カード表面 */
   --color-cream: #F8EFE0;            /* カード内ソフトフィル */
 
-  /* Ink（テキスト・warm brown） */
-  --color-ink: #3A322A;              /* 本文・見出し */
+  /* Ink（テキスト・deep sumi v3） */
+  --color-ink: #241E16;              /* 本文・見出し（warm sumi） */
   --color-ink-soft: #87796A;         /* 二次・キャプション */
   --color-ink-softer: #B5AC9B;       /* 三次・プレースホルダー */
 
-  /* Rules（罫線） */
-  --color-rule: rgba(46, 42, 32, 0.10);
-  --color-rule-strong: rgba(46, 42, 32, 0.20);
+  /* Rules（罫線・ink v3 ベース） */
+  --color-rule: rgba(36, 30, 22, 0.10);
+  --color-rule-strong: rgba(36, 30, 22, 0.20);
 
   /* Medal（ランキングTOP3バッジ） */
   --color-medal-gold: #E8B85B;

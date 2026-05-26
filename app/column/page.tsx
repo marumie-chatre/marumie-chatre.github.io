@@ -11,14 +11,15 @@ export const metadata = {
 const G = {
   bg: "#FAFAF5",
   paper: "#FFFFFF",
-  ink: "#3A322A",
+  ink: "#241E16",
   inkSoft: "#87796A",
   inkSofter: "#B5AC9B",
   sage: "#7BAA3F",
-  sageDeep: "#4F8225",
+  sageDeep: "#587A38",
   sageSoft: "#CDDDB0",
+  sagePastel: "#A8C49A",
   cream: "#F8EFE0",
-  rule: "rgba(58,50,42,0.10)",
+  rule: "rgba(36,30,22,0.10)",
 };
 
 // FEATURED 記事（先頭1本）
@@ -64,7 +65,7 @@ export default function ColumnPage() {
         {/* kicker */}
         <div style={{
           display: "inline-flex", alignItems: "center", gap: 8,
-          fontSize: 10, letterSpacing: 2.2, fontWeight: 800, color: G.sageDeep,
+          fontSize: 10, letterSpacing: 2.2, fontWeight: 800, color: G.ink,
           marginBottom: 12,
         }}>
           <span style={{ width: 18, height: 1.5, background: G.sage, borderRadius: 1 }} />
@@ -234,7 +235,7 @@ export default function ColumnPage() {
       }}>
         <div style={{
           padding: "20px 22px",
-          background: G.sageDeep, color: "#fff",
+          background: G.ink, color: "#fff",
           borderRadius: 14, position: "relative", overflow: "hidden",
         }}>
           <div style={{
@@ -254,7 +255,7 @@ export default function ColumnPage() {
           <Link href="/kuchikomi" style={{
             display: "flex", alignItems: "center", justifyContent: "space-between",
             padding: "11px 14px", borderRadius: 99,
-            background: "#fff", color: G.sageDeep,
+            background: "#fff", color: G.ink,
             fontSize: 12, fontWeight: 700, textDecoration: "none",
           }}>
             <span style={{ display: "inline-flex", alignItems: "center", gap: 6 }}>

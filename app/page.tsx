@@ -14,20 +14,21 @@ const G = {
   bg: "#FAFAF5",            // near-white cream（清潔感UP）
   bgWarm: "#F5E8C8",        // warm yellow band
   paper: "#FFFFFF",
-  ink: "#3A322A",           // warm brown
+  ink: "#241E16",           // deep sumi
   inkSoft: "#87796A",
   inkSofter: "#B5AC9B",
   sage: "#7BAA3F",          // fresh forest（明るく爽やかな草緑）
-  sageDeep: "#4F8225",      // vibrant deep
+  sageDeep: "#587A38",      // refined moss
   sageSoft: "#CDDDB0",      // Natural Kiss mint chip color
+  sagePastel: "#A8C49A",    // pastel sage (CTA bg)
   mint: "#B5D670",          // light lime（戻し）
   cream: "#F8EFE0",         // soft cream
   accent: "#F4B5A0",        // light peach
   accentDeep: "#E89B85",    // coral
   warmYellow: "#F5E8C8",    // 第3カラー：黄/クリーム
   warmYellowDeep: "#D5A93C", // 番号バッジ文字色
-  rule: "rgba(58,50,42,0.10)",
-  ruleStrong: "rgba(58,50,42,0.20)",
+  rule: "rgba(36,30,22,0.10)",
+  ruleStrong: "rgba(36,30,22,0.20)",
 };
 
 // データ：評価軸
@@ -239,7 +240,7 @@ function SectionHead({ kicker, title, note }: { kicker: string; title: string; n
     <div>
       <div style={{
         display: "inline-flex", alignItems: "center", gap: 8,
-        fontSize: 10, letterSpacing: 2.2, fontWeight: 800, color: G.sageDeep,
+        fontSize: 10, letterSpacing: 2.2, fontWeight: 800, color: G.ink,
       }}>
         <span style={{ width: 18, height: 1.5, background: G.sage, borderRadius: 1 }} />
         {kicker}
@@ -332,17 +333,17 @@ function RankingCard({ r, idx }: { r: typeof RANKING[0]; idx: number }) {
     <div style={{
       background: G.paper, borderRadius: 20, padding: 16, position: "relative",
       boxShadow: isTop
-        ? `0 10px 30px rgba(79,130,37,0.25), 0 0 0 2px ${G.sage}`
+        ? `0 10px 30px rgba(36,30,22,0.15), 0 0 0 2px ${G.sage}`
         : "0 2px 10px rgba(51,45,34,0.05)",
     }}>
       {isTop && (
         <div style={{
           position: "absolute", top: -12, left: 14,
           padding: "5px 11px 5px 9px", borderRadius: 99,
-          background: G.sageDeep, color: "#fff",
+          background: G.ink, color: "#fff",
           fontSize: 10.5, fontWeight: 800, letterSpacing: 0.3,
           display: "flex", alignItems: "center", gap: 5,
-          boxShadow: "0 4px 12px rgba(79,130,37,0.35)",
+          boxShadow: "0 4px 12px rgba(36,30,22,0.25)",
         }}>
           <Icon.Crown size={13} />
           初心者に最もおすすめ
@@ -384,7 +385,7 @@ function RankingCard({ r, idx }: { r: typeof RANKING[0]; idx: number }) {
         <div style={{ textAlign: "right", flexShrink: 0 }}>
           <div style={{
             fontSize: 26, fontWeight: 800, lineHeight: 1,
-            color: isTop ? G.sageDeep : G.ink,
+            color: G.ink,
           }}>{r.score}</div>
           <div style={{ fontSize: 9, color: G.inkSoft, marginTop: 2 }}>/100点</div>
         </div>
@@ -511,7 +512,7 @@ export default function Home() {
             padding: "6px 12px 6px 8px", borderRadius: 999,
             background: G.paper,
             boxShadow: "0 2px 8px rgba(51,45,34,0.05)",
-            fontSize: 11, fontWeight: 700, color: G.sageDeep,
+            fontSize: 11, fontWeight: 700, color: G.ink,
           }}>
             <span style={{
               width: 18, height: 18, borderRadius: "50%",
@@ -534,7 +535,7 @@ export default function Home() {
                   position: "absolute", left: 0, right: 0, bottom: 4,
                   height: 11, background: G.accent, opacity: 0.45, zIndex: 0, borderRadius: 4,
                 }} />
-                <span style={{ position: "relative", color: G.sageDeep }}>口コミサイト。</span>
+                <span style={{ position: "relative", color: G.ink }}>口コミサイト。</span>
                 <WavyUnderline color={G.accentDeep} thickness={2.5} />
               </span>
             </span>
@@ -548,10 +549,10 @@ export default function Home() {
           <div style={{ marginTop: 22, display: "flex", flexDirection: "column", gap: 10, maxWidth: 420 }}>
             <Link href="/jimusho" style={{
               padding: "15px 18px",
-              background: G.sageDeep, color: "#fff",
+              background: G.sagePastel, color: G.ink,
               borderRadius: 14, fontSize: 14, fontWeight: 700,
               display: "flex", alignItems: "center", justifyContent: "space-between",
-              boxShadow: "0 6px 18px rgba(79,130,37,0.35)",
+              boxShadow: "0 4px 14px rgba(36,30,22,0.10)",
               textDecoration: "none",
             }}>
               <span>自分に合う事務所を探す</span>
@@ -577,7 +578,7 @@ export default function Home() {
         marginTop: 28,
         padding: "28px 20px 36px",
         backgroundColor: G.bg,
-        backgroundImage: "radial-gradient(circle, rgba(58,50,42,0.06) 1px, transparent 1px)",
+        backgroundImage: "radial-gradient(circle, rgba(36,30,22,0.06) 1px, transparent 1px)",
         backgroundSize: "16px 16px",
       }}>
         <div style={{ maxWidth: 720, margin: "0 auto" }}>
@@ -939,7 +940,7 @@ export default function Home() {
       <section style={{ padding: "40px 20px 0", maxWidth: 760, margin: "0 auto" }}>
         <div style={{
           position: "relative", overflow: "hidden",
-          background: `linear-gradient(135deg, ${G.sage}, ${G.sageDeep})`,
+          background: G.ink,
           borderRadius: 24, padding: "28px 22px", color: "#fff",
         }}>
           <svg width="140" height="140" viewBox="0 0 140 140" style={{
@@ -966,7 +967,7 @@ export default function Home() {
             </p>
             <Link href="/kuchikomi" style={{
               marginTop: 18, width: "100%", padding: 14,
-              background: "#fff", color: G.sageDeep,
+              background: "#fff", color: G.ink,
               borderRadius: 12, fontSize: 13, fontWeight: 800,
               display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
               textDecoration: "none",

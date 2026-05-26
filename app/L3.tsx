@@ -4,22 +4,24 @@
 import Link from "next/link";
 import { Icon } from "./Icon";
 
-// Palette E カラー（tier-3 で使う色）
+// Palette E refined v3（5/27）：ink 深化＋緑使用ナロー化
+// 方針：kicker/h2/links/scoreNum は ink、CTAは sagePastel + ink、FINAL CTA は ink + white
 export const L3G = {
   bg: "#FAFAF5",
   bgWarm: "#F5E8C8",
   paper: "#FFFFFF",
-  ink: "#3A322A",
+  ink: "#241E16",          // deep sumi（warm sumi）
   inkSoft: "#87796A",
   inkSofter: "#B5AC9B",
-  sage: "#7BAA3F",
-  sageDeep: "#4F8225",
-  sageSoft: "#CDDDB0",
+  sage: "#7BAA3F",         // 細い線・score bar fill のみ
+  sageDeep: "#587A38",     // refined moss（限定使用）
+  sageSoft: "#CDDDB0",     // タグ背景・アイコン背景
+  sagePastel: "#A8C49A",   // CTA background（パステル + ink text）
   cream: "#F8EFE0",
   accent: "#F4B5A0",
   accentDeep: "#E89B85",
-  rule: "rgba(58,50,42,0.10)",
-  ruleStrong: "rgba(58,50,42,0.20)",
+  rule: "rgba(36,30,22,0.10)",
+  ruleStrong: "rgba(36,30,22,0.20)",
 };
 
 // 記事系 tier-3 共通：article shell（hero + breadcrumb を統一・article body は children として保持）
@@ -59,10 +61,10 @@ export function L3ArticleShell({
       <L3Breadcrumb items={breadcrumb} />
 
       <section style={{ padding: "8px 22px 20px", maxWidth: 720, margin: "0 auto" }}>
-        {/* kicker */}
+        {/* kicker（ink text + sage line - 緑をナロー化） */}
         <div style={{
           display: "inline-flex", alignItems: "center", gap: 8,
-          fontSize: 10, letterSpacing: 2.2, fontWeight: 800, color: L3G.sageDeep,
+          fontSize: 10, letterSpacing: 2.2, fontWeight: 800, color: L3G.ink,
           marginBottom: 10,
         }}>
           <span style={{ width: 18, height: 1.5, background: L3G.sage, borderRadius: 1 }} />
@@ -129,12 +131,12 @@ export function L3Breadcrumb({ items }: { items: { l: string; href?: string }[] 
   );
 }
 
-// L3 共通：セクション見出し
+// L3 共通：セクション見出し（kicker は ink + sage line）
 export function L3SectionHeader({ kicker, title }: { kicker: string; title: string | React.ReactNode }) {
   return (
     <div style={{ padding: "0 22px 14px", maxWidth: 720, margin: "0 auto" }}>
       <div style={{
-        fontSize: 10, letterSpacing: 2.5, fontWeight: 700, color: L3G.sageDeep,
+        fontSize: 10, letterSpacing: 2.5, fontWeight: 700, color: L3G.ink,
         display: "inline-flex", alignItems: "center", gap: 8,
       }}>
         <span style={{ width: 20, height: 1.5, background: L3G.sage }} />
@@ -226,11 +228,11 @@ export function OfficeDetailLayout({
           />
         </div>
 
-        {/* rank badge */}
+        {/* rank badge（ink bg + white text - refined） */}
         <div style={{
           display: "inline-flex", alignItems: "center", gap: 6,
           padding: "4px 11px 4px 8px", borderRadius: 99,
-          background: L3G.sageDeep, color: "#fff",
+          background: L3G.ink, color: "#fff",
           fontSize: 10.5, letterSpacing: 0.5, fontWeight: 700,
         }}>
           <Icon.Crown size={12} />
@@ -272,13 +274,13 @@ export function OfficeDetailLayout({
           ))}
         </div>
 
-        {/* CTA */}
+        {/* CTA（pastel sage bg + ink text - パステル化） */}
         <a href={o.applyUrl} target="_blank" rel="noopener noreferrer" style={{
           marginTop: 18, display: "flex", alignItems: "center", justifyContent: "space-between",
           padding: "14px 18px", borderRadius: 99,
-          background: L3G.sageDeep, color: "#fff",
+          background: L3G.sagePastel, color: L3G.ink,
           fontSize: 13, fontWeight: 700, textDecoration: "none",
-          boxShadow: "0 6px 18px rgba(79,130,37,0.30)",
+          boxShadow: "0 4px 14px rgba(36,30,22,0.10)",
         }}>
           <span>公式サイトを見る</span>
           <Icon.Arrow size={14} />
@@ -303,7 +305,7 @@ export function OfficeDetailLayout({
           }}>
             <div style={{ fontSize: 15, fontWeight: 800, color: L3G.ink }}>5軸スコア</div>
             <div style={{ textAlign: "right" }}>
-              <span style={{ fontSize: 28, fontWeight: 800, color: L3G.sageDeep, lineHeight: 1 }}>
+              <span style={{ fontSize: 28, fontWeight: 800, color: L3G.ink, lineHeight: 1 }}>
                 {o.score}
               </span>
               <span style={{ fontSize: 11, color: L3G.inkSoft, marginLeft: 3 }}>/100</span>
@@ -326,8 +328,8 @@ export function OfficeDetailLayout({
           </div>
           <Link href="/hyoka-kijun" style={{
             marginTop: 14, display: "inline-flex", alignItems: "center", gap: 5,
-            fontSize: 11, fontWeight: 600, color: L3G.sageDeep,
-            borderBottom: `1px solid ${L3G.sageDeep}`, paddingBottom: 1,
+            fontSize: 11, fontWeight: 600, color: L3G.ink,
+            borderBottom: `1px solid ${L3G.ink}`, paddingBottom: 1,
             textDecoration: "none",
           }}>
             このスコアの根拠を見る
@@ -448,11 +450,11 @@ export function OfficeDetailLayout({
         </div>
       </div>
 
-      {/* ===== FINAL CTA ===== */}
+      {/* ===== FINAL CTA（ink bg + white - editorial refined） ===== */}
       <div style={{ padding: "0 22px", maxWidth: 720, margin: "30px auto 0" }}>
         <div style={{
           padding: "22px 22px",
-          background: L3G.sageDeep, color: "#fff",
+          background: L3G.ink, color: "#fff",
           borderRadius: 14,
         }}>
           <div style={{
@@ -460,14 +462,14 @@ export function OfficeDetailLayout({
           }}>{o.name}が気になったら</div>
           <p style={{
             margin: "8px 0 14px",
-            fontSize: 11.5, color: "rgba(255,255,255,0.80)", lineHeight: 1.85,
+            fontSize: 11.5, color: "rgba(255,255,255,0.75)", lineHeight: 1.85,
           }}>
             まずは公式サイトで詳細を確認してみてください。無料見学・相談から始められます。
           </p>
           <a href={o.applyUrl} target="_blank" rel="noopener noreferrer" style={{
             display: "flex", alignItems: "center", justifyContent: "space-between",
             padding: "12px 16px", borderRadius: 99,
-            background: "#fff", color: L3G.sageDeep,
+            background: L3G.sagePastel, color: L3G.ink,
             fontSize: 12, fontWeight: 700, textDecoration: "none",
           }}>
             公式サイトを見る
@@ -499,7 +501,7 @@ export function OfficeDetailLayout({
                 {r.name}
               </div>
               <div style={{
-                fontSize: 16, fontWeight: 800, color: L3G.sageDeep,
+                fontSize: 16, fontWeight: 800, color: L3G.ink,
               }}>{r.score}</div>
               <Icon.Arrow size={12} />
             </Link>
