@@ -12,17 +12,18 @@ const G = {
   bg: "#FAFAF5",
   bgWarm: "#F5E8C8",
   paper: "#FFFFFF",
-  ink: "#3A322A",
+  ink: "#241E16",
   inkSoft: "#87796A",
   inkSofter: "#B5AC9B",
   sage: "#7BAA3F",
-  sageDeep: "#4F8225",
+  sageDeep: "#587A38",
   sageSoft: "#CDDDB0",
+  sagePastel: "#A8C49A",
   mint: "#B5D670",
   cream: "#F8EFE0",
   accent: "#F4B5A0",
   accentDeep: "#E89B85",
-  rule: "rgba(58,50,42,0.10)",
+  rule: "rgba(36,30,22,0.10)",
 };
 
 type ConcernIconName = "Shield" | "Briefcase" | "Home" | "Question" | "Sprout";
@@ -107,7 +108,7 @@ export default function QFinderPage() {
         {/* kicker */}
         <div style={{
           display: "inline-flex", alignItems: "center", gap: 8,
-          fontSize: 10, letterSpacing: 2.2, fontWeight: 800, color: G.sageDeep,
+          fontSize: 10, letterSpacing: 2.2, fontWeight: 800, color: G.ink,
           marginBottom: 12,
         }}>
           <span style={{ width: 18, height: 1.5, background: G.sage, borderRadius: 1 }} />
@@ -243,7 +244,7 @@ export default function QFinderPage() {
           position: "relative",
         }}>
           <div style={{
-            fontSize: 9.5, letterSpacing: 2.2, fontWeight: 700, color: G.sageDeep,
+            fontSize: 9.5, letterSpacing: 2.2, fontWeight: 700, color: G.ink,
           }}>FROM MINAMI</div>
           <div style={{
             marginTop: 8,
@@ -275,7 +276,7 @@ export default function QFinderPage() {
           <div style={{
             marginTop: 12, textAlign: "right",
             fontFamily: "'Klee One', cursive",
-            fontSize: 13, color: G.sageDeep, fontWeight: 600,
+            fontSize: 13, color: G.ink, fontWeight: 600,
           }}>— みなみ ✎</div>
         </div>
       </section>

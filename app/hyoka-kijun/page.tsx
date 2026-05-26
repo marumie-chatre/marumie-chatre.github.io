@@ -11,17 +11,18 @@ const G = {
   bg: "#FAFAF5",
   bgWarm: "#F5E8C8",
   paper: "#FFFFFF",
-  ink: "#3A322A",
+  ink: "#241E16",
   inkSoft: "#87796A",
   inkSofter: "#B5AC9B",
   sage: "#7BAA3F",
-  sageDeep: "#4F8225",
+  sageDeep: "#587A38",
   sageSoft: "#CDDDB0",
+  sagePastel: "#A8C49A",
   mint: "#B5D670",
   cream: "#F8EFE0",
   accent: "#F4B5A0",
   accentDeep: "#E89B85",
-  rule: "rgba(58,50,42,0.10)",
+  rule: "rgba(36,30,22,0.10)",
 };
 
 // 5軸詳細
@@ -105,7 +106,7 @@ export default function HyokaKijunPage() {
         {/* kicker */}
         <div style={{
           display: "inline-flex", alignItems: "center", gap: 8,
-          fontSize: 10, letterSpacing: 2.2, fontWeight: 800, color: G.sageDeep,
+          fontSize: 10, letterSpacing: 2.2, fontWeight: 800, color: G.ink,
           marginBottom: 12,
         }}>
           <span style={{ width: 18, height: 1.5, background: G.sage, borderRadius: 1 }} />
@@ -136,7 +137,7 @@ export default function HyokaKijunPage() {
       <section style={{ padding: "8px 22px 8px", maxWidth: 720, margin: "0 auto" }}>
         <div style={{
           display: "flex", height: 32, borderRadius: 6, overflow: "hidden",
-          boxShadow: "inset 0 0 0 1px rgba(58,50,42,0.06)",
+          boxShadow: "inset 0 0 0 1px rgba(36,30,22,0.06)",
         }}>
           {AXIS_DETAIL.map(a => (
             <div key={a.id} style={{
@@ -232,7 +233,7 @@ export default function HyokaKijunPage() {
       {/* ===== 編集プロセスタイムライン ===== */}
       <section style={{ padding: "32px 22px 0", maxWidth: 720, margin: "0 auto" }}>
         <div style={{
-          fontSize: 10, letterSpacing: 2.5, fontWeight: 700, color: G.sageDeep,
+          fontSize: 10, letterSpacing: 2.5, fontWeight: 700, color: G.ink,
           display: "inline-flex", alignItems: "center", gap: 8,
         }}>
           <span style={{ width: 20, height: 1.5, background: G.sage }} />
@@ -280,7 +281,7 @@ export default function HyokaKijunPage() {
       }}>
         <div style={{
           padding: "18px 20px",
-          background: G.sageDeep, color: "#fff",
+          background: G.ink, color: "#fff",
           borderRadius: 14,
         }}>
           <div style={{

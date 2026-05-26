@@ -10,17 +10,18 @@ export const metadata = {
 const G = {
   bg: "#FAFAF5",
   paper: "#FFFFFF",
-  ink: "#3A322A",
+  ink: "#241E16",
   inkSoft: "#87796A",
   inkSofter: "#B5AC9B",
   sage: "#7BAA3F",
-  sageDeep: "#4F8225",
+  sageDeep: "#587A38",
   sageSoft: "#CDDDB0",
+  sagePastel: "#A8C49A",
   cream: "#F8EFE0",
   accent: "#F4B5A0",
   accentDeep: "#E89B85",
-  rule: "rgba(58,50,42,0.10)",
-  ruleStrong: "rgba(58,50,42,0.20)",
+  rule: "rgba(36,30,22,0.10)",
+  ruleStrong: "rgba(36,30,22,0.20)",
 };
 
 // 編集ポリシー3カード
@@ -36,7 +37,7 @@ function SectionTagE({ children }: { children: React.ReactNode }) {
     <div style={{
       display: "inline-flex", alignItems: "center", gap: 8,
       fontSize: 10, letterSpacing: 2.5, fontWeight: 700,
-      color: G.sageDeep,
+      color: G.ink,
     }}>
       <span style={{ width: 20, height: 1.5, background: G.sage, borderRadius: 1 }} />
       {children}
@@ -75,7 +76,7 @@ export default function ProfilePage() {
           {/* name + meta */}
           <div style={{ flex: 1, minWidth: 0 }}>
             <div style={{
-              fontSize: 9.5, letterSpacing: 2.5, fontWeight: 700, color: G.sageDeep,
+              fontSize: 9.5, letterSpacing: 2.5, fontWeight: 700, color: G.ink,
             }}>EDITOR</div>
             <div style={{
               marginTop: 4,

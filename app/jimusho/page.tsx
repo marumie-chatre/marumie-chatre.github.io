@@ -12,18 +12,19 @@ const G = {
   bg: "#FAFAF5",
   bgWarm: "#F5E8C8",
   paper: "#FFFFFF",
-  ink: "#3A322A",
+  ink: "#241E16",
   inkSoft: "#87796A",
   inkSofter: "#B5AC9B",
   sage: "#7BAA3F",
-  sageDeep: "#4F8225",
+  sageDeep: "#587A38",
   sageSoft: "#CDDDB0",
+  sagePastel: "#A8C49A",
   mint: "#B5D670",
   cream: "#F8EFE0",
   accent: "#F4B5A0",
   accentDeep: "#E89B85",
-  rule: "rgba(58,50,42,0.10)",
-  ruleStrong: "rgba(58,50,42,0.20)",
+  rule: "rgba(36,30,22,0.10)",
+  ruleStrong: "rgba(36,30,22,0.20)",
 };
 
 // メダル色
@@ -77,10 +78,10 @@ function CompactOfficeCard({ o }: { o: Office }) {
       background: G.paper,
       borderRadius: 14,
       padding: 14,
-      border: isTop3 ? `1.5px solid ${G.sageDeep}` : `1px solid ${G.rule}`,
+      border: isTop3 ? `1.5px solid ${G.sage}` : `1px solid ${G.rule}`,
       boxShadow: isTop3
-        ? "0 4px 16px rgba(79,130,37,0.12)"
-        : "0 1px 4px rgba(58,50,42,0.04)",
+        ? "0 4px 16px rgba(36,30,22,0.10)"
+        : "0 1px 4px rgba(36,30,22,0.04)",
     }}>
       <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
         {/* rank pill */}
@@ -115,7 +116,7 @@ function CompactOfficeCard({ o }: { o: Office }) {
         <div style={{ textAlign: "right", flexShrink: 0 }}>
           <div style={{
             fontSize: 22, fontWeight: 800, lineHeight: 1,
-            color: isTop3 ? G.sageDeep : G.ink,
+            color: G.ink,
           }}>{o.score}</div>
           <div style={{ fontSize: 8.5, color: G.inkSoft, marginTop: 2 }}>/100</div>
         </div>
@@ -168,7 +169,7 @@ export default function JimushoPage() {
         {/* kicker */}
         <div style={{
           display: "inline-flex", alignItems: "center", gap: 8,
-          fontSize: 10, letterSpacing: 2.2, fontWeight: 800, color: G.sageDeep,
+          fontSize: 10, letterSpacing: 2.2, fontWeight: 800, color: G.ink,
           marginBottom: 12,
         }}>
           <span style={{ width: 18, height: 1.5, background: G.sage, borderRadius: 1 }} />
@@ -202,8 +203,8 @@ export default function JimushoPage() {
         <Link href="/hyoka-kijun" style={{
           marginTop: 16,
           display: "inline-flex", alignItems: "center", gap: 6,
-          fontSize: 12, fontWeight: 600, color: G.sageDeep,
-          borderBottom: `1px solid ${G.sageDeep}`, paddingBottom: 2,
+          fontSize: 12, fontWeight: 600, color: G.ink,
+          borderBottom: `1px solid ${G.ink}`, paddingBottom: 2,
           textDecoration: "none",
         }}>
           評価基準について
