@@ -67,6 +67,7 @@ export default function ProfilePage() {
             flexShrink: 0,
             overflow: "hidden",
           }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/photo-minami.png"
               alt="みなみ"

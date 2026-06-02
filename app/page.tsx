@@ -265,67 +265,6 @@ function ScoreBar({ value, max, height = 5, bg, fill }: { value: number; max: nu
   );
 }
 
-// HeroIllustration（横長バナー用）
-function HeroIllustration() {
-  return (
-    <svg viewBox="0 0 720 180" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"
-      style={{ display: "block" }}>
-      <defs>
-        <linearGradient id="hi-bg" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor={G.mint} />
-          <stop offset="1" stopColor={G.sageSoft} />
-        </linearGradient>
-      </defs>
-      <rect width="720" height="180" fill="url(#hi-bg)" />
-      {/* sun */}
-      <circle cx="620" cy="42" r="32" fill={G.cream} opacity="0.75" />
-      <circle cx="620" cy="42" r="22" fill={G.accent} opacity="0.35" />
-      {/* leaves left */}
-      <g transform="translate(40, 30)">
-        <path d="M 5 100 C 5 40 30 5 75 0 C 75 60 45 100 5 100 Z" fill={G.sage} />
-        <path d="M 5 100 L 60 25" stroke={G.sageDeep} strokeWidth="1.5" fill="none" opacity="0.4" />
-      </g>
-      {/* table */}
-      <rect x="180" y="135" width="420" height="6" rx="2" fill={G.ink} opacity="0.85" />
-      <rect x="180" y="141" width="420" height="3" rx="1" fill={G.ink} opacity="0.4" />
-      {/* laptop center */}
-      <g transform="translate(300, 70)">
-        <rect x="0" y="0" width="100" height="65" rx="4" fill={G.ink} opacity="0.92" />
-        <rect x="3" y="3" width="94" height="59" rx="2" fill={G.cream} />
-        <rect x="12" y="12" width="40" height="3" rx="1.5" fill={G.sage} />
-        <rect x="12" y="22" width="60" height="2" rx="1" fill={G.inkSofter} opacity="0.6" />
-        <rect x="12" y="30" width="50" height="2" rx="1" fill={G.inkSofter} opacity="0.6" />
-        <rect x="12" y="44" width="24" height="10" rx="2" fill={G.accent} />
-        <rect x="-6" y="65" width="112" height="3" rx="1.5" fill={G.ink} opacity="0.85" />
-      </g>
-      {/* tea cup left of laptop */}
-      <g transform="translate(220, 100)">
-        <path d="M 0 5 L 0 28 C 0 34 6 36 16 36 C 26 36 32 34 32 28 L 32 5 Z" fill={G.paper} />
-        <path d="M 32 10 C 40 10 40 22 32 22" stroke={G.paper} strokeWidth="3" fill="none" />
-        <path d="M 8 -2 C 6 -10 10 -10 8 -18 M 18 -2 C 16 -10 20 -10 18 -18"
-          stroke={G.inkSofter} strokeWidth="1.4" fill="none" strokeLinecap="round" opacity="0.55" />
-      </g>
-      {/* plant right of laptop */}
-      <g transform="translate(440, 85)">
-        <path d="M 0 22 L 5 50 L 28 50 L 33 22 Z" fill={G.accentDeep} opacity="0.85" />
-        <ellipse cx="16" cy="22" rx="18" ry="3.5" fill={G.cream} />
-        <path d="M 16 22 C 16 6 5 -6 0 -10 M 16 22 C 16 6 27 -6 32 -10 M 16 22 L 16 -6"
-          stroke={G.sageDeep} strokeWidth="1.6" fill="none" strokeLinecap="round" />
-        <ellipse cx="2" cy="-8" rx="7" ry="3.5" transform="rotate(-30 2 -8)" fill={G.sage} />
-        <ellipse cx="30" cy="-8" rx="7" ry="3.5" transform="rotate(30 30 -8)" fill={G.sage} />
-        <ellipse cx="16" cy="-10" rx="6" ry="3.5" fill={G.sageDeep} />
-      </g>
-      {/* sparkles */}
-      <g fill={G.accent} opacity="0.7">
-        <circle cx="120" cy="135" r="2.5" />
-        <circle cx="680" cy="125" r="3" />
-        <circle cx="240" cy="50" r="2" />
-        <circle cx="580" cy="60" r="2" />
-      </g>
-    </svg>
-  );
-}
-
 function RankingCard({ r, idx }: { r: typeof RANKING[0]; idx: number }) {
   const isTop = idx === 0;
   const medalColors = ["#E8B85B", "#C5C0BA", "#D69C71"];

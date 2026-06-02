@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function HeroImage() {
@@ -21,6 +20,7 @@ export default function HeroImage() {
       overflow: "hidden",
       background: "#ffffff",
     }}>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={isSp ? "/hero-sp.jpg" : "/hero-pc.jpg"}
         alt="ちょっとだけ余裕がほしいあなたへ"

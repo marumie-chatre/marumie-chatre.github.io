@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { L3ArticleShell } from "../L3";
 
 export const metadata = {
   title: "プライバシーポリシー｜まるみえチャトレ",
@@ -7,17 +8,15 @@ export const metadata = {
 
 export default function PrivacyPage() {
   return (
-    <main>
-      <section className="col-article-hero">
-        <div className="col-article-inner">
-          <div className="col-article-cat">運営情報｜プライバシーポリシー</div>
-          <h1 className="col-article-h1">プライバシーポリシー</h1>
-          <div className="col-article-meta">
-            <span>制定日：2026年5月16日</span>
-          </div>
-        </div>
-      </section>
-
+    <L3ArticleShell
+      breadcrumb={[
+        { l: "トップ", href: "/" },
+        { l: "プライバシーポリシー" },
+      ]}
+      kicker="運営情報｜プライバシー"
+      title="プライバシーポリシー"
+      meta={{ date: "制定日:2026年5月16日" }}
+    >
       <article className="col-article-body">
         <p>まるみえチャトレ（以下「当サイト」）は、ユーザーの個人情報を以下の通り取り扱います。</p>
 
@@ -61,6 +60,6 @@ export default function PrivacyPage() {
           <Link href="/" className="btn-main">トップに戻る →</Link>
         </div>
       </article>
-    </main>
+    </L3ArticleShell>
   );
 }

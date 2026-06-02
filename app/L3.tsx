@@ -182,7 +182,7 @@ export type OfficeDetailData = {
   goodComment: string;
   honestComment: string;
   features?: { n: string; t: string; d: string }[];
-  story?: { title: string; paragraphs: string[] };
+  story?: { title: string; paragraphs: string[]; image?: string };
   basic: [string, string][];
   applyUrl: string;
 };
@@ -221,6 +221,7 @@ export function OfficeDetailLayout({
           marginBottom: 16, position: "relative",
           display: "flex", alignItems: "center", justifyContent: "center",
         }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={o.logoSrc}
             alt={o.name}
@@ -363,18 +364,25 @@ export function OfficeDetailLayout({
         </div>
       </section>
 
-      {/* ===== STORY（optional）===== */}
+      {/* ===== STORY（optional・画像は指定された場合のみ）===== */}
       {o.story && (
         <div style={{ marginTop: 30 }}>
           <L3SectionHeader kicker="STORY" title={o.story.title} />
           <div style={{ padding: "0 22px", maxWidth: 720, margin: "0 auto" }}>
-            <div style={{
-              width: "100%", aspectRatio: "16/9",
-              background: `linear-gradient(135deg, ${L3G.sageSoft}, ${L3G.cream})`,
-              borderRadius: 10, marginBottom: 14,
-              display: "flex", alignItems: "center", justifyContent: "center",
-              fontSize: 11, color: L3G.inkSoft, opacity: 0.7,
-            }}>STORY画像（差し替え予定）</div>
+            {o.story.image && (
+              <div style={{
+                width: "100%", aspectRatio: "16/9",
+                borderRadius: 10, marginBottom: 14, overflow: "hidden",
+                background: L3G.sageSoft,
+              }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={o.story.image}
+                  alt={o.story.title}
+                  style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                />
+              </div>
+            )}
             {o.story.paragraphs.map((p, i) => (
               <p key={i} style={{
                 margin: i === 0 ? 0 : "12px 0 0",

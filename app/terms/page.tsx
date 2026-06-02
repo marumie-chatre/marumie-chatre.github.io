@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { L3ArticleShell } from "../L3";
 
 export const metadata = {
   title: "利用規約｜まるみえチャトレ",
@@ -7,17 +8,15 @@ export const metadata = {
 
 export default function TermsPage() {
   return (
-    <main>
-      <section className="col-article-hero">
-        <div className="col-article-inner">
-          <div className="col-article-cat">運営情報｜利用規約</div>
-          <h1 className="col-article-h1">利用規約</h1>
-          <div className="col-article-meta">
-            <span>制定日：2026年5月16日</span>
-          </div>
-        </div>
-      </section>
-
+    <L3ArticleShell
+      breadcrumb={[
+        { l: "トップ", href: "/" },
+        { l: "利用規約" },
+      ]}
+      kicker="運営情報｜利用規約"
+      title="利用規約"
+      meta={{ date: "制定日：2026年5月16日" }}
+    >
       <article className="col-article-body">
         <p>本利用規約（以下「本規約」）は、まるみえチャトレ（以下「当サイト」）が提供するサービスの利用条件を定めるものです。当サイトを利用される方は、本規約に同意したものとみなします。</p>
 
@@ -69,6 +68,6 @@ export default function TermsPage() {
           <Link href="/" className="btn-main">トップに戻る →</Link>
         </div>
       </article>
-    </main>
+    </L3ArticleShell>
   );
 }
