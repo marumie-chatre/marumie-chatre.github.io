@@ -22,7 +22,7 @@ export type Review = {
 };
 
 // レビューデータを直接インポート
-const reviewsData = require("./reviews.json");
+import reviewsData from "./reviews.json";
 export const reviews: Review[] = reviewsData as Review[];
 
 export function getReviewsBySlug(slug: string): Review[] {

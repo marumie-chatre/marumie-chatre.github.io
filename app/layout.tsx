@@ -18,6 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="google-site-verification" content="dYhQMC8PxfBr0tehcNhY7KshfWBC4ttu_QuHf26DuUw" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* eslint-disable-next-line @next/next/no-page-custom-font */}
         <link
           href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700&family=Zen+Maru+Gothic:wght@400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Shippori+Mincho:wght@500;600;700&family=Klee+One:wght@400;600&family=Manrope:wght@500;700;800&display=swap"
           rel="stylesheet"
@@ -31,6 +32,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <header className="site-header">
           <div className="header-inner">
             <Link href="/" className="logo">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/logo.png" alt="まるみえチャトレ" height={44} />
             </Link>
             {/* PC ナビ */}
@@ -41,7 +43,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <Link href="/q">不安から探す</Link>
               <Link href="/column">コラム</Link>
             </nav>
-            {/* 口コミを見るボタン（CTA・常時表示） */}
+            {/* 口コミを見るボタン（CTA・常時表示・ink bg + white text - refined） */}
             <Link
               href="/kuchikomi"
               style={{
@@ -49,7 +51,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 alignItems: "center",
                 gap: "6px",
                 padding: "8px 14px",
-                background: "var(--green)",
+                background: "var(--text)",
                 color: "#fff",
                 textDecoration: "none",
                 borderRadius: "100px",
@@ -79,6 +81,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <div className="footer-top">
               <div>
                 <div className="footer-logo">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src="/logo.png" alt="まるみえチャトレ" height={36} />
                 </div>
                 <div className="footer-tag">ちゃんと選びたい人のための事務所比較サイト</div>

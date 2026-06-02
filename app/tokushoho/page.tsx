@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { L3ArticleShell } from "../L3";
 
 export const metadata = {
   title: "特定商取引法に基づく表記｜まるみえチャトレ",
@@ -7,17 +8,15 @@ export const metadata = {
 
 export default function TokushohoPage() {
   return (
-    <main>
-      <section className="col-article-hero">
-        <div className="col-article-inner">
-          <div className="col-article-cat">運営情報｜特定商取引法表記</div>
-          <h1 className="col-article-h1">特定商取引法に基づく表記</h1>
-          <div className="col-article-meta">
-            <span>制定日：2026年5月16日</span>
-          </div>
-        </div>
-      </section>
-
+    <L3ArticleShell
+      breadcrumb={[
+        { l: "トップ", href: "/" },
+        { l: "特定商取引法表記" },
+      ]}
+      kicker="運営情報｜特商法表記"
+      title="特定商取引法に基づく表記"
+      meta={{ date: "制定日:2026年5月16日" }}
+    >
       <article className="col-article-body">
         <table style={{
           width: "100%",
@@ -25,40 +24,40 @@ export default function TokushohoPage() {
           marginBottom: "24px",
         }}>
           <tbody>
-            <tr style={{borderBottom: "1px solid #e0d8cc"}}>
-              <th style={{padding: "12px 16px", textAlign: "left", width: "30%", background: "var(--cream)", fontWeight: 700, color: "var(--green-dark)"}}>サイト名</th>
+            <tr style={{borderBottom: "1px solid var(--color-rule)"}}>
+              <th style={{padding: "12px 16px", textAlign: "left", width: "30%", background: "var(--cream)", fontWeight: 700, color: "var(--text)"}}>サイト名</th>
               <td style={{padding: "12px 16px"}}>まるみえチャトレ</td>
             </tr>
-            <tr style={{borderBottom: "1px solid #e0d8cc"}}>
-              <th style={{padding: "12px 16px", textAlign: "left", background: "var(--cream)", fontWeight: 700, color: "var(--green-dark)"}}>運営責任者</th>
+            <tr style={{borderBottom: "1px solid var(--color-rule)"}}>
+              <th style={{padding: "12px 16px", textAlign: "left", background: "var(--cream)", fontWeight: 700, color: "var(--text)"}}>運営責任者</th>
               <td style={{padding: "12px 16px"}}>みなみ</td>
             </tr>
-            <tr style={{borderBottom: "1px solid #e0d8cc"}}>
-              <th style={{padding: "12px 16px", textAlign: "left", background: "var(--cream)", fontWeight: 700, color: "var(--green-dark)"}}>所在地</th>
+            <tr style={{borderBottom: "1px solid var(--color-rule)"}}>
+              <th style={{padding: "12px 16px", textAlign: "left", background: "var(--cream)", fontWeight: 700, color: "var(--text)"}}>所在地</th>
               <td style={{padding: "12px 16px"}}>ご請求があり次第、遅滞なく開示いたします</td>
             </tr>
-            <tr style={{borderBottom: "1px solid #e0d8cc"}}>
-              <th style={{padding: "12px 16px", textAlign: "left", background: "var(--cream)", fontWeight: 700, color: "var(--green-dark)"}}>連絡先</th>
+            <tr style={{borderBottom: "1px solid var(--color-rule)"}}>
+              <th style={{padding: "12px 16px", textAlign: "left", background: "var(--cream)", fontWeight: 700, color: "var(--text)"}}>連絡先</th>
               <td style={{padding: "12px 16px"}}>ご請求があり次第、遅滞なく開示いたします</td>
             </tr>
-            <tr style={{borderBottom: "1px solid #e0d8cc"}}>
-              <th style={{padding: "12px 16px", textAlign: "left", background: "var(--cream)", fontWeight: 700, color: "var(--green-dark)"}}>提供サービス</th>
+            <tr style={{borderBottom: "1px solid var(--color-rule)"}}>
+              <th style={{padding: "12px 16px", textAlign: "left", background: "var(--cream)", fontWeight: 700, color: "var(--text)"}}>提供サービス</th>
               <td style={{padding: "12px 16px"}}>チャットレディ事務所の口コミ・比較情報の提供</td>
             </tr>
-            <tr style={{borderBottom: "1px solid #e0d8cc"}}>
-              <th style={{padding: "12px 16px", textAlign: "left", background: "var(--cream)", fontWeight: 700, color: "var(--green-dark)"}}>料金</th>
+            <tr style={{borderBottom: "1px solid var(--color-rule)"}}>
+              <th style={{padding: "12px 16px", textAlign: "left", background: "var(--cream)", fontWeight: 700, color: "var(--text)"}}>料金</th>
               <td style={{padding: "12px 16px"}}>無料（ユーザーから料金を徴収しません）</td>
             </tr>
-            <tr style={{borderBottom: "1px solid #e0d8cc"}}>
-              <th style={{padding: "12px 16px", textAlign: "left", background: "var(--cream)", fontWeight: 700, color: "var(--green-dark)"}}>支払方法</th>
+            <tr style={{borderBottom: "1px solid var(--color-rule)"}}>
+              <th style={{padding: "12px 16px", textAlign: "left", background: "var(--cream)", fontWeight: 700, color: "var(--text)"}}>支払方法</th>
               <td style={{padding: "12px 16px"}}>該当なし（無料サービス）</td>
             </tr>
-            <tr style={{borderBottom: "1px solid #e0d8cc"}}>
-              <th style={{padding: "12px 16px", textAlign: "left", background: "var(--cream)", fontWeight: 700, color: "var(--green-dark)"}}>役務の提供時期</th>
+            <tr style={{borderBottom: "1px solid var(--color-rule)"}}>
+              <th style={{padding: "12px 16px", textAlign: "left", background: "var(--cream)", fontWeight: 700, color: "var(--text)"}}>役務の提供時期</th>
               <td style={{padding: "12px 16px"}}>サイト公開中、随時</td>
             </tr>
-            <tr style={{borderBottom: "1px solid #e0d8cc"}}>
-              <th style={{padding: "12px 16px", textAlign: "left", background: "var(--cream)", fontWeight: 700, color: "var(--green-dark)"}}>返品・キャンセル</th>
+            <tr style={{borderBottom: "1px solid var(--color-rule)"}}>
+              <th style={{padding: "12px 16px", textAlign: "left", background: "var(--cream)", fontWeight: 700, color: "var(--text)"}}>返品・キャンセル</th>
               <td style={{padding: "12px 16px"}}>該当なし（無料サービス）</td>
             </tr>
           </tbody>
@@ -71,6 +70,6 @@ export default function TokushohoPage() {
           <Link href="/" className="btn-main">トップに戻る →</Link>
         </div>
       </article>
-    </main>
+    </L3ArticleShell>
   );
 }
