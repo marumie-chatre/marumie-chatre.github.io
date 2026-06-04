@@ -97,144 +97,6 @@ const COLUMNS_PREVIEW = [
 
 // ========== サブコンポーネント ==========
 
-// 圏点（けんてん）：各文字の上に小さな丸を表示するヘルパー
-// Natural Kiss / athomelive 風の女性的タイポグラフィ装飾
-function EmphasisWord({
-  text,
-  color,
-  sizeMultiplier = 1,
-}: { text: string; color: string; sizeMultiplier?: number }) {
-  return (
-    <span style={{
-      display: "inline-flex", color, fontWeight: 800,
-      fontSize: sizeMultiplier !== 1 ? `${sizeMultiplier}em` : undefined,
-      verticalAlign: "baseline",
-    }}>
-      {Array.from(text).map((char, i) => (
-        <span key={i} style={{
-          position: "relative",
-          display: "inline-block",
-          paddingTop: "0.3em",   // 圏点用の余白（行間に余分を作らない最小値）
-        }}>
-          <span style={{
-            position: "absolute",
-            top: 0,                       // line box の最上部に密着
-            left: "50%",
-            transform: "translateX(-50%)",
-            width: 5,
-            height: 5,
-            borderRadius: "50%",
-            background: color,
-          }} />
-          {char}
-        </span>
-      ))}
-    </span>
-  );
-}
-
-// 波線下線（手書き風・滑らかカーブ）：見出しの装飾下線
-// 三次ベジエで描く滑らかなSタイプ波線
-function WavyUnderline({
-  color,
-  thickness = 2,
-  height = 8,
-}: {
-  color: string;
-  thickness?: number;
-  height?: number;
-}) {
-  return (
-    <svg
-      viewBox="0 0 100 8"
-      preserveAspectRatio="none"
-      aria-hidden="true"
-      style={{
-        position: "absolute",
-        left: 0,
-        right: 0,
-        bottom: -4,
-        width: "100%",
-        height: height,
-        pointerEvents: "none",
-      }}
-    >
-      <path
-        d="M 0 4 C 16 -1, 34 9, 50 4 S 84 -1, 100 4"
-        stroke={color}
-        strokeWidth={thickness}
-        fill="none"
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-}
-
-// 単語ピル強調：1単語だけ色付きピル背景で囲む（line height 影響最小化）
-function PillWord({
-  children,
-  bg,
-  color = "#fff",
-  px = "0.55em",
-}: {
-  children: React.ReactNode;
-  bg: string;
-  color?: string;
-  px?: string;
-}) {
-  return (
-    <span style={{
-      display: "inline-block",
-      padding: `0.02em ${px} 0.1em`,
-      margin: "0 0.12em",
-      background: bg,
-      color: color,
-      borderRadius: 99,
-      lineHeight: 1,
-      fontWeight: 800,
-      verticalAlign: "0.04em",
-    }}>
-      {children}
-    </span>
-  );
-}
-
-// 斜線ブラケット装飾：実文字 ＼／ で自然な手作り感
-function BracketKicker({
-  children,
-  color,
-}: {
-  children: React.ReactNode;
-  color: string;
-}) {
-  return (
-    <span style={{
-      display: "inline-flex",
-      alignItems: "center",
-      gap: "0.45em",
-      color,
-      fontWeight: 700,
-      letterSpacing: 2,
-    }}>
-      <span style={{
-        display: "inline-block",
-        fontSize: "1.3em",
-        opacity: 0.65,
-        transform: "translateY(-1px)",
-        fontWeight: 400,
-      }}>＼</span>
-      <span>{children}</span>
-      <span style={{
-        display: "inline-block",
-        fontSize: "1.3em",
-        opacity: 0.65,
-        transform: "translateY(-1px)",
-        fontWeight: 400,
-      }}>／</span>
-    </span>
-  );
-}
-
 function SectionHead({ kicker, title, note }: { kicker: string; title: string; note?: string }) {
   return (
     <div>
@@ -411,208 +273,174 @@ export default function Home() {
   return (
     <main style={{ background: G.bg, color: G.ink, paddingBottom: 60 }}>
 
-      {/* ===== HERO IMAGE BANNER（最上部・横長・実写） ===== */}
-      <div style={{
-        width: "100%",
-        aspectRatio: "16/8",
-        maxHeight: 420,
-        overflow: "hidden",
-        position: "relative",
-        background: G.sageSoft,
-      }}>
+      {/* ===== HERO（写真背景＋テキストオーバーレイ・PC/SP 整合） ===== */}
+      <section className="top-hero-photo-section">
         <Image
-          src="/hero-top.jpg"
-          alt="ちょっとだけ余裕が欲しいあなたへ"
+          src="/top-hero-photo.jpg"
+          alt="まるみえチャトレ"
           fill
           priority
           sizes="100vw"
-          style={{ objectFit: "cover" }}
         />
-      </div>
-
-      {/* ===== HERO TEXT ===== */}
-      <section style={{ position: "relative", padding: "20px 20px 28px" }}>
-        {/* organic green blob */}
-        <svg width="280" height="240" viewBox="0 0 280 240" style={{
-          position: "absolute", top: -20, right: -60, opacity: 0.4, zIndex: 0,
-        }}>
-          <path d="M 220 30 C 280 80 270 150 200 180 C 130 210 50 180 30 120 C 10 60 60 10 130 20 C 180 25 200 20 220 30 Z" fill={G.sageSoft} />
-        </svg>
-        <svg width="60" height="60" viewBox="0 0 60 60" style={{
-          position: "absolute", top: 30, right: 20, zIndex: 0,
-        }}>
-          <path d="M 10 50 C 10 20 30 5 55 5 C 55 30 35 50 10 50 Z" fill={G.sage} opacity="0.35" />
-          <path d="M 10 50 L 40 20" stroke={G.sageDeep} strokeWidth="1.2" fill="none" opacity="0.4" />
-        </svg>
-
-        <div style={{ position: "relative", zIndex: 1, maxWidth: 720, margin: "0 auto" }}>
-          <div style={{
-            display: "inline-flex", alignItems: "center", gap: 8,
-            padding: "6px 12px 6px 8px", borderRadius: 999,
-            background: G.paper,
-            boxShadow: "0 2px 8px rgba(51,45,34,0.05)",
-            fontSize: 11, fontWeight: 700, color: G.ink,
-          }}>
-            <span style={{
-              width: 18, height: 18, borderRadius: "50%",
-              background: G.sage, color: "#fff",
-              display: "inline-flex", alignItems: "center", justifyContent: "center",
-            }}><Icon.Check size={11} /></span>
-            編集部が11事務所を実地調査
-          </div>
-
-          <h1 style={{
-            margin: "18px 0 0",
-            fontSize: "clamp(22px, 5.8vw, 30px)", lineHeight: 1.4,
-            fontWeight: 800, letterSpacing: -0.5,
-          }}>
-            中身で選ぶ、<br />
-            <span style={{ whiteSpace: "nowrap" }}>
-              チャトレ事務所の
-              <span style={{ position: "relative", display: "inline-block" }}>
-                <span style={{
-                  position: "absolute", left: 0, right: 0, bottom: 4,
-                  height: 11, background: G.accent, opacity: 0.45, zIndex: 0, borderRadius: 4,
-                }} />
-                <span style={{ position: "relative", color: G.ink }}>口コミサイト。</span>
-                <WavyUnderline color={G.accentDeep} thickness={2.5} />
-              </span>
-            </span>
-          </h1>
-
-          <p style={{ margin: "16px 0 0", fontSize: 13.5, lineHeight: 1.9, color: G.inkSoft, maxWidth: 360 }}>
-            初心者でも失敗しないために。<br />
-            良い点も気になる点も、まるっと公開しています。
-          </p>
-
-          <div style={{ marginTop: 22, display: "flex", flexDirection: "column", gap: 10, maxWidth: 420 }}>
-            <Link href="/jimusho" style={{
-              padding: "15px 18px",
-              background: G.sagePastel, color: G.ink,
-              borderRadius: 14, fontSize: 14, fontWeight: 700,
-              display: "flex", alignItems: "center", justifyContent: "space-between",
-              boxShadow: "0 4px 14px rgba(36,30,22,0.10)",
-              textDecoration: "none",
+        <div className="top-hero-photo-text">
+          <div className="top-hero-photo-text-inner">
+            {/* badge */}
+            <div style={{
+              display: "inline-flex", alignItems: "center", gap: 8,
+              padding: "6px 12px 6px 8px", borderRadius: 999,
+              background: "rgba(255,255,255,0.9)",
+              boxShadow: "0 2px 8px rgba(36,30,22,0.06)",
+              fontSize: 11, fontWeight: 700, color: G.ink,
+              backdropFilter: "blur(4px)",
             }}>
-              <span>自分に合う事務所を探す</span>
               <span style={{
-                width: 28, height: 28, borderRadius: "50%",
-                background: G.accent, color: "#fff",
-                display: "flex", alignItems: "center", justifyContent: "center",
-              }}><Icon.Arrow size={13} /></span>
-            </Link>
-            <Link href="/jimusho" style={{
-              padding: "13px 18px",
-              background: "transparent", color: G.ink,
-              border: `1.5px solid ${G.ruleStrong}`, borderRadius: 14,
-              fontSize: 13, fontWeight: 700, textAlign: "center",
-              textDecoration: "none",
-            }}>11事務所のランキング</Link>
+                width: 18, height: 18, borderRadius: "50%",
+                background: G.sageDeep, color: "#fff",
+                display: "inline-flex", alignItems: "center", justifyContent: "center",
+              }}><Icon.Check size={11} /></span>
+              編集部が11事務所を実地調査
+            </div>
+
+            {/* h1 */}
+            <h1 style={{
+              margin: "16px 0 0",
+              fontSize: "clamp(22px, 5.8vw, 32px)",
+              lineHeight: 1.45,
+              fontWeight: 800,
+              letterSpacing: -0.5,
+              color: G.ink,
+            }}>
+              中身で選ぶ、<br />
+              チャトレ事務所の<br />口コミサイト。
+            </h1>
+
+            {/* sub */}
+            <p style={{
+              margin: "14px 0 0",
+              fontSize: 13, lineHeight: 1.9, color: G.ink,
+              fontWeight: 500,
+            }}>
+              初心者でも失敗しないために。<br />
+              良い点も気になる点も、まるっと公開して
+            </p>
           </div>
         </div>
       </section>
 
-      {/* ===== PILLARS（スクショ忠実版・大見出し+ピル3つ）===== */}
+      {/* ===== HERO 下 CTA（写真の下に配置） ===== */}
+      <section style={{ padding: "20px 22px 0", maxWidth: 720, margin: "0 auto" }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: 10, maxWidth: 420, margin: "0 auto" }}>
+          <Link href="/jimusho" style={{
+            padding: "15px 18px",
+            background: G.sagePastel, color: G.ink,
+            borderRadius: 14, fontSize: 14, fontWeight: 700,
+            display: "flex", alignItems: "center", justifyContent: "space-between",
+            boxShadow: "0 4px 14px rgba(36,30,22,0.10)",
+            textDecoration: "none",
+          }}>
+            <span>自分に合う事務所を探す</span>
+            <span style={{
+              width: 28, height: 28, borderRadius: "50%",
+              background: G.accent, color: "#fff",
+              display: "flex", alignItems: "center", justifyContent: "center",
+            }}><Icon.Arrow size={13} /></span>
+          </Link>
+          <Link href="/jimusho" style={{
+            padding: "13px 18px",
+            background: "transparent", color: G.ink,
+            border: `1.5px solid ${G.ruleStrong}`, borderRadius: 14,
+            fontSize: 13, fontWeight: 700, textAlign: "center",
+            textDecoration: "none",
+          }}>11事務所のランキング</Link>
+        </div>
+      </section>
+
+      {/* ===== EDITOR'S PROMISE（差し替え画像版） ===== */}
       <section style={{
         marginTop: 28,
-        padding: "28px 20px 36px",
-        backgroundColor: G.bg,
-        backgroundImage: "radial-gradient(circle, rgba(36,30,22,0.06) 1px, transparent 1px)",
-        backgroundSize: "16px 16px",
+        padding: "20px 16px 28px",
+        background: G.bg,
       }}>
-        <div style={{ maxWidth: 720, margin: "0 auto" }}>
-          {/* Kicker（斜線ブラケット装飾） */}
-          <div style={{ textAlign: "center", marginBottom: 16, fontSize: 11 }}>
-            <BracketKicker color={G.inkSoft}>EDITOR&apos;S PROMISE</BracketKicker>
-          </div>
+        <div style={{ maxWidth: 640, margin: "0 auto" }}>
+          <Image
+            src="/editor-promise.jpg"
+            alt="EDITOR'S PROMISE - ちゃんと選んでほしいから、全部かいてます。良い点も気になる点もどちらも掲載／採点基準をすべて公開／広告費で順位は変えません"
+            width={1240}
+            height={1240}
+            sizes="(max-width:720px) 100vw, 640px"
+            style={{
+              width: "100%",
+              height: "auto",
+              display: "block",
+              borderRadius: 14,
+            }}
+          />
+        </div>
 
-          {/* 大見出し：「選んで」圏点・「全部」ピル */}
-          <h2 style={{
-            textAlign: "center",
-            fontSize: "clamp(22px, 5.8vw, 30px)",
-            lineHeight: 1.7,
-            fontWeight: 800,
-            letterSpacing: -0.5,
-            margin: "0 0 26px",
-            color: G.ink,
+        {/* 下 CTA：自分に合う事務所を探す / 11事務所のランキング */}
+        <div style={{
+          maxWidth: 420, margin: "22px auto 0", padding: "0 22px",
+          display: "flex", flexDirection: "column", gap: 10,
+        }}>
+          <Link href="/jimusho" style={{
+            padding: "15px 18px",
+            background: G.sagePastel, color: G.ink,
+            borderRadius: 14, fontSize: 14, fontWeight: 700,
+            display: "flex", alignItems: "center", justifyContent: "space-between",
+            boxShadow: "0 4px 14px rgba(36,30,22,0.10)",
+            textDecoration: "none",
           }}>
-            ちゃんと
-            <EmphasisWord text="選んで" color={G.sageDeep} sizeMultiplier={1.15} />
-            ほしいから、<br />
-            <PillWord bg={G.sageDeep} color="#fff" px="0.6em">全部</PillWord>
-            かいてます。
-          </h2>
-
-          {/* 3 シンプルピル（リファレンス忠実） */}
-          <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-            {[
-              { prefix: "良い点も気になる点も", emphasis: "両方掲載" },
-              { prefix: "採点基準を", emphasis: "すべて公開" },
-              { prefix: "広告費で", emphasis: "順位は変えません" },
-            ].map((item, i) => (
-              <div key={i} style={{
-                display: "flex", alignItems: "center", gap: 12,
-                padding: "14px 22px",
-                background: G.sageSoft,
-                borderRadius: 999,
-              }}>
-                <div style={{
-                  width: 22, height: 22, borderRadius: 5,
-                  background: G.sageDeep, color: "#fff",
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  flexShrink: 0,
-                }}>
-                  <Icon.Check size={14} />
-                </div>
-                <div style={{ fontSize: 14.5, fontWeight: 600, color: G.ink, lineHeight: 1.5 }}>
-                  {item.prefix}
-                  <span style={{
-                    color: G.accentDeep,
-                    textDecoration: "underline",
-                    textDecorationColor: G.accentDeep,
-                    textDecorationThickness: 2,
-                    textUnderlineOffset: 3,
-                    fontWeight: 700,
-                    marginLeft: 2,
-                  }}>{item.emphasis}</span>
-                </div>
-              </div>
-            ))}
-          </div>
+            <span>自分に合う事務所を探す</span>
+            <span style={{
+              width: 28, height: 28, borderRadius: "50%",
+              background: G.accent, color: "#fff",
+              display: "flex", alignItems: "center", justifyContent: "center",
+            }}><Icon.Arrow size={13} /></span>
+          </Link>
+          <Link href="/jimusho" style={{
+            padding: "13px 18px",
+            background: "transparent", color: G.ink,
+            border: `1.5px solid ${G.ruleStrong}`, borderRadius: 14,
+            fontSize: 13, fontWeight: 700, textAlign: "center",
+            textDecoration: "none",
+          }}>11事務所のランキング</Link>
         </div>
       </section>
 
-      {/* ===== QUICK NAV ===== */}
-      <section style={{ padding: "36px 20px 8px", maxWidth: 760, margin: "0 auto" }}>
-        <SectionHead kicker="HOW TO FIND" title="あなたに合う探し方" />
-        <div style={{
-          marginTop: 16, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10,
-        }}>
-          {QUICK_NAV.map((it) => {
-            const I = Icon[it.icon];
-            return (
-              <Link href={it.href} key={it.href} style={{
-                background: G.paper, borderRadius: 16, padding: 14,
-                boxShadow: "0 2px 10px rgba(51,45,34,0.04)",
-                display: "flex", alignItems: "center", gap: 12,
-                textDecoration: "none", color: G.ink,
-              }}>
-                <div style={{
-                  width: 44, height: 44, borderRadius: 12,
-                  background: it.bg, color: it.color,
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  flexShrink: 0,
+      {/* ===== QUICK NAV「あなたに合う探し方」（葉模様背景） ===== */}
+      <section className="top-find-section">
+        <div className="top-find-bg-leaves" />
+        <div className="top-find-inner">
+          <SectionHead kicker="HOW TO FIND" title="あなたに合う探し方" />
+          <div style={{
+            marginTop: 16, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10,
+          }}>
+            {QUICK_NAV.map((it) => {
+              const I = Icon[it.icon];
+              return (
+                <Link href={it.href} key={it.href} style={{
+                  background: G.paper, borderRadius: 16, padding: 14,
+                  boxShadow: "0 2px 10px rgba(51,45,34,0.04)",
+                  display: "flex", alignItems: "center", gap: 12,
+                  textDecoration: "none", color: G.ink,
                 }}>
-                  <I size={22} />
-                </div>
-                <div style={{ flex: 1, minWidth: 0 }}>
-                  <div style={{ fontSize: 13.5, fontWeight: 800 }}>{it.label}</div>
-                  <div style={{ fontSize: 10.5, color: G.inkSoft, marginTop: 2 }}>{it.sub}</div>
-                </div>
-                <Icon.Arrow size={14} />
-              </Link>
-            );
-          })}
+                  <div style={{
+                    width: 44, height: 44, borderRadius: 12,
+                    background: it.bg, color: it.color,
+                    display: "flex", alignItems: "center", justifyContent: "center",
+                    flexShrink: 0,
+                  }}>
+                    <I size={22} />
+                  </div>
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    <div style={{ fontSize: 13.5, fontWeight: 800 }}>{it.label}</div>
+                    <div style={{ fontSize: 10.5, color: G.inkSoft, marginTop: 2 }}>{it.sub}</div>
+                  </div>
+                  <Icon.Arrow size={14} />
+                </Link>
+              );
+            })}
+          </div>
         </div>
       </section>
 
