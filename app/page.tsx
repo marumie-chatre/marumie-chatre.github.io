@@ -354,7 +354,7 @@ export default function Home() {
             alt="まるみえチャトレ"
             fill
             priority
-            sizes="(max-width:720px) 42vw, 480px"
+            sizes="(max-width:720px) 48vw, 480px"
           />
         </div>
       </section>
