@@ -273,65 +273,11 @@ export default function Home() {
   return (
     <main style={{ background: G.bg, color: G.ink, paddingBottom: 60 }}>
 
-      {/* ===== HERO（写真背景＋テキストオーバーレイ・PC/SP 整合） ===== */}
-      <section className="top-hero-photo-section">
-        <Image
-          src="/top-hero-photo.jpg"
-          alt="まるみえチャトレ"
-          fill
-          priority
-          sizes="100vw"
-        />
-        <div className="top-hero-photo-text">
-          <div className="top-hero-photo-text-inner">
-            {/* badge */}
-            <div style={{
-              display: "inline-flex", alignItems: "center", gap: 8,
-              padding: "6px 12px 6px 8px", borderRadius: 999,
-              background: "rgba(255,255,255,0.9)",
-              boxShadow: "0 2px 8px rgba(36,30,22,0.06)",
-              fontSize: 11, fontWeight: 700, color: G.ink,
-              backdropFilter: "blur(4px)",
-            }}>
-              <span style={{
-                width: 18, height: 18, borderRadius: "50%",
-                background: G.sageDeep, color: "#fff",
-                display: "inline-flex", alignItems: "center", justifyContent: "center",
-              }}><Icon.Check size={11} /></span>
-              編集部が11事務所を実地調査
-            </div>
-
-            {/* h1 */}
-            <h1 style={{
-              margin: "16px 0 0",
-              fontSize: "clamp(22px, 5.8vw, 32px)",
-              lineHeight: 1.45,
-              fontWeight: 800,
-              letterSpacing: -0.5,
-              color: G.ink,
-            }}>
-              中身で選ぶ、<br />
-              チャトレ事務所の<br />口コミサイト。
-            </h1>
-
-            {/* sub */}
-            <p style={{
-              margin: "14px 0 0",
-              fontSize: 13, lineHeight: 1.9, color: G.ink,
-              fontWeight: 500,
-            }}>
-              初心者でも失敗しないために。<br />
-              良い点も気になる点も、まるっと公開して
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* ===== HERO 下 CTA（写真の下に配置） ===== */}
-      <section style={{ padding: "20px 22px 0", maxWidth: 720, margin: "0 auto" }}>
+      {/* ===== HERO 上 CTA（1枚目画像の上に配置） ===== */}
+      <section style={{ padding: "16px 16px 4px", maxWidth: 720, margin: "0 auto" }}>
         <div style={{ display: "flex", flexDirection: "column", gap: 10, maxWidth: 420, margin: "0 auto" }}>
           <Link href="/jimusho" style={{
-            padding: "15px 18px",
+            padding: "13px 18px",
             background: G.sagePastel, color: G.ink,
             borderRadius: 14, fontSize: 14, fontWeight: 700,
             display: "flex", alignItems: "center", justifyContent: "space-between",
@@ -346,7 +292,7 @@ export default function Home() {
             }}><Icon.Arrow size={13} /></span>
           </Link>
           <Link href="/jimusho" style={{
-            padding: "13px 18px",
+            padding: "11px 18px",
             background: "transparent", color: G.ink,
             border: `1.5px solid ${G.ruleStrong}`, borderRadius: 14,
             fontSize: 13, fontWeight: 700, textAlign: "center",
@@ -355,10 +301,68 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ===== HERO 本体（文字 ← → 写真 横並び・PC/SP 整合） ===== */}
+      <section className="top-hero-flex">
+        <div className="top-hero-flex-text">
+          {/* badge */}
+          <div style={{
+            display: "inline-flex", alignItems: "center", gap: 6,
+            padding: "5px 10px 5px 6px", borderRadius: 999,
+            background: G.cream,
+            fontSize: 10, fontWeight: 700, color: G.ink,
+            alignSelf: "flex-start",
+            maxWidth: "100%",
+          }}>
+            <span style={{
+              width: 16, height: 16, borderRadius: "50%",
+              background: G.sageDeep, color: "#fff",
+              display: "inline-flex", alignItems: "center", justifyContent: "center",
+              flexShrink: 0,
+            }}><Icon.Check size={10} /></span>
+            <span style={{
+              overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap",
+            }}>編集部が11事務所を実地調査</span>
+          </div>
+
+          {/* h1 */}
+          <h1 style={{
+            margin: "12px 0 0",
+            fontSize: "clamp(18px, 5.5vw, 30px)",
+            lineHeight: 1.45,
+            fontWeight: 800,
+            letterSpacing: -0.5,
+            color: G.ink,
+          }}>
+            中身で選ぶ、<br />
+            チャトレ事務所の<br />口コミサイト。
+          </h1>
+
+          {/* sub */}
+          <p style={{
+            margin: "10px 0 0",
+            fontSize: "clamp(10.5px, 2.8vw, 13px)",
+            lineHeight: 1.85, color: G.inkSoft,
+            fontWeight: 500,
+          }}>
+            初心者でも失敗しないために。<br />
+            良い点も気になる点も、<br />まるっと公開して
+          </p>
+        </div>
+        <div className="top-hero-flex-photo">
+          <Image
+            src="/top-hero-photo.jpg"
+            alt="まるみえチャトレ"
+            fill
+            priority
+            sizes="(max-width:720px) 42vw, 480px"
+          />
+        </div>
+      </section>
+
       {/* ===== EDITOR'S PROMISE（差し替え画像版） ===== */}
       <section style={{
-        marginTop: 28,
-        padding: "20px 16px 28px",
+        marginTop: 20,
+        padding: "16px 16px 20px",
         background: G.bg,
       }}>
         <div style={{ maxWidth: 640, margin: "0 auto" }}>
@@ -375,35 +379,6 @@ export default function Home() {
               borderRadius: 14,
             }}
           />
-        </div>
-
-        {/* 下 CTA：自分に合う事務所を探す / 11事務所のランキング */}
-        <div style={{
-          maxWidth: 420, margin: "22px auto 0", padding: "0 22px",
-          display: "flex", flexDirection: "column", gap: 10,
-        }}>
-          <Link href="/jimusho" style={{
-            padding: "15px 18px",
-            background: G.sagePastel, color: G.ink,
-            borderRadius: 14, fontSize: 14, fontWeight: 700,
-            display: "flex", alignItems: "center", justifyContent: "space-between",
-            boxShadow: "0 4px 14px rgba(36,30,22,0.10)",
-            textDecoration: "none",
-          }}>
-            <span>自分に合う事務所を探す</span>
-            <span style={{
-              width: 28, height: 28, borderRadius: "50%",
-              background: G.accent, color: "#fff",
-              display: "flex", alignItems: "center", justifyContent: "center",
-            }}><Icon.Arrow size={13} /></span>
-          </Link>
-          <Link href="/jimusho" style={{
-            padding: "13px 18px",
-            background: "transparent", color: G.ink,
-            border: `1.5px solid ${G.ruleStrong}`, borderRadius: 14,
-            fontSize: 13, fontWeight: 700, textAlign: "center",
-            textDecoration: "none",
-          }}>11事務所のランキング</Link>
         </div>
       </section>
 
