@@ -181,22 +181,19 @@ img { display: block; max-width: 100%; }
   gap: 11px;
 }
 
-/* 主CTA（目立つ・上品な premium 感） */
+/* 主CTA（フラットデザイン・solid color・no shadow） */
 .top-hero-cta-primary {
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 60px;
   padding: 0 22px;
-  background: linear-gradient(180deg, #C2DCB1 0%, #98C083 100%);
+  background: #A8C49A;
   color: var(--text);
   border-radius: var(--fv-btn-radius);
   font-size: 15px;
   font-weight: 700;
   text-decoration: none;
-  box-shadow:
-    0 8px 22px rgba(88,122,56,0.32),
-    inset 0 1px 0 rgba(255,255,255,0.5);
 }
 .top-hero-cta-primary-arrow {
   width: 30px;
@@ -208,10 +205,9 @@ img { display: block; max-width: 100%; }
   justify-content: center;
   color: var(--text);
   flex-shrink: 0;
-  box-shadow: 0 1px 3px rgba(46,31,16,0.08);
 }
 
-/* 副CTA */
+/* 副CTA（フラットデザイン・solid・border のみ） */
 .top-hero-cta-sub {
   display: flex;
   align-items: center;
@@ -225,7 +221,6 @@ img { display: block; max-width: 100%; }
   font-size: 13.5px;
   font-weight: 600;
   text-decoration: none;
-  box-shadow: 0 2px 6px rgba(36,30,22,0.04);
 }
 
 
