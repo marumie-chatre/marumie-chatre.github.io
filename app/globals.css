@@ -238,11 +238,11 @@ img { display: block; max-width: 100%; }
   line-height: 1.7;
 }
 
-/* EDITOR'S PROMISE 画像（hero-card と幅・角丸を揃える） */
+/* EDITOR'S PROMISE 画像（hero-card と幅・角丸を揃える・SP は edge-to-edge） */
 .top-editor-promise-wrap {
   max-width: 608px;
   margin: 0 auto;
-  padding: 0 var(--fv-side-pad);
+  padding: 0;
 }
 .top-editor-promise-img {
   width: 100%;
