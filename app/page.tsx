@@ -91,9 +91,9 @@ const QUICK_NAV = [
 
 // データ：コラム3本
 const COLUMNS_PREVIEW = [
-  { slug: "jimusho-erabi",  cat: "事務所の選び方", title: "チャットレディ事務所の選び方｜失敗しない5つの基準", time: "5分", date: "2025.05.01" },
-  { slug: "mibare-taisaku", cat: "身バレ対策",     title: "配信中に顔がバレる？家族にバレる？よくある疑問に答えます", time: "6分", date: "2025.05.01" },
-  { slug: "hoikushi-baito", cat: "副業ガイド",     title: "チャットレディは副業にアリ？会社・職場にバレない全対策", time: "7分", date: "2025.05.01" },
+  { slug: "jimusho-erabi",  cat: "事務所の選び方", title: "チャットレディ事務所の選び方｜失敗しない5つの基準", time: "5分", date: "2025.05.01", image: "/col-jimusho-erabi.png" },
+  { slug: "mibare-taisaku", cat: "身バレ対策",     title: "配信中に顔がバレる？家族にバレる？よくある疑問に答えます", time: "6分", date: "2025.05.01", image: "/col-mibare-taisaku.png" },
+  { slug: "hoikushi-baito", cat: "副業ガイド",     title: "チャットレディは副業にアリ？会社・職場にバレない全対策", time: "7分", date: "2025.05.01", image: "/col-hoikushi-baito.png" },
 ];
 
 // ========== サブコンポーネント ==========
@@ -146,9 +146,10 @@ function RankingCard({ r, idx }: { r: typeof RANKING[0]; idx: number }) {
           <div style={{
             display: "inline-flex", alignItems: "center", gap: 8,
             padding: "5px 14px", borderRadius: 99,
-            background: G.ink, color: "#fff",
+            background: "linear-gradient(135deg, #E8B85B 0%, #C9923F 100%)",
+            color: "#fff",
             fontSize: 11, fontWeight: 800, letterSpacing: 1,
-            boxShadow: "0 4px 12px rgba(36,30,22,0.25)",
+            boxShadow: "0 4px 12px rgba(180,135,50,0.32)",
           }}>
             <span style={{ opacity: 0.7, fontWeight: 400 }}>＼</span>
             初心者に最もおすすめ
@@ -695,10 +696,16 @@ export default function Home() {
             }}>
               <div style={{
                 width: 84, height: 70, borderRadius: 8, flexShrink: 0,
-                background: `linear-gradient(135deg, ${G.sageSoft}, ${G.cream})`,
-                display: "flex", alignItems: "center", justifyContent: "center",
+                position: "relative", overflow: "hidden",
+                background: G.sageSoft,
               }}>
-                <Icon.Pencil size={22} color={G.sage} />
+                <Image
+                  src={c.image}
+                  alt={c.title}
+                  fill
+                  sizes="84px"
+                  style={{ objectFit: "cover" }}
+                />
               </div>
               <div style={{ flex: 1, minWidth: 0, paddingTop: 2 }}>
                 <div style={{
