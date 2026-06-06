@@ -72,21 +72,21 @@ const RANKING = [
   },
 ];
 
-// データ：不安カテゴリ
+// データ：不安カテゴリ（sage 単色テーマで統一）
 const CONCERNS = [
-  { id: "barebure",     icon: "Shield" as const,    label: "身バレが怖い",       sub: "配信中対策", color: G.sageDeep, tint: G.sageSoft },
-  { id: "shokuba-bare", icon: "Briefcase" as const, label: "職場にバレたくない", sub: "副業バレ",   color: "#7AAE3A",  tint: "#E2EBB8"  },
-  { id: "kazoku-bare",  icon: "Home" as const,      label: "家族にバレたくない", sub: "家族バレ",   color: "#B36947",  tint: G.bgWarm  },
-  { id: "ayashii",      icon: "Question" as const,  label: "業界が怪しく見える", sub: "実態解説",   color: "#A88830",  tint: "#FBEEC4"  },
-  { id: "shoshinsha",   icon: "Sprout" as const,    label: "初心者で不安",       sub: "総合ガイド", color: G.sage,     tint: G.sageSoft },
+  { id: "barebure",     icon: "Shield" as const,    label: "身バレが怖い",       sub: "配信中対策" },
+  { id: "shokuba-bare", icon: "Briefcase" as const, label: "職場にバレたくない", sub: "副業バレ" },
+  { id: "kazoku-bare",  icon: "Home" as const,      label: "家族にバレたくない", sub: "家族バレ" },
+  { id: "ayashii",      icon: "Question" as const,  label: "業界が怪しく見える", sub: "実態解説" },
+  { id: "shoshinsha",   icon: "Sprout" as const,    label: "初心者で不安",       sub: "総合ガイド" },
 ];
 
-// データ：クイックナビ
+// データ：クイックナビ（単色 sage テーマで統一）
 const QUICK_NAV = [
-  { href: "/jimusho", icon: "Trophy" as const,   label: "ランキングから探す",     bg: G.sageSoft, color: G.sage },
-  { href: "/area",    icon: "Pin" as const,      label: "一番近い事務所を探す",   bg: "#FCE0CC",  color: "#B36947" },
-  { href: "/style",   icon: "Home" as const,     label: "働き方から探す",         bg: "#FBEEC4",  color: "#A88830" },
-  { href: "/q",       icon: "Question" as const, label: "お悩みからさがす",       bg: "#F5DBC9",  color: "#C97755" },
+  { href: "/jimusho", icon: "Trophy" as const,   label: "ランキングから探す" },
+  { href: "/area",    icon: "Pin" as const,      label: "一番近い事務所を探す" },
+  { href: "/style",   icon: "Home" as const,     label: "働き方から探す" },
+  { href: "/q",       icon: "Question" as const, label: "お悩みからさがす" },
 ];
 
 // データ：コラム3本
@@ -311,7 +311,7 @@ export default function Home() {
                   <span>編集部が実地調査</span>
                 </div>
 
-                {/* h1 - 「中身」「口コミ」を sageDeep で強調・サイズ大きく */}
+                {/* h1 - 「中身」「口コミ」をパステル緑で強調（EDITOR'S PROMISE と統一） */}
                 <h1 style={{
                   margin: "10px 0 0",
                   fontSize: "clamp(22px, 6.2vw, 32px)",
@@ -320,9 +320,9 @@ export default function Home() {
                   letterSpacing: -0.3,
                   color: G.ink,
                 }}>
-                  <span style={{ color: G.sageDeep }}>中身</span>で選ぶ、<br />
+                  <span style={{ color: G.sagePastelText }}>中身</span>で選ぶ、<br />
                   チャトレ事務所の<br />
-                  <span style={{ color: G.sageDeep }}>口コミ</span>サイト。
+                  <span style={{ color: G.sagePastelText }}>口コミ</span>サイト。
                 </h1>
 
                 {/* sub */}
@@ -355,10 +355,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== EDITOR'S PROMISE（女性誌風・上下スペース圧縮・パステル緑強調） ===== */}
+      {/* ===== EDITOR'S PROMISE（CTA エリアと同色で地続き化） ===== */}
       <section style={{
-        background: "#F0F5E5",
-        padding: "14px 22px 16px",
+        background: "#F8FCF7",
+        padding: "14px 22px 24px",
         textAlign: "center",
       }}>
         {/* Kicker：＼ EDITOR'S PROMISE ／ */}
@@ -439,13 +439,13 @@ export default function Home() {
               return (
                 <Link href={it.href} key={it.href} style={{
                   background: G.paper, borderRadius: 16, padding: 14,
-                  boxShadow: "0 2px 10px rgba(51,45,34,0.04)",
+                  boxShadow: "0 2px 10px rgba(46,31,16,0.04)",
                   display: "flex", alignItems: "center", gap: 10,
                   textDecoration: "none", color: G.ink,
                 }}>
                   <div style={{
                     width: 40, height: 40, borderRadius: 11,
-                    background: it.bg, color: it.color,
+                    background: G.sageSoft, color: G.sageDeep,
                     display: "flex", alignItems: "center", justifyContent: "center",
                     flexShrink: 0,
                   }}>
@@ -581,7 +581,7 @@ export default function Home() {
               }}>
                 <div style={{
                   width: 38, height: 38, borderRadius: "50%",
-                  background: c.tint, color: c.color,
+                  background: G.sageSoft, color: G.sageDeep,
                   display: "flex", alignItems: "center", justifyContent: "center",
                   flexShrink: 0,
                 }}><I size={19} /></div>
