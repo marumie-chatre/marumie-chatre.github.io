@@ -124,14 +124,11 @@ img { display: block; max-width: 100%; }
   --fv-intro-color: #6F7F68;
 }
 
-/* Hero card：画像＋CTA を1つのカードに */
+/* Hero card：画像＋CTA を1つのカードに（角丸・ボーダー削除版） */
 .top-hero-card {
   max-width: 608px;
   margin: 0 auto;
   background: var(--fv-card-bg);
-  border: 1px solid var(--fv-card-border);
-  border-radius: var(--fv-card-radius);
-  box-shadow: 0 2px 14px rgba(36,30,22,0.045);
   overflow: hidden;
 }
 
@@ -228,17 +225,7 @@ img { display: block; max-width: 100%; }
   box-shadow: 0 2px 6px rgba(36,30,22,0.04);
 }
 
-/* 「はじめて選ぶ人でも...」導入テキスト */
-.top-hero-intro {
-  margin: 0 auto 12px;
-  font-size: 13px;
-  color: var(--fv-intro-color);
-  text-align: center;
-  padding: 0 20px;
-  line-height: 1.7;
-}
-
-/* EDITOR'S PROMISE 画像（hero-card と幅・角丸を揃える・SP は edge-to-edge） */
+/* EDITOR'S PROMISE 画像（角丸・ボーダー削除版・edge-to-edge） */
 .top-editor-promise-wrap {
   max-width: 608px;
   margin: 0 auto;
@@ -246,11 +233,9 @@ img { display: block; max-width: 100%; }
 }
 .top-editor-promise-img {
   width: 100%;
-  border-radius: var(--fv-card-radius);
   overflow: hidden;
   display: block;
   height: auto;
-  border: 1px solid var(--fv-card-border);
 }
 
 /* ===== TOP FIND セクション（葉模様背景）===== */
