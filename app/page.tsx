@@ -384,16 +384,7 @@ export default function Home() {
           ちゃんと
           <span style={{ color: G.sagePastelText, fontWeight: 700 }}>選んで</span>
           ほしいから、<br />
-          <span style={{
-            display: "inline-block",
-            background: G.sageDeep,
-            color: "#fff",
-            borderRadius: 99,
-            padding: "0.12em 0.7em",
-            fontWeight: 700,
-            margin: "0 3px",
-            lineHeight: 1.3,
-          }}>全部</span>
+          <span style={{ color: G.sagePastelText, fontWeight: 700 }}>全部</span>
           かいてます。
         </h2>
 
