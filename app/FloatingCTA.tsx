@@ -32,14 +32,14 @@ export default function FloatingCTA() {
           display: "flex",
           alignItems: "center",
           gap: "8px",
-          background: "var(--text)",
-          color: "#fff",
+          background: "#A8C49A",
+          color: "var(--text)",
           fontWeight: 700,
           fontSize: "14px",
           padding: "13px 28px",
           borderRadius: "100px",
           textDecoration: "none",
-          boxShadow: "0 6px 22px rgba(36,30,22,0.28)",
+          boxShadow: "0 4px 16px rgba(88,122,56,0.18)",
           whiteSpace: "nowrap",
         }}
       >

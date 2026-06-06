@@ -43,7 +43,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <Link href="/q">不安から探す</Link>
               <Link href="/column">コラム</Link>
             </nav>
-            {/* 口コミを見るボタン（CTA・常時表示・ink bg + white text - refined） */}
+            {/* 口コミを見るボタン（CTA・常時表示・pastel sage で統一） */}
             <Link
               href="/kuchikomi"
               style={{
@@ -51,8 +51,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 alignItems: "center",
                 gap: "6px",
                 padding: "8px 14px",
-                background: "var(--text)",
-                color: "#fff",
+                background: "#A8C49A",
+                color: "var(--text)",
                 textDecoration: "none",
                 borderRadius: "100px",
                 fontSize: "13px",
