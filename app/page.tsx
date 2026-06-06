@@ -98,7 +98,9 @@ const COLUMNS_PREVIEW = [
 
 // ========== サブコンポーネント ==========
 
-function SectionHead({ kicker, title, note }: { kicker: string; title: string; note?: string }) {
+function SectionHead({ kicker, title, note, image }: {
+  kicker: string; title: string; note?: string; image?: string;
+}) {
   return (
     <div>
       <div style={{
@@ -108,12 +110,30 @@ function SectionHead({ kicker, title, note }: { kicker: string; title: string; n
         <span style={{ width: 18, height: 1.5, background: G.sage, borderRadius: 1 }} />
         {kicker}
       </div>
-      <h2 style={{
-        margin: "8px 0 0", fontSize: 22, lineHeight: 1.45,
-        fontWeight: 700, letterSpacing: -0.2, color: G.ink,
-      }}>{title}</h2>
+      {image ? (
+        <div style={{ margin: "10px 0 0", lineHeight: 0 }}>
+          <Image
+            src={image}
+            alt={title}
+            width={2172}
+            height={560}
+            sizes="(max-width:720px) 70vw, 360px"
+            style={{
+              width: "100%",
+              maxWidth: 360,
+              height: "auto",
+              display: "block",
+            }}
+          />
+        </div>
+      ) : (
+        <h2 style={{
+          margin: "8px 0 0", fontSize: 22, lineHeight: 1.45,
+          fontWeight: 700, letterSpacing: -0.2, color: G.ink,
+        }}>{title}</h2>
+      )}
       {note && (
-        <p style={{ margin: "6px 0 0", fontSize: 12, color: G.inkSoft, lineHeight: 1.7 }}>{note}</p>
+        <p style={{ margin: "10px 0 0", fontSize: 12, color: G.inkSoft, lineHeight: 1.7 }}>{note}</p>
       )}
     </div>
   );
@@ -431,7 +451,7 @@ export default function Home() {
       <section className="top-find-section">
         <div className="top-find-bg-leaves" />
         <div className="top-find-inner">
-          <SectionHead kicker="HOW TO FIND" title="あなたに合う探し方" />
+          <SectionHead kicker="HOW TO FIND" title="あなたに合う探し方" image="/top-title-find.png" />
           <div style={{
             marginTop: 16, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10,
           }}>
@@ -468,6 +488,7 @@ export default function Home() {
           kicker="RANKING"
           title="編集部おすすめ事務所"
           note="広告費ではなく、公開している評価基準で順位を決めています。"
+          image="/top-title-ranking.png"
         />
         <Link href="/hyoka-kijun" style={{
           marginTop: 8, display: "inline-flex", alignItems: "center", gap: 4,
@@ -501,6 +522,7 @@ export default function Home() {
           kicker="EVALUATION"
           title="5つの基準で丁寧に採点"
           note="5つの評価軸で事務所を丁寧に採点しています。"
+          image="/top-title-evaluation.png"
         />
         <div style={{
           marginTop: 18, background: G.paper, borderRadius: 20,
@@ -568,6 +590,7 @@ export default function Home() {
           kicker="WORRIES"
           title="お悩みから、探す。"
           note="始める前の心配ごとに、まっすぐ答える記事を用意しています。"
+          image="/top-title-worries.png"
         />
         <div style={{ marginTop: 16, display: "flex", flexDirection: "column", gap: 8 }}>
           {CONCERNS.map(c => {
@@ -610,6 +633,7 @@ export default function Home() {
           kicker="REVIEWS"
           title="リアルな声を集めました。"
           note="良かった点も、気になった点もどちらも公開。"
+          image="/top-title-reviews.png"
         />
         <div style={{ marginTop: 16, display: "flex", flexDirection: "column", gap: 12 }}>
           {topReviews.map((r) => (
@@ -685,6 +709,7 @@ export default function Home() {
           kicker="COLUMN"
           title="もう一歩ふかく答えていきます。"
           note="編集部が書く、応募前後の不安を解決する記事。"
+          image="/top-title-column.png"
         />
         <div style={{ marginTop: 16, display: "flex", flexDirection: "column", gap: 10 }}>
           {COLUMNS_PREVIEW.map(c => (
