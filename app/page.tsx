@@ -121,8 +121,8 @@ function SectionHead({ kicker, title, note, image }: {
             width: "100%",
             height: "auto",
             display: "block",
-            maskImage: "linear-gradient(to bottom, #000 55%, transparent 100%)",
-            WebkitMaskImage: "linear-gradient(to bottom, #000 55%, transparent 100%)",
+            maskImage: "linear-gradient(to bottom, #000 85%, transparent 100%)",
+            WebkitMaskImage: "linear-gradient(to bottom, #000 85%, transparent 100%)",
           }}
         />
       </div>
