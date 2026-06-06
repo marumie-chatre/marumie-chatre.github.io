@@ -225,18 +225,6 @@ img { display: block; max-width: 100%; }
   box-shadow: 0 2px 6px rgba(36,30,22,0.04);
 }
 
-/* EDITOR'S PROMISE 画像（角丸・ボーダー削除版・edge-to-edge） */
-.top-editor-promise-wrap {
-  max-width: 608px;
-  margin: 0 auto;
-  padding: 0;
-}
-.top-editor-promise-img {
-  width: 100%;
-  overflow: hidden;
-  display: block;
-  height: auto;
-}
 
 /* ===== TOP FIND セクション（葉模様背景）===== */
 .top-find-section {
