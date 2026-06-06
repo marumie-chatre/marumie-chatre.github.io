@@ -111,28 +111,146 @@ body {
 a { text-decoration: none; color: inherit; }
 img { display: block; max-width: 100%; }
 
-/* ===== TOP HERO 写真背景＋テキストオーバーレイ（PC/SP 同レイアウト・中央寄せ）===== */
-.top-hero-overlay-section {
+/* ===== TOP ファーストビュー hero-card（画像＋CTAを一体化）===== */
+:root {
+  --fv-card-radius: 20px;
+  --fv-btn-radius: 18px;
+  --fv-side-pad: 16px;
+  --fv-card-bg: #FFFFFF;
+  --fv-card-border: #E8EFE3;
+  --fv-cta-area-bg: #F8FCF7;
+  --fv-cta-primary-bg: #B8D6AA;
+  --fv-cta-sub-border: #DDE8D7;
+  --fv-intro-color: #6F7F68;
+}
+
+/* Hero card：画像＋CTA を1つのカードに */
+.top-hero-card {
+  max-width: 608px;
+  margin: 0 auto;
+  background: var(--fv-card-bg);
+  border: 1px solid var(--fv-card-border);
+  border-radius: var(--fv-card-radius);
+  box-shadow: 0 2px 14px rgba(36,30,22,0.045);
+  overflow: hidden;
+}
+
+/* 画像エリア */
+.top-hero-card-img {
   position: relative;
   width: 100%;
-  max-width: 720px;
-  margin: 0 auto;
   aspect-ratio: 16/9;
   overflow: hidden;
   background: var(--cream);
 }
-.top-hero-overlay-section img {
+.top-hero-card-img img {
   object-fit: cover;
   object-position: center;
 }
-.top-hero-overlay-text {
+/* 画像下端の白〜薄緑グラデで CTA エリアへ自然に繋ぐ */
+.top-hero-card-img::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 42%;
+  background: linear-gradient(
+    180deg,
+    rgba(248,252,247,0) 0%,
+    rgba(248,252,247,0.35) 40%,
+    rgba(248,252,247,0.82) 78%,
+    #F8FCF7 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* テキストオーバーレイ（badge / h1 / sub） */
+.top-hero-card-text {
   position: absolute;
   inset: 0;
-  z-index: 1;
+  z-index: 2;
   padding: 18px 20px 0;
 }
-.top-hero-overlay-text-content {
+.top-hero-card-text-content {
   max-width: 58%;
+}
+
+/* CTA エリア（カード内・画像下） */
+.top-hero-card-cta {
+  background: var(--fv-cta-area-bg);
+  padding: 16px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+/* 主CTA */
+.top-hero-cta-primary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 58px;
+  padding: 0 20px;
+  background: var(--fv-cta-primary-bg);
+  color: var(--text);
+  border-radius: var(--fv-btn-radius);
+  font-size: 14.5px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 3px 10px rgba(124,168,108,0.28);
+}
+.top-hero-cta-primary-arrow {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+  flex-shrink: 0;
+}
+
+/* 副CTA */
+.top-hero-cta-sub {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 54px;
+  padding: 0 20px;
+  background: #FFFFFF;
+  color: var(--text);
+  border: 1px solid var(--fv-cta-sub-border);
+  border-radius: var(--fv-btn-radius);
+  font-size: 13.5px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(36,30,22,0.04);
+}
+
+/* 「はじめて選ぶ人でも...」導入テキスト */
+.top-hero-intro {
+  margin: 0 auto 12px;
+  font-size: 13px;
+  color: var(--fv-intro-color);
+  text-align: center;
+  padding: 0 20px;
+  line-height: 1.7;
+}
+
+/* EDITOR'S PROMISE 画像（hero-card と幅・角丸を揃える） */
+.top-editor-promise-wrap {
+  max-width: 608px;
+  margin: 0 auto;
+  padding: 0 var(--fv-side-pad);
+}
+.top-editor-promise-img {
+  width: 100%;
+  border-radius: var(--fv-card-radius);
+  overflow: hidden;
+  display: block;
+  height: auto;
+  border: 1px solid var(--fv-card-border);
 }
 
 /* ===== TOP FIND セクション（葉模様背景）===== */
