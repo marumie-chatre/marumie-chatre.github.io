@@ -14,21 +14,22 @@ const G = {
   bg: "#FAFAF5",            // near-white cream（清潔感UP）
   bgWarm: "#F5E8C8",        // warm yellow band
   paper: "#FFFFFF",
-  ink: "#241E16",           // deep sumi
+  ink: "#2E1F10",           // 濃い目のブラウン（warm dark brown）
   inkSoft: "#87796A",
   inkSofter: "#B5AC9B",
-  sage: "#7BAA3F",          // fresh forest（明るく爽やかな草緑）
+  sage: "#7BAA3F",          // fresh forest
   sageDeep: "#587A38",      // refined moss
-  sageSoft: "#CDDDB0",      // Natural Kiss mint chip color
+  sageSoft: "#CDDDB0",      // mint chip
   sagePastel: "#A8C49A",    // pastel sage (CTA bg)
-  mint: "#B5D670",          // light lime（戻し）
-  cream: "#F8EFE0",         // soft cream
-  accent: "#F4B5A0",        // light peach
-  accentDeep: "#E89B85",    // coral
-  warmYellow: "#F5E8C8",    // 第3カラー：黄/クリーム
-  warmYellowDeep: "#D5A93C", // 番号バッジ文字色
-  rule: "rgba(36,30,22,0.10)",
-  ruleStrong: "rgba(36,30,22,0.20)",
+  sagePastelText: "#8FAD7F", // パステル緑（文字強調用・読みやすい彩度）
+  mint: "#B5D670",
+  cream: "#F8EFE0",
+  accent: "#F4B5A0",
+  accentDeep: "#E89B85",
+  warmYellow: "#F5E8C8",
+  warmYellowDeep: "#D5A93C",
+  rule: "rgba(46,31,16,0.10)",
+  ruleStrong: "rgba(46,31,16,0.20)",
 };
 
 // データ：評価軸
@@ -354,10 +355,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== EDITOR'S PROMISE（テキスト再現・女性誌風・緑トーン） ===== */}
+      {/* ===== EDITOR'S PROMISE（女性誌風・上下スペース圧縮・パステル緑強調） ===== */}
       <section style={{
         background: "#F0F5E5",
-        padding: "26px 22px 28px",
+        padding: "14px 22px 16px",
         textAlign: "center",
       }}>
         {/* Kicker：＼ EDITOR'S PROMISE ／ */}
@@ -371,34 +372,17 @@ export default function Home() {
           <span style={{ opacity: 0.65, fontWeight: 400, fontSize: "1.3em" }}>／</span>
         </div>
 
-        {/* dots between kicker and h2 */}
-        <div style={{
-          margin: "6px auto 14px",
-          color: G.sageDeep, opacity: 0.5,
-          letterSpacing: 5, fontSize: 9, fontWeight: 800,
-        }}>
-          ・・・
-        </div>
-
-        {/* 大見出し（雑誌風）：選んで＝薄緑pill、全部＝濃緑pill */}
+        {/* 大見出し（雑誌風）：選んで＝パステル緑文字、全部＝濃緑pill */}
         <h2 style={{
           fontSize: "clamp(22px, 6vw, 30px)",
-          lineHeight: 1.65,
+          lineHeight: 1.55,
           fontWeight: 700,
           letterSpacing: -0.3,
           color: G.ink,
-          margin: "0 0 22px",
+          margin: "10px 0 14px",
         }}>
           ちゃんと
-          <span style={{
-            display: "inline-block",
-            background: "#CFE3B8",
-            borderRadius: 99,
-            padding: "0.08em 0.55em",
-            color: G.ink,
-            margin: "0 2px",
-            lineHeight: 1.3,
-          }}>選んで</span>
+          <span style={{ color: G.sagePastelText, fontWeight: 700 }}>選んで</span>
           <br />
           ほしいから、<br />
           <span style={{
@@ -414,22 +398,22 @@ export default function Home() {
           かいてます。
         </h2>
 
-        {/* 3 チェックリスト（白pill + 緑チェック・雑誌風） */}
+        {/* 3 チェックリスト（白pill + 緑チェック・末尾語をパステル緑強調） */}
         <div style={{
           display: "flex", flexDirection: "column", gap: 8,
           maxWidth: 400, margin: "0 auto",
         }}>
           {[
-            "良い点も気になる点もどちらも掲載",
-            "採点基準をすべて公開",
-            "広告費で順位は変えません",
+            { plain: "良い点も気になる点も", emphasis: "どちらも掲載", suffix: "" },
+            { plain: "採点基準を",             emphasis: "すべて公開",   suffix: "" },
+            { plain: "広告費で",               emphasis: "順位",         suffix: "は変えません" },
           ].map((item, i) => (
             <div key={i} style={{
               display: "flex", alignItems: "center", gap: 10,
               background: "#FFFFFF",
               borderRadius: 99,
               padding: "10px 16px 10px 12px",
-              boxShadow: "0 1px 4px rgba(36,30,22,0.04)",
+              boxShadow: "0 1px 4px rgba(46,31,16,0.04)",
             }}>
               <span style={{
                 width: 22, height: 22, borderRadius: "50%",
@@ -443,7 +427,9 @@ export default function Home() {
                 fontSize: 12.5, fontWeight: 600, color: G.ink,
                 lineHeight: 1.5, textAlign: "left",
               }}>
-                {item}
+                {item.plain}
+                <span style={{ color: G.sagePastelText, fontWeight: 700 }}>{item.emphasis}</span>
+                {item.suffix}
               </span>
             </div>
           ))}
