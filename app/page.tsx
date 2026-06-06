@@ -354,11 +354,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== EDITOR'S PROMISE 導入文＋画像（カードと幅・角丸統一） ===== */}
-      <section style={{ marginTop: 28 }}>
-        <p className="top-hero-intro">
-          はじめて選ぶ人でも迷わないように、編集部が確認していること
-        </p>
+      {/* ===== EDITOR'S PROMISE 画像（hero-card と地続き・余白圧縮） ===== */}
+      <section>
         <div className="top-editor-promise-wrap">
           <Image
             src="/editor-promise.jpg"
