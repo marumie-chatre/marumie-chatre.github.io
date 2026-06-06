@@ -311,11 +311,11 @@ export default function Home() {
                   <span>編集部が実地調査</span>
                 </div>
 
-                {/* h1 - 「中身」「口コミ」を sageDeep で強調 */}
+                {/* h1 - 「中身」「口コミ」を sageDeep で強調・サイズ大きく */}
                 <h1 style={{
                   margin: "10px 0 0",
-                  fontSize: "clamp(17px, 4.8vw, 28px)",
-                  lineHeight: 1.5,
+                  fontSize: "clamp(22px, 6.2vw, 32px)",
+                  lineHeight: 1.45,
                   fontWeight: 800,
                   letterSpacing: -0.3,
                   color: G.ink,
@@ -372,9 +372,9 @@ export default function Home() {
           <span style={{ opacity: 0.65, fontWeight: 400, fontSize: "1.3em" }}>／</span>
         </div>
 
-        {/* 大見出し（雑誌風）：選んで＝パステル緑文字、全部＝濃緑pill */}
+        {/* 大見出し（雑誌風・2行）：選んで＝パステル緑文字、全部＝濃緑pill */}
         <h2 style={{
-          fontSize: "clamp(22px, 6vw, 30px)",
+          fontSize: "clamp(20px, 5.4vw, 28px)",
           lineHeight: 1.55,
           fontWeight: 700,
           letterSpacing: -0.3,
@@ -383,7 +383,6 @@ export default function Home() {
         }}>
           ちゃんと
           <span style={{ color: G.sagePastelText, fontWeight: 700 }}>選んで</span>
-          <br />
           ほしいから、<br />
           <span style={{
             display: "inline-block",
