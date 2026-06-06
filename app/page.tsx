@@ -278,111 +278,95 @@ export default function Home() {
   return (
     <main style={{ background: G.bg, color: G.ink, paddingBottom: 60 }}>
 
-      {/* ===== HERO 写真背景＋テキストオーバーレイ（PC/SP 同レイアウト・中央寄せ） ===== */}
-      <section className="top-hero-overlay-section">
-        <Image
-          src="/top-hero-photo.jpg"
-          alt="まるみえチャトレ"
-          fill
-          priority
-          sizes="(max-width:720px) 100vw, 720px"
-        />
-        <div className="top-hero-overlay-text">
-          <div className="top-hero-overlay-text-content">
-            {/* badge */}
-            <div style={{
-              display: "inline-flex", alignItems: "center", gap: 6,
-              padding: "4px 10px 4px 6px", borderRadius: 999,
-              background: "#fff",
-              boxShadow: "0 2px 8px rgba(36,30,22,0.08)",
-              fontSize: "clamp(9.5px, 2.5vw, 11px)", fontWeight: 700, color: G.ink,
-              maxWidth: "100%",
-            }}>
-              <span style={{
-                width: 14, height: 14, borderRadius: "50%",
-                background: G.sageDeep, color: "#fff",
-                display: "inline-flex", alignItems: "center", justifyContent: "center",
-                flexShrink: 0,
-              }}><Icon.Check size={9} /></span>
-              <span>編集部が実地調査</span>
+      {/* ===== ヒーローカード（画像＋CTA を1枚のカードに） ===== */}
+      <section style={{ padding: "16px 16px 0" }}>
+        <div className="top-hero-card">
+          {/* 画像エリア（テキストオーバーレイ＋下端グラデ） */}
+          <div className="top-hero-card-img">
+            <Image
+              src="/top-hero-photo.jpg"
+              alt="まるみえチャトレ"
+              fill
+              priority
+              sizes="(max-width:640px) 100vw, 608px"
+            />
+            <div className="top-hero-card-text">
+              <div className="top-hero-card-text-content">
+                {/* badge */}
+                <div style={{
+                  display: "inline-flex", alignItems: "center", gap: 6,
+                  padding: "4px 10px 4px 6px", borderRadius: 999,
+                  background: "#fff",
+                  boxShadow: "0 2px 8px rgba(36,30,22,0.08)",
+                  fontSize: "clamp(9.5px, 2.5vw, 11px)", fontWeight: 700, color: G.ink,
+                  maxWidth: "100%",
+                }}>
+                  <span style={{
+                    width: 14, height: 14, borderRadius: "50%",
+                    background: G.sageDeep, color: "#fff",
+                    display: "inline-flex", alignItems: "center", justifyContent: "center",
+                    flexShrink: 0,
+                  }}><Icon.Check size={9} /></span>
+                  <span>編集部が実地調査</span>
+                </div>
+
+                {/* h1 - 「中身」「口コミ」を sageDeep で強調 */}
+                <h1 style={{
+                  margin: "10px 0 0",
+                  fontSize: "clamp(17px, 4.8vw, 28px)",
+                  lineHeight: 1.5,
+                  fontWeight: 800,
+                  letterSpacing: -0.3,
+                  color: G.ink,
+                }}>
+                  <span style={{ color: G.sageDeep }}>中身</span>で選ぶ、<br />
+                  チャトレ事務所の<br />
+                  <span style={{ color: G.sageDeep }}>口コミ</span>サイト。
+                </h1>
+
+                {/* sub */}
+                <p style={{
+                  margin: "10px 0 0",
+                  fontSize: "clamp(10px, 2.5vw, 12px)",
+                  lineHeight: 1.8, color: G.ink,
+                  fontWeight: 500,
+                }}>
+                  初心者でも失敗しないために。<br />
+                  良い点も気になる点も、<br />
+                  まるっと公開して
+                </p>
+              </div>
             </div>
+          </div>
 
-            {/* h1 - 「中身」「口コミ」を sageDeep で強調 */}
-            <h1 style={{
-              margin: "10px 0 0",
-              fontSize: "clamp(17px, 4.8vw, 28px)",
-              lineHeight: 1.5,
-              fontWeight: 800,
-              letterSpacing: -0.3,
-              color: G.ink,
-            }}>
-              <span style={{ color: G.sageDeep }}>中身</span>で選ぶ、<br />
-              チャトレ事務所の<br />
-              <span style={{ color: G.sageDeep }}>口コミ</span>サイト。
-            </h1>
-
-            {/* sub */}
-            <p style={{
-              margin: "10px 0 0",
-              fontSize: "clamp(10px, 2.5vw, 12px)",
-              lineHeight: 1.8, color: G.ink,
-              fontWeight: 500,
-            }}>
-              初心者でも失敗しないために。<br />
-              良い点も気になる点も、<br />
-              まるっと公開して
-            </p>
+          {/* CTA エリア（カード内・薄緑背景でグラデと自然繋ぎ） */}
+          <div className="top-hero-card-cta">
+            <Link href="/jimusho" className="top-hero-cta-primary">
+              <span>自分に合う事務所を探す</span>
+              <span className="top-hero-cta-primary-arrow">
+                <Icon.Arrow size={13} />
+              </span>
+            </Link>
+            <Link href="/jimusho" className="top-hero-cta-sub">
+              事務所のランキングをみる
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* ===== HERO 下 CTA（元の位置：EDITOR'S PROMISE の上に配置） ===== */}
-      <section style={{ padding: "22px 16px 0", maxWidth: 720, margin: "0 auto" }}>
-        <div style={{ display: "flex", flexDirection: "column", gap: 10, maxWidth: 420, margin: "0 auto" }}>
-          <Link href="/jimusho" style={{
-            padding: "15px 18px",
-            background: G.sagePastel, color: G.ink,
-            borderRadius: 14, fontSize: 14, fontWeight: 700,
-            display: "flex", alignItems: "center", justifyContent: "space-between",
-            boxShadow: "0 4px 14px rgba(36,30,22,0.10)",
-            textDecoration: "none",
-          }}>
-            <span>自分に合う事務所を探す</span>
-            <span style={{
-              width: 28, height: 28, borderRadius: "50%",
-              background: G.accent, color: "#fff",
-              display: "flex", alignItems: "center", justifyContent: "center",
-            }}><Icon.Arrow size={13} /></span>
-          </Link>
-          <Link href="/jimusho" style={{
-            padding: "13px 18px",
-            background: "transparent", color: G.ink,
-            border: `1.5px solid ${G.ruleStrong}`, borderRadius: 14,
-            fontSize: 13, fontWeight: 700, textAlign: "center",
-            textDecoration: "none",
-          }}>事務所のランキングをみる</Link>
-        </div>
-      </section>
-
-      {/* ===== EDITOR'S PROMISE（差し替え画像版） ===== */}
-      <section style={{
-        marginTop: 20,
-        padding: "16px 16px 20px",
-        background: G.bg,
-      }}>
-        <div style={{ maxWidth: 640, margin: "0 auto" }}>
+      {/* ===== EDITOR'S PROMISE 導入文＋画像（カードと幅・角丸統一） ===== */}
+      <section style={{ marginTop: 28 }}>
+        <p className="top-hero-intro">
+          はじめて選ぶ人でも迷わないように、編集部が確認していること
+        </p>
+        <div className="top-editor-promise-wrap">
           <Image
             src="/editor-promise.jpg"
             alt="EDITOR'S PROMISE - ちゃんと選んでほしいから、全部かいてます。良い点も気になる点もどちらも掲載／採点基準をすべて公開／広告費で順位は変えません"
             width={1240}
             height={1240}
-            sizes="(max-width:720px) 100vw, 640px"
-            style={{
-              width: "100%",
-              height: "auto",
-              display: "block",
-              borderRadius: 14,
-            }}
+            sizes="(max-width:640px) 100vw, 608px"
+            className="top-editor-promise-img"
           />
         </div>
       </section>
