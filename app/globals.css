@@ -111,52 +111,28 @@ body {
 a { text-decoration: none; color: inherit; }
 img { display: block; max-width: 100%; }
 
-/* ===== TOP HERO 写真背景＋テキストオーバーレイ（かぶせ・顔アップ）===== */
+/* ===== TOP HERO 写真背景＋テキストオーバーレイ（PC/SP 同レイアウト・中央寄せ）===== */
 .top-hero-overlay-section {
   position: relative;
   width: 100%;
-  aspect-ratio: 5/4;
-  max-height: 480px;
+  max-width: 720px;
+  margin: 0 auto;
+  aspect-ratio: 16/9;
   overflow: hidden;
   background: var(--cream);
 }
 .top-hero-overlay-section img {
   object-fit: cover;
-  object-position: 70% 30%;
-  transform: scale(1.25);
-  transform-origin: 70% 30%;
+  object-position: center;
 }
 .top-hero-overlay-text {
   position: absolute;
   inset: 0;
   z-index: 1;
-  /* 文字側に薄い白フェード - 写真の上で文字を読みやすく */
-  background: linear-gradient(90deg, rgba(250,250,245,0.92) 0%, rgba(250,250,245,0.75) 35%, rgba(250,250,245,0) 65%);
-}
-.top-hero-overlay-text-inner {
-  padding: 24px 20px 0;
-  max-width: 1200px;
-  margin: 0 auto;
+  padding: 18px 20px 0;
 }
 .top-hero-overlay-text-content {
-  max-width: 220px;
-}
-@media (min-width: 768px) {
-  .top-hero-overlay-section {
-    aspect-ratio: 16/7;
-    max-height: 520px;
-  }
-  .top-hero-overlay-section img {
-    object-position: 75% 30%;
-    transform: scale(1.15);
-    transform-origin: 75% 30%;
-  }
-  .top-hero-overlay-text-inner {
-    padding: 70px 60px 0;
-  }
-  .top-hero-overlay-text-content {
-    max-width: 440px;
-  }
+  max-width: 58%;
 }
 
 /* ===== TOP FIND セクション（葉模様背景）===== */
