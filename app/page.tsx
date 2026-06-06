@@ -454,7 +454,6 @@ export default function Home() {
                   <div style={{ flex: 1, minWidth: 0, fontSize: 12.5, fontWeight: 800, lineHeight: 1.35 }}>
                     {it.label}
                   </div>
-                  <Icon.Arrow size={12} />
                 </Link>
               );
             })}
