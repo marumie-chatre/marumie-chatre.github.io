@@ -279,7 +279,7 @@ export default function Home() {
     <main style={{ background: G.bg, color: G.ink, paddingBottom: 60 }}>
 
       {/* ===== ヒーローカード（画像＋CTA を1枚のカードに） ===== */}
-      <section style={{ padding: "16px 0 0" }}>
+      <section style={{ padding: 0 }}>
         <div className="top-hero-card">
           {/* 画像エリア（テキストオーバーレイ＋下端グラデ） */}
           <div className="top-hero-card-img">
@@ -354,17 +354,99 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== EDITOR'S PROMISE 画像（hero-card と地続き・余白圧縮） ===== */}
-      <section>
-        <div className="top-editor-promise-wrap">
-          <Image
-            src="/editor-promise.jpg"
-            alt="EDITOR'S PROMISE - ちゃんと選んでほしいから、全部かいてます。良い点も気になる点もどちらも掲載／採点基準をすべて公開／広告費で順位は変えません"
-            width={1240}
-            height={1240}
-            sizes="(max-width:640px) 100vw, 608px"
-            className="top-editor-promise-img"
-          />
+      {/* ===== EDITOR'S PROMISE（テキスト再現・女性誌風・緑トーン） ===== */}
+      <section style={{
+        background: "#F0F5E5",
+        padding: "26px 22px 28px",
+        textAlign: "center",
+      }}>
+        {/* Kicker：＼ EDITOR'S PROMISE ／ */}
+        <div style={{
+          display: "inline-flex", alignItems: "center", gap: "0.5em",
+          fontSize: 10.5, letterSpacing: 2.5, fontWeight: 700,
+          color: G.sageDeep,
+        }}>
+          <span style={{ opacity: 0.65, fontWeight: 400, fontSize: "1.3em" }}>＼</span>
+          EDITOR&apos;S PROMISE
+          <span style={{ opacity: 0.65, fontWeight: 400, fontSize: "1.3em" }}>／</span>
+        </div>
+
+        {/* dots between kicker and h2 */}
+        <div style={{
+          margin: "6px auto 14px",
+          color: G.sageDeep, opacity: 0.5,
+          letterSpacing: 5, fontSize: 9, fontWeight: 800,
+        }}>
+          ・・・
+        </div>
+
+        {/* 大見出し（雑誌風）：選んで＝薄緑pill、全部＝濃緑pill */}
+        <h2 style={{
+          fontSize: "clamp(22px, 6vw, 30px)",
+          lineHeight: 1.65,
+          fontWeight: 700,
+          letterSpacing: -0.3,
+          color: G.ink,
+          margin: "0 0 22px",
+        }}>
+          ちゃんと
+          <span style={{
+            display: "inline-block",
+            background: "#CFE3B8",
+            borderRadius: 99,
+            padding: "0.08em 0.55em",
+            color: G.ink,
+            margin: "0 2px",
+            lineHeight: 1.3,
+          }}>選んで</span>
+          <br />
+          ほしいから、<br />
+          <span style={{
+            display: "inline-block",
+            background: G.sageDeep,
+            color: "#fff",
+            borderRadius: 99,
+            padding: "0.12em 0.7em",
+            fontWeight: 700,
+            margin: "0 3px",
+            lineHeight: 1.3,
+          }}>全部</span>
+          かいてます。
+        </h2>
+
+        {/* 3 チェックリスト（白pill + 緑チェック・雑誌風） */}
+        <div style={{
+          display: "flex", flexDirection: "column", gap: 8,
+          maxWidth: 400, margin: "0 auto",
+        }}>
+          {[
+            "良い点も気になる点もどちらも掲載",
+            "採点基準をすべて公開",
+            "広告費で順位は変えません",
+          ].map((item, i) => (
+            <div key={i} style={{
+              display: "flex", alignItems: "center", gap: 10,
+              background: "#FFFFFF",
+              borderRadius: 99,
+              padding: "10px 16px 10px 12px",
+              boxShadow: "0 1px 4px rgba(36,30,22,0.04)",
+            }}>
+              <span style={{
+                width: 22, height: 22, borderRadius: "50%",
+                background: G.sageDeep, color: "#fff",
+                display: "flex", alignItems: "center", justifyContent: "center",
+                flexShrink: 0,
+              }}>
+                <Icon.Check size={12} />
+              </span>
+              <span style={{
+                fontSize: 12.5, fontWeight: 600, color: G.ink,
+                lineHeight: 1.5, textAlign: "left",
+              }}>
+                {item}
+              </span>
+            </div>
+          ))}
         </div>
       </section>
 
