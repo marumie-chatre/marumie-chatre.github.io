@@ -135,8 +135,8 @@ function RankingCard({ r, idx }: { r: typeof RANKING[0]; idx: number }) {
     <div style={{
       background: G.paper, borderRadius: 20, padding: 16, position: "relative",
       boxShadow: isTop
-        ? `0 10px 30px rgba(36,30,22,0.15), 0 0 0 2px ${G.sage}`
-        : "0 2px 10px rgba(51,45,34,0.05)",
+        ? `0 6px 22px rgba(46,31,16,0.08), 0 0 0 1.5px ${G.sagePastel}`
+        : "0 2px 10px rgba(46,31,16,0.04)",
     }}>
       {isTop && (
         <div style={{
@@ -183,7 +183,7 @@ function RankingCard({ r, idx }: { r: typeof RANKING[0]; idx: number }) {
               <span key={t} style={{
                 fontSize: 9.5, fontWeight: 600,
                 padding: "2px 7px", borderRadius: 99,
-                background: G.mint, color: G.sageDeep,
+                background: G.sageSoft, color: G.sageDeep,
               }}>{t}</span>
             ))}
           </div>
@@ -206,7 +206,7 @@ function RankingCard({ r, idx }: { r: typeof RANKING[0]; idx: number }) {
               <div style={{ fontSize: 8.5, color: G.inkSoft, marginBottom: 4, textAlign: "center", fontWeight: 600 }}>
                 {a.label}
               </div>
-              <ScoreBar value={v} max={a.max} height={5} bg={G.cream} fill={isTop ? G.sage : G.inkSofter} />
+              <ScoreBar value={v} max={a.max} height={5} bg={G.cream} fill={isTop ? G.sagePastelText : G.inkSofter} />
               <div style={{ fontSize: 9.5, fontWeight: 700, textAlign: "center", marginTop: 4 }}>{v}</div>
             </div>
           );
@@ -215,7 +215,7 @@ function RankingCard({ r, idx }: { r: typeof RANKING[0]; idx: number }) {
 
       <div style={{
         marginTop: 12, padding: "10px 12px",
-        background: isTop ? G.mint : G.bg, borderRadius: 10,
+        background: isTop ? G.sageSoft : G.bg, borderRadius: 10,
         fontSize: 11.5, lineHeight: 1.65,
         display: "flex", gap: 8, alignItems: "flex-start",
       }}>
@@ -229,8 +229,8 @@ function RankingCard({ r, idx }: { r: typeof RANKING[0]; idx: number }) {
       <Link href={`/jimusho/${r.id}`} style={{
         marginTop: 12, display: "flex", alignItems: "center", justifyContent: "space-between",
         padding: "11px 14px", borderRadius: 10,
-        background: isTop ? G.ink : "transparent",
-        color: isTop ? "#fff" : G.ink,
+        background: isTop ? G.sagePastel : "transparent",
+        color: G.ink,
         border: isTop ? "none" : `1.5px solid ${G.rule}`,
         fontSize: 12, fontWeight: 700, textDecoration: "none",
       }}>
@@ -627,7 +627,7 @@ export default function Home() {
                   <div style={{ display: "flex", gap: 5, alignItems: "center", flexWrap: "wrap" }}>
                     <span style={{
                       fontSize: 9.5, padding: "2px 7px", borderRadius: 99,
-                      background: G.mint, color: G.sageDeep, fontWeight: 700,
+                      background: G.sageSoft, color: G.sageDeep, fontWeight: 700,
                     }}>{r.style}</span>
                     <span style={{ fontSize: 12.5, fontWeight: 800 }}>{r.office}</span>
                   </div>
