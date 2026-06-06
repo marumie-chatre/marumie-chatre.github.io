@@ -47,8 +47,8 @@ const RANKING = [
     rank: 1,
     name: "フェアリーテイル",
     score: 84,
-    tags: ["ノンアダ専門", "身バレ対策◎", "清楚系向け"],
-    summary: "稼ぎより安心して長く続けたい・アダルト絶対NGの方",
+    tags: ["ノンアダ専門", "身バレ対策◎", "会話から見せ方までサポート"],
+    summary: "見た目を磨いて会話力も身に着けられるサポートを求めてる方",
     breakdown: { safe: 29, support: 20, beginner: 17, work: 12, earn: 6 },
   },
   {
@@ -57,7 +57,7 @@ const RANKING = [
     name: "ブライトグループ",
     score: 84,
     tags: ["老舗20年", "全国140店舗", "税理士サポート"],
-    summary: "副業バレ対策で安心して大手で始めたい方",
+    summary: "大手・老舗店のサポートを求めてる方。",
     breakdown: { safe: 25, support: 20, beginner: 18, work: 13, earn: 8 },
   },
   {
@@ -66,7 +66,7 @@ const RANKING = [
     name: "チャットスタイル",
     score: 81,
     tags: ["会話指導◎", "バーチャル対応"],
-    summary: "接客スキルを磨きながら稼げるようになりたい方",
+    summary: "安定したサポートを求める方。",
     breakdown: { safe: 23, support: 21, beginner: 17, work: 12, earn: 8 },
   },
 ];
@@ -82,10 +82,10 @@ const CONCERNS = [
 
 // データ：クイックナビ
 const QUICK_NAV = [
-  { href: "/jimusho", icon: "Trophy" as const,   label: "ランキング", sub: "11社を比較",  bg: G.sageSoft, color: G.sage },
-  { href: "/area",    icon: "Pin" as const,      label: "エリア",     sub: "全国対応",    bg: "#FCE0CC",  color: "#B36947" },
-  { href: "/style",   icon: "Home" as const,     label: "働き方",     sub: "在宅/通勤",   bg: "#FBEEC4",  color: "#A88830" },
-  { href: "/q",       icon: "Question" as const, label: "不安から",   sub: "Q&Aで探す",  bg: "#F5DBC9",  color: "#C97755" },
+  { href: "/jimusho", icon: "Trophy" as const,   label: "ランキングから探す",     bg: G.sageSoft, color: G.sage },
+  { href: "/area",    icon: "Pin" as const,      label: "一番近い事務所を探す",   bg: "#FCE0CC",  color: "#B36947" },
+  { href: "/style",   icon: "Home" as const,     label: "働き方から探す",         bg: "#FBEEC4",  color: "#A88830" },
+  { href: "/q",       icon: "Question" as const, label: "お悩みからさがす",       bg: "#F5DBC9",  color: "#C97755" },
 ];
 
 // データ：コラム3本
@@ -139,15 +139,20 @@ function RankingCard({ r, idx }: { r: typeof RANKING[0]; idx: number }) {
     }}>
       {isTop && (
         <div style={{
-          position: "absolute", top: -12, left: 14,
-          padding: "5px 11px 5px 9px", borderRadius: 99,
-          background: G.ink, color: "#fff",
-          fontSize: 10.5, fontWeight: 800, letterSpacing: 0.3,
-          display: "flex", alignItems: "center", gap: 5,
-          boxShadow: "0 4px 12px rgba(36,30,22,0.25)",
+          position: "absolute", top: -14, left: 0, right: 0,
+          display: "flex", justifyContent: "center", pointerEvents: "none",
         }}>
-          <Icon.Crown size={13} />
-          初心者に最もおすすめ
+          <div style={{
+            display: "inline-flex", alignItems: "center", gap: 8,
+            padding: "5px 14px", borderRadius: 99,
+            background: G.ink, color: "#fff",
+            fontSize: 11, fontWeight: 800, letterSpacing: 1,
+            boxShadow: "0 4px 12px rgba(36,30,22,0.25)",
+          }}>
+            <span style={{ opacity: 0.7, fontWeight: 400 }}>＼</span>
+            初心者に最もおすすめ
+            <span style={{ opacity: 0.7, fontWeight: 400 }}>／</span>
+          </div>
         </div>
       )}
 
@@ -273,60 +278,60 @@ export default function Home() {
   return (
     <main style={{ background: G.bg, color: G.ink, paddingBottom: 60 }}>
 
-      {/* ===== HERO 写真背景＋テキストオーバーレイ（かぶせ・顔アップ） ===== */}
+      {/* ===== HERO 写真背景＋テキストオーバーレイ（PC/SP 同レイアウト・中央寄せ） ===== */}
       <section className="top-hero-overlay-section">
         <Image
           src="/top-hero-photo.jpg"
           alt="まるみえチャトレ"
           fill
           priority
-          sizes="100vw"
+          sizes="(max-width:720px) 100vw, 720px"
         />
         <div className="top-hero-overlay-text">
-          <div className="top-hero-overlay-text-inner">
-            <div className="top-hero-overlay-text-content">
-              {/* badge */}
-              <div style={{
-                display: "inline-flex", alignItems: "center", gap: 6,
-                padding: "5px 10px 5px 6px", borderRadius: 999,
-                background: "#fff",
-                boxShadow: "0 2px 8px rgba(36,30,22,0.08)",
-                fontSize: 10.5, fontWeight: 700, color: G.ink,
-                maxWidth: "100%",
-              }}>
-                <span style={{
-                  width: 16, height: 16, borderRadius: "50%",
-                  background: G.sageDeep, color: "#fff",
-                  display: "inline-flex", alignItems: "center", justifyContent: "center",
-                  flexShrink: 0,
-                }}><Icon.Check size={10} /></span>
-                <span>編集部が11事務所を実地調査</span>
-              </div>
-
-              {/* h1 */}
-              <h1 style={{
-                margin: "14px 0 0",
-                fontSize: "clamp(20px, 5.8vw, 32px)",
-                lineHeight: 1.45,
-                fontWeight: 800,
-                letterSpacing: -0.5,
-                color: G.ink,
-              }}>
-                中身で選ぶ、<br />
-                チャトレ事務所の<br />口コミサイト。
-              </h1>
-
-              {/* sub */}
-              <p style={{
-                margin: "12px 0 0",
-                fontSize: "clamp(11px, 2.9vw, 13px)",
-                lineHeight: 1.85, color: G.ink,
-                fontWeight: 500,
-              }}>
-                初心者でも失敗しないために。<br />
-                良い点も気になる点も、<br />まるっと公開して
-              </p>
+          <div className="top-hero-overlay-text-content">
+            {/* badge */}
+            <div style={{
+              display: "inline-flex", alignItems: "center", gap: 6,
+              padding: "4px 10px 4px 6px", borderRadius: 999,
+              background: "#fff",
+              boxShadow: "0 2px 8px rgba(36,30,22,0.08)",
+              fontSize: "clamp(9.5px, 2.5vw, 11px)", fontWeight: 700, color: G.ink,
+              maxWidth: "100%",
+            }}>
+              <span style={{
+                width: 14, height: 14, borderRadius: "50%",
+                background: G.sageDeep, color: "#fff",
+                display: "inline-flex", alignItems: "center", justifyContent: "center",
+                flexShrink: 0,
+              }}><Icon.Check size={9} /></span>
+              <span>編集部が実地調査</span>
             </div>
+
+            {/* h1 - 「中身」「口コミ」を sageDeep で強調 */}
+            <h1 style={{
+              margin: "10px 0 0",
+              fontSize: "clamp(17px, 4.8vw, 28px)",
+              lineHeight: 1.5,
+              fontWeight: 800,
+              letterSpacing: -0.3,
+              color: G.ink,
+            }}>
+              <span style={{ color: G.sageDeep }}>中身</span>で選ぶ、<br />
+              チャトレ事務所の<br />
+              <span style={{ color: G.sageDeep }}>口コミ</span>サイト。
+            </h1>
+
+            {/* sub */}
+            <p style={{
+              margin: "10px 0 0",
+              fontSize: "clamp(10px, 2.5vw, 12px)",
+              lineHeight: 1.8, color: G.ink,
+              fontWeight: 500,
+            }}>
+              初心者でも失敗しないために。<br />
+              良い点も気になる点も、<br />
+              まるっと公開して
+            </p>
           </div>
         </div>
       </section>
@@ -355,7 +360,7 @@ export default function Home() {
             border: `1.5px solid ${G.ruleStrong}`, borderRadius: 14,
             fontSize: 13, fontWeight: 700, textAlign: "center",
             textDecoration: "none",
-          }}>11事務所のランキング</Link>
+          }}>事務所のランキングをみる</Link>
         </div>
       </section>
 
@@ -396,22 +401,21 @@ export default function Home() {
                 <Link href={it.href} key={it.href} style={{
                   background: G.paper, borderRadius: 16, padding: 14,
                   boxShadow: "0 2px 10px rgba(51,45,34,0.04)",
-                  display: "flex", alignItems: "center", gap: 12,
+                  display: "flex", alignItems: "center", gap: 10,
                   textDecoration: "none", color: G.ink,
                 }}>
                   <div style={{
-                    width: 44, height: 44, borderRadius: 12,
+                    width: 40, height: 40, borderRadius: 11,
                     background: it.bg, color: it.color,
                     display: "flex", alignItems: "center", justifyContent: "center",
                     flexShrink: 0,
                   }}>
-                    <I size={22} />
+                    <I size={20} />
                   </div>
-                  <div style={{ flex: 1, minWidth: 0 }}>
-                    <div style={{ fontSize: 13.5, fontWeight: 800 }}>{it.label}</div>
-                    <div style={{ fontSize: 10.5, color: G.inkSoft, marginTop: 2 }}>{it.sub}</div>
+                  <div style={{ flex: 1, minWidth: 0, fontSize: 12.5, fontWeight: 800, lineHeight: 1.35 }}>
+                    {it.label}
                   </div>
-                  <Icon.Arrow size={14} />
+                  <Icon.Arrow size={12} />
                 </Link>
               );
             })}
@@ -426,6 +430,14 @@ export default function Home() {
           title="編集部おすすめ事務所"
           note="広告費ではなく、公開している評価基準で順位を決めています。"
         />
+        <Link href="/hyoka-kijun" style={{
+          marginTop: 8, display: "inline-flex", alignItems: "center", gap: 4,
+          fontSize: 12, fontWeight: 700, color: G.ink,
+          borderBottom: `1px solid ${G.ink}`, paddingBottom: 1,
+          textDecoration: "none",
+        }}>
+          → 先に評価基準を確認する
+        </Link>
         <div style={{ marginTop: 18, display: "flex", flexDirection: "column", gap: 14 }}>
           {RANKING.map((r, i) => (
             <RankingCard key={r.id} r={r} idx={i} />
@@ -439,7 +451,7 @@ export default function Home() {
           display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
           textDecoration: "none",
         }}>
-          全11社を比較する
+          全部比較する
           <Icon.Arrow size={14} />
         </Link>
       </section>
@@ -448,8 +460,8 @@ export default function Home() {
       <section style={{ padding: "40px 20px 0", maxWidth: 760, margin: "0 auto" }}>
         <SectionHead
           kicker="EVALUATION"
-          title="5つの基準で公平に"
-          note="配点の重みをすべて公開しています。"
+          title="5つの基準で丁寧に採点"
+          note="5つの評価軸で事務所を丁寧に採点しています。"
         />
         <div style={{
           marginTop: 18, background: G.paper, borderRadius: 20,
@@ -515,7 +527,7 @@ export default function Home() {
       <section style={{ padding: "40px 20px 0", maxWidth: 760, margin: "0 auto" }}>
         <SectionHead
           kicker="WORRIES"
-          title="不安から、探す。"
+          title="お悩みから、探す。"
           note="始める前の心配ごとに、まっすぐ答える記事を用意しています。"
         />
         <div style={{ marginTop: 16, display: "flex", flexDirection: "column", gap: 8 }}>
@@ -557,8 +569,8 @@ export default function Home() {
       <section style={{ padding: "40px 20px 0", maxWidth: 760, margin: "0 auto" }}>
         <SectionHead
           kicker="REVIEWS"
-          title="リアルな声を、両面から"
-          note="良かった点も、気になった点も。"
+          title="リアルな声を集めました。"
+          note="良かった点も、気になった点もどちらも公開。"
         />
         <div style={{ marginTop: 16, display: "flex", flexDirection: "column", gap: 12 }}>
           {topReviews.map((r) => (
@@ -632,8 +644,8 @@ export default function Home() {
       <section style={{ padding: "40px 20px 0", maxWidth: 760, margin: "0 auto" }}>
         <SectionHead
           kicker="COLUMN"
-          title="読み物で、もう一歩深く。"
-          note="編集部が書く、応募前後の不安に答える記事。"
+          title="もう一歩ふかく答えていきます。"
+          note="編集部が書く、応募前後の不安を解決する記事。"
         />
         <div style={{ marginTop: 16, display: "flex", flexDirection: "column", gap: 10 }}>
           {COLUMNS_PREVIEW.map(c => (
