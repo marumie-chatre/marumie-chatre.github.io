@@ -101,6 +101,34 @@ const COLUMNS_PREVIEW = [
 function SectionHead({ kicker, title, note, image }: {
   kicker: string; title: string; note?: string; image?: string;
 }) {
+  // 画像版：画面幅いっぱい + 上下文字削除 + 下端グラデで馴染ませる
+  if (image) {
+    return (
+      <div style={{
+        position: "relative",
+        width: "100vw",
+        marginLeft: "calc(50% - 50vw)",
+        marginRight: "calc(50% - 50vw)",
+        lineHeight: 0,
+      }}>
+        <Image
+          src={image}
+          alt={title}
+          width={2172}
+          height={560}
+          sizes="100vw"
+          style={{
+            width: "100%",
+            height: "auto",
+            display: "block",
+            maskImage: "linear-gradient(to bottom, #000 55%, transparent 100%)",
+            WebkitMaskImage: "linear-gradient(to bottom, #000 55%, transparent 100%)",
+          }}
+        />
+      </div>
+    );
+  }
+  // テキスト版（既存）
   return (
     <div>
       <div style={{
@@ -110,28 +138,10 @@ function SectionHead({ kicker, title, note, image }: {
         <span style={{ width: 18, height: 1.5, background: G.sage, borderRadius: 1 }} />
         {kicker}
       </div>
-      {image ? (
-        <div style={{ margin: "10px 0 0", lineHeight: 0 }}>
-          <Image
-            src={image}
-            alt={title}
-            width={2172}
-            height={560}
-            sizes="(max-width:720px) 70vw, 360px"
-            style={{
-              width: "100%",
-              maxWidth: 360,
-              height: "auto",
-              display: "block",
-            }}
-          />
-        </div>
-      ) : (
-        <h2 style={{
-          margin: "8px 0 0", fontSize: 22, lineHeight: 1.45,
-          fontWeight: 700, letterSpacing: -0.2, color: G.ink,
-        }}>{title}</h2>
-      )}
+      <h2 style={{
+        margin: "8px 0 0", fontSize: 22, lineHeight: 1.45,
+        fontWeight: 700, letterSpacing: -0.2, color: G.ink,
+      }}>{title}</h2>
       {note && (
         <p style={{ margin: "10px 0 0", fontSize: 12, color: G.inkSoft, lineHeight: 1.7 }}>{note}</p>
       )}
