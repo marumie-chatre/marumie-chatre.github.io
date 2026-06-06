@@ -463,7 +463,7 @@ export default function Home() {
         <div className="top-find-inner">
           <SectionHead kicker="HOW TO FIND" title="あなたに合う探し方" image="/top-title-find.png" />
           <div style={{
-            marginTop: 16, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10,
+            marginTop: 0, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10,
           }}>
             {QUICK_NAV.map((it) => {
               const I = Icon[it.icon];
@@ -500,14 +500,16 @@ export default function Home() {
           note="広告費ではなく、公開している評価基準で順位を決めています。"
           image="/top-title-ranking.png"
         />
-        <Link href="/hyoka-kijun" style={{
-          marginTop: 8, display: "inline-flex", alignItems: "center", gap: 4,
-          fontSize: 12, fontWeight: 700, color: G.ink,
-          borderBottom: `1px solid ${G.ink}`, paddingBottom: 1,
-          textDecoration: "none",
-        }}>
-          → 先に評価基準を確認する
-        </Link>
+        <div style={{ marginTop: 8, textAlign: "right" }}>
+          <Link href="/hyoka-kijun" style={{
+            display: "inline-flex", alignItems: "center", gap: 4,
+            fontSize: 12, fontWeight: 700, color: G.ink,
+            borderBottom: `1px solid ${G.ink}`, paddingBottom: 1,
+            textDecoration: "none",
+          }}>
+            → 先に評価基準を確認する
+          </Link>
+        </div>
         <div style={{ marginTop: 18, display: "flex", flexDirection: "column", gap: 14 }}>
           {RANKING.map((r, i) => (
             <RankingCard key={r.id} r={r} idx={i} />
@@ -535,7 +537,7 @@ export default function Home() {
           image="/top-title-evaluation.png"
         />
         <div style={{
-          marginTop: 18, background: G.paper, borderRadius: 20,
+          marginTop: 0, background: G.paper, borderRadius: 20,
           padding: 18, boxShadow: "0 2px 12px rgba(51,45,34,0.05)",
         }}>
           <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
@@ -602,7 +604,7 @@ export default function Home() {
           note="始める前の心配ごとに、まっすぐ答える記事を用意しています。"
           image="/top-title-worries.png"
         />
-        <div style={{ marginTop: 16, display: "flex", flexDirection: "column", gap: 8 }}>
+        <div style={{ marginTop: 0, display: "flex", flexDirection: "column", gap: 8 }}>
           {CONCERNS.map(c => {
             const I = Icon[c.icon];
             return (
@@ -645,7 +647,7 @@ export default function Home() {
           note="良かった点も、気になった点もどちらも公開。"
           image="/top-title-reviews.png"
         />
-        <div style={{ marginTop: 16, display: "flex", flexDirection: "column", gap: 12 }}>
+        <div style={{ marginTop: 0, display: "flex", flexDirection: "column", gap: 12 }}>
           {topReviews.map((r) => (
             <div key={r.id} style={{
               background: G.paper, borderRadius: 16, padding: 16,
@@ -721,7 +723,7 @@ export default function Home() {
           note="編集部が書く、応募前後の不安を解決する記事。"
           image="/top-title-column.png"
         />
-        <div style={{ marginTop: 16, display: "flex", flexDirection: "column", gap: 10 }}>
+        <div style={{ marginTop: 0, display: "flex", flexDirection: "column", gap: 10 }}>
           {COLUMNS_PREVIEW.map(c => (
             <Link href={`/column/${c.slug}`} key={c.slug} style={{
               display: "flex", gap: 12,
