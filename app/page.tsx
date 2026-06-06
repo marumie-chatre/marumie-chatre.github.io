@@ -170,8 +170,8 @@ function RankingCard({ r, idx }: { r: typeof RANKING[0]; idx: number }) {
     }}>
       {isTop && (
         <div style={{
-          position: "absolute", top: -14, left: 0, right: 0,
-          display: "flex", justifyContent: "center", pointerEvents: "none",
+          position: "absolute", top: -14, left: 16,
+          display: "flex", justifyContent: "flex-start", pointerEvents: "none",
         }}>
           <div style={{
             display: "inline-flex", alignItems: "center", gap: 8,
