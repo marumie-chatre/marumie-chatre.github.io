@@ -297,7 +297,7 @@ function DonutChart() {
 // ========== メインコンポーネント ==========
 
 export default function Home() {
-  const topReviews = reviews.slice(0, 2);
+  const topReviews = reviews.filter(r => !r.hideInInitial).slice(0, 2);
 
   return (
     <main style={{ background: G.bg, color: G.ink, paddingBottom: 60 }}>

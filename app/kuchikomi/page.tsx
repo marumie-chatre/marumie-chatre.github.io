@@ -45,7 +45,7 @@ export default function KuchikomiPage() {
           <p className="eyebrow">REVIEWS</p>
           <h2 className="sec-h" style={{marginBottom:"8px"}}>良いことだけじゃない、リアルな声を読んでみてください。</h2>
           <p className="sec-sub">実際に働いた方の体験談が載っています。</p>
-          <OfficeReviews reviews={reviews} officeName="まるみえチャトレ" />
+          <OfficeReviews reviews={reviews} officeName="まるみえチャトレ" excludeHiddenInInitial />
           <div style={{textAlign:"center", marginTop:"32px"}}>
             <Link href="/jimusho" className="btn-sub">
               事務所ごとの口コミを見る →
