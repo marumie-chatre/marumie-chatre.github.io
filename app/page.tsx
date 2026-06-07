@@ -528,10 +528,8 @@ export default function Home() {
           まるみえチャトレは、そんな人が<br />
           <span style={{
             color: "#3A2A20",
-            textDecoration: "underline",
-            textDecorationColor: "#DFA59A",
-            textDecorationThickness: 2,
-            textUnderlineOffset: 4,
+            backgroundImage: "linear-gradient(transparent 62%, rgba(223,165,154,0.25) 62%)",
+            padding: "0 3px",
           }}>お店の雰囲気やサポート、口コミ、報酬</span>
           のことまで<br />
           <span style={{
