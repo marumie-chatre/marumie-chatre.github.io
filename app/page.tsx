@@ -601,7 +601,7 @@ export default function Home() {
           kicker="WORRIES"
           title="お悩みから、探す。"
           note="始める前の心配ごとに、まっすぐ答える記事を用意しています。"
-          image="/top-title-worries.png"
+          image="/top-title-reviews.png"
         />
         <div style={{ marginTop: 0, display: "flex", flexDirection: "column", gap: 8 }}>
           {CONCERNS.map(c => {
@@ -644,7 +644,7 @@ export default function Home() {
           kicker="REVIEWS"
           title="リアルな声を集めました。"
           note="良かった点も、気になった点もどちらも公開。"
-          image="/top-title-reviews.png"
+          image="/top-title-worries.png"
         />
         <div style={{ marginTop: 0, display: "flex", flexDirection: "column", gap: 12 }}>
           {topReviews.map((r) => (
@@ -652,33 +652,39 @@ export default function Home() {
               background: G.paper, borderRadius: 16, padding: 16,
               boxShadow: "0 2px 10px rgba(51,45,34,0.04)",
             }}>
-              <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 10 }}>
-                <div style={{
-                  width: 38, height: 38, borderRadius: "50%",
-                  background: G.sageSoft, color: G.sageDeep,
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  fontSize: 14, fontWeight: 700, flexShrink: 0,
-                }}>{r.office.slice(0, 1)}</div>
+              {/* 顔アイコン（左上 64px）＋右側 3段（星／タグ・事務所名／時期） */}
+              <div style={{ display: "flex", gap: 14, alignItems: "flex-start", marginBottom: 12 }}>
+                {/* LEFT: 顔アイコン大 */}
+                <Image
+                  src={`/star-${Math.min(5, Math.max(1, Math.round(r.rating)))}.png`}
+                  alt={`評価 ${Math.round(r.rating)}/5`}
+                  width={64}
+                  height={64}
+                  style={{ width: 64, height: 64, borderRadius: "50%", display: "block", flexShrink: 0 }}
+                />
+                {/* RIGHT: stacked */}
                 <div style={{ flex: 1, minWidth: 0 }}>
-                  <div style={{ display: "flex", gap: 5, alignItems: "center", flexWrap: "wrap" }}>
+                  {/* 星 ★ */}
+                  <div style={{ display: "flex", gap: 1.5 }}>
+                    {[1, 2, 3, 4, 5].map(s => (
+                      <Icon.Star key={s} size={12} fill={s <= r.rating ? G.accent : G.cream} />
+                    ))}
+                  </div>
+                  {/* タグ + 事務所名 */}
+                  <div style={{
+                    display: "flex", gap: 5, alignItems: "center", flexWrap: "wrap",
+                    marginTop: 5,
+                  }}>
                     <span style={{
                       fontSize: 9.5, padding: "2px 7px", borderRadius: 99,
                       background: G.sageSoft, color: G.sageDeep, fontWeight: 700,
                     }}>{r.style}</span>
-                    <span style={{ fontSize: 12.5, fontWeight: 800 }}>{r.office}</span>
+                    <span style={{ fontSize: 13, fontWeight: 800 }}>{r.office}</span>
                   </div>
-                  <div style={{ fontSize: 10, color: G.inkSoft, marginTop: 3 }}>
+                  {/* 時期 */}
+                  <div style={{ fontSize: 10.5, color: G.inkSoft, marginTop: 4 }}>
                     {r.period}
                   </div>
-                </div>
-                <div style={{ display: "flex", alignItems: "center", flexShrink: 0 }}>
-                  <Image
-                    src={`/star-${Math.min(5, Math.max(1, Math.round(r.rating)))}.png`}
-                    alt={`評価 ${Math.round(r.rating)}/5`}
-                    width={36}
-                    height={36}
-                    style={{ width: 36, height: 36, borderRadius: "50%", display: "block" }}
-                  />
                 </div>
               </div>
 
