@@ -13,7 +13,7 @@ type Review = {
   recommend: string;
 };
 
-function Stars({ rating, size = 40 }: { rating: number; size?: number }) {
+function FaceIcon({ rating, size = 64 }: { rating: number; size?: number }) {
   // 1〜5 の範囲にクランプ
   const clamped = Math.min(5, Math.max(1, Math.round(rating)));
   return (
@@ -31,6 +31,19 @@ function Stars({ rating, size = 40 }: { rating: number; size?: number }) {
   );
 }
 
+function StarRow({ rating, size = 16 }: { rating: number; size?: number }) {
+  return (
+    <div style={{ display: "flex", gap: "2px" }}>
+      {[1,2,3,4,5].map(i => (
+        <span key={i} style={{
+          color: i <= rating ? "#f5a623" : "#ddd",
+          fontSize: `${size}px`, lineHeight: 1,
+        }}>★</span>
+      ))}
+    </div>
+  );
+}
+
 function ReviewCard({ review }: { review: Review }) {
   const [expanded, setExpanded] = useState(false);
   const maxLen = 60;
@@ -44,19 +57,33 @@ function ReviewCard({ review }: { review: Review }) {
       borderRadius: "var(--radius)", padding: "18px 20px",
       boxShadow: "var(--shadow-sm)", display: "flex", flexDirection: "column",
     }}>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: "6px" }}>
-        <div style={{ display: "flex", gap: "6px", alignItems: "center", flexWrap: "wrap" }}>
-          <span style={{ fontSize: "12px", fontWeight: 700, color: "#fff", background: "var(--green-dark)", borderRadius: "100px", padding: "3px 12px" }}>
-            {review.office}
-          </span>
-          <span style={{ fontSize: "11px", color: "var(--text-muted)", background: "var(--cream)", border: "1px solid var(--border)", borderRadius: "100px", padding: "2px 8px" }}>
-            {review.style}
-          </span>
+      {/* 顔アイコン（左上 64px）＋右側 3段（星／タグ・事務所名／時期） */}
+      <div style={{ display: "flex", gap: "14px", alignItems: "flex-start", marginBottom: "12px" }}>
+        <FaceIcon rating={review.rating} size={64} />
+        <div style={{ flex: 1, minWidth: 0 }}>
+          {/* 星 ★ */}
+          <StarRow rating={review.rating} size={16} />
+          {/* タグ + 事務所名 */}
+          <div style={{
+            display: "flex", gap: "6px", alignItems: "center", flexWrap: "wrap",
+            marginTop: "6px",
+          }}>
+            <span style={{
+              fontSize: "10px", padding: "2px 8px", borderRadius: "100px",
+              background: "var(--cream)", border: "1px solid var(--border)",
+              color: "var(--text-muted)", fontWeight: 700,
+            }}>{review.style}</span>
+            <span style={{ fontSize: "13px", fontWeight: 800, color: "var(--text)" }}>
+              {review.office}
+            </span>
+          </div>
+          {/* 時期 */}
+          <div style={{ fontSize: "11px", color: "var(--text-light)", marginTop: "4px" }}>
+            {review.period}
+          </div>
         </div>
-        <span style={{ fontSize: "11px", color: "var(--text-light)" }}>{review.period}</span>
       </div>
-      <Stars rating={review.rating} />
-      <div style={{ display: "flex", flexDirection: "column", gap: "8px", marginTop: "8px" }}>
+      <div style={{ display: "flex", flexDirection: "column", gap: "8px", marginTop: "0" }}>
         <div>
           <div style={{ fontSize: "11px", fontWeight: 700, color: "var(--green)", marginBottom: "3px" }}>良かったこと</div>
           <p style={{ fontSize: "13px", color: "var(--text-mid)", lineHeight: "1.75", margin: 0 }}>{goodText}</p>
@@ -120,13 +147,18 @@ export default function OfficeReviews({
         background: "var(--cream)", padding: "14px 18px",
         borderRadius: "var(--radius)", marginBottom: "20px",
       }}>
-        <Stars rating={Math.round(average)} size={56} />
-        <span style={{ fontSize: "20px", fontWeight: 700, color: "var(--text)" }}>
-          {avgDisplay}
-        </span>
-        <span style={{ fontSize: "12px", color: "var(--text-light)" }}>
-          / 5.0（{officeName}の口コミ {reviews.length}件の平均）
-        </span>
+        <FaceIcon rating={Math.round(average)} size={56} />
+        <div>
+          <StarRow rating={Math.round(average)} size={16} />
+          <div style={{ marginTop: 2, display: "flex", alignItems: "baseline", gap: 6 }}>
+            <span style={{ fontSize: "20px", fontWeight: 700, color: "var(--text)" }}>
+              {avgDisplay}
+            </span>
+            <span style={{ fontSize: "12px", color: "var(--text-light)" }}>
+              / 5.0（{officeName}の口コミ {reviews.length}件の平均）
+            </span>
+          </div>
+        </div>
       </div>
 
       <div className="review-grid" style={{ marginBottom: "20px" }}>
