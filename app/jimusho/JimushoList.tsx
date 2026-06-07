@@ -47,7 +47,7 @@ const OFFICES: Office[] = [
       "会話や見せ方のコツまで丁寧に教えてほしい方",
       "いきなり稼ぐより、まずは安心して慣れていきたい方",
     ],
-    scores: { total: 84, safety: 29, support: 20, beginner: 17, work: 12, earning: 6 },
+    scores: { total: 88, safety: 29, support: 20, beginner: 17, work: 14, earning: 8 },
   },
   {
     defaultRank: 2, name: "ブライトグループ", slug: "bright-group", logo: "/logo-bright-group.png",
@@ -60,17 +60,7 @@ const OFFICES: Office[] = [
     scores: { total: 84, safety: 25, support: 20, beginner: 18, work: 13, earning: 8 },
   },
   {
-    defaultRank: 3, name: "アットグループ", slug: "at-group", logo: "/logo-at-group.png",
-    tags: ["カフェ風空間", "店舗配信向け", "全国展開"],
-    forYou: [
-      "カフェのような落ち着いた空間で配信したい方",
-      "在宅よりも、店舗に通ってお仕事したい方",
-      "居心地のよさや通いやすさを重視したい方",
-    ],
-    scores: { total: 80, safety: 22, support: 21, beginner: 16, work: 13, earning: 8 },
-  },
-  {
-    defaultRank: 4, name: "チャットスタイル", slug: "chatstyle", logo: "/logo-chatstyle.png",
+    defaultRank: 3, name: "チャットスタイル", slug: "chatstyle", logo: "/logo-chatstyle.png",
     tags: ["バーチャル対応", "現役スタッフ在籍", "都市部中心"],
     forYou: [
       "バーチャル配信も気になる方",
@@ -80,6 +70,16 @@ const OFFICES: Office[] = [
     scores: { total: 81, safety: 23, support: 21, beginner: 17, work: 12, earning: 8 },
   },
   {
+    defaultRank: 4, name: "アットグループ", slug: "at-group", logo: "/logo-at-group.png",
+    tags: ["カフェ風空間", "店舗配信向け", "全国展開"],
+    forYou: [
+      "カフェのような落ち着いた空間で配信したい方",
+      "在宅よりも、店舗に通ってお仕事したい方",
+      "居心地のよさや通いやすさを重視したい方",
+    ],
+    scores: { total: 79, safety: 22, support: 21, beginner: 16, work: 13, earning: 7 },
+  },
+  {
     defaultRank: 5, name: "フレイバーグループ", slug: "flavor-group", logo: "/logo-flavor-group.png",
     tags: ["全国展開", "老舗運営", "固定給制度あり"],
     forYou: [
@@ -87,7 +87,7 @@ const OFFICES: Office[] = [
       "報酬の安定感も重視したい方",
       "複数の働き方を比べて選びたい方",
     ],
-    scores: { total: 80, safety: 23, support: 20, beginner: 17, work: 12, earning: 8 },
+    scores: { total: 79, safety: 23, support: 20, beginner: 17, work: 12, earning: 7 },
   },
   {
     defaultRank: 6, name: "アリュール", slug: "allure", logo: "/logo-allure.png",
@@ -97,7 +97,7 @@ const OFFICES: Office[] = [
       "収入面を重視して比較したい方",
       "自分に合う配信スタイルを相談しながら決めたい方",
     ],
-    scores: { total: 76, safety: 24, support: 18, beginner: 13, work: 12, earning: 9 },
+    scores: { total: 74, safety: 24, support: 18, beginner: 13, work: 12, earning: 7 },
   },
   {
     defaultRank: 7, name: "NMRグループ", slug: "nmr-group", logo: "/logo-nmr-group.png",
@@ -117,7 +117,7 @@ const OFFICES: Office[] = [
       "新宿・上野エリアで通える店舗を探している方",
       "時給保証のある事務所も比較したい方",
     ],
-    scores: { total: 71, safety: 22, support: 17, beginner: 14, work: 11, earning: 7 },
+    scores: { total: 70, safety: 22, support: 17, beginner: 14, work: 11, earning: 6 },
   },
   {
     defaultRank: 9, name: "アスタリスク", slug: "asterisk", logo: "/logo-asterisk.png",
@@ -127,7 +127,7 @@ const OFFICES: Office[] = [
       "高収入を目指せる事務所も比較したい方",
       "稼げるならアダルトも選択肢に入れれる方",
     ],
-    scores: { total: 71, safety: 25, support: 18, beginner: 9, work: 10, earning: 9 },
+    scores: { total: 68, safety: 25, support: 18, beginner: 9, work: 9, earning: 7 },
   },
   {
     defaultRank: 10, name: "ポケットワーク", slug: "pocket-work", logo: "/logo-pocket-work.png",
@@ -137,7 +137,7 @@ const OFFICES: Office[] = [
       "在宅サポートを重視したい方に",
       "バーチャルジャンルも検討している方",
     ],
-    scores: { total: 71, safety: 24, support: 12, beginner: 13, work: 13, earning: 9 },
+    scores: { total: 68, safety: 24, support: 12, beginner: 13, work: 13, earning: 6 },
   },
   {
     defaultRank: 11, name: "ライバーサポートグループ", slug: "liver-support", logo: "/logo-liver-support.png",
@@ -147,7 +147,7 @@ const OFFICES: Office[] = [
       "運営歴のある事務所を比較したい方",
       "通えるエリアの選択肢を広く見たい方",
     ],
-    scores: { total: 69, safety: 21, support: 16, beginner: 14, work: 11, earning: 7 },
+    scores: { total: 68, safety: 21, support: 16, beginner: 14, work: 11, earning: 6 },
   },
 ];
 

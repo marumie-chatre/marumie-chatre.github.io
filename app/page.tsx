@@ -47,10 +47,10 @@ const RANKING = [
     id: "ft",
     rank: 1,
     name: "フェアリーテイル",
-    score: 84,
+    score: 88,
     tags: ["ノンアダ専門", "身バレ対策◎", "会話から見せ方までサポート"],
     summary: "見た目を磨いて会話力も身に着けられるサポートを求めてる方",
-    breakdown: { safe: 29, support: 20, beginner: 17, work: 12, earn: 6 },
+    breakdown: { safe: 29, support: 20, beginner: 17, work: 14, earn: 8 },
   },
   {
     id: "bright-group",
