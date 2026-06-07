@@ -666,7 +666,7 @@ export default function Home() {
           kicker="WORRIES"
           title="お悩みから、探す。"
           note="始める前の心配ごとに、まっすぐ答える記事を用意しています。"
-          image="/top-title-column.png"
+          image="/top-title-reviews.png"
         />
 
         {/* チップ帯（/q ハブと同意匠・全てが /q へのリンク） */}
