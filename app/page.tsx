@@ -499,27 +499,56 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== ABOUT 紹介文＋プロフィールリンク ===== */}
-      <section style={{ padding: "32px 20px 0", maxWidth: 760, margin: "0 auto" }}>
+      {/* ===== ABOUT 紹介文＋プロフィールリンク（女性誌風・上品な文字装飾） ===== */}
+      <section style={{ padding: "36px 20px 0", maxWidth: 760, margin: "0 auto" }}>
+        {/* 1行目 */}
         <p style={{
-          margin: 0, fontSize: 13, lineHeight: 2.05, color: G.ink, textAlign: "center",
+          margin: 0,
+          fontSize: 13.5, lineHeight: 2.1, color: "#3A2A20",
+          textAlign: "center", fontWeight: 400, letterSpacing: 0.2,
         }}>
-          チャットレディを始めてみたい。<br />
-          でも、どのお店を選べばいいのか分からない。
+          チャットレディを始めてみたい。
         </p>
+        {/* 2行目：「どのお店を選べばいいのか」を緑強調 */}
         <p style={{
-          margin: "18px 0 0", fontSize: 12.5, lineHeight: 2, color: G.ink, textAlign: "center",
+          margin: "16px 0 0",
+          fontSize: 13.5, lineHeight: 2.1, color: "#3A2A20",
+          textAlign: "center", letterSpacing: 0.2,
+        }}>
+          でも、
+          <span style={{ color: "#6F9B5E", fontWeight: 500 }}>どのお店を選べばいいのか</span>
+          分からない。
+        </p>
+        {/* 3段落：複数の強調＋「中身を見て選べる」がメイン */}
+        <p style={{
+          margin: "26px 0 0",
+          fontSize: 13.5, lineHeight: 2.1, color: "#3A2A20",
+          textAlign: "center", letterSpacing: 0.2,
         }}>
           まるみえチャトレは、そんな人が<br />
-          お店の雰囲気やサポート、口コミ、報酬のことまで<br />
-          中身を見て選べるように作った情報サイトです。
+          <span style={{ color: "#6F9B5E", fontWeight: 500 }}>お店の雰囲気</span>
+          や
+          <span style={{ color: "#6F9B5E", fontWeight: 500 }}>サポート</span>
+          、
+          <span style={{ color: "#DFA59A", fontWeight: 500 }}>口コミ</span>
+          、
+          <span style={{ color: "#6F9B5E", fontWeight: 500 }}>報酬</span>
+          のことまで<br />
+          <span style={{
+            color: "#6F9B5E",
+            fontWeight: 600,
+            backgroundImage: "linear-gradient(transparent 62%, rgba(111,155,94,0.18) 62%)",
+            padding: "0 3px",
+          }}>中身を見て選べる</span>
+          ように作った情報サイトです。
         </p>
-        <div style={{ marginTop: 22, textAlign: "center" }}>
+        {/* プロフィールリンク */}
+        <div style={{ marginTop: 26, textAlign: "center" }}>
           <Link href="/profile" style={{
             display: "inline-flex", alignItems: "center", gap: 6,
-            fontSize: 12.5, fontWeight: 700, color: "#5C3D1F",
-            borderBottom: "1px solid #5C3D1F", paddingBottom: 2,
-            textDecoration: "none",
+            fontSize: 12.5, fontWeight: 600, color: "#3A2A20",
+            borderBottom: "1px solid rgba(58,42,32,0.35)", paddingBottom: 2,
+            textDecoration: "none", letterSpacing: 0.3,
           }}>
             このサイトを作った人
             <Icon.Arrow size={12} />
