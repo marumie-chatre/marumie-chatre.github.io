@@ -745,15 +745,9 @@ export default function Home() {
                     }}>{r.style}</span>
                     <span style={{ fontSize: 13, fontWeight: 800 }}>{r.office}</span>
                   </div>
-                  {/* 入店日 + 投稿日時 */}
-                  <div style={{
-                    fontSize: 10, color: G.inkSoft, marginTop: 4,
-                    display: "flex", gap: 8, flexWrap: "wrap",
-                  }}>
-                    <span>入店：{r.period}</span>
-                    {r.submittedAt && (
-                      <span style={{ opacity: 0.75 }}>投稿：{r.submittedAt}</span>
-                    )}
+                  {/* 入店日 */}
+                  <div style={{ fontSize: 10.5, color: G.inkSoft, marginTop: 4 }}>
+                    入店：{r.period}
                   </div>
                 </div>
               </div>
@@ -778,6 +772,15 @@ export default function Home() {
                 </div>
                 {r.bad}
               </div>
+              {/* 投稿日時：右下 */}
+              {r.submittedAt && (
+                <div style={{
+                  marginTop: 10, fontSize: 10, color: G.inkSoft,
+                  textAlign: "right", opacity: 0.85,
+                }}>
+                  投稿：{r.submittedAt}
+                </div>
+              )}
             </div>
           ))}
         </div>
