@@ -78,15 +78,9 @@ function ReviewCard({ review }: { review: Review }) {
               {review.office}
             </span>
           </div>
-          {/* 入店日 + 投稿日時 */}
-          <div style={{
-            fontSize: "10.5px", color: "var(--text-light)", marginTop: "4px",
-            display: "flex", gap: "10px", flexWrap: "wrap",
-          }}>
-            <span>入店：{review.period}</span>
-            {review.submittedAt && (
-              <span style={{ opacity: 0.75 }}>投稿：{review.submittedAt}</span>
-            )}
+          {/* 入店日 */}
+          <div style={{ fontSize: "11px", color: "var(--text-light)", marginTop: "4px" }}>
+            入店：{review.period}
           </div>
         </div>
       </div>
@@ -113,6 +107,18 @@ function ReviewCard({ review }: { review: Review }) {
         <div style={{ background: "var(--cream)", borderRadius: "8px", padding: "8px 12px", marginTop: "8px" }}>
           <span style={{ fontSize: "11px", fontWeight: 700, color: "var(--text-muted)" }}>向いている人：</span>
           <span style={{ fontSize: "12px", color: "var(--text-mid)" }}>{review.recommend}</span>
+        </div>
+      )}
+      {/* 投稿日時：右下 */}
+      {review.submittedAt && (
+        <div style={{
+          marginTop: "10px",
+          fontSize: "10.5px",
+          color: "var(--text-light)",
+          textAlign: "right",
+          opacity: 0.85,
+        }}>
+          投稿：{review.submittedAt}
         </div>
       )}
     </div>
