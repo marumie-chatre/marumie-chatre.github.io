@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Icon } from "../Icon";
 
 export const metadata = {
@@ -25,67 +26,57 @@ const G = {
   rule: "rgba(36,30,22,0.10)",
 };
 
-// 5軸詳細
-type AxisIconName = "Shield" | "HeartHand" | "Sprout" | "Briefcase" | "Coin";
-
-const AXIS_DETAIL: {
-  id: string;
-  label: string;
-  max: number;
-  color: string;
-  iconName: AxisIconName;
-  sub: string;
-  items: { l: string; pt: number }[];
-}[] = [
+// 5軸詳細（画像 + 説明 + 採点項目）
+const AXIS_DETAIL = [
   {
-    id: "safety", label: "安全性", max: 30, color: G.sageDeep,
-    iconName: "Shield",
-    sub: "身バレ対策・運営情報・アダルト強要の有無",
-    items: [
-      { l: "身バレ対策の質", pt: 12 },
-      { l: "運営情報の公開度", pt: 10 },
-      { l: "アダルト強要の有無", pt: 8 },
-    ],
+    id: "safety",
+    n: "01",
+    label: "安全性",
+    max: 30,
+    color: G.sageDeep,
+    image: "/eval-axis-1-safety.png",
+    desc: "お仕事を続けるうえで一番大事な要素です。\n身バレ対策や無理な強要がないことを重視して採点しています。",
+    items: ["身バレ対策", "アダルト強要の有無", "プライバシー保護の対応"],
   },
   {
-    id: "support", label: "サポート", max: 25, color: G.sage,
-    iconName: "HeartHand",
-    sub: "研修・相談体制・スタッフ対応",
-    items: [
-      { l: "研修・マニュアル", pt: 10 },
-      { l: "相談しやすさ", pt: 8 },
-      { l: "スタッフ常駐の体制", pt: 7 },
-    ],
+    id: "support",
+    n: "02",
+    label: "サポート",
+    max: 25,
+    color: G.sage,
+    image: "/eval-axis-2-support.png",
+    desc: "事務所の雰囲気や技術を身に着けるスピードはスタッフの対応で大きく変わります。\n悩みや成長によりそう体制があるか採点しています。",
+    items: ["サポートやマニュアルの充実度", "スタッフに相談をしやすいか", "スタッフが常駐しているか"],
   },
   {
-    id: "beginner", label: "初心者向け", max: 20, color: "#9BC25E",
-    iconName: "Sprout",
-    sub: "未経験でも始めやすいか",
-    items: [
-      { l: "未経験者の受け入れ", pt: 8 },
-      { l: "配信デビューまでの導線", pt: 7 },
-      { l: "失敗しにくい設計", pt: 5 },
-    ],
+    id: "beginner",
+    n: "03",
+    label: "初心者向け",
+    max: 20,
+    color: "#9BC25E",
+    image: "/eval-axis-3-beginner.png",
+    desc: "未経験でも安心して始められるか採点しています。",
+    items: ["未経験者の受け入れ態勢", "配信デビューまでの導線", "初心者が躓きにくい設計"],
   },
   {
-    id: "work", label: "働きやすさ", max: 15, color: G.mint,
-    iconName: "Briefcase",
-    sub: "シフト・在宅/通勤・辞めやすさ",
-    items: [
-      { l: "シフトの自由度", pt: 6 },
-      { l: "在宅／通勤の選択肢", pt: 5 },
-      { l: "辞めやすさ", pt: 4 },
-    ],
+    id: "work",
+    n: "04",
+    label: "働きやすさ",
+    max: 15,
+    color: G.mint,
+    image: "/eval-axis-4-work.png",
+    desc: "無理なく続けらる環境や居心地の良さを採点しています。",
+    items: ["シフトの自由度", "在宅・通勤の選びやすさ", "退店時のトラブルリスク"],
   },
   {
-    id: "earn", label: "稼ぎやすさ", max: 10, color: G.accent,
-    iconName: "Coin",
-    sub: "報酬率・保証・稼げる環境",
-    items: [
-      { l: "報酬率", pt: 4 },
-      { l: "保証・最低時給", pt: 3 },
-      { l: "稼げる仕組み", pt: 3 },
-    ],
+    id: "earn",
+    n: "05",
+    label: "稼ぎやすさ",
+    max: 10,
+    color: G.accent,
+    image: "/eval-axis-5-earn.png",
+    desc: "報酬率は業界ルール通りにうたっているか？\n実際に売り上げを伸ばしやすい環境か採点しています。",
+    items: ["待機対策の有無", "戦略の提案クオリティ", "リピート獲得のサポート"],
   },
 ];
 
@@ -101,133 +92,118 @@ export default function HyokaKijunPage() {
   return (
     <main style={{ background: G.bg, color: G.ink, paddingBottom: 40 }}>
 
-      {/* ===== HERO ===== */}
-      <section style={{ padding: "28px 22px 18px", maxWidth: 720, margin: "0 auto" }}>
-        {/* kicker */}
-        <div style={{
-          display: "inline-flex", alignItems: "center", gap: 8,
-          fontSize: 10, letterSpacing: 2.2, fontWeight: 800, color: G.ink,
-          marginBottom: 12,
-        }}>
-          <span style={{ width: 18, height: 1.5, background: G.sage, borderRadius: 1 }} />
-          HOW WE SCORE
-        </div>
+      {/* ===== ヘッダー画像 ===== */}
+      <section style={{ padding: 0, maxWidth: 720, margin: "0 auto" }}>
+        <Image
+          src="/eval-header.png"
+          alt="評価基準ヘッダー"
+          width={2172}
+          height={560}
+          priority
+          sizes="(max-width:720px) 100vw, 720px"
+          style={{ width: "100%", height: "auto", display: "block" }}
+        />
+      </section>
 
-        {/* h1 */}
-        <h1 style={{
-          margin: 0,
-          fontSize: "clamp(24px, 6.5vw, 32px)",
-          lineHeight: 1.5,
-          fontWeight: 800,
-          letterSpacing: -0.4,
-          color: G.ink,
-        }}>
-          5軸100点満点。
-        </h1>
-
-        {/* sub */}
+      {/* ===== 導入文 ===== */}
+      <section style={{ padding: "16px 22px 0", maxWidth: 720, margin: "0 auto" }}>
         <p style={{
-          margin: "14px 0 0", fontSize: 12.5, lineHeight: 1.9, color: G.inkSoft,
+          margin: 0, fontSize: 13, lineHeight: 1.9, color: G.ink, textAlign: "center",
         }}>
-          広告費で順位は変えません。編集部が実際に応募・面接・体験まで行った調査結果と、匿名口コミを元に採点しています。配点と採点項目はすべて公開しています。
+          初心者でも安心して選べるように、<br />
+          いい点も気になる点も同じ基準で確認しています。
         </p>
       </section>
 
-      {/* ===== 横棒ウェイトグラフ ===== */}
-      <section style={{ padding: "8px 22px 8px", maxWidth: 720, margin: "0 auto" }}>
+      {/* ===== お約束 box ===== */}
+      <section style={{ padding: "20px 22px 0", maxWidth: 720, margin: "0 auto" }}>
         <div style={{
-          display: "flex", height: 32, borderRadius: 6, overflow: "hidden",
-          boxShadow: "inset 0 0 0 1px rgba(36,30,22,0.06)",
+          padding: "16px 18px",
+          background: G.bgWarm, borderRadius: 14,
         }}>
-          {AXIS_DETAIL.map(a => (
-            <div key={a.id} style={{
-              flex: a.max,
-              background: a.color,
-              display: "flex", alignItems: "center", justifyContent: "center",
-              fontSize: 11, fontWeight: 800,
-              color: [G.mint, G.accent].includes(a.color) ? G.ink : "#fff",
-            }}>{a.max}</div>
-          ))}
-        </div>
-        <div style={{
-          marginTop: 6, display: "flex",
-          fontSize: 9, color: G.inkSoft, fontWeight: 600,
-        }}>
-          {AXIS_DETAIL.map(a => (
-            <div key={a.id} style={{ flex: a.max, textAlign: "center", whiteSpace: "nowrap" }}>{a.label}</div>
-          ))}
+          <div style={{
+            display: "inline-flex", alignItems: "center", gap: 6,
+            fontSize: 13, fontWeight: 800, color: G.sageDeep, marginBottom: 8,
+          }}>
+            <Icon.Leaf size={16} />
+            お約束
+          </div>
+          <p style={{
+            margin: 0, fontSize: 12.5, lineHeight: 1.9, color: G.ink,
+          }}>
+            広告費で順位は変えません。<br />
+            スコアが変わるのは、&ldquo;採点項目の事実&rdquo;が変わった時だけです
+          </p>
         </div>
       </section>
 
-      {/* ===== 5軸詳細カード ===== */}
+      {/* ===== 5軸詳細カード（画像左 + テキスト右） ===== */}
       <section style={{
-        padding: "24px 22px 0",
+        padding: "20px 22px 0",
         maxWidth: 720,
         margin: "0 auto",
         display: "flex", flexDirection: "column", gap: 14,
       }}>
-        {AXIS_DETAIL.map((a, i) => {
-          const IconComp = Icon[a.iconName];
-          return (
-            <div key={a.id} style={{
-              background: G.paper, borderRadius: 14, padding: 16,
-              border: `1px solid ${G.rule}`,
-            }}>
-              {/* header */}
-              <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                <div style={{
-                  width: 42, height: 42, borderRadius: "50%",
-                  background: `${a.color}22`,
-                  color: a.color,
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  flexShrink: 0,
-                }}>
-                  <IconComp size={22} />
+        {AXIS_DETAIL.map((a) => (
+          <div key={a.id} style={{
+            background: G.paper, borderRadius: 14, padding: 16,
+            border: `1px solid ${G.rule}`,
+          }}>
+            <div style={{ display: "flex", gap: 14, alignItems: "flex-start" }}>
+              {/* LEFT: 軸画像 */}
+              <Image
+                src={a.image}
+                alt={a.label}
+                width={400}
+                height={400}
+                sizes="(max-width:640px) 100px, 110px"
+                style={{
+                  width: 100, height: 100,
+                  borderRadius: 12, flexShrink: 0,
+                  objectFit: "cover",
+                }}
+              />
+              {/* RIGHT: 番号+ラベル+pt / 説明 / 採点項目 */}
+              <div style={{ flex: 1, minWidth: 0 }}>
+                <div style={{ display: "flex", alignItems: "baseline", gap: 8, flexWrap: "wrap" }}>
+                  <span style={{
+                    fontSize: 22, fontWeight: 800, color: a.color,
+                    fontFamily: "'Manrope', sans-serif", letterSpacing: -0.5,
+                  }}>{a.n}</span>
+                  <span style={{ fontSize: 16, fontWeight: 800, color: G.ink }}>{a.label}</span>
+                  <span style={{ fontSize: 12, fontWeight: 700, color: a.color }}>{a.max}pt</span>
                 </div>
-                <div style={{ flex: 1, minWidth: 0 }}>
-                  <div style={{
-                    fontSize: 9.5, letterSpacing: 1.5, fontWeight: 700,
-                    color: G.inkSofter, marginBottom: 1,
-                  }}>0{i + 1} · AXIS</div>
-                  <div style={{ display: "flex", alignItems: "baseline", gap: 8 }}>
-                    <span style={{ fontSize: 17, fontWeight: 700, color: G.ink }}>{a.label}</span>
-                    <span style={{ fontSize: 13, fontWeight: 800, color: a.color }}>
-                      {a.max}pt
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              {/* sub */}
-              <div style={{ fontSize: 11, color: G.inkSoft, marginTop: 8, lineHeight: 1.6 }}>
-                {a.sub}
-              </div>
-
-              {/* 採点項目 */}
-              <div style={{ marginTop: 14, paddingTop: 12, borderTop: `1px dashed ${G.rule}` }}>
+                <p style={{
+                  margin: "6px 0 12px",
+                  fontSize: 11.5, lineHeight: 1.75, color: G.inkSoft,
+                  whiteSpace: "pre-line",
+                }}>{a.desc}</p>
                 <div style={{
-                  fontSize: 9.5, letterSpacing: 1.2, fontWeight: 800,
-                  color: G.inkSoft, marginBottom: 8,
+                  fontSize: 10, fontWeight: 800, color: G.sageDeep,
+                  letterSpacing: 1.5, marginBottom: 6,
                 }}>採点項目</div>
-                {a.items.map((it, j) => (
-                  <div key={j} style={{
-                    display: "flex", alignItems: "center", gap: 8,
-                    padding: "6px 0", fontSize: 12, color: G.ink,
-                  }}>
-                    <span style={{
-                      width: 4, height: 4, borderRadius: "50%",
-                      background: a.color, flexShrink: 0,
-                    }} />
-                    <span style={{ flex: 1 }}>{it.l}</span>
-                    <span style={{
-                      fontSize: 11, fontWeight: 700, color: G.inkSoft,
-                    }}>{it.pt}pt</span>
-                  </div>
-                ))}
+                <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+                  {a.items.map((item, j) => (
+                    <li key={j} style={{
+                      display: "flex", alignItems: "center", gap: 8,
+                      fontSize: 11.5, color: G.ink, lineHeight: 1.7, marginBottom: 4,
+                    }}>
+                      <span style={{
+                        width: 16, height: 16, borderRadius: "50%",
+                        background: G.sageDeep, color: "#fff",
+                        display: "flex", alignItems: "center", justifyContent: "center",
+                        flexShrink: 0,
+                      }}>
+                        <Icon.Check size={9} />
+                      </span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
-          );
-        })}
+          </div>
+        ))}
       </section>
 
       {/* ===== 編集プロセスタイムライン ===== */}
