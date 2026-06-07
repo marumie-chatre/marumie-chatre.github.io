@@ -11,6 +11,9 @@ export type Review = {
   bad: string;
   recommend: string;
 
+  // 🔴 表示制御フラグ
+  hideInInitial?: boolean;        // true の場合 TOP・ハブ初期表示から除外（もっと見るで開示）
+
   // 🔴 新規追加フィールド（オプショナル）
   area?: string;                  // エリア（新宿/池袋/錦糸町/上野/福岡など）
   storeName?: string;             // 店舗名（FT錦糸町店など）

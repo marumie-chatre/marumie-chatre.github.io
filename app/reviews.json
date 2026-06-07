@@ -37,7 +37,8 @@
     "contentStyle": "ノンアダルト",
     "visualStyle": "顔出しあり",
     "personalStyle": "ライト",
-    "submittedAt": "2026.6.5 22:13"
+    "submittedAt": "2026.6.5 22:13",
+    "hideInInitial": true
   },
   {
     "id": 70,

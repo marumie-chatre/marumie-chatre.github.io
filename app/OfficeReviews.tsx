@@ -7,6 +7,7 @@ type Review = {
   slug: string;
   period: string;
   submittedAt?: string;
+  hideInInitial?: boolean;
   style: string;
   rating: number;
   good: string;
@@ -130,13 +131,19 @@ const INITIAL_COUNT = 3;
 export default function OfficeReviews({
   reviews,
   officeName,
+  excludeHiddenInInitial = false,
 }: {
   reviews: Review[];
   officeName: string;
+  excludeHiddenInInitial?: boolean;
 }) {
   const [showAll, setShowAll] = useState(false);
-  const displayed = showAll ? reviews : reviews.slice(0, INITIAL_COUNT);
-  const remaining = reviews.length - INITIAL_COUNT;
+  // 初期表示用：hideInInitial を除外（指定された場合のみ）→ 上から INITIAL_COUNT 件
+  const initialReviews = excludeHiddenInInitial
+    ? reviews.filter(r => !r.hideInInitial).slice(0, INITIAL_COUNT)
+    : reviews.slice(0, INITIAL_COUNT);
+  const displayed = showAll ? reviews : initialReviews;
+  const remaining = reviews.length - initialReviews.length;
   const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSeoozsXNP5R5hgyPbxMlVPNPBrc2NOceFtI5f97Lbv3KUATkw/viewform?usp=dialog";
 
   if (reviews.length === 0) {
