@@ -44,7 +44,7 @@ const ARTICLES: Article[] = [
     title: "身バレが怖い人のための、事務所選び",
     excerpt: "配信中の身バレが心配な方へ。マスク・バーチャル・地域ブロックなど対策を具体的に。",
     time: "5分", date: "2026.05.07",
-    image: "/q-barebure.jpg",
+    image: "/q-barebure.png",
   },
   {
     href: "/column/mibare-taisaku",
@@ -60,7 +60,7 @@ const ARTICLES: Article[] = [
     title: "家族にバレずに続けるための、安全対策",
     excerpt: "同居家族にバレずに続けたい方へ。検索履歴・SNS・声漏れ・部屋の対策まで。",
     time: "5分", date: "2026.05.07",
-    image: "/q-kazoku-bare.jpg",
+    image: "/q-kazoku-bare.png",
   },
   {
     href: "/q/shokuba-bare",
@@ -68,7 +68,7 @@ const ARTICLES: Article[] = [
     title: "職場にバレずに始める、副業チャットレディ",
     excerpt: "副業として始めたい方へ。住民税対策・マイナンバー誤解・職種別の判断ポイント。",
     time: "5分", date: "2026.05.07",
-    image: "/q-shokuba-bare.jpg",
+    image: "/q-shokuba-bare.png",
   },
   {
     href: "/column/hoikushi-baito",
@@ -84,7 +84,7 @@ const ARTICLES: Article[] = [
     title: "初心者が安心して始めるための、総合ガイド",
     excerpt: "これから始める方へ。初心者がつまずく5つのポイントと、サポートが手厚い事務所選び。",
     time: "5分", date: "2026.05.07",
-    image: "/q-shoshinsha.jpg",
+    image: "/q-shoshinsha.png",
   },
   {
     href: "/q/ayashii",
@@ -92,7 +92,7 @@ const ARTICLES: Article[] = [
     title: "業界が怪しく見える方へ、現役が正直に答える",
     excerpt: "アダルト強要・ノルマ・怪しい事務所の見分け方を、現役4年の視点で正直に解説。",
     time: "5分", date: "2026.05.07",
-    image: "/q-ayashii.jpg",
+    image: "/q-ayashii.png",
   },
 ];
 

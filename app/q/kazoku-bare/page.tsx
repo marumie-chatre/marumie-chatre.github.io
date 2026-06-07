@@ -47,6 +47,7 @@ export default function QKazokuBare() {
       <FAQSchema items={FAQS} />
 
       <L3ArticleShell
+        coverImage={{ src: "/q-kazoku-bare.png", alt: "家族・親・彼氏にバレないチャットレディの始め方" }}
         breadcrumb={[
           { l: "トップ", href: "/" },
           { l: "不安から探す", href: "/q" },

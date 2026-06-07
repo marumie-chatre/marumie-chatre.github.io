@@ -47,6 +47,7 @@ export default function QShokubaBare() {
       <FAQSchema items={FAQS} />
 
       <L3ArticleShell
+        coverImage={{ src: "/q-shokuba-bare.png", alt: "職場・会社にバレないチャットレディの始め方" }}
         breadcrumb={[
           { l: "トップ", href: "/" },
           { l: "不安から探す", href: "/q" },

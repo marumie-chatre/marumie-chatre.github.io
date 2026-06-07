@@ -47,6 +47,7 @@ export default function QAyashii() {
       <FAQSchema items={FAQS} />
 
       <L3ArticleShell
+        coverImage={{ src: "/q-ayashii.png", alt: "チャットレディって怪しくない？危なくない？現役が正直に答えます" }}
         breadcrumb={[
           { l: "トップ", href: "/" },
           { l: "不安から探す", href: "/q" },

@@ -47,6 +47,7 @@ export default function QShoshinsha() {
       <FAQSchema items={FAQS} />
 
       <L3ArticleShell
+        coverImage={{ src: "/q-shoshinsha.png", alt: "初心者が安心して始められるチャットレディ事務所" }}
         breadcrumb={[
           { l: "トップ", href: "/" },
           { l: "不安から探す", href: "/q" },
