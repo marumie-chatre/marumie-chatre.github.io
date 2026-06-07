@@ -42,19 +42,11 @@ export function L3ArticleShell({
 }) {
   return (
     <main style={{ background: L3G.bg, color: L3G.ink, paddingBottom: 40 }}>
-      {/* full-width cover image（任意） */}
+      {/* full-width cover image（任意・画像本来のサイズで表示・SP edge-to-edge / PC 720px contained） */}
       {coverImage && (
-        <div style={{
-          width: "100%", aspectRatio: "16/7",
-          background: L3G.sageSoft, overflow: "hidden",
-          position: "relative",
-        }}>
+        <div className="l3-article-cover">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={coverImage.src}
-            alt={coverImage.alt}
-            style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-          />
+          <img src={coverImage.src} alt={coverImage.alt} />
         </div>
       )}
 

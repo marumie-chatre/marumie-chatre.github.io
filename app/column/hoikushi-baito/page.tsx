@@ -43,6 +43,7 @@ export default function ColHoikushiBaitoPage() {
       <FAQSchema items={FAQS} />
 
       <L3ArticleShell
+        coverImage={{ src: "/col-hoikushi-baito.png", alt: "チャトレは副業にアリ？会社・職場にバレないための全対策" }}
         breadcrumb={[
           { l: "トップ", href: "/" },
           { l: "お悩みから探す", href: "/q" },

@@ -272,6 +272,32 @@ img { display: block; max-width: 100%; }
   }
 }
 
+/* ===== L3 記事系 cover（/q, /column, /area – 同パターン・実寸 aspect ratio）===== */
+.l3-article-cover {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  margin-bottom: 4px; /* 画像下の余白を詰める */
+  line-height: 0;
+  background: var(--green-light);
+}
+.l3-article-cover img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+@media (min-width: 768px) {
+  .l3-article-cover {
+    width: 100%;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 14px;
+    overflow: hidden;
+  }
+}
+
 /* ===== /jimusho ハブヘッダー画像（同パターン・実寸 aspect ratio）===== */
 .jimusho-hub-header {
   position: relative;
