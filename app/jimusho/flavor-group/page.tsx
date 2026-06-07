@@ -14,6 +14,7 @@ const OFFICE_DATA: OfficeDetailData = {
   score: 79,
   isPR: false,
   logoSrc: "/logo-flavor-group.png",
+  headerImage: "/office-header-flavor-group.png",
   tagline: "稼ぎ方のノウハウを具体的に教えてくれる。\n全国300店舗の老舗。",
   tags: ["全国300店舗", "老舗20年", "固定給選択可", "24h対応"],
   breakdown: [

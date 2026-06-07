@@ -14,6 +14,7 @@ const OFFICE_DATA: OfficeDetailData = {
   score: 70,
   isPR: false,
   logoSrc: "/logo-chatlady-jp.png",
+  headerImage: "/office-header-chatlady-jp.png",
   tagline: "新宿・上野に多店舗展開。\n美容機器無料サービスあり。",
   tags: ["新宿・上野", "美容機器無料", "バーチャル対応"],
   breakdown: [

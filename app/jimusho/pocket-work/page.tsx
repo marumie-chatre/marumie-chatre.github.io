@@ -14,6 +14,7 @@ const OFFICE_DATA: OfficeDetailData = {
   score: 68,
   isPR: false,
   logoSrc: "/logo-pocket-work.png",
+  headerImage: "/office-header-pocket-work.png",
   tagline: "全国8拠点。\n教えてもらうより自分で動きたい人向けの事務所。",
   tags: ["仕組み重視", "バーチャル対応"],
   breakdown: [

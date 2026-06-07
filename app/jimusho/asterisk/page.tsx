@@ -14,6 +14,7 @@ const OFFICE_DATA: OfficeDetailData = {
   score: 68,
   isPR: false,
   logoSrc: "/logo-asterisk.png",
+  headerImage: "/office-header-asterisk.png",
   tagline: "全店女性スタッフ。\n本気で稼ぎたい方向けの事務所。",
   tags: ["全店女性スタッフ", "安全性◎"],
   breakdown: [

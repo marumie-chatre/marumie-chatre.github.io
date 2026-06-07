@@ -14,6 +14,7 @@ const OFFICE_DATA: OfficeDetailData = {
   score: 81,
   isPR: false,
   logoSrc: "/logo-chatstyle.png",
+  headerImage: "/office-header-chatstyle.png",
   tagline: "会話テクニック・接客サポートが充実。\n現役スタッフが教えてくれる事務所。",
   tags: ["会話テクニック指導", "現役スタッフ在籍", "バーチャル対応"],
   breakdown: [

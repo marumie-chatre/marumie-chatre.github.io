@@ -176,6 +176,7 @@ export type OfficeDetailData = {
   score: number;
   isPR: boolean;
   logoSrc: string;
+  headerImage?: string;  // cover/hero 画像（未指定なら logoSrc + green gradient のフォールバック）
   tagline: string;
   tags: string[];
   breakdown: { l: string; v: number; max: number }[];
@@ -213,19 +214,22 @@ export function OfficeDetailLayout({
 
       {/* ===== HERO ===== */}
       <section style={{ padding: "14px 22px 20px", maxWidth: 720, margin: "0 auto" }}>
-        {/* cover - ロゴ＋緑グラデ */}
+        {/* cover - headerImage があれば実画像、なければロゴ + 緑グラデ */}
         <div style={{
-          width: "100%", aspectRatio: "16/10",
-          background: `linear-gradient(135deg, ${L3G.sageSoft}, ${L3G.cream})`,
+          width: "100%", aspectRatio: o.headerImage ? "4/3" : "16/10",
+          background: o.headerImage ? L3G.sageSoft : `linear-gradient(135deg, ${L3G.sageSoft}, ${L3G.cream})`,
           borderRadius: 14, overflow: "hidden",
           marginBottom: 16, position: "relative",
           display: "flex", alignItems: "center", justifyContent: "center",
         }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={o.logoSrc}
+            src={o.headerImage ?? o.logoSrc}
             alt={o.name}
-            style={{ maxHeight: "70%", maxWidth: "60%", objectFit: "contain" }}
+            style={o.headerImage
+              ? { width: "100%", height: "100%", objectFit: "cover", display: "block" }
+              : { maxHeight: "70%", maxWidth: "60%", objectFit: "contain" }
+            }
           />
         </div>
 

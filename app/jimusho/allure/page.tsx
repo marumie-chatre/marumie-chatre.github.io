@@ -14,6 +14,7 @@ const OFFICE_DATA: OfficeDetailData = {
   score: 74,
   isPR: false,
   logoSrc: "/logo-allure.png",
+  headerImage: "/office-header-allure.png",
   tagline: "時給保証制度あり。\n稼ぎ重視層向けの事務所。",
   tags: ["時給保証あり", "稼ぎ重視向け"],
   breakdown: [
