@@ -11,7 +11,7 @@ export const metadata = {
 // Design Refresh v2 カラーパレット（Palette E: Natural Kiss 風）
 // Fresh Sage × Peach × Warm Yellow × Near-White Cream
 const G = {
-  bg: "#F4ECDD",            // タイトル画像のベージュに合わせた warm cream
+  bg: "#FBF7F0",            // タイトル画像の実 bg（#FAF6EE〜#FBF7F1 平均）に合わせた淡いクリーム
   bgWarm: "#F5E8C8",        // warm yellow band
   paper: "#FFFFFF",
   ink: "#2E1F10",           // 濃い目のブラウン（warm dark brown）
