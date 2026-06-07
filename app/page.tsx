@@ -459,7 +459,6 @@ export default function Home() {
 
       {/* ===== QUICK NAV「あなたに合う探し方」（葉模様背景） ===== */}
       <section className="top-find-section">
-        <div className="top-find-bg-leaves" />
         <div className="top-find-inner">
           <SectionHead kicker="HOW TO FIND" title="あなたに合う探し方" image="/top-title-find.png" />
           <div style={{
