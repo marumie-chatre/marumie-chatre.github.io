@@ -24,7 +24,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           rel="stylesheet"
         />
       </head>
-      <body style={{paddingTop: "68px"}}>
+      <body>
         {/* 構造化データ（全ページ共通：WebSite + Organization） */}
         <WebSiteSchema />
         <OrganizationSchema />
