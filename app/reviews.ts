@@ -3,7 +3,8 @@ export type Review = {
   id: number;
   office: string;
   slug: string;
-  period: string;
+  period: string;        // 入店日（例：2024年4月）
+  submittedAt?: string;  // 投稿日時（例：2026.3.2 18:00）
   style: string;
   rating: number;
   good: string;
