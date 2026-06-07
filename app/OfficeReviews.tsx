@@ -6,6 +6,7 @@ type Review = {
   office: string;
   slug: string;
   period: string;
+  submittedAt?: string;
   style: string;
   rating: number;
   good: string;
