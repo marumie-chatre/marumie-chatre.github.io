@@ -519,20 +519,20 @@ export default function Home() {
           <span style={{ color: "#6F9B5E", fontWeight: 500 }}>どのお店を選べばいいのか</span>
           分からない。
         </p>
-        {/* 3段落：複数の強調＋「中身を見て選べる」がメイン */}
+        {/* 3段落：地ブラウン／「お店の雰囲気やサポート、口コミ、報酬」にピンクベージュ下線／「中身を見て選べる」メイン強調 */}
         <p style={{
           margin: "26px 0 0",
-          fontSize: 13.5, lineHeight: 2.1, color: "#3A2A20",
+          fontSize: 13.5, lineHeight: 2.2, color: "#3A2A20",
           textAlign: "center", letterSpacing: 0.2,
         }}>
           まるみえチャトレは、そんな人が<br />
-          <span style={{ color: "#6F9B5E", fontWeight: 500 }}>お店の雰囲気</span>
-          や
-          <span style={{ color: "#6F9B5E", fontWeight: 500 }}>サポート</span>
-          、
-          <span style={{ color: "#DFA59A", fontWeight: 500 }}>口コミ</span>
-          、
-          <span style={{ color: "#6F9B5E", fontWeight: 500 }}>報酬</span>
+          <span style={{
+            color: "#3A2A20",
+            textDecoration: "underline",
+            textDecorationColor: "#DFA59A",
+            textDecorationThickness: 2,
+            textUnderlineOffset: 4,
+          }}>お店の雰囲気やサポート、口コミ、報酬</span>
           のことまで<br />
           <span style={{
             color: "#6F9B5E",
