@@ -671,10 +671,14 @@ export default function Home() {
                     {r.period}
                   </div>
                 </div>
-                <div style={{ display: "flex", gap: 1.5 }}>
-                  {[1, 2, 3, 4, 5].map(s => (
-                    <Icon.Star key={s} size={11} fill={s <= r.rating ? G.accent : G.cream} />
-                  ))}
+                <div style={{ display: "flex", alignItems: "center", flexShrink: 0 }}>
+                  <Image
+                    src={`/star-${Math.min(5, Math.max(1, Math.round(r.rating)))}.png`}
+                    alt={`評価 ${Math.round(r.rating)}/5`}
+                    width={36}
+                    height={36}
+                    style={{ width: 36, height: 36, borderRadius: "50%", display: "block" }}
+                  />
                 </div>
               </div>
 

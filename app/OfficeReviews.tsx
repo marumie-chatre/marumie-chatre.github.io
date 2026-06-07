@@ -13,13 +13,21 @@ type Review = {
   recommend: string;
 };
 
-function Stars({ rating }: { rating: number }) {
+function Stars({ rating, size = 40 }: { rating: number; size?: number }) {
+  // 1〜5 の範囲にクランプ
+  const clamped = Math.min(5, Math.max(1, Math.round(rating)));
   return (
-    <div style={{ display: "flex", gap: "2px", margin: "6px 0" }}>
-      {[1,2,3,4,5].map(i => (
-        <span key={i} style={{ color: i <= rating ? "#f5a623" : "#ddd", fontSize: "16px" }}>★</span>
-      ))}
-    </div>
+    /* eslint-disable-next-line @next/next/no-img-element */
+    <img
+      src={`/star-${clamped}.png`}
+      alt={`評価 ${clamped}/5`}
+      width={size}
+      height={size}
+      style={{
+        width: size, height: size, borderRadius: "50%",
+        display: "block", flexShrink: 0,
+      }}
+    />
   );
 }
 
@@ -112,7 +120,7 @@ export default function OfficeReviews({
         background: "var(--cream)", padding: "14px 18px",
         borderRadius: "var(--radius)", marginBottom: "20px",
       }}>
-        <Stars rating={Math.round(average)} />
+        <Stars rating={Math.round(average)} size={56} />
         <span style={{ fontSize: "20px", fontWeight: 700, color: "var(--text)" }}>
           {avgDisplay}
         </span>
