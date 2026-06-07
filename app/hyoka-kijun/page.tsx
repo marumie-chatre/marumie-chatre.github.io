@@ -257,12 +257,12 @@ export default function HyokaKijunPage() {
       }}>
         <div style={{
           padding: "18px 20px",
-          background: G.ink, color: "#fff",
+          background: G.sagePastel, color: G.ink,
           borderRadius: 14,
         }}>
           <div style={{
             fontSize: 9.5, letterSpacing: 2, fontWeight: 700,
-            color: G.accent, marginBottom: 6,
+            color: G.sageDeep, marginBottom: 6,
           }}>NO PR</div>
           <div style={{
             fontSize: 17, fontWeight: 700, lineHeight: 1.5,
@@ -270,15 +270,15 @@ export default function HyokaKijunPage() {
           <p style={{
             margin: "10px 0 0",
             fontSize: 11.5, lineHeight: 1.85,
-            color: "rgba(255,255,255,0.80)",
+            color: G.inkSoft,
           }}>
             事務所からの広告費は順位に反映していません。スコアが上下するのは「採点項目の事実が変わったとき」だけです。
           </p>
           <div style={{
             marginTop: 14, fontSize: 10,
-            color: "rgba(255,255,255,0.65)", letterSpacing: 0.5,
+            color: G.inkSoft, letterSpacing: 0.5,
             display: "flex", justifyContent: "space-between",
-            paddingTop: 12, borderTop: "1px solid rgba(255,255,255,0.15)",
+            paddingTop: 12, borderTop: "1px solid rgba(36,30,22,0.15)",
           }}>
             <span>最終更新 2026.05.20</span>
             <span>次回更新 2026.06</span>

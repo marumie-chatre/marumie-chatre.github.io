@@ -458,11 +458,11 @@ export function OfficeDetailLayout({
         </div>
       </div>
 
-      {/* ===== FINAL CTA（ink bg + white - editorial refined） ===== */}
+      {/* ===== FINAL CTA（pastel sage + ink - HPトーン統一） ===== */}
       <div style={{ padding: "0 22px", maxWidth: 720, margin: "30px auto 0" }}>
         <div style={{
           padding: "22px 22px",
-          background: L3G.ink, color: "#fff",
+          background: L3G.sagePastel, color: L3G.ink,
           borderRadius: 14,
         }}>
           <div style={{
@@ -470,14 +470,14 @@ export function OfficeDetailLayout({
           }}>{o.name}が気になったら</div>
           <p style={{
             margin: "8px 0 14px",
-            fontSize: 11.5, color: "rgba(255,255,255,0.75)", lineHeight: 1.85,
+            fontSize: 11.5, color: L3G.inkSoft, lineHeight: 1.85,
           }}>
             まずは公式サイトで詳細を確認してみてください。無料見学・相談から始められます。
           </p>
           <a href={o.applyUrl} target="_blank" rel="noopener noreferrer" style={{
             display: "flex", alignItems: "center", justifyContent: "space-between",
             padding: "12px 16px", borderRadius: 99,
-            background: L3G.sagePastel, color: L3G.ink,
+            background: "#fff", color: L3G.ink,
             fontSize: 12, fontWeight: 700, textDecoration: "none",
           }}>
             公式サイトを見る
@@ -485,7 +485,7 @@ export function OfficeDetailLayout({
           </a>
           {o.isPR && (
             <div style={{
-              marginTop: 6, fontSize: 9, color: "rgba(255,255,255,0.55)", textAlign: "center",
+              marginTop: 6, fontSize: 9, color: L3G.inkSofter, textAlign: "center",
             }}>※ PR（広告）リンクです</div>
           )}
         </div>
