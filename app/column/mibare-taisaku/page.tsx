@@ -43,6 +43,7 @@ export default function ColMibareTaisakuPage() {
       <FAQSchema items={FAQS} />
 
       <L3ArticleShell
+        coverImage={{ src: "/col-mibare-taisaku.png", alt: "身バレ、よくある疑問に答えます｜顔バレ・家族バレ・職場バレ" }}
         breadcrumb={[
           { l: "トップ", href: "/" },
           { l: "お悩みから探す", href: "/q" },
