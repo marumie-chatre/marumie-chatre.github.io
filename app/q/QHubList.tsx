@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { Icon } from "../Icon";
@@ -105,8 +106,21 @@ const CATEGORIES = [
   "業界の不安",
 ];
 
+// useSearchParams を使う Inner を Suspense で包む（Next.js 16 の SSG 要件）
 export default function QHubList() {
-  const [active, setActive] = useState<string>("すべて");
+  return (
+    <Suspense fallback={null}>
+      <QHubListInner />
+    </Suspense>
+  );
+}
+
+function QHubListInner() {
+  const searchParams = useSearchParams();
+  const catParam = searchParams.get("cat");
+  // URL ?cat= が有効カテゴリと一致する場合のみ初期値に採用
+  const initial = catParam && CATEGORIES.includes(catParam) ? catParam : "すべて";
+  const [active, setActive] = useState<string>(initial);
 
   const filtered = active === "すべて"
     ? ARTICLES

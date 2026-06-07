@@ -41,7 +41,7 @@ export default function QAyashii() {
       />
       <BreadcrumbSchema items={[
         { name: "トップ", path: "/" },
-        { name: "不安から探す", path: "/q" },
+        { name: "お悩みから探す", path: "/q" },
         { name: "怪しい？危なくない？", path: "/q/ayashii" },
       ]} />
       <FAQSchema items={FAQS} />
@@ -50,7 +50,7 @@ export default function QAyashii() {
         coverImage={{ src: "/q-ayashii.png", alt: "チャットレディって怪しくない？危なくない？現役が正直に答えます" }}
         breadcrumb={[
           { l: "トップ", href: "/" },
-          { l: "不安から探す", href: "/q" },
+          { l: "お悩みから探す", href: "/q" },
           { l: "怪しい？危なくない？" },
         ]}
         kicker="お悩み｜怪しさ・危なさ"

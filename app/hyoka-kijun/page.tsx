@@ -280,8 +280,8 @@ export default function HyokaKijunPage() {
             display: "flex", justifyContent: "space-between",
             paddingTop: 12, borderTop: "1px solid rgba(36,30,22,0.15)",
           }}>
-            <span>最終更新 2026.05.20</span>
-            <span>次回更新 2026.06</span>
+            <span>最終更新 2026.06.08</span>
+            <span>次回更新 2026.07</span>
           </div>
         </div>
       </section>
