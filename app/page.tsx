@@ -666,7 +666,7 @@ export default function Home() {
           kicker="WORRIES"
           title="お悩みから、探す。"
           note="始める前の心配ごとに、まっすぐ答える記事を用意しています。"
-          image="/top-title-reviews.png"
+          image="/top-title-worries.png"
         />
 
         {/* チップ帯（/q ハブと同意匠・全てが /q へのリンク） */}
@@ -796,7 +796,7 @@ export default function Home() {
           kicker="REVIEWS"
           title="リアルな声を集めました。"
           note="良かった点も、気になった点もどちらも公開。"
-          image="/top-title-worries.png"
+          image="/top-title-reviews.png"
         />
         <div style={{ marginTop: 0, display: "flex", flexDirection: "column", gap: 12 }}>
           {topReviews.map((r) => (
