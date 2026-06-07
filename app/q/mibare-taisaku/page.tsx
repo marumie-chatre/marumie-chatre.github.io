@@ -32,13 +32,13 @@ export default function ColMibareTaisakuPage() {
       <ArticleSchema
         title="配信中に顔がバレる？家族にバレる？チャットレディの身バレ、よくある疑問に答えます"
         description="顔出しなしなら大丈夫？家族や職場にバレない？チャットレディの身バレに関するよくある疑問を、具体的な対策とともに解説します。"
-        url="https://marumie-chatre.vercel.app/column/mibare-taisaku"
+        url="https://marumie-chatre.vercel.app/q/mibare-taisaku"
         datePublished="2026-05-06"
       />
       <BreadcrumbSchema items={[
         { name: "トップ", path: "/" },
         { name: "お悩みから探す", path: "/q" },
-        { name: "身バレ対策", path: "/column/mibare-taisaku" },
+        { name: "身バレ対策", path: "/q/mibare-taisaku" },
       ]} />
       <FAQSchema items={FAQS} />
 

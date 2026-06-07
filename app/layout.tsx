@@ -7,8 +7,46 @@ import { Icon } from "./Icon";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "まるみえチャトレ｜中身で選ぶチャトレ事務所",
-  description: "事務所選びで失敗したくない初心者のための口コミサイト。",
+  metadataBase: new URL("https://marumie-chatre.vercel.app"),
+  title: {
+    default: "まるみえチャトレ｜中身で選ぶチャトレ事務所",
+    template: "%s｜まるみえチャトレ",
+  },
+  description: "事務所選びで失敗したくない初心者のための口コミサイト。広告費では順位を決めず、良い点・気になる点の両方を公開しています。",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "ja_JP",
+    siteName: "まるみえチャトレ",
+    title: "まるみえチャトレ｜中身で選ぶチャトレ事務所",
+    description: "事務所選びで失敗したくない初心者のための口コミサイト。広告費では順位を決めず、良い点・気になる点の両方を公開しています。",
+    images: [
+      {
+        url: "/top-hero-photo.jpg",
+        width: 1200,
+        height: 630,
+        alt: "まるみえチャトレ",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "まるみえチャトレ｜中身で選ぶチャトレ事務所",
+    description: "事務所選びで失敗したくない初心者のための口コミサイト。",
+    images: ["/top-hero-photo.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
