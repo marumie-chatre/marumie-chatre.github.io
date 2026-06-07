@@ -89,6 +89,50 @@ const QUICK_NAV = [
   { href: "/q",       icon: "Question" as const, label: "お悩みからさがす" },
 ];
 
+// データ：評価軸詳細（画像 + 説明 + 採点項目）
+const AXES_DETAIL = [
+  {
+    id: "safety",
+    n: "01",
+    label: "安全性",
+    image: "/eval-axis-1-safety.png",
+    desc: "お仕事を続けるうえで一番大事な要素です。\n身バレ対策や無理な強要がないことを重視して採点しています。",
+    items: ["身バレ対策", "アダルト強要の有無", "プライバシー保護の対応"],
+  },
+  {
+    id: "support",
+    n: "02",
+    label: "サポート",
+    image: "/eval-axis-2-support.png",
+    desc: "事務所の雰囲気や技術を身に着けるスピードはスタッフの対応で大きく変わります。\n悩みや成長によりそう体制があるか採点しています。",
+    items: ["サポートやマニュアルの充実度", "スタッフに相談をしやすいか", "スタッフが常駐しているか"],
+  },
+  {
+    id: "beginner",
+    n: "03",
+    label: "初心者向け",
+    image: "/eval-axis-3-beginner.png",
+    desc: "未経験でも安心して始められるか採点しています。",
+    items: ["未経験者の受け入れ態勢", "配信デビューまでの導線", "初心者が躓きにくい設計"],
+  },
+  {
+    id: "work",
+    n: "04",
+    label: "働きやすさ",
+    image: "/eval-axis-4-work.png",
+    desc: "無理なく続けらる環境や居心地の良さを採点しています。",
+    items: ["シフトの自由度", "在宅・通勤の選びやすさ", "退店時のトラブルリスク"],
+  },
+  {
+    id: "earn",
+    n: "05",
+    label: "稼ぎやすさ",
+    image: "/eval-axis-5-earn.png",
+    desc: "報酬率は業界ルール通りにうたっているか？\n実際に売り上げを伸ばしやすい環境か採点しています。",
+    items: ["待機対策の有無", "戦略の提案クオリティ", "リピート獲得のサポート"],
+  },
+];
+
 // データ：コラム3本
 const COLUMNS_PREVIEW = [
   { slug: "jimusho-erabi",  cat: "事務所の選び方", title: "チャットレディ事務所の選び方｜失敗しない5つの基準", time: "5分", date: "2025.05.01", image: "/col-jimusho-erabi.png" },
@@ -269,36 +313,6 @@ function RankingCard({ r, idx }: { r: typeof RANKING[0]; idx: number }) {
         <Icon.Arrow size={13} />
       </Link>
     </div>
-  );
-}
-
-function DonutChart() {
-  const colors = ["#82964A", "#A4B559", "#C9D77B", "#E2EBB8", "#F8B5A8"];
-  const sizes = [30, 25, 20, 15, 10];
-  const total = 100;
-  let offset = 0;
-  const r = 32, cx = 40, cy = 40, c = 2 * Math.PI * r;
-  return (
-    <svg width="100" height="100" viewBox="0 0 80 80" style={{ flexShrink: 0 }}>
-      <circle cx={cx} cy={cy} r={r} fill="none" stroke={G.cream} strokeWidth="14" />
-      {sizes.map((s, i) => {
-        const len = (s / total) * c;
-        const el = (
-          <circle key={i}
-            cx={cx} cy={cy} r={r}
-            fill="none" stroke={colors[i]} strokeWidth="14"
-            strokeDasharray={`${len} ${c - len}`}
-            strokeDashoffset={-offset}
-            transform={`rotate(-90 ${cx} ${cy})`} />
-        );
-        offset += len;
-        return el;
-      })}
-      <text x={cx} y={cy + 1} textAnchor="middle" dominantBaseline="middle"
-        fontSize="15" fontWeight="800" fill={G.ink}>100</text>
-      <text x={cx} y={cy + 12} textAnchor="middle" dominantBaseline="middle"
-        fontSize="6" fill={G.inkSoft} fontWeight="600">点満点</text>
-    </svg>
   );
 }
 
@@ -527,7 +541,7 @@ export default function Home() {
         </Link>
       </section>
 
-      {/* ===== AXES ===== */}
+      {/* ===== EVALUATION（header + 5軸詳細）===== */}
       <section style={{ padding: "40px 20px 0", maxWidth: 760, margin: "0 auto" }}>
         <SectionHead
           kicker="EVALUATION"
@@ -535,58 +549,103 @@ export default function Home() {
           note="5つの評価軸で事務所を丁寧に採点しています。"
           image="/top-title-evaluation.png"
         />
-        <div style={{
-          marginTop: 0, background: G.paper, borderRadius: 20,
-          padding: 18, boxShadow: "0 2px 12px rgba(51,45,34,0.05)",
+
+        {/* 導入文 */}
+        <p style={{
+          margin: "12px 0 0",
+          fontSize: 13, lineHeight: 1.9, color: G.ink, textAlign: "center",
         }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-            <DonutChart />
-            <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: 8 }}>
-              {AXES.map((a, i) => (
-                <div key={a.id} style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 11 }}>
-                  <span style={{
-                    width: 10, height: 10, borderRadius: 3,
-                    background: ["#82964A", "#A4B559", "#C9D77B", "#E2EBB8", "#F8B5A8"][i],
-                  }} />
-                  <span style={{ flex: 1, fontWeight: 600 }}>{a.label}</span>
-                  <span style={{ fontWeight: 800 }}>
-                    {a.max}<span style={{ color: G.inkSoft, fontWeight: 500, fontSize: 9 }}>pt</span>
-                  </span>
-                </div>
-              ))}
-            </div>
+          初心者でも安心して選べるように、<br />
+          いい点も気になる点も同じ基準で確認しています。
+        </p>
+
+        {/* お約束 box */}
+        <div style={{
+          marginTop: 22, padding: "16px 18px",
+          background: G.bgWarm, borderRadius: 14,
+        }}>
+          <div style={{
+            display: "inline-flex", alignItems: "center", gap: 6,
+            fontSize: 13, fontWeight: 800, color: G.sageDeep, marginBottom: 8,
+          }}>
+            <Icon.Leaf size={16} />
+            お約束
           </div>
-          <div style={{ marginTop: 14, paddingTop: 14, borderTop: `1px solid ${G.rule}` }}>
-            {AXES.map((a, i) => {
-              const IconComp = [Icon.Shield, Icon.HeartHand, Icon.Sprout, Icon.Briefcase, Icon.Coin][i];
-              const c = ["#82964A", "#A4B559", "#C9D77B", "#E2EBB8", "#F8B5A8"][i];
-              return (
-                <div key={a.id} style={{
-                  display: "grid", gridTemplateColumns: "36px 1fr",
-                  gap: 12, alignItems: "flex-start", padding: "10px 0",
-                  borderBottom: i < AXES.length - 1 ? `1px dashed ${G.rule}` : "none",
-                }}>
-                  <div style={{
-                    width: 36, height: 36, borderRadius: 10,
-                    background: `${c}22`, color: c,
-                    display: "flex", alignItems: "center", justifyContent: "center",
-                  }}>
-                    <IconComp size={20} />
-                  </div>
-                  <div>
-                    <div style={{ display: "flex", alignItems: "baseline", gap: 6 }}>
-                      <span style={{ fontSize: 13, fontWeight: 800 }}>{a.label}</span>
-                      <span style={{ fontSize: 11, fontWeight: 700, color: c }}>{a.max}pt</span>
-                    </div>
-                    <div style={{ fontSize: 10.5, color: G.inkSoft, marginTop: 2, lineHeight: 1.5 }}>{a.desc}</div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+          <p style={{
+            margin: 0, fontSize: 12.5, lineHeight: 1.9, color: G.ink,
+          }}>
+            広告費で順位は変えません。<br />
+            スコアが変わるのは、&ldquo;採点項目の事実&rdquo;が変わった時だけです
+          </p>
         </div>
+
+        {/* 5軸詳細（画像左 + テキスト右） */}
+        <div style={{
+          marginTop: 24, display: "flex", flexDirection: "column", gap: 16,
+        }}>
+          {AXES_DETAIL.map((axis) => (
+            <div key={axis.id} style={{
+              background: G.paper, borderRadius: 16, padding: 16,
+              boxShadow: "0 2px 10px rgba(46,31,16,0.04)",
+            }}>
+              <div style={{ display: "flex", gap: 14, alignItems: "flex-start" }}>
+                {/* LEFT: 軸画像 */}
+                <Image
+                  src={axis.image}
+                  alt={axis.label}
+                  width={400}
+                  height={400}
+                  sizes="(max-width:640px) 100px, 110px"
+                  style={{
+                    width: 100, height: 100,
+                    borderRadius: 12, flexShrink: 0,
+                    objectFit: "cover",
+                  }}
+                />
+                {/* RIGHT: 番号+ラベル / 説明 / 採点項目 */}
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <div style={{ display: "flex", alignItems: "baseline", gap: 8 }}>
+                    <span style={{
+                      fontSize: 22, fontWeight: 800, color: G.sageDeep,
+                      fontFamily: "'Manrope', sans-serif", letterSpacing: -0.5,
+                    }}>{axis.n}</span>
+                    <span style={{ fontSize: 16, fontWeight: 800, color: G.ink }}>{axis.label}</span>
+                  </div>
+                  <p style={{
+                    margin: "6px 0 12px",
+                    fontSize: 11.5, lineHeight: 1.75, color: G.inkSoft,
+                    whiteSpace: "pre-line",
+                  }}>{axis.desc}</p>
+                  <div style={{
+                    fontSize: 10, fontWeight: 800, color: G.sageDeep,
+                    letterSpacing: 1.5, marginBottom: 6,
+                  }}>採点項目</div>
+                  <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+                    {axis.items.map((item, j) => (
+                      <li key={j} style={{
+                        display: "flex", alignItems: "center", gap: 8,
+                        fontSize: 11.5, color: G.ink, lineHeight: 1.7, marginBottom: 4,
+                      }}>
+                        <span style={{
+                          width: 16, height: 16, borderRadius: "50%",
+                          background: G.sageDeep, color: "#fff",
+                          display: "flex", alignItems: "center", justifyContent: "center",
+                          flexShrink: 0,
+                        }}>
+                          <Icon.Check size={9} />
+                        </span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
         <Link href="/hyoka-kijun" style={{
-          marginTop: 14, display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
+          marginTop: 18, display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
           padding: 12, border: `1px solid ${G.rule}`, borderRadius: 99,
           fontSize: 12, fontWeight: 600, color: G.ink, textDecoration: "none",
         }}>
