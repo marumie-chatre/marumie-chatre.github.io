@@ -224,23 +224,11 @@ img { display: block; max-width: 100%; }
 }
 
 
-/* ===== TOP FIND セクション（葉模様背景）===== */
+/* ===== TOP FIND セクション（背景削除版・透明）===== */
 .top-find-section {
   position: relative;
   padding: 36px 20px 36px;
-  background: var(--cream);
   overflow: hidden;
-}
-.top-find-bg-leaves {
-  position: absolute;
-  inset: 0;
-  background-image: url('/bg-leaves-pattern.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  opacity: 0.55;
-  pointer-events: none;
-  z-index: 0;
 }
 .top-find-inner {
   position: relative;
