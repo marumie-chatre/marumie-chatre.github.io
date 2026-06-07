@@ -245,6 +245,60 @@ img { display: block; max-width: 100%; }
   }
 }
 
+/* ===== 事務所詳細 cover（SP: edge-to-edge / PC: 親幅内）===== */
+.office-detail-cover {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  aspect-ratio: 4/3;
+  max-height: 480px;
+  overflow: hidden;
+  background: var(--green-light);
+  margin-top: -14px; /* HERO section padding-top をキャンセル */
+  margin-bottom: 16px;
+}
+.office-detail-cover img {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+}
+@media (min-width: 768px) {
+  .office-detail-cover {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    aspect-ratio: 16/9;
+    max-height: 420px;
+    border-radius: 14px;
+    margin-top: 0;
+  }
+}
+
+/* ===== /jimusho ハブヘッダー画像（同じパターン）===== */
+.jimusho-hub-header {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  aspect-ratio: 16/9;
+  max-height: 360px;
+  overflow: hidden;
+  background: var(--green-light);
+}
+.jimusho-hub-header img {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+}
+@media (min-width: 768px) {
+  .jimusho-hub-header {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 14px;
+    max-height: 320px;
+  }
+}
+
 /* ===== TOP FIND セクション（背景削除版・透明）===== */
 .top-find-section {
   position: relative;
