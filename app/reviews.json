@@ -3,7 +3,7 @@
     "id": 1,
     "office": "フェアリーテイル",
     "slug": "ft",
-    "period": "2024年春ごろ",
+    "period": "2025年2月",
     "style": "通勤",
     "rating": 5,
     "good": "もともと月5万くらい稼げればいいかなって気持ちで始めたんですが、3ヶ月目くらいからじわじわ増えてきて、今は十分すぎるくらいもらえています。ノンアダルト専門なので、アダルトを一切勧められないのが続けられている理由です。面接前がいちばん怖かったけど、スタッフが女性で話しやすくて安心しました。",
@@ -16,13 +16,14 @@
     "isCurrentlyWorking": true,
     "contentStyle": "ノンアダルト専門",
     "visualStyle": "顔出しあり",
-    "personalStyle": "ノンアダルト"
+    "personalStyle": "ノンアダルト",
+    "submittedAt": "2026.4.9 16:15"
   },
   {
     "id": 2,
     "office": "フェアリーテイル",
     "slug": "ft",
-    "period": "2023年秋ごろ",
+    "period": "2025年8月",
     "style": "通勤",
     "rating": 4,
     "good": "在宅も試したんですが、通勤の方が気持ちの切り替えができて稼ぎも上でした。スタッフが稼ぎ方を具体的に教えてくれて、コツをつかんでから安定してきました。",
@@ -35,13 +36,14 @@
     "isCurrentlyWorking": true,
     "contentStyle": "ノンアダルト専門",
     "visualStyle": "顔出しあり",
-    "personalStyle": "ノンアダルト"
+    "personalStyle": "ノンアダルト",
+    "submittedAt": "2026.3.19 10:45"
   },
   {
     "id": 3,
     "office": "フェアリーテイル",
     "slug": "ft",
-    "period": "2024年夏ごろ",
+    "period": "2024年11月",
     "style": "在宅",
     "rating": 3,
     "good": "スタッフは親切で連絡もちゃんと返ってきます。ノンアダルト専門なのでアダルトの心配がないのは安心でした。",
@@ -54,13 +56,14 @@
     "isCurrentlyWorking": false,
     "contentStyle": "ノンアダルト専門",
     "visualStyle": "顔出しあり",
-    "personalStyle": "ノンアダルト"
+    "personalStyle": "ノンアダルト",
+    "submittedAt": "2026.3.7 18:45"
   },
   {
     "id": 4,
     "office": "フェアリーテイル",
     "slug": "ft",
-    "period": "2024年春ごろ",
+    "period": "2022年12月",
     "style": "通勤",
     "rating": 4,
     "good": "スタッフが優しくてなんとなく「また来たい」と思える場所でした。内装もカフェみたいな感じで行くたびに気分が上がります。同じくらいの年の子もいて話しやすかったです。",
@@ -73,13 +76,14 @@
     "isCurrentlyWorking": true,
     "contentStyle": "ノンアダルト専門",
     "visualStyle": "顔出しあり",
-    "personalStyle": "ノンアダルト"
+    "personalStyle": "ノンアダルト",
+    "submittedAt": "2026.5.25 20:00"
   },
   {
     "id": 5,
     "office": "フェアリーテイル",
     "slug": "ft",
-    "period": "2023年冬ごろ",
+    "period": "2024年8月",
     "style": "通勤",
     "rating": 4,
     "good": "いくつか比較した上でここに決めました。ノンアダルト専門でスタッフが女性だけという点が決め手でした。顔出しの範囲や配信のやり方についても具体的に相談に乗ってもらえました。",
@@ -92,13 +96,14 @@
     "isCurrentlyWorking": true,
     "contentStyle": "ノンアダルト専門",
     "visualStyle": "マスク",
-    "personalStyle": "ノンアダルト"
+    "personalStyle": "ノンアダルト",
+    "submittedAt": "2026.4.15 17:00"
   },
   {
     "id": 6,
     "office": "ブライトグループ",
     "slug": "bright-group",
-    "period": "2024年初めごろ",
+    "period": "2023年8月",
     "style": "通勤",
     "rating": 4,
     "good": "大手っていうだけで最初から安心感がありました。月間ランキング上位の人がいるくらいの規模感で、ちゃんと稼げる場所なんだなと実感しました。スタッフが丁寧で初回の説明がすごく細かくて、夜遅くに確認したいことがあっても返事が来ました。",
@@ -111,13 +116,14 @@
     "isCurrentlyWorking": true,
     "contentStyle": "ノンアダ・アダルト選択可",
     "visualStyle": "顔出しあり",
-    "personalStyle": "ノンアダルト"
+    "personalStyle": "ノンアダルト",
+    "submittedAt": "2026.4.30 19:00"
   },
   {
     "id": 7,
     "office": "ブライトグループ",
     "slug": "bright-group",
-    "period": "2024年春ごろ",
+    "period": "2023年10月",
     "style": "通勤",
     "rating": 4,
     "good": "稼ぎの仕組みがわかりやすくて、プレミアム店舗制度があるのがモチベーションになりました。頑張ったらステップアップできる感じがあって長く続けようという気持ちになれました。",
@@ -130,13 +136,14 @@
     "isCurrentlyWorking": true,
     "contentStyle": "ノンアダ・アダルト選択可",
     "visualStyle": "顔出しあり",
-    "personalStyle": "ノンアダルト"
+    "personalStyle": "ノンアダルト",
+    "submittedAt": "2026.3.6 22:30"
   },
   {
     "id": 8,
     "office": "ブライトグループ",
     "slug": "bright-group",
-    "period": "2023年秋ごろ",
+    "period": "2022年8月",
     "style": "通勤",
     "rating": 3,
     "good": "近所に店舗があって通いやすかったです。大手なので安心感がありました。",
@@ -149,13 +156,14 @@
     "isCurrentlyWorking": false,
     "contentStyle": "ノンアダ・アダルト選択可",
     "visualStyle": "顔出しあり",
-    "personalStyle": "ノンアダルト"
+    "personalStyle": "ノンアダルト",
+    "submittedAt": "2026.4.12 9:15"
   },
   {
     "id": 9,
     "office": "ブライトグループ",
     "slug": "bright-group",
-    "period": "2024年夏ごろ",
+    "period": "2023年1月",
     "style": "通勤",
     "rating": 3,
     "good": "設備がしっかりしていて研修があって一通り説明してもらえたのは助かりました。",
@@ -168,13 +176,14 @@
     "isCurrentlyWorking": false,
     "contentStyle": "ノンアダ・アダルト選択可",
     "visualStyle": "顔出しあり",
-    "personalStyle": "ノンアダルト"
+    "personalStyle": "ノンアダルト",
+    "submittedAt": "2026.3.29 9:45"
   },
   {
     "id": 10,
     "office": "ブライトグループ",
     "slug": "bright-group",
-    "period": "2024年初めごろ",
+    "period": "2023年2月",
     "style": "通勤",
     "rating": 4,
     "good": "顧問税理士サポートがある点が決め手でした。確定申告の相談ができるのは副業をしている身としてかなり助かりました。",
@@ -187,13 +196,14 @@
     "isCurrentlyWorking": true,
     "contentStyle": "ノンアダ・アダルト選択可",
     "visualStyle": "顔出しあり",
-    "personalStyle": "ノンアダルト"
+    "personalStyle": "ノンアダルト",
+    "submittedAt": "2026.4.1 17:00"
   },
   {
     "id": 11,
     "office": "アットグループ",
     "slug": "at-group",
-    "period": "2024年春ごろ",
+    "period": "2023年9月",
     "style": "通勤",
     "rating": 4,
     "good": "内装がカフェみたいな感じで最初から「ここなら大丈夫かも」と思えました。女性スタッフが優しくて細かいことも気軽に聞けました。通うのが嫌じゃないっていうのは続けられる理由として意外と大事だと思います。",
@@ -206,13 +216,14 @@
     "isCurrentlyWorking": true,
     "contentStyle": "ノンアダ・アダルト選択可",
     "visualStyle": "顔出しあり",
-    "personalStyle": "ノンアダルト"
+    "personalStyle": "ノンアダルト",
+    "submittedAt": "2026.4.20 14:30"
   },
   {
     "id": 12,
     "office": "アットグループ",
     "slug": "at-group",
-    "period": "2024年夏ごろ",
+    "period": "2025年6月",
     "style": "通勤",
     "rating": 4,
     "good": "家の近くに店舗があって買い物ついでに通える距離だったのが続けられた理由です。カフェみたいな内装で外出するための言い訳も作りやすかったです。スタッフが気さくで相談しやすかったです。",
@@ -225,13 +236,14 @@
     "isCurrentlyWorking": true,
     "contentStyle": "ノンアダ・アダルト選択可",
     "visualStyle": "顔出しあり",
-    "personalStyle": "ノンアダルト"
+    "personalStyle": "ノンアダルト",
+    "submittedAt": "2026.4.23 20:45"
   },
   {
     "id": 13,
     "office": "アットグループ",
     "slug": "at-group",
-    "period": "2024年初めごろ",
+    "period": "2025年1月",
     "style": "通勤",
     "rating": 5,
     "good": "スタッフが本当にフレンドリーで通うたびに顔を覚えてもらえて嬉しかったです。内装がカフェみたいでおしゃれで「今日も行きたい」と思える場所でした。同じくらいの年代の子もいて自然と話せる雰囲気がありました。",
@@ -244,13 +256,14 @@
     "isCurrentlyWorking": true,
     "contentStyle": "ノンアダ・アダルト選択可",
     "visualStyle": "顔出しあり",
-    "personalStyle": "ノンアダルト"
+    "personalStyle": "ノンアダルト",
+    "submittedAt": "2026.4.7 12:30"
   },
   {
     "id": 14,
     "office": "アットグループ",
     "slug": "at-group",
-    "period": "2023年秋ごろ",
+    "period": "2022年11月",
     "style": "通勤",
     "rating": 3,
     "good": "体験入店の仕組みがあって最初にリスクなく試せる点は良かったです。スタッフの対応は丁寧でした。",
@@ -263,13 +276,14 @@
     "isCurrentlyWorking": false,
     "contentStyle": "ノンアダ・アダルト選択可",
     "visualStyle": "顔出しあり",
-    "personalStyle": "ノンアダルト"
+    "personalStyle": "ノンアダルト",
+    "submittedAt": "2026.4.8 17:30"
   },
   {
     "id": 15,
     "office": "アットグループ",
     "slug": "at-group",
-    "period": "2023年冬ごろ",
+    "period": "2023年4月",
     "style": "通勤",
     "rating": 3,
     "good": "関東に店舗が多くて通いやすい場所を選べました。",
@@ -282,13 +296,14 @@
     "isCurrentlyWorking": false,
     "contentStyle": "ノンアダ・アダルト選択可",
     "visualStyle": "顔出しあり",
-    "personalStyle": "ノンアダルト"
+    "personalStyle": "ノンアダルト",
+    "submittedAt": "2026.5.4 21:15"
   },
   {
     "id": 16,
     "office": "チャットスタイル",
     "slug": "chatstyle",
-    "period": "2024年春ごろ",
+    "period": "2023年3月",
     "style": "通勤",
     "rating": 4,
     "good": "他の事務所と一番違うのは、お客さんとの会話の仕方・テクニックをしっかり教えてくれるところでした。「どんな話をするといいか」「こういう場合はこう返すといい」というような接客面のサポートが充実していて、コミュニケーション力が上がる感じがありました。",
@@ -301,13 +316,14 @@
     "isCurrentlyWorking": true,
     "contentStyle": "ノンアダ・アダルト選択可",
     "visualStyle": "顔出しあり",
-    "personalStyle": "ノンアダルト"
+    "personalStyle": "ノンアダルト",
+    "submittedAt": "2026.5.9 18:45"
   },
   {
     "id": 17,
     "office": "チャットスタイル",
     "slug": "chatstyle",
-    "period": "2024年夏ごろ",
+    "period": "2025年6月",
     "style": "通勤",
     "rating": 4,
     "good": "どうすればお客さんに好んでもらえるか、会話の引き出しをどう増やすかを具体的に教えてもらえました。単に「頑張れ」ではなくて、接客面でのアドバイスが丁寧なのが他と違うと思います。バーチャル配信で一切顔を出さなくていい選択肢があるのも安心でした。",
@@ -320,13 +336,14 @@
     "isCurrentlyWorking": true,
     "contentStyle": "ノンアダ・アダルト選択可",
     "visualStyle": "バーチャル",
-    "personalStyle": "ノンアダルト"
+    "personalStyle": "ノンアダルト",
+    "submittedAt": "2026.4.20 17:15"
   },
   {
     "id": 18,
     "office": "チャットスタイル",
     "slug": "chatstyle",
-    "period": "2024年初めごろ",
+    "period": "2023年3月",
     "style": "通勤",
     "rating": 4,
     "good": "「この返し方だとお客さんが長居してくれる」「こういうトークがいい」という具体的な会話サポートが充実していて、ここで学んだことが今でも役立っています。",
@@ -339,13 +356,14 @@
     "isCurrentlyWorking": true,
     "contentStyle": "ノンアダ・アダルト選択可",
     "visualStyle": "顔出しあり",
-    "personalStyle": "ノンアダルト"
+    "personalStyle": "ノンアダルト",
+    "submittedAt": "2026.5.7 9:15"
   },
   {
     "id": 19,
     "office": "チャットスタイル",
     "slug": "chatstyle",
-    "period": "2023年冬ごろ",
+    "period": "2024年1月",
     "style": "在宅",
     "rating": 3,
     "good": "スタッフへのLINE相談の対応が丁寧で助かりました。在宅でも会話のアドバイスをもらえました。",
@@ -358,13 +376,14 @@
     "isCurrentlyWorking": false,
     "contentStyle": "ノンアダ・アダルト選択可",
     "visualStyle": "顔出しあり",
-    "personalStyle": "ノンアダルト"
+    "personalStyle": "ノンアダルト",
+    "submittedAt": "2026.3.7 16:15"
   },
   {
     "id": 20,
     "office": "チャットスタイル",
     "slug": "chatstyle",
-    "period": "2024年春ごろ",
+    "period": "2024年7月",
     "style": "通勤",
     "rating": 4,
     "good": "会話の引き出しが増えると稼ぎも伸びるというのが実感できた事務所でした。接客面でのサポートが手厚くて、ここに来てから自分のトークスタイルが変わりました。",
@@ -377,13 +396,14 @@
     "isCurrentlyWorking": true,
     "contentStyle": "ノンアダ・アダルト選択可",
     "visualStyle": "顔出しあり",
-    "personalStyle": "ノンアダルト"
+    "personalStyle": "ノンアダルト",
+    "submittedAt": "2026.3.4 14:00"
   },
   {
     "id": 21,
     "office": "フレイバーグループ",
     "slug": "flavor-group",
-    "period": "2024年初めごろ",
+    "period": "2023年12月",
     "style": "通勤",
     "rating": 3,
     "good": "稼ぎのノウハウを教えてくれるのが早かったです。「いつ入るといいか」「どの媒体で稼ぎやすいか」など、お金を増やすための具体的な話をしてくれます。固定給を選べる制度があって最初の不安定な時期も収入の見通しが立てやすかったのは助かりました。",
@@ -396,13 +416,14 @@
     "isCurrentlyWorking": true,
     "contentStyle": "ノンアダ・アダルト選択可",
     "visualStyle": "顔出しあり",
-    "personalStyle": "ノンアダルト"
+    "personalStyle": "ノンアダルト",
+    "submittedAt": "2026.3.8 20:30"
   },
   {
     "id": 22,
     "office": "フレイバーグループ",
     "slug": "flavor-group",
-    "period": "2023年秋ごろ",
+    "period": "2025年3月",
     "style": "通勤",
     "rating": 3,
     "good": "どうすれば稼ぎが増えるかをはっきり教えてくれます。「この時間帯がいい」「この方法を試してみて」という具体的なアドバイスが多くて、稼ぎ重視で頑張りたい人には向いている事務所だと思います。",
@@ -415,13 +436,14 @@
     "isCurrentlyWorking": true,
     "contentStyle": "ノンアダ・アダルト選択可",
     "visualStyle": "顔出しあり",
-    "personalStyle": "ノンアダルト"
+    "personalStyle": "ノンアダルト",
+    "submittedAt": "2026.5.8 11:45"
   },
   {
     "id": 23,
     "office": "フレイバーグループ",
     "slug": "flavor-group",
-    "period": "2024年夏ごろ",
+    "period": "2024年12月",
     "style": "通勤",
     "rating": 3,
     "good": "近所に店舗があって通いやすかったです。稼ぎのノウハウを積極的に教えてくれる姿勢がありました。",
@@ -434,13 +456,14 @@
     "isCurrentlyWorking": false,
     "contentStyle": "ノンアダ・アダルト選択可",
     "visualStyle": "顔出しあり",
-    "personalStyle": "ノンアダルト"
+    "personalStyle": "ノンアダルト",
+    "submittedAt": "2026.5.20 17:00"
   },
   {
     "id": 24,
     "office": "フレイバーグループ",
     "slug": "flavor-group",
-    "period": "2024年春ごろ",
+    "period": "2023年7月",
     "style": "通勤",
     "rating": 3,
     "good": "どの媒体で稼ぎやすいか、どうすれば効率よく稼げるかを具体的に教えてくれます。稼ぎへの意識が高い事務所だなと感じました。",
@@ -453,13 +476,14 @@
     "isCurrentlyWorking": false,
     "contentStyle": "ノンアダ・アダルト選択可",
     "visualStyle": "顔出しあり",
-    "personalStyle": "ノンアダルト"
+    "personalStyle": "ノンアダルト",
+    "submittedAt": "2026.5.10 9:30"
   },
   {
     "id": 25,
     "office": "フレイバーグループ",
     "slug": "flavor-group",
-    "period": "2023年冬ごろ",
+    "period": "2022年8月",
     "style": "通勤",
     "rating": 4,
     "good": "夜勤明けに稼働することが多いので24時間スタッフ対応というのが選んだ決め手でした。深夜に質問しても対応してもらえました。稼ぎへの具体的なアドバイスも早かったです。",
@@ -472,13 +496,14 @@
     "isCurrentlyWorking": true,
     "contentStyle": "ノンアダ・アダルト選択可",
     "visualStyle": "顔出しあり",
-    "personalStyle": "ノンアダルト"
+    "personalStyle": "ノンアダルト",
+    "submittedAt": "2026.3.4 22:15"
   },
   {
     "id": 26,
     "office": "アリュール",
     "slug": "allure",
-    "period": "2024年初めごろ",
+    "period": "2024年3月",
     "style": "通勤",
     "rating": 2,
     "good": "スタッフは丁寧でした。通える距離に店舗がありました。",
@@ -491,13 +516,14 @@
     "isCurrentlyWorking": false,
     "contentStyle": "ノンアダ・アダルト選択可",
     "visualStyle": "顔出しあり",
-    "personalStyle": "ノンアダルト"
+    "personalStyle": "ノンアダルト",
+    "submittedAt": "2026.3.23 19:00"
   },
   {
     "id": 27,
     "office": "アリュール",
     "slug": "allure",
-    "period": "2023年秋ごろ",
+    "period": "2023年8月",
     "style": "通勤",
     "rating": 4,
     "good": "時給保証の条件をちゃんと理解した上で入ったので、ギャップはなかったです。スタッフのアドバイスが具体的で稼ぎが伸びるのが早かったです。",
@@ -510,13 +536,14 @@
     "isCurrentlyWorking": true,
     "contentStyle": "ノンアダ・アダルト選択可",
     "visualStyle": "顔出しあり",
-    "personalStyle": "ノンアダルト"
+    "personalStyle": "ノンアダルト",
+    "submittedAt": "2026.4.9 14:15"
   },
   {
     "id": 28,
     "office": "アリュール",
     "slug": "allure",
-    "period": "2024年夏ごろ",
+    "period": "2025年8月",
     "style": "通勤",
     "rating": 3,
     "good": "通いやすい場所に店舗がありました。",
@@ -529,13 +556,14 @@
     "isCurrentlyWorking": false,
     "contentStyle": "ノンアダ・アダルト選択可",
     "visualStyle": "顔出しあり",
-    "personalStyle": "ノンアダルト"
+    "personalStyle": "ノンアダルト",
+    "submittedAt": "2026.5.23 23:15"
   },
   {
     "id": 29,
     "office": "NMRグループ",
     "slug": "nmr-group",
-    "period": "2024年初めごろ",
+    "period": "2023年1月",
     "style": "通勤",
     "rating": 3,
     "good": "完全防音個室なので集中して配信できます。設備はしっかりしていました。",
@@ -548,13 +576,14 @@
     "isCurrentlyWorking": false,
     "contentStyle": "ノンアダ・アダルト選択可",
     "visualStyle": "顔出しあり",
-    "personalStyle": "ノンアダルト"
+    "personalStyle": "ノンアダルト",
+    "submittedAt": "2026.5.12 9:15"
   },
   {
     "id": 30,
     "office": "NMRグループ",
     "slug": "nmr-group",
-    "period": "2023年秋ごろ",
+    "period": "2024年9月",
     "style": "通勤",
     "rating": 3,
     "good": "設備の質は高くて防音個室は快適でした。",
@@ -567,13 +596,14 @@
     "isCurrentlyWorking": false,
     "contentStyle": "ノンアダ・アダルト選択可",
     "visualStyle": "顔出しあり",
-    "personalStyle": "ノンアダルト"
+    "personalStyle": "ノンアダルト",
+    "submittedAt": "2026.4.19 16:15"
   },
   {
     "id": 31,
     "office": "NMRグループ",
     "slug": "nmr-group",
-    "period": "2024年夏ごろ",
+    "period": "2022年11月",
     "style": "通勤",
     "rating": 4,
     "good": "完全防音個室なので話し声が外に漏れる心配がないのが一番良かったです。スタッフが落ち着いた雰囲気で相談しやすかったです。",
@@ -586,13 +616,14 @@
     "isCurrentlyWorking": true,
     "contentStyle": "ノンアダ・アダルト選択可",
     "visualStyle": "顔出しあり",
-    "personalStyle": "ノンアダルト"
+    "personalStyle": "ノンアダルト",
+    "submittedAt": "2026.5.8 11:00"
   },
   {
     "id": 32,
     "office": "NMRグループ",
     "slug": "nmr-group",
-    "period": "2024年春ごろ",
+    "period": "2023年4月",
     "style": "通勤",
     "rating": 3,
     "good": "個室が広くてきれいで居心地は良かったです。",
@@ -605,13 +636,14 @@
     "isCurrentlyWorking": true,
     "contentStyle": "ノンアダ・アダルト選択可",
     "visualStyle": "顔出しあり",
-    "personalStyle": "ノンアダルト"
+    "personalStyle": "ノンアダルト",
+    "submittedAt": "2026.3.18 9:00"
   },
   {
     "id": 33,
     "office": "NMRグループ",
     "slug": "nmr-group",
-    "period": "2023年冬ごろ",
+    "period": "2025年3月",
     "style": "通勤",
     "rating": 4,
     "good": "防音個室は安心して配信できます。公式ブログが充実していて応募前に情報を集めやすかったのも好印象でした。",
@@ -624,13 +656,14 @@
     "isCurrentlyWorking": true,
     "contentStyle": "ノンアダ・アダルト選択可",
     "visualStyle": "顔出しあり",
-    "personalStyle": "ノンアダルト"
+    "personalStyle": "ノンアダルト",
+    "submittedAt": "2026.4.15 22:45"
   },
   {
     "id": 34,
     "office": "チャットレディJP",
     "slug": "chatlady-jp",
-    "period": "2024年春ごろ",
+    "period": "2023年11月",
     "style": "通勤",
     "rating": 3,
     "good": "新宿に複数の店舗があって通いやすかったです。美容機器を無料で使えるのが珍しくて肌ケアしながら働けるのは嬉しかったです。",
@@ -643,13 +676,14 @@
     "isCurrentlyWorking": true,
     "contentStyle": "ノンアダ・アダルト選択可",
     "visualStyle": "顔出しあり",
-    "personalStyle": "ノンアダルト"
+    "personalStyle": "ノンアダルト",
+    "submittedAt": "2026.3.15 17:45"
   },
   {
     "id": 35,
     "office": "チャットレディJP",
     "slug": "chatlady-jp",
-    "period": "2023年秋ごろ",
+    "period": "2024年9月",
     "style": "通勤",
     "rating": 3,
     "good": "新宿に複数店舗があって通いやすかったです。",
@@ -662,13 +696,14 @@
     "isCurrentlyWorking": false,
     "contentStyle": "ノンアダ・アダルト選択可",
     "visualStyle": "顔出しあり",
-    "personalStyle": "ノンアダルト"
+    "personalStyle": "ノンアダルト",
+    "submittedAt": "2026.5.7 12:30"
   },
   {
     "id": 36,
     "office": "チャットレディJP",
     "slug": "chatlady-jp",
-    "period": "2024年初めごろ",
+    "period": "2022年6月",
     "style": "通勤",
     "rating": 4,
     "good": "美容機器が無料で使えるのが面白かったです。新宿に複数店舗があって気分で店舗を変えられるのも良かったです。バーチャルを試してみたら思ったより楽しくて、自分のキャラを作る感覚がありました。",
@@ -681,13 +716,14 @@
     "isCurrentlyWorking": true,
     "contentStyle": "ノンアダ・アダルト選択可",
     "visualStyle": "バーチャル",
-    "personalStyle": "ノンアダルト"
+    "personalStyle": "ノンアダルト",
+    "submittedAt": "2026.5.16 9:45"
   },
   {
     "id": 37,
     "office": "チャットレディJP",
     "slug": "chatlady-jp",
-    "period": "2024年夏ごろ",
+    "period": "2022年4月",
     "style": "通勤",
     "rating": 3,
     "good": "新宿に通える距離だったので選びました。スタッフは親切でした。",
@@ -700,13 +736,14 @@
     "isCurrentlyWorking": false,
     "contentStyle": "ノンアダ・アダルト選択可",
     "visualStyle": "顔出しあり",
-    "personalStyle": "ノンアダルト"
+    "personalStyle": "ノンアダルト",
+    "submittedAt": "2026.3.17 22:15"
   },
   {
     "id": 38,
     "office": "チャットレディJP",
     "slug": "chatlady-jp",
-    "period": "2023年冬ごろ",
+    "period": "2024年5月",
     "style": "通勤",
     "rating": 3,
     "good": "バーチャル配信で顔出し不要というのが職場バレのリスク軽減に有効だと判断して選びました。",
@@ -719,13 +756,14 @@
     "isCurrentlyWorking": false,
     "contentStyle": "ノンアダ・アダルト選択可",
     "visualStyle": "バーチャル",
-    "personalStyle": "ノンアダルト"
+    "personalStyle": "ノンアダルト",
+    "submittedAt": "2026.4.7 23:45"
   },
   {
     "id": 39,
     "office": "アスタリスク",
     "slug": "asterisk",
-    "period": "2024年春ごろ",
+    "period": "2022年1月",
     "style": "通勤",
     "rating": 3,
     "good": "全店女性スタッフだけというのが最初の安心感になりました。",
@@ -738,13 +776,14 @@
     "isCurrentlyWorking": false,
     "contentStyle": "ノンアダ・アダルト選択可",
     "visualStyle": "顔出しあり",
-    "personalStyle": "ノンアダルト"
+    "personalStyle": "ノンアダルト",
+    "submittedAt": "2026.4.21 15:45"
   },
   {
     "id": 40,
     "office": "アスタリスク",
     "slug": "asterisk",
-    "period": "2023年冬ごろ",
+    "period": "2022年10月",
     "style": "通勤",
     "rating": 5,
     "good": "稼ぎのノウハウが豊富で具体的なアドバイスをたくさんもらえました。スタッフが全員女性なので何でも気軽に相談できます。本気で稼ぎたいならここだと思います。",
@@ -757,13 +796,14 @@
     "isCurrentlyWorking": true,
     "contentStyle": "ノンアダ・アダルト選択可",
     "visualStyle": "顔出しあり",
-    "personalStyle": "ノンアダルト"
+    "personalStyle": "ノンアダルト",
+    "submittedAt": "2026.5.2 14:00"
   },
   {
     "id": 41,
     "office": "アスタリスク",
     "slug": "asterisk",
-    "period": "2024年初めごろ",
+    "period": "2024年3月",
     "style": "通勤",
     "rating": 2,
     "good": "全店女性スタッフで安心感はありました。",
@@ -776,13 +816,14 @@
     "isCurrentlyWorking": false,
     "contentStyle": "ノンアダ・アダルト選択可",
     "visualStyle": "顔出しあり",
-    "personalStyle": "ノンアダルト"
+    "personalStyle": "ノンアダルト",
+    "submittedAt": "2026.5.17 18:00"
   },
   {
     "id": 42,
     "office": "アスタリスク",
     "slug": "asterisk",
-    "period": "2024年夏ごろ",
+    "period": "2022年4月",
     "style": "通勤",
     "rating": 3,
     "good": "女性スタッフだけなので入りやすかったです。",
@@ -795,13 +836,14 @@
     "isCurrentlyWorking": false,
     "contentStyle": "ノンアダ・アダルト選択可",
     "visualStyle": "顔出しあり",
-    "personalStyle": "ノンアダルト"
+    "personalStyle": "ノンアダルト",
+    "submittedAt": "2026.4.26 11:00"
   },
   {
     "id": 43,
     "office": "アスタリスク",
     "slug": "asterisk",
-    "period": "2023年秋ごろ",
+    "period": "2022年1月",
     "style": "通勤",
     "rating": 4,
     "good": "全店女性スタッフで安心材料でした。稼ぎのサポートが手厚く目標に向かって動きやすかったです。",
@@ -814,13 +856,14 @@
     "isCurrentlyWorking": true,
     "contentStyle": "ノンアダ・アダルト選択可",
     "visualStyle": "顔出しあり",
-    "personalStyle": "ノンアダルト"
+    "personalStyle": "ノンアダルト",
+    "submittedAt": "2026.4.30 22:15"
   },
   {
     "id": 44,
     "office": "ポケットワーク",
     "slug": "pocket-work",
-    "period": "2024年初めごろ",
+    "period": "2022年3月",
     "style": "通勤",
     "rating": 2,
     "good": "システム自体はわかりやすくて使いやすかったです。",
@@ -833,13 +876,14 @@
     "isCurrentlyWorking": false,
     "contentStyle": "ノンアダ・アダルト選択可",
     "visualStyle": "顔出しあり",
-    "personalStyle": "ノンアダルト"
+    "personalStyle": "ノンアダルト",
+    "submittedAt": "2026.3.3 17:45"
   },
   {
     "id": 45,
     "office": "ポケットワーク",
     "slug": "pocket-work",
-    "period": "2023年冬ごろ",
+    "period": "2025年7月",
     "style": "通勤",
     "rating": 3,
     "good": "仕組みがしっかりしていて自分で動ける人には効率的な環境だと思います。",
@@ -852,13 +896,14 @@
     "isCurrentlyWorking": false,
     "contentStyle": "ノンアダ・アダルト選択可",
     "visualStyle": "バーチャル",
-    "personalStyle": "ノンアダルト"
+    "personalStyle": "ノンアダルト",
+    "submittedAt": "2026.3.31 13:30"
   },
   {
     "id": 46,
     "office": "ポケットワーク",
     "slug": "pocket-work",
-    "period": "2024年春ごろ",
+    "period": "2025年4月",
     "style": "通勤",
     "rating": 2,
     "good": "通勤できる距離に店舗がありました。",
@@ -871,13 +916,14 @@
     "isCurrentlyWorking": false,
     "contentStyle": "ノンアダ・アダルト選択可",
     "visualStyle": "顔出しあり",
-    "personalStyle": "ノンアダルト"
+    "personalStyle": "ノンアダルト",
+    "submittedAt": "2026.3.16 21:45"
   },
   {
     "id": 47,
     "office": "ポケットワーク",
     "slug": "pocket-work",
-    "period": "2024年夏ごろ",
+    "period": "2025年11月",
     "style": "通勤",
     "rating": 3,
     "good": "仕組みとしては整っていて使いやすかったです。",
@@ -890,13 +936,14 @@
     "isCurrentlyWorking": false,
     "contentStyle": "ノンアダ・アダルト選択可",
     "visualStyle": "顔出しあり",
-    "personalStyle": "ノンアダルト"
+    "personalStyle": "ノンアダルト",
+    "submittedAt": "2026.4.1 10:15"
   },
   {
     "id": 48,
     "office": "ポケットワーク",
     "slug": "pocket-work",
-    "period": "2023年秋ごろ",
+    "period": "2023年12月",
     "style": "通勤",
     "rating": 3,
     "good": "バーチャル配信で顔出しなしで働ける選択肢があります。",
@@ -909,13 +956,14 @@
     "isCurrentlyWorking": false,
     "contentStyle": "ノンアダ・アダルト選択可",
     "visualStyle": "バーチャル",
-    "personalStyle": "ノンアダルト"
+    "personalStyle": "ノンアダルト",
+    "submittedAt": "2026.5.15 17:30"
   },
   {
     "id": 49,
     "office": "ライバーサポートグループ",
     "slug": "liver-support",
-    "period": "2024年春ごろ",
+    "period": "2022年2月",
     "style": "通勤",
     "rating": 3,
     "good": "20年以上続いている老舗と聞いて安心感がありました。池袋に店舗があって通いやすかったです。スタッフは丁寧でした。",
@@ -928,13 +976,14 @@
     "isCurrentlyWorking": true,
     "contentStyle": "ノンアダ・アダルト選択可",
     "visualStyle": "顔出しあり",
-    "personalStyle": "ノンアダルト"
+    "personalStyle": "ノンアダルト",
+    "submittedAt": "2026.5.4 10:45"
   },
   {
     "id": 50,
     "office": "ライバーサポートグループ",
     "slug": "liver-support",
-    "period": "2023年冬ごろ",
+    "period": "2025年7月",
     "style": "通勤",
     "rating": 3,
     "good": "エリアの選択肢が多くて通いやすい場所を選べました。老舗なので安心感がありました。",
@@ -947,13 +996,14 @@
     "isCurrentlyWorking": true,
     "contentStyle": "ノンアダ・アダルト選択可",
     "visualStyle": "顔出しあり",
-    "personalStyle": "ノンアダルト"
+    "personalStyle": "ノンアダルト",
+    "submittedAt": "2026.4.11 17:15"
   },
   {
     "id": 51,
     "office": "ライバーサポートグループ",
     "slug": "liver-support",
-    "period": "2024年初めごろ",
+    "period": "2023年5月",
     "style": "在宅",
     "rating": 3,
     "good": "在宅でできてノルマなしで自分のペースで働けました。",
@@ -966,13 +1016,14 @@
     "isCurrentlyWorking": true,
     "contentStyle": "ノンアダ・アダルト選択可",
     "visualStyle": "顔出しあり",
-    "personalStyle": "ノンアダルト"
+    "personalStyle": "ノンアダルト",
+    "submittedAt": "2026.3.31 16:00"
   },
   {
     "id": 52,
     "office": "ライバーサポートグループ",
     "slug": "liver-support",
-    "period": "2024年夏ごろ",
+    "period": "2024年11月",
     "style": "通勤",
     "rating": 3,
     "good": "池袋に店舗があって通いやすかったです。スタッフは優しかったです。",
@@ -985,13 +1036,14 @@
     "isCurrentlyWorking": false,
     "contentStyle": "ノンアダ・アダルト選択可",
     "visualStyle": "顔出しあり",
-    "personalStyle": "ノンアダルト"
+    "personalStyle": "ノンアダルト",
+    "submittedAt": "2026.3.3 21:45"
   },
   {
     "id": 53,
     "office": "ライバーサポートグループ",
     "slug": "liver-support",
-    "period": "2023年秋ごろ",
+    "period": "2023年2月",
     "style": "通勤",
     "rating": 4,
     "good": "社会保険加入ができると聞いて選びました。チャットレディ事務所で社保加入できるのは珍しいと思います。老舗で安定感がありました。",
@@ -1004,13 +1056,14 @@
     "isCurrentlyWorking": true,
     "contentStyle": "ノンアダ・アダルト選択可",
     "visualStyle": "顔出しあり",
-    "personalStyle": "ノンアダルト"
+    "personalStyle": "ノンアダルト",
+    "submittedAt": "2026.5.23 12:00"
   },
   {
     "id": 54,
     "office": "フェアリーテイル",
     "slug": "ft",
-    "period": "2025年11月ごろ",
+    "period": "2024年10月",
     "style": "通勤",
     "rating": 3,
     "good": "面接で「うちはノンアダルト専門だけど、アダルト要求が来ないわけじゃない」と良いことだけじゃなく現実も話してくれたのが、逆に信頼できました。業界全体に怪しいイメージがあったので、変に売り込まれなかったのが入店の決め手です。",
@@ -1023,13 +1076,14 @@
     "isCurrentlyWorking": true,
     "contentStyle": "ノンアダルト専門",
     "visualStyle": "マスク",
-    "personalStyle": "ノンアダルト"
+    "personalStyle": "ノンアダルト",
+    "submittedAt": "2026.4.28 9:00"
   },
   {
     "id": 55,
     "office": "フェアリーテイル",
     "slug": "ft",
-    "period": "2025年11月ごろ",
+    "period": "2023年11月",
     "style": "通勤",
     "rating": 5,
     "good": "本業が副業禁止なので、顔バレ・身バレが一番の不安でした。マスク配信OKで、しかもノンアダルト専門というのが決め手です。最初は月3万円稼げればいいかな程度の気持ちで始めましたが、トレーナーさんがプロフィールやサムネを一緒に考えてくれて、3ヶ月目くらいから固定のお客さんがついてくれるようになりました。女性スタッフの方もいるし、店長さんはいつもニコニコして相談しやすい雰囲気なのが続けられている理由だと思います。",
@@ -1042,13 +1096,14 @@
     "isCurrentlyWorking": true,
     "contentStyle": "ノンアダルト専門",
     "visualStyle": "マスク",
-    "personalStyle": "ノンアダルト"
+    "personalStyle": "ノンアダルト",
+    "submittedAt": "2026.5.9 23:00"
   },
   {
     "id": 56,
     "office": "フェアリーテイル",
     "slug": "ft",
-    "period": "2025年11月ごろ",
+    "period": "2023年12月",
     "style": "通勤",
     "rating": 4,
     "good": "他社で体験したときにスタッフからアダルトを暗にすすめられて嫌になり、ノンアダルト専門と書いてあるこちらに移りました。お話でお客さんを掴んでいくので一貫しているし、お客さんもお話メインの方が多く、自分のペースで関係性を築けます。スタッフさんが「お客さんへの向き合い方」を一緒に考えてくれて、技術論だけじゃなく考え方の部分でアドバイスをくれるのがありがたいです。家事と育児の合間でも、出勤シフトを柔軟に組めるので無理なく続けられています。",
@@ -1061,13 +1116,14 @@
     "isCurrentlyWorking": true,
     "contentStyle": "ノンアダルト専門",
     "visualStyle": "マスク",
-    "personalStyle": "ノンアダルト"
+    "personalStyle": "ノンアダルト",
+    "submittedAt": "2026.5.26 17:45"
   },
   {
     "id": 57,
     "office": "フェアリーテイル",
     "slug": "ft",
-    "period": "2026年4月ごろ",
+    "period": "2022年5月",
     "style": "通勤",
     "rating": 2,
     "good": "ノンアダルト専門なので、過激なことを求められないのは楽です。マスクOKなので顔出しの抵抗もありませんでした。",
@@ -1080,6 +1136,7 @@
     "isCurrentlyWorking": false,
     "contentStyle": "ノンアダルト専門",
     "visualStyle": "マスク",
-    "personalStyle": "ノンアダルト"
+    "personalStyle": "ノンアダルト",
+    "submittedAt": "2026.4.1 10:30"
   }
 ]

@@ -77,9 +77,15 @@ function ReviewCard({ review }: { review: Review }) {
               {review.office}
             </span>
           </div>
-          {/* 時期 */}
-          <div style={{ fontSize: "11px", color: "var(--text-light)", marginTop: "4px" }}>
-            {review.period}
+          {/* 入店日 + 投稿日時 */}
+          <div style={{
+            fontSize: "10.5px", color: "var(--text-light)", marginTop: "4px",
+            display: "flex", gap: "10px", flexWrap: "wrap",
+          }}>
+            <span>入店：{review.period}</span>
+            {review.submittedAt && (
+              <span style={{ opacity: 0.75 }}>投稿：{review.submittedAt}</span>
+            )}
           </div>
         </div>
       </div>

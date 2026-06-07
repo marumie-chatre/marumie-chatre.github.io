@@ -745,9 +745,15 @@ export default function Home() {
                     }}>{r.style}</span>
                     <span style={{ fontSize: 13, fontWeight: 800 }}>{r.office}</span>
                   </div>
-                  {/* 時期 */}
-                  <div style={{ fontSize: 10.5, color: G.inkSoft, marginTop: 4 }}>
-                    {r.period}
+                  {/* 入店日 + 投稿日時 */}
+                  <div style={{
+                    fontSize: 10, color: G.inkSoft, marginTop: 4,
+                    display: "flex", gap: 8, flexWrap: "wrap",
+                  }}>
+                    <span>入店：{r.period}</span>
+                    {r.submittedAt && (
+                      <span style={{ opacity: 0.75 }}>投稿：{r.submittedAt}</span>
+                    )}
                   </div>
                 </div>
               </div>
