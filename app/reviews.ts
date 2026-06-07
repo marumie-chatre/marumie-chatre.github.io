@@ -24,7 +24,31 @@ export type Review = {
 
 // レビューデータを直接インポート
 import reviewsData from "./reviews.json";
-export const reviews: Review[] = reviewsData as Review[];
+
+// 投稿日時 "2026.4.9 16:15" → ソート用数値 YYYYMMDDHHmm
+function parseSubmittedAt(s?: string): number {
+  if (!s) return 0;
+  const m = s.match(/(\d+)\.(\d+)\.(\d+)\s+(\d+):(\d+)/);
+  if (!m) return 0;
+  const [, y, mo, d, h, min] = m;
+  return (
+    parseInt(y) * 100000000 +
+    parseInt(mo) * 1000000 +
+    parseInt(d) * 10000 +
+    parseInt(h) * 100 +
+    parseInt(min)
+  );
+}
+
+// 投稿日時降順（新しい順）でソート
+export function sortByDateDesc(list: Review[]): Review[] {
+  return [...list].sort(
+    (a, b) => parseSubmittedAt(b.submittedAt) - parseSubmittedAt(a.submittedAt)
+  );
+}
+
+// 初期データを投稿日時降順で正規化（全エクスポートに反映）
+export const reviews: Review[] = sortByDateDesc(reviewsData as Review[]);
 
 export function getReviewsBySlug(slug: string): Review[] {
   return reviews.filter((r: Review) => r.slug === slug);
