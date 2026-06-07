@@ -92,9 +92,9 @@ const QUICK_NAV = [
 
 // データ：お悩みプレビュー3本（旧コラム枠を統合）— 全て /q 配下のハブで提示する
 const WORRIES_PREVIEW = [
-  { href: "/column/jimusho-erabi",  cat: "初心者・選び方", title: "チャットレディ事務所の選び方｜失敗しない5つの基準", time: "5分", date: "2025.05.01", image: "/col-jimusho-erabi.png" },
-  { href: "/column/mibare-taisaku", cat: "身バレ",         title: "身バレ、よくある疑問に答えます｜顔バレ・家族バレ・職場バレ", time: "6分", date: "2025.05.01", image: "/col-mibare-taisaku.png" },
-  { href: "/column/hoikushi-baito", cat: "副業バレ",       title: "チャトレは副業にアリ？会社・職場にバレないための全対策", time: "7分", date: "2025.05.01", image: "/col-hoikushi-baito.png" },
+  { href: "/q/jimusho-erabi",  cat: "初心者・選び方", title: "チャットレディ事務所の選び方｜失敗しない5つの基準", time: "5分", date: "2025.05.01", image: "/col-jimusho-erabi.png" },
+  { href: "/q/mibare-taisaku", cat: "身バレ",         title: "身バレ、よくある疑問に答えます｜顔バレ・家族バレ・職場バレ", time: "6分", date: "2025.05.01", image: "/col-mibare-taisaku.png" },
+  { href: "/q/hoikushi-baito", cat: "副業バレ",       title: "チャトレは副業にアリ？会社・職場にバレないための全対策", time: "7分", date: "2025.05.01", image: "/col-hoikushi-baito.png" },
 ];
 
 // ========== サブコンポーネント ==========

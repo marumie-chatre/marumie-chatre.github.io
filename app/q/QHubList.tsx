@@ -27,17 +27,21 @@ type Article = {
   time: string;
   date: string;
   image: string;
+  // FEATURED 運用ルール：true をつけた記事が「すべて」タブの先頭に大カードで出る
+  // どこにも true がない場合は配列先頭が自動的に FEATURED になる
+  featured?: boolean;
 };
 
 // 8記事：旧 /q × 5 + 旧 /column × 3 を統合
 const ARTICLES: Article[] = [
   {
-    href: "/column/jimusho-erabi",
+    href: "/q/jimusho-erabi",
     cat: "初心者・選び方",
     title: "チャットレディ事務所の選び方｜失敗しない5つの基準",
     excerpt: "「なんとなく良さそう」で選ぶと後悔します。安全な事務所を見極める5つの基準を、現役の視点で解説します。",
     time: "5分", date: "2025.05.01",
     image: "/col-jimusho-erabi.png",
+    featured: true,
   },
   {
     href: "/q/barebure",
@@ -48,7 +52,7 @@ const ARTICLES: Article[] = [
     image: "/q-barebure.png",
   },
   {
-    href: "/column/mibare-taisaku",
+    href: "/q/mibare-taisaku",
     cat: "身バレ",
     title: "身バレ、よくある疑問に答えます｜顔バレ・家族バレ・職場バレ",
     excerpt: "配信中の身バレが心配な方へ。マスク・バーチャル・地域ブロックなど、よく聞かれる質問を一気に整理。",
@@ -72,7 +76,7 @@ const ARTICLES: Article[] = [
     image: "/q-shokuba-bare.png",
   },
   {
-    href: "/column/hoikushi-baito",
+    href: "/q/hoikushi-baito",
     cat: "副業バレ",
     title: "チャトレは副業にアリ？会社・職場にバレないための全対策",
     excerpt: "副業として始めたい方へ。住民税・確定申告・職場バレ対策まで一気通貫で整理。",
@@ -127,8 +131,13 @@ function QHubListInner() {
     : ARTICLES.filter(a => a.cat === active);
 
   const isAll = active === "すべて";
-  const featured = isAll && filtered.length > 0 ? filtered[0] : null;
-  const list = isAll ? filtered.slice(1) : filtered;
+  // FEATURED：「すべて」タブの時のみ、featured: true 指定 (なければ配列先頭) を大カードで出す
+  const featured = isAll && filtered.length > 0
+    ? (ARTICLES.find(a => a.featured) ?? filtered[0])
+    : null;
+  const list = isAll && featured
+    ? filtered.filter(a => a.href !== featured.href)
+    : filtered;
 
   return (
     <>

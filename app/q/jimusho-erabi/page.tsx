@@ -32,13 +32,13 @@ export default function ColJimushoErabiPage() {
       <ArticleSchema
         title="チャットレディ事務所の選び方｜失敗しない5つの基準"
         description="「なんとなく良さそう」で選ぶと後悔します。編集部が実際に調査した、安全な事務所を見極める5つのチェックポイントを解説します。"
-        url="https://marumie-chatre.vercel.app/column/jimusho-erabi"
+        url="https://marumie-chatre.vercel.app/q/jimusho-erabi"
         datePublished="2026-05-05"
       />
       <BreadcrumbSchema items={[
         { name: "トップ", path: "/" },
         { name: "お悩みから探す", path: "/q" },
-        { name: "事務所の選び方", path: "/column/jimusho-erabi" },
+        { name: "事務所の選び方", path: "/q/jimusho-erabi" },
       ]} />
       <FAQSchema items={FAQS} />
 

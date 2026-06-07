@@ -32,13 +32,13 @@ export default function ColHoikushiBaitoPage() {
       <ArticleSchema
         title="チャットレディは副業にアリ？会社・職場にバレないための全対策"
         description="本業をしながらチャットレディを始めたい方へ。就業規則の確認方法から、住民税・人づて・SNSなどバレる4つの原因と対策を解説します。"
-        url="https://marumie-chatre.vercel.app/column/hoikushi-baito"
+        url="https://marumie-chatre.vercel.app/q/hoikushi-baito"
         datePublished="2026-05-07"
       />
       <BreadcrumbSchema items={[
         { name: "トップ", path: "/" },
         { name: "お悩みから探す", path: "/q" },
-        { name: "副業ガイド", path: "/column/hoikushi-baito" },
+        { name: "副業ガイド", path: "/q/hoikushi-baito" },
       ]} />
       <FAQSchema items={FAQS} />
 
