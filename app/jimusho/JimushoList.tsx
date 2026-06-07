@@ -161,17 +161,20 @@ const AXIS_META: { key: Exclude<ScoreKey, "total">; label: string; max: number }
 ];
 
 // タブ
-const TABS: { id: ScoreKey; label: string }[] = [
-  { id: "total",    label: "おすすめ順" },
-  { id: "safety",   label: "安全性" },
-  { id: "support",  label: "サポート" },
-  { id: "beginner", label: "初心者向け" },
-  { id: "work",     label: "働きやすさ" },
-  { id: "earning",  label: "稼ぎやすさ" },
+const TABS: { id: ScoreKey; label: string; desc: string }[] = [
+  { id: "total",    label: "おすすめ順",   desc: "総合的にバランスよく見たい方に" },
+  { id: "safety",   label: "安全性",       desc: "身バレや強要から守ってくれるかをチェック" },
+  { id: "support",  label: "サポート",     desc: "困ったときに相談しやすいかをチェック" },
+  { id: "beginner", label: "初心者向け",   desc: "はじめてでも無理なく続けやすいかをチェック" },
+  { id: "work",     label: "働きやすさ",   desc: "通いやすさや続けやすさをチェック" },
+  { id: "earning",  label: "稼ぎやすさ",   desc: "報酬アップを目指しやすい環境かをチェック" },
 ];
 
 export default function JimushoList() {
   const [sortKey, setSortKey] = useState<ScoreKey>("total");
+
+  // 選択中タブの説明文
+  const activeTabDesc = TABS.find(t => t.id === sortKey)?.desc ?? "";
 
   // ソート（安定ソートで同点は defaultRank 順）
   const sorted = [...OFFICES]
@@ -193,7 +196,7 @@ export default function JimushoList() {
           display: "flex",
           gap: 8,
           overflowX: "auto",
-          padding: "4px 20px 16px",
+          padding: "4px 20px 12px",
           maxWidth: 760,
           margin: "0 auto",
           WebkitOverflowScrolling: "touch",
@@ -229,6 +232,22 @@ export default function JimushoList() {
           );
         })}
       </div>
+
+      {/* ===== 選択中タブの説明文（aria-live で SR にも通知） ===== */}
+      <p
+        aria-live="polite"
+        style={{
+          margin: "0 20px 16px",
+          maxWidth: 760,
+          marginLeft: "auto", marginRight: "auto",
+          padding: "0 20px",
+          fontSize: 12, lineHeight: 1.7, color: G.inkSoft,
+          textAlign: "center",
+          transition: "opacity 0.18s",
+        }}
+      >
+        {activeTabDesc}
+      </p>
 
       {/* ===== カード一覧 ===== */}
       <section style={{
