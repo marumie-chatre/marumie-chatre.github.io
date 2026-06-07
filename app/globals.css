@@ -245,49 +245,46 @@ img { display: block; max-width: 100%; }
   }
 }
 
-/* ===== 事務所詳細 cover（SP: edge-to-edge / PC: 親幅内）===== */
+/* ===== 事務所詳細 cover（SP: edge-to-edge / PC: 親幅内・実寸 aspect ratio）===== */
 .office-detail-cover {
   position: relative;
   width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
-  aspect-ratio: 4/3;
-  max-height: 480px;
-  overflow: hidden;
-  background: var(--green-light);
   margin-top: -14px; /* HERO section padding-top をキャンセル */
-  margin-bottom: 16px;
+  margin-bottom: 4px; /* 画像下の余白を詰める */
+  line-height: 0;
+  background: var(--green-light);
 }
 .office-detail-cover img {
-  width: 100%; height: 100%;
-  object-fit: cover; display: block;
+  width: 100%;
+  height: auto;
+  display: block;
 }
 @media (min-width: 768px) {
   .office-detail-cover {
     width: 100%;
     margin-left: 0;
     margin-right: 0;
-    aspect-ratio: 16/9;
-    max-height: 420px;
-    border-radius: 14px;
     margin-top: 0;
+    border-radius: 14px;
+    overflow: hidden;
   }
 }
 
-/* ===== /jimusho ハブヘッダー画像（同じパターン）===== */
+/* ===== /jimusho ハブヘッダー画像（同パターン・実寸 aspect ratio）===== */
 .jimusho-hub-header {
   position: relative;
   width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
-  aspect-ratio: 16/9;
-  max-height: 360px;
-  overflow: hidden;
+  line-height: 0;
   background: var(--green-light);
 }
 .jimusho-hub-header img {
-  width: 100%; height: 100%;
-  object-fit: cover; display: block;
+  width: 100%;
+  height: auto;
+  display: block;
 }
 @media (min-width: 768px) {
   .jimusho-hub-header {
@@ -295,7 +292,7 @@ img { display: block; max-width: 100%; }
     margin-left: 0;
     margin-right: 0;
     border-radius: 14px;
-    max-height: 320px;
+    overflow: hidden;
   }
 }
 

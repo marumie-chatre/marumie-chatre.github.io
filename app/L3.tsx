@@ -214,11 +214,11 @@ export function OfficeDetailLayout({
 
       {/* ===== HERO ===== */}
       <section style={{ padding: "14px 22px 20px", maxWidth: 720, margin: "0 auto" }}>
-        {/* cover - headerImage は SP edge-to-edge / PC 親幅内、なければロゴ + 緑グラデ */}
+        {/* cover - headerImage は SP edge-to-edge / PC 親幅内、実寸 aspect ratio、画像下スペース最小化 */}
         {o.headerImage ? (
           <div className="office-detail-cover">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={o.headerImage} alt={o.name} />
+            <img src={o.headerImage} alt={o.name} loading="eager" />
           </div>
         ) : (
           <div style={{
