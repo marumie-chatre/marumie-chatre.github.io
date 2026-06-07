@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Icon } from "../Icon";
 import JimushoList from "./JimushoList";
 
@@ -26,8 +27,23 @@ export default function JimushoPage() {
   return (
     <main style={{ background: G.bg, color: G.ink, paddingBottom: 60 }}>
 
+      {/* ===== ハブヘッダー画像（SP edge-to-edge / PC 親幅内）===== */}
+      <section style={{ padding: "0 0 8px", maxWidth: 760, margin: "0 auto" }}>
+        <div className="jimusho-hub-header">
+          <Image
+            src="/office-header-extra.png"
+            alt="事務所ランキング"
+            width={2172}
+            height={1224}
+            priority
+            sizes="(max-width:768px) 100vw, 760px"
+            style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+          />
+        </div>
+      </section>
+
       {/* ===== HERO ===== */}
-      <section style={{ padding: "28px 20px 22px", maxWidth: 760, margin: "0 auto" }}>
+      <section style={{ padding: "20px 20px 22px", maxWidth: 760, margin: "0 auto" }}>
         {/* kicker */}
         <div style={{
           display: "inline-flex", alignItems: "center", gap: 8,
