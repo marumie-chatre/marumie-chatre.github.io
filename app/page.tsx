@@ -499,6 +499,34 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ===== ABOUT 紹介文＋プロフィールリンク ===== */}
+      <section style={{ padding: "32px 20px 0", maxWidth: 760, margin: "0 auto" }}>
+        <p style={{
+          margin: 0, fontSize: 13, lineHeight: 2.05, color: G.ink, textAlign: "center",
+        }}>
+          チャットレディを始めてみたい。<br />
+          でも、どのお店を選べばいいのか分からない。
+        </p>
+        <p style={{
+          margin: "18px 0 0", fontSize: 12.5, lineHeight: 2, color: G.ink, textAlign: "center",
+        }}>
+          まるみえチャトレは、そんな人が<br />
+          お店の雰囲気やサポート、口コミ、報酬のことまで<br />
+          中身を見て選べるように作った情報サイトです。
+        </p>
+        <div style={{ marginTop: 22, textAlign: "center" }}>
+          <Link href="/profile" style={{
+            display: "inline-flex", alignItems: "center", gap: 6,
+            fontSize: 12.5, fontWeight: 700, color: "#5C3D1F",
+            borderBottom: "1px solid #5C3D1F", paddingBottom: 2,
+            textDecoration: "none",
+          }}>
+            このサイトを作った人
+            <Icon.Arrow size={12} />
+          </Link>
+        </div>
+      </section>
+
       {/* ===== RANKING ===== */}
       <section style={{ padding: "36px 20px 0", maxWidth: 760, margin: "0 auto" }}>
         <SectionHead
