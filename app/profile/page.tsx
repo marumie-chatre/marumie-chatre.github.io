@@ -134,6 +134,27 @@ export default function ProfilePage() {
           </div>
         </div>
 
+        {/* ===== WORKSPACE 編集部の机画像 ===== */}
+        <div style={{ marginTop: 26 }}>
+          <SectionKicker>WORKSPACE</SectionKicker>
+          <h2 style={{
+            margin: "8px 0 12px",
+            fontSize: 19, fontWeight: 700, lineHeight: 1.6, color: G.ink,
+          }}>編集部の机から。</h2>
+          <div style={{
+            width: "100%", aspectRatio: "16/10",
+            borderRadius: 12, overflow: "hidden",
+            background: G.sageSoft,
+          }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/editor-desk.png"
+              alt="編集部の机"
+              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+            />
+          </div>
+        </div>
+
         {/* ===== BIOGRAPHY セクション ===== */}
         <div style={{ marginTop: 30 }}>
           <SectionKicker>MESSAGE</SectionKicker>

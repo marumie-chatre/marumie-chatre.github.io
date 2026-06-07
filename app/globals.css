@@ -248,7 +248,7 @@ img { display: block; max-width: 100%; }
 /* ===== TOP FIND セクション（背景削除版・透明）===== */
 .top-find-section {
   position: relative;
-  padding: 36px 20px 36px;
+  padding: 24px 20px 24px;
   overflow: hidden;
 }
 .top-find-inner {

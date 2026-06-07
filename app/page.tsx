@@ -500,7 +500,7 @@ export default function Home() {
       </section>
 
       {/* ===== ABOUT 紹介文＋プロフィールリンク（女性誌風・上品な文字装飾） ===== */}
-      <section style={{ padding: "36px 20px 0", maxWidth: 760, margin: "0 auto" }}>
+      <section style={{ padding: "24px 20px 0", maxWidth: 760, margin: "0 auto" }}>
         {/* 1行目 */}
         <p style={{
           margin: 0,
@@ -557,7 +557,7 @@ export default function Home() {
       </section>
 
       {/* ===== RANKING ===== */}
-      <section style={{ padding: "36px 20px 0", maxWidth: 760, margin: "0 auto" }}>
+      <section style={{ padding: "24px 20px 0", maxWidth: 760, margin: "0 auto" }}>
         <SectionHead
           kicker="RANKING"
           title="編集部おすすめ事務所"
@@ -593,7 +593,7 @@ export default function Home() {
       </section>
 
       {/* ===== AXES ===== */}
-      <section style={{ padding: "40px 20px 0", maxWidth: 760, margin: "0 auto" }}>
+      <section style={{ padding: "26px 20px 0", maxWidth: 760, margin: "0 auto" }}>
         <SectionHead
           kicker="EVALUATION"
           title="5つの基準で丁寧に採点"
@@ -661,7 +661,7 @@ export default function Home() {
       </section>
 
       {/* ===== CONCERN PREVIEW ===== */}
-      <section style={{ padding: "40px 20px 0", maxWidth: 760, margin: "0 auto" }}>
+      <section style={{ padding: "26px 20px 0", maxWidth: 760, margin: "0 auto" }}>
         <SectionHead
           kicker="WORRIES"
           title="お悩みから、探す。"
@@ -704,7 +704,7 @@ export default function Home() {
       </section>
 
       {/* ===== REVIEWS ===== */}
-      <section style={{ padding: "40px 20px 0", maxWidth: 760, margin: "0 auto" }}>
+      <section style={{ padding: "26px 20px 0", maxWidth: 760, margin: "0 auto" }}>
         <SectionHead
           kicker="REVIEWS"
           title="リアルな声を集めました。"
@@ -790,7 +790,7 @@ export default function Home() {
       </section>
 
       {/* ===== COLUMN PREVIEW ===== */}
-      <section style={{ padding: "40px 20px 0", maxWidth: 760, margin: "0 auto" }}>
+      <section style={{ padding: "26px 20px 0", maxWidth: 760, margin: "0 auto" }}>
         <SectionHead
           kicker="COLUMN"
           title="もう一歩ふかく答えていきます。"
@@ -847,7 +847,7 @@ export default function Home() {
       </section>
 
       {/* ===== CTA ===== */}
-      <section style={{ padding: "40px 20px 0", maxWidth: 760, margin: "0 auto" }}>
+      <section style={{ padding: "26px 20px 0", maxWidth: 760, margin: "0 auto" }}>
         <div style={{
           position: "relative", overflow: "hidden",
           background: G.ink,
