@@ -34,11 +34,11 @@ const G = {
 
 // データ：評価軸
 const AXES = [
-  { id: "safe", label: "安全性", max: 30, desc: "アダルト強要なし・身バレ対策・運営年数" },
-  { id: "support", label: "サポート", max: 25, desc: "スタッフ・研修・面談の手厚さ" },
-  { id: "beginner", label: "初心者向け", max: 20, desc: "未経験のキャストの定着率" },
-  { id: "work", label: "働きやすさ", max: 15, desc: "シフトの自由度・施設・通いやすさ" },
-  { id: "earn", label: "稼ぎやすさ", max: 10, desc: "報酬率・常連の作りやすさ" },
+  { id: "safe",     label: "安全性",     max: 30, desc: "身バレ対策やプライバシーを守る姿勢があるか見ていきます。" },
+  { id: "support",  label: "サポート",   max: 25, desc: "スタッフは悩みや成長に寄り添ってくれるか見ていきます。" },
+  { id: "beginner", label: "初心者向け", max: 20, desc: "未経験でも安心して始められる体制があるか見ていきます。" },
+  { id: "work",     label: "働きやすさ", max: 15, desc: "無理なく続けられる環境があるか見ていきます。" },
+  { id: "earn",     label: "稼ぎやすさ", max: 10, desc: "売上を伸ばしやすい環境があるか見ていきます。" },
 ];
 
 // データ：TOP3ランキング
@@ -175,9 +175,7 @@ function RankingCard({ r, idx }: { r: typeof RANKING[0]; idx: number }) {
             fontSize: 11, fontWeight: 800, letterSpacing: 1,
             boxShadow: "0 4px 12px rgba(180,135,50,0.32)",
           }}>
-            <span style={{ opacity: 0.7, fontWeight: 400 }}>＼</span>
             初心者に最もおすすめ
-            <span style={{ opacity: 0.7, fontWeight: 400 }}>／</span>
           </div>
         </div>
       )}
