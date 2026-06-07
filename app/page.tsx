@@ -681,15 +681,18 @@ export default function Home() {
           }}
         >
           {WORRIES_CHIPS.map((t, i) => (
-            <Link href="/q" key={t} style={{
-              whiteSpace: "nowrap",
-              fontSize: 12, fontWeight: 700,
-              padding: "8px 16px", borderRadius: 99,
-              textDecoration: "none",
-              background: i === 0 ? G.sagePastel : G.paper,
-              color: G.sageDeep,
-              border: i === 0 ? `1.5px solid ${G.sagePastel}` : `1px solid ${G.rule}`,
-            }}>
+            <Link
+              href={i === 0 ? "/q" : `/q?cat=${encodeURIComponent(t)}`}
+              key={t}
+              style={{
+                whiteSpace: "nowrap",
+                fontSize: 12, fontWeight: 700,
+                padding: "8px 16px", borderRadius: 99,
+                textDecoration: "none",
+                background: i === 0 ? G.sagePastel : G.paper,
+                color: G.sageDeep,
+                border: i === 0 ? `1.5px solid ${G.sagePastel}` : `1px solid ${G.rule}`,
+              }}>
               {t}
             </Link>
           ))}

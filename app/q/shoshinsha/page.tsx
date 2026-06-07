@@ -41,7 +41,7 @@ export default function QShoshinsha() {
       />
       <BreadcrumbSchema items={[
         { name: "トップ", path: "/" },
-        { name: "不安から探す", path: "/q" },
+        { name: "お悩みから探す", path: "/q" },
         { name: "初心者向け", path: "/q/shoshinsha" },
       ]} />
       <FAQSchema items={FAQS} />
@@ -50,7 +50,7 @@ export default function QShoshinsha() {
         coverImage={{ src: "/q-shoshinsha.png", alt: "初心者が安心して始められるチャットレディ事務所" }}
         breadcrumb={[
           { l: "トップ", href: "/" },
-          { l: "不安から探す", href: "/q" },
+          { l: "お悩みから探す", href: "/q" },
           { l: "初心者向け" },
         ]}
         kicker="お悩み｜初心者"

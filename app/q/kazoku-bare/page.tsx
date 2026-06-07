@@ -41,7 +41,7 @@ export default function QKazokuBare() {
       />
       <BreadcrumbSchema items={[
         { name: "トップ", path: "/" },
-        { name: "不安から探す", path: "/q" },
+        { name: "お悩みから探す", path: "/q" },
         { name: "家族バレ対策", path: "/q/kazoku-bare" },
       ]} />
       <FAQSchema items={FAQS} />
@@ -50,7 +50,7 @@ export default function QKazokuBare() {
         coverImage={{ src: "/q-kazoku-bare.png", alt: "家族・親・彼氏にバレないチャットレディの始め方" }}
         breadcrumb={[
           { l: "トップ", href: "/" },
-          { l: "不安から探す", href: "/q" },
+          { l: "お悩みから探す", href: "/q" },
           { l: "家族バレ対策" },
         ]}
         kicker="お悩み｜家族バレ"

@@ -41,7 +41,7 @@ export default function QShokubaBare() {
       />
       <BreadcrumbSchema items={[
         { name: "トップ", path: "/" },
-        { name: "不安から探す", path: "/q" },
+        { name: "お悩みから探す", path: "/q" },
         { name: "職場バレ対策", path: "/q/shokuba-bare" },
       ]} />
       <FAQSchema items={FAQS} />
@@ -50,7 +50,7 @@ export default function QShokubaBare() {
         coverImage={{ src: "/q-shokuba-bare.png", alt: "職場・会社にバレないチャットレディの始め方" }}
         breadcrumb={[
           { l: "トップ", href: "/" },
-          { l: "不安から探す", href: "/q" },
+          { l: "お悩みから探す", href: "/q" },
           { l: "職場バレ対策" },
         ]}
         kicker="お悩み｜職場バレ"

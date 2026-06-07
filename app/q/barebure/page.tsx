@@ -41,7 +41,7 @@ export default function QBarebure() {
       />
       <BreadcrumbSchema items={[
         { name: "トップ", path: "/" },
-        { name: "不安から探す", path: "/q" },
+        { name: "お悩みから探す", path: "/q" },
         { name: "身バレが怖い", path: "/q/barebure" },
       ]} />
       <FAQSchema items={FAQS} />
@@ -50,7 +50,7 @@ export default function QBarebure() {
         coverImage={{ src: "/q-barebure.png", alt: "身バレが怖い人のための事務所選び" }}
         breadcrumb={[
           { l: "トップ", href: "/" },
-          { l: "不安から探す", href: "/q" },
+          { l: "お悩みから探す", href: "/q" },
           { l: "身バレが怖い" },
         ]}
         kicker="お悩み｜身バレ"
