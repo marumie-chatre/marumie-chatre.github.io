@@ -37,7 +37,7 @@ export default function ColHoikushiBaitoPage() {
       />
       <BreadcrumbSchema items={[
         { name: "トップ", path: "/" },
-        { name: "コラム", path: "/column" },
+        { name: "お悩みから探す", path: "/q" },
         { name: "副業ガイド", path: "/column/hoikushi-baito" },
       ]} />
       <FAQSchema items={FAQS} />
@@ -45,10 +45,10 @@ export default function ColHoikushiBaitoPage() {
       <L3ArticleShell
         breadcrumb={[
           { l: "トップ", href: "/" },
-          { l: "コラム", href: "/column" },
+          { l: "お悩みから探す", href: "/q" },
           { l: "副業ガイド" },
         ]}
-        kicker="コラム｜副業・働き方ガイド"
+        kicker="お悩み｜副業・働き方ガイド"
         title={<>チャットレディは副業にアリ？<br />会社・職場にバレないための全対策</>}
         meta={{ date: "2025.05.01", readTime: "約7分で読めます" }}
       >

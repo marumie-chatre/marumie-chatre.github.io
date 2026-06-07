@@ -17,9 +17,8 @@ export default function HamburgerMenu() {
     { href: "/jimusho", icon: "/icon-recommend.svg", label: "ランキング" },
     { href: "/area", icon: "/icon-area.svg", label: "エリア" },
     { href: "/style", icon: "/icon-work.svg", label: "働き方" },
-    { href: "/q", icon: "/icon-safe.svg", label: "不安から探す" },
+    { href: "/q", icon: "/icon-safe.svg", label: "お悩みから探す" },
     { href: "/kuchikomi", icon: "/icon-review2.svg", label: "口コミ" },
-    { href: "/column", icon: "/icon-column.svg", label: "コラム" },
   ];
 
   return (

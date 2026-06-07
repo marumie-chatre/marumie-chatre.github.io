@@ -40,8 +40,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <Link href="/jimusho">ランキング</Link>
               <Link href="/area">エリア</Link>
               <Link href="/style">働き方</Link>
-              <Link href="/q">不安から探す</Link>
-              <Link href="/column">コラム</Link>
+              <Link href="/q">お悩みから探す</Link>
+              <Link href="/kuchikomi">口コミ</Link>
             </nav>
             {/* 口コミを見るボタン（CTA・常時表示・pastel sage で統一） */}
             <Link
