@@ -33,7 +33,7 @@ export default function FloatingCTA() {
           alignItems: "center",
           gap: "8px",
           background: "#A8C49A",
-          color: "var(--text)",
+          color: "#5C3D1F",
           fontWeight: 700,
           fontSize: "14px",
           padding: "13px 28px",

@@ -257,7 +257,7 @@ export default function HyokaKijunPage() {
       }}>
         <div style={{
           padding: "18px 20px",
-          background: G.sagePastel, color: G.ink,
+          background: G.sagePastel, color: "#5C3D1F",
           borderRadius: 14,
         }}>
           <div style={{

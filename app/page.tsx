@@ -253,7 +253,7 @@ function RankingCard({ r, idx }: { r: typeof RANKING[0]; idx: number }) {
         marginTop: 12, display: "flex", alignItems: "center", justifyContent: "space-between",
         padding: "11px 14px", borderRadius: 10,
         background: isTop ? G.sagePastel : "transparent",
-        color: G.ink,
+        color: isTop ? "#5C3D1F" : G.ink,
         border: isTop ? "none" : `1.5px solid ${G.rule}`,
         fontSize: 12, fontWeight: 700, textDecoration: "none",
       }}>

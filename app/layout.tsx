@@ -52,7 +52,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 gap: "6px",
                 padding: "8px 14px",
                 background: "#A8C49A",
-                color: "var(--text)",
+                color: "#5C3D1F",
                 textDecoration: "none",
                 borderRadius: "100px",
                 fontSize: "13px",
