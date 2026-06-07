@@ -72,13 +72,14 @@ const RANKING = [
   },
 ];
 
-// データ：不安カテゴリ（sage 単色テーマで統一）
-const CONCERNS = [
-  { id: "barebure",     icon: "Shield" as const,    label: "身バレが怖い",       sub: "配信中対策" },
-  { id: "shokuba-bare", icon: "Briefcase" as const, label: "職場にバレたくない", sub: "副業バレ" },
-  { id: "kazoku-bare",  icon: "Home" as const,      label: "家族にバレたくない", sub: "家族バレ" },
-  { id: "ayashii",      icon: "Question" as const,  label: "業界が怪しく見える", sub: "実態解説" },
-  { id: "shoshinsha",   icon: "Sprout" as const,    label: "初心者で不安",       sub: "総合ガイド" },
+// データ：お悩みカテゴリ（チップ表示用・/q への入口）
+const WORRIES_CHIPS = [
+  "すべて",
+  "身バレ",
+  "家族バレ",
+  "副業バレ",
+  "初心者・選び方",
+  "業界の不安",
 ];
 
 // データ：クイックナビ（単色 sage テーマで統一）
@@ -412,61 +413,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== ABOUT 紹介文＋プロフィールリンク（女性誌風・上品な文字装飾） ===== */}
-      <section style={{ padding: "24px 20px 0", maxWidth: 760, margin: "0 auto" }}>
-        {/* 1行目 */}
-        <p style={{
-          margin: 0,
-          fontSize: 13.5, lineHeight: 2.1, color: "#3A2A20",
-          textAlign: "center", fontWeight: 400, letterSpacing: 0.2,
-        }}>
-          チャットレディを始めてみたい。
-        </p>
-        {/* 2行目：「どのお店を選べばいいのか」を緑強調 */}
-        <p style={{
-          margin: "16px 0 0",
-          fontSize: 13.5, lineHeight: 2.1, color: "#3A2A20",
-          textAlign: "center", letterSpacing: 0.2,
-        }}>
-          でも、
-          <span style={{ color: "#6F9B5E", fontWeight: 500 }}>どのお店を選べばいいのか</span>
-          分からない。
-        </p>
-        {/* 3段落：地ブラウン／「お店の雰囲気やサポート、口コミ、報酬」にピンクベージュ下線／「中身を見て選べる」メイン強調 */}
-        <p style={{
-          margin: "26px 0 0",
-          fontSize: 13.5, lineHeight: 2.2, color: "#3A2A20",
-          textAlign: "center", letterSpacing: 0.2,
-        }}>
-          まるみえチャトレは、そんな人が<br />
-          <span style={{
-            color: "#3A2A20",
-            backgroundImage: "linear-gradient(transparent 62%, rgba(223,165,154,0.25) 62%)",
-            padding: "0 3px",
-          }}>お店の雰囲気やサポート、口コミ、報酬</span>
-          のことまで<br />
-          <span style={{
-            color: "#6F9B5E",
-            fontWeight: 600,
-            backgroundImage: "linear-gradient(transparent 62%, rgba(111,155,94,0.18) 62%)",
-            padding: "0 3px",
-          }}>中身を見て選べる</span>
-          ように作った情報サイトです。
-        </p>
-        {/* プロフィールリンク */}
-        <div style={{ marginTop: 26, textAlign: "center" }}>
-          <Link href="/profile" style={{
-            display: "inline-flex", alignItems: "center", gap: 6,
-            fontSize: 12.5, fontWeight: 600, color: "#3A2A20",
-            borderBottom: "1px solid rgba(58,42,32,0.35)", paddingBottom: 2,
-            textDecoration: "none", letterSpacing: 0.3,
-          }}>
-            このサイトを作った人
-            <Icon.Arrow size={12} />
-          </Link>
-        </div>
-      </section>
-
       {/* ===== RANKING ===== */}
       <section style={{ padding: "24px 20px 0", maxWidth: 760, margin: "0 auto" }}>
         <SectionHead
@@ -659,45 +605,187 @@ export default function Home() {
         </Link>
       </section>
 
-      {/* ===== CONCERN PREVIEW ===== */}
-      <section style={{ padding: "26px 20px 0", maxWidth: 760, margin: "0 auto" }}>
+      {/* ===== ABOUT 紹介文＋プロフィールリンク（AXES の直後・信頼の人格付け） ===== */}
+      <section style={{ padding: "30px 20px 0", maxWidth: 760, margin: "0 auto" }}>
+        {/* 1行目 */}
+        <p style={{
+          margin: 0,
+          fontSize: 13.5, lineHeight: 2.1, color: "#3A2A20",
+          textAlign: "center", fontWeight: 400, letterSpacing: 0.2,
+        }}>
+          チャットレディを始めてみたい。
+        </p>
+        {/* 2行目：「どのお店を選べばいいのか」を緑強調 */}
+        <p style={{
+          margin: "16px 0 0",
+          fontSize: 13.5, lineHeight: 2.1, color: "#3A2A20",
+          textAlign: "center", letterSpacing: 0.2,
+        }}>
+          でも、
+          <span style={{ color: "#6F9B5E", fontWeight: 500 }}>どのお店を選べばいいのか</span>
+          分からない。
+        </p>
+        {/* 3段落：地ブラウン／「お店の雰囲気やサポート、口コミ、報酬」にピンクベージュ下線／「中身を見て選べる」メイン強調 */}
+        <p style={{
+          margin: "26px 0 0",
+          fontSize: 13.5, lineHeight: 2.2, color: "#3A2A20",
+          textAlign: "center", letterSpacing: 0.2,
+        }}>
+          まるみえチャトレは、そんな人が<br />
+          <span style={{
+            color: "#3A2A20",
+            backgroundImage: "linear-gradient(transparent 62%, rgba(223,165,154,0.25) 62%)",
+            padding: "0 3px",
+          }}>お店の雰囲気やサポート、口コミ、報酬</span>
+          のことまで<br />
+          <span style={{
+            color: "#6F9B5E",
+            fontWeight: 600,
+            backgroundImage: "linear-gradient(transparent 62%, rgba(111,155,94,0.18) 62%)",
+            padding: "0 3px",
+          }}>中身を見て選べる</span>
+          ように作った情報サイトです。
+        </p>
+        {/* プロフィールリンク */}
+        <div style={{ marginTop: 26, textAlign: "center" }}>
+          <Link href="/profile" style={{
+            display: "inline-flex", alignItems: "center", gap: 6,
+            fontSize: 12.5, fontWeight: 600, color: "#3A2A20",
+            borderBottom: "1px solid rgba(58,42,32,0.35)", paddingBottom: 2,
+            textDecoration: "none", letterSpacing: 0.3,
+          }}>
+            このサイトを作った人
+            <Icon.Arrow size={12} />
+          </Link>
+        </div>
+      </section>
+
+      {/* ===== お悩みハブ統合（旧 CONCERN PREVIEW + WORRIES PREVIEW を合体） ===== */}
+      <section style={{ padding: "30px 20px 0", maxWidth: 760, margin: "0 auto" }}>
         <SectionHead
           kicker="WORRIES"
           title="お悩みから、探す。"
           note="始める前の心配ごとに、まっすぐ答える記事を用意しています。"
-          image="/top-title-reviews.png"
+          image="/top-title-column.png"
         />
-        <div style={{ marginTop: 0, display: "flex", flexDirection: "column", gap: 8 }}>
-          {CONCERNS.map(c => {
-            const I = Icon[c.icon];
-            return (
-              <Link href={`/q/${c.id}`} key={c.id} style={{
-                display: "flex", alignItems: "center", gap: 12,
-                background: G.paper, borderRadius: 12, padding: "12px 14px",
-                border: `1px solid ${G.rule}`,
-                textDecoration: "none", color: G.ink,
-              }}>
-                <div style={{
-                  width: 38, height: 38, borderRadius: "50%",
-                  background: G.sageSoft, color: G.sageDeep,
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  flexShrink: 0,
-                }}><I size={19} /></div>
-                <div style={{ flex: 1, minWidth: 0 }}>
-                  <div style={{ fontSize: 13.5, fontWeight: 700 }}>{c.label}</div>
-                  <div style={{ fontSize: 10, color: G.inkSoft, marginTop: 2 }}>{c.sub}</div>
-                </div>
-                <Icon.Arrow size={12} />
-              </Link>
-            );
-          })}
+
+        {/* チップ帯（/q ハブと同意匠・全てが /q へのリンク） */}
+        <div
+          aria-label="お悩みカテゴリ"
+          style={{
+            marginTop: 0,
+            display: "flex", gap: 8, overflowX: "auto",
+            WebkitOverflowScrolling: "touch",
+            scrollbarWidth: "none",
+            paddingBottom: 16,
+          }}
+        >
+          {WORRIES_CHIPS.map((t, i) => (
+            <Link href="/q" key={t} style={{
+              whiteSpace: "nowrap",
+              fontSize: 12, fontWeight: 700,
+              padding: "8px 16px", borderRadius: 99,
+              textDecoration: "none",
+              background: i === 0 ? G.sagePastel : G.paper,
+              color: G.sageDeep,
+              border: i === 0 ? `1.5px solid ${G.sagePastel}` : `1px solid ${G.rule}`,
+            }}>
+              {t}
+            </Link>
+          ))}
         </div>
+
+        {/* FEATURED 1本（jimusho-erabi をメインに） */}
+        <Link href={WORRIES_PREVIEW[0].href} style={{
+          display: "block",
+          background: G.paper, borderRadius: 14, overflow: "hidden",
+          border: `1px solid ${G.rule}`,
+          textDecoration: "none", color: G.ink,
+          boxShadow: "0 2px 10px rgba(58,42,32,0.04)",
+        }}>
+          <div style={{
+            position: "relative", width: "100%",
+            aspectRatio: "16/9", background: G.sageSoft,
+          }}>
+            <Image
+              src={WORRIES_PREVIEW[0].image}
+              alt={WORRIES_PREVIEW[0].title}
+              fill
+              sizes="(max-width:760px) 100vw, 720px"
+              style={{ objectFit: "cover" }}
+            />
+          </div>
+          <div style={{ padding: 16 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+              <span style={{
+                fontSize: 9.5, fontWeight: 800, letterSpacing: 0.8,
+                padding: "2px 8px", borderRadius: 99,
+                background: G.sageDeep, color: "#fff",
+              }}>FEATURED</span>
+              <span style={{ fontSize: 10.5, fontWeight: 700, color: G.sageDeep }}>
+                {WORRIES_PREVIEW[0].cat}
+              </span>
+            </div>
+            <div style={{
+              marginTop: 10, fontSize: 16, fontWeight: 800,
+              lineHeight: 1.5, color: G.ink,
+            }}>{WORRIES_PREVIEW[0].title}</div>
+            <div style={{
+              marginTop: 10, fontSize: 10, color: G.inkSoft,
+              display: "flex", alignItems: "center", gap: 10,
+            }}>
+              <span style={{ display: "inline-flex", alignItems: "center", gap: 4 }}>
+                <Icon.Clock size={11} /> {WORRIES_PREVIEW[0].time}で読める
+              </span>
+              <span>{WORRIES_PREVIEW[0].date}</span>
+            </div>
+          </div>
+        </Link>
+
+        {/* サブカード 2本（横並び） */}
+        <div style={{
+          marginTop: 12, display: "grid",
+          gridTemplateColumns: "1fr 1fr", gap: 10,
+        }}>
+          {WORRIES_PREVIEW.slice(1).map(c => (
+            <Link href={c.href} key={c.href} style={{
+              display: "flex", flexDirection: "column",
+              background: G.paper, borderRadius: 12, overflow: "hidden",
+              border: `1px solid ${G.rule}`,
+              textDecoration: "none", color: G.ink,
+            }}>
+              <div style={{
+                position: "relative", width: "100%",
+                aspectRatio: "16/10", background: G.sageSoft,
+              }}>
+                <Image
+                  src={c.image}
+                  alt={c.title}
+                  fill
+                  sizes="(max-width:760px) 50vw, 360px"
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
+              <div style={{ padding: "10px 12px 12px" }}>
+                <div style={{
+                  fontSize: 9, fontWeight: 700, letterSpacing: 0.8,
+                  color: G.sageDeep, marginBottom: 5,
+                }}>{c.cat}</div>
+                <div style={{
+                  fontSize: 12, fontWeight: 700, lineHeight: 1.45,
+                }}>{c.title}</div>
+              </div>
+            </Link>
+          ))}
+        </div>
+
+        {/* CTA：もっと探す */}
         <Link href="/q" style={{
           marginTop: 14, display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
           padding: 12, border: `1px solid ${G.rule}`, borderRadius: 99,
           fontSize: 12, fontWeight: 600, color: G.ink, textDecoration: "none",
         }}>
-          すべての不安カテゴリを見る
+          お悩みからもっと探す
           <Icon.Arrow size={12} />
         </Link>
       </section>
@@ -794,63 +882,6 @@ export default function Home() {
         }}>
           {reviews.length}件の口コミをもっと見る
           <Icon.Arrow size={13} />
-        </Link>
-      </section>
-
-      {/* ===== WORRIES PREVIEW（旧 COLUMN 枠を /q ハブに統合） ===== */}
-      <section style={{ padding: "26px 20px 0", maxWidth: 760, margin: "0 auto" }}>
-        <SectionHead
-          kicker="WORRIES"
-          title="お悩みから、探す。"
-          note="編集部が書く、応募前後の不安を解決する記事。"
-          image="/top-title-column.png"
-        />
-        <div style={{ marginTop: 0, display: "flex", flexDirection: "column", gap: 10 }}>
-          {WORRIES_PREVIEW.map(c => (
-            <Link href={c.href} key={c.href} style={{
-              display: "flex", gap: 12,
-              background: G.paper, borderRadius: 12, padding: 10,
-              border: `1px solid ${G.rule}`,
-              textDecoration: "none", color: G.ink,
-            }}>
-              <div style={{
-                width: 84, height: 70, borderRadius: 8, flexShrink: 0,
-                position: "relative", overflow: "hidden",
-                background: G.sageSoft,
-              }}>
-                <Image
-                  src={c.image}
-                  alt={c.title}
-                  fill
-                  sizes="84px"
-                  style={{ objectFit: "cover" }}
-                />
-              </div>
-              <div style={{ flex: 1, minWidth: 0, paddingTop: 2 }}>
-                <div style={{
-                  fontSize: 9, fontWeight: 700, letterSpacing: 0.8,
-                  color: G.sageDeep, marginBottom: 5,
-                }}>{c.cat}</div>
-                <div style={{ fontSize: 12.5, fontWeight: 700, lineHeight: 1.5 }}>
-                  {c.title}
-                </div>
-                <div style={{ marginTop: 5, fontSize: 9.5, color: G.inkSoft, display: "flex", gap: 10 }}>
-                  <span style={{ display: "inline-flex", alignItems: "center", gap: 4 }}>
-                    <Icon.Clock size={10} /> {c.time}
-                  </span>
-                  <span>{c.date}</span>
-                </div>
-              </div>
-            </Link>
-          ))}
-        </div>
-        <Link href="/q" style={{
-          marginTop: 14, display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
-          padding: 12, border: `1px solid ${G.rule}`, borderRadius: 99,
-          fontSize: 12, fontWeight: 600, color: G.ink, textDecoration: "none",
-        }}>
-          お悩みからもっと探す
-          <Icon.Arrow size={12} />
         </Link>
       </section>
 
