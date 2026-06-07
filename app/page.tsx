@@ -380,12 +380,27 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== EDITOR'S PROMISE（CTA エリアと同色で地続き化） ===== */}
+      {/* ===== EDITOR'S PROMISE（葉模様bg + CTAエリアと同色で地続き化） ===== */}
       <section style={{
         background: "#F8FCF7",
         padding: "14px 22px 24px",
         textAlign: "center",
+        position: "relative",
+        overflow: "hidden",
       }}>
+        {/* 葉模様 bg overlay */}
+        <div style={{
+          position: "absolute",
+          inset: 0,
+          backgroundImage: "url('/bg-leaves-pattern.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          opacity: 0.55,
+          pointerEvents: "none",
+          zIndex: 0,
+        }} />
+        <div style={{ position: "relative", zIndex: 1 }}>
         {/* Kicker：＼ EDITOR'S PROMISE ／ */}
         <div style={{
           display: "inline-flex", alignItems: "center", gap: "0.5em",
@@ -448,6 +463,7 @@ export default function Home() {
               </span>
             </div>
           ))}
+        </div>
         </div>
       </section>
 
