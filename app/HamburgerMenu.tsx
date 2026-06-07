@@ -49,10 +49,10 @@ export default function HamburgerMenu() {
         <div onClick={close} style={{ position:"fixed", inset:0, background:"rgba(0,0,0,0.45)", zIndex:398 }} />
       )}
 
-      {/* メニュー本体（中央大展開UI・クリーム背景） */}
+      {/* メニュー本体（HP TOP の bg トーン #FBF7F0 に統一） */}
       <div style={{
         position:"fixed", top:0, left:0, width:"100%", height:"100vh",
-        background:"var(--cream)", zIndex:399,
+        background:"#FBF7F0", zIndex:399,
         transform: isOpen ? "translateY(0)" : "translateY(-100%)",
         transition:"transform 0.35s ease",
         overflowY:"auto",
@@ -100,19 +100,18 @@ export default function HamburgerMenu() {
           ))}
         </nav>
 
-        {/* 投稿ボタン（ink bg + white text - refined） */}
+        {/* 投稿ボタン（pastel sage + ink - HPトーン統一） */}
         <a
           href="https://docs.google.com/forms/d/e/1FAIpQLSeoozsXNP5R5hgyPbxMlVPNPBrc2NOceFtI5f97Lbv3KUATkw/viewform?usp=dialog"
           target="_blank" rel="noopener noreferrer" onClick={close}
           style={{
             display:"inline-flex", alignItems:"center", justifyContent:"center",
             gap:"8px",
-            background:"var(--text)", color:"#fff",
+            background:"#A8C49A", color:"var(--text)",
             fontWeight:700, fontSize:"15px",
             padding:"14px 32px", borderRadius:"100px",
             textDecoration:"none",
             marginTop:"32px",
-            boxShadow:"0 6px 22px rgba(36,30,22,0.28)",
           }}
         >
           <Icon.Pencil size={16} />
