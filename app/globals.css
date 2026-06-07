@@ -271,12 +271,9 @@ img { display: block; max-width: 100%; }
   height: 68px;
 }
 
-/* ヘッダー固定分のオフセット（TOP は短めに、他ページは元のまま） */
+/* ヘッダー固定分のオフセット */
 body > main,
 body > div > main { padding-top: 68px; }
-/* TOP のみオフセット縮小 */
-body > main:has(.top-hero-card),
-body > div > main:has(.top-hero-card) { padding-top: 52px; }
 .logo img { height: 44px; width: auto; }
 .gnav { display: flex; align-items: center; gap: 2px; }
 .gnav a {

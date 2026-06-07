@@ -305,7 +305,7 @@ export default function Home() {
     <main style={{ background: G.bg, color: G.ink, paddingBottom: 60 }}>
 
       {/* ===== ヒーローカード（画像＋CTA を1枚のカードに） ===== */}
-      <section style={{ padding: 0, marginTop: -16 }}>
+      <section style={{ padding: 0 }}>
         <div className="top-hero-card">
           {/* 画像エリア（テキストオーバーレイ＋下端グラデ） */}
           <div className="top-hero-card-img">
