@@ -47,6 +47,7 @@ export default function QBarebure() {
       <FAQSchema items={FAQS} />
 
       <L3ArticleShell
+        coverImage={{ src: "/q-barebure.png", alt: "身バレが怖い人のための事務所選び" }}
         breadcrumb={[
           { l: "トップ", href: "/" },
           { l: "不安から探す", href: "/q" },
