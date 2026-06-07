@@ -378,93 +378,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== EDITOR'S PROMISE（葉模様bg + CTAエリアと同色で地続き化） ===== */}
-      <section style={{
-        background: "#F8FCF7",
-        padding: "14px 22px 24px",
-        textAlign: "center",
-        position: "relative",
-        overflow: "hidden",
-      }}>
-        {/* 葉模様 bg overlay */}
-        <div style={{
-          position: "absolute",
-          inset: 0,
-          backgroundImage: "url('/bg-leaves-pattern.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          opacity: 0.55,
-          pointerEvents: "none",
-          zIndex: 0,
-        }} />
-        <div style={{ position: "relative", zIndex: 1 }}>
-        {/* Kicker：＼ EDITOR'S PROMISE ／ */}
-        <div style={{
-          display: "inline-flex", alignItems: "center", gap: "0.5em",
-          fontSize: 10.5, letterSpacing: 2.5, fontWeight: 700,
-          color: G.sageDeep,
-        }}>
-          <span style={{ opacity: 0.65, fontWeight: 400, fontSize: "1.3em" }}>＼</span>
-          EDITOR&apos;S PROMISE
-          <span style={{ opacity: 0.65, fontWeight: 400, fontSize: "1.3em" }}>／</span>
-        </div>
-
-        {/* 大見出し（雑誌風・2行）：選んで＝パステル緑文字、全部＝濃緑pill */}
-        <h2 style={{
-          fontSize: "clamp(20px, 5.4vw, 28px)",
-          lineHeight: 1.55,
-          fontWeight: 700,
-          letterSpacing: -0.3,
-          color: G.ink,
-          margin: "10px 0 14px",
-        }}>
-          ちゃんと
-          <span style={{ color: G.sagePastelText, fontWeight: 700 }}>選んで</span>
-          ほしいから、<br />
-          <span style={{ color: G.sagePastelText, fontWeight: 700 }}>全部</span>
-          かいてます。
-        </h2>
-
-        {/* 3 チェックリスト（白pill + 緑チェック・末尾語をパステル緑強調） */}
-        <div style={{
-          display: "flex", flexDirection: "column", gap: 8,
-          maxWidth: 400, margin: "0 auto",
-        }}>
-          {[
-            { plain: "良い点も気になる点も", emphasis: "どちらも掲載", suffix: "" },
-            { plain: "採点基準を",             emphasis: "すべて公開",   suffix: "" },
-            { plain: "広告費で",               emphasis: "順位",         suffix: "は変えません" },
-          ].map((item, i) => (
-            <div key={i} style={{
-              display: "flex", alignItems: "center", gap: 10,
-              background: "#FFFFFF",
-              borderRadius: 99,
-              padding: "10px 16px 10px 12px",
-              boxShadow: "0 1px 4px rgba(46,31,16,0.04)",
-            }}>
-              <span style={{
-                width: 22, height: 22, borderRadius: "50%",
-                background: G.sageDeep, color: "#fff",
-                display: "flex", alignItems: "center", justifyContent: "center",
-                flexShrink: 0,
-              }}>
-                <Icon.Check size={12} />
-              </span>
-              <span style={{
-                fontSize: 12.5, fontWeight: 600, color: G.ink,
-                lineHeight: 1.5, textAlign: "left",
-              }}>
-                {item.plain}
-                <span style={{ color: G.sagePastelText, fontWeight: 700 }}>{item.emphasis}</span>
-                {item.suffix}
-              </span>
-            </div>
-          ))}
-        </div>
-        </div>
-      </section>
-
       {/* ===== QUICK NAV「あなたに合う探し方」（葉模様背景） ===== */}
       <section className="top-find-section">
         <div className="top-find-inner">
@@ -588,6 +501,94 @@ export default function Home() {
           全部比較する
           <Icon.Arrow size={14} />
         </Link>
+      </section>
+
+      {/* ===== EDITOR'S PROMISE（葉模様bg + AXES の真上に配置） ===== */}
+      <section style={{
+        background: "#F8FCF7",
+        padding: "14px 22px 24px",
+        textAlign: "center",
+        position: "relative",
+        overflow: "hidden",
+        marginTop: 26,
+      }}>
+        {/* 葉模様 bg overlay */}
+        <div style={{
+          position: "absolute",
+          inset: 0,
+          backgroundImage: "url('/bg-leaves-pattern.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          opacity: 0.55,
+          pointerEvents: "none",
+          zIndex: 0,
+        }} />
+        <div style={{ position: "relative", zIndex: 1 }}>
+        {/* Kicker：＼ EDITOR'S PROMISE ／ */}
+        <div style={{
+          display: "inline-flex", alignItems: "center", gap: "0.5em",
+          fontSize: 10.5, letterSpacing: 2.5, fontWeight: 700,
+          color: G.sageDeep,
+        }}>
+          <span style={{ opacity: 0.65, fontWeight: 400, fontSize: "1.3em" }}>＼</span>
+          EDITOR&apos;S PROMISE
+          <span style={{ opacity: 0.65, fontWeight: 400, fontSize: "1.3em" }}>／</span>
+        </div>
+
+        {/* 大見出し（雑誌風・2行）：選んで＝パステル緑文字、全部＝濃緑pill */}
+        <h2 style={{
+          fontSize: "clamp(20px, 5.4vw, 28px)",
+          lineHeight: 1.55,
+          fontWeight: 700,
+          letterSpacing: -0.3,
+          color: G.ink,
+          margin: "10px 0 14px",
+        }}>
+          ちゃんと
+          <span style={{ color: G.sagePastelText, fontWeight: 700 }}>選んで</span>
+          ほしいから、<br />
+          <span style={{ color: G.sagePastelText, fontWeight: 700 }}>全部</span>
+          かいてます。
+        </h2>
+
+        {/* 3 チェックリスト（白pill + 緑チェック・末尾語をパステル緑強調） */}
+        <div style={{
+          display: "flex", flexDirection: "column", gap: 8,
+          maxWidth: 400, margin: "0 auto",
+        }}>
+          {[
+            { plain: "良い点も気になる点も", emphasis: "どちらも掲載", suffix: "" },
+            { plain: "採点基準を",             emphasis: "すべて公開",   suffix: "" },
+            { plain: "広告費で",               emphasis: "順位",         suffix: "は変えません" },
+          ].map((item, i) => (
+            <div key={i} style={{
+              display: "flex", alignItems: "center", gap: 10,
+              background: "#FFFFFF",
+              borderRadius: 99,
+              padding: "10px 16px 10px 12px",
+              boxShadow: "0 1px 4px rgba(46,31,16,0.04)",
+            }}>
+              <span style={{
+                width: 22, height: 22, borderRadius: "50%",
+                background: G.sageDeep, color: "#fff",
+                display: "flex", alignItems: "center", justifyContent: "center",
+                flexShrink: 0,
+              }}>
+                <Icon.Check size={12} />
+              </span>
+              <span style={{
+                fontSize: 12.5, fontWeight: 600, color: G.ink,
+                lineHeight: 1.5, textAlign: "left",
+              }}>
+                {item.plain}
+                <span style={{ color: G.sagePastelText, fontWeight: 700 }}>{item.emphasis}</span>
+                {item.suffix}
+              </span>
+            </div>
+          ))}
+        </div>
+        </div>
       </section>
 
       {/* ===== AXES ===== */}
