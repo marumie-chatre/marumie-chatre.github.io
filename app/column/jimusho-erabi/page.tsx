@@ -37,7 +37,7 @@ export default function ColJimushoErabiPage() {
       />
       <BreadcrumbSchema items={[
         { name: "トップ", path: "/" },
-        { name: "コラム", path: "/column" },
+        { name: "お悩みから探す", path: "/q" },
         { name: "事務所の選び方", path: "/column/jimusho-erabi" },
       ]} />
       <FAQSchema items={FAQS} />
@@ -45,10 +45,10 @@ export default function ColJimushoErabiPage() {
       <L3ArticleShell
         breadcrumb={[
           { l: "トップ", href: "/" },
-          { l: "コラム", href: "/column" },
+          { l: "お悩みから探す", href: "/q" },
           { l: "事務所の選び方" },
         ]}
-        kicker="コラム｜事務所の選び方"
+        kicker="お悩み｜事務所の選び方"
         title={<>チャットレディ事務所の選び方｜<br />失敗しない5つの基準</>}
         meta={{ date: "2025.05.01", readTime: "約5分で読めます" }}
       >

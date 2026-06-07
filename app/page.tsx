@@ -89,11 +89,11 @@ const QUICK_NAV = [
   { href: "/q",       icon: "Question" as const, label: "お悩みからさがす" },
 ];
 
-// データ：コラム3本
-const COLUMNS_PREVIEW = [
-  { slug: "jimusho-erabi",  cat: "事務所の選び方", title: "チャットレディ事務所の選び方｜失敗しない5つの基準", time: "5分", date: "2025.05.01", image: "/col-jimusho-erabi.png" },
-  { slug: "mibare-taisaku", cat: "身バレ対策",     title: "配信中に顔がバレる？家族にバレる？よくある疑問に答えます", time: "6分", date: "2025.05.01", image: "/col-mibare-taisaku.png" },
-  { slug: "hoikushi-baito", cat: "副業ガイド",     title: "チャットレディは副業にアリ？会社・職場にバレない全対策", time: "7分", date: "2025.05.01", image: "/col-hoikushi-baito.png" },
+// データ：お悩みプレビュー3本（旧コラム枠を統合）— 全て /q 配下のハブで提示する
+const WORRIES_PREVIEW = [
+  { href: "/column/jimusho-erabi",  cat: "初心者・選び方", title: "チャットレディ事務所の選び方｜失敗しない5つの基準", time: "5分", date: "2025.05.01", image: "/col-jimusho-erabi.png" },
+  { href: "/column/mibare-taisaku", cat: "身バレ",         title: "身バレ、よくある疑問に答えます｜顔バレ・家族バレ・職場バレ", time: "6分", date: "2025.05.01", image: "/col-mibare-taisaku.png" },
+  { href: "/column/hoikushi-baito", cat: "副業バレ",       title: "チャトレは副業にアリ？会社・職場にバレないための全対策", time: "7分", date: "2025.05.01", image: "/col-hoikushi-baito.png" },
 ];
 
 // ========== サブコンポーネント ==========
@@ -797,17 +797,17 @@ export default function Home() {
         </Link>
       </section>
 
-      {/* ===== COLUMN PREVIEW ===== */}
+      {/* ===== WORRIES PREVIEW（旧 COLUMN 枠を /q ハブに統合） ===== */}
       <section style={{ padding: "26px 20px 0", maxWidth: 760, margin: "0 auto" }}>
         <SectionHead
-          kicker="COLUMN"
-          title="もう一歩ふかく答えていきます。"
+          kicker="WORRIES"
+          title="お悩みから、探す。"
           note="編集部が書く、応募前後の不安を解決する記事。"
           image="/top-title-column.png"
         />
         <div style={{ marginTop: 0, display: "flex", flexDirection: "column", gap: 10 }}>
-          {COLUMNS_PREVIEW.map(c => (
-            <Link href={`/column/${c.slug}`} key={c.slug} style={{
+          {WORRIES_PREVIEW.map(c => (
+            <Link href={c.href} key={c.href} style={{
               display: "flex", gap: 12,
               background: G.paper, borderRadius: 12, padding: 10,
               border: `1px solid ${G.rule}`,
@@ -844,12 +844,12 @@ export default function Home() {
             </Link>
           ))}
         </div>
-        <Link href="/column" style={{
+        <Link href="/q" style={{
           marginTop: 14, display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
           padding: 12, border: `1px solid ${G.rule}`, borderRadius: 99,
           fontSize: 12, fontWeight: 600, color: G.ink, textDecoration: "none",
         }}>
-          コラムをもっと見る
+          お悩みからもっと探す
           <Icon.Arrow size={12} />
         </Link>
       </section>

@@ -37,7 +37,7 @@ export default function ColMibareTaisakuPage() {
       />
       <BreadcrumbSchema items={[
         { name: "トップ", path: "/" },
-        { name: "コラム", path: "/column" },
+        { name: "お悩みから探す", path: "/q" },
         { name: "身バレ対策", path: "/column/mibare-taisaku" },
       ]} />
       <FAQSchema items={FAQS} />
@@ -45,10 +45,10 @@ export default function ColMibareTaisakuPage() {
       <L3ArticleShell
         breadcrumb={[
           { l: "トップ", href: "/" },
-          { l: "コラム", href: "/column" },
+          { l: "お悩みから探す", href: "/q" },
           { l: "身バレ対策" },
         ]}
-        kicker="コラム｜安全・身バレ対策"
+        kicker="お悩み｜安全・身バレ対策"
         title={<>配信中に顔がバレる？家族にバレる？<br />チャットレディの身バレ、よくある疑問に答えます</>}
         meta={{ date: "2025.05.01", readTime: "約6分で読めます" }}
       >
