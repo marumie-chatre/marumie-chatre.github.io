@@ -279,7 +279,7 @@ export function OfficeDetailLayout({
         <a href={o.applyUrl} target="_blank" rel="noopener noreferrer" style={{
           marginTop: 18, display: "flex", alignItems: "center", justifyContent: "space-between",
           padding: "14px 18px", borderRadius: 99,
-          background: L3G.sagePastel, color: L3G.ink,
+          background: L3G.sagePastel, color: "#5C3D1F",
           fontSize: 13, fontWeight: 700, textDecoration: "none",
           boxShadow: "0 4px 14px rgba(36,30,22,0.10)",
         }}>
@@ -462,7 +462,7 @@ export function OfficeDetailLayout({
       <div style={{ padding: "0 22px", maxWidth: 720, margin: "30px auto 0" }}>
         <div style={{
           padding: "22px 22px",
-          background: L3G.sagePastel, color: L3G.ink,
+          background: L3G.sagePastel, color: "#5C3D1F",
           borderRadius: 14,
         }}>
           <div style={{
@@ -477,7 +477,7 @@ export function OfficeDetailLayout({
           <a href={o.applyUrl} target="_blank" rel="noopener noreferrer" style={{
             display: "flex", alignItems: "center", justifyContent: "space-between",
             padding: "12px 16px", borderRadius: 99,
-            background: "#fff", color: L3G.ink,
+            background: "#fff", color: "#5C3D1F",
             fontSize: 12, fontWeight: 700, textDecoration: "none",
           }}>
             公式サイトを見る

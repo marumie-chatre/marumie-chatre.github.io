@@ -186,7 +186,7 @@ img { display: block; max-width: 100%; }
   gap: 11px;
 }
 
-/* 主CTA（フラットデザイン・solid color・no shadow） */
+/* 主CTA（pastel sage bg + ブラウン text - Hamburger と統一） */
 .top-hero-cta-primary {
   display: flex;
   align-items: center;
@@ -194,7 +194,7 @@ img { display: block; max-width: 100%; }
   height: 60px;
   padding: 0 22px;
   background: #A8C49A;
-  color: var(--text);
+  color: #5C3D1F;
   border-radius: var(--fv-btn-radius);
   font-size: 15px;
   font-weight: 700;
@@ -208,11 +208,11 @@ img { display: block; max-width: 100%; }
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text);
+  color: #5C3D1F;
   flex-shrink: 0;
 }
 
-/* 副CTA（フラットデザイン・solid・border のみ） */
+/* 副CTA（白 bg + ブラウン text） */
 .top-hero-cta-sub {
   display: flex;
   align-items: center;
@@ -220,7 +220,7 @@ img { display: block; max-width: 100%; }
   height: 54px;
   padding: 0 20px;
   background: #FFFFFF;
-  color: var(--text);
+  color: #5C3D1F;
   border: 1px solid var(--fv-cta-sub-border);
   border-radius: var(--fv-btn-radius);
   font-size: 13.5px;
