@@ -14,6 +14,7 @@ const OFFICE_DATA: OfficeDetailData = {
   score: 68,
   isPR: false,
   logoSrc: "/logo-liver-support.png",
+  headerImage: "/office-header-liver-support.png",
   tagline: "創業22年の老舗。\n広域展開が強みの事務所。",
   tags: ["創業22年", "広域展開", "社会保険加入可"],
   breakdown: [

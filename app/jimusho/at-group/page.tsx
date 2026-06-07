@@ -14,6 +14,7 @@ const OFFICE_DATA: OfficeDetailData = {
   score: 79,
   isPR: false,
   logoSrc: "/logo-at-group.png",
+  headerImage: "/office-header-at-group.png",
   tagline: "カフェのような居心地。\n関東57店舗展開の大手。",
   tags: ["カフェ空間", "居心地◎", "関東57店舗", "体験入店OK"],
   breakdown: [

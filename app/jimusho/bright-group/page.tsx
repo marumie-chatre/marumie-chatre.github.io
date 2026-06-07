@@ -14,6 +14,7 @@ const OFFICE_DATA: OfficeDetailData = {
   score: 84,
   isPR: false,
   logoSrc: "/logo-bright-group.png",
+  headerImage: "/office-header-bright-group.png",
   tagline: "運営20年・全国最大手。\n初心者でも安心の大手ブランド。",
   tags: ["全国140店舗", "老舗20年", "24h対応", "顧問税理士"],
   breakdown: [

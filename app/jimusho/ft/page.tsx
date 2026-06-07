@@ -14,6 +14,7 @@ const OFFICE_DATA: OfficeDetailData = {
   score: 88,
   isPR: false,
   logoSrc: "/logo-ft.png",
+  headerImage: "/office-header-ft.png",
   tagline: "ノンアダルト専門の先駆者。\n安全に、自分らしく働ける事務所。",
   tags: ["業界初ノンアダルト専門", "女性スタッフ常駐", "在宅・通勤OK", "美容サロン連携", "初心者歓迎", "身バレ対策◎"],
   breakdown: [

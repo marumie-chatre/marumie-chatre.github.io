@@ -14,6 +14,7 @@ const OFFICE_DATA: OfficeDetailData = {
   score: 74,
   isPR: false,
   logoSrc: "/logo-nmr-group.png",
+  headerImage: "/office-header-nmr-group.png",
   tagline: "完全防音個室。\n関東・東北中心の中堅事務所。",
   tags: ["完全防音個室", "関東東北"],
   breakdown: [
