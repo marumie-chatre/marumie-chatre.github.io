@@ -11,7 +11,7 @@ export const metadata = {
 // Design Refresh v2 カラーパレット（Palette E: Natural Kiss 風）
 // Fresh Sage × Peach × Warm Yellow × Near-White Cream
 const G = {
-  bg: "#FAFAF5",            // near-white cream（清潔感UP）
+  bg: "#F4ECDD",            // タイトル画像のベージュに合わせた warm cream
   bgWarm: "#F5E8C8",        // warm yellow band
   paper: "#FFFFFF",
   ink: "#2E1F10",           // 濃い目のブラウン（warm dark brown）
@@ -101,22 +101,16 @@ const COLUMNS_PREVIEW = [
 function SectionHead({ kicker, title, note, image }: {
   kicker: string; title: string; note?: string; image?: string;
 }) {
-  // 画像版：画面幅いっぱい + 上下文字削除 + 下端グラデで馴染ませる
+  // 画像版：SP は edge-to-edge（100vw）、PC は親コンテナ幅で固定
   if (image) {
     return (
-      <div style={{
-        position: "relative",
-        width: "100vw",
-        marginLeft: "calc(50% - 50vw)",
-        marginRight: "calc(50% - 50vw)",
-        lineHeight: 0,
-      }}>
+      <div className="top-section-title-img">
         <Image
           src={image}
           alt={title}
           width={2172}
           height={560}
-          sizes="100vw"
+          sizes="(max-width:640px) 100vw, 760px"
           style={{
             width: "100%",
             height: "auto",
@@ -311,7 +305,7 @@ export default function Home() {
     <main style={{ background: G.bg, color: G.ink, paddingBottom: 60 }}>
 
       {/* ===== ヒーローカード（画像＋CTA を1枚のカードに） ===== */}
-      <section style={{ padding: 0 }}>
+      <section style={{ padding: 0, marginTop: -16 }}>
         <div className="top-hero-card">
           {/* 画像エリア（テキストオーバーレイ＋下端グラデ） */}
           <div className="top-hero-card-img">

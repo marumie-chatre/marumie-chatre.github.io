@@ -132,13 +132,18 @@ img { display: block; max-width: 100%; }
   overflow: hidden;
 }
 
-/* 画像エリア */
+/* 画像エリア（SP は縦余裕を持たせて文字切れ防止、PC は 16/9） */
 .top-hero-card-img {
   position: relative;
   width: 100%;
-  aspect-ratio: 16/9;
+  aspect-ratio: 5/3;
   overflow: hidden;
   background: var(--cream);
+}
+@media (min-width: 640px) {
+  .top-hero-card-img {
+    aspect-ratio: 16/9;
+  }
 }
 .top-hero-card-img img {
   object-fit: cover;
@@ -223,6 +228,22 @@ img { display: block; max-width: 100%; }
   text-decoration: none;
 }
 
+
+/* ===== TOP セクションタイトル画像（SP: edge-to-edge / PC: 親幅内に固定）===== */
+.top-section-title-img {
+  position: relative;
+  line-height: 0;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+@media (min-width: 768px) {
+  .top-section-title-img {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
 
 /* ===== TOP FIND セクション（背景削除版・透明）===== */
 .top-find-section {
