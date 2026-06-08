@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Icon } from "../Icon";
+import { BreadcrumbSchema } from "../StructuredData";
 import AreaFilter from "./AreaFilter";
 
 export const metadata = {
@@ -23,6 +24,10 @@ const G = {
 export default function AreaPage() {
   return (
     <main style={{ background: G.bg, color: G.ink, paddingBottom: 60 }}>
+      <BreadcrumbSchema items={[
+        { name: "トップ", path: "/" },
+        { name: "エリアから探す", path: "/area" },
+      ]} />
 
       {/* ===== HERO ===== */}
       <section style={{ padding: "28px 20px 12px", maxWidth: 760, margin: "0 auto" }}>

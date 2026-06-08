@@ -3,6 +3,8 @@
 
 import Link from "next/link";
 import { Icon } from "./Icon";
+import { reviews } from "./reviews";
+import { BreadcrumbSchema, OfficeProductSchema } from "./StructuredData";
 
 // Palette E refined v3（5/27）：ink 深化＋緑使用ナロー化
 // 方針：kicker/h2/links/scoreNum は ink、CTAは sagePastel + ink、FINAL CTA は ink + white
@@ -194,10 +196,28 @@ export function OfficeDetailLayout({
   reviewsSlot: React.ReactNode;
   relatedOffices: RelatedOffice[];
 }) {
+  // 構造化データ用：この事務所宛の口コミだけ抜き出し
+  const officeReviewsForSchema = reviews.filter((r) => r.slug === o.slug);
+  const officeUrl = `https://marumie-chatre.vercel.app/jimusho/${o.slug}`;
+
   return (
     <main style={{ background: L3G.bg, color: L3G.ink, paddingBottom: 40 }}>
 
-      {/* ===== Breadcrumb ===== */}
+      {/* ===== JSON-LD: BreadcrumbList + Product + AggregateRating + Review ===== */}
+      <BreadcrumbSchema items={[
+        { name: "トップ", path: "/" },
+        { name: "事務所一覧", path: "/jimusho" },
+        { name: o.name, path: `/jimusho/${o.slug}` },
+      ]} />
+      <OfficeProductSchema
+        name={o.name}
+        description={o.tagline.replace(/\n/g, " ")}
+        url={officeUrl}
+        imageUrl={o.headerImage ? `https://marumie-chatre.vercel.app${o.headerImage}` : undefined}
+        reviews={officeReviewsForSchema}
+      />
+
+      {/* ===== Breadcrumb（視覚版） ===== */}
       <L3Breadcrumb items={[
         { l: "トップ", href: "/" },
         { l: "事務所一覧", href: "/jimusho" },

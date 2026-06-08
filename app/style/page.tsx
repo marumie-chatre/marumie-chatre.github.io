@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Icon } from "../Icon";
+import { BreadcrumbSchema } from "../StructuredData";
 
 export const metadata = {
   title: "働き方から探す｜まるみえチャトレ",
@@ -50,6 +51,10 @@ const OTHER_STYLES = [
 export default function StylePage() {
   return (
     <main style={{ background: G.bg, color: G.ink, paddingBottom: 40 }}>
+      <BreadcrumbSchema items={[
+        { name: "トップ", path: "/" },
+        { name: "働き方から探す", path: "/style" },
+      ]} />
 
       {/* ===== HERO ===== */}
       <section style={{ padding: "28px 22px 18px", maxWidth: 720, margin: "0 auto" }}>

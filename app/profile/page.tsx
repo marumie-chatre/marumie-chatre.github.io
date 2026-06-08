@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Icon } from "../Icon";
+import { BreadcrumbSchema } from "../StructuredData";
 
 export const metadata = {
   title: "運営者プロフィール｜まるみえチャトレ",
@@ -90,6 +91,10 @@ function SectionKicker({ children }: { children: React.ReactNode }) {
 export default function ProfilePage() {
   return (
     <main style={{ background: G.bg, color: G.ink, paddingBottom: 40 }}>
+      <BreadcrumbSchema items={[
+        { name: "トップ", path: "/" },
+        { name: "運営者プロフィール", path: "/profile" },
+      ]} />
 
       <div style={{ padding: "32px 22px 0", maxWidth: 720, margin: "0 auto" }}>
 

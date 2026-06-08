@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { reviews } from "../reviews";
 import OfficeReviews from "../OfficeReviews";
+import { BreadcrumbSchema } from "../StructuredData";
 
 export const metadata = {
   title: "口コミ｜まるみえチャトレ",
@@ -13,6 +14,10 @@ export default function KuchikomiPage() {
 
   return (
     <main>
+      <BreadcrumbSchema items={[
+        { name: "トップ", path: "/" },
+        { name: "口コミ", path: "/kuchikomi" },
+      ]} />
       {/* HERO */}
       <section className="hero" style={{paddingBottom:"48px"}}>
         <div className="hero-inner" style={{maxWidth:"680px", margin:"0 auto", textAlign:"left"}}>

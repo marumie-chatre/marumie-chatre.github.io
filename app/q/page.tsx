@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Icon } from "../Icon";
+import { BreadcrumbSchema } from "../StructuredData";
 import QHubList from "./QHubList";
 
 export const metadata = {
@@ -21,6 +22,10 @@ const G = {
 export default function QHubPage() {
   return (
     <main style={{ background: G.bg, color: G.ink, paddingBottom: 40 }}>
+      <BreadcrumbSchema items={[
+        { name: "トップ", path: "/" },
+        { name: "お悩みから探す", path: "/q" },
+      ]} />
 
       {/* ===== HERO ===== */}
       <section style={{ padding: "28px 22px 18px", maxWidth: 720, margin: "0 auto" }}>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Icon } from "../Icon";
+import { BreadcrumbSchema } from "../StructuredData";
 
 export const metadata = {
   title: "評価基準について｜まるみえチャトレ",
@@ -91,6 +92,10 @@ const PROCESS_STEPS = [
 export default function HyokaKijunPage() {
   return (
     <main style={{ background: G.bg, color: G.ink, paddingBottom: 40 }}>
+      <BreadcrumbSchema items={[
+        { name: "トップ", path: "/" },
+        { name: "評価基準について", path: "/hyoka-kijun" },
+      ]} />
 
       {/* ===== ヘッダー画像 ===== */}
       <section style={{ padding: 0, maxWidth: 720, margin: "0 auto" }}>
