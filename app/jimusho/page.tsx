@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Icon } from "../Icon";
+import { BreadcrumbSchema } from "../StructuredData";
 import JimushoList from "./JimushoList";
 
 export const metadata = {
@@ -26,6 +27,10 @@ const G = {
 export default function JimushoPage() {
   return (
     <main style={{ background: G.bg, color: G.ink, paddingBottom: 60 }}>
+      <BreadcrumbSchema items={[
+        { name: "トップ", path: "/" },
+        { name: "事務所ランキング", path: "/jimusho" },
+      ]} />
 
       {/* ===== ハブヘッダー画像（実寸 aspect ratio、画像下スペース詰める） ===== */}
       <section style={{ padding: 0, maxWidth: 760, margin: "0 auto" }}>
