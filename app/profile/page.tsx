@@ -389,7 +389,7 @@ export default function ProfilePage() {
               <span style={{ color: G.inkSoft, fontWeight: 600 }}>主な掲載内容</span>
               <span>チャットレディ事務所の比較、口コミ、報酬条件、サポート体制、身バレ対策に関する情報</span>
               <span style={{ color: G.inkSoft, fontWeight: 600 }}>最終更新日</span>
-              <span>2026年6月</span>
+              <span>2026年6月10日</span>
             </div>
           </div>
         </div>
