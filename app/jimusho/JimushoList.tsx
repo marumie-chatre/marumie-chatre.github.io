@@ -276,7 +276,7 @@ export default function JimushoList() {
                 border: `1px solid ${G.border}`,
                 borderRadius: 20,
                 boxShadow: "0 2px 12px rgba(58,42,32,0.04)",
-                overflow: "hidden",
+                // overflow: hidden は badge（top:-13）を切り落とすので付けない
               }}
             >
               {/* カード全体をリンク化（padding を Link 内に移し、視覚を変えずクリック領域だけ拡張） */}
