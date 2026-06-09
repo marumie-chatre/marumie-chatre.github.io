@@ -47,7 +47,7 @@ const OFFICES: Office[] = [
       "会話や見せ方のコツまで丁寧に教えてほしい方",
       "いきなり稼ぐより、まずは安心して慣れていきたい方",
     ],
-    scores: { total: 88, safety: 29, support: 20, beginner: 17, work: 14, earning: 8 },
+    scores: { total: 89, safety: 29, support: 20, beginner: 19, work: 14, earning: 7 },
   },
   {
     defaultRank: 2, name: "ブライトグループ", slug: "bright-group", logo: "/logo-bright-group.png",
@@ -57,7 +57,7 @@ const OFFICES: Office[] = [
       "通いやすい店舗を見つけたい方",
       "SNS活動も含めて相談したい方",
     ],
-    scores: { total: 84, safety: 25, support: 20, beginner: 18, work: 13, earning: 8 },
+    scores: { total: 83, safety: 25, support: 20, beginner: 17, work: 13, earning: 8 },
   },
   {
     defaultRank: 3, name: "チャットスタイル", slug: "chatstyle", logo: "/logo-chatstyle.png",
@@ -77,7 +77,7 @@ const OFFICES: Office[] = [
       "在宅よりも、店舗に通ってお仕事したい方",
       "居心地のよさや通いやすさを重視したい方",
     ],
-    scores: { total: 79, safety: 22, support: 21, beginner: 16, work: 13, earning: 7 },
+    scores: { total: 80, safety: 22, support: 21, beginner: 16, work: 13, earning: 8 },
   },
   {
     defaultRank: 5, name: "フレイバーグループ", slug: "flavor-group", logo: "/logo-flavor-group.png",
@@ -87,7 +87,7 @@ const OFFICES: Office[] = [
       "報酬の安定感も重視したい方",
       "複数の働き方を比べて選びたい方",
     ],
-    scores: { total: 79, safety: 23, support: 20, beginner: 17, work: 12, earning: 7 },
+    scores: { total: 80, safety: 23, support: 20, beginner: 17, work: 12, earning: 8 },
   },
   {
     defaultRank: 6, name: "アリュール", slug: "allure", logo: "/logo-allure.png",
@@ -127,7 +127,7 @@ const OFFICES: Office[] = [
       "高収入を目指せる事務所も比較したい方",
       "稼げるならアダルトも選択肢に入れれる方",
     ],
-    scores: { total: 68, safety: 25, support: 18, beginner: 9, work: 9, earning: 7 },
+    scores: { total: 69, safety: 25, support: 18, beginner: 9, work: 9, earning: 8 },
   },
   {
     defaultRank: 10, name: "ポケットワーク", slug: "pocket-work", logo: "/logo-pocket-work.png",

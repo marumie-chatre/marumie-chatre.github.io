@@ -4,14 +4,14 @@ import { OfficeDetailLayout, type OfficeDetailData, type RelatedOffice } from ".
 
 export const metadata = {
   title: "フェアリーテイルの口コミ・評判｜ノンアダルト専門の先駆者【まるみえチャトレ】",
-  description: "フェアリーテイルの編集部調査レポート・口コミを掲載。業界初のノンアダルト専門店。安全性29点・サポート20点・総合84点。",
+  description: "フェアリーテイルの編集部調査レポート・口コミを掲載。業界初のノンアダルト専門店。安全性29点・初心者向け19点・総合89点。",
 };
 
 const OFFICE_DATA: OfficeDetailData = {
   slug: "ft",
   name: "フェアリーテイル",
   rank: 1,
-  score: 88,
+  score: 89,
   isPR: false,
   logoSrc: "/logo-ft.png",
   headerImage: "/office-header-ft.png",
@@ -20,9 +20,9 @@ const OFFICE_DATA: OfficeDetailData = {
   breakdown: [
     { l: "安全性", v: 29, max: 30 },
     { l: "サポート", v: 20, max: 25 },
-    { l: "初心者", v: 17, max: 20 },
+    { l: "初心者", v: 19, max: 20 },
     { l: "働きやすさ", v: 14, max: 15 },
-    { l: "稼ぎ", v: 8, max: 10 },
+    { l: "稼ぎ", v: 7, max: 10 },
   ],
   goodComment: "「ノンアダルト専門」という言葉がまだ珍しかった時代から、アダルトなしでも輝ける場所をつくり続けてきた事務所。チャットレディ歴3年以上の女性スタッフが常駐しているから、はじめての不安もちゃんと話せます。",
   honestComment: "稼ぎ重視の方には向いていないかもしれません。でも「安全に、自分のペースで、長く続けたい」という方には業界でトップクラスの環境だと思います。",
@@ -51,7 +51,7 @@ const OFFICE_DATA: OfficeDetailData = {
 };
 
 const RELATED: RelatedOffice[] = [
-  { rank: 2, slug: "bright-group", name: "ブライトグループ", score: 84 },
+  { rank: 2, slug: "bright-group", name: "ブライトグループ", score: 83 },
   { rank: 3, slug: "at-group", name: "アットグループ", score: 80 },
 ];
 
