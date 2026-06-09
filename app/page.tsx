@@ -157,12 +157,18 @@ function RankingCard({ r, idx }: { r: typeof RANKING[0]; idx: number }) {
   const isTop = idx === 0;
   const medalColors = ["#E8B85B", "#C5C0BA", "#D69C71"];
   return (
-    <div style={{
-      background: G.paper, borderRadius: 20, padding: 16, position: "relative",
-      boxShadow: isTop
-        ? `0 6px 22px rgba(46,31,16,0.08), 0 0 0 1.5px ${G.sagePastel}`
-        : "0 2px 10px rgba(46,31,16,0.04)",
-    }}>
+    <Link
+      href={`/jimusho/${r.id}`}
+      aria-label={`${r.name} の詳細・口コミを見る`}
+      style={{
+        display: "block",
+        background: G.paper, borderRadius: 20, padding: 16, position: "relative",
+        boxShadow: isTop
+          ? `0 6px 22px rgba(46,31,16,0.08), 0 0 0 1.5px ${G.sagePastel}`
+          : "0 2px 10px rgba(46,31,16,0.04)",
+        textDecoration: "none", color: "inherit", cursor: "pointer",
+      }}
+    >
       {isTop && (
         <div style={{
           position: "absolute", top: -14, left: 16,
@@ -250,18 +256,19 @@ function RankingCard({ r, idx }: { r: typeof RANKING[0]; idx: number }) {
         <span style={{ color: G.ink }}>{r.summary}</span>
       </div>
 
-      <Link href={`/jimusho/${r.id}`} style={{
+      {/* 視覚装飾としての「詳細を見る」ボタン（カード全体がリンクなので入れ子リンクは作らない） */}
+      <div aria-hidden="true" style={{
         marginTop: 12, display: "flex", alignItems: "center", justifyContent: "space-between",
         padding: "11px 14px", borderRadius: 10,
         background: isTop ? G.sagePastel : "transparent",
         color: isTop ? "#5C3D1F" : G.ink,
         border: isTop ? "none" : `1.5px solid ${G.rule}`,
-        fontSize: 12, fontWeight: 700, textDecoration: "none",
+        fontSize: 12, fontWeight: 700,
       }}>
         <span>詳細・口コミを見る</span>
         <Icon.Arrow size={13} />
-      </Link>
-    </div>
+      </div>
+    </Link>
   );
 }
 
