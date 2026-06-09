@@ -88,7 +88,7 @@ export default function AreaKinshicho() {
         <p>錦糸町エリアに店舗がある主な事務所は以下の通りです：</p>
         <div className="col-article-box">
           <p>・<strong>フェアリーテイル</strong>：錦糸町店あり。<strong>カフェをコンセプトにした店内</strong>・劇場通り沿い・アルカキット近く<br />
-          ・<strong>アットグループ</strong>：関東57店舗のうち錦糸町エリアにも対応。<strong>カフェのような居心地</strong>で人気<br />
+          ・<strong>アットグループ</strong>：全国95店舗のうち錦糸町エリアにも対応。<strong>カフェのような居心地</strong>で人気<br />
           ・<strong>アスタリスク</strong>：錦糸町店。<strong>マンション型・1室1部屋で広め</strong>・宿泊可・2024年8月OPEN<br />
           ・<strong>チャットスタイル</strong>：錦糸町エリア対応。会話テクニック指導が手厚い<br />
           ・<strong>ブライトグループ</strong>：錦糸町店あり。寮完備<br />

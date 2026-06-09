@@ -35,7 +35,7 @@ const FAQS = [
 const SHIBUYA_OFFICES = [
   { name: "フェアリーテイル", slug: "ft", nonAdult: "◎専門", support: "高", area: "全国展開・渋谷対応", target: "アダ勧誘ゼロ希望", top: true },
   { name: "ブライトグループ", slug: "bright-group", nonAdult: "△両対応", support: "高", area: "全国140店舗の渋谷店", target: "大手の安心感", top: true },
-  { name: "アットグループ", slug: "at-group", nonAdult: "△両対応", support: "高", area: "関東57店舗のカフェ空間", target: "居心地重視", top: true },
+  { name: "アットグループ", slug: "at-group", nonAdult: "△両対応", support: "高", area: "全国95店舗のカフェ空間", target: "居心地重視", top: true },
   { name: "チャットスタイル", slug: "chatstyle", nonAdult: "△両対応", support: "中", area: "会話指導◎", target: "接客スキル磨き", top: false },
   { name: "フレイバーグループ", slug: "flavor-group", nonAdult: "△両対応", support: "中", area: "稼ぎ重視", target: "稼ぎ重視", top: false },
   { name: "ポケットワーク", slug: "pocket-work", nonAdult: "×アダ誘導強め", support: "低", area: "渋谷店あり", target: "自走できる人", top: false },
@@ -164,7 +164,7 @@ export default function AreaShibuya() {
 
         <h3>🥇 アットグループ｜渋谷の「若年層×カフェ空間」と相性が良い</h3>
         <div className="col-article-box">
-          <p>✓ <strong>関東57店舗</strong>で渋谷にも店舗あり・通いやすい場所を選べる<br />
+          <p>✓ <strong>全国95店舗</strong>で渋谷にも店舗あり・通いやすい場所を選べる<br />
           ✓ <strong>オシャレで清潔感のあるカフェ空間</strong>のチャットルーム<br />
           ✓ <strong>1000パターン以上のノウハウ</strong>で稼ぎ方を体系的に学べる<br />
           ✓ <strong>身バレ対策が最強レベル</strong>（地域ブロック・特殊加工・完全個室）<br />

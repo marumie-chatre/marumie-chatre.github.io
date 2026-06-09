@@ -88,7 +88,7 @@ export default function AreaUeno() {
         <p>上野エリアに店舗がある主な事務所は以下の通りです：</p>
         <div className="col-article-box">
           <p>・<strong>フェアリーテイル</strong>：上野店あり。<strong>ノンアダルト専門</strong>・完全個室・防音設備完備<br />
-          ・<strong>アットグループ</strong>：関東57店舗のうち上野エリアに<strong>上野駅前店・上野御徒町店の2店舗</strong>展開<br />
+          ・<strong>アットグループ</strong>：全国95店舗のうち上野エリアに<strong>上野駅前店・上野御徒町店の2店舗</strong>展開<br />
           ・<strong>チャットスタイル</strong>：上野店（上野駅徒歩3分）・現役スタッフ常駐・マニュアル充実<br />
           ・<strong>チャットレディJP</strong>：上野エリアに店舗あり。FANZAの一次代理店<br />
           ・<strong>ライバーサポートグループ</strong>：上野御徒町店・年12回賞与制度・完全個室<br />
@@ -183,7 +183,7 @@ export default function AreaUeno() {
 
         <h3>🥉 アットグループ上野店(安全性 22/30点)</h3>
         <div className="col-article-box">
-          <p>✓ <strong>上野駅前店・上野御徒町店の2店舗展開</strong><br />✓ <strong>カフェのような居心地</strong>の店舗環境<br />✓ 関東57店舗で自分に合う雰囲気の店舗を選べる<br />✓ 24時間営業・宿泊可・新規オープンの密着サポート</p>
+          <p>✓ <strong>上野駅前店・上野御徒町店の2店舗展開</strong><br />✓ <strong>カフェのような居心地</strong>の店舗環境<br />✓ 全国95店舗で自分に合う雰囲気の店舗を選べる<br />✓ 24時間営業・宿泊可・新規オープンの密着サポート</p>
         </div>
         <p>「<strong>面談で実際の店舗の雰囲気を確認してから決めたい</strong>」という方に向いている事務所です。アットグループは<strong>北欧カフェ空間のおしゃれな休憩所</strong>で知られており、職場というより居心地のよい空間で配信できます。上野エリアの落ち着いた雰囲気と、アットグループのカフェ的な店舗環境は相性が良く、長く続けやすい組み合わせです。</p>
         <div className="col-article-box">

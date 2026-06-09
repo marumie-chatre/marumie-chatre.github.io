@@ -129,7 +129,7 @@ export default function QShoshinsha() {
 
         <h3>🥉 アットグループ（サポート 21/25・初心者向け 16/20）</h3>
         <div className="col-article-box">
-          <p>✓ カフェのような居心地の良い店舗環境<br />✓ スタッフがフレンドリーで通いやすい<br />✓ 関東57店舗で通勤しやすい<br />✓ 面談が丁寧で説明もしっかり</p>
+          <p>✓ カフェのような居心地の良い店舗環境<br />✓ スタッフがフレンドリーで通いやすい<br />✓ 全国95店舗で通勤しやすい<br />✓ 面談が丁寧で説明もしっかり</p>
         </div>
         <p>「初めてでも入店しやすい雰囲気」を求める方に。</p>
         <p><Link href="/jimusho/at-group" className="btn-main">アットグループの詳細を見る →</Link></p>

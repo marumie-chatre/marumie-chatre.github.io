@@ -134,7 +134,7 @@ export default function QShokubaBare() {
 
         <h3>🥉 アットグループ（安全性 22/30点）</h3>
         <div className="col-article-box">
-          <p>✓ 関東57店舗で通勤の選択肢が多い<br />✓ 職場と離れた店舗を選びやすい<br />✓ カフェのような居心地で「相談しやすい」雰囲気</p>
+          <p>✓ 全国95店舗で通勤の選択肢が多い<br />✓ 職場と離れた店舗を選びやすい<br />✓ カフェのような居心地で「相談しやすい」雰囲気</p>
         </div>
         <p><Link href="/jimusho/at-group" className="btn-main">アットグループの詳細を見る →</Link></p>
 

@@ -129,7 +129,7 @@ export default function QKazokuBare() {
 
         <h3>🥈 アットグループ（安全性 22/30点）</h3>
         <div className="col-article-box">
-          <p>✓ 関東57店舗で通勤の選択肢が多い<br />✓ 自宅から離れた店舗を選べる<br />✓ カフェのような居心地で「副業に通っている」ことが自然に見える</p>
+          <p>✓ 全国95店舗で通勤の選択肢が多い<br />✓ 自宅から離れた店舗を選べる<br />✓ カフェのような居心地で「副業に通っている」ことが自然に見える</p>
         </div>
         <p>実家暮らし・同棲中の方には、<strong>通勤型で自宅以外の場所で配信できる</strong>ことが大きなメリットです。</p>
         <p><Link href="/jimusho/at-group" className="btn-main">アットグループの詳細を見る →</Link></p>
