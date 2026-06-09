@@ -11,7 +11,7 @@ const OFFICE_DATA: OfficeDetailData = {
   slug: "bright-group",
   name: "ブライトグループ",
   rank: 2,
-  score: 84,
+  score: 83,
   isPR: false,
   logoSrc: "/logo-bright-group.png",
   headerImage: "/office-header-bright-group.png",
@@ -20,7 +20,7 @@ const OFFICE_DATA: OfficeDetailData = {
   breakdown: [
     { l: "安全性", v: 25, max: 30 },
     { l: "サポート", v: 20, max: 25 },
-    { l: "初心者", v: 18, max: 20 },
+    { l: "初心者", v: 17, max: 20 },
     { l: "働きやすさ", v: 13, max: 15 },
     { l: "稼ぎ", v: 8, max: 10 },
   ],
@@ -39,7 +39,7 @@ const OFFICE_DATA: OfficeDetailData = {
 };
 
 const RELATED: RelatedOffice[] = [
-  { rank: 1, slug: "ft", name: "フェアリーテイル", score: 84 },
+  { rank: 1, slug: "ft", name: "フェアリーテイル", score: 89 },
   { rank: 3, slug: "at-group", name: "アットグループ", score: 80 },
 ];
 
