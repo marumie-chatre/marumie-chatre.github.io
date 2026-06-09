@@ -394,13 +394,21 @@ export default function ProfilePage() {
           </div>
         </div>
 
-        {/* ===== CONTACT ===== */}
+        {/* ===== REVIEW（投稿） ===== */}
         <div style={{ marginTop: 30 }}>
-          <SectionKicker>CONTACT</SectionKicker>
+          <SectionKicker>REVIEW</SectionKicker>
           <h2 style={{
             margin: "8px 0 14px",
             fontSize: 19, fontWeight: 700, lineHeight: 1.6, color: G.ink,
-          }}>お問い合わせ。</h2>
+          }}>口コミ・体験談のご投稿。</h2>
+
+          <p style={{
+            margin: "0 0 14px",
+            fontSize: 12, lineHeight: 1.85, color: G.inkSoft,
+          }}>
+            実際に働いた経験を、匿名で投稿いただけます。<br />
+            良かった点も気になった点も、次に選ぶ誰かの判断材料になります。
+          </p>
 
           <Link href="/kuchikomi" style={{
             display: "flex", alignItems: "center", justifyContent: "space-between",
@@ -410,8 +418,8 @@ export default function ProfilePage() {
             fontSize: 13, fontWeight: 700, textDecoration: "none",
           }}>
             <span style={{ display: "inline-flex", alignItems: "center", gap: 10 }}>
-              <Icon.Mail size={16} />
-              編集部にメッセージを送る
+              <Icon.Pencil size={16} />
+              事務所の口コミを投稿する
             </span>
             <Icon.Arrow size={13} />
           </Link>
