@@ -20,9 +20,10 @@ const G = {
   border: "#E2EBDD",
 };
 
-type RegionId = "hokkaido" | "tohoku" | "kanto" | "kansai" | "kinki" | "chubu" | "kyushu";
+type RegionId = "all" | "hokkaido" | "tohoku" | "kanto" | "kansai" | "kinki" | "chubu" | "kyushu";
 
 const REGIONS: { id: RegionId; label: string }[] = [
+  { id: "all",      label: "全国" },
   { id: "hokkaido", label: "北海道" },
   { id: "tohoku",   label: "東北" },
   { id: "kanto",    label: "関東" },
@@ -75,8 +76,11 @@ const CITIES: City[] = [
 ];
 
 export default function AreaFilter() {
-  const [active, setActive] = useState<RegionId>("kanto");
-  const filtered = CITIES.filter(c => c.region === active);
+  const [active, setActive] = useState<RegionId>("all");
+  // "all" のときは全件、それ以外は地方フィルタ
+  const filtered = active === "all"
+    ? CITIES
+    : CITIES.filter(c => c.region === active);
 
   return (
     <>
