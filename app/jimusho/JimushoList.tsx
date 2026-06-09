@@ -275,10 +275,22 @@ export default function JimushoList() {
                 background: G.paper,
                 border: `1px solid ${G.border}`,
                 borderRadius: 20,
-                padding: 18,
                 boxShadow: "0 2px 12px rgba(58,42,32,0.04)",
+                overflow: "hidden",
               }}
             >
+              {/* カード全体をリンク化（padding を Link 内に移し、視覚を変えずクリック領域だけ拡張） */}
+              <Link
+                href={`/jimusho/${o.slug}`}
+                aria-label={`${o.name} の詳細・口コミを見る`}
+                style={{
+                  display: "block",
+                  padding: 18,
+                  textDecoration: "none",
+                  color: "inherit",
+                  cursor: "pointer",
+                }}
+              >
               {/* 初心者に最もおすすめ badge（ft × 総合 のみ） */}
               {isTopRecommend && (
                 <div style={{
@@ -433,16 +445,16 @@ export default function JimushoList() {
                 </ul>
               </div>
 
-              {/* 8. 詳細・口コミを見るボタン */}
-              <Link href={`/jimusho/${o.slug}`} style={{
+              {/* 8. 詳細・口コミを見るボタン（視覚装飾／カード全体がリンクなので入れ子リンクは作らない） */}
+              <div aria-hidden="true" style={{
                 display: "flex", alignItems: "center", justifyContent: "space-between",
                 padding: "13px 18px",
                 background: G.sagePastel, color: G.brown,
                 borderRadius: 12, fontSize: 13, fontWeight: 700,
-                textDecoration: "none",
               }}>
                 <span>詳細・口コミを見る</span>
                 <Icon.Arrow size={14} />
+              </div>
               </Link>
             </article>
           );
