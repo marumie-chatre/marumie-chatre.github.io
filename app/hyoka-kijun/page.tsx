@@ -304,7 +304,7 @@ export default function HyokaKijunPage() {
           border: `1.5px solid ${G.rule}`,
           fontSize: 13, fontWeight: 700, textDecoration: "none",
         }}>
-          <span>11事務所のランキングを見る</span>
+          <span>事務所のランキングを見る</span>
           <Icon.Arrow size={14} />
         </Link>
       </section>

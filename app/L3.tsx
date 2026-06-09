@@ -540,7 +540,7 @@ export function OfficeDetailLayout({
           padding: 12, border: `1px solid ${L3G.rule}`, borderRadius: 99,
           fontSize: 12, fontWeight: 600, color: L3G.ink, textDecoration: "none",
         }}>
-          全11社の比較ランキングを見る
+          事務所の比較ランキングを見る
           <Icon.Arrow size={12} />
         </Link>
       </div>
