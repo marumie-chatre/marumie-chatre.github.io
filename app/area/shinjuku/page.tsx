@@ -202,7 +202,7 @@ export default function AreaShinjuku() {
 
         <h3>🥈 アットグループ｜新宿エリアに複数店舗・「気分で店舗を変えられる」</h3>
         <div className="col-article-box">
-          <p>✓ <strong>関東57店舗</strong>で新宿エリアにも複数店舗<br />
+          <p>✓ <strong>全国95店舗</strong>で新宿エリアにも複数店舗<br />
           ✓ <strong>オシャレで清潔感のあるカフェ空間</strong>のチャットルーム<br />
           ✓ <strong>1000パターン以上のノウハウ</strong>で稼ぎ方を体系的に学べる<br />
           ✓ <strong>身バレ対策が最強レベル</strong>（地域ブロック・特殊加工・完全個室）<br />

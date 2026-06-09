@@ -166,7 +166,7 @@ export default function QAyashii() {
 
         <h3>🥉 アットグループ（安全性 22/30点）</h3>
         <div className="col-article-box">
-          <p>✓ 関東57店舗で透明性が高い<br />✓ カフェのような居心地で「圧をかけられる」雰囲気が皆無<br />✓ 面談が丁寧で説明もしっかり</p>
+          <p>✓ 全国95店舗で透明性が高い<br />✓ カフェのような居心地で「圧をかけられる」雰囲気が皆無<br />✓ 面談が丁寧で説明もしっかり</p>
         </div>
         <p>「面談で圧をかけられたくない」という方に。</p>
         <p><Link href="/jimusho/at-group" className="btn-main">アットグループの詳細を見る →</Link></p>

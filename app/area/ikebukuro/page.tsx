@@ -89,7 +89,7 @@ export default function AreaIkebukuro() {
         <div className="col-article-box">
           <p>・<strong>フェアリーテイル</strong>：池袋店あり。ノンアダルト専門<br />
           ・<strong>ブライトグループ</strong>：池袋店。老舗20年・コスプレ衣装が充実・寮完備<br />
-          ・<strong>アットグループ</strong>：関東57店舗のうち池袋エリアにも複数<br />
+          ・<strong>アットグループ</strong>：全国95店舗のうち池袋エリアにも複数<br />
           ・<strong>チャットレディJP</strong>：池袋TLI店。寮完備・入店祝い金最大10万円<br />
           ・<strong>アスタリスク</strong>：池袋店。池袋エリア最大規模・元チャトレ女性マネージャー<br />
           ・<strong>アリュール</strong>：池袋店。2021年OPEN・防音・宿泊可<br />

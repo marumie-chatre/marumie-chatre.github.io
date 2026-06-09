@@ -247,7 +247,7 @@ export default function StyleTsukinPage() {
           <li><strong>フェアリーテイル</strong>：業界初のノンアダ専門・カフェコンセプト・店舗に女性スタッフ在籍</li>
           <li><strong>ブライトグループ</strong>：老舗20年・全国140店舗・顧問税理士サポート</li>
           <li><strong>チャットスタイル</strong>：会話テクニック指導・現役経験者スタッフ</li>
-          <li><strong>アットグループ</strong>：関東57店舗・カフェのような居心地</li>
+          <li><strong>アットグループ</strong>：全国95店舗・カフェのような居心地</li>
           <li><strong>チャットレディJP</strong>：複数店舗・美容機器無料</li>
           <li><strong>ポケットワーク</strong>：全国8拠点・通勤も対応・在宅と併用可</li>
           <li><strong>アスタリスク</strong>：大手・現役チャトレ経験者スタッフ</li>
@@ -337,7 +337,7 @@ export default function StyleTsukinPage() {
 
         <h3>🥉 アットグループ（安全性 22/30点・サポート 21/25点・初心者 16/20点）</h3>
         <ul>
-          <li><strong>関東57店舗</strong>で自分の通えるエリアの店舗を選べる</li>
+          <li><strong>全国95店舗</strong>で自分の通えるエリアの店舗を選べる</li>
           <li><strong>オシャレで清潔感のあるカフェ空間</strong>のチャットルーム</li>
           <li><strong>1000種類以上のノウハウ</strong>で稼ぎ方を体系的に学べる</li>
           <li><strong>身バレ対策が最強レベル</strong>（地域ブロック・特殊加工・完全個室）</li>
@@ -347,7 +347,7 @@ export default function StyleTsukinPage() {
 
         <p>「<strong>通勤型で身バレが心配</strong>」「<strong>副業で自由に出勤したい</strong>」という方には、<strong>身バレ対策が最強レベル</strong>のアットグループが向いています。店舗の場所は完全非公開、配信映像には特殊な加工が施され、<strong>地域ブロック機能</strong>で知り合いがいるエリアからのアクセスを遮断できます。</p>
 
-        <p>また、<strong>1000種類以上のノウハウ</strong>が体系化されており、ノンアダルトでも段階的に稼げる仕組みが整っているのが特徴です。関東57店舗あるため、<strong>自分の通えるエリアの店舗を選びやすい</strong>のも大きな魅力です。</p>
+        <p>また、<strong>1000種類以上のノウハウ</strong>が体系化されており、ノンアダルトでも段階的に稼げる仕組みが整っているのが特徴です。全国95店舗あるため、<strong>自分の通えるエリアの店舗を選びやすい</strong>のも大きな魅力です。</p>
 
         <blockquote>
           <p>実際の口コミ：「<strong>通うたびに顔を覚えてもらえて、自然に世間話できる雰囲気が居心地よかった</strong>」「<strong>未経験でも徹底的にサポートしてくれる</strong>」</p>
@@ -465,7 +465,7 @@ export default function StyleTsukinPage() {
           <Link href="/jimusho" className="btn-main">掲載事務所の比較ランキングを見る →</Link>
           <Link href="/jimusho/ft" className="btn-main">フェアリーテイル（業界初ノンアダ専門・カフェコンセプト・1000項目ノウハウ）の詳細を見る →</Link>
           <Link href="/jimusho/bright-group" className="btn-main">ブライトグループ（老舗20年・顧問税理士サポート）の詳細を見る →</Link>
-          <Link href="/jimusho/at-group" className="btn-main">アットグループ（関東57店舗・身バレ対策最強・1000パターンノウハウ）の詳細を見る →</Link>
+          <Link href="/jimusho/at-group" className="btn-main">アットグループ（全国95店舗・身バレ対策最強・1000パターンノウハウ）の詳細を見る →</Link>
         </p>
 
       </article>
