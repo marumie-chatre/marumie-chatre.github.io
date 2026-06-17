@@ -3,6 +3,7 @@ import { FAQSchema, ArticleSchema, BreadcrumbSchema } from "../../StructuredData
 import { L3ArticleShell } from "../../L3";
 
 export const metadata = {
+  alternates: { canonical: "/q/shokuba-bare" },
   title: "職場・会社にバレないチャットレディの始め方｜まるみえチャトレ",
   description: "副業でチャットレディを始めたい方へ。職場バレの本当の原因と住民税対策、職業に合わせた働き方を提案してくれる事務所をまとめました。元保育士の現役チャットレディが解説します。",
 };

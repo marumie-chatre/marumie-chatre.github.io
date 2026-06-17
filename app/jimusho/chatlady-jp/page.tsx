@@ -3,6 +3,7 @@ import OfficeReviews from "../../OfficeReviews";
 import { OfficeDetailLayout, type OfficeDetailData, type RelatedOffice } from "../../L3";
 
 export const metadata = {
+  alternates: { canonical: "/jimusho/chatlady-jp" },
   title: "チャットレディJPの口コミ・評判【まるみえチャトレ】",
   description: "チャットレディJPの編集部調査レポートと口コミを掲載。新宿・上野に多店舗展開。美容機器無料サービスあり。",
 };

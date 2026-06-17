@@ -3,6 +3,7 @@ import OfficeReviews from "../../OfficeReviews";
 import { OfficeDetailLayout, type OfficeDetailData, type RelatedOffice } from "../../L3";
 
 export const metadata = {
+  alternates: { canonical: "/jimusho/ft" },
   title: "フェアリーテイルの口コミ・評判｜ノンアダルト専門の先駆者【まるみえチャトレ】",
   description: "フェアリーテイルの編集部調査レポート・口コミを掲載。業界初のノンアダルト専門店。安全性29点・初心者向け19点・総合89点。",
 };

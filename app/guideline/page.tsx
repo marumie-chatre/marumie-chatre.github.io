@@ -1,4 +1,5 @@
 export const metadata = {
+  alternates: { canonical: "/guideline" },
   title: "口コミ投稿ガイドライン｜まるみえチャトレ",
   description: "まるみえチャトレの口コミ投稿ガイドライン。匿名で投稿できます。実際に働いた方のリアルな体験談をお待ちしています。",
 };

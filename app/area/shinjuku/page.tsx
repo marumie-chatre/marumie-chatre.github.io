@@ -4,6 +4,7 @@ import { FAQSchema, ArticleSchema, BreadcrumbSchema } from "../../StructuredData
 import { L3ArticleShell } from "../../L3";
 
 export const metadata = {
+  alternates: { canonical: "/area/shinjuku" },
   title: "新宿のチャットレディ事務所｜約50店舗の中から選ぶ4社｜まるみえチャトレ",
   description: "新宿は約50店舗ある業界最大の激戦区。激戦区だからこそ気をつけたい選び方の軸と、主要7社の比較表、評価が高い事務所4社を、現役4年の視点で整理した新宿ガイドです。",
 };

@@ -3,6 +3,7 @@ import { FAQSchema, ArticleSchema, BreadcrumbSchema } from "../../StructuredData
 import { L3ArticleShell } from "../../L3";
 
 export const metadata = {
+  alternates: { canonical: "/style/tsukin" },
   title: "通勤型チャットレディ事務所｜選び方と評価が高い3社｜まるみえチャトレ",
   description: "通勤型のチャットレディを始めたい方へ。通勤型のメリット・選び方・評価が高い事務所3社を、元保育士の現役チャットレディが正直に解説します。",
 };

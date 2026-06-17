@@ -3,6 +3,7 @@ import OfficeReviews from "../../OfficeReviews";
 import { OfficeDetailLayout, type OfficeDetailData, type RelatedOffice } from "../../L3";
 
 export const metadata = {
+  alternates: { canonical: "/jimusho/at-group" },
   title: "アットグループの口コミ・評判【まるみえチャトレ】",
   description: "アットグループの編集部調査レポートと口コミを掲載。カフェのような居心地。全国95店舗展開の大手。",
 };

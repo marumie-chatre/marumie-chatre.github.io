@@ -4,6 +4,7 @@ import { FAQSchema, ArticleSchema, BreadcrumbSchema } from "../../StructuredData
 import { L3ArticleShell } from "../../L3";
 
 export const metadata = {
+  alternates: { canonical: "/area/ikebukuro" },
   title: "池袋のチャットレディ事務所｜選び方と評価が高い3社｜まるみえチャトレ",
   description: "池袋でチャットレディ事務所を探している方へ。池袋には18店舗以上のチャトレ事務所が集中しています。学生街・若年層が多いエリア特性と、初心者が安心して選べる事務所を、元保育士の現役チャットレディが解説します。",
 };

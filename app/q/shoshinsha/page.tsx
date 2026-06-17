@@ -3,6 +3,7 @@ import { FAQSchema, ArticleSchema, BreadcrumbSchema } from "../../StructuredData
 import { L3ArticleShell } from "../../L3";
 
 export const metadata = {
+  alternates: { canonical: "/q/shoshinsha" },
   title: "初心者が安心して始められるチャットレディ事務所｜まるみえチャトレ",
   description: "チャットレディが初めての方へ。初心者がつまずく5つのポイントと、サポートが手厚い事務所、始める前のチェックリストをまとめました。元保育士の現役チャットレディが解説します。",
 };

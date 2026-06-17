@@ -3,6 +3,7 @@ import OfficeReviews from "../../OfficeReviews";
 import { OfficeDetailLayout, type OfficeDetailData, type RelatedOffice } from "../../L3";
 
 export const metadata = {
+  alternates: { canonical: "/jimusho/bright-group" },
   title: "ブライトグループの口コミ・評判【まるみえチャトレ】",
   description: "ブライトグループの編集部調査レポートと口コミを掲載。運営20年・全国最大手。初心者でも安心の大手ブランド。",
 };

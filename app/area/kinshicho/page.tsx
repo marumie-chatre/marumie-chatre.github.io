@@ -4,6 +4,7 @@ import { FAQSchema, ArticleSchema, BreadcrumbSchema } from "../../StructuredData
 import { L3ArticleShell } from "../../L3";
 
 export const metadata = {
+  alternates: { canonical: "/area/kinshicho" },
   title: "錦糸町のチャットレディ事務所｜居心地で選ぶ評価が高い3社｜まるみえチャトレ",
   description: "錦糸町は新宿・池袋ほど事務所が多くないからこそ、「居心地で選んで長く続ける」ができるエリアです。落ち着いた雰囲気の中で安心して働ける事務所を、元保育士の現役チャットレディが解説します。",
 };

@@ -3,6 +3,7 @@ import OfficeReviews from "../../OfficeReviews";
 import { OfficeDetailLayout, type OfficeDetailData, type RelatedOffice } from "../../L3";
 
 export const metadata = {
+  alternates: { canonical: "/jimusho/asterisk" },
   title: "アスタリスクの口コミ・評判【まるみえチャトレ】",
   description: "アスタリスクの編集部調査レポートと口コミを掲載。全店女性スタッフ。本気で稼ぎたい方向けの事務所。",
 };

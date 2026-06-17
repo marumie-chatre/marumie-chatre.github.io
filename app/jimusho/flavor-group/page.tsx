@@ -3,6 +3,7 @@ import OfficeReviews from "../../OfficeReviews";
 import { OfficeDetailLayout, type OfficeDetailData, type RelatedOffice } from "../../L3";
 
 export const metadata = {
+  alternates: { canonical: "/jimusho/flavor-group" },
   title: "フレイバーグループの口コミ・評判【まるみえチャトレ】",
   description: "フレイバーグループの編集部調査レポートと口コミを掲載。稼ぎ方のノウハウを具体的に教えてくれる。全国300店舗の老舗。",
 };

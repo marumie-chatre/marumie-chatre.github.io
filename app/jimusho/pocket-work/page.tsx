@@ -3,6 +3,7 @@ import OfficeReviews from "../../OfficeReviews";
 import { OfficeDetailLayout, type OfficeDetailData, type RelatedOffice } from "../../L3";
 
 export const metadata = {
+  alternates: { canonical: "/jimusho/pocket-work" },
   title: "ポケットワークの口コミ・評判【まるみえチャトレ】",
   description: "ポケットワークの編集部調査レポートと口コミを掲載。全国8拠点。教えてもらうより自分で動きたい人向けの事務所。",
 };

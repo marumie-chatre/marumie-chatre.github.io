@@ -4,6 +4,7 @@ import { FAQSchema, ArticleSchema, BreadcrumbSchema } from "../../StructuredData
 import { L3ArticleShell } from "../../L3";
 
 export const metadata = {
+  alternates: { canonical: "/area/fukuoka" },
   title: "福岡のチャットレディ事務所｜選び方と評価が高い3社｜まるみえチャトレ",
   description: "福岡でチャットレディ事務所を探している方へ。福岡県内には130店舗以上の事務所があり、選択肢が多すぎて選びにくいエリアです。天神・博多を中心とした選び方と評価が高い事務所を、元保育士の現役チャットレディが解説します。",
 };

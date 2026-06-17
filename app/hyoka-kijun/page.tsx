@@ -4,6 +4,7 @@ import { Icon } from "../Icon";
 import { BreadcrumbSchema } from "../StructuredData";
 
 export const metadata = {
+  alternates: { canonical: "/hyoka-kijun" },
   title: "評価基準について｜まるみえチャトレ",
   description: "まるみえチャトレがなぜその順位をつけたのか、5軸100点満点の採点基準と根拠をすべて公開しています。",
 };

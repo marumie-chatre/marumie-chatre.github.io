@@ -4,6 +4,7 @@ import { ArticleSchema, BreadcrumbSchema, FAQSchema } from "../StructuredData";
 import { L3ArticleShell } from "../L3";
 
 export const metadata = {
+  alternates: { canonical: "/yougo" },
   title: "チャットレディ用語辞典｜初心者がよく迷う業界用語をやさしく解説｜まるみえチャトレ",
   description: "チャットレディ業界の用語を、初心者向けにやさしく解説。ノンアダ・マスク配信・バーチャル・接続率など、求人サイトでよく見る用語の意味と業界の実態をまとめました。",
 };

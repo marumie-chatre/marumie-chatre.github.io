@@ -3,6 +3,7 @@ import { FAQSchema, ArticleSchema, BreadcrumbSchema } from "../../StructuredData
 import { L3ArticleShell } from "../../L3";
 
 export const metadata = {
+  alternates: { canonical: "/q/kazoku-bare" },
   title: "家族・親・彼氏にバレないチャットレディの始め方｜まるみえチャトレ",
   description: "チャットレディが家族や彼氏にバレるのが不安な方へ。検索履歴・SNS・声漏れ・部屋のバレなど、家庭内で起きやすい身バレの原因と対策をまとめました。元保育士の現役チャットレディが解説します。",
 };
