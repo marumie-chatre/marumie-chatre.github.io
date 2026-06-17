@@ -51,7 +51,7 @@ export default function ColMibareTaisakuPage() {
         ]}
         kicker="お悩み｜安全・身バレ対策"
         title={<>配信中に顔がバレる？家族にバレる？<br />チャットレディの身バレ、よくある疑問に答えます</>}
-        meta={{ date: "2025.05.01", readTime: "約6分で読めます" }}
+        meta={{ date: "2026.05.06", readTime: "約6分で読めます" }}
       >
         <article className="col-article-body">
 

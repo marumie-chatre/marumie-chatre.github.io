@@ -6,6 +6,9 @@ import { Icon } from "./Icon";
 export const metadata = {
   title: "まるみえチャトレ｜中身で選ぶチャトレ事務所",
   description: "事務所選びで失敗したくない初心者のための口コミサイト。編集部が実際に調査した情報と評価基準をすべて公開しています。",
+  alternates: {
+    canonical: "/",
+  },
 };
 
 // Design Refresh v2 カラーパレット（Palette E: Natural Kiss 風）
@@ -92,9 +95,9 @@ const QUICK_NAV = [
 
 // データ：お悩みプレビュー3本（旧コラム枠を統合）— 全て /q 配下のハブで提示する
 const WORRIES_PREVIEW = [
-  { href: "/q/jimusho-erabi",  cat: "初心者・選び方", title: "チャットレディ事務所の選び方｜失敗しない5つの基準", time: "5分", date: "2025.05.01", image: "/col-jimusho-erabi.png" },
-  { href: "/q/mibare-taisaku", cat: "身バレ",         title: "身バレ、よくある疑問に答えます｜顔バレ・家族バレ・職場バレ", time: "6分", date: "2025.05.01", image: "/col-mibare-taisaku.png" },
-  { href: "/q/hoikushi-baito", cat: "副業バレ",       title: "チャトレは副業にアリ？会社・職場にバレないための全対策", time: "7分", date: "2025.05.01", image: "/col-hoikushi-baito.png" },
+  { href: "/q/jimusho-erabi",  cat: "初心者・選び方", title: "チャットレディ事務所の選び方｜失敗しない5つの基準", time: "5分", date: "2026.05.05", image: "/col-jimusho-erabi.png" },
+  { href: "/q/mibare-taisaku", cat: "身バレ",         title: "身バレ、よくある疑問に答えます｜顔バレ・家族バレ・職場バレ", time: "6分", date: "2026.05.06", image: "/col-mibare-taisaku.png" },
+  { href: "/q/hoikushi-baito", cat: "副業バレ",       title: "チャトレは副業にアリ？会社・職場にバレないための全対策", time: "7分", date: "2026.05.07", image: "/col-hoikushi-baito.png" },
 ];
 
 // ========== サブコンポーネント ==========

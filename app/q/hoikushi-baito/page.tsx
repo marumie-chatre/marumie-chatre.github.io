@@ -51,7 +51,7 @@ export default function ColHoikushiBaitoPage() {
         ]}
         kicker="お悩み｜副業・働き方ガイド"
         title={<>チャットレディは副業にアリ？<br />会社・職場にバレないための全対策</>}
-        meta={{ date: "2025.05.01", readTime: "約7分で読めます" }}
+        meta={{ date: "2026.05.07", readTime: "約7分で読めます" }}
       >
         <article className="col-article-body">
 

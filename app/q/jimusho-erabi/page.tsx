@@ -51,7 +51,7 @@ export default function ColJimushoErabiPage() {
         ]}
         kicker="お悩み｜事務所の選び方"
         title={<>チャットレディ事務所の選び方｜<br />失敗しない5つの基準</>}
-        meta={{ date: "2025.05.01", readTime: "約5分で読めます" }}
+        meta={{ date: "2026.05.05", readTime: "約5分で読めます" }}
       >
         <article className="col-article-body">
 
