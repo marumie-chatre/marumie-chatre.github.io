@@ -13,9 +13,6 @@ export const metadata: Metadata = {
     template: "%s｜まるみえチャトレ",
   },
   description: "事務所選びで失敗したくない初心者のための口コミサイト。広告費では順位を決めず、良い点・気になる点の両方を公開しています。",
-  alternates: {
-    canonical: "/",
-  },
   openGraph: {
     type: "website",
     locale: "ja_JP",

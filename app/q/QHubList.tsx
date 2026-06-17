@@ -39,7 +39,7 @@ const ARTICLES: Article[] = [
     cat: "初心者・選び方",
     title: "チャットレディ事務所の選び方｜失敗しない5つの基準",
     excerpt: "「なんとなく良さそう」で選ぶと後悔します。安全な事務所を見極める5つの基準を、現役の視点で解説します。",
-    time: "5分", date: "2025.05.01",
+    time: "5分", date: "2026.05.05",
     image: "/col-jimusho-erabi.png",
     featured: true,
   },
@@ -56,7 +56,7 @@ const ARTICLES: Article[] = [
     cat: "身バレ",
     title: "身バレ、よくある疑問に答えます｜顔バレ・家族バレ・職場バレ",
     excerpt: "配信中の身バレが心配な方へ。マスク・バーチャル・地域ブロックなど、よく聞かれる質問を一気に整理。",
-    time: "6分", date: "2025.05.01",
+    time: "6分", date: "2026.05.06",
     image: "/col-mibare-taisaku.png",
   },
   {
@@ -80,7 +80,7 @@ const ARTICLES: Article[] = [
     cat: "副業バレ",
     title: "チャトレは副業にアリ？会社・職場にバレないための全対策",
     excerpt: "副業として始めたい方へ。住民税・確定申告・職場バレ対策まで一気通貫で整理。",
-    time: "7分", date: "2025.05.01",
+    time: "7分", date: "2026.05.07",
     image: "/col-hoikushi-baito.png",
   },
   {

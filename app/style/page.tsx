@@ -28,7 +28,8 @@ type StyleIconName = "Home" | "Briefcase" | "Clock" | "Sprout" | "Coin" | "Heart
 type StyleItem = {
   href: string;
   l: string;
-  n: number;
+  n?: number;        // 専用ページがある働き方は件数を表示
+  cta?: string;      // 専用ページが無い場合はランキングへ誘導するラベル
   sub: string;
   iconName: StyleIconName;
 };
@@ -37,9 +38,9 @@ type StyleItem = {
 const STYLES: StyleItem[] = [
   { href: "/style/zaitaku",   l: "在宅で働きたい",   n: 7, sub: "自宅から配信できる事務所",   iconName: "Home" },
   { href: "/style/tsukin",    l: "通勤で働きたい",   n: 9, sub: "完全個室・設備充実",         iconName: "Briefcase" },
-  { href: "/jimusho",         l: "副業・夜だけ",     n: 6, sub: "本業と両立しやすい",         iconName: "Clock" },
-  { href: "/jimusho",         l: "主婦・スキマで",   n: 5, sub: "短時間 / 日中OK",            iconName: "Sprout" },
-  { href: "/jimusho",         l: "本気で稼ぎたい",   n: 4, sub: "時給保証 / 高還元率",        iconName: "Coin" },
+  { href: "/jimusho",         l: "副業・夜だけ",     cta: "ランキングで探す", sub: "本業と両立しやすい",         iconName: "Clock" },
+  { href: "/jimusho",         l: "主婦・スキマで",   cta: "ランキングで探す", sub: "短時間 / 日中OK",            iconName: "Sprout" },
+  { href: "/jimusho",         l: "本気で稼ぎたい",   cta: "ランキングで探す", sub: "時給保証 / 高還元率",        iconName: "Coin" },
   { href: "/style/non-adult", l: "ノンアダルト",     n: 3, sub: "お話のみ / 清楚系",          iconName: "HeartHand" },
 ];
 
@@ -127,7 +128,7 @@ export default function StylePage() {
                 fontSize: 11, fontWeight: 700, color: G.ink,
                 display: "inline-flex", alignItems: "center", gap: 4,
               }}>
-                {s.n}社 <Icon.Arrow size={10} />
+                {s.cta ?? `${s.n}社`} <Icon.Arrow size={10} />
               </div>
             </Link>
           );

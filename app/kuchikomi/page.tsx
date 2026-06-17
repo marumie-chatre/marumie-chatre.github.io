@@ -40,7 +40,7 @@ export default function KuchikomiPage() {
           >
             口コミを投稿する →
           </a>
-          <p style={{fontSize:"12px", color:"var(--text-light)", marginTop:"8px"}}>匿名・約5分で投稿できます</p>
+          <p style={{fontSize:"12px", color:"var(--text-light)", marginTop:"8px"}}>匿名・約1分で投稿できます</p>
         </div>
       </section>
 
@@ -76,7 +76,7 @@ export default function KuchikomiPage() {
               <div className="kuchi-step-num">02</div>
               <div className="kuchi-step-body">
                 <div className="kuchi-step-title">事務所・評価・感想を入力</div>
-                <p className="kuchi-step-text">良かったこと・気になったこと、どちらも正直に書いてください。所要時間は約5分です。</p>
+                <p className="kuchi-step-text">良かったこと・気になったこと、どちらも正直に書いてください。所要時間は約1分です。</p>
               </div>
             </div>
             <div className="kuchi-step">
@@ -96,7 +96,7 @@ export default function KuchikomiPage() {
           <h2 className="kuchi-h">働いた経験がある方へ</h2>
           <p className="kuchi-p">
             あなたの本音が、次に選ぶ誰かの安心になります。<br />
-            匿名・5分で投稿できます。
+            匿名・1分で投稿できます。
           </p>
           <a href={FORM_URL} target="_blank" rel="noopener noreferrer" className="btn-main">
             口コミを投稿する →
