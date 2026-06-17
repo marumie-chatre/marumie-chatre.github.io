@@ -3,6 +3,7 @@ import { FAQSchema, ArticleSchema, BreadcrumbSchema } from "../../StructuredData
 import { L3ArticleShell } from "../../L3";
 
 export const metadata = {
+  alternates: { canonical: "/q/hoikushi-baito" },
   title: "チャットレディは副業にアリ？会社・職場にバレないための全対策【まるみえチャトレ】",
   description: "本業をしながらチャットレディを始めたい方へ。就業規則の確認方法から、住民税・人づて・SNSなどバレる4つの原因と対策を解説します。",
 };

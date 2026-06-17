@@ -3,6 +3,7 @@ import { FAQSchema, ArticleSchema, BreadcrumbSchema } from "../../StructuredData
 import { L3ArticleShell } from "../../L3";
 
 export const metadata = {
+  alternates: { canonical: "/style/non-adult" },
   title: "ノンアダルト専門チャットレディ事務所｜選び方と評価が高い3社｜まるみえチャトレ",
   description: "ノンアダルトでチャットレディを始めたい方へ。「対応」と「専門」の違い、ノンアダで稼げる金額の現実、評価が高い専門事務所3社を、元保育士の現役チャットレディが正直に解説します。",
 };

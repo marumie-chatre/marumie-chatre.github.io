@@ -3,6 +3,7 @@ import { Icon } from "../Icon";
 import { BreadcrumbSchema } from "../StructuredData";
 
 export const metadata = {
+  alternates: { canonical: "/style" },
   title: "働き方から探す｜まるみえチャトレ",
   description: "同じチャットレディでも、在宅/通勤、副業/専業、時間帯で「向いている事務所」がまったく違います。あなたに合う働き方から事務所を選べます。",
 };

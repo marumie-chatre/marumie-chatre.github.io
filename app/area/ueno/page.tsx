@@ -4,6 +4,7 @@ import { FAQSchema, ArticleSchema, BreadcrumbSchema } from "../../StructuredData
 import { L3ArticleShell } from "../../L3";
 
 export const metadata = {
+  alternates: { canonical: "/area/ueno" },
   title: "上野のチャットレディ事務所｜選び方と評価が高い3社｜まるみえチャトレ",
   description: "上野でチャットレディ事務所を探している方へ。新宿・池袋とは違う「少し落ち着いた大人の雰囲気」が特徴のエリアです。エリア特性と評価が高い事務所を、元保育士の現役チャットレディが解説します。",
 };

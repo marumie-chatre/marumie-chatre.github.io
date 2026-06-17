@@ -3,6 +3,7 @@ import OfficeReviews from "../../OfficeReviews";
 import { OfficeDetailLayout, type OfficeDetailData, type RelatedOffice } from "../../L3";
 
 export const metadata = {
+  alternates: { canonical: "/jimusho/chatstyle" },
   title: "チャットスタイルの口コミ・評判【まるみえチャトレ】",
   description: "チャットスタイルの編集部調査レポートと口コミを掲載。会話テクニック・接客サポートが充実。現役スタッフが教えてくれる事務所。",
 };

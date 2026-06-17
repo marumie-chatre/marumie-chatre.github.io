@@ -3,6 +3,7 @@ import { FAQSchema, ArticleSchema, BreadcrumbSchema } from "../../StructuredData
 import { L3ArticleShell } from "../../L3";
 
 export const metadata = {
+  alternates: { canonical: "/q/ayashii" },
   title: "チャットレディって怪しくない？危なくない？現役が正直に答えます｜まるみえチャトレ",
   description: "チャットレディは怪しい・危ない仕事？アダルト強要はない？お話だけで稼げる？業界の実態を、元保育士の現役チャットレディが正直にお答えします。怪しくない事務所の見極め方も解説。",
 };

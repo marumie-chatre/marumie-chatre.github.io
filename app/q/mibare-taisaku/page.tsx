@@ -3,6 +3,7 @@ import { FAQSchema, ArticleSchema, BreadcrumbSchema } from "../../StructuredData
 import { L3ArticleShell } from "../../L3";
 
 export const metadata = {
+  alternates: { canonical: "/q/mibare-taisaku" },
   title: "配信中に顔がバレる？家族にバレる？チャットレディの身バレ、よくある疑問に答えます【まるみえチャトレ】",
   description: "顔出しなしなら大丈夫？家族や職場にバレない？チャットレディの身バレに関するよくある疑問を、具体的な対策とともに解説します。",
 };

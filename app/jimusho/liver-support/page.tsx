@@ -3,6 +3,7 @@ import OfficeReviews from "../../OfficeReviews";
 import { OfficeDetailLayout, type OfficeDetailData, type RelatedOffice } from "../../L3";
 
 export const metadata = {
+  alternates: { canonical: "/jimusho/liver-support" },
   title: "ライバーサポートグループの口コミ・評判【まるみえチャトレ】",
   description: "ライバーサポートグループの編集部調査レポートと口コミを掲載。創業22年の老舗。広域展開が強みの事務所。",
 };

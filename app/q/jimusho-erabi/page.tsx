@@ -3,6 +3,7 @@ import { FAQSchema, ArticleSchema, BreadcrumbSchema } from "../../StructuredData
 import { L3ArticleShell } from "../../L3";
 
 export const metadata = {
+  alternates: { canonical: "/q/jimusho-erabi" },
   title: "チャットレディ事務所の選び方｜失敗しない5つの基準【まるみえチャトレ】",
   description: "「なんとなく良さそう」で選ぶと後悔します。編集部が実際に調査した、安全な事務所を見極める5つのチェックポイントを解説します。",
 };

@@ -3,6 +3,7 @@ import { FAQSchema, ArticleSchema, BreadcrumbSchema } from "../../StructuredData
 import { L3ArticleShell } from "../../L3";
 
 export const metadata = {
+  alternates: { canonical: "/style/zaitaku" },
   title: "在宅チャットレディ事務所｜選び方と評価が高い3社｜まるみえチャトレ",
   description: "在宅でチャットレディを始めたい方へ。在宅のリアルな現実と、業界標準の報酬率、評価が高い在宅対応事務所3社を、元保育士の現役チャットレディが正直に解説します。",
 };

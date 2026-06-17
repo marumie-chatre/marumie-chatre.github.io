@@ -3,6 +3,7 @@ import OfficeReviews from "../../OfficeReviews";
 import { OfficeDetailLayout, type OfficeDetailData, type RelatedOffice } from "../../L3";
 
 export const metadata = {
+  alternates: { canonical: "/jimusho/nmr-group" },
   title: "NMRグループの口コミ・評判【まるみえチャトレ】",
   description: "NMRグループの編集部調査レポートと口コミを掲載。完全防音個室。関東・東北中心の中堅事務所。",
 };

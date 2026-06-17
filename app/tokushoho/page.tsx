@@ -2,6 +2,7 @@ import Link from "next/link";
 import { L3ArticleShell } from "../L3";
 
 export const metadata = {
+  alternates: { canonical: "/tokushoho" },
   title: "特定商取引法に基づく表記｜まるみえチャトレ",
   description: "まるみえチャトレの特定商取引法に基づく表記。",
 };

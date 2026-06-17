@@ -4,6 +4,7 @@ import { FAQSchema, ArticleSchema, BreadcrumbSchema } from "../../StructuredData
 import { L3ArticleShell } from "../../L3";
 
 export const metadata = {
+  alternates: { canonical: "/area/shibuya" },
   title: "渋谷のチャットレディ事務所｜選び方と評価が高い4社｜まるみえチャトレ",
   description: "渋谷でチャットレディ事務所を探したい方へ。渋谷エリアの特徴・主要6社の比較表・選び方の3つの軸・実際に働いた人の声まで、現役4年の視点で整理した渋谷ガイドです。",
 };

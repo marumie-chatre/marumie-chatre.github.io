@@ -3,6 +3,7 @@ import { FAQSchema, ArticleSchema, BreadcrumbSchema } from "../../StructuredData
 import { L3ArticleShell } from "../../L3";
 
 export const metadata = {
+  alternates: { canonical: "/q/barebure" },
   title: "身バレが怖い人のためのチャットレディ事務所選び｜まるみえチャトレ",
   description: "チャットレディの配信中の身バレが不安な方へ。実際の身バレ確率と、映像で身バレを防ぐ4つの方法、配信ルームの選び方をまとめました。元保育士の現役チャットレディが正直に解説します。",
 };

@@ -3,6 +3,7 @@ import { FAQSchema, ArticleSchema, BreadcrumbSchema } from "../../StructuredData
 import { L3ArticleShell } from "../../L3";
 
 export const metadata = {
+  alternates: { canonical: "/style/virtual" },
   title: "バーチャル配信対応チャットレディ事務所｜選び方と評価が高い3社｜まるみえチャトレ",
   description: "顔出しなしで働きたいチャットレディ志望者へ。バーチャル配信のメリット・デメリット、稼げる金額の現実、評価が高い対応事務所3社を、現役チャットレディが正直に解説します。",
 };

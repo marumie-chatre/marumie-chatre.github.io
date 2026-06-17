@@ -3,6 +3,7 @@ import OfficeReviews from "../../OfficeReviews";
 import { OfficeDetailLayout, type OfficeDetailData, type RelatedOffice } from "../../L3";
 
 export const metadata = {
+  alternates: { canonical: "/jimusho/allure" },
   title: "アリュールの口コミ・評判【まるみえチャトレ】",
   description: "アリュールの編集部調査レポートと口コミを掲載。時給保証制度あり。稼ぎ重視層向けの事務所。",
 };
