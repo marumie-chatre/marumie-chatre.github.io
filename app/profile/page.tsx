@@ -3,6 +3,7 @@ import { Icon } from "../Icon";
 import { BreadcrumbSchema } from "../StructuredData";
 
 export const metadata = {
+  alternates: { canonical: "/profile" },
   title: "運営者プロフィール｜まるみえチャトレ",
   description: "まるみえチャトレの運営者プロフィール。元保育士・現役チャットレディ4年目のみなみが、編集の3つの約束を守って運営しています。",
 };
