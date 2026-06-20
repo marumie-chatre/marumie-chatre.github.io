@@ -466,11 +466,9 @@ export function OfficeDetailLayout({
                 display: "flex", gap: 14, alignItems: "flex-start",
               }}>
                 {IconComp ? (
-                  <div style={{
-                    flexShrink: 0, width: 46, height: 46, borderRadius: 12,
-                    border: `1.5px solid ${L3G.sage}`, color: L3G.sageDeep,
-                    display: "flex", alignItems: "center", justifyContent: "center",
-                  }}><IconComp size={26} stroke={1.6} /></div>
+                  <div style={{ flexShrink: 0, color: L3G.sageDeep, paddingTop: 1, lineHeight: 0 }}>
+                    <IconComp size={28} stroke={1.7} />
+                  </div>
                 ) : (
                   <div style={{
                     fontSize: 22, fontWeight: 800, color: L3G.sageDeep, lineHeight: 1,
