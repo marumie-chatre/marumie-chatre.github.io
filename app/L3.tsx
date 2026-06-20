@@ -176,8 +176,8 @@ export type OfficeDetailData = {
   breakdown: { l: string; v: number; max: number }[];
   goodComment: string;
   honestComment: string;
-  features?: { n: string; t: string; d: string }[];
-  story?: { title: string; paragraphs: string[]; image?: string };
+  features?: { n: string; t: string; d: string; icon?: string }[];
+  story?: { title: string; paragraphs: string[]; image?: string; highlights?: number[] };
   basic: [string, string][];
   applyUrl: string;
 };
@@ -359,7 +359,8 @@ export function OfficeDetailLayout({
         </div>
       </section>
 
-      {/* ===== EDITORIAL ===== */}
+      {/* ===== EDITORIAL（クリームの帯） ===== */}
+      <div style={{ background: L3G.cream, padding: "26px 0", marginTop: 8 }}>
       <L3SectionHeader kicker="EDITORIAL" title="編集部の声" />
       <section style={{ padding: "0 22px", maxWidth: 720, margin: "0 auto", display: "flex", flexDirection: "column", gap: 12 }}>
         <div style={{
@@ -383,10 +384,11 @@ export function OfficeDetailLayout({
           <p style={{ margin: 0, fontSize: 12, lineHeight: 1.9, color: L3G.ink }}>{o.honestComment}</p>
         </div>
       </section>
+      </div>
 
-      {/* ===== STORY（optional・画像は指定された場合のみ）===== */}
+      {/* ===== STORY（セージの帯・optional）===== */}
       {o.story && (
-        <div style={{ marginTop: 30 }}>
+        <div style={{ background: "#EDF3E2", padding: "26px 0" }}>
           <L3SectionHeader kicker="STORY" title={o.story.title} />
           <div style={{ padding: "0 22px", maxWidth: 720, margin: "0 auto" }}>
             {o.story.image && (
@@ -404,11 +406,19 @@ export function OfficeDetailLayout({
               </div>
             )}
             {o.story.paragraphs.map((p, i) => (
-              <p key={i} style={{
-                margin: i === 0 ? 0 : "12px 0 0",
-                fontSize: 12.5, lineHeight: 1.95,
-                color: i === 0 ? L3G.ink : L3G.inkSoft,
-              }}>{p}</p>
+              o.story?.highlights?.includes(i) ? (
+                <p key={i} style={{
+                  margin: "12px 0 0", fontSize: 12.5, lineHeight: 1.95, color: L3G.ink,
+                  background: "rgba(168,196,154,0.20)", borderLeft: `3px solid ${L3G.sagePastel}`,
+                  borderRadius: "0 8px 8px 0", padding: "11px 14px", fontWeight: 600,
+                }}>{p}</p>
+              ) : (
+                <p key={i} style={{
+                  margin: i === 0 ? 0 : "12px 0 0",
+                  fontSize: 12.5, lineHeight: 1.95,
+                  color: i === 0 ? L3G.ink : L3G.inkSoft,
+                }}>{p}</p>
+              )
             ))}
           </div>
         </div>
@@ -422,23 +432,36 @@ export function OfficeDetailLayout({
             padding: "0 22px", maxWidth: 720, margin: "0 auto",
             display: "flex", flexDirection: "column", gap: 10,
           }}>
-            {o.features.map(f => (
+            {o.features.map(f => {
+              const IconComp = f.icon
+                ? (Icon as unknown as Record<string, React.ComponentType<{ size?: number }>>)[f.icon]
+                : undefined;
+              return (
               <div key={f.n} style={{
                 padding: "14px 16px",
                 background: L3G.paper, borderRadius: 12,
                 border: `1px solid ${L3G.rule}`,
                 display: "flex", gap: 14, alignItems: "flex-start",
               }}>
-                <div style={{
-                  fontSize: 22, fontWeight: 800, color: L3G.sageDeep, lineHeight: 1,
-                  paddingTop: 2,
-                }}>{f.n}</div>
+                {IconComp ? (
+                  <div style={{
+                    flexShrink: 0, width: 40, height: 40, borderRadius: 11,
+                    background: L3G.sageSoft, color: L3G.sageDeep,
+                    display: "flex", alignItems: "center", justifyContent: "center",
+                  }}><IconComp size={20} /></div>
+                ) : (
+                  <div style={{
+                    fontSize: 22, fontWeight: 800, color: L3G.sageDeep, lineHeight: 1,
+                    paddingTop: 2,
+                  }}>{f.n}</div>
+                )}
                 <div style={{ flex: 1, minWidth: 0 }}>
                   <div style={{ fontSize: 14, fontWeight: 800, color: L3G.ink }}>{f.t}</div>
                   <div style={{ fontSize: 11, color: L3G.inkSoft, marginTop: 5, lineHeight: 1.7 }}>{f.d}</div>
                 </div>
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       )}
