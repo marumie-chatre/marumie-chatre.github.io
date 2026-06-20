@@ -395,7 +395,7 @@ export function OfficeDetailLayout({
       <section style={{ padding: "0 22px", maxWidth: 720, margin: "0 auto", display: "flex", flexDirection: "column", gap: 12 }}>
         <div style={{
           padding: "14px 16px",
-          background: "rgba(123,170,63,0.08)", borderRadius: 12,
+          background: L3G.paper, borderRadius: 12,
           borderLeft: `3px solid ${L3G.sage}`,
         }}>
           <div style={{ fontSize: 9.5, fontWeight: 800, color: L3G.sageDeep, letterSpacing: 1.5, marginBottom: 5 }}>
@@ -405,7 +405,7 @@ export function OfficeDetailLayout({
         </div>
         <div style={{
           padding: "14px 16px",
-          background: "rgba(232,155,133,0.12)", borderRadius: 12,
+          background: L3G.paper, borderRadius: 12,
           borderLeft: `3px solid ${L3G.accentDeep}`,
         }}>
           <div style={{ fontSize: 9.5, fontWeight: 800, color: L3G.accentDeep, letterSpacing: 1.5, marginBottom: 5 }}>
