@@ -5,6 +5,36 @@ import Link from "next/link";
 import { Icon } from "./Icon";
 import { reviews } from "./reviews";
 import { BreadcrumbSchema, OfficeProductSchema } from "./StructuredData";
+import {
+  IconMessageCircle, IconHeartHandshake, IconSparkles, IconCoin,
+  IconShieldCheck, IconHome, IconDeviceLaptop, IconGift, IconUsers, IconClock,
+} from "@tabler/icons-react";
+
+// 強み用アイコン（Tabler・全レビューで使い回し）
+const FEATURE_ICONS: Record<string, React.ComponentType<{ size?: number; stroke?: number }>> = {
+  talk: IconMessageCircle,
+  support: IconHeartHandshake,
+  beauty: IconSparkles,
+  reward: IconCoin,
+  safety: IconShieldCheck,
+  home: IconHome,
+  device: IconDeviceLaptop,
+  gift: IconGift,
+  users: IconUsers,
+  time: IconClock,
+};
+
+// ストーリー本文：【…】を淡いセージのマーカーで強調（トップの蛍光ペン調と統一）
+function renderMarker(text: string) {
+  return text.split(/【(.+?)】/g).map((part, i) =>
+    i % 2 === 1 ? (
+      <span key={i} style={{
+        backgroundImage: "linear-gradient(transparent 62%, rgba(111,155,94,0.20) 62%)",
+        fontWeight: 700, padding: "0 2px",
+      }}>{part}</span>
+    ) : part
+  );
+}
 
 // Palette E refined v3（5/27）：ink 深化＋緑使用ナロー化
 // 方針：kicker/h2/links/scoreNum は ink、CTAは sagePastel + ink、FINAL CTA は ink + white
@@ -177,7 +207,7 @@ export type OfficeDetailData = {
   goodComment: string;
   honestComment: string;
   features?: { n: string; t: string; d: string; icon?: string }[];
-  story?: { title: string; paragraphs: string[]; image?: string; highlights?: number[] };
+  story?: { title: string; paragraphs: string[]; image?: string };
   basic: [string, string][];
   applyUrl: string;
 };
@@ -406,19 +436,11 @@ export function OfficeDetailLayout({
               </div>
             )}
             {o.story.paragraphs.map((p, i) => (
-              o.story?.highlights?.includes(i) ? (
-                <p key={i} style={{
-                  margin: "12px 0 0", fontSize: 12.5, lineHeight: 1.95, color: L3G.ink,
-                  background: "rgba(168,196,154,0.20)", borderLeft: `3px solid ${L3G.sagePastel}`,
-                  borderRadius: "0 8px 8px 0", padding: "11px 14px", fontWeight: 600,
-                }}>{p}</p>
-              ) : (
-                <p key={i} style={{
-                  margin: i === 0 ? 0 : "12px 0 0",
-                  fontSize: 12.5, lineHeight: 1.95,
-                  color: i === 0 ? L3G.ink : L3G.inkSoft,
-                }}>{p}</p>
-              )
+              <p key={i} style={{
+                margin: i === 0 ? 0 : "12px 0 0",
+                fontSize: 12.5, lineHeight: 1.95,
+                color: i === 0 ? L3G.ink : L3G.inkSoft,
+              }}>{renderMarker(p)}</p>
             ))}
           </div>
         </div>
@@ -433,9 +455,7 @@ export function OfficeDetailLayout({
             display: "flex", flexDirection: "column", gap: 10,
           }}>
             {o.features.map(f => {
-              const IconComp = f.icon
-                ? (Icon as unknown as Record<string, React.ComponentType<{ size?: number }>>)[f.icon]
-                : undefined;
+              const IconComp = f.icon ? FEATURE_ICONS[f.icon] : undefined;
               return (
               <div key={f.n} style={{
                 padding: "14px 16px",
@@ -448,7 +468,7 @@ export function OfficeDetailLayout({
                     flexShrink: 0, width: 40, height: 40, borderRadius: 11,
                     background: L3G.sageSoft, color: L3G.sageDeep,
                     display: "flex", alignItems: "center", justifyContent: "center",
-                  }}><IconComp size={20} /></div>
+                  }}><IconComp size={22} stroke={1.6} /></div>
                 ) : (
                   <div style={{
                     fontSize: 22, fontWeight: 800, color: L3G.sageDeep, lineHeight: 1,
