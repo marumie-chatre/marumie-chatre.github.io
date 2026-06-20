@@ -476,7 +476,7 @@ export function OfficeDetailLayout({
                   }}>{f.n}</div>
                 )}
                 <div style={{ flex: 1, minWidth: 0 }}>
-                  <div style={{ fontSize: 14, fontWeight: 800, color: L3G.ink }}>{f.t}</div>
+                  <div style={{ fontSize: 14, fontWeight: 800, color: L3G.sageDeep }}>{f.t}</div>
                   <div style={{ fontSize: 11, color: L3G.inkSoft, marginTop: 5, lineHeight: 1.7 }}>{f.d}</div>
                 </div>
               </div>
