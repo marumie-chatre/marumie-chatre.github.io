@@ -29,8 +29,8 @@ function renderMarker(text: string) {
   return text.split(/【(.+?)】/g).map((part, i) =>
     i % 2 === 1 ? (
       <span key={i} style={{
-        backgroundImage: "linear-gradient(transparent 62%, rgba(111,155,94,0.20) 62%)",
-        fontWeight: 700, padding: "0 2px",
+        backgroundImage: "linear-gradient(transparent 60%, rgba(111,155,94,0.25) 60%)",
+        color: "#241E16", fontWeight: 700, padding: "0 2px",
       }}>{part}</span>
     ) : part
   );
@@ -421,6 +421,7 @@ export function OfficeDetailLayout({
         <div style={{ background: "#EDF3E2", padding: "26px 0" }}>
           <L3SectionHeader kicker="STORY" title={o.story.title} />
           <div style={{ padding: "0 22px", maxWidth: 720, margin: "0 auto" }}>
+          <div style={{ background: L3G.paper, border: `1px solid ${L3G.rule}`, borderRadius: 14, padding: "16px 18px" }}>
             {o.story.image && (
               <div style={{
                 width: "100%", aspectRatio: "16/9",
@@ -442,6 +443,7 @@ export function OfficeDetailLayout({
                 color: i === 0 ? L3G.ink : L3G.inkSoft,
               }}>{renderMarker(p)}</p>
             ))}
+          </div>
           </div>
         </div>
       )}
