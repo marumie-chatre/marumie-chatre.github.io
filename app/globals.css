@@ -2063,9 +2063,10 @@ body > div > main { padding-top: 68px; }
   background: #fff; border: 1.5px solid var(--rk-gold-line);
   border-radius: var(--radius-pill);
   box-shadow: 0 3px 10px rgba(190,138,60,0.22);
-  color: var(--rk-gold);
-  font-size: 11.5px; font-weight: 800; letter-spacing: .03em;
+  color: var(--color-ink);
+  font-size: 11px; font-weight: 700; letter-spacing: .02em; white-space: nowrap;
 }
+.rk-crown b { color: var(--rk-gold); font-weight: 800; }
 .rk-crown svg { color: var(--rk-gold-bright); }
 
 .rk-badge {
@@ -2089,7 +2090,7 @@ body > div > main { padding-top: 68px; }
 .rk-name { font-size: 17px; font-weight: 800; color: var(--color-ink); line-height: 1.4; letter-spacing: -.01em; }
 
 .rk-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 12px; }
-.rk-tag { font-size: 10.5px; font-weight: 600; color: var(--color-primary-deep); background: var(--color-primary-tint); padding: 3px 10px; border-radius: var(--radius-pill); }
+.rk-tag { font-size: 11px; font-weight: 600; color: var(--color-primary-deep); background: var(--color-primary-tint); padding: 4px 11px; border-radius: var(--radius-pill); }
 
 .rk-score { margin-top: 13px; background: var(--green-pale); border-radius: 14px; padding: 12px 14px; }
 .rk-score-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 10px; }
@@ -2107,7 +2108,7 @@ body > div > main { padding-top: 68px; }
 .rk-foryou { margin-top: 14px; }
 .rk-foryou-cap { font-size: 11px; font-weight: 800; letter-spacing: .03em; color: var(--color-primary-deep); margin-bottom: 7px; }
 .rk-foryou ul { list-style: none; display: flex; flex-direction: column; gap: 4px; }
-.rk-foryou li { display: flex; gap: 8px; align-items: flex-start; font-size: 12px; color: var(--color-ink); line-height: 1.65; }
+.rk-foryou li { display: flex; gap: 8px; align-items: flex-start; font-size: 12.5px; color: var(--color-ink); line-height: 1.75; }
 .rk-foryou-check { flex-shrink: 0; margin-top: 3px; width: 15px; height: 15px; border-radius: 50%; background: var(--color-primary-pastel); color: #fff; display: flex; align-items: center; justify-content: center; }
 
 .rk-cta {
@@ -2126,39 +2127,49 @@ body > div > main { padding-top: 68px; }
 }
 
 /* ========================================================== */
-/* OTHER OFFICES v3（事務所詳細・下部「他の事務所も比べてみる」）*/
+/* OTHER OFFICES v4（事務所詳細・下部・王冠メダル＋葉の装飾）   */
 /* ========================================================== */
 .oo-sec { max-width: 720px; margin: 36px auto 0; padding: 0 22px; }
-.oo-head { margin-bottom: 14px; }
-.oo-kicker { display: inline-flex; align-items: center; gap: 8px; font-size: 10px; font-weight: 800; letter-spacing: .22em; color: var(--color-ink-soft); }
-.oo-kicker::before { content: ""; width: 18px; height: 1.5px; border-radius: 1px; background: var(--color-primary); }
-.oo-kicker::after { content: ""; width: 4px; height: 4px; border-radius: 50%; background: var(--color-primary-tint); }
-.oo-title { margin-top: 8px; font-size: 19px; font-weight: 800; color: var(--color-ink); letter-spacing: .01em; }
+.oo-head { margin-bottom: 4px; }
+.oo-kicker { display: inline-flex; align-items: center; gap: 7px; font-size: 10.5px; font-weight: 800; letter-spacing: .22em; color: var(--color-primary-deep); }
+.oo-leaf { width: 15px; height: 15px; color: var(--color-primary); flex-shrink: 0; }
+.oo-title { margin-top: 10px; font-family: "Zen Maru Gothic", sans-serif; font-size: 24px; font-weight: 700; color: var(--color-ink); letter-spacing: .01em; }
+.oo-divider { display: flex; align-items: center; gap: 8px; margin: 12px 0 18px; }
+.oo-divider-line { flex: 1; height: 0; border-top: 1.5px dotted var(--rk-gold-line); }
+.oo-diamond { width: 11px; height: 11px; color: var(--rk-gold); flex-shrink: 0; }
 
-.oo-list { display: flex; flex-direction: column; gap: 9px; }
+.oo-list { display: flex; flex-direction: column; gap: 10px; }
 .oo-card {
-  display: flex; align-items: center; gap: 12px;
-  padding: 13px 14px; border-radius: 14px;
+  position: relative; overflow: hidden;
+  display: flex; align-items: center; gap: 13px;
+  padding: 13px 15px; border-radius: 16px;
   background: var(--color-paper); border: 1px solid var(--rk-border);
   box-shadow: var(--shadow-v2-sm); color: inherit; text-decoration: none;
   transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
 }
 @media (hover: hover) { .oo-card:hover { transform: translateY(-2px); box-shadow: var(--rk-shadow-hover); border-color: var(--rk-border-green); } }
 .oo-card:focus-visible { outline: 3px solid var(--color-primary-pastel); outline-offset: 2px; }
-.oo-rank { flex-shrink: 0; width: 40px; display: flex; align-items: center; gap: 3px; }
-.oo-crown { display: inline-flex; color: var(--rk-gold-bright); }
-.oo-rank-num { font-family: "Zen Maru Gothic", sans-serif; font-size: 16px; font-weight: 800; color: var(--color-ink-soft); }
-.oo-card--first .oo-rank-num { color: var(--rk-gold); }
+.oo-card--first { background: linear-gradient(180deg, #FCF8EF 0%, #FFFDF8 100%); border-color: var(--rk-gold-line); box-shadow: var(--rk-shadow-first); padding: 16px 15px; }
+
+/* 1位メダル（緑円＋金の王冠＋月桂冠） */
+.oo-medal { position: relative; flex-shrink: 0; width: 58px; height: 54px; display: flex; align-items: center; justify-content: center; }
+.oo-laurel { position: absolute; left: 50%; top: 52%; transform: translate(-50%,-50%); width: 58px; height: 52px; }
+.oo-medal-crown { position: absolute; top: 0; left: 50%; transform: translateX(-50%); z-index: 2; display: inline-flex; }
+.oo-medal-circle { position: relative; z-index: 1; width: 36px; height: 36px; margin-top: 8px; border-radius: 50%; background: var(--color-primary-deep); color: #fff; font-family: "Zen Maru Gothic", sans-serif; font-size: 17px; font-weight: 800; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(88,122,56,.32); }
+
+/* 2位以降：点線の円 */
+.oo-rank-dot { flex-shrink: 0; width: 38px; height: 38px; border-radius: 50%; border: 1.5px dashed var(--rk-border-green); display: flex; align-items: center; justify-content: center; font-family: "Zen Maru Gothic", sans-serif; font-size: 15px; font-weight: 800; color: var(--color-ink-soft); }
+
 .oo-body { flex: 1; min-width: 0; }
-.oo-name { display: block; font-size: 13.5px; font-weight: 800; color: var(--color-ink); line-height: 1.4; }
-.oo-badge { display: inline-block; margin-top: 4px; padding: 1px 8px; border-radius: var(--radius-pill); background: var(--color-primary-tint); color: var(--color-primary-deep); font-size: 9px; font-weight: 700; }
+.oo-name { display: block; font-size: 14.5px; font-weight: 800; color: var(--color-ink); line-height: 1.45; }
+.oo-badge { display: inline-block; margin-top: 5px; padding: 2px 9px; border-radius: var(--radius-pill); background: var(--color-primary-tint); color: var(--color-primary-deep); font-size: 9.5px; font-weight: 700; }
 .oo-score { flex-shrink: 0; text-align: right; font-family: "Zen Maru Gothic", sans-serif; line-height: 1; }
-.oo-score b { font-size: 18px; font-weight: 800; color: var(--rk-gold); }
-.oo-score small { display: block; margin-top: 2px; font-size: 8.5px; font-weight: 600; color: var(--color-ink-softer); }
-.oo-arrow { flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%; background: var(--green-pale); display: flex; align-items: center; justify-content: center; color: var(--rk-gold); }
+.oo-score b { font-size: 20px; font-weight: 800; color: var(--rk-gold); }
+.oo-arrow { flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: #fff; border: 1px solid var(--rk-gold-line); display: flex; align-items: center; justify-content: center; color: var(--rk-gold); }
+.oo-leaf-bg { position: absolute; right: -8px; top: -6px; width: 76px; height: 76px; color: var(--color-primary-tint); opacity: .55; pointer-events: none; }
 
 .oo-more {
-  margin-top: 14px; display: flex; align-items: center; justify-content: center; gap: 10px;
+  margin-top: 16px; display: flex; align-items: center; justify-content: center; gap: 10px;
   padding: 16px 20px; border-radius: var(--radius-pill);
   background: var(--color-primary-pastel); color: #5C3D1F;
   font-size: 13.5px; font-weight: 800; letter-spacing: .01em; text-decoration: none;
