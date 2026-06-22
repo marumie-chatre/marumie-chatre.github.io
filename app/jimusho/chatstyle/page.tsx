@@ -11,7 +11,7 @@ export const metadata = {
 const OFFICE_DATA: OfficeDetailData = {
   slug: "chatstyle",
   name: "チャットスタイル",
-  rank: 4,
+  rank: 3,
   score: 81,
   isPR: false,
   logoSrc: "/logo-chatstyle.png",

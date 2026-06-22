@@ -11,7 +11,7 @@ export const metadata = {
 const OFFICE_DATA: OfficeDetailData = {
   slug: "at-group",
   name: "アットグループ",
-  rank: 3,
+  rank: 4,
   score: 80,
   isPR: false,
   logoSrc: "/logo-at-group.png",

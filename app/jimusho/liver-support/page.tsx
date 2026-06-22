@@ -11,7 +11,7 @@ export const metadata = {
 const OFFICE_DATA: OfficeDetailData = {
   slug: "liver-support",
   name: "ライバーサポートグループ",
-  rank: 12,
+  rank: 11,
   score: 68,
   isPR: false,
   logoSrc: "/logo-liver-support.png",
