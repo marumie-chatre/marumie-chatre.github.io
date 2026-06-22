@@ -48,6 +48,7 @@ const OFFICE_DATA: OfficeDetailData = {
 };
 
 const RELATED: RelatedOffice[] = [
+  { rank: 1, slug: "ft", name: "フェアリーテイル", score: 89, badge: "初心者におすすめ" },
   { rank: 8, slug: "nmr-group", name: "NMRグループ", score: 74 },
   { rank: 10, slug: "asterisk", name: "アスタリスク", score: 69 },
 ];
