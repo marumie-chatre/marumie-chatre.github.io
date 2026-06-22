@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { reviews } from "./reviews";
 import { Icon } from "./Icon";
+import ArticleCarousel from "./ArticleCarousel";
 
 export const metadata = {
   title: "まるみえチャトレ｜中身で選ぶチャトレ事務所",
@@ -93,11 +94,14 @@ const QUICK_NAV = [
   { href: "/q",       icon: "Question" as const, label: "お悩みからさがす" },
 ];
 
-// データ：お悩みプレビュー3本（旧コラム枠を統合）— 全て /q 配下のハブで提示する
-const WORRIES_PREVIEW = [
-  { href: "/q/jimusho-erabi",  cat: "初心者・選び方", title: "チャットレディ事務所の選び方｜失敗しない5つの基準", time: "5分", date: "2026.05.05", image: "/col-jimusho-erabi.png" },
-  { href: "/q/mibare-taisaku", cat: "身バレ",         title: "身バレ、よくある疑問に答えます｜顔バレ・家族バレ・職場バレ", time: "6分", date: "2026.05.06", image: "/col-mibare-taisaku.png" },
-  { href: "/q/hoikushi-baito", cat: "副業バレ",       title: "チャトレは副業にアリ？会社・職場にバレないための全対策", time: "7分", date: "2026.05.07", image: "/col-hoikushi-baito.png" },
+// データ：TOP「読みもの」カルーセル（先頭＝最新記事＝フィーチャー、以降を横スライド）
+const ARTICLES = [
+  { href: "/yougo/houshu-60", category: "お金の話", title: "報酬率「最大60%」って本当？数字でわかる、安心できる事務所選び", readTime: "約3分", date: "2026.06.23", accent: "#D5A93C", accentSoft: "#F5E8C8" },
+  { href: "/q/jimusho-erabi", category: "選び方", title: "チャットレディ事務所の選び方｜失敗しない見極め方", readTime: "約5分", date: "2026.06.19", accent: "#587A38", accentSoft: "#CDDDB0", image: "/col-jimusho-erabi.png" },
+  { href: "/style/non-adult", category: "働き方", title: "ノンアダルト専門で、安心して始めるには", readTime: "約7分", date: "2026.05.14", accent: "#7BAA3F", accentSoft: "#CDDDB0" },
+  { href: "/q/mibare-taisaku", category: "身バレ", title: "身バレのよくある疑問に、ぜんぶ答えます", readTime: "約6分", date: "2026.05.06", accent: "#E89B85", accentSoft: "#F8DCD2", image: "/col-mibare-taisaku.png" },
+  { href: "/q/shokuba-bare", category: "副業バレ", title: "職場・会社にバレない副業の始め方", readTime: "約7分", date: "2026.05.07", accent: "#8FAD7F", accentSoft: "#E2EBB8" },
+  { href: "/yougo", category: "用語", title: "チャットレディ用語辞典｜迷う言葉をやさしく解説", readTime: "約8分", date: "2026.05.16", accent: "#A8893C", accentSoft: "#F5E8C8" },
 ];
 
 // ========== サブコンポーネント ==========
@@ -708,89 +712,8 @@ export default function Home() {
           ))}
         </div>
 
-        {/* FEATURED 1本（jimusho-erabi をメインに） */}
-        <Link href={WORRIES_PREVIEW[0].href} style={{
-          display: "block",
-          background: G.paper, borderRadius: 14, overflow: "hidden",
-          border: `1px solid ${G.rule}`,
-          textDecoration: "none", color: G.ink,
-          boxShadow: "0 2px 10px rgba(58,42,32,0.04)",
-        }}>
-          <div style={{
-            position: "relative", width: "100%",
-            aspectRatio: "16/9", background: G.sageSoft,
-          }}>
-            <Image
-              src={WORRIES_PREVIEW[0].image}
-              alt={WORRIES_PREVIEW[0].title}
-              fill
-              sizes="(max-width:760px) 100vw, 720px"
-              style={{ objectFit: "cover" }}
-            />
-          </div>
-          <div style={{ padding: 16 }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-              <span style={{
-                fontSize: 9.5, fontWeight: 800, letterSpacing: 0.8,
-                padding: "2px 8px", borderRadius: 99,
-                background: G.sageDeep, color: "#fff",
-              }}>FEATURED</span>
-              <span style={{ fontSize: 10.5, fontWeight: 700, color: G.sageDeep }}>
-                {WORRIES_PREVIEW[0].cat}
-              </span>
-            </div>
-            <div style={{
-              marginTop: 10, fontSize: 16, fontWeight: 800,
-              lineHeight: 1.5, color: G.ink,
-            }}>{WORRIES_PREVIEW[0].title}</div>
-            <div style={{
-              marginTop: 10, fontSize: 10, color: G.inkSoft,
-              display: "flex", alignItems: "center", gap: 10,
-            }}>
-              <span style={{ display: "inline-flex", alignItems: "center", gap: 4 }}>
-                <Icon.Clock size={11} /> {WORRIES_PREVIEW[0].time}で読める
-              </span>
-              <span>{WORRIES_PREVIEW[0].date}</span>
-            </div>
-          </div>
-        </Link>
-
-        {/* サブカード 2本（横並び） */}
-        <div style={{
-          marginTop: 12, display: "grid",
-          gridTemplateColumns: "1fr 1fr", gap: 10,
-        }}>
-          {WORRIES_PREVIEW.slice(1).map(c => (
-            <Link href={c.href} key={c.href} style={{
-              display: "flex", flexDirection: "column",
-              background: G.paper, borderRadius: 12, overflow: "hidden",
-              border: `1px solid ${G.rule}`,
-              textDecoration: "none", color: G.ink,
-            }}>
-              <div style={{
-                position: "relative", width: "100%",
-                aspectRatio: "16/10", background: G.sageSoft,
-              }}>
-                <Image
-                  src={c.image}
-                  alt={c.title}
-                  fill
-                  sizes="(max-width:760px) 50vw, 360px"
-                  style={{ objectFit: "cover" }}
-                />
-              </div>
-              <div style={{ padding: "10px 12px 12px" }}>
-                <div style={{
-                  fontSize: 9, fontWeight: 700, letterSpacing: 0.8,
-                  color: G.sageDeep, marginBottom: 5,
-                }}>{c.cat}</div>
-                <div style={{
-                  fontSize: 12, fontWeight: 700, lineHeight: 1.45,
-                }}>{c.title}</div>
-              </div>
-            </Link>
-          ))}
-        </div>
+        {/* 読みものカルーセル（最新記事＋横スライド5本） */}
+        <ArticleCarousel articles={ARTICLES} />
 
         {/* CTA：もっと探す */}
         <Link href="/q" style={{
