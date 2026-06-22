@@ -39,7 +39,7 @@ const SHIBUYA_OFFICES = [
   { name: "アットグループ", slug: "at-group", nonAdult: "△アダルトもあり", support: "高", area: "全国95店舗のカフェ空間", target: "居心地重視", top: true },
   { name: "チャットスタイル", slug: "chatstyle", nonAdult: "△アダルトもあり", support: "中", area: "会話指導◎", target: "接客スキル磨き", top: false },
   { name: "フレイバーグループ", slug: "flavor-group", nonAdult: "△アダルトもあり", support: "中", area: "稼ぎ重視", target: "稼ぎ重視", top: false },
-  { name: "ポケットワーク", slug: "pocket-work", nonAdult: "×アダ誘導強め", support: "低", area: "渋谷店あり", target: "自走できる人", top: false },
+  { name: "ポケットワーク", slug: "pocket-work", nonAdult: "△アダルトもあり", support: "中", area: "渋谷店あり・在宅中心", target: "在宅で自走できる人", top: false },
 ];
 
 export default function AreaShibuya() {
@@ -144,7 +144,7 @@ export default function AreaShibuya() {
           ・<strong>即答で「もちろん大丈夫です」</strong>と返ってくる → 信頼度◎<br />
           ・<strong>「最初はノンアダルトで様子を見て…」と前置きが入る</strong> → 後でアダルトを勧められる可能性あり<br />
           ・<strong>「アダルトをやった方が稼げますよ」と切り返してくる</strong> → ノンアダルト希望者には不向き<br /><br />
-          口コミでも、ポケットワーク・アスタリスクでこの3パターン目に近い体験談が複数寄せられています。一方フェアリーテイル・アット・ブライトでは「ノンアダルト希望を聞いてもらえた」という声が中心ですよ。
+          面談で前置きをされたり「アダルトの方が稼げますよ」と返された、という声は実際にあります。だからこそ、最初の面談での答え方を確認しておくのが大事なんですよ。
         </PointBox>
 
         <h2>渋谷で事務所を選ぶときの3つの軸</h2>
