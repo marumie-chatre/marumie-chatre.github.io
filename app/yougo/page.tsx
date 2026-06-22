@@ -90,7 +90,7 @@ export default function YougoPage() {
           </ul>
 
           <h3>最大報酬率</h3>
-          <p>「最大40%」「最大60%」のように使われる数字。<MarkerSpan>新人のうちは半分以下のスタート</MarkerSpan>であることが多いカラクリつき表現。ランクアップ条件は厳しく、副業・初心者ではほぼ届かないラインに設定されていることが多い。</p>
+          <p>「最大40%」「最大60%」のように使われる数字。<MarkerSpan>新人のうちは半分以下のスタート</MarkerSpan>であることが多い表現です。ランクアップ条件は厳しく、副業・初心者ではほぼ届かないラインに設定されていることが多いもの。<Link href="/yougo/houshu-60">なぜ報酬率は30〜40%が標準なのか、数字に振り回されない選び方</Link>でやさしく解説しています。</p>
 
           <h3>最大時給</h3>
           <p>「最大時給10,000円」「最大時給15,000円」のような表記。<strong>トップ層のごく一部が達成できる金額</strong>であり、新人の実態は時給1,000-3,000円程度。広告の数字を鵜呑みにしないこと。</p>
@@ -156,6 +156,7 @@ export default function YougoPage() {
 
           <h2>もっと詳しく知りたい方へ</h2>
           <ul>
+            <li><Link href="/yougo/houshu-60">報酬率「最大60%」って本当？数字でわかる安心の選び方</Link></li>
             <li><Link href="/style/non-adult">ノンアダルト専門事務所の選び方</Link></li>
             <li><Link href="/style/virtual">バーチャル配信対応事務所</Link></li>
             <li><Link href="/q/barebure">配信中に客に特定されるのが怖い</Link></li>

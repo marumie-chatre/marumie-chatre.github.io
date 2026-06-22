@@ -211,12 +211,12 @@ export default function AreaShibuya() {
         <p><Link href="/jimusho/chatstyle" className="btn-main">チャットスタイルの詳細を見る →</Link></p>
 
         <h2 id="ft-section">🌟「ノンアダルト一本で迷いなく続けたい」方へ：ノンアダルト専門のフェアリーテイル</h2>
-        <p>上記3社はいずれも<strong>アダルトもノンアダルトも扱う事務所</strong>。渋谷で働きたいけれど、<MarkerSpan>「アダルトを勧められる可能性すら避けたい」</MarkerSpan>という方には、<strong>業界初・業界唯一のノンアダルト専門店であるフェアリーテイル</strong>がもっとも安心の選択肢になるんです。</p>
+        <p>上記3社はいずれも<strong>アダルトもノンアダルトも扱う事務所</strong>。渋谷で働きたいけれど、<MarkerSpan>「アダルトを勧められる可能性すら避けたい」</MarkerSpan>という方には、<strong>ノンアダルト専門店であるフェアリーテイル</strong>がもっとも安心の選択肢になるんです。</p>
 
         <div className="col-article-box">
-          <p>✓ <strong>業界初・業界唯一のノンアダルト専門店</strong>として運営<br />
+          <p>✓ <strong>ノンアダルト専門店</strong>として運営<br />
           ✓ 在籍チャトレの<strong>98.4%がノンアダルト</strong><br />
-          ✓ <strong>アダルトを勧める空気が組織として存在しない</strong><br />
+          ✓ <strong>アダルトを勧める空気がそもそもない</strong><br />
           ✓ 1,000項目以上のノンアダルト専用ノウハウ<br />
           ✓ マスク配信・バーチャル配信にも対応（顔バレ対策◎）</p>
         </div>
