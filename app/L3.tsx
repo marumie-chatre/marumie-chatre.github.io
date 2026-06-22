@@ -210,6 +210,7 @@ export type OfficeDetailData = {
   story?: { title: string; paragraphs: string[]; image?: string };
   basic: [string, string][];
   applyUrl: string;
+  note?: string;
 };
 
 // 関連事務所（手動指定可・デフォルト：ランクが近い2社）
@@ -512,6 +513,12 @@ export function OfficeDetailLayout({
           </div>
         </div>
       </div>
+
+      {o.note && (
+        <div style={{ padding: "0 22px", maxWidth: 720, margin: "16px auto 0" }}>
+          <p style={{ fontSize: 11, lineHeight: 1.85, color: L3G.inkSoft, background: L3G.bgWarm, borderRadius: 10, padding: "12px 14px", margin: 0 }}>※ {o.note}</p>
+        </div>
+      )}
 
       {/* ===== REVIEWS ===== */}
       <div style={{ marginTop: 30 }}>
