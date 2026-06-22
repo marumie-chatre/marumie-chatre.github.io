@@ -1,6 +1,6 @@
 import { reviews } from "../../reviews";
 import OfficeReviews from "../../OfficeReviews";
-import { OfficeDetailLayout, type OfficeDetailData, type RelatedOffice } from "../../L3";
+import { OfficeDetailLayout, type OfficeDetailData } from "../../L3";
 
 export const metadata = {
   alternates: { canonical: "/jimusho/pocket-work" },
@@ -56,19 +56,12 @@ const OFFICE_DATA: OfficeDetailData = {
   note: "在宅で1か月働いた実体験をもとにした内容です。広告で見る印象と、入ってからの実感が違う場合があります。ノンアダルト×在宅でどこまで稼げるか、顔出しなしの収支がどうなるかは、事前に確認しておくと安心です。",
 };
 
-const RELATED: RelatedOffice[] = [
-  { rank: 1, slug: "ft", name: "フェアリーテイル", score: 89, badge: "初心者におすすめ" },
-  { rank: 10, slug: "asterisk", name: "アスタリスク", score: 69 },
-  { rank: 12, slug: "liver-support", name: "ライバーサポートグループ", score: 68 },
-];
-
 export default function Page() {
   const officeReviews = reviews.filter(r => r.slug === OFFICE_DATA.slug);
   return (
     <OfficeDetailLayout
       o={OFFICE_DATA}
       reviewsSlot={<OfficeReviews reviews={officeReviews} officeName={OFFICE_DATA.name} />}
-      relatedOffices={RELATED}
     />
   );
 }

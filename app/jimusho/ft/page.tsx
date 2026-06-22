@@ -1,6 +1,6 @@
 import { reviews } from "../../reviews";
 import OfficeReviews from "../../OfficeReviews";
-import { OfficeDetailLayout, type OfficeDetailData, type RelatedOffice } from "../../L3";
+import { OfficeDetailLayout, type OfficeDetailData } from "../../L3";
 
 export const metadata = {
   alternates: { canonical: "/jimusho/ft" },
@@ -58,18 +58,12 @@ const OFFICE_DATA: OfficeDetailData = {
   applyUrl: "https://livecafefairytale.com/",
 };
 
-const RELATED: RelatedOffice[] = [
-  { rank: 2, slug: "bright-group", name: "ブライトグループ", score: 83 },
-  { rank: 3, slug: "at-group", name: "アットグループ", score: 80 },
-];
-
 export default function FTPage() {
   const officeReviews = reviews.filter(r => r.slug === OFFICE_DATA.slug);
   return (
     <OfficeDetailLayout
       o={OFFICE_DATA}
       reviewsSlot={<OfficeReviews reviews={officeReviews} officeName={OFFICE_DATA.name} />}
-      relatedOffices={RELATED}
     />
   );
 }

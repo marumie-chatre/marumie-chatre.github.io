@@ -1,6 +1,6 @@
 import { reviews } from "../../reviews";
 import OfficeReviews from "../../OfficeReviews";
-import { OfficeDetailLayout, type OfficeDetailData, type RelatedOffice } from "../../L3";
+import { OfficeDetailLayout, type OfficeDetailData } from "../../L3";
 
 export const metadata = {
   alternates: { canonical: "/jimusho/flavor-group" },
@@ -55,19 +55,12 @@ const OFFICE_DATA: OfficeDetailData = {
   note: "店舗ごとの差が大きいグループのため、ここでの内容はグループ全体の傾向です。実際の報酬・対応範囲・設備は、通う店舗ごとに確認してください。",
 };
 
-const RELATED: RelatedOffice[] = [
-  { rank: 1, slug: "ft", name: "フェアリーテイル", score: 89, badge: "初心者におすすめ" },
-  { rank: 4, slug: "chatstyle", name: "チャットスタイル", score: 81 },
-  { rank: 7, slug: "allure", name: "アリュール", score: 74 },
-];
-
 export default function Page() {
   const officeReviews = reviews.filter(r => r.slug === OFFICE_DATA.slug);
   return (
     <OfficeDetailLayout
       o={OFFICE_DATA}
       reviewsSlot={<OfficeReviews reviews={officeReviews} officeName={OFFICE_DATA.name} />}
-      relatedOffices={RELATED}
     />
   );
 }

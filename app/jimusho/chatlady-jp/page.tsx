@@ -1,6 +1,6 @@
 import { reviews } from "../../reviews";
 import OfficeReviews from "../../OfficeReviews";
-import { OfficeDetailLayout, type OfficeDetailData, type RelatedOffice } from "../../L3";
+import { OfficeDetailLayout, type OfficeDetailData } from "../../L3";
 
 export const metadata = {
   alternates: { canonical: "/jimusho/chatlady-jp" },
@@ -47,19 +47,12 @@ const OFFICE_DATA: OfficeDetailData = {
   note: "公式サイトを中心に調べた内容で、実際に働いた人の口コミはまだ少なめです。ノンアダルト条件・保証・寮は「JP全体」ではなく実際に入る店舗ごとに違うので、個別に確認してください。",
 };
 
-const RELATED: RelatedOffice[] = [
-  { rank: 1, slug: "ft", name: "フェアリーテイル", score: 89, badge: "初心者におすすめ" },
-  { rank: 8, slug: "nmr-group", name: "NMRグループ", score: 74 },
-  { rank: 10, slug: "asterisk", name: "アスタリスク", score: 69 },
-];
-
 export default function Page() {
   const officeReviews = reviews.filter(r => r.slug === OFFICE_DATA.slug);
   return (
     <OfficeDetailLayout
       o={OFFICE_DATA}
       reviewsSlot={<OfficeReviews reviews={officeReviews} officeName={OFFICE_DATA.name} />}
-      relatedOffices={RELATED}
     />
   );
 }
