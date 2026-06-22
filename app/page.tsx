@@ -95,13 +95,14 @@ const QUICK_NAV = [
 ];
 
 // データ：TOP「読みもの」カルーセル（先頭＝最新記事＝フィーチャー、以降を横スライド）
+// ※ image に「仮」とあるものは要・専用カバー写真（houshu-60 / non-adult / yougo）
 const ARTICLES = [
-  { href: "/yougo/houshu-60", category: "お金の話", title: "報酬率「最大60%」って本当？数字でわかる、安心できる事務所選び", readTime: "約3分", date: "2026.06.23", accent: "#D5A93C", accentSoft: "#F5E8C8" },
-  { href: "/q/jimusho-erabi", category: "選び方", title: "チャットレディ事務所の選び方｜失敗しない見極め方", readTime: "約5分", date: "2026.06.19", accent: "#587A38", accentSoft: "#CDDDB0", image: "/col-jimusho-erabi.png" },
-  { href: "/style/non-adult", category: "働き方", title: "ノンアダルト専門で、安心して始めるには", readTime: "約7分", date: "2026.05.14", accent: "#7BAA3F", accentSoft: "#CDDDB0" },
-  { href: "/q/mibare-taisaku", category: "身バレ", title: "身バレのよくある疑問に、ぜんぶ答えます", readTime: "約6分", date: "2026.05.06", accent: "#E89B85", accentSoft: "#F8DCD2", image: "/col-mibare-taisaku.png" },
-  { href: "/q/shokuba-bare", category: "副業バレ", title: "職場・会社にバレない副業の始め方", readTime: "約7分", date: "2026.05.07", accent: "#8FAD7F", accentSoft: "#E2EBB8" },
-  { href: "/yougo", category: "用語", title: "チャットレディ用語辞典｜迷う言葉をやさしく解説", readTime: "約8分", date: "2026.05.16", accent: "#A8893C", accentSoft: "#F5E8C8" },
+  { href: "/yougo/houshu-60", category: "お金の話", title: "報酬率「最大60%」って本当？数字でわかる、安心できる事務所選び", readTime: "約3分", date: "2026.06.23", accent: "#D5A93C", image: "/top-hero-photo.jpg" /* 仮 */ },
+  { href: "/q/jimusho-erabi", category: "選び方", title: "チャットレディ事務所の選び方｜失敗しない見極め方", readTime: "約5分", date: "2026.06.19", accent: "#587A38", image: "/col-jimusho-erabi.png" },
+  { href: "/style/non-adult", category: "働き方", title: "ノンアダルト専門で、安心して始めるには", readTime: "約7分", date: "2026.05.14", accent: "#7BAA3F", image: "/hero-pc.jpg" /* 仮 */ },
+  { href: "/q/mibare-taisaku", category: "身バレ", title: "身バレのよくある疑問に、ぜんぶ答えます", readTime: "約6分", date: "2026.05.06", accent: "#E89B85", image: "/col-mibare-taisaku.png" },
+  { href: "/q/hoikushi-baito", category: "副業バレ", title: "チャトレは副業にアリ？会社にバレないための全対策", readTime: "約7分", date: "2026.05.07", accent: "#8FAD7F", image: "/col-hoikushi-baito.png" },
+  { href: "/yougo", category: "用語", title: "チャットレディ用語辞典｜迷う言葉をやさしく解説", readTime: "約8分", date: "2026.05.16", accent: "#A8893C", image: "/hero-sp.jpg" /* 仮 */ },
 ];
 
 // ========== サブコンポーネント ==========

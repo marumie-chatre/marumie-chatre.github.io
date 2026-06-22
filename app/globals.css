@@ -2180,23 +2180,34 @@ body > div > main { padding-top: 68px; }
 .oo-more:focus-visible { outline: 3px solid var(--color-primary-deep); outline-offset: 2px; }
 .oo-more-arrow { flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: #fff; display: flex; align-items: center; justify-content: center; color: var(--rk-gold); }
 
-/* ===== Article Carousel（TOP・読みもの） ===== */
-.ac-featured { display: block; text-decoration: none; color: inherit; }
-@media (hover: hover) { .ac-featured:hover { opacity: 0.96; } }
-.ac-featured:focus-visible { outline: 3px solid var(--color-primary-deep); outline-offset: 3px; border-radius: 16px; }
+/* ===== Article Carousel（TOP・読みもの／写真誌型） ===== */
+.ac-featured, .ac-card { transition: transform .18s ease; }
+.ac-featured {
+  position: relative; display: block; width: 100%;
+  aspect-ratio: 16/9; border-radius: 16px; overflow: hidden;
+  text-decoration: none; color: inherit;
+  box-shadow: 0 4px 18px rgba(46,31,16,0.10);
+}
+.ac-featured-body { position: absolute; left: 0; right: 0; bottom: 0; padding: 16px 18px; }
+.ac-card-body { position: absolute; left: 0; right: 0; bottom: 0; padding: 12px 12px 13px; }
+.ac-scrim { position: absolute; inset: 0; pointer-events: none; }
+@media (hover: hover) {
+  .ac-featured:hover { transform: translateY(-2px); }
+  .ac-card:hover { transform: translateY(-3px); }
+}
+.ac-featured:focus-visible, .ac-card:focus-visible { outline: 3px solid var(--color-primary-deep); outline-offset: 3px; }
 .ac-track {
   display: flex; gap: 12px; overflow-x: auto;
   scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;
-  scrollbar-width: none; -ms-overflow-style: none; padding-bottom: 4px;
+  scrollbar-width: none; -ms-overflow-style: none; padding: 2px 0 6px;
 }
 .ac-track::-webkit-scrollbar { display: none; }
 .ac-card {
-  flex: 0 0 auto; width: 200px; scroll-snap-align: start;
+  position: relative; flex: 0 0 auto; width: 180px; aspect-ratio: 3/4;
+  border-radius: 14px; overflow: hidden; scroll-snap-align: start;
   display: block; text-decoration: none; color: inherit;
-  transition: transform .18s ease;
+  box-shadow: 0 3px 12px rgba(46,31,16,0.08);
 }
-@media (hover: hover) { .ac-card:hover { transform: translateY(-3px); } }
-.ac-card:focus-visible { outline: 3px solid var(--color-primary-deep); outline-offset: 3px; border-radius: 14px; }
 .ac-nav {
   width: 30px; height: 30px; border-radius: 50%;
   border: 1px solid rgba(46,31,16,0.15); background: #fff; color: #2E1F10;
