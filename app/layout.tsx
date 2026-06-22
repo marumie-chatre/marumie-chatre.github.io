@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import HamburgerMenu from "./HamburgerMenu";
 import FloatingCTA from "./FloatingCTA";
 import { WebSiteSchema, OrganizationSchema } from "./StructuredData";
@@ -136,6 +137,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </div>
           </div>
         </footer>
+        <SpeedInsights />
       </body>
     </html>
   );
