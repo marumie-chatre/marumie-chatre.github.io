@@ -234,9 +234,9 @@ export default function AreaShinjuku() {
 
         <h3>🏅 フェアリーテイル新宿店｜「ノンアダルト一本で迷いなく続けたい」方へ</h3>
         <div className="col-article-box">
-          <p>✓ <strong>業界初・業界唯一のノンアダルト専門店</strong>として運営<br />
+          <p>✓ <strong>ノンアダルト専門店</strong>として運営<br />
           ✓ 在籍チャトレの<strong>98.4%がノンアダルト</strong><br />
-          ✓ <strong>アダルトを勧める空気が組織として存在しない</strong><br />
+          ✓ <strong>アダルトを勧める空気がそもそもない</strong><br />
           ✓ 1,000項目以上のノンアダルト専用ノウハウ<br />
           ✓ マスク配信・バーチャル配信にも対応（顔バレ対策◎）</p>
         </div>

@@ -24,6 +24,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "non-adult", "tsukin", "zaitaku", "virtual",
   ];
 
+  // /yougo 配下の辞書エントリ（深掘り記事）
+  const yougoArticles = [
+    "houshu-60",
+  ];
+
   // 静的ページ（法務・概要系）
   const staticPages: { slug: string; priority: number; freq: "weekly" | "monthly" | "yearly" }[] = [
     { slug: "hyoka-kijun", priority: 0.6, freq: "monthly" },
@@ -76,6 +81,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.7,
+    })),
+
+    // /yougo 配下の辞書エントリ
+    ...yougoArticles.map(slug => ({
+      url: `${base}/yougo/${slug}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
     })),
 
     // 静的ページ
