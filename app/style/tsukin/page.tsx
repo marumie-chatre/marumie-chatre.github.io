@@ -245,7 +245,7 @@ export default function StyleTsukinPage() {
         <h2>通勤で働ける主な事務所</h2>
         <p>通勤対応している主な事務所は以下の通りです：</p>
         <ul>
-          <li><strong>フェアリーテイル</strong>：業界初のノンアダ専門・カフェコンセプト・店舗に女性スタッフ在籍</li>
+          <li><strong>フェアリーテイル</strong>：業界初のノンアダルト専門・カフェコンセプト・店舗に女性スタッフ在籍</li>
           <li><strong>ブライトグループ</strong>：老舗20年・全国140店舗・顧問税理士サポート</li>
           <li><strong>チャットスタイル</strong>：会話テクニック指導・現役経験者スタッフ</li>
           <li><strong>アットグループ</strong>：全国95店舗・カフェのような居心地</li>
@@ -326,7 +326,7 @@ export default function StyleTsukinPage() {
 
         <p>副業でチャットレディを始める方にとって最大の不安は「<strong>職場にバレないか</strong>」です。ブライトグループは<strong>顧問税理士サポート</strong>があり、<strong>住民税対策・確定申告</strong>の相談ができます。通勤の事務所は怪しい派手な広告を出している事務所も混在していますが、<strong>老舗20年で運営している実績</strong>は、それだけで「ちゃんと続いている事務所」という証明になります。</p>
 
-        <p>フェアリーテイルが「ノンアダ専門・カフェコンセプト」で評価されているのに対し、ブライトグループは<strong>「老舗の実績・職場バレ対策」</strong>が強みです。</p>
+        <p>フェアリーテイルが「ノンアダルト専門・カフェコンセプト」で評価されているのに対し、ブライトグループは<strong>「老舗の実績・職場バレ対策」</strong>が強みです。</p>
 
         <blockquote>
           <p>実際の口コミ：「<strong>大手っていうだけで最初から安心感がありました</strong>」「<strong>スタッフが丁寧で初回の説明がすごく細かくて、夜遅くに確認したいことがあっても返事が来ました</strong>」</p>
@@ -399,7 +399,7 @@ export default function StyleTsukinPage() {
         <p>「最大40%」ではなく、<strong>入店直後の料率・ランクアップ条件・適用される配信サイト</strong>まで具体的に確認してください。<strong>新人スタートで25-30%が業界標準</strong>です。</p>
 
         <h3>④ ノンアダルト方針の徹底度</h3>
-        <p>「ノンアダルト選択可」と「ノンアダルト専門」では、<strong>面談・入店後の空気感が全く違います</strong>。「ノンアダで続けたい」という希望を伝えた時の反応で、その事務所の方針が見えます。</p>
+        <p>「ノンアダルト選択可」と「ノンアダルト専門」では、<strong>面談・入店後の空気感が全く違います</strong>。「ノンアダルトで続けたい」という希望を伝えた時の反応で、その事務所の方針が見えます。</p>
 
         <h3>⑤ スタッフのサポート方針</h3>
         <p>「指導が放任型か、密着型か」は事務所によって違います。初心者は<strong>密着型のサポート</strong>がある事務所の方が伸びやすいです。</p>
@@ -464,7 +464,7 @@ export default function StyleTsukinPage() {
 
         <p style={{display:"flex", flexDirection:"column", gap:"12px", marginTop:"24px"}}>
           <Link href="/jimusho" className="btn-main">掲載事務所の比較ランキングを見る →</Link>
-          <Link href="/jimusho/ft" className="btn-main">フェアリーテイル（業界初ノンアダ専門・カフェコンセプト・1000項目ノウハウ）の詳細を見る →</Link>
+          <Link href="/jimusho/ft" className="btn-main">フェアリーテイル（業界初ノンアダルト専門・カフェコンセプト・1000項目ノウハウ）の詳細を見る →</Link>
           <Link href="/jimusho/bright-group" className="btn-main">ブライトグループ（老舗20年・顧問税理士サポート）の詳細を見る →</Link>
           <Link href="/jimusho/at-group" className="btn-main">アットグループ（全国95店舗・身バレ対策最強・1000パターンノウハウ）の詳細を見る →</Link>
         </p>

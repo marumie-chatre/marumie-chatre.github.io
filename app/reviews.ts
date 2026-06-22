@@ -20,7 +20,7 @@ export type Review = {
   ageGroup?: string;              // 年齢層（20代前半/20代後半/30代/40代）
   duration?: string;              // 継続期間（1ヶ月未満/1-3ヶ月/3-6ヶ月/6-12ヶ月/1年以上）
   isCurrentlyWorking?: boolean;   // 現在も働いているか
-  contentStyle?: string;          // 事務所方針（ノンアダルト専門/ノンアダ・アダルト選択可/アダルト中心）
+  contentStyle?: string;          // 事務所方針（ノンアダルト専門/ノンアダルト・アダルト選択可/アダルト中心）
   visualStyle?: string;           // 個人の見た目（顔出しあり/マスク/顔出しなし/バーチャル）
   personalStyle?: string;         // 個人の内容（ノンアダルト/アダルト）
 };
@@ -71,7 +71,7 @@ export function getCurrentlyWorkingReviews(): Review[] {
   return reviews.filter((r: Review) => r.isCurrentlyWorking === true);
 }
 
-// 🔴 事務所方針別取得（ノンアダ専門の声など）
+// 🔴 事務所方針別取得（ノンアダルト専門の声など）
 export function getReviewsByContentStyle(contentStyle: string): Review[] {
   return reviews.filter((r: Review) => r.contentStyle === contentStyle);
 }

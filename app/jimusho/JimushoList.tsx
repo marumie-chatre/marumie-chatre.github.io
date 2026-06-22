@@ -41,7 +41,7 @@ type Office = {
 const OFFICES: Office[] = [
   {
     defaultRank: 1, name: "フェアリーテイル", slug: "ft", logo: "/logo-ft.png",
-    tags: ["ノンアダ専門", "身バレ対策◎", "会話サポート"],
+    tags: ["ノンアダルト専門", "身バレ対策◎", "会話サポート"],
     forYou: [
       "ノンアダルト中心で始めたい方",
       "会話や見せ方のコツまで丁寧に教えてほしい方",
