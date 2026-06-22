@@ -10,64 +10,18 @@ export type CarouselArticle = {
   title: string;
   readTime: string;
   date: string;
-  accent: string;     // カテゴリのアクセント色
-  accentSoft: string; // 表紙グラデの淡色
-  image?: string;     // あれば写真表紙、なければデザイン表紙
+  accent: string;   // カテゴリチップの色
+  image: string;    // カバー写真（写真誌型）
 };
 
-const INK = "#2E1F10";
-const INK_SOFT = "#87796A";
-const PAPER = "#FFFFFF";
-
-// 表紙（写真があれば写真／無ければカテゴリ別のやわらかいデザイン表紙）
-function Cover({ a, big = false }: { a: CarouselArticle; big?: boolean }) {
-  return (
-    <div style={{
-      position: "relative",
-      width: "100%",
-      aspectRatio: big ? "16/9" : "5/3",
-      borderRadius: 14,
-      overflow: "hidden",
-      background: `linear-gradient(135deg, ${a.accentSoft} 0%, #FFFFFF 120%)`,
-      flexShrink: 0,
-    }}>
-      {a.image ? (
-        <Image src={a.image} alt={a.title} fill sizes={big ? "(max-width:760px) 100vw, 720px" : "260px"} style={{ objectFit: "cover" }} />
-      ) : (
-        <>
-          {/* デザイン表紙：大きなカテゴリ文字＋葉のアクセント */}
-          <span style={{
-            position: "absolute", left: big ? 18 : 12, top: big ? 14 : 10,
-            fontSize: big ? 13 : 10, fontWeight: 800, letterSpacing: 2,
-            color: a.accent, background: PAPER,
-            padding: big ? "4px 12px" : "3px 9px", borderRadius: 99,
-            boxShadow: "0 2px 8px rgba(46,31,16,0.06)",
-          }}>{a.category}</span>
-          <span style={{
-            position: "absolute", right: big ? 16 : 10, bottom: big ? -8 : -6,
-            fontSize: big ? 84 : 52, fontWeight: 800, lineHeight: 1,
-            color: a.accent, opacity: 0.16,
-            fontFamily: '"Zen Maru Gothic", sans-serif',
-            userSelect: "none",
-          }}>{a.category.slice(0, 2)}</span>
-          <svg viewBox="0 0 20 20" width={big ? 30 : 22} height={big ? 30 : 22} fill="none"
-            stroke={a.accent} strokeWidth={1.4} strokeLinecap="round"
-            style={{ position: "absolute", left: big ? 20 : 13, bottom: big ? 16 : 12, opacity: 0.7 }}>
-            <path d="M10 18 V7" />
-            <path d="M10 11c0-2.5 1.6-4 4.5-4.3C14.3 9 12.7 10.6 10 11z" fill={a.accent} stroke="none" />
-            <path d="M10 8.5C10 6 8.4 4.6 5.5 4.3 5.7 6.7 7.3 8.2 10 8.5z" fill={a.accent} stroke="none" />
-          </svg>
-        </>
-      )}
-    </div>
-  );
-}
+// 写真の上に乗せる下方向スクリム（文字可読性）
+const SCRIM = "linear-gradient(to top, rgba(28,18,10,0.82) 0%, rgba(28,18,10,0.34) 42%, rgba(28,18,10,0) 72%)";
 
 export default function ArticleCarousel({ articles }: { articles: CarouselArticle[] }) {
   const [featured, ...rest] = articles;
   const trackRef = useRef<HTMLDivElement>(null);
 
-  // 自動スライド（横）：ホバー/タッチ/reduced-motion で停止。端まで来たら先頭へ戻る。
+  // 自動スライド（横）：ホバー/タッチ/reduced-motion で停止。端まで来たら先頭へ。
   useEffect(() => {
     const el = trackRef.current;
     if (!el) return;
@@ -83,7 +37,7 @@ export default function ArticleCarousel({ articles }: { articles: CarouselArticl
     const id = window.setInterval(() => {
       if (paused) return;
       const card = el.querySelector<HTMLElement>("[data-card]");
-      const step = card ? card.offsetWidth + 12 : 260;
+      const step = card ? card.offsetWidth + 12 : 192;
       const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 8;
       el.scrollTo({ left: atEnd ? 0 : el.scrollLeft + step, behavior: "smooth" });
     }, 3200);
@@ -100,32 +54,46 @@ export default function ArticleCarousel({ articles }: { articles: CarouselArticl
     const el = trackRef.current;
     if (!el) return;
     const card = el.querySelector<HTMLElement>("[data-card]");
-    const step = card ? card.offsetWidth + 12 : 260;
+    const step = card ? card.offsetWidth + 12 : 192;
     const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 8;
     if (dir === 1 && atEnd) { el.scrollTo({ left: 0, behavior: "smooth" }); return; }
     if (dir === -1 && el.scrollLeft <= 8) { el.scrollTo({ left: el.scrollWidth, behavior: "smooth" }); return; }
     el.scrollBy({ left: dir * step, behavior: "smooth" });
   };
 
+  const chip = (a: CarouselArticle, extra?: React.ReactNode) => (
+    <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
+      {extra}
+      <span style={{
+        fontSize: 9.5, fontWeight: 800, letterSpacing: 0.6,
+        padding: "3px 10px", borderRadius: 99,
+        background: a.accent, color: "#fff",
+        boxShadow: "0 2px 8px rgba(0,0,0,0.18)",
+      }}>{a.category}</span>
+    </div>
+  );
+
   return (
     <div>
-      {/* 最新記事（フィーチャー・大） */}
+      {/* 最新記事（フィーチャー・写真大・テキストは写真上にオーバーレイ） */}
       {featured && (
         <Link href={featured.href} className="ac-featured" aria-label={featured.title}>
-          <Cover a={featured} big />
-          <div style={{ padding: "14px 4px 0" }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+          <Image src={featured.image} alt={featured.title} fill priority
+            sizes="(max-width:760px) 100vw, 720px" style={{ objectFit: "cover" }} />
+          <span className="ac-scrim" style={{ background: SCRIM }} />
+          <div className="ac-featured-body">
+            {chip(featured, (
               <span style={{
                 fontSize: 9.5, fontWeight: 800, letterSpacing: 0.8,
-                padding: "2px 9px", borderRadius: 99,
-                background: featured.accent, color: "#fff",
+                padding: "3px 9px", borderRadius: 99,
+                background: "#fff", color: featured.accent,
               }}>NEW</span>
-              <span style={{ fontSize: 10.5, fontWeight: 700, color: featured.accent }}>{featured.category}</span>
-            </div>
-            <div style={{ marginTop: 9, fontSize: 17, fontWeight: 800, lineHeight: 1.5, color: INK }}>
+            ))}
+            <div style={{ marginTop: 10, fontSize: 19, fontWeight: 800, lineHeight: 1.45, color: "#fff",
+              textShadow: "0 1px 8px rgba(0,0,0,0.35)" }}>
               {featured.title}
             </div>
-            <div style={{ marginTop: 8, fontSize: 10, color: INK_SOFT, display: "flex", gap: 10, alignItems: "center" }}>
+            <div style={{ marginTop: 9, fontSize: 10.5, color: "rgba(255,255,255,0.92)", display: "flex", gap: 12, alignItems: "center" }}>
               <span style={{ display: "inline-flex", alignItems: "center", gap: 4 }}>
                 <Icon.Clock size={11} /> {featured.readTime}で読める
               </span>
@@ -135,10 +103,10 @@ export default function ArticleCarousel({ articles }: { articles: CarouselArticl
         </Link>
       )}
 
-      {/* 横スライド（自動・5記事） */}
+      {/* 横スライド（自動・5記事・縦長の写真カード） */}
       <div style={{ position: "relative", marginTop: 18 }}>
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 10 }}>
-          <span style={{ fontSize: 11, fontWeight: 800, letterSpacing: 1.5, color: INK }}>PICK UP</span>
+          <span style={{ fontSize: 11, fontWeight: 800, letterSpacing: 1.5, color: "#2E1F10" }}>PICK UP</span>
           <span style={{ display: "flex", gap: 6 }}>
             <button onClick={() => nudge(-1)} aria-label="前へ" className="ac-nav">
               <Icon.Arrow size={13} />
@@ -152,14 +120,16 @@ export default function ArticleCarousel({ articles }: { articles: CarouselArticl
         <div ref={trackRef} className="ac-track">
           {rest.map((a) => (
             <Link key={a.href} href={a.href} data-card className="ac-card" aria-label={a.title}>
-              <Cover a={a} />
-              <div style={{ padding: "10px 2px 0" }}>
-                <span style={{ fontSize: 9, fontWeight: 800, letterSpacing: 0.6, color: a.accent }}>{a.category}</span>
-                <div style={{ marginTop: 5, fontSize: 12.5, fontWeight: 700, lineHeight: 1.45, color: INK,
-                  display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }}>
+              <Image src={a.image} alt={a.title} fill sizes="200px" style={{ objectFit: "cover" }} />
+              <span className="ac-scrim" style={{ background: SCRIM }} />
+              <div className="ac-card-body">
+                {chip(a)}
+                <div style={{ marginTop: 8, fontSize: 13, fontWeight: 700, lineHeight: 1.4, color: "#fff",
+                  textShadow: "0 1px 6px rgba(0,0,0,0.4)",
+                  display: "-webkit-box", WebkitLineClamp: 3, WebkitBoxOrient: "vertical", overflow: "hidden" }}>
                   {a.title}
                 </div>
-                <div style={{ marginTop: 7, fontSize: 9.5, color: INK_SOFT, display: "inline-flex", alignItems: "center", gap: 4 }}>
+                <div style={{ marginTop: 7, fontSize: 9.5, color: "rgba(255,255,255,0.9)", display: "inline-flex", alignItems: "center", gap: 4 }}>
                   <Icon.Clock size={10} /> {a.readTime}
                 </div>
               </div>
