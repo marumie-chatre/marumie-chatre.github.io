@@ -51,7 +51,7 @@ const RANKING = [
     rank: 1,
     name: "フェアリーテイル",
     score: 89,
-    tags: ["ノンアダ専門", "身バレ対策◎", "会話から見せ方までサポート"],
+    tags: ["ノンアダルト専門", "身バレ対策◎", "会話から見せ方までサポート"],
     summary: "見た目を磨いて会話力も身に着けられるサポートを求めてる方",
     breakdown: { safe: 29, support: 20, beginner: 19, work: 14, earn: 7 },
   },

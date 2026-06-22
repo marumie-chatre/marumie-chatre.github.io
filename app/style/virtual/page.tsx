@@ -247,13 +247,13 @@ export default function StyleVirtualPage() {
 
         <h3>マスク配信×事務所選びの差別化</h3>
         <p>マスク配信機能自体はどこの事務所にもあるため、<strong>事務所選びで差がつくのは「マスク配信＋他の強み」の組み合わせ</strong>です。</p>
-        <p>特に「<strong>顔バレ対策をしながら、ノンアダルトで真面目に長く続けたい</strong>」という方には、<strong>「マスク配信×ノンアダ専門」を両立できる事務所</strong>が最強の選択肢になります。</p>
+        <p>特に「<strong>顔バレ対策をしながら、ノンアダルトで真面目に長く続けたい</strong>」という方には、<strong>「マスク配信×ノンアダルト専門」を両立できる事務所</strong>が最強の選択肢になります。</p>
         <p>業界でこの両立ができる代表は、<strong>業界初のノンアダルト専門店であるフェアリーテイル</strong>です。</p>
         <ul>
           <li><strong>業界唯一のノンアダルト専門店</strong>として運営</li>
           <li><strong>マスク配信のキャストが多数活躍</strong></li>
           <li><strong>「アダルトを勧められない安心感」と「顔バレ対策」を両立</strong></li>
-          <li>1,000項目以上のノンアダ専用ノウハウで、未経験者でも段階的に稼げる</li>
+          <li>1,000項目以上のノンアダルト専用ノウハウで、未経験者でも段階的に稼げる</li>
         </ul>
 
         <blockquote>
@@ -283,7 +283,7 @@ export default function StyleVirtualPage() {
         <p>A. <strong>Webカメラ付きパソコン or スマホ＋安定したWi-Fi</strong>が最低限必要です。トラッキングは顔の動きを自動で拾うので操作自体は簡単で、<strong>特別なスキルは不要</strong>です。事務所によっては機材レンタルもあります。</p>
 
         <h3>Q. バーチャルでもアダルト強要されることはありますか？</h3>
-        <p>A. <strong>可能性は否定できません</strong>。バーチャル配信でも、お客さんからアダルト要求が来ることはあります。重要なのは、<strong>そうした要求への対応の仕方を教えてくれる事務所を選ぶ</strong>ことです。「ノンアダ専門」「ノンアダ積極採用」を明示している事務所なら、<strong>対応マニュアル・トーク例</strong>を共有してくれるので安心です。</p>
+        <p>A. <strong>可能性は否定できません</strong>。バーチャル配信でも、お客さんからアダルト要求が来ることはあります。重要なのは、<strong>そうした要求への対応の仕方を教えてくれる事務所を選ぶ</strong>ことです。「ノンアダルト専門」「ノンアダルト積極採用」を明示している事務所なら、<strong>対応マニュアル・トーク例</strong>を共有してくれるので安心です。</p>
 
         <h3>Q. バーチャルから途中で実写・マスクに切り替えできますか？</h3>
         <p>A. <strong>可能です</strong>。むしろ「<strong>まずバーチャルで配信に慣れてから、マスク配信に切り替える</strong>」というステップアップをするキャストも多いです。実写・マスクに切り替えれば、<strong>月収の天井が一気に上がる</strong>ので、長期的なキャリアパスとして検討する価値があります。</p>
@@ -303,7 +303,7 @@ export default function StyleVirtualPage() {
         <p>「バーチャル＋通勤」で店舗の防音個室を使う選択肢があると、<strong>身バレ対策がより強化</strong>できます。<strong>新宿・上野などに店舗のあるチャットレディJP</strong>などは、この柔軟性を持っています。</p>
 
         <h3>⑤ ノンアダルト方針の徹底度</h3>
-        <p>「バーチャル＋ノンアダルト」を両立したい方は、<strong>ノンアダ専門のフェアリーテイル</strong>などを選ぶことで、アダルトを勧められない安心感が得られます。</p>
+        <p>「バーチャル＋ノンアダルト」を両立したい方は、<strong>ノンアダルト専門のフェアリーテイル</strong>などを選ぶことで、アダルトを勧められない安心感が得られます。</p>
 
         <h2>よくある質問（FAQ）</h2>
 
@@ -358,7 +358,7 @@ export default function StyleVirtualPage() {
           <Link href="/jimusho/chatstyle" className="btn-main">チャットスタイル（バーチャル特化・会話技術指導）の詳細を見る →</Link>
           <Link href="/jimusho/pocket-work" className="btn-main">ポケットワーク（在宅最大手・24時間女性スタッフサポート）の詳細を見る →</Link>
           <Link href="/jimusho/chatlady-jp" className="btn-main">チャットレディJP（バーチャル＋通勤対応・職場バレ対策）の詳細を見る →</Link>
-          <Link href="/jimusho/ft" className="btn-main">フェアリーテイル（業界初ノンアダ専門・マスク配信対応）の詳細を見る →</Link>
+          <Link href="/jimusho/ft" className="btn-main">フェアリーテイル（業界初ノンアダルト専門・マスク配信対応）の詳細を見る →</Link>
           <Link href="/style/non-adult" className="btn-main">ノンアダルト専門事務所のページを見る →</Link>
         </p>
 

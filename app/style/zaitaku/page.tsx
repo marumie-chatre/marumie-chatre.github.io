@@ -230,7 +230,7 @@ export default function StyleZaitakuPage() {
           <li><strong>20年以上の運営実績</strong>を持つ老舗ライブチャット代理店</li>
           <li>FANZAライブチャットの一次代理店</li>
           <li>在宅・通勤の両方に対応・地方在住者にも強い</li>
-          <li>アダルト強要なし・ノンアダ対応</li>
+          <li>アダルト強要なし・ノンアダルト対応</li>
           <li>経験豊富なスタッフによるサポート</li>
         </ul>
 
