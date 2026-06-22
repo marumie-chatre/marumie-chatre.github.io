@@ -163,7 +163,7 @@ export default function StyleNonAdultPage() {
         <p>ノンアダルト対応している主な事務所は以下の通りです：</p>
         <ul>
           <li><strong>フェアリーテイル</strong>：<strong>業界初のノンアダルト専門店</strong>・98.4%がノンアダ</li>
-          <li><strong>アットグループ</strong>：<strong>アダ・ノンアダ両対応の大手</strong>・公式が「ノンアダ積極採用」を明示・1000パターンのノウハウ</li>
+          <li><strong>アットグループ</strong>：<strong>アダルトもノンアダルトも扱う大手</strong>・公式が「ノンアダ積極採用」を明示・1000パターンのノウハウ</li>
           <li><strong>ブライトグループ</strong>：<strong>ノンアダルトのトップランカー輩出実績</strong>・老舗20年・顧問税理士</li>
           <li><strong>チャットスタイル</strong>：ノンアダ対応・会話技術指導</li>
           <li><strong>ポケットワーク</strong>：ノンアダ対応・在宅対応最大手</li>
@@ -233,11 +233,11 @@ export default function StyleNonAdultPage() {
         <h3>🥈 アットグループ（安全性 22/30点・サポート 21/25点・初心者 16/20点）</h3>
 
         <div className="col-article-box">
-          <p><strong>補足</strong>：アットは本ページ冒頭の「タイプA：ノンアダ『対応』の事務所」とは別カテゴリ。<strong>両対応の大手として、ノンアダのノウハウもしっかり整っています</strong>。</p>
+          <p><strong>補足</strong>：アットは本ページ冒頭の「タイプA：ノンアダ『対応』の事務所」とは別カテゴリ。<strong>アダルトもノンアダルトも扱う大手として、ノンアダのノウハウもしっかり整っています</strong>。</p>
         </div>
 
         <ul>
-          <li><strong>アダ・ノンアダ両対応の大手</strong>で、公式が「ノンアダルトも積極採用」と明示</li>
+          <li><strong>アダルトもノンアダルトも扱う大手</strong>で、公式が「ノンアダルトも積極採用」と明示</li>
           <li><strong>1000パターン以上のノウハウ</strong>で稼ぎ方を体系的に学べる</li>
           <li><strong>全国に店舗を展開</strong>（自分の通えるエリアの店舗を選びやすい）</li>
           <li><strong>オシャレで清潔感のあるカフェ空間</strong>のチャットルーム</li>
@@ -245,15 +245,15 @@ export default function StyleNonAdultPage() {
           <li>大手グループの安心感</li>
         </ul>
 
-        <p>「<strong>大手の安心感のある事務所でノンアダを始めたい</strong>」という方には、<strong>アダ・ノンアダ両対応の大手であるアットグループ</strong>が選択肢になります。</p>
+        <p>「<strong>大手の安心感のある事務所でノンアダを始めたい</strong>」という方には、<strong>アダルトもノンアダルトも扱う大手であるアットグループ</strong>が選択肢になります。</p>
 
         <p>アットグループは<strong>公式サイトで「ノンアダルトも積極採用」と明示</strong>しており、<strong>「アダルトな要求に応えなくても、自分の得意な話題や笑顔でリピーターを獲得し、安定した収入を得られる」</strong>と公式が宣言しています。<strong>1000パターン以上のノウハウ</strong>が体系化されており、ノンアダルトでも段階的に稼げる仕組みは整っています。</p>
 
-        <h4>FTとアットの違い（ノンアダ専門 vs アダ・ノンアダ両対応）</h4>
+        <h4>FTとアットの違い（ノンアダルト専門 vs アダルトもノンアダルトも扱う）</h4>
         <p>FTもアットも、どちらも<strong>1,000以上のノウハウを保有</strong>しており、ノンアダで稼げる仕組みは整っています。違いは「<strong>事務所のコンセプト</strong>」にあります：</p>
         <ul>
           <li><strong>FT</strong>：「<strong>ノンアダルト専門</strong>」のコンセプト。在籍チャトレの<strong>98.4%がノンアダ</strong>で、事務所全体が「ノンアダ前提」で運営されている。<strong>ノンアダ一本でブレずに、長期的に安定して稼ぐ</strong>ことに特化。</li>
-          <li><strong>アット</strong>：「<strong>アダ・ノンアダ両対応の大手</strong>」のコンセプト。公式は「ノンアダ積極採用」を明示しているが、<strong>両対応のため、店舗・お客さん・目標額によってはアダルトの選択肢を提示されることもあります</strong>。</li>
+          <li><strong>アット</strong>：「<strong>アダルトもノンアダルトも扱う大手</strong>」のコンセプト。公式は「ノンアダ積極採用」を明示しているが、<strong>アダルトもノンアダルトも扱うため、店舗・お客さん・目標額によってはアダルトの選択肢を提示されることもあります</strong>。</li>
         </ul>
         <p>「<strong>ノンアダ一本で迷いなく、長く続けたい</strong>」ならFT、<br />
         「<strong>アダ・ノンアダどちらの選択肢もある環境で、大手の安心感を持って始めたい</strong>」ならアットが向いています。</p>
@@ -387,7 +387,7 @@ export default function StyleNonAdultPage() {
         <p style={{display:"flex", flexDirection:"column", gap:"12px", marginTop:"24px"}}>
           <Link href="/jimusho" className="btn-main">掲載事務所の比較ランキングを見る →</Link>
           <Link href="/jimusho/ft" className="btn-main">フェアリーテイル（業界初ノンアダ専門・JCF最優秀店舗賞3年連続・1000項目ノウハウ）の詳細を見る →</Link>
-          <Link href="/jimusho/at-group" className="btn-main">アットグループ（アダ・ノンアダ両対応の大手・公式がノンアダ積極採用）の詳細を見る →</Link>
+          <Link href="/jimusho/at-group" className="btn-main">アットグループ（アダルトもノンアダルトも扱う大手・公式がノンアダ積極採用）の詳細を見る →</Link>
           <Link href="/jimusho/bright-group" className="btn-main">ブライトグループ（FANZAノンアダトップランカー輩出・老舗20年）の詳細を見る →</Link>
         </p>
 

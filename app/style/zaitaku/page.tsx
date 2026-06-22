@@ -173,7 +173,7 @@ export default function StyleZaitakuPage() {
           <li><strong>ポケットワーク</strong>：在宅対応の業界最大手・24時間女性スタッフサポート・全国8拠点</li>
           <li><strong>チャットスタイル</strong>：バーチャル配信対応・会話テクニック指導・在宅対応あり</li>
           <li><strong>アスタリスク</strong>：在宅対応・大手・初心者サポート充実</li>
-          <li><strong>チャットレディJP</strong>：在宅・通勤両対応・複数店舗</li>
+          <li><strong>チャットレディJP</strong>：在宅・通勤どちらも・複数店舗</li>
           <li><strong>ブライトグループ</strong>：在宅対応・顧問税理士サポート</li>
           <li><strong>アリュール</strong>：在宅対応・時給保証</li>
         </ul>

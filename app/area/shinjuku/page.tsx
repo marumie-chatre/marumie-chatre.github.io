@@ -28,18 +28,18 @@ const FAQS = [
   },
   {
     q: "新宿で「ノンアダ一本」で続けたい場合、どこを選べばいいですか？",
-    a: "新宿店舗のある大手は「両対応」がほとんどです。アダルトを勧められる心配を完全になくしたい場合は、ノンアダルト専門のフェアリーテイル新宿店が最も安心です。両対応の事務所を選ぶ場合は、面談時に「ノンアダで続けたい」と伝えて即答してくれる事務所を選んでください。",
+    a: "新宿店舗のある大手はアダルトもノンアダルトも扱うところがほとんどです。アダルトを勧められる心配を完全になくしたい場合は、ノンアダルト専門のフェアリーテイル新宿店が最も安心です。アダルトもノンアダルトも扱う事務所を選ぶ場合は、面談時に「ノンアダで続けたい」と伝えて即答してくれる事務所を選んでください。",
   },
 ];
 
 // 新宿で働ける主要事務所の比較データ（公式サイトと口コミから整理）
 const SHINJUKU_OFFICES = [
   { name: "フェアリーテイル", slug: "ft", nonAdult: "◎専門", support: "高", area: "新宿店あり・ノンアダ専門", target: "アダ勧誘ゼロ希望", top: true, unique: false },
-  { name: "ブライトグループ", slug: "bright-group", nonAdult: "△両対応", support: "高", area: "新宿店・全国140店舗・税理士サポート", target: "大手の安心感・職場バレ対策", top: true, unique: false },
-  { name: "アットグループ", slug: "at-group", nonAdult: "△両対応", support: "高", area: "新宿エリアに複数店舗・カフェ空間", target: "居心地重視", top: true, unique: false },
-  { name: "チャットスタイル", slug: "chatstyle", nonAdult: "△両対応", support: "中", area: "新宿店・会話指導◎", target: "接客スキル磨き", top: true, unique: false },
-  { name: "チャットレディJP", slug: "chatlady-jp", nonAdult: "△両対応", support: "中", area: "新宿複数・美容機器無料", target: "新宿で美容ケアも", top: false, unique: true },
-  { name: "アスタリスク", slug: "asterisk", nonAdult: "△両対応(熱量高)", support: "中", area: "新宿駅徒歩5分・全店女性スタッフ", target: "本気で稼ぎたい人", top: false, unique: true },
+  { name: "ブライトグループ", slug: "bright-group", nonAdult: "△アダルトもあり", support: "高", area: "新宿店・全国140店舗・税理士サポート", target: "大手の安心感・職場バレ対策", top: true, unique: false },
+  { name: "アットグループ", slug: "at-group", nonAdult: "△アダルトもあり", support: "高", area: "新宿エリアに複数店舗・カフェ空間", target: "居心地重視", top: true, unique: false },
+  { name: "チャットスタイル", slug: "chatstyle", nonAdult: "△アダルトもあり", support: "中", area: "新宿店・会話指導◎", target: "接客スキル磨き", top: true, unique: false },
+  { name: "チャットレディJP", slug: "chatlady-jp", nonAdult: "△アダルトもあり", support: "中", area: "新宿複数・美容機器無料", target: "新宿で美容ケアも", top: false, unique: true },
+  { name: "アスタリスク", slug: "asterisk", nonAdult: "△アダルトもあり(熱量高)", support: "中", area: "新宿駅徒歩5分・全店女性スタッフ", target: "本気で稼ぎたい人", top: false, unique: true },
   { name: "ポケットワーク", slug: "pocket-work", nonAdult: "×アダ誘導強め", support: "低", area: "新宿三丁目徒歩5分・71部屋", target: "自走できる人", top: false, unique: false },
 ];
 
@@ -194,7 +194,7 @@ export default function AreaShinjuku() {
         </div>
         <p><strong>新宿との相性</strong>：新宿は<MarkerSpan>派手な広告で釣る短命の事務所も混在しやすい激戦区</MarkerSpan>。<strong>20年続いている老舗</strong>であることは、それだけで「ちゃんと続いている事務所」という証明になるんです。さらに、新宿で副業として始める人にとって最大の不安は「<strong>職場にバレないか</strong>」。ブライトグループの顧問税理士サポートは、住民税対策・確定申告の相談ができる安心材料なんです。</p>
         <WarningBox title="アット・ブライト共通の注意点">
-          ブライトグループも<strong>アダ・ノンアダ両対応の事務所</strong>です。FANZAノンアダのトップランカーを輩出している実績はある一方、店舗・お客さん次第で<strong>アダルトの提案を受ける可能性</strong>があります。ノンアダ一本で続けたい方は面談時に明示してくださいね。
+          ブライトグループも<strong>アダルトもノンアダルトも扱う事務所</strong>です。FANZAノンアダのトップランカーを輩出している実績はある一方、店舗・お客さん次第で<strong>アダルトの提案を受ける可能性</strong>があります。ノンアダ一本で続けたい方は面談時に明示してくださいね。
         </WarningBox>
         <TipBox title="実際に働いた方の声（★4）">
           「大手っていうだけで最初から安心感がありました。月間ランキング上位の人がいるくらいの規模感で、ちゃんと稼げる場所なんだなと実感しました。スタッフが丁寧で初回の説明がすごく細かくて、<strong>夜遅くに確認したいことがあっても返事が来ました</strong>」
@@ -211,7 +211,7 @@ export default function AreaShinjuku() {
         </div>
         <p><strong>新宿との相性</strong>：新宿エリアにアットの店舗は複数あり、<MarkerSpan>「今日はあっち、明日はこっち」と気分で選べる</MarkerSpan>のがアット×新宿の強みなんです。新宿の街並みは大型書店・カフェ・雑貨屋が並ぶ落ち着いた一面もあって、<strong>「カフェ空間のチャットルーム」</strong>の雰囲気にも馴染みやすいんです。</p>
         <WarningBox title="アット・ブライト共通の注意点">
-          アットグループは<strong>アダ・ノンアダ両対応の大手</strong>のため、店舗・お客さん・目標額によっては<strong>アダルトの選択肢を提示される場合があります</strong>。「ノンアダ一本で迷いなく続けたい」方は、面談時に必ず希望を伝えてくださいね。
+          アットグループは<strong>アダルトもノンアダルトも扱う大手</strong>のため、店舗・お客さん・目標額によっては<strong>アダルトの選択肢を提示される場合があります</strong>。「ノンアダ一本で迷いなく続けたい」方は、面談時に必ず希望を伝えてくださいね。
         </WarningBox>
         <TipBox title="実際に働いた方の声（★4）">
           「家の近くに店舗があって買い物ついでに通える距離だったのが続けられた理由です。<strong>カフェみたいな内装で外出するための言い訳も作りやすかった</strong>です。スタッフが気さくで相談しやすかったです」
