@@ -587,26 +587,42 @@ export function OfficeDetailLayout({
               <Link href={`/jimusho/${r.slug}`} key={r.slug} className={`oo-card${first ? " oo-card--first" : ""}`}>
                 {first ? (
                   <span className="oo-medal" aria-hidden="true">
-                    <svg className="oo-laurel" viewBox="0 0 60 54" fill="none" aria-hidden="true" style={{ color: "#D9B872" }}>
-                      <g stroke="currentColor" strokeWidth={1.4} strokeLinecap="round">
-                        <path d="M19 49C10 44 7 33 12 25" />
-                        <path d="M41 49C50 44 53 33 48 25" />
+                    <svg className="oo-laurel" viewBox="0 0 64 60" aria-hidden="true">
+                      <defs>
+                        <linearGradient id="ooGold" x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="0" stopColor="#ECCB7C" />
+                          <stop offset="1" stopColor="#C2923F" />
+                        </linearGradient>
+                      </defs>
+                      <g stroke="url(#ooGold)" strokeWidth={1.3} fill="none" strokeLinecap="round">
+                        <path d="M14 52 Q7 41 12 25" />
+                        <path d="M50 52 Q57 41 52 25" />
                       </g>
-                      <g fill="currentColor">
-                        <ellipse cx="12" cy="42" rx="3.2" ry="1.7" transform="rotate(45 12 42)" />
-                        <ellipse cx="10.5" cy="36" rx="3.2" ry="1.7" transform="rotate(25 10.5 36)" />
-                        <ellipse cx="11" cy="29.5" rx="3" ry="1.6" transform="rotate(8 11 29.5)" />
-                        <ellipse cx="48" cy="42" rx="3.2" ry="1.7" transform="rotate(-45 48 42)" />
-                        <ellipse cx="49.5" cy="36" rx="3.2" ry="1.7" transform="rotate(-25 49.5 36)" />
-                        <ellipse cx="49" cy="29.5" rx="3" ry="1.6" transform="rotate(-8 49 29.5)" />
+                      <g fill="url(#ooGold)">
+                        <path d="M0 0 C2 -2.3 5 -2.3 7 0 C5 2.3 2 2.3 0 0 Z" transform="translate(9,47) rotate(-62)" />
+                        <path d="M0 0 C2 -2.3 5 -2.3 7 0 C5 2.3 2 2.3 0 0 Z" transform="translate(7,39) rotate(-44)" />
+                        <path d="M0 0 C2 -2.3 5 -2.3 7 0 C5 2.3 2 2.3 0 0 Z" transform="translate(7,31) rotate(-26)" />
+                        <path d="M0 0 C2 -2.3 5 -2.3 7 0 C5 2.3 2 2.3 0 0 Z" transform="translate(9,24) rotate(-8)" />
+                        <path d="M0 0 C-2 -2.3 -5 -2.3 -7 0 C-5 2.3 -2 2.3 0 0 Z" transform="translate(55,47) rotate(62)" />
+                        <path d="M0 0 C-2 -2.3 -5 -2.3 -7 0 C-5 2.3 -2 2.3 0 0 Z" transform="translate(57,39) rotate(44)" />
+                        <path d="M0 0 C-2 -2.3 -5 -2.3 -7 0 C-5 2.3 -2 2.3 0 0 Z" transform="translate(57,31) rotate(26)" />
+                        <path d="M0 0 C-2 -2.3 -5 -2.3 -7 0 C-5 2.3 -2 2.3 0 0 Z" transform="translate(55,24) rotate(8)" />
                       </g>
+                      <path d="M32 2.5 l.7 1.9 1.9.7-1.9.7-.7 1.9-.7-1.9-1.9-.7 1.9-.7z" fill="#ECCB7C" />
                     </svg>
                     <span className="oo-medal-crown">
-                      <svg width="22" height="15" viewBox="0 0 24 16" fill="#E5B756" aria-hidden="true">
-                        <path d="M2 13.5h20l-1.4-9-4.6 3.8L12 2 8 8.3 3.4 4.5z" />
-                        <circle cx="3" cy="3.5" r="1.5" />
-                        <circle cx="21" cy="3.5" r="1.5" />
-                        <circle cx="12" cy="1.5" r="1.6" />
+                      <svg width="26" height="17" viewBox="0 0 26 18" aria-hidden="true">
+                        <defs>
+                          <linearGradient id="ooCrown" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0" stopColor="#F0D285" />
+                            <stop offset="1" stopColor="#C2923F" />
+                          </linearGradient>
+                        </defs>
+                        <path d="M3 14.2 L1.5 5 6.3 8.2 13 2 19.7 8.2 24.5 5 23 14.2 Z" fill="url(#ooCrown)" stroke="#A9762E" strokeWidth={0.5} strokeLinejoin="round" />
+                        <rect x="3.2" y="14" width="19.6" height="2.5" rx="1.25" fill="url(#ooCrown)" />
+                        <circle cx="13" cy="3.7" r="1.4" fill="#FFF6E2" />
+                        <circle cx="3.6" cy="4.3" r="1" fill="#FFF6E2" />
+                        <circle cx="22.4" cy="4.3" r="1" fill="#FFF6E2" />
                       </svg>
                     </span>
                     <span className="oo-medal-circle">1</span>
