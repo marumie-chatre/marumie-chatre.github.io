@@ -374,7 +374,7 @@ export default function StyleZaitakuPage() {
         <p>「<strong>月3-5万のお小遣い稼ぎ</strong>」が目的なら、在宅で十分です。ただし「<strong>月10万以上を本気で稼ぎたい</strong>」「<strong>長く安定して続けたい</strong>」という方は、<strong>最初の3ヶ月だけでも通勤で学ぶ</strong>ことを強くおすすめします。私自身、4年前に通勤型でスタートしたからこそ、今も安定して続けられています。</p>
 
         <p style={{display:"flex", flexDirection:"column", gap:"12px", marginTop:"24px"}}>
-          <Link href="/jimusho" className="btn-main">掲載事務所の比較ランキングを見る →</Link>
+          <Link href="/jimusho" className="btn-main">自分に合う事務所を比較ランキングで見る →</Link>
           <Link href="/jimusho/pocket-work" className="btn-main">ポケットワーク（業界最大手・24時間女性スタッフサポート）の詳細を見る →</Link>
           <Link href="/jimusho/flavor-group" className="btn-main">フレイバーグループ（全国300店舗以上・運営実績20年）の詳細を見る →</Link>
           <Link href="/style/tsukin" className="btn-main">→ 通勤型チャットレディ事務所のページ</Link>

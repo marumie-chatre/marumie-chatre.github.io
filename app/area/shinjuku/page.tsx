@@ -280,7 +280,7 @@ export default function AreaShinjuku() {
 
         <QABlock
           q="新宿でアダルト強要されない事務所はありますか？"
-          a={<>新宿エリアには<strong>ノンアダルトを軸にしている事務所</strong>もあります。ただ、業界全体には「ノンアダルト」と求人に書きながら現場でアダルトを勧めてくる事務所も実在するんです。<strong>ノンアダルト専門店としてはっきり明言しているフェアリーテイル</strong>を選ぶのが、最も確実です。</>}
+          a={<>新宿エリアには<strong>ノンアダルトを軸にしている事務所</strong>もあります。ただ、業界全体には「ノンアダルト」と求人に書きながら現場でアダルトを勧めてくる事務所もあるんです。<strong>ノンアダルト専門店としてはっきり明言しているフェアリーテイル</strong>を選ぶのが、最も確実です。</>}
         />
 
         <QABlock
@@ -317,7 +317,7 @@ export default function AreaShinjuku() {
         </div>
 
         <div style={{textAlign:"center", marginTop:"48px"}}>
-          <Link href="/jimusho" className="btn-main">掲載事務所の比較ランキングを見る →</Link>
+          <Link href="/jimusho" className="btn-main">自分に合う事務所を比較ランキングで見る →</Link>
         </div>
       </article>
       </L3ArticleShell>

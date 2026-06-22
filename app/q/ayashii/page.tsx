@@ -210,7 +210,7 @@ export default function QAyashii() {
         <div style={{textAlign:"center", marginTop:"48px"}}>
           <p style={{marginBottom:"24px"}}><strong>「怪しくない事務所を選んで、安心して始めたい」という方へ</strong></p>
           <p style={{marginBottom:"24px"}}>最初は<strong>「説明だけ聞いてみる」「こんな働き方ができるのか質問してみる」</strong>くらいの軽い気持ちで大丈夫です。私自身、3社目でやっと納得できる事務所に出会えました。</p>
-          <Link href="/jimusho" className="btn-main">掲載事務所の比較ランキングを見る →</Link>
+          <Link href="/jimusho" className="btn-main">自分に合う事務所を比較ランキングで見る →</Link>
         </div>
       </article>
       </L3ArticleShell>

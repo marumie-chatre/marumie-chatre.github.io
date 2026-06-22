@@ -172,7 +172,7 @@ export default function StyleTsukinPage() {
         </ul>
 
         <div className="col-article-box">
-          <p>「<strong>月収100万円以上</strong>」「<strong>150万円以上</strong>」は決して大げさな数字ではありません。通勤型で<strong>週5-6回・1日6〜8時間配信を1年以上続けたトップ層</strong>であれば、現実的に到達可能な金額です。私が所属している事務所にも、<strong>月100万円以上を安定して稼ぐトップ層は実在</strong>します。</p>
+          <p>「<strong>月収100万円以上</strong>」「<strong>150万円以上</strong>」は決して大げさな数字ではありません。通勤型で<strong>週5-6回・1日6〜8時間配信を1年以上続けたトップ層</strong>であれば、現実的に到達可能な金額です。私が所属している事務所にも、<strong>月100万円以上を安定して稼ぐトップ層もいます</strong>。</p>
           <p>ただし、これは<strong>ごく一部のキャスト</strong>であり、<strong>「最初から月100万」という訴求は誤り</strong>です。<strong>しっかり続けて、スキルを磨いて、常連さんを増やす</strong>——この3つを<strong>1年以上積み重ねれば到達できる</strong>金額です。中堅層（月50-80万）であれば、<strong>1年〜1年半で到達できる</strong>現実的な目標です。</p>
           <p>なお、<strong>センス・努力・運に恵まれた方の中には、半年〜1年という短期間でトップランカーレベルに到達した方もいます</strong>。「自分が中堅で終わるかトップ層まで行けるかは、やってみないと分からない」というのが正直なところです。</p>
         </div>
@@ -463,7 +463,7 @@ export default function StyleTsukinPage() {
         <p>通勤型は、<strong>最初の3ヶ月で稼ぎ方を体系的に学べる</strong>のが最大のメリットです。派手な数字に惹かれて事務所を選ぶより、<strong>「サポート・継続率・実績」で選ぶ</strong>方が、結果的に長く・多く稼げます。私自身、<strong>元保育士（手取り18万円）からチャットレディに転職して、4年目で月50-80万円の中堅層</strong>になれました。<strong>しっかり続ければ、保育士・OLの何倍もの収入が現実的に手に入る</strong>のが通勤型の魅力です。</p>
 
         <p style={{display:"flex", flexDirection:"column", gap:"12px", marginTop:"24px"}}>
-          <Link href="/jimusho" className="btn-main">掲載事務所の比較ランキングを見る →</Link>
+          <Link href="/jimusho" className="btn-main">自分に合う事務所を比較ランキングで見る →</Link>
           <Link href="/jimusho/ft" className="btn-main">フェアリーテイル（ノンアダルト専門・カフェコンセプト・1000項目ノウハウ）の詳細を見る →</Link>
           <Link href="/jimusho/bright-group" className="btn-main">ブライトグループ（老舗20年・顧問税理士サポート）の詳細を見る →</Link>
           <Link href="/jimusho/at-group" className="btn-main">アットグループ（全国95店舗・身バレ対策最強・1000パターンノウハウ）の詳細を見る →</Link>

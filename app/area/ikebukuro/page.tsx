@@ -261,7 +261,7 @@ export default function AreaIkebukuro() {
         </div>
 
         <div style={{textAlign:"center", marginTop:"48px"}}>
-          <Link href="/jimusho" className="btn-main">掲載事務所の比較ランキングを見る →</Link>
+          <Link href="/jimusho" className="btn-main">自分に合う事務所を比較ランキングで見る →</Link>
         </div>
       </article>
       </L3ArticleShell>
