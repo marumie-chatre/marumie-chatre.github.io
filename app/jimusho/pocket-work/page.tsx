@@ -11,7 +11,7 @@ export const metadata = {
 const OFFICE_DATA: OfficeDetailData = {
   slug: "pocket-work",
   name: "ポケットワーク",
-  rank: 11,
+  rank: 10,
   score: 68,
   isPR: false,
   logoSrc: "/logo-pocket-work.png",

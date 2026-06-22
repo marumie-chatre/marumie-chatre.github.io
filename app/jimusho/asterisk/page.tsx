@@ -11,7 +11,7 @@ export const metadata = {
 const OFFICE_DATA: OfficeDetailData = {
   slug: "asterisk",
   name: "アスタリスク",
-  rank: 10,
+  rank: 9,
   score: 69,
   isPR: false,
   logoSrc: "/logo-asterisk.png",

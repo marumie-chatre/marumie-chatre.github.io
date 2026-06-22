@@ -11,7 +11,7 @@ export const metadata = {
 const OFFICE_DATA: OfficeDetailData = {
   slug: "nmr-group",
   name: "NMRグループ",
-  rank: 8,
+  rank: 7,
   score: 74,
   isPR: false,
   logoSrc: "/logo-nmr-group.png",

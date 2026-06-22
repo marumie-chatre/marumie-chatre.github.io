@@ -11,7 +11,7 @@ export const metadata = {
 const OFFICE_DATA: OfficeDetailData = {
   slug: "chatlady-jp",
   name: "チャットレディJP",
-  rank: 9,
+  rank: 8,
   score: 70,
   isPR: false,
   logoSrc: "/logo-chatlady-jp.png",

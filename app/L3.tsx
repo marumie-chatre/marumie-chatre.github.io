@@ -213,19 +213,25 @@ export type OfficeDetailData = {
   note?: string;
 };
 
-// 関連事務所（手動指定可・デフォルト：ランクが近い2社）
+// 関連事務所（型）
 export type RelatedOffice = { rank: number; slug: string; name: string; score: number; badge?: string };
+
+// 下部「他の事務所も比べてみる」は全ページ共通で総合トップ3を表示（スコア順）
+const TOP3: RelatedOffice[] = [
+  { rank: 1, slug: "ft", name: "フェアリーテイル", score: 89, badge: "初心者におすすめ" },
+  { rank: 2, slug: "bright-group", name: "ブライトグループ", score: 83 },
+  { rank: 3, slug: "chatstyle", name: "チャットスタイル", score: 81 },
+];
 
 // 事務所詳細：full layout
 // reviewsはサーバ側でフィルター済みのを渡す
 export function OfficeDetailLayout({
   o,
   reviewsSlot,
-  relatedOffices,
 }: {
   o: OfficeDetailData;
   reviewsSlot: React.ReactNode;
-  relatedOffices: RelatedOffice[];
+  relatedOffices?: RelatedOffice[];
 }) {
   // 構造化データ用：この事務所宛の口コミだけ抜き出し
   const officeReviewsForSchema = reviews.filter((r) => r.slug === o.slug);
@@ -581,67 +587,84 @@ export function OfficeDetailLayout({
           </div>
         </div>
         <div className="oo-list">
-          {relatedOffices.map(r => {
+          {TOP3.map(r => {
             const first = r.rank === 1;
-            return (
-              <Link href={`/jimusho/${r.slug}`} key={r.slug} className={`oo-card${first ? " oo-card--first" : ""}`}>
-                {first ? (
-                  <span className="oo-medal" aria-hidden="true">
-                    <svg className="oo-laurel" viewBox="0 0 64 60" aria-hidden="true">
-                      <defs>
-                        <linearGradient id="ooGold" x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="0" stopColor="#ECCB7C" />
-                          <stop offset="1" stopColor="#C2923F" />
-                        </linearGradient>
-                      </defs>
-                      <g stroke="url(#ooGold)" strokeWidth={1.3} fill="none" strokeLinecap="round">
-                        <path d="M14 52 Q7 41 12 25" />
-                        <path d="M50 52 Q57 41 52 25" />
-                      </g>
-                      <g fill="url(#ooGold)">
-                        <path d="M0 0 C2 -2.3 5 -2.3 7 0 C5 2.3 2 2.3 0 0 Z" transform="translate(9,47) rotate(-62)" />
-                        <path d="M0 0 C2 -2.3 5 -2.3 7 0 C5 2.3 2 2.3 0 0 Z" transform="translate(7,39) rotate(-44)" />
-                        <path d="M0 0 C2 -2.3 5 -2.3 7 0 C5 2.3 2 2.3 0 0 Z" transform="translate(7,31) rotate(-26)" />
-                        <path d="M0 0 C2 -2.3 5 -2.3 7 0 C5 2.3 2 2.3 0 0 Z" transform="translate(9,24) rotate(-8)" />
-                        <path d="M0 0 C-2 -2.3 -5 -2.3 -7 0 C-5 2.3 -2 2.3 0 0 Z" transform="translate(55,47) rotate(62)" />
-                        <path d="M0 0 C-2 -2.3 -5 -2.3 -7 0 C-5 2.3 -2 2.3 0 0 Z" transform="translate(57,39) rotate(44)" />
-                        <path d="M0 0 C-2 -2.3 -5 -2.3 -7 0 C-5 2.3 -2 2.3 0 0 Z" transform="translate(57,31) rotate(26)" />
-                        <path d="M0 0 C-2 -2.3 -5 -2.3 -7 0 C-5 2.3 -2 2.3 0 0 Z" transform="translate(55,24) rotate(8)" />
-                      </g>
-                      <path d="M32 2.5 l.7 1.9 1.9.7-1.9.7-.7 1.9-.7-1.9-1.9-.7 1.9-.7z" fill="#ECCB7C" />
-                    </svg>
-                    <span className="oo-medal-crown">
-                      <svg width="26" height="17" viewBox="0 0 26 18" aria-hidden="true">
-                        <defs>
-                          <linearGradient id="ooCrown" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="0" stopColor="#F0D285" />
-                            <stop offset="1" stopColor="#C2923F" />
-                          </linearGradient>
-                        </defs>
-                        <path d="M3 14.2 L1.5 5 6.3 8.2 13 2 19.7 8.2 24.5 5 23 14.2 Z" fill="url(#ooCrown)" stroke="#A9762E" strokeWidth={0.5} strokeLinejoin="round" />
-                        <rect x="3.2" y="14" width="19.6" height="2.5" rx="1.25" fill="url(#ooCrown)" />
-                        <circle cx="13" cy="3.7" r="1.4" fill="#FFF6E2" />
-                        <circle cx="3.6" cy="4.3" r="1" fill="#FFF6E2" />
-                        <circle cx="22.4" cy="4.3" r="1" fill="#FFF6E2" />
-                      </svg>
-                    </span>
-                    <span className="oo-medal-circle">1</span>
-                  </span>
-                ) : (
-                  <span className="oo-rank-dot">{r.rank}</span>
-                )}
+            const current = r.slug === o.slug;
+            const rankMark = first ? (
+              <span className="oo-medal" aria-hidden="true">
+                <svg className="oo-laurel" viewBox="0 0 64 60" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="ooGold" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0" stopColor="#ECCB7C" />
+                      <stop offset="1" stopColor="#C2923F" />
+                    </linearGradient>
+                  </defs>
+                  <g stroke="url(#ooGold)" strokeWidth={1.3} fill="none" strokeLinecap="round">
+                    <path d="M14 52 Q7 41 12 25" />
+                    <path d="M50 52 Q57 41 52 25" />
+                  </g>
+                  <g fill="url(#ooGold)">
+                    <path d="M0 0 C2 -2.3 5 -2.3 7 0 C5 2.3 2 2.3 0 0 Z" transform="translate(9,47) rotate(-62)" />
+                    <path d="M0 0 C2 -2.3 5 -2.3 7 0 C5 2.3 2 2.3 0 0 Z" transform="translate(7,39) rotate(-44)" />
+                    <path d="M0 0 C2 -2.3 5 -2.3 7 0 C5 2.3 2 2.3 0 0 Z" transform="translate(7,31) rotate(-26)" />
+                    <path d="M0 0 C2 -2.3 5 -2.3 7 0 C5 2.3 2 2.3 0 0 Z" transform="translate(9,24) rotate(-8)" />
+                    <path d="M0 0 C-2 -2.3 -5 -2.3 -7 0 C-5 2.3 -2 2.3 0 0 Z" transform="translate(55,47) rotate(62)" />
+                    <path d="M0 0 C-2 -2.3 -5 -2.3 -7 0 C-5 2.3 -2 2.3 0 0 Z" transform="translate(57,39) rotate(44)" />
+                    <path d="M0 0 C-2 -2.3 -5 -2.3 -7 0 C-5 2.3 -2 2.3 0 0 Z" transform="translate(57,31) rotate(26)" />
+                    <path d="M0 0 C-2 -2.3 -5 -2.3 -7 0 C-5 2.3 -2 2.3 0 0 Z" transform="translate(55,24) rotate(8)" />
+                  </g>
+                  <path d="M32 2.5 l.7 1.9 1.9.7-1.9.7-.7 1.9-.7-1.9-1.9-.7 1.9-.7z" fill="#ECCB7C" />
+                </svg>
+                <span className="oo-medal-crown">
+                  <svg width="26" height="17" viewBox="0 0 26 18" aria-hidden="true">
+                    <defs>
+                      <linearGradient id="ooCrown" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0" stopColor="#F0D285" />
+                        <stop offset="1" stopColor="#C2923F" />
+                      </linearGradient>
+                    </defs>
+                    <path d="M3 14.2 L1.5 5 6.3 8.2 13 2 19.7 8.2 24.5 5 23 14.2 Z" fill="url(#ooCrown)" stroke="#A9762E" strokeWidth={0.5} strokeLinejoin="round" />
+                    <rect x="3.2" y="14" width="19.6" height="2.5" rx="1.25" fill="url(#ooCrown)" />
+                    <circle cx="13" cy="3.7" r="1.4" fill="#FFF6E2" />
+                    <circle cx="3.6" cy="4.3" r="1" fill="#FFF6E2" />
+                    <circle cx="22.4" cy="4.3" r="1" fill="#FFF6E2" />
+                  </svg>
+                </span>
+                <span className="oo-medal-circle">1</span>
+              </span>
+            ) : (
+              <span className="oo-rank-dot">{r.rank}</span>
+            );
+            const leafBg = first ? (
+              <svg className="oo-leaf-bg" viewBox="0 0 80 80" fill="currentColor" aria-hidden="true">
+                <path d="M72 10C56 14 47 25 45 42c13-2 22-11 27-32z" />
+                <path d="M63 30C51 34 45 43 44 55c11-2 18-10 19-25z" opacity=".7" />
+              </svg>
+            ) : null;
+            const inner = (
+              <>
+                {rankMark}
                 <span className="oo-body">
                   <span className="oo-name">{r.name}</span>
                   {r.badge && <span className="oo-badge">{r.badge}</span>}
                 </span>
                 <span className="oo-score"><b>{r.score}</b></span>
+              </>
+            );
+            if (current) {
+              return (
+                <div key={r.slug} className={`oo-card oo-card--current${first ? " oo-card--first" : ""}`} aria-current="page">
+                  {inner}
+                  <span className="oo-current">閲覧中</span>
+                  {leafBg}
+                </div>
+              );
+            }
+            return (
+              <Link href={`/jimusho/${r.slug}`} key={r.slug} className={`oo-card${first ? " oo-card--first" : ""}`}>
+                {inner}
                 <span className="oo-arrow"><Icon.Arrow size={12} /></span>
-                {first && (
-                  <svg className="oo-leaf-bg" viewBox="0 0 80 80" fill="currentColor" aria-hidden="true">
-                    <path d="M72 10C56 14 47 25 45 42c13-2 22-11 27-32z" />
-                    <path d="M63 30C51 34 45 43 44 55c11-2 18-10 19-25z" opacity=".7" />
-                  </svg>
-                )}
+                {leafBg}
               </Link>
             );
           })}
