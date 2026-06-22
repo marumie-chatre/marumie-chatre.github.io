@@ -2135,8 +2135,8 @@ body > div > main { padding-top: 68px; }
 .oo-leaf { width: 15px; height: 15px; color: var(--color-primary); flex-shrink: 0; }
 .oo-title { margin-top: 10px; font-family: "Zen Maru Gothic", sans-serif; font-size: 24px; font-weight: 700; color: var(--color-ink); letter-spacing: .01em; }
 .oo-divider { display: flex; align-items: center; gap: 8px; margin: 12px 0 18px; }
-.oo-divider-line { flex: 1; height: 0; border-top: 1.5px dotted var(--rk-gold-line); }
-.oo-diamond { width: 11px; height: 11px; color: var(--rk-gold); flex-shrink: 0; }
+.oo-divider-line { flex: 1; height: 0; border-top: 1.5px dotted var(--rk-border-green); }
+.oo-diamond { width: 10px; height: 10px; color: var(--color-primary); flex-shrink: 0; }
 
 .oo-list { display: flex; flex-direction: column; gap: 10px; }
 .oo-card {
@@ -2149,24 +2149,22 @@ body > div > main { padding-top: 68px; }
 }
 @media (hover: hover) { .oo-card:hover { transform: translateY(-2px); box-shadow: var(--rk-shadow-hover); border-color: var(--rk-border-green); } }
 .oo-card:focus-visible { outline: 3px solid var(--color-primary-pastel); outline-offset: 2px; }
-.oo-card--first { background: linear-gradient(180deg, #FCF8EF 0%, #FFFDF8 100%); border-color: var(--rk-gold-line); box-shadow: var(--rk-shadow-first); padding: 16px 15px; }
+.oo-card--first { background: #FBFCF7; border-color: var(--color-primary-tint); box-shadow: var(--shadow-v2-md); padding: 16px 15px; }
 
-/* 1位メダル（緑円＋金リング＋金の王冠＋月桂冠） */
-.oo-medal { position: relative; flex-shrink: 0; width: 60px; height: 58px; display: flex; align-items: center; justify-content: center; }
-.oo-laurel { position: absolute; inset: 0; width: 100%; height: 100%; }
-.oo-medal-crown { position: absolute; top: -1px; left: 50%; transform: translateX(-50%); z-index: 2; display: inline-flex; line-height: 0; }
-.oo-medal-circle { position: relative; z-index: 1; width: 35px; height: 35px; margin-top: 7px; border-radius: 50%; background: radial-gradient(120% 120% at 50% 25%, #6E9646 0%, var(--color-primary-deep) 70%); color: #fff; font-family: "Zen Maru Gothic", sans-serif; font-size: 17px; font-weight: 800; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 2px #EAD49C, 0 2px 7px rgba(88,122,56,.32); }
+/* 1位メダル（淡い緑の円＋金の王冠・全体トーンになじむ） */
+.oo-medal { position: relative; flex-shrink: 0; width: 40px; height: 48px; display: flex; align-items: flex-end; justify-content: center; }
+.oo-medal-crown { position: absolute; top: 0; left: 50%; transform: translateX(-50%); z-index: 2; line-height: 0; }
+.oo-medal-circle { width: 36px; height: 36px; border-radius: 50%; background: var(--color-primary); color: #fff; font-family: "Zen Maru Gothic", sans-serif; font-size: 17px; font-weight: 800; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 7px rgba(123,170,63,.35); }
 
-/* 2位以降：点線の円 */
-.oo-rank-dot { flex-shrink: 0; width: 38px; height: 38px; border-radius: 50%; border: 1.5px dashed var(--rk-border-green); display: flex; align-items: center; justify-content: center; font-family: "Zen Maru Gothic", sans-serif; font-size: 15px; font-weight: 800; color: var(--color-ink-soft); }
+/* 2位以降：淡い緑の円 */
+.oo-rank-dot { flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%; background: var(--color-primary-tint); color: var(--color-primary-deep); display: flex; align-items: center; justify-content: center; font-family: "Zen Maru Gothic", sans-serif; font-size: 15px; font-weight: 800; }
 
 .oo-body { flex: 1; min-width: 0; }
 .oo-name { display: block; font-size: 14.5px; font-weight: 800; color: var(--color-ink); line-height: 1.45; }
 .oo-badge { display: inline-block; margin-top: 5px; padding: 2px 9px; border-radius: var(--radius-pill); background: var(--color-primary-tint); color: var(--color-primary-deep); font-size: 9.5px; font-weight: 700; }
 .oo-score { flex-shrink: 0; text-align: right; font-family: "Zen Maru Gothic", sans-serif; line-height: 1; }
 .oo-score b { font-size: 20px; font-weight: 800; color: var(--rk-gold); }
-.oo-arrow { flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: #fff; border: 1px solid var(--rk-gold-line); display: flex; align-items: center; justify-content: center; color: var(--rk-gold); }
-.oo-leaf-bg { position: absolute; right: -8px; top: -6px; width: 76px; height: 76px; color: var(--color-primary-tint); opacity: .55; pointer-events: none; }
+.oo-arrow { flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--green-pale); border: 1px solid var(--rk-border-green); display: flex; align-items: center; justify-content: center; color: var(--rk-gold); }
 .oo-card--current { pointer-events: none; }
 .oo-current { flex-shrink: 0; font-size: 9.5px; font-weight: 700; color: var(--color-ink-softer); background: var(--color-bg); border: 1px solid var(--rk-border); padding: 4px 10px; border-radius: var(--radius-pill); }
 

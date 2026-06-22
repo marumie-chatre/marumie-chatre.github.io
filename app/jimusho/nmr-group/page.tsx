@@ -1,6 +1,6 @@
 import { reviews } from "../../reviews";
 import OfficeReviews from "../../OfficeReviews";
-import { OfficeDetailLayout, type OfficeDetailData, type RelatedOffice } from "../../L3";
+import { OfficeDetailLayout, type OfficeDetailData } from "../../L3";
 
 export const metadata = {
   alternates: { canonical: "/jimusho/nmr-group" },
@@ -47,19 +47,12 @@ const OFFICE_DATA: OfficeDetailData = {
   note: "月20万円の給与保証・近隣託児所・生理休暇などの条件は店舗によって異なります。会社全体で見える条件と、応募する店舗ごとの条件は別なので、必ず個別に確認してください。",
 };
 
-const RELATED: RelatedOffice[] = [
-  { rank: 1, slug: "ft", name: "フェアリーテイル", score: 89, badge: "初心者におすすめ" },
-  { rank: 7, slug: "allure", name: "アリュール", score: 74 },
-  { rank: 9, slug: "chatlady-jp", name: "チャットレディJP", score: 70 },
-];
-
 export default function Page() {
   const officeReviews = reviews.filter(r => r.slug === OFFICE_DATA.slug);
   return (
     <OfficeDetailLayout
       o={OFFICE_DATA}
       reviewsSlot={<OfficeReviews reviews={officeReviews} officeName={OFFICE_DATA.name} />}
-      relatedOffices={RELATED}
     />
   );
 }

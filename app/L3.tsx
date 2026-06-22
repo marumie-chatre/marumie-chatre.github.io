@@ -179,8 +179,8 @@ export function L3SectionHeader({ kicker, title }: { kicker: string; title: stri
 export function L3ScoreBar({ value, max }: { value: number; max: number }) {
   const pct = (value / max) * 100;
   return (
-    <div style={{ background: L3G.cream, borderRadius: 99, height: 6, overflow: "hidden" }}>
-      <div style={{ width: `${pct}%`, height: "100%", background: L3G.sage, borderRadius: 99 }} />
+    <div style={{ background: "#E7E2D6", borderRadius: 99, height: 6, overflow: "hidden" }}>
+      <div style={{ width: `${pct}%`, height: "100%", background: L3G.sagePastel, borderRadius: 99 }} />
     </div>
   );
 }
@@ -363,7 +363,7 @@ export function OfficeDetailLayout({
           }}>
             <div style={{ fontSize: 15, fontWeight: 800, color: L3G.ink }}>5軸スコア</div>
             <div style={{ textAlign: "right" }}>
-              <span style={{ fontSize: 28, fontWeight: 800, color: L3G.ink, lineHeight: 1 }}>
+              <span style={{ fontSize: 28, fontWeight: 800, color: "#BE8A3C", lineHeight: 1 }}>
                 {o.score}
               </span>
               <span style={{ fontSize: 11, color: L3G.inkSoft, marginLeft: 3 }}>/100</span>
@@ -592,31 +592,8 @@ export function OfficeDetailLayout({
             const current = r.slug === o.slug;
             const rankMark = first ? (
               <span className="oo-medal" aria-hidden="true">
-                <svg className="oo-laurel" viewBox="0 0 64 60" aria-hidden="true">
-                  <defs>
-                    <linearGradient id="ooGold" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0" stopColor="#ECCB7C" />
-                      <stop offset="1" stopColor="#C2923F" />
-                    </linearGradient>
-                  </defs>
-                  <g stroke="url(#ooGold)" strokeWidth={1.3} fill="none" strokeLinecap="round">
-                    <path d="M14 52 Q7 41 12 25" />
-                    <path d="M50 52 Q57 41 52 25" />
-                  </g>
-                  <g fill="url(#ooGold)">
-                    <path d="M0 0 C2 -2.3 5 -2.3 7 0 C5 2.3 2 2.3 0 0 Z" transform="translate(9,47) rotate(-62)" />
-                    <path d="M0 0 C2 -2.3 5 -2.3 7 0 C5 2.3 2 2.3 0 0 Z" transform="translate(7,39) rotate(-44)" />
-                    <path d="M0 0 C2 -2.3 5 -2.3 7 0 C5 2.3 2 2.3 0 0 Z" transform="translate(7,31) rotate(-26)" />
-                    <path d="M0 0 C2 -2.3 5 -2.3 7 0 C5 2.3 2 2.3 0 0 Z" transform="translate(9,24) rotate(-8)" />
-                    <path d="M0 0 C-2 -2.3 -5 -2.3 -7 0 C-5 2.3 -2 2.3 0 0 Z" transform="translate(55,47) rotate(62)" />
-                    <path d="M0 0 C-2 -2.3 -5 -2.3 -7 0 C-5 2.3 -2 2.3 0 0 Z" transform="translate(57,39) rotate(44)" />
-                    <path d="M0 0 C-2 -2.3 -5 -2.3 -7 0 C-5 2.3 -2 2.3 0 0 Z" transform="translate(57,31) rotate(26)" />
-                    <path d="M0 0 C-2 -2.3 -5 -2.3 -7 0 C-5 2.3 -2 2.3 0 0 Z" transform="translate(55,24) rotate(8)" />
-                  </g>
-                  <path d="M32 2.5 l.7 1.9 1.9.7-1.9.7-.7 1.9-.7-1.9-1.9-.7 1.9-.7z" fill="#ECCB7C" />
-                </svg>
                 <span className="oo-medal-crown">
-                  <svg width="26" height="17" viewBox="0 0 26 18" aria-hidden="true">
+                  <svg width="24" height="16" viewBox="0 0 26 18" aria-hidden="true">
                     <defs>
                       <linearGradient id="ooCrown" x1="0" y1="0" x2="0" y2="1">
                         <stop offset="0" stopColor="#F0D285" />
@@ -635,12 +612,6 @@ export function OfficeDetailLayout({
             ) : (
               <span className="oo-rank-dot">{r.rank}</span>
             );
-            const leafBg = first ? (
-              <svg className="oo-leaf-bg" viewBox="0 0 80 80" fill="currentColor" aria-hidden="true">
-                <path d="M72 10C56 14 47 25 45 42c13-2 22-11 27-32z" />
-                <path d="M63 30C51 34 45 43 44 55c11-2 18-10 19-25z" opacity=".7" />
-              </svg>
-            ) : null;
             const inner = (
               <>
                 {rankMark}
@@ -656,7 +627,6 @@ export function OfficeDetailLayout({
                 <div key={r.slug} className={`oo-card oo-card--current${first ? " oo-card--first" : ""}`} aria-current="page">
                   {inner}
                   <span className="oo-current">閲覧中</span>
-                  {leafBg}
                 </div>
               );
             }
@@ -664,7 +634,6 @@ export function OfficeDetailLayout({
               <Link href={`/jimusho/${r.slug}`} key={r.slug} className={`oo-card${first ? " oo-card--first" : ""}`}>
                 {inner}
                 <span className="oo-arrow"><Icon.Arrow size={12} /></span>
-                {leafBg}
               </Link>
             );
           })}
