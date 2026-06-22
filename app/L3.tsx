@@ -214,7 +214,7 @@ export type OfficeDetailData = {
 };
 
 // 関連事務所（手動指定可・デフォルト：ランクが近い2社）
-export type RelatedOffice = { rank: number; slug: string; name: string; score: number };
+export type RelatedOffice = { rank: number; slug: string; name: string; score: number; badge?: string };
 
 // 事務所詳細：full layout
 // reviewsはサーバ側でフィルター済みのを渡す
@@ -575,8 +575,11 @@ export function OfficeDetailLayout({
               <div style={{
                 fontSize: 16, fontWeight: 800, color: L3G.inkSoft, width: 26,
               }}>{r.rank}</div>
-              <div style={{ flex: 1, fontSize: 13.5, fontWeight: 800, color: L3G.ink }}>
-                {r.name}
+              <div style={{ flex: 1, minWidth: 0 }}>
+                <div style={{ fontSize: 13.5, fontWeight: 800, color: L3G.ink }}>{r.name}</div>
+                {r.badge && (
+                  <span style={{ display: "inline-block", marginTop: 4, fontSize: 9, fontWeight: 700, color: L3G.sageDeep, background: L3G.sageSoft, padding: "1px 8px", borderRadius: 99 }}>{r.badge}</span>
+                )}
               </div>
               <div style={{
                 fontSize: 16, fontWeight: 800, color: L3G.ink,
