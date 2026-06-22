@@ -68,6 +68,18 @@
   --color-medal-silver: #C5C0BA;
   --color-medal-bronze: #D69C71;
 
+  /* Ranking v3（カード・王冠・点数・矢印のアクセント） */
+  --rk-radius: 18px;
+  --rk-border: #ECEAE0;
+  --rk-border-green: #CFDDB4;
+  --rk-shadow: 0 4px 16px rgba(46,42,32,0.06);
+  --rk-shadow-hover: 0 10px 26px rgba(46,70,40,0.13);
+  --rk-shadow-first: 0 8px 24px rgba(190,138,60,0.16);
+  --rk-gold: #BE8A3C;          /* 点数・矢印（白地で読める濃さのゴールド） */
+  --rk-gold-bright: #E5B756;   /* 1位の王冠 */
+  --rk-gold-line: #E7D3A3;     /* 1位カードの細いライン */
+  --rk-first-bg: linear-gradient(180deg, #FFFDF8 0%, #FFFFFF 46%);
+
   /* Typography families */
   --font-mincho: 'Shippori Mincho', 'Noto Serif JP', serif;
   --font-sans-jp: 'Noto Sans JP', sans-serif;
@@ -2007,3 +2019,152 @@ body > div > main { padding-top: 68px; }
   position: relative;
   z-index: 1;
 }
+
+/* ========================================================== */
+/* RANKING CARDS v3（/jimusho ランキングカード）              */
+/* 丸ゴシック維持・緑/アイボリー基調・ゴールドはアクセントのみ   */
+/* ========================================================== */
+.rk-list {
+  display: flex; flex-direction: column; gap: 18px;
+  max-width: 640px; margin: 0 auto; padding: 10px 16px 0;
+}
+.rk-card {
+  position: relative;
+  background: var(--color-paper);
+  border: 1px solid var(--rk-border);
+  border-radius: var(--rk-radius);
+  box-shadow: var(--rk-shadow);
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.rk-card:focus-within { border-color: var(--rk-border-green); }
+@media (hover: hover) {
+  .rk-card:hover { transform: translateY(-3px); box-shadow: var(--rk-shadow-hover); border-color: var(--rk-border-green); }
+}
+.rk-card--first {
+  border-color: var(--rk-gold-line);
+  box-shadow: var(--rk-shadow-first);
+  background: var(--rk-first-bg);
+}
+.rk-card--first::before {
+  content: ""; position: absolute; left: 16px; right: 16px; top: 0; height: 3px;
+  background: linear-gradient(90deg, var(--rk-gold-bright), var(--rk-gold-line));
+  border-radius: 0 0 3px 3px;
+}
+.rk-link {
+  display: block; padding: 18px 16px 16px;
+  color: inherit; text-decoration: none; border-radius: var(--rk-radius);
+}
+.rk-link:focus-visible { outline: 3px solid var(--color-primary-pastel); outline-offset: 2px; }
+
+.rk-crown {
+  position: absolute; top: -14px; left: 16px; z-index: 1;
+  display: inline-flex; align-items: center; gap: 5px;
+  height: 28px; padding: 0 13px 0 10px;
+  background: #fff; border: 1.5px solid var(--rk-gold-line);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 3px 10px rgba(190,138,60,0.22);
+  color: var(--rk-gold);
+  font-size: 11.5px; font-weight: 800; letter-spacing: .03em;
+}
+.rk-crown svg { color: var(--rk-gold-bright); }
+
+.rk-badge {
+  display: inline-flex; align-items: center; margin-bottom: 12px;
+  padding: 4px 12px; border-radius: var(--radius-pill);
+  background: var(--color-primary-tint); color: var(--color-primary-deep);
+  font-size: 11px; font-weight: 700; letter-spacing: .02em;
+}
+
+.rk-head { display: flex; align-items: center; gap: 13px; }
+.rk-rank { flex-shrink: 0; width: 40px; display: flex; flex-direction: column; align-items: center; line-height: 1; }
+.rk-rank-label { font-size: 9px; font-weight: 700; letter-spacing: .08em; color: var(--color-ink-softer); }
+.rk-rank-num { font-family: "Zen Maru Gothic", sans-serif; font-size: 22px; font-weight: 800; color: var(--color-primary-deep); }
+.rk-card--first .rk-rank-num { color: var(--rk-gold); }
+.rk-logo {
+  flex-shrink: 0; width: 54px; height: 54px; border-radius: 12px; overflow: hidden;
+  background: var(--green-pale); border: 1px solid var(--rk-border);
+  display: flex; align-items: center; justify-content: center;
+}
+.rk-logo img { width: 100%; height: 100%; object-fit: contain; padding: 6px; }
+.rk-name { font-size: 17px; font-weight: 800; color: var(--color-ink); line-height: 1.4; letter-spacing: -.01em; }
+
+.rk-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 12px; }
+.rk-tag { font-size: 10.5px; font-weight: 600; color: var(--color-primary-deep); background: var(--color-primary-tint); padding: 3px 10px; border-radius: var(--radius-pill); }
+
+.rk-score { margin-top: 13px; background: var(--green-pale); border-radius: 14px; padding: 12px 14px; }
+.rk-score-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 10px; }
+.rk-score-cap { font-size: 10px; font-weight: 800; letter-spacing: .12em; color: var(--color-ink-soft); }
+.rk-score-num { font-family: "Zen Maru Gothic", sans-serif; font-size: 23px; font-weight: 800; color: var(--rk-gold); line-height: 1; }
+.rk-score-num small { font-size: 10px; font-weight: 600; color: var(--color-ink-softer); margin-left: 2px; }
+.rk-bars { display: flex; flex-direction: column; gap: 6px; }
+.rk-bar { display: flex; align-items: center; gap: 8px; font-size: 10.5px; }
+.rk-bar-label { width: 58px; flex-shrink: 0; color: var(--color-ink-soft); font-weight: 600; }
+.rk-bar-track { display: block; flex: 1; height: 5px; border-radius: var(--radius-pill); background: #E7E2D6; overflow: hidden; }
+.rk-bar-fill { display: block; height: 100%; border-radius: var(--radius-pill); background: var(--color-primary-pastel); }
+.rk-bar-val { width: 36px; flex-shrink: 0; text-align: right; font-weight: 700; color: var(--color-ink); }
+.rk-bar-val small { font-size: 9px; font-weight: 500; color: var(--color-ink-softer); }
+
+.rk-foryou { margin-top: 14px; }
+.rk-foryou-cap { font-size: 11px; font-weight: 800; letter-spacing: .03em; color: var(--color-primary-deep); margin-bottom: 7px; }
+.rk-foryou ul { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+.rk-foryou li { display: flex; gap: 8px; align-items: flex-start; font-size: 12px; color: var(--color-ink); line-height: 1.65; }
+.rk-foryou-check { flex-shrink: 0; margin-top: 3px; width: 15px; height: 15px; border-radius: 50%; background: var(--color-primary-pastel); color: #fff; display: flex; align-items: center; justify-content: center; }
+
+.rk-cta {
+  margin-top: 16px; display: flex; align-items: center; justify-content: space-between;
+  padding: 13px 14px 13px 18px; border-radius: 14px;
+  background: var(--color-primary-pastel); color: #5C3D1F;
+  font-size: 13px; font-weight: 700;
+  transition: background .18s ease, color .18s ease;
+}
+.rk-cta-arrow {
+  flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%; background: #fff;
+  display: flex; align-items: center; justify-content: center; color: var(--rk-gold);
+}
+@media (hover: hover) {
+  .rk-card:hover .rk-cta { background: var(--color-primary-mid); color: #fff; }
+}
+
+/* ========================================================== */
+/* OTHER OFFICES v3（事務所詳細・下部「他の事務所も比べてみる」）*/
+/* ========================================================== */
+.oo-sec { max-width: 720px; margin: 36px auto 0; padding: 0 22px; }
+.oo-head { margin-bottom: 14px; }
+.oo-kicker { display: inline-flex; align-items: center; gap: 8px; font-size: 10px; font-weight: 800; letter-spacing: .22em; color: var(--color-ink-soft); }
+.oo-kicker::before { content: ""; width: 18px; height: 1.5px; border-radius: 1px; background: var(--color-primary); }
+.oo-kicker::after { content: ""; width: 4px; height: 4px; border-radius: 50%; background: var(--color-primary-tint); }
+.oo-title { margin-top: 8px; font-size: 19px; font-weight: 800; color: var(--color-ink); letter-spacing: .01em; }
+
+.oo-list { display: flex; flex-direction: column; gap: 9px; }
+.oo-card {
+  display: flex; align-items: center; gap: 12px;
+  padding: 13px 14px; border-radius: 14px;
+  background: var(--color-paper); border: 1px solid var(--rk-border);
+  box-shadow: var(--shadow-v2-sm); color: inherit; text-decoration: none;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+@media (hover: hover) { .oo-card:hover { transform: translateY(-2px); box-shadow: var(--rk-shadow-hover); border-color: var(--rk-border-green); } }
+.oo-card:focus-visible { outline: 3px solid var(--color-primary-pastel); outline-offset: 2px; }
+.oo-rank { flex-shrink: 0; width: 40px; display: flex; align-items: center; gap: 3px; }
+.oo-crown { display: inline-flex; color: var(--rk-gold-bright); }
+.oo-rank-num { font-family: "Zen Maru Gothic", sans-serif; font-size: 16px; font-weight: 800; color: var(--color-ink-soft); }
+.oo-card--first .oo-rank-num { color: var(--rk-gold); }
+.oo-body { flex: 1; min-width: 0; }
+.oo-name { display: block; font-size: 13.5px; font-weight: 800; color: var(--color-ink); line-height: 1.4; }
+.oo-badge { display: inline-block; margin-top: 4px; padding: 1px 8px; border-radius: var(--radius-pill); background: var(--color-primary-tint); color: var(--color-primary-deep); font-size: 9px; font-weight: 700; }
+.oo-score { flex-shrink: 0; text-align: right; font-family: "Zen Maru Gothic", sans-serif; line-height: 1; }
+.oo-score b { font-size: 18px; font-weight: 800; color: var(--rk-gold); }
+.oo-score small { display: block; margin-top: 2px; font-size: 8.5px; font-weight: 600; color: var(--color-ink-softer); }
+.oo-arrow { flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%; background: var(--green-pale); display: flex; align-items: center; justify-content: center; color: var(--rk-gold); }
+
+.oo-more {
+  margin-top: 14px; display: flex; align-items: center; justify-content: center; gap: 10px;
+  padding: 16px 20px; border-radius: var(--radius-pill);
+  background: var(--color-primary-pastel); color: #5C3D1F;
+  font-size: 13.5px; font-weight: 800; letter-spacing: .01em; text-decoration: none;
+  box-shadow: 0 4px 14px rgba(46,70,40,0.12);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+@media (hover: hover) { .oo-more:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(46,70,40,0.18); } }
+.oo-more:focus-visible { outline: 3px solid var(--color-primary-deep); outline-offset: 2px; }
+.oo-more-arrow { flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: #fff; display: flex; align-items: center; justify-content: center; color: var(--rk-gold); }
