@@ -332,38 +332,20 @@ export function OfficeDetailLayout({
           ))}
         </div>
 
-        {/* CTA（pastel sage bg + ink text - パステル化） */}
-        <a href={o.applyUrl} target="_blank" rel="noopener noreferrer" style={{
-          marginTop: 18, display: "flex", alignItems: "center", justifyContent: "space-between",
-          padding: "14px 18px", borderRadius: 99,
-          background: L3G.sagePastel, color: "#5C3D1F",
-          fontSize: 13, fontWeight: 700, textDecoration: "none",
-          boxShadow: "0 4px 14px rgba(36,30,22,0.10)",
-        }}>
-          <span>公式サイトを見る</span>
-          <Icon.Arrow size={14} />
-        </a>
-        {o.isPR && (
-          <div style={{
-            marginTop: 6, textAlign: "center",
-            fontSize: 9.5, color: L3G.inkSofter, letterSpacing: 0.3,
-          }}>※ このボタンはPR（広告）リンクです</div>
-        )}
       </section>
 
-      {/* ===== Score Breakdown ===== */}
-      <section style={{ padding: "0 22px 24px", maxWidth: 720, margin: "0 auto" }}>
+      {/* ===== Score Breakdown（ランキングのSCOREボックスと統一） ===== */}
+      <section style={{ padding: "0 22px 16px", maxWidth: 720, margin: "0 auto" }}>
         <div style={{
-          background: L3G.paper, borderRadius: 14, padding: 18,
-          border: `1px solid ${L3G.rule}`,
+          background: "var(--green-pale)", borderRadius: 14, padding: "14px 16px",
         }}>
           <div style={{
             display: "flex", alignItems: "baseline", justifyContent: "space-between",
-            marginBottom: 14,
+            marginBottom: 12,
           }}>
-            <div style={{ fontSize: 15, fontWeight: 800, color: L3G.ink }}>5軸スコア</div>
+            <span style={{ fontSize: 11, fontWeight: 800, letterSpacing: ".12em", color: L3G.inkSoft }}>SCORE</span>
             <div style={{ textAlign: "right" }}>
-              <span style={{ fontSize: 28, fontWeight: 800, color: "#BE8A3C", lineHeight: 1 }}>
+              <span style={{ fontFamily: '"Zen Maru Gothic", sans-serif', fontSize: 27, fontWeight: 800, color: "#BE8A3C", lineHeight: 1 }}>
                 {o.score}
               </span>
               <span style={{ fontSize: 11, color: L3G.inkSoft, marginLeft: 3 }}>/100</span>
@@ -385,7 +367,7 @@ export function OfficeDetailLayout({
             ))}
           </div>
           <Link href="/hyoka-kijun" style={{
-            marginTop: 14, display: "inline-flex", alignItems: "center", gap: 5,
+            marginTop: 12, display: "inline-flex", alignItems: "center", gap: 5,
             fontSize: 11, fontWeight: 600, color: L3G.ink,
             borderBottom: `1px solid ${L3G.ink}`, paddingBottom: 1,
             textDecoration: "none",
@@ -395,6 +377,26 @@ export function OfficeDetailLayout({
           </Link>
         </div>
       </section>
+
+      {/* ===== 公式サイト CTA（スコア直下に配置） ===== */}
+      <div style={{ padding: "0 22px 8px", maxWidth: 720, margin: "0 auto" }}>
+        <a href={o.applyUrl} target="_blank" rel="noopener noreferrer" style={{
+          display: "flex", alignItems: "center", justifyContent: "space-between",
+          padding: "15px 18px", borderRadius: 99,
+          background: L3G.sagePastel, color: "#5C3D1F",
+          fontSize: 14, fontWeight: 700, textDecoration: "none",
+          boxShadow: "0 4px 14px rgba(36,30,22,0.10)",
+        }}>
+          <span>{o.name}の公式サイトを見る</span>
+          <Icon.Arrow size={14} />
+        </a>
+        {o.isPR && (
+          <div style={{
+            marginTop: 6, textAlign: "center",
+            fontSize: 9.5, color: L3G.inkSofter, letterSpacing: 0.3,
+          }}>※ このボタンはPR（広告）リンクです</div>
+        )}
+      </div>
 
       {/* ===== EDITORIAL（クリームの帯） ===== */}
       <div style={{ background: L3G.cream, padding: "26px 0", marginTop: 8 }}>
@@ -594,17 +596,8 @@ export function OfficeDetailLayout({
               <span className="oo-medal" aria-hidden="true">
                 <span className="oo-medal-crown">
                   <svg width="24" height="16" viewBox="0 0 26 18" aria-hidden="true">
-                    <defs>
-                      <linearGradient id="ooCrown" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0" stopColor="#F0D285" />
-                        <stop offset="1" stopColor="#C2923F" />
-                      </linearGradient>
-                    </defs>
-                    <path d="M3 14.2 L1.5 5 6.3 8.2 13 2 19.7 8.2 24.5 5 23 14.2 Z" fill="url(#ooCrown)" stroke="#A9762E" strokeWidth={0.5} strokeLinejoin="round" />
-                    <rect x="3.2" y="14" width="19.6" height="2.5" rx="1.25" fill="url(#ooCrown)" />
-                    <circle cx="13" cy="3.7" r="1.4" fill="#FFF6E2" />
-                    <circle cx="3.6" cy="4.3" r="1" fill="#FFF6E2" />
-                    <circle cx="22.4" cy="4.3" r="1" fill="#FFF6E2" />
+                    <path d="M3 14.2 L1.5 5 6.3 8.2 13 2 19.7 8.2 24.5 5 23 14.2 Z" fill="#C99A3E" />
+                    <rect x="3.2" y="13.6" width="19.6" height="2.6" rx="1.3" fill="#C99A3E" />
                   </svg>
                 </span>
                 <span className="oo-medal-circle">1</span>
