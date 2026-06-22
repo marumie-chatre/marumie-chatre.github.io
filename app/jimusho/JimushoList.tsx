@@ -41,7 +41,7 @@ type Office = {
 const OFFICES: Office[] = [
   {
     defaultRank: 1, name: "フェアリーテイル", slug: "ft", logo: "/logo-ft.png",
-    tags: ["ノンアダルト専門", "身バレ対策◎", "会話サポート"],
+    tags: ["業界初ノンアダルト専門", "女性スタッフ常駐", "身バレ対策◎"],
     forYou: [
       "ノンアダルト中心で始めたい方",
       "会話や見せ方のコツまで丁寧に教えてほしい方",
@@ -51,7 +51,7 @@ const OFFICES: Office[] = [
   },
   {
     defaultRank: 2, name: "ブライトグループ", slug: "bright-group", logo: "/logo-bright-group.png",
-    tags: ["全国展開", "老舗運営", "24時間サポート"],
+    tags: ["大手", "寮あり", "24時間スタッフ"],
     forYou: [
       "大手の安心感で選びたい方",
       "通いやすい店舗を見つけたい方",
@@ -61,7 +61,7 @@ const OFFICES: Office[] = [
   },
   {
     defaultRank: 3, name: "チャットスタイル", slug: "chatstyle", logo: "/logo-chatstyle.png",
-    tags: ["バーチャル対応", "現役スタッフ在籍", "都市部中心"],
+    tags: ["ノンアダルトOK", "バーチャル配信", "サポート手厚い"],
     forYou: [
       "バーチャル配信も気になる方",
       "顔出しや身バレに不安がある方",
@@ -71,7 +71,7 @@ const OFFICES: Office[] = [
   },
   {
     defaultRank: 4, name: "アットグループ", slug: "at-group", logo: "/logo-at-group.png",
-    tags: ["カフェ風空間", "店舗配信向け", "全国展開"],
+    tags: ["居心地重視", "完全個室", "顔出しなしOK"],
     forYou: [
       "カフェのような落ち着いた空間で配信したい方",
       "在宅よりも、店舗に通ってお仕事したい方",
@@ -81,7 +81,7 @@ const OFFICES: Office[] = [
   },
   {
     defaultRank: 5, name: "フレイバーグループ", slug: "flavor-group", logo: "/logo-flavor-group.png",
-    tags: ["全国展開", "老舗運営", "固定給制度あり"],
+    tags: ["老舗", "店舗数多い", "地方・通勤"],
     forYou: [
       "近くに通える店舗を探している方",
       "報酬の安定感も重視したい方",
@@ -91,7 +91,7 @@ const OFFICES: Office[] = [
   },
   {
     defaultRank: 6, name: "アリュール", slug: "allure", logo: "/logo-allure.png",
-    tags: ["時給保証あり", "収入重視", "サポートあり"],
+    tags: ["日給保証", "入店祝い金", "初心者向け"],
     forYou: [
       "時給保証制度がある事務所を検討したい方",
       "収入面を重視して比較したい方",
@@ -101,7 +101,7 @@ const OFFICES: Office[] = [
   },
   {
     defaultRank: 7, name: "NMRグループ", slug: "nmr-group", logo: "/logo-nmr-group.png",
-    tags: ["完全防音個室", "関東・東北中心", "店舗配信向け"],
+    tags: ["完全防音個室", "在宅・通勤切替", "条件が見える"],
     forYou: [
       "周りを気にせず配信できる環境を重視したい方",
       "関東・東北エリアで店舗を探している方",
@@ -111,7 +111,7 @@ const OFFICES: Office[] = [
   },
   {
     defaultRank: 8, name: "チャットレディJP", slug: "chatlady-jp", logo: "/logo-chatlady-jp.png",
-    tags: ["新宿・上野エリア", "美容機器あり", "時給保証あり"],
+    tags: ["比較プラットフォーム", "全国対応", "ノンアダルト可"],
     forYou: [
       "配信環境だけでなく、美容面のサポートも気になる方",
       "新宿・上野エリアで通える店舗を探している方",
@@ -121,7 +121,7 @@ const OFFICES: Office[] = [
   },
   {
     defaultRank: 9, name: "アスタリスク", slug: "asterisk", logo: "/logo-asterisk.png",
-    tags: ["女性スタッフ対応", "監視体制あり", "収入重視"],
+    tags: ["女性スタッフのみ", "高収入向け", "1日体験あり"],
     forYou: [
       "女性スタッフに相談できる環境を重視したい方",
       "高収入を目指せる事務所も比較したい方",
@@ -131,7 +131,7 @@ const OFFICES: Office[] = [
   },
   {
     defaultRank: 10, name: "ポケットワーク", slug: "pocket-work", logo: "/logo-pocket-work.png",
-    tags: ["在宅対応", "効率重視", "バーチャル対応"],
+    tags: ["在宅メイン", "即日払い", "アダルト寄り"],
     forYou: [
       "在宅でコツコツ配信したい方",
       "在宅サポートを重視したい方に",
@@ -141,7 +141,7 @@ const OFFICES: Office[] = [
   },
   {
     defaultRank: 11, name: "ライバーサポートグループ", slug: "liver-support", logo: "/logo-liver-support.png",
-    tags: ["広域展開", "老舗運営", "福利厚生あり"],
+    tags: ["FANZA正規代理店", "無料寮あり", "福利厚生"],
     forYou: [
       "福利厚生の内容も確認して選びたい方",
       "運営歴のある事務所を比較したい方",
