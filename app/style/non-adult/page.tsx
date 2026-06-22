@@ -140,7 +140,7 @@ export default function StyleNonAdultPage() {
           <li><strong>1年以降</strong>：月40〜70万円（中堅層）</li>
           <li><strong>トップ層（2年以上・常連多数）</strong>：月<strong>100万円以上</strong></li>
         </ul>
-        <p>→ <strong>ノンアダルト専門事務所のトップ層は月100万円を超える方も実在</strong>します。業界には「<strong>ノンアダルトで月間売上1位</strong>」を輩出している事務所もあり、ノンアダルトでも十分にトップを狙えます。</p>
+        <p>→ <strong>ノンアダルト専門事務所のトップ層には月100万円を超える方もいます</strong>。業界には「<strong>ノンアダルトで月間売上1位</strong>」を輩出している事務所もあり、ノンアダルトでも十分にトップを狙えます。</p>
 
         <h3>ノンアダルトが向いている人</h3>
         <ul>
@@ -306,7 +306,7 @@ export default function StyleNonAdultPage() {
         <h2>ノンアダルトでよく聞かれる不安と答え</h2>
 
         <h3>Q. ノンアダルトでも本当に稼げますか？</h3>
-        <p>A. <strong>時間をかければ稼げます</strong>。ノンアダルト専門の事務所には<strong>月100万円以上のキャストも実在</strong>します。ただし、<strong>最初の3-6ヶ月は月3-10万円程度</strong>で、ここから常連さんを育てていく仕事です。「<strong>短期間で大金を稼ぎたい</strong>」方には向きません。</p>
+        <p>A. <strong>時間をかければ稼げます</strong>。ノンアダルト専門の事務所には<strong>月100万円以上のキャストもいます</strong>。ただし、<strong>最初の3-6ヶ月は月3-10万円程度</strong>で、ここから常連さんを育てていく仕事です。「<strong>短期間で大金を稼ぎたい</strong>」方には向きません。</p>
 
         <h3>Q. 「ノンアダルトOK」と書いてあれば安心ですか？</h3>
         <p>A. <strong>安心とは限りません</strong>。「対応」事務所は、<strong>現場でアダルトを勧められる</strong>ケースがあります。<strong>「専門」かどうか</strong>を必ず確認してください。フェアリーテイルのように、<strong>「ノンアダルト専門店」</strong>を明示している事務所が最も確実です。</p>
@@ -385,7 +385,7 @@ export default function StyleNonAdultPage() {
         <p>ノンアダルトは、<strong>「対応」と「専門」で全く違う</strong>働き方になります。派手な数字に惹かれて「対応」事務所を選ぶと、<strong>現場でアダルトを勧められる</strong>リスクがあります。<strong>「専門」を選べば、真面目に長く続けられる</strong>仕事です。私自身、フェアリーテイル所属で4年続けてきましたが、<strong>ノンアダルト専門の環境だからこそ安心して続けられている</strong>と実感しています。</p>
 
         <p style={{display:"flex", flexDirection:"column", gap:"12px", marginTop:"24px"}}>
-          <Link href="/jimusho" className="btn-main">掲載事務所の比較ランキングを見る →</Link>
+          <Link href="/jimusho" className="btn-main">自分に合う事務所を比較ランキングで見る →</Link>
           <Link href="/jimusho/ft" className="btn-main">フェアリーテイル（ノンアダルト専門・1000項目ノウハウ）の詳細を見る →</Link>
           <Link href="/jimusho/at-group" className="btn-main">アットグループ（アダルトもノンアダルトも扱う大手・公式がノンアダルト積極採用）の詳細を見る →</Link>
           <Link href="/jimusho/bright-group" className="btn-main">ブライトグループ（FANZAノンアダルトトップランカー輩出・老舗20年）の詳細を見る →</Link>

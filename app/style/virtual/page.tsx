@@ -354,7 +354,7 @@ export default function StyleVirtualPage() {
         <p>「<strong>もう少し集客力もほしい</strong>」「<strong>アダルトを絶対避けたい＋顔バレ対策もしたい</strong>」という方は、<strong>マスク配信×ノンアダルト専門のフェアリーテイル</strong>も選択肢に入れてみてください。私自身、フェアリーテイル所属で4年続けてきましたが、<strong>マスク配信のキャストが多数活躍している</strong>のを実感しています。</p>
 
         <p style={{display:"flex", flexDirection:"column", gap:"12px", marginTop:"24px"}}>
-          <Link href="/jimusho" className="btn-main">掲載事務所の比較ランキングを見る →</Link>
+          <Link href="/jimusho" className="btn-main">自分に合う事務所を比較ランキングで見る →</Link>
           <Link href="/jimusho/chatstyle" className="btn-main">チャットスタイル（バーチャル特化・会話技術指導）の詳細を見る →</Link>
           <Link href="/jimusho/pocket-work" className="btn-main">ポケットワーク（在宅最大手・24時間女性スタッフサポート）の詳細を見る →</Link>
           <Link href="/jimusho/chatlady-jp" className="btn-main">チャットレディJP（バーチャル＋通勤対応・職場バレ対策）の詳細を見る →</Link>
