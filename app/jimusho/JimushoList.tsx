@@ -5,24 +5,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { Icon } from "../Icon";
 
-// Palette E カラー（インライン使用用）
+// Palette E カラー（並び替えタブのインライン使用用）
 const G = {
-  bg: "#FBF7F0",
   paper: "#FFFFFF",
-  ink: "#3A2A20",
   inkSoft: "#87796A",
-  inkSofter: "#B5AC9B",
-  sage: "#7BAA3F",
   sageDeep: "#587A38",
-  sageSoft: "#CDDDB0",
   sagePastel: "#A8C49A",
-  sagePastelText: "#8FAD7F",
-  cream: "#F8EFE0",
-  bgPale: "#F0F5E8",
-  brown: "#5C3D1F",
-  gold: "#C9923F",
   border: "#E2EBDD",
-  rule: "rgba(58,42,32,0.10)",
 };
 
 // 11事務所データ
@@ -221,7 +210,7 @@ export default function JimushoList() {
                 whiteSpace: "nowrap",
                 transition: "background 0.18s, color 0.18s, border-color 0.18s",
                 background: isActive ? G.sagePastel : "#fff",
-                color: isActive ? G.sageDeep : G.sageDeep,
+                color: G.sageDeep,
                 border: isActive
                   ? `1.5px solid ${G.sagePastel}`
                   : `1px solid ${G.border}`,
@@ -237,9 +226,8 @@ export default function JimushoList() {
       <p
         aria-live="polite"
         style={{
-          margin: "0 20px 16px",
+          margin: "0 auto 16px",
           maxWidth: 760,
-          marginLeft: "auto", marginRight: "auto",
           padding: "0 20px",
           fontSize: 12, lineHeight: 1.7, color: G.inkSoft,
           textAlign: "center",
@@ -249,212 +237,86 @@ export default function JimushoList() {
         {activeTabDesc}
       </p>
 
-      {/* ===== カード一覧 ===== */}
-      <section style={{
-        padding: "8px 20px 0",
-        maxWidth: 760,
-        margin: "0 auto",
-        display: "flex",
-        flexDirection: "column",
-        gap: 22,
-      }}>
+      {/* ===== カード一覧（ランキング v3・クラスベース） ===== */}
+      <section className="rk-list">
         {sorted.map((o, idx) => {
           const displayRank = idx + 1;
           const isTopRecommend = o.slug === "ft" && sortKey === "total" && displayRank === 1;
+          const isFirst = displayRank === 1;
           return (
             <article
               key={o.slug}
+              className={`rk-card${isFirst ? " rk-card--first" : ""}`}
               data-score-total={o.scores.total}
               data-score-safety={o.scores.safety}
               data-score-support={o.scores.support}
               data-score-beginner={o.scores.beginner}
               data-score-work={o.scores.work}
               data-score-earning={o.scores.earning}
-              style={{
-                position: "relative",
-                background: G.paper,
-                border: `1px solid ${G.border}`,
-                borderRadius: 20,
-                boxShadow: "0 2px 12px rgba(58,42,32,0.04)",
-                // overflow: hidden は badge（top:-13）を切り落とすので付けない
-              }}
             >
-              {/* カード全体をリンク化（padding を Link 内に移し、視覚を変えずクリック領域だけ拡張） */}
               <Link
                 href={`/jimusho/${o.slug}`}
                 aria-label={`${o.name} の詳細・口コミを見る`}
-                style={{
-                  display: "block",
-                  padding: 18,
-                  textDecoration: "none",
-                  color: "inherit",
-                  cursor: "pointer",
-                }}
+                className="rk-link"
               >
-              {/* 初心者に最もおすすめ badge（ft × 総合 のみ） */}
-              {isTopRecommend && (
-                <div style={{
-                  position: "absolute", top: -13, left: 14,
-                  display: "inline-flex", alignItems: "center", gap: 6,
-                  padding: "5px 14px", borderRadius: 99,
-                  background: "linear-gradient(135deg, #E8B85B 0%, #C9923F 100%)",
-                  color: "#fff",
-                  fontSize: 11, fontWeight: 800, letterSpacing: 1,
-                  boxShadow: "0 4px 12px rgba(180,135,50,0.32)",
-                }}>
-                  初心者に最もおすすめ
+                {isFirst && (
+                  <span className="rk-crown"><Icon.Crown size={15} />1位</span>
+                )}
+                {isTopRecommend && <span className="rk-badge">初心者におすすめ</span>}
+
+                <div className="rk-head">
+                  <div className="rk-rank">
+                    <span className="rk-rank-label">No.</span>
+                    <span className="rk-rank-num">{displayRank}</span>
+                  </div>
+                  <div className="rk-logo">
+                    <Image src={o.logo} alt={`${o.name} ロゴ`} width={120} height={120} />
+                  </div>
+                  <h3 className="rk-name">{o.name}</h3>
                 </div>
-              )}
 
-              {/* 1. No.{rank} */}
-              <div style={{
-                display: "inline-block",
-                fontSize: 11, fontWeight: 800, letterSpacing: 0.5,
-                color: G.sageDeep,
-                padding: "3px 10px",
-                borderRadius: 99,
-                background: G.bgPale,
-                whiteSpace: "nowrap",
-                marginBottom: 14,
-                marginTop: isTopRecommend ? 8 : 0,
-              }}>
-                No.{displayRank}
-              </div>
-
-              {/* 2-3. ロゴ + 事務所名 横並び */}
-              <div style={{
-                display: "flex", gap: 14, alignItems: "center",
-                marginBottom: 10,
-              }}>
-                <div style={{
-                  width: 64, height: 64, borderRadius: 12,
-                  background: G.bgPale,
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  overflow: "hidden", flexShrink: 0,
-                  border: `1px solid ${G.border}`,
-                }}>
-                  <Image
-                    src={o.logo}
-                    alt={`${o.name} ロゴ`}
-                    width={120}
-                    height={120}
-                    style={{ width: "100%", height: "100%", objectFit: "contain", padding: 6 }}
-                  />
+                <div className="rk-tags">
+                  {o.tags.map(t => <span key={t} className="rk-tag">{t}</span>)}
                 </div>
-                <h3 style={{
-                  margin: 0,
-                  fontSize: 17, fontWeight: 800,
-                  color: G.ink, lineHeight: 1.4,
-                  letterSpacing: -0.2,
-                }}>{o.name}</h3>
-              </div>
 
-              {/* 4-5. 特徴タグ（横並び） */}
-              <div style={{
-                display: "flex", flexWrap: "wrap", gap: 5,
-                marginBottom: 14,
-              }}>
-                {o.tags.map(t => (
-                  <span key={t} style={{
-                    fontSize: 10.5, fontWeight: 600,
-                    color: G.sageDeep,
-                    padding: "3px 9px", borderRadius: 99,
-                    background: G.sageSoft,
-                  }}>{t}</span>
-                ))}
-              </div>
-
-              {/* 6. スコア表（5軸） */}
-              <div style={{
-                background: G.bgPale,
-                padding: "12px 14px",
-                borderRadius: 12,
-                marginBottom: 14,
-              }}>
-                <div style={{
-                  display: "flex", alignItems: "baseline", justifyContent: "space-between",
-                  marginBottom: 10,
-                }}>
-                  <div style={{
-                    fontSize: 10, fontWeight: 800, letterSpacing: 1,
-                    color: G.sageDeep,
-                  }}>SCORE</div>
-                  <div>
-                    <span style={{ fontSize: 22, fontWeight: 800, color: G.brown, lineHeight: 1 }}>
-                      {o.scores.total}
-                    </span>
-                    <span style={{ fontSize: 10, color: G.inkSoft, marginLeft: 3 }}>/100</span>
+                <div className="rk-score">
+                  <div className="rk-score-head">
+                    <span className="rk-score-cap">SCORE</span>
+                    <span className="rk-score-num">{o.scores.total}<small>/100</small></span>
+                  </div>
+                  <div className="rk-bars">
+                    {AXIS_META.map(a => {
+                      const v = o.scores[a.key];
+                      const pct = (v / a.max) * 100;
+                      return (
+                        <div key={a.key} className="rk-bar">
+                          <span className="rk-bar-label">{a.label}</span>
+                          <span className="rk-bar-track">
+                            <span className="rk-bar-fill" style={{ width: `${pct}%` }} />
+                          </span>
+                          <span className="rk-bar-val">{v}<small>/{a.max}</small></span>
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
-                <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-                  {AXIS_META.map(a => {
-                    const v = o.scores[a.key];
-                    const pct = (v / a.max) * 100;
-                    return (
-                      <div key={a.key} style={{
-                        display: "flex", alignItems: "center", gap: 8, fontSize: 10.5,
-                      }}>
-                        <span style={{ width: 62, color: G.inkSoft, fontWeight: 600 }}>{a.label}</span>
-                        <div style={{
-                          flex: 1, height: 5, borderRadius: 99,
-                          background: "rgba(58,42,32,0.06)", overflow: "hidden",
-                        }}>
-                          <div style={{
-                            width: `${pct}%`, height: "100%",
-                            background: G.sagePastel, borderRadius: 99,
-                          }} />
-                        </div>
-                        <span style={{
-                          width: 36, textAlign: "right", fontWeight: 700, color: G.ink,
-                        }}>
-                          {v}<span style={{ color: G.inkSofter, fontWeight: 500, fontSize: 9 }}>/{a.max}</span>
-                        </span>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
 
-              {/* 7. こんな方におすすめ */}
-              <div style={{ marginBottom: 16 }}>
-                <div style={{
-                  fontSize: 11, fontWeight: 800, color: G.sageDeep,
-                  letterSpacing: 0.5, marginBottom: 8,
-                }}>
-                  こんな方におすすめ
+                <div className="rk-foryou">
+                  <div className="rk-foryou-cap">こんな方におすすめ</div>
+                  <ul>
+                    {o.forYou.map((line, i) => (
+                      <li key={i}>
+                        <span className="rk-foryou-check"><Icon.Check size={9} /></span>
+                        <span>{line}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
-                  {o.forYou.map((line, i) => (
-                    <li key={i} style={{
-                      display: "flex", alignItems: "flex-start", gap: 8,
-                      padding: "4px 0",
-                      fontSize: 12, color: G.ink, lineHeight: 1.65,
-                    }}>
-                      <span style={{
-                        flexShrink: 0, marginTop: 4,
-                        width: 14, height: 14, borderRadius: "50%",
-                        background: G.sagePastel,
-                        display: "flex", alignItems: "center", justifyContent: "center",
-                        color: G.sageDeep,
-                      }}>
-                        <Icon.Check size={8} />
-                      </span>
-                      <span>{line}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
 
-              {/* 8. 詳細・口コミを見るボタン（視覚装飾／カード全体がリンクなので入れ子リンクは作らない） */}
-              <div aria-hidden="true" style={{
-                display: "flex", alignItems: "center", justifyContent: "space-between",
-                padding: "13px 18px",
-                background: G.sagePastel, color: G.brown,
-                borderRadius: 12, fontSize: 13, fontWeight: 700,
-              }}>
-                <span>詳細・口コミを見る</span>
-                <Icon.Arrow size={14} />
-              </div>
+                <div className="rk-cta" aria-hidden="true">
+                  <span>詳細・口コミを見る</span>
+                  <span className="rk-cta-arrow"><Icon.Arrow size={13} /></span>
+                </div>
               </Link>
             </article>
           );

@@ -562,39 +562,30 @@ export function OfficeDetailLayout({
       </div>
 
       {/* ===== OTHER OFFICES ===== */}
-      <div style={{ padding: "0 22px", maxWidth: 720, margin: "32px auto 0" }}>
-        <L3SectionHeader kicker="OTHER OFFICES" title="他の事務所も比べてみる" />
-        <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+      <div className="oo-sec">
+        <div className="oo-head">
+          <span className="oo-kicker">OTHER OFFICES</span>
+          <h2 className="oo-title">他の事務所も比べてみる</h2>
+        </div>
+        <div className="oo-list">
           {relatedOffices.map(r => (
-            <Link href={`/jimusho/${r.slug}`} key={r.slug} style={{
-              display: "flex", alignItems: "center", gap: 12,
-              padding: "12px 14px",
-              background: L3G.paper, border: `1px solid ${L3G.rule}`, borderRadius: 12,
-              textDecoration: "none", color: L3G.ink,
-            }}>
-              <div style={{
-                fontSize: 16, fontWeight: 800, color: L3G.inkSoft, width: 26,
-              }}>{r.rank}</div>
-              <div style={{ flex: 1, minWidth: 0 }}>
-                <div style={{ fontSize: 13.5, fontWeight: 800, color: L3G.ink }}>{r.name}</div>
-                {r.badge && (
-                  <span style={{ display: "inline-block", marginTop: 4, fontSize: 9, fontWeight: 700, color: L3G.sageDeep, background: L3G.sageSoft, padding: "1px 8px", borderRadius: 99 }}>{r.badge}</span>
-                )}
-              </div>
-              <div style={{
-                fontSize: 16, fontWeight: 800, color: L3G.ink,
-              }}>{r.score}</div>
-              <Icon.Arrow size={12} />
+            <Link href={`/jimusho/${r.slug}`} key={r.slug} className={`oo-card${r.rank === 1 ? " oo-card--first" : ""}`}>
+              <span className="oo-rank">
+                {r.rank === 1 && <span className="oo-crown"><Icon.Crown size={14} /></span>}
+                <span className="oo-rank-num">{r.rank}</span>
+              </span>
+              <span className="oo-body">
+                <span className="oo-name">{r.name}</span>
+                {r.badge && <span className="oo-badge">{r.badge}</span>}
+              </span>
+              <span className="oo-score"><b>{r.score}</b><small>点</small></span>
+              <span className="oo-arrow"><Icon.Arrow size={12} /></span>
             </Link>
           ))}
         </div>
-        <Link href="/jimusho" style={{
-          marginTop: 12, display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
-          padding: 12, border: `1px solid ${L3G.rule}`, borderRadius: 99,
-          fontSize: 12, fontWeight: 600, color: L3G.ink, textDecoration: "none",
-        }}>
+        <Link href="/jimusho" className="oo-more">
           事務所の比較ランキングを見る
-          <Icon.Arrow size={12} />
+          <span className="oo-more-arrow"><Icon.Arrow size={14} /></span>
         </Link>
       </div>
 
