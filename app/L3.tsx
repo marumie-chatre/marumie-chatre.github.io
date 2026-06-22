@@ -402,7 +402,7 @@ export function OfficeDetailLayout({
           <div style={{ fontSize: 9.5, fontWeight: 800, color: L3G.sageDeep, letterSpacing: 1.5, marginBottom: 5 }}>
             GOOD
           </div>
-          <p style={{ margin: 0, fontSize: 12, lineHeight: 1.9, color: L3G.ink }}>{o.goodComment}</p>
+          <p style={{ margin: 0, fontSize: 13, lineHeight: 2.05, color: L3G.ink }}>{o.goodComment}</p>
         </div>
         <div style={{
           padding: "14px 16px",
@@ -412,14 +412,14 @@ export function OfficeDetailLayout({
           <div style={{ fontSize: 9.5, fontWeight: 800, color: L3G.accentDeep, letterSpacing: 1.5, marginBottom: 5 }}>
             正直なひとこと
           </div>
-          <p style={{ margin: 0, fontSize: 12, lineHeight: 1.9, color: L3G.ink }}>{o.honestComment}</p>
+          <p style={{ margin: 0, fontSize: 13, lineHeight: 2.05, color: L3G.ink }}>{o.honestComment}</p>
         </div>
       </section>
       </div>
 
       {o.note && (
         <div style={{ padding: "0 22px", maxWidth: 720, margin: "16px auto 0" }}>
-          <p style={{ fontSize: 11, lineHeight: 1.85, color: L3G.inkSoft, background: L3G.bgWarm, borderRadius: 10, padding: "12px 14px", margin: 0 }}>※ {o.note}</p>
+          <p style={{ fontSize: 11.5, lineHeight: 1.95, color: L3G.inkSoft, background: L3G.bgWarm, borderRadius: 10, padding: "12px 14px", margin: 0 }}>※ {o.note}</p>
         </div>
       )}
 
@@ -446,7 +446,7 @@ export function OfficeDetailLayout({
             {o.story.paragraphs.map((p, i) => (
               <p key={i} style={{
                 margin: i === 0 ? 0 : "12px 0 0",
-                fontSize: 12.5, lineHeight: 1.95,
+                fontSize: 13.5, lineHeight: 2.05,
                 color: i === 0 ? L3G.ink : L3G.inkSoft,
               }}>{renderMarker(p)}</p>
             ))}
@@ -484,7 +484,7 @@ export function OfficeDetailLayout({
                 )}
                 <div style={{ flex: 1, minWidth: 0 }}>
                   <div style={{ fontSize: 14, fontWeight: 800, color: L3G.sageDeep }}>{f.t}</div>
-                  <div style={{ fontSize: 11, color: L3G.inkSoft, marginTop: 5, lineHeight: 1.7 }}>{f.d}</div>
+                  <div style={{ fontSize: 12, color: L3G.inkSoft, marginTop: 5, lineHeight: 1.85 }}>{f.d}</div>
                 </div>
               </div>
               );
@@ -505,7 +505,7 @@ export function OfficeDetailLayout({
             {o.basic.map((row, i) => (
               <div key={i} style={{
                 display: "grid", gridTemplateColumns: "100px 1fr",
-                fontSize: 11.5,
+                fontSize: 12.5,
                 borderBottom: i < o.basic.length - 1 ? `1px solid ${L3G.rule}` : "none",
               }}>
                 <div style={{
@@ -564,24 +564,71 @@ export function OfficeDetailLayout({
       {/* ===== OTHER OFFICES ===== */}
       <div className="oo-sec">
         <div className="oo-head">
-          <span className="oo-kicker">OTHER OFFICES</span>
+          <span className="oo-kicker">
+            <svg className="oo-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth={1.4} strokeLinecap="round" aria-hidden="true">
+              <path d="M10 18 V7" />
+              <path d="M10 11c0-2.5 1.6-4 4.5-4.3C14.3 9 12.7 10.6 10 11z" fill="currentColor" stroke="none" />
+              <path d="M10 8.5C10 6 8.4 4.6 5.5 4.3 5.7 6.7 7.3 8.2 10 8.5z" fill="currentColor" stroke="none" />
+            </svg>
+            OTHER OFFICES
+          </span>
           <h2 className="oo-title">他の事務所も比べてみる</h2>
+          <div className="oo-divider" aria-hidden="true">
+            <span className="oo-divider-line" />
+            <svg className="oo-diamond" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true">
+              <path d="M6 0l1.4 4.6L12 6l-4.6 1.4L6 12l-1.4-4.6L0 6l4.6-1.4z" />
+            </svg>
+          </div>
         </div>
         <div className="oo-list">
-          {relatedOffices.map(r => (
-            <Link href={`/jimusho/${r.slug}`} key={r.slug} className={`oo-card${r.rank === 1 ? " oo-card--first" : ""}`}>
-              <span className="oo-rank">
-                {r.rank === 1 && <span className="oo-crown"><Icon.Crown size={14} /></span>}
-                <span className="oo-rank-num">{r.rank}</span>
-              </span>
-              <span className="oo-body">
-                <span className="oo-name">{r.name}</span>
-                {r.badge && <span className="oo-badge">{r.badge}</span>}
-              </span>
-              <span className="oo-score"><b>{r.score}</b><small>点</small></span>
-              <span className="oo-arrow"><Icon.Arrow size={12} /></span>
-            </Link>
-          ))}
+          {relatedOffices.map(r => {
+            const first = r.rank === 1;
+            return (
+              <Link href={`/jimusho/${r.slug}`} key={r.slug} className={`oo-card${first ? " oo-card--first" : ""}`}>
+                {first ? (
+                  <span className="oo-medal" aria-hidden="true">
+                    <svg className="oo-laurel" viewBox="0 0 60 54" fill="none" aria-hidden="true" style={{ color: "#D9B872" }}>
+                      <g stroke="currentColor" strokeWidth={1.4} strokeLinecap="round">
+                        <path d="M19 49C10 44 7 33 12 25" />
+                        <path d="M41 49C50 44 53 33 48 25" />
+                      </g>
+                      <g fill="currentColor">
+                        <ellipse cx="12" cy="42" rx="3.2" ry="1.7" transform="rotate(45 12 42)" />
+                        <ellipse cx="10.5" cy="36" rx="3.2" ry="1.7" transform="rotate(25 10.5 36)" />
+                        <ellipse cx="11" cy="29.5" rx="3" ry="1.6" transform="rotate(8 11 29.5)" />
+                        <ellipse cx="48" cy="42" rx="3.2" ry="1.7" transform="rotate(-45 48 42)" />
+                        <ellipse cx="49.5" cy="36" rx="3.2" ry="1.7" transform="rotate(-25 49.5 36)" />
+                        <ellipse cx="49" cy="29.5" rx="3" ry="1.6" transform="rotate(-8 49 29.5)" />
+                      </g>
+                    </svg>
+                    <span className="oo-medal-crown">
+                      <svg width="22" height="15" viewBox="0 0 24 16" fill="#E5B756" aria-hidden="true">
+                        <path d="M2 13.5h20l-1.4-9-4.6 3.8L12 2 8 8.3 3.4 4.5z" />
+                        <circle cx="3" cy="3.5" r="1.5" />
+                        <circle cx="21" cy="3.5" r="1.5" />
+                        <circle cx="12" cy="1.5" r="1.6" />
+                      </svg>
+                    </span>
+                    <span className="oo-medal-circle">1</span>
+                  </span>
+                ) : (
+                  <span className="oo-rank-dot">{r.rank}</span>
+                )}
+                <span className="oo-body">
+                  <span className="oo-name">{r.name}</span>
+                  {r.badge && <span className="oo-badge">{r.badge}</span>}
+                </span>
+                <span className="oo-score"><b>{r.score}</b></span>
+                <span className="oo-arrow"><Icon.Arrow size={12} /></span>
+                {first && (
+                  <svg className="oo-leaf-bg" viewBox="0 0 80 80" fill="currentColor" aria-hidden="true">
+                    <path d="M72 10C56 14 47 25 45 42c13-2 22-11 27-32z" />
+                    <path d="M63 30C51 34 45 43 44 55c11-2 18-10 19-25z" opacity=".7" />
+                  </svg>
+                )}
+              </Link>
+            );
+          })}
         </div>
         <Link href="/jimusho" className="oo-more">
           事務所の比較ランキングを見る

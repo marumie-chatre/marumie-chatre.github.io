@@ -260,9 +260,11 @@ export default function JimushoList() {
                 className="rk-link"
               >
                 {isFirst && (
-                  <span className="rk-crown"><Icon.Crown size={15} />1位</span>
+                  <span className="rk-crown">
+                    <Icon.Crown size={15} />
+                    {isTopRecommend ? <><b>総合1位</b>｜初心者に最もおすすめ</> : <b>{displayRank}位</b>}
+                  </span>
                 )}
-                {isTopRecommend && <span className="rk-badge">初心者におすすめ</span>}
 
                 <div className="rk-head">
                   <div className="rk-rank">
