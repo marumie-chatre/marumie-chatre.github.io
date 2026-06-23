@@ -31,10 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // 静的ページ（法務・概要系）
   const staticPages: { slug: string; priority: number; freq: "weekly" | "monthly" | "yearly" }[] = [
-    { slug: "houshin",     priority: 0.6, freq: "monthly" },
-    { slug: "hyoka-kijun", priority: 0.6, freq: "monthly" },
-    { slug: "profile",     priority: 0.5, freq: "monthly" },
-    { slug: "guideline",   priority: 0.4, freq: "monthly" },
+    { slug: "profile",     priority: 0.6, freq: "monthly" },
     { slug: "yougo",       priority: 0.5, freq: "monthly" },
     { slug: "privacy",     priority: 0.3, freq: "yearly" },
     { slug: "terms",       priority: 0.3, freq: "yearly" },

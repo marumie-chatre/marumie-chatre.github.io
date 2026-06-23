@@ -437,7 +437,7 @@ export default function Home() {
           image="/top-title-ranking.png"
         />
         <div style={{ marginTop: 8, textAlign: "right" }}>
-          <Link href="/hyoka-kijun" style={{
+          <Link href="/profile#hyoka" style={{
             display: "inline-flex", alignItems: "center", gap: 4,
             fontSize: 12, fontWeight: 700, color: G.ink,
             borderBottom: `1px solid ${G.ink}`, paddingBottom: 1,
@@ -610,7 +610,7 @@ export default function Home() {
             })}
           </div>
         </div>
-        <Link href="/hyoka-kijun" style={{
+        <Link href="/profile#hyoka" style={{
           marginTop: 14, display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
           padding: 12, border: `1px solid ${G.rule}`, borderRadius: 99,
           fontSize: 12, fontWeight: 600, color: G.ink, textDecoration: "none",

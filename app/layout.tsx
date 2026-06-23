@@ -122,10 +122,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <div className="footer-tag">ちゃんと選びたい人のための事務所比較サイト</div>
               </div>
               <div className="footer-links">
-                <Link href="/houshin">私たちの約束</Link>
-                <Link href="/hyoka-kijun">評価基準について</Link>
-                <Link href="/profile">運営者プロフィール</Link>
-                <Link href="/guideline">口コミガイドライン</Link>
+                <Link href="/profile">運営方針・プロフィール</Link>
+                <Link href="/profile#hyoka">評価基準について</Link>
+                <Link href="/profile#kuchikomi">口コミ投稿ガイドライン</Link>
                 <Link href="/privacy">プライバシーポリシー</Link>
                 <Link href="/tokushoho">特定商取引法表記</Link>
                 <Link href="/terms">利用規約</Link>

@@ -111,7 +111,7 @@ export default function KuchikomiPage() {
           <p style={{fontSize:"14px", color:"var(--text-muted)", marginBottom:"12px"}}>
             口コミの審査基準・掲載ルールについては
           </p>
-          <Link href="/guideline" className="btn-sub">口コミガイドラインを確認する →</Link>
+          <Link href="/profile#kuchikomi" className="btn-sub">口コミガイドラインを確認する →</Link>
         </div>
       </section>
     </main>
