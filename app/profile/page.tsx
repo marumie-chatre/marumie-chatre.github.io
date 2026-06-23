@@ -13,9 +13,9 @@ export const metadata = {
 
 // 3つの約束
 const PROMISES = [
-  { n: "01", t: "広告費で順位は変えません", d: "おすすめ順は、公開している5つの評価基準だけで決めます。広告費の多さで順位は動かしません。", Icon: IconShieldCheck },
-  { n: "02", t: "良い点も、気になる点も、両方書きます", d: "お店の魅力だけでなく、応募前に知っておきたい“気になる点”も正直に。片方しか書かないのは、求人広告と同じになってしまうから。", Icon: IconScale },
-  { n: "03", t: "検証と実体験をもとに書きます", d: "書き手は、業界を実際に見てきた経験者です。調べたこと・体験したことをもとに、感覚ではなく根拠のある言葉でお伝えします。", Icon: IconSearch },
+  { n: "01", t: "広告費で順位は変えません", d: "おすすめ順は、公開した5つの評価基準だけで決めます。広告費の多さで順位は動かしません。", Icon: IconShieldCheck },
+  { n: "02", t: "良いことも気になることも、両方書きます", d: "お店の魅力だけでなく、応募前に知っておきたい気になることも正直に。ちゃんと選んで応募してほしいからこそ、公平さを大事にしています。", Icon: IconScale },
+  { n: "03", t: "検証と実体験をもとに書きます", d: "書き手は業界を見てきた経験者です。調べたこと・体験したことをもとに、根拠のある言葉でお伝えします。", Icon: IconSearch },
 ];
 
 // 評価の5軸
@@ -70,7 +70,7 @@ export default function ProfilePage() {
           <h1 style={{
             fontFamily: "'Zen Maru Gothic', sans-serif",
             fontWeight: 900, fontSize: 27, lineHeight: 1.45, color: MM.ink, margin: "8px 0 0",
-          }}>広告ではなく、<br />ほんとうのことを。</h1>
+          }}>ほんとうのことを、<br />わかりやすく。</h1>
           <p style={{ fontSize: 13, lineHeight: 1.95, color: MM.text, margin: "14px 0 0" }}>
             まるみえチャトレは、<strong>真面目に働きたい女性が、安心してお店を選べるように</strong>作った比較メディアです。私たちが大事にしているのは、たったひとつ。<strong>広告のためではなく、ほんとうのことを書く</strong>ということ。
           </p>
@@ -99,18 +99,19 @@ export default function ProfilePage() {
         <section style={{ paddingTop: 34 }}>
           <H2>なぜ、このサイトを作ったのか</H2>
           <p style={{ fontSize: 13, lineHeight: 1.95, margin: 0 }}>
-            私がチャットレディを知ったのは、生活に少し余裕がほしくて副業を探していた時でした。でも調べてみると、求人には「簡単に稼げる」「高収入」の言葉ばかり。一方で口コミには「思ったより稼げなかった」「スタッフ対応が合わなかった」という声も。<strong>良い情報と悪い情報の差が大きく、何を信じていいか分からない</strong>——応募ボタンを押すまで、かなり悩みました。
+私がチャットレディを知ったのは、副業を探していた時。でも調べると、求人は「簡単に稼げる」ばかりで、口コミには「思ったより稼げなかった」の声も。<strong>何を信じていいか分からず</strong>、応募ボタンを押すまで悩みました。
           </p>
           <p style={{ fontSize: 13, lineHeight: 1.95, margin: "14px 0 0" }}>
-            チャットレディの求人サイトやランキングは、<strong>広告費やアフィリエイト報酬で順位が決まっていること</strong>があります。「一番おすすめ」が、実は一番広告費を払っただけ、ということも。だからまるみえチャトレは、<strong>入ってからじゃないと分からないことを、先に正直に伝える</strong>ことにしました。
+求人サイトやランキングは、<strong>広告費で順位が決まっていること</strong>があります。「一番おすすめ」が、実は一番広告費を払っただけ、ということも。だからこのサイトは、<strong>入る前に分からないことを、先に正直に伝えます</strong>。
           </p>
           <div style={{
             marginTop: 16, padding: "14px 16px",
             background: MM.paper, borderRadius: 12, border: `1.5px solid ${MM.green}`,
-            fontSize: 13, lineHeight: 1.85, fontWeight: 700, color: MM.ink,
+            fontSize: 13.5, lineHeight: 2, fontWeight: 500, color: MM.ink,
           }}>
-            「とにかく応募してほしい」ではなく、<br />
-            <span style={{ color: MM.green, backgroundImage: "linear-gradient(transparent 64%, rgba(193,154,102,0.30) 64%)" }}>「ちゃんと選んでから決めてほしい」</span>。<br />それが、このサイトの基本方針です。
+            <strong>「とりあえず応募してほしい」</strong>ではありません。<br />
+            不安を<strong>ちゃんと解消してから、納得して選んでほしい</strong>。<br />
+            それが、このサイトの基本方針です。
           </div>
         </section>
 
@@ -124,16 +125,13 @@ export default function ProfilePage() {
                 <div key={p.n} style={{
                   background: "transparent", border: `1.5px solid ${MM.tan}`,
                   borderRadius: 12, padding: "16px 18px",
-                  display: "flex", gap: 14, alignItems: "flex-start",
                 }}>
-                  <Ico size={34} stroke={1.6} color={MM.tan} style={{ flexShrink: 0, marginTop: 4 }} />
-                  <div>
-                    <div style={{ display: "flex", alignItems: "baseline", gap: 9 }}>
-                      <span style={{ fontFamily: "'Zen Maru Gothic', sans-serif", fontSize: 26, fontWeight: 900, color: MM.tan, lineHeight: 1 }}>{p.n}</span>
-                      <span style={{ fontSize: 14.5, fontWeight: 800, color: MM.ink, lineHeight: 1.5 }}>{p.t}</span>
-                    </div>
-                    <p style={{ margin: "8px 0 0", fontSize: 12, lineHeight: 1.85, color: MM.text }}>{p.d}</p>
+                  <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                    <Ico size={26} stroke={1.7} color={MM.tan} style={{ flexShrink: 0 }} />
+                    <span style={{ fontFamily: "'Zen Maru Gothic', sans-serif", fontSize: 23, fontWeight: 900, color: MM.tan, lineHeight: 1, flexShrink: 0 }}>{p.n}</span>
+                    <span style={{ fontSize: 14, fontWeight: 800, color: MM.ink, lineHeight: 1.4 }}>{p.t}</span>
                   </div>
+                  <p style={{ margin: "9px 0 0", fontSize: 12, lineHeight: 1.85, color: MM.text }}>{p.d}</p>
                 </div>
               );
             })}
@@ -142,7 +140,7 @@ export default function ProfilePage() {
 
         {/* ===== 評価の5つの基準 ===== */}
         <section style={{ paddingTop: 34 }}>
-          <H2 id="hyoka">事務所を評価する、5つの基準</H2>
+          <H2 id="hyoka">事務所を評価する5つの基準</H2>
           <p style={{ fontSize: 13, lineHeight: 1.9, margin: "0 0 16px" }}>
             すべての事務所を、同じ<strong>5軸100点満点</strong>で採点しています。広告費で順位は変えません。スコアが動くのは、採点項目の“事実”が変わったときだけです。
           </p>
@@ -155,10 +153,10 @@ export default function ProfilePage() {
                 <Image src={a.image} alt={a.label} width={400} height={400}
                   sizes="92px" style={{ width: 92, height: 92, borderRadius: 12, flexShrink: 0, objectFit: "cover" }} />
                 <div style={{ flex: 1, minWidth: 0 }}>
-                  <div style={{ display: "flex", alignItems: "baseline", gap: 8 }}>
-                    <span style={{ fontFamily: "'Zen Maru Gothic', sans-serif", fontSize: 20, fontWeight: 900, color: MM.green }}>{a.n}</span>
+                  <div style={{ display: "flex", alignItems: "center", gap: 9, marginBottom: 8 }}>
+                    <span style={{ fontFamily: "'Zen Maru Gothic', sans-serif", fontSize: 22, fontWeight: 900, color: MM.green, lineHeight: 1 }}>{a.n}</span>
                     <span style={{ fontSize: 15, fontWeight: 800, color: MM.ink }}>{a.label}</span>
-                    <span style={{ fontSize: 12, fontWeight: 700, color: MM.tan }}>{a.max}pt</span>
+                    <span style={{ fontSize: 11, fontWeight: 800, color: MM.tan, background: MM.tanBg, padding: "2px 8px", borderRadius: 99 }}>{a.max}pt</span>
                   </div>
                   <ul style={{ listStyle: "none", padding: 0, margin: "8px 0 0" }}>
                     {a.items.map((it, j) => (
@@ -192,7 +190,7 @@ export default function ProfilePage() {
         <section style={{ paddingTop: 34 }}>
           <H2 id="kuchikomi">口コミについての考え方と、投稿ガイドライン</H2>
           <p style={{ fontSize: 13, lineHeight: 1.95, margin: 0 }}>
-            口コミは事務所選びの参考になります。ただ、口コミだけで判断するのは危険です。働く時間・希望収入・スタッフとの相性で感じ方は大きく変わりますし、良いお店でも良い口コミが書かれるとは限りません。だから私たちは、口コミに加えて<strong>基本情報・サポート・報酬・身バレ対策まで確認して総合的に判断</strong>します。
+口コミは参考になりますが、それだけで判断するのは危険です。感じ方は人によって大きく変わるから。だから私たちは、口コミに加えて<strong>基本情報・サポート・報酬・身バレ対策まで確認して、総合的に判断</strong>します。
           </p>
 
           <div style={{ marginTop: 16, padding: "14px 16px", background: "transparent", border: `1.5px solid ${MM.green}`, borderRadius: 12 }}>
