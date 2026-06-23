@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Icon } from "../Icon";
-import { IconShieldCheck, IconScale, IconSearch } from "@tabler/icons-react";
+import { IconShieldCheck, IconScale, IconSearch, IconMessage2Plus, IconBan, IconRosetteDiscountCheck } from "@tabler/icons-react";
 import { BreadcrumbSchema, FAQSchema } from "../StructuredData";
 import { MM } from "../theme";
 
@@ -106,7 +106,7 @@ export default function ProfilePage() {
           </p>
           <div style={{
             marginTop: 16, padding: "14px 16px",
-            background: MM.greenBg, borderRadius: 12, borderLeft: `4px solid ${MM.green}`,
+            background: MM.paper, borderRadius: 12, border: `1.5px solid ${MM.green}`,
             fontSize: 13, lineHeight: 1.85, fontWeight: 700, color: MM.ink,
           }}>
             「とにかく応募してほしい」ではなく、<br />
@@ -116,29 +116,23 @@ export default function ProfilePage() {
 
         {/* ===== 3つの約束 ===== */}
         <section style={{ paddingTop: 34 }}>
-          <H2 id="yakusoku">まるみえチャトレの、3つの約束</H2>
+          <H2 id="yakusoku">まるみえチャトレの3つの約束</H2>
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             {PROMISES.map((p) => {
               const Ico = p.Icon;
               return (
                 <div key={p.n} style={{
-                  background: MM.tanBg, borderRadius: 12, padding: "16px 18px",
+                  background: "transparent", border: `1.5px solid ${MM.tan}`,
+                  borderRadius: 12, padding: "16px 18px",
                   display: "flex", gap: 14, alignItems: "flex-start",
                 }}>
-                  <span style={{
-                    width: 46, height: 46, borderRadius: "50%", flexShrink: 0,
-                    background: MM.paper, color: MM.tan,
-                    display: "flex", alignItems: "center", justifyContent: "center",
-                    border: `1.5px solid ${MM.tan}`,
-                  }}>
-                    <Ico size={24} stroke={1.7} />
-                  </span>
+                  <Ico size={34} stroke={1.6} color={MM.tan} style={{ flexShrink: 0, marginTop: 4 }} />
                   <div>
-                    <div style={{ display: "flex", alignItems: "baseline", gap: 7 }}>
-                      <span style={{ fontFamily: "'Zen Maru Gothic', sans-serif", fontSize: 16, fontWeight: 900, color: MM.tan, lineHeight: 1 }}>{p.n}</span>
-                      <span style={{ fontSize: 14, fontWeight: 800, color: MM.ink, lineHeight: 1.5 }}>{p.t}</span>
+                    <div style={{ display: "flex", alignItems: "baseline", gap: 9 }}>
+                      <span style={{ fontFamily: "'Zen Maru Gothic', sans-serif", fontSize: 26, fontWeight: 900, color: MM.tan, lineHeight: 1 }}>{p.n}</span>
+                      <span style={{ fontSize: 14.5, fontWeight: 800, color: MM.ink, lineHeight: 1.5 }}>{p.t}</span>
                     </div>
-                    <p style={{ margin: "7px 0 0", fontSize: 12, lineHeight: 1.85, color: MM.text }}>{p.d}</p>
+                    <p style={{ margin: "8px 0 0", fontSize: 12, lineHeight: 1.85, color: MM.text }}>{p.d}</p>
                   </div>
                 </div>
               );
@@ -182,8 +176,11 @@ export default function ProfilePage() {
           </div>
 
           {/* NO PR */}
-          <div style={{ marginTop: 16, padding: "16px 18px", background: MM.greenBg, borderRadius: 14 }}>
-            <div style={{ fontSize: 9.5, letterSpacing: 2, fontWeight: 800, color: MM.green, marginBottom: 5 }}>NO PR</div>
+          <div style={{ marginTop: 16, padding: "16px 18px", background: "transparent", border: `1.5px solid ${MM.green}`, borderRadius: 14 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 7, marginBottom: 5 }}>
+              <IconRosetteDiscountCheck size={20} stroke={1.7} color={MM.green} />
+              <span style={{ fontSize: 9.5, letterSpacing: 2, fontWeight: 800, color: MM.green }}>NO PR</span>
+            </div>
             <div style={{ fontFamily: "'Zen Maru Gothic', sans-serif", fontSize: 16, fontWeight: 700, color: MM.ink, lineHeight: 1.5 }}>広告費で順位は変えません。</div>
             <p style={{ margin: "8px 0 0", fontSize: 11.5, lineHeight: 1.85, color: MM.muted }}>
               事務所からの広告費は順位に反映していません。スコアが上下するのは「採点項目の事実が変わったとき」だけです。
@@ -198,8 +195,11 @@ export default function ProfilePage() {
             口コミは事務所選びの参考になります。ただ、口コミだけで判断するのは危険です。働く時間・希望収入・スタッフとの相性で感じ方は大きく変わりますし、良いお店でも良い口コミが書かれるとは限りません。だから私たちは、口コミに加えて<strong>基本情報・サポート・報酬・身バレ対策まで確認して総合的に判断</strong>します。
           </p>
 
-          <div style={{ marginTop: 16, padding: "14px 16px", background: MM.greenBg2, borderRadius: 12 }}>
-            <div style={{ fontSize: 13, fontWeight: 800, color: MM.ink, marginBottom: 8 }}>投稿していただきたいこと</div>
+          <div style={{ marginTop: 16, padding: "14px 16px", background: "transparent", border: `1.5px solid ${MM.green}`, borderRadius: 12 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 7, fontSize: 13, fontWeight: 800, color: MM.ink, marginBottom: 8 }}>
+              <IconMessage2Plus size={19} stroke={1.7} color={MM.green} />
+              投稿していただきたいこと
+            </div>
             <ul style={{ margin: 0, paddingLeft: 18, fontSize: 12.5, lineHeight: 1.9, color: MM.text }}>
               <li>スタッフの対応・サポートの実態</li>
               <li>面接と入店後のギャップの有無</li>
@@ -211,8 +211,11 @@ export default function ProfilePage() {
             </p>
           </div>
 
-          <div style={{ marginTop: 12, padding: "14px 16px", background: MM.tanBg, borderRadius: 12, borderLeft: `4px solid ${MM.tan}` }}>
-            <div style={{ fontSize: 13, fontWeight: 800, color: "#9A7644", marginBottom: 8 }}>掲載できない内容</div>
+          <div style={{ marginTop: 12, padding: "14px 16px", background: "transparent", border: `1.5px solid ${MM.tan}`, borderRadius: 12 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 7, fontSize: 13, fontWeight: 800, color: "#9A7644", marginBottom: 8 }}>
+              <IconBan size={19} stroke={1.7} color={MM.tan} />
+              掲載できない内容
+            </div>
             <ul style={{ margin: 0, paddingLeft: 18, fontSize: 12.5, lineHeight: 1.9, color: MM.text }}>
               <li>事実ではない内容・噂話</li>
               <li>感情的な誹謗中傷</li>
