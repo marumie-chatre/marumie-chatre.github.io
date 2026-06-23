@@ -76,16 +76,6 @@ const RANKING = [
   },
 ];
 
-// データ：お悩みカテゴリ（チップ表示用・/q への入口）
-const WORRIES_CHIPS = [
-  "すべて",
-  "身バレ",
-  "家族バレ",
-  "副業バレ",
-  "初心者・選び方",
-  "業界の不安",
-];
-
 // データ：クイックナビ（単色 sage テーマで統一）
 const QUICK_NAV = [
   { href: "/jimusho", icon: "Trophy" as const,   label: "ランキングから探す" },
@@ -104,6 +94,9 @@ const ARTICLES = [
   { href: "/q/hoikushi-baito", category: "副業バレ", title: "チャトレは副業にアリ？会社にバレないための全対策", readTime: "約7分", date: "2026.05.07", accent: "#8FAD7F", image: "/col-hoikushi-baito.png" },
   { href: "/yougo", category: "用語", title: "チャットレディ用語辞典｜迷う言葉をやさしく解説", readTime: "約8分", date: "2026.05.16", accent: "#A8893C", image: "/hero-sp.jpg" /* 仮 */ },
 ];
+
+// データ：お悩みカテゴリ（最下部・記事への入口）
+const WORRIES_CHIPS = ["すべて", "身バレ", "家族バレ", "副業バレ", "初心者・選び方", "業界の不安"];
 
 // ========== サブコンポーネント ==========
 
@@ -163,118 +156,99 @@ function ScoreBar({ value, max, height = 5, bg, fill }: { value: number; max: nu
 
 function RankingCard({ r, idx }: { r: typeof RANKING[0]; idx: number }) {
   const isTop = idx === 0;
-  const medalColors = ["#E8B85B", "#C5C0BA", "#D69C71"];
+  const TAN = "#C19A66", TAN_BG = "#F4EADB", GREEN_BTN = "#6FA858";
+  const pills = isTop ? ["初心者に最もおすすめ", r.tags[0]] : [r.tags[0]];
   return (
     <Link
       href={`/jimusho/${r.id}`}
       aria-label={`${r.name} の詳細・口コミを見る`}
       style={{
         display: "block",
-        background: G.paper, borderRadius: 20, padding: 16, position: "relative",
+        background: G.paper, borderRadius: 18, padding: 16, position: "relative",
         boxShadow: isTop
-          ? `0 6px 22px rgba(46,31,16,0.08), 0 0 0 1.5px ${G.sagePastel}`
+          ? `0 6px 22px rgba(46,31,16,0.08), 0 0 0 1.5px ${TAN}66`
           : "0 2px 10px rgba(46,31,16,0.04)",
         textDecoration: "none", color: "inherit", cursor: "pointer",
       }}
     >
-      {isTop && (
-        <div style={{
-          position: "absolute", top: -14, left: 16,
-          display: "flex", justifyContent: "flex-start", pointerEvents: "none",
-        }}>
-          <div style={{
-            display: "inline-flex", alignItems: "center", gap: 8,
-            padding: "5px 14px", borderRadius: 99,
-            background: "linear-gradient(135deg, #E8B85B 0%, #C9923F 100%)",
-            color: "#fff",
-            fontSize: 11, fontWeight: 800, letterSpacing: 1,
-            boxShadow: "0 4px 12px rgba(180,135,50,0.32)",
-          }}>
-            初心者に最もおすすめ
-          </div>
-        </div>
-      )}
-
-      <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
-        {/* office image - placeholder */}
+      <div style={{ display: "flex", gap: 12, alignItems: "flex-start" }}>
+        {/* avatar + rank badge */}
         <div style={{ position: "relative", flexShrink: 0 }}>
           <div style={{
-            width: 56, height: 56, borderRadius: "50%",
+            width: 54, height: 54, borderRadius: 14,
             background: G.sageSoft, color: G.sageDeep,
             display: "flex", alignItems: "center", justifyContent: "center",
-            fontSize: 15, fontWeight: 700, letterSpacing: 1,
+            fontSize: 15, fontWeight: 800,
           }}>{r.name.slice(0, 2)}</div>
           <div style={{
-            position: "absolute", bottom: -4, right: -4,
+            position: "absolute", top: -7, left: -7,
             width: 24, height: 24, borderRadius: "50%",
-            background: medalColors[idx],
-            color: "#fff",
+            background: TAN, color: "#fff",
             display: "flex", alignItems: "center", justifyContent: "center",
-            fontSize: 11, fontWeight: 800, border: `2px solid ${G.paper}`,
+            fontSize: 12, fontWeight: 800, border: "2px solid #fff",
           }}>{r.rank}</div>
         </div>
 
+        {/* pills + name + tagline */}
         <div style={{ flex: 1, minWidth: 0 }}>
-          <div style={{ fontSize: 16, fontWeight: 700, color: G.ink }}>{r.name}</div>
-          <div style={{ display: "flex", gap: 4, flexWrap: "wrap", marginTop: 6 }}>
-            {r.tags.map(t => (
-              <span key={t} style={{
-                fontSize: 9.5, fontWeight: 600,
-                padding: "2px 7px", borderRadius: 99,
-                background: G.sageSoft, color: G.sageDeep,
-              }}>{t}</span>
+          <div style={{ display: "flex", gap: 5, flexWrap: "wrap" }}>
+            {pills.map((p, i) => (
+              <span key={p} style={{
+                fontSize: 9.5, fontWeight: 800,
+                padding: "2px 9px", borderRadius: 99,
+                background: (isTop && i === 0) ? TAN : TAN_BG,
+                color: (isTop && i === 0) ? "#fff" : TAN,
+              }}>{p}</span>
             ))}
           </div>
+          <div style={{ marginTop: 6, fontSize: 16, fontWeight: 800, color: G.ink }}>{r.name}</div>
+          <div style={{ marginTop: 3, fontSize: 10.5, color: G.inkSoft, lineHeight: 1.5 }}>{r.tags.join("／")}</div>
         </div>
 
+        {/* score */}
         <div style={{ textAlign: "right", flexShrink: 0 }}>
-          <div style={{
-            fontSize: 26, fontWeight: 800, lineHeight: 1,
-            color: G.ink,
-          }}>{r.score}</div>
+          <div style={{ fontFamily: "'Zen Maru Gothic', sans-serif", fontSize: 28, fontWeight: 800, lineHeight: 1, color: TAN }}>{r.score}</div>
           <div style={{ fontSize: 9, color: G.inkSoft, marginTop: 2 }}>/100点</div>
         </div>
       </div>
 
-      <div style={{ marginTop: 14, display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 6 }}>
+      {/* 5軸 横バー */}
+      <div style={{ marginTop: 14, display: "flex", flexDirection: "column", gap: 7 }}>
         {AXES.map(a => {
           const v = r.breakdown[a.id as keyof typeof r.breakdown];
           return (
-            <div key={a.id}>
-              <div style={{ fontSize: 8.5, color: G.inkSoft, marginBottom: 4, textAlign: "center", fontWeight: 600 }}>
-                {a.label}
+            <div key={a.id} style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 10.5 }}>
+              <span style={{ width: 62, color: G.inkSoft, fontWeight: 600, flexShrink: 0 }}>{a.label}</span>
+              <div style={{ flex: 1 }}>
+                <ScoreBar value={v} max={a.max} height={6} bg={G.cream} fill={GREEN_BTN} />
               </div>
-              <ScoreBar value={v} max={a.max} height={5} bg={G.cream} fill={isTop ? G.sagePastelText : G.inkSofter} />
-              <div style={{ fontSize: 9.5, fontWeight: 700, textAlign: "center", marginTop: 4 }}>{v}</div>
+              <span style={{ width: 42, textAlign: "right", fontWeight: 700, color: G.ink, flexShrink: 0 }}>
+                {v}<span style={{ color: G.inkSoft, fontWeight: 500, fontSize: 9 }}>/{a.max}</span>
+              </span>
             </div>
           );
         })}
       </div>
 
+      {/* こんな方に */}
       <div style={{
         marginTop: 12, padding: "10px 12px",
-        background: isTop ? G.sageSoft : G.bg, borderRadius: 10,
-        fontSize: 11.5, lineHeight: 1.65,
+        background: "#EFF4E5", borderRadius: 10,
+        fontSize: 11.5, lineHeight: 1.6,
         display: "flex", gap: 8, alignItems: "flex-start",
       }}>
-        <span style={{
-          fontSize: 9.5, fontWeight: 800, color: isTop ? G.sageDeep : G.inkSoft,
-          letterSpacing: 0.5, paddingTop: 1, flexShrink: 0,
-        }}>こんな方に →</span>
+        <span style={{ fontSize: 9.5, fontWeight: 800, color: G.sageDeep, paddingTop: 1, flexShrink: 0 }}>こんな方に →</span>
         <span style={{ color: G.ink }}>{r.summary}</span>
       </div>
 
-      {/* 視覚装飾としての「詳細を見る」ボタン（カード全体がリンクなので入れ子リンクは作らない） */}
+      {/* 緑ボタン（カード全体がリンクなので装飾） */}
       <div aria-hidden="true" style={{
-        marginTop: 12, display: "flex", alignItems: "center", justifyContent: "space-between",
-        padding: "11px 14px", borderRadius: 10,
-        background: isTop ? G.sagePastel : "transparent",
-        color: isTop ? "#5C3D1F" : G.ink,
-        border: isTop ? "none" : `1.5px solid ${G.rule}`,
-        fontSize: 12, fontWeight: 700,
+        marginTop: 12, display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
+        padding: "13px 14px", borderRadius: 12,
+        background: GREEN_BTN, color: "#fff", fontSize: 13, fontWeight: 800,
       }}>
-        <span>詳細・口コミを見る</span>
-        <Icon.Arrow size={13} />
+        詳細・口コミを見る
+        <Icon.Arrow size={14} />
       </div>
     </Link>
   );
@@ -391,6 +365,23 @@ export default function Home() {
               事務所のランキングをみる
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* ===== 注目の記事（hero直下・横長カードの自動スライド） ===== */}
+      <section style={{ padding: "22px 0 4px" }}>
+        <div style={{ maxWidth: 760, margin: "0 auto", padding: "0 20px", display: "flex", alignItems: "flex-end", justifyContent: "space-between" }}>
+          <div>
+            <div style={{ display: "inline-flex", alignItems: "center", gap: 8, fontSize: 10, letterSpacing: 2.2, fontWeight: 800, color: G.sageDeep }}>
+              <span style={{ width: 18, height: 1.5, background: G.sage, borderRadius: 1 }} />
+              PICK UP
+            </div>
+            <h2 style={{ margin: "9px 0 0", fontFamily: "'Zen Maru Gothic', sans-serif", fontSize: 21, fontWeight: 700, color: G.ink }}>注目の記事</h2>
+          </div>
+          <span style={{ fontSize: 11, color: G.inkSoft, fontWeight: 700, whiteSpace: "nowrap", paddingBottom: 3 }}>スワイプ →</span>
+        </div>
+        <div style={{ marginTop: 14 }}>
+          <ArticleCarousel articles={ARTICLES} variant="row" />
         </div>
       </section>
 
@@ -673,57 +664,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== お悩みハブ統合（旧 CONCERN PREVIEW + WORRIES PREVIEW を合体） ===== */}
-      <section style={{ padding: "30px 20px 0", maxWidth: 760, margin: "0 auto" }}>
-        <SectionHead
-          kicker="WORRIES"
-          title="お悩みから、探す。"
-          note="始める前の心配ごとに、まっすぐ答える記事を用意しています。"
-        />
-
-        {/* チップ帯（/q ハブと同意匠・全てが /q へのリンク） */}
-        <div
-          aria-label="お悩みカテゴリ"
-          style={{
-            marginTop: 0,
-            display: "flex", gap: 8, overflowX: "auto",
-            WebkitOverflowScrolling: "touch",
-            scrollbarWidth: "none",
-            paddingBottom: 16,
-          }}
-        >
-          {WORRIES_CHIPS.map((t, i) => (
-            <Link
-              href={i === 0 ? "/q" : `/q?cat=${encodeURIComponent(t)}`}
-              key={t}
-              style={{
-                whiteSpace: "nowrap",
-                fontSize: 12, fontWeight: 700,
-                padding: "8px 16px", borderRadius: 99,
-                textDecoration: "none",
-                background: i === 0 ? G.sagePastel : G.paper,
-                color: G.sageDeep,
-                border: i === 0 ? `1.5px solid ${G.sagePastel}` : `1px solid ${G.rule}`,
-              }}>
-              {t}
-            </Link>
-          ))}
-        </div>
-
-        {/* 読みものカルーセル（最新記事＋横スライド5本） */}
-        <ArticleCarousel articles={ARTICLES} />
-
-        {/* CTA：もっと探す */}
-        <Link href="/q" style={{
-          marginTop: 14, display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
-          padding: 12, border: `1px solid ${G.rule}`, borderRadius: 99,
-          fontSize: 12, fontWeight: 600, color: G.ink, textDecoration: "none",
-        }}>
-          お悩みからもっと探す
-          <Icon.Arrow size={12} />
-        </Link>
-      </section>
-
       {/* ===== REVIEWS ===== */}
       <section style={{ padding: "26px 20px 0", maxWidth: 760, margin: "0 auto" }}>
         <SectionHead
@@ -859,6 +799,33 @@ export default function Home() {
             </Link>
           </div>
         </div>
+      </section>
+
+      {/* ===== お悩みからさがす（最下部・記事への誘導） ===== */}
+      <section style={{ padding: "30px 20px 0", maxWidth: 760, margin: "0 auto" }}>
+        <SectionHead
+          kicker="WORRIES"
+          title="お悩みからさがす"
+          note="始める前の心配ごとから、答える記事を探せます。"
+        />
+        <div style={{ marginTop: 14, display: "flex", flexWrap: "wrap", gap: 8 }}>
+          {WORRIES_CHIPS.map((t, i) => (
+            <Link href={i === 0 ? "/q" : `/q?cat=${encodeURIComponent(t)}`} key={t} style={{
+              whiteSpace: "nowrap", fontSize: 12, fontWeight: 700,
+              padding: "9px 16px", borderRadius: 99, textDecoration: "none",
+              background: i === 0 ? G.sagePastel : G.paper, color: G.sageDeep,
+              border: i === 0 ? `1.5px solid ${G.sagePastel}` : `1px solid ${G.rule}`,
+            }}>{t}</Link>
+          ))}
+        </div>
+        <Link href="/q" style={{
+          marginTop: 16, display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
+          padding: 13, border: `1.5px solid ${G.ruleStrong}`, borderRadius: 14,
+          fontSize: 13, fontWeight: 700, color: G.ink, textDecoration: "none",
+        }}>
+          お悩みの記事をすべて見る
+          <Icon.Arrow size={14} />
+        </Link>
       </section>
 
     </main>
