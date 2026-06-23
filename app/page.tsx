@@ -131,19 +131,19 @@ function SectionHead({ kicker, title, note, image }: {
       </div>
     );
   }
-  // テキスト版（既存）
+  // テキスト版（文字構造化・「ちゃんと選んでほしいから」と色味統一）
   return (
     <div>
       <div style={{
         display: "inline-flex", alignItems: "center", gap: 8,
-        fontSize: 10, letterSpacing: 2.2, fontWeight: 800, color: G.ink,
+        fontSize: 10, letterSpacing: 2.2, fontWeight: 800, color: G.sageDeep,
       }}>
         <span style={{ width: 18, height: 1.5, background: G.sage, borderRadius: 1 }} />
         {kicker}
       </div>
       <h2 style={{
-        margin: "8px 0 0", fontSize: 22, lineHeight: 1.45,
-        fontWeight: 700, letterSpacing: -0.2, color: G.ink,
+        margin: "9px 0 0", fontFamily: "'Zen Maru Gothic', sans-serif",
+        fontSize: 21, lineHeight: 1.45, fontWeight: 700, letterSpacing: -0.2, color: G.ink,
       }}>{title}</h2>
       {note && (
         <p style={{ margin: "10px 0 0", fontSize: 12, color: G.inkSoft, lineHeight: 1.7 }}>{note}</p>
@@ -397,7 +397,7 @@ export default function Home() {
       {/* ===== QUICK NAV「あなたに合う探し方」（葉模様背景） ===== */}
       <section className="top-find-section">
         <div className="top-find-inner">
-          <SectionHead kicker="HOW TO FIND" title="あなたに合う探し方" image="/top-title-find.png" />
+          <SectionHead kicker="HOW TO FIND" title="あなたに合う探し方" />
           <div style={{
             marginTop: 0, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10,
           }}>
@@ -434,7 +434,6 @@ export default function Home() {
           kicker="RANKING"
           title="編集部おすすめ事務所"
           note="広告費ではなく、公開している評価基準で順位を決めています。"
-          image="/top-title-ranking.png"
         />
         <div style={{ marginTop: 8, textAlign: "right" }}>
           <Link href="/profile#hyoka" style={{
@@ -558,7 +557,6 @@ export default function Home() {
           kicker="EVALUATION"
           title="5つの基準で丁寧に採点"
           note="5つの評価軸で事務所を丁寧に採点しています。"
-          image="/top-title-evaluation.png"
         />
         <div style={{
           marginTop: 0, background: G.paper, borderRadius: 20,
@@ -681,7 +679,6 @@ export default function Home() {
           kicker="WORRIES"
           title="お悩みから、探す。"
           note="始める前の心配ごとに、まっすぐ答える記事を用意しています。"
-          image="/top-title-worries.png"
         />
 
         {/* チップ帯（/q ハブと同意匠・全てが /q へのリンク） */}
@@ -733,7 +730,6 @@ export default function Home() {
           kicker="REVIEWS"
           title="リアルな声を集めました。"
           note="良かった点も、気になった点もどちらも公開。"
-          image="/top-title-reviews.png"
         />
         <div style={{ marginTop: 0, display: "flex", flexDirection: "column", gap: 12 }}>
           {topReviews.map((r) => (
