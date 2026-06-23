@@ -1,430 +1,270 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Icon } from "../Icon";
-import { BreadcrumbSchema } from "../StructuredData";
+import { BreadcrumbSchema, FAQSchema } from "../StructuredData";
+import { MM } from "../theme";
 
 export const metadata = {
   alternates: { canonical: "/profile" },
-  title: "運営者プロフィール｜まるみえチャトレ",
-  description: "まるみえチャトレの運営者プロフィール。元保育士・現役チャットレディ4年目のみなみが、編集の3つの約束を守って運営しています。",
+  title: "運営方針・プロフィール｜広告ではなく、ほんとうのことを｜まるみえチャトレ",
+  description: "まるみえチャトレの運営方針とプロフィール。広告費で順位を変えない・良い点も気になる点も両方書く・検証と実体験で書く・口コミは本物だけ。5つの約束と評価基準、口コミ投稿ガイドラインをまとめています。",
 };
 
-// Palette E カラー（インライン使用用）
-const G = {
-  bg: "#FBF7F0",
-  paper: "#FFFFFF",
-  ink: "#2E1F10",
-  inkSoft: "#87796A",
-  inkSofter: "#B5AC9B",
-  sage: "#7BAA3F",
-  sageDeep: "#587A38",
-  sageSoft: "#CDDDB0",
-  sagePastel: "#A8C49A",
-  sagePastelText: "#8FAD7F",
-  cream: "#F8EFE0",
-  bgWarm: "#F5E8C8",
-  accent: "#F4B5A0",
-  accentDeep: "#E89B85",
-  brown: "#5C3D1F",
-  gold: "#C9923F",
-  rule: "rgba(46,31,16,0.10)",
-  ruleStrong: "rgba(46,31,16,0.20)",
-};
-
-// 編集部の3つの約束（画像付き）
-const POLICIES = [
-  {
-    n: "01",
-    title: "広告費だけで順位を決めません",
-    image: "/profile-promise-1.png",
-    body: "事務所から広告費をいただく場合でも、ランキングのスコアにそのまま反映することはありません。\n順位は、掲載基準や採点項目、確認できた情報をもとに、できるだけ公平に判断しています。",
-  },
-  {
-    n: "02",
-    title: "良いところも、気になるところも書きます",
-    image: "/profile-promise-2.png",
-    body: "メリットだけを並べるレビューではなく、実際に選ぶ前に知っておきたいことも、きちんと掲載します。\n報酬、サポート、身バレ対策、通いやすさ、スタッフ対応など、良いところと注意したいところの両方を見られるようにしています。",
-  },
-  {
-    n: "03",
-    title: "採点の理由をわかりやすく公開します",
-    image: "/profile-promise-3.png",
-    body: "ランキングの配点、採点項目、情報の更新日などは、できるだけわかりやすく確認できるようにしています。\nもし掲載情報に誤りがあった場合は、内容を確認したうえで、必要に応じて修正します。",
-  },
+// 5つの約束
+const PROMISES = [
+  { n: "01", t: "広告費で順位は変えません", d: "おすすめ順は、公開している5つの評価基準だけで決めます。広告費の多さで順位は動かしません。" },
+  { n: "02", t: "良い点も、気になる点も、両方書きます", d: "お店の魅力だけでなく、応募前に知っておきたい“気になる点”も正直に。片方しか書かないのは、求人広告と同じになってしまうから。" },
+  { n: "03", t: "検証と実体験をもとに書きます", d: "書き手は、業界を実際に見てきた経験者です。調べたこと・体験したことをもとに、感覚ではなく根拠のある言葉でお伝えします。" },
+  { n: "04", t: "口コミは、本物だけ。作りません", d: "いただいた声を、投稿のルールにそってそのまま掲載します。サイト側が口コミを創作することは、絶対にしません。" },
+  { n: "05", t: "競合を品なくけなさず、誇大な数字に流されません", d: "他社をむやみに悪く書くことはしません。報酬も「在宅40%・通勤30%」という業界の標準を正直にお伝えし、「最大時給◯円」のような過度な期待はあおりません。" },
 ];
 
-const FAQ_ITEMS = [
-  {
-    q: "まるみえチャトレはどんなサイトですか？",
-    a: "チャットレディ事務所の口コミ、報酬条件、サポート体制、身バレ対策などを比較できる情報メディアです。",
-  },
-  {
-    q: "ランキングは広告費で決まりますか？",
-    a: "いいえ。広告費の有無だけでランキング順位を決めることはありません。採点項目と確認できた情報をもとに評価しています。",
-  },
-  {
-    q: "口コミだけで事務所を選んでも大丈夫ですか？",
-    a: "口コミは参考になりますが、それだけで判断するのはおすすめしません。報酬条件、サポート体制、身バレ対策、スタッフ対応なども合わせて確認することが大切です。",
-  },
-  {
-    q: "掲載情報はどのように確認していますか？",
-    a: "公式サイト、公開情報、編集部による確認内容をもとに作成しています。情報に誤りがある場合は、確認後に修正します。",
-  },
-  {
-    q: "チャットレディ未経験でも参考になりますか？",
-    a: "はい。未経験の方が不安になりやすい、身バレ、報酬、ノルマ、スタッフ対応、配信環境などを分かりやすく比較できるようにしています。",
-  },
+// 評価の5軸
+const AXES = [
+  { n: "01", label: "安全性", max: 30, image: "/eval-axis-1-safety.png", items: ["身バレ対策", "アダルト強要の有無", "プライバシー保護"] },
+  { n: "02", label: "サポート", max: 25, image: "/eval-axis-2-support.png", items: ["マニュアルの充実度", "相談のしやすさ", "スタッフ常駐"] },
+  { n: "03", label: "初心者向け", max: 20, image: "/eval-axis-3-beginner.png", items: ["未経験の受け入れ", "デビューまでの導線", "つまずきにくい設計"] },
+  { n: "04", label: "働きやすさ", max: 15, image: "/eval-axis-4-work.png", items: ["シフトの自由度", "在宅・通勤の選びやすさ", "退店時のリスク"] },
+  { n: "05", label: "稼ぎやすさ", max: 10, image: "/eval-axis-5-earn.png", items: ["待機対策", "戦略の提案", "リピート獲得サポート"] },
 ];
 
-// セクション kicker
-function SectionKicker({ children }: { children: React.ReactNode }) {
+const FAQS = [
+  { q: "まるみえチャトレはどんなサイトですか？", a: "チャットレディ事務所の口コミ・報酬条件・サポート体制・身バレ対策などを比較できる情報メディアです。" },
+  { q: "ランキングは広告費で決まりますか？", a: "いいえ。広告費の有無だけで順位を決めることはありません。公開した5つの評価基準と、確認できた情報をもとに評価しています。" },
+  { q: "口コミだけで事務所を選んでも大丈夫ですか？", a: "口コミは参考になりますが、それだけで判断するのはおすすめしません。報酬条件・サポート体制・身バレ対策・スタッフ対応もあわせて確認することが大切です。" },
+  { q: "掲載情報はどのように確認していますか？", a: "公式サイト・公開情報・編集部の確認内容をもとに作成しています。誤りがある場合は、確認後に修正します。" },
+  { q: "未経験でも参考になりますか？", a: "はい。未経験の方が不安になりやすい、身バレ・報酬・ノルマ・スタッフ対応・配信環境を分かりやすく比較できるようにしています。" },
+];
+
+const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSeoozsXNP5R5hgyPbxMlVPNPBrc2NOceFtI5f97Lbv3KUATkw/viewform?usp=dialog";
+
+// 統一見出し（コーラルの左バー）
+function H2({ children, id }: { children: React.ReactNode; id?: string }) {
   return (
-    <div style={{
-      display: "inline-flex", alignItems: "center", gap: 8,
-      fontSize: 10, letterSpacing: 2.5, fontWeight: 700,
-      color: G.ink,
-    }}>
-      <span style={{ width: 20, height: 1.5, background: G.sage, borderRadius: 1 }} />
-      {children}
-    </div>
+    <h2 id={id} style={{
+      fontFamily: "'Zen Maru Gothic', sans-serif",
+      fontWeight: 700,
+      fontSize: 19,
+      lineHeight: 1.5,
+      color: MM.ink,
+      borderLeft: `5px solid ${MM.coral}`,
+      paddingLeft: 13,
+      margin: "0 0 16px",
+    }}>{children}</h2>
   );
 }
 
 export default function ProfilePage() {
   return (
-    <main style={{ background: G.bg, color: G.ink, paddingBottom: 40 }}>
+    <main style={{ background: MM.bg, color: MM.text, paddingBottom: 48 }}>
       <BreadcrumbSchema items={[
         { name: "トップ", path: "/" },
-        { name: "運営者プロフィール", path: "/profile" },
+        { name: "運営方針・プロフィール", path: "/profile" },
       ]} />
+      <FAQSchema items={FAQS} />
 
-      <div style={{ padding: "32px 22px 0", maxWidth: 720, margin: "0 auto" }}>
+      <div style={{ maxWidth: 720, margin: "0 auto", padding: "0 18px" }}>
 
-        {/* ===== photo + name カード ===== */}
-        <div style={{
-          display: "flex", alignItems: "center", gap: 16,
-          padding: "20px",
-          background: G.paper, borderRadius: 16,
-          border: `1px solid ${G.rule}`,
-        }}>
-          {/* avatar - みなみアイコン */}
+        {/* ===== HERO ===== */}
+        <section style={{ paddingTop: 28 }}>
+          <div style={{ fontSize: 10, letterSpacing: 2.5, fontWeight: 800, color: MM.green }}>ABOUT US</div>
+          <h1 style={{
+            fontFamily: "'Zen Maru Gothic', sans-serif",
+            fontWeight: 900, fontSize: 27, lineHeight: 1.45, color: MM.ink, margin: "8px 0 0",
+          }}>広告ではなく、<br />ほんとうのことを。</h1>
+          <p style={{ fontSize: 13, lineHeight: 1.95, color: MM.text, margin: "14px 0 0" }}>
+            まるみえチャトレは、<strong>真面目に働きたい女性が、安心してお店を選べるように</strong>作った比較メディアです。私たちが大事にしているのは、たったひとつ。<strong>広告のためではなく、ほんとうのことを書く</strong>ということ。
+          </p>
+
+          {/* みなみカード */}
           <div style={{
-            width: 88, height: 88, borderRadius: "50%",
-            background: G.sageSoft,
-            display: "flex", alignItems: "center", justifyContent: "center",
-            flexShrink: 0,
-            overflow: "hidden",
+            display: "flex", alignItems: "center", gap: 16,
+            padding: 18, marginTop: 18,
+            background: MM.greenBg, borderRadius: 16,
           }}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/minami-icon.png"
-              alt="みなみ"
-              style={{ width: "100%", height: "100%", objectFit: "cover" }}
-            />
-          </div>
-          {/* name + meta */}
-          <div style={{ flex: 1, minWidth: 0 }}>
-            <div style={{
-              fontSize: 9.5, letterSpacing: 2.5, fontWeight: 700, color: G.gold,
-            }}>EDITOR</div>
-            <div style={{
-              marginTop: 4,
-              fontSize: 22, fontWeight: 800, lineHeight: 1.2, color: G.brown,
-            }}>みなみ</div>
-            <div style={{
-              fontSize: 11, color: G.inkSoft, marginTop: 6, lineHeight: 1.7,
-            }}>
-              元保育士で現役チャットレディをしています。<br />
-              チャットレディ経験は4年目、<br />
-              まるみえチャトレの運営をしてます。
+            <div style={{ width: 80, height: 80, borderRadius: "50%", overflow: "hidden", flexShrink: 0, background: MM.paper }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/minami-icon.png" alt="みなみ" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+            </div>
+            <div style={{ flex: 1, minWidth: 0 }}>
+              <div style={{ fontSize: 9.5, letterSpacing: 2, fontWeight: 800, color: MM.tan }}>EDITOR</div>
+              <div style={{ fontFamily: "'Zen Maru Gothic', sans-serif", fontSize: 21, fontWeight: 800, color: MM.ink, marginTop: 3 }}>みなみ</div>
+              <div style={{ fontSize: 11.5, color: MM.muted, marginTop: 5, lineHeight: 1.7 }}>
+                元保育士・現役チャットレディ4年目。<br />まるみえチャトレの運営・編集をしています。
+              </div>
             </div>
           </div>
-        </div>
+        </section>
 
-        {/* ===== WORKSPACE 編集部の机画像 ===== */}
-        <div style={{ marginTop: 26 }}>
-          <SectionKicker>WORKSPACE</SectionKicker>
-          <h2 style={{
-            margin: "8px 0 12px",
-            fontSize: 19, fontWeight: 700, lineHeight: 1.6, color: G.ink,
-          }}>編集部の机から。</h2>
-          <div style={{
-            width: "100%", aspectRatio: "16/10",
-            borderRadius: 12, overflow: "hidden",
-            background: G.sageSoft,
-          }}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/editor-desk.png"
-              alt="編集部の机"
-              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-            />
-          </div>
-        </div>
-
-        {/* ===== BIOGRAPHY セクション ===== */}
-        <div style={{ marginTop: 30 }}>
-          <SectionKicker>MESSAGE</SectionKicker>
-          <h2 style={{
-            margin: "8px 0 14px",
-            fontSize: 19, fontWeight: 700, lineHeight: 1.6, color: G.ink,
-          }}>チャットレディを始めたいけど<br />悩んでいる方へ。</h2>
-
-          <p style={{
-            margin: 0, fontSize: 12.5, lineHeight: 1.95, color: G.ink,
-          }}>
-            チャットレディを始めたいけど、どのお店を選べばいいか分からない。
+        {/* ===== なぜ作ったか ===== */}
+        <section style={{ paddingTop: 34 }}>
+          <H2>なぜ、このサイトを作ったのか</H2>
+          <p style={{ fontSize: 13, lineHeight: 1.95, margin: 0 }}>
+            私がチャットレディを知ったのは、生活に少し余裕がほしくて副業を探していた時でした。でも調べてみると、求人には「簡単に稼げる」「高収入」の言葉ばかり。一方で口コミには「思ったより稼げなかった」「スタッフ対応が合わなかった」という声も。<strong>良い情報と悪い情報の差が大きく、何を信じていいか分からない</strong>——応募ボタンを押すまで、かなり悩みました。
           </p>
-          <p style={{
-            margin: "12px 0 0", fontSize: 12.5, lineHeight: 1.95, color: G.ink,
-          }}>
-            まるみえチャトレは、そんな人が<br />
-            お店の雰囲気やサポート、口コミ、報酬のことまで<br />
-            中身を見て選べるように作った情報サイトです。
-          </p>
-          <p style={{
-            margin: "14px 0 0", fontSize: 12.5, lineHeight: 1.95, color: G.ink,
-          }}>
-            「簡単に稼げる」という言葉だけではなく、<br />
-            良い点も気になる点も見たうえで、自分に合う事務所を選べることを大切にしています。
-          </p>
-        </div>
-
-        {/* ===== このサイトを作った理由 ===== */}
-        <div style={{ marginTop: 32 }}>
-          <SectionKicker>WHY</SectionKicker>
-          <h2 style={{
-            margin: "8px 0 14px",
-            fontSize: 19, fontWeight: 700, lineHeight: 1.6, color: G.ink,
-          }}>このサイトを作った理由。</h2>
-
-          <p style={{ margin: 0, fontSize: 12.5, lineHeight: 1.95, color: G.ink }}>
-            私がチャットレディというお仕事を知ったのは、生活に少し余裕を持ちたくて副業を探していた時でした。
-          </p>
-
-          <div style={{
-            margin: "14px 0", padding: "14px 16px",
-            background: G.bgWarm, borderRadius: 10,
-            fontSize: 12, lineHeight: 1.95, color: G.ink,
-          }}>
-            本業に影響が出ない範囲で働きたい。<br />
-            でも、できれば収入も増やしたい。<br />
-            そんな気持ちで調べていた時に、チャットレディのお仕事を見つけました。
-          </div>
-
-          <p style={{ margin: 0, fontSize: 12.5, lineHeight: 1.95, color: G.ink }}>
-            ただ、実際に調べてみると、求人サイトには「簡単に稼げる」「高収入」といった言葉が多く、逆にネットの口コミには「思ったより稼げなかった」「スタッフ対応が合わなかった」「ノルマが不安だった」といった声もありました。
-          </p>
-          <p style={{ margin: "12px 0 0", fontSize: 12.5, lineHeight: 1.95, color: G.ink, fontWeight: 700 }}>
-            良い情報と悪い情報の差が大きく、何を信じていいのか分からない。
-          </p>
-          <p style={{ margin: "12px 0 0", fontSize: 12.5, lineHeight: 1.95, color: G.ink }}>
-            応募ボタンを押すまで、かなり悩んだことを覚えています。
-          </p>
-          <p style={{ margin: "14px 0 0", fontSize: 12.5, lineHeight: 1.95, color: G.ink }}>
-            だからこそ、まるみえチャトレでは、これから始める人が勢いだけで応募するのではなく、事務所の中身を見て、納得して選べる状態を作りたいと考えています。
-          </p>
-        </div>
-
-        {/* ===== 大切にしていること ===== */}
-        <div style={{ marginTop: 32 }}>
-          <SectionKicker>OUR VALUE</SectionKicker>
-          <h2 style={{
-            margin: "8px 0 14px",
-            fontSize: 19, fontWeight: 700, lineHeight: 1.6, color: G.ink,
-          }}>まるみえチャトレが<br />大切にしていること。</h2>
-
-          <p style={{ margin: 0, fontSize: 12.5, lineHeight: 1.95, color: G.ink }}>
-            チャットレディのお仕事は、事務所選びによって働きやすさが大きく変わります。
-          </p>
-          <p style={{ margin: "12px 0 0", fontSize: 12.5, lineHeight: 1.95, color: G.ink }}>
-            報酬率だけでなく、スタッフの対応、身バレ対策、配信環境、サポート体制、未経験者への説明の丁寧さなど、見るべきポイントはたくさんあります。
-          </p>
-          <p style={{ margin: "12px 0 0", fontSize: 12.5, lineHeight: 1.95, color: G.ink }}>
-            まるみえチャトレでは、良い点だけを並べるのではなく、気になる点や注意点も含めて掲載します。
+          <p style={{ fontSize: 13, lineHeight: 1.95, margin: "14px 0 0" }}>
+            チャットレディの求人サイトやランキングは、<strong>広告費やアフィリエイト報酬で順位が決まっていること</strong>があります。「一番おすすめ」が、実は一番広告費を払っただけ、ということも。だからまるみえチャトレは、<strong>入ってからじゃないと分からないことを、先に正直に伝える</strong>ことにしました。
           </p>
           <div style={{
-            margin: "16px 0", padding: "14px 16px",
-            background: "rgba(168,196,154,0.18)", borderRadius: 10,
-            borderLeft: `3px solid ${G.sagePastel}`,
-            fontSize: 12.5, lineHeight: 1.85, color: G.ink, fontWeight: 600,
+            marginTop: 16, padding: "14px 16px",
+            background: MM.greenBg, borderRadius: 12, borderLeft: `4px solid ${MM.green}`,
+            fontSize: 13, lineHeight: 1.85, fontWeight: 700, color: MM.ink,
           }}>
             「とにかく応募してほしい」ではなく、<br />
-            <span style={{ color: G.sagePastelText, fontWeight: 800 }}>「ちゃんと選んでから決めてほしい」</span>
-            <br />
-            それが、このサイトの基本方針です。
+            <span style={{ color: MM.green }}>「ちゃんと選んでから決めてほしい」</span>。<br />それが、このサイトの基本方針です。
           </div>
-        </div>
+        </section>
 
-        {/* ===== 編集部の3つの約束（画像付き） ===== */}
-        <div style={{ marginTop: 32 }}>
-          <SectionKicker>EDITORIAL POLICY</SectionKicker>
-          <h2 style={{
-            margin: "8px 0 18px",
-            fontSize: 19, fontWeight: 700, lineHeight: 1.6, color: G.ink,
-          }}>編集部の3つの約束。</h2>
-
-          <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
-            {POLICIES.map(p => (
+        {/* ===== 5つの約束 ===== */}
+        <section style={{ paddingTop: 34 }}>
+          <H2 id="yakusoku">まるみえチャトレの、5つの約束</H2>
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+            {PROMISES.map((p) => (
               <div key={p.n} style={{
-                background: G.paper, borderRadius: 14, padding: 16,
-                border: `1px solid ${G.rule}`,
+                background: MM.coralBg, borderRadius: 12, padding: "14px 16px",
                 display: "flex", gap: 14, alignItems: "flex-start",
               }}>
-                {/* イラストアイコン */}
-                <div style={{
-                  width: 88, height: 88, borderRadius: 12,
-                  background: G.sageSoft,
-                  overflow: "hidden", flexShrink: 0,
-                }}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={p.image}
-                    alt={p.title}
-                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                  />
-                </div>
-                <div style={{ flex: 1, minWidth: 0 }}>
-                  <div style={{
-                    fontSize: 20, fontWeight: 800, color: G.sageDeep, lineHeight: 1,
-                    fontFamily: "'Manrope', sans-serif", marginBottom: 4,
-                  }}>{p.n}</div>
-                  <div style={{
-                    fontSize: 14, fontWeight: 800, color: G.ink, lineHeight: 1.45,
-                  }}>{p.title}</div>
-                  <p style={{
-                    margin: "8px 0 0", fontSize: 11.5, color: G.inkSoft, lineHeight: 1.85,
-                    whiteSpace: "pre-line",
-                  }}>{p.body}</p>
+                <span style={{
+                  fontFamily: "'Zen Maru Gothic', sans-serif", fontSize: 20, fontWeight: 900,
+                  color: MM.coral, lineHeight: 1, flexShrink: 0, paddingTop: 2,
+                }}>{p.n}</span>
+                <div>
+                  <div style={{ fontSize: 14, fontWeight: 800, color: MM.ink, lineHeight: 1.5 }}>{p.t}</div>
+                  <p style={{ margin: "6px 0 0", fontSize: 12, lineHeight: 1.85, color: MM.text }}>{p.d}</p>
                 </div>
               </div>
             ))}
           </div>
-        </div>
+        </section>
 
-        {/* ===== 口コミについての考え方 ===== */}
-        <div style={{ marginTop: 32 }}>
-          <SectionKicker>ABOUT REVIEWS</SectionKicker>
-          <h2 style={{
-            margin: "8px 0 14px",
-            fontSize: 19, fontWeight: 700, lineHeight: 1.6, color: G.ink,
-          }}>口コミについての考え方。</h2>
-
-          <p style={{ margin: 0, fontSize: 12.5, lineHeight: 1.95, color: G.ink }}>
-            ネット上の口コミは、事務所選びの参考になります。<br />
-            ただし、口コミだけですべてを判断するのは危険です。
+        {/* ===== 評価の5つの基準 ===== */}
+        <section style={{ paddingTop: 34 }}>
+          <H2 id="hyoka">事務所を評価する、5つの基準</H2>
+          <p style={{ fontSize: 13, lineHeight: 1.9, margin: "0 0 16px" }}>
+            すべての事務所を、同じ<strong>5軸100点満点</strong>で採点しています。広告費で順位は変えません。スコアが動くのは、採点項目の“事実”が変わったときだけです。
           </p>
-          <p style={{ margin: "12px 0 0", fontSize: 12.5, lineHeight: 1.95, color: G.ink }}>
-            チャットレディのお仕事は、働く時間、希望する収入、スタッフとの相性、配信スタイルによって感じ方が大きく変わります。
-          </p>
-          <p style={{ margin: "12px 0 0", fontSize: 12.5, lineHeight: 1.95, color: G.ink }}>
-            また、良い事務所であっても、働いている人が積極的に良い口コミを書くとは限りません。
-            一方で、不満があった時には口コミとして表に出やすい傾向があります。
-          </p>
-          <p style={{ margin: "12px 0 0", fontSize: 12.5, lineHeight: 1.95, color: G.ink }}>
-            だからこそ、まるみえチャトレでは、口コミだけではなく、事務所の基本情報・サポート体制・報酬条件・身バレ対策・未経験者への説明内容まで確認し、総合的に判断します。
-          </p>
-        </div>
-
-        {/* ===== よくある質問 FAQ ===== */}
-        <div style={{ marginTop: 32 }}>
-          <SectionKicker>FAQ</SectionKicker>
-          <h2 style={{
-            margin: "8px 0 14px",
-            fontSize: 19, fontWeight: 700, lineHeight: 1.6, color: G.ink,
-          }}>よくある質問。</h2>
-
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-            {FAQ_ITEMS.map((item, i) => (
-              <div key={i} style={{
-                background: G.paper, borderRadius: 12, padding: "14px 16px",
-                border: `1px solid ${G.rule}`,
+            {AXES.map((a) => (
+              <div key={a.n} style={{
+                background: MM.paper, borderRadius: 14, padding: 14,
+                border: `1px solid ${MM.rule}`, display: "flex", gap: 14, alignItems: "flex-start",
               }}>
-                <div style={{
-                  display: "flex", gap: 8, alignItems: "flex-start", marginBottom: 6,
-                }}>
-                  <span style={{
-                    fontSize: 13, fontWeight: 800, color: G.sageDeep,
-                    fontFamily: "'Manrope', sans-serif", flexShrink: 0,
-                  }}>Q.</span>
-                  <span style={{
-                    fontSize: 13, fontWeight: 700, color: G.ink, lineHeight: 1.55,
-                  }}>{item.q}</span>
-                </div>
-                <div style={{
-                  display: "flex", gap: 8, alignItems: "flex-start",
-                  paddingTop: 6, borderTop: `1px dashed ${G.rule}`,
-                }}>
-                  <span style={{
-                    fontSize: 13, fontWeight: 800, color: G.accentDeep,
-                    fontFamily: "'Manrope', sans-serif", flexShrink: 0,
-                  }}>A.</span>
-                  <span style={{
-                    fontSize: 12, color: G.inkSoft, lineHeight: 1.85,
-                  }}>{item.a}</span>
+                <Image src={a.image} alt={a.label} width={400} height={400}
+                  sizes="92px" style={{ width: 92, height: 92, borderRadius: 12, flexShrink: 0, objectFit: "cover" }} />
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <div style={{ display: "flex", alignItems: "baseline", gap: 8 }}>
+                    <span style={{ fontFamily: "'Zen Maru Gothic', sans-serif", fontSize: 20, fontWeight: 900, color: MM.green }}>{a.n}</span>
+                    <span style={{ fontSize: 15, fontWeight: 800, color: MM.ink }}>{a.label}</span>
+                    <span style={{ fontSize: 12, fontWeight: 700, color: MM.tan }}>{a.max}pt</span>
+                  </div>
+                  <ul style={{ listStyle: "none", padding: 0, margin: "8px 0 0" }}>
+                    {a.items.map((it, j) => (
+                      <li key={j} style={{ display: "flex", alignItems: "center", gap: 7, fontSize: 11.5, color: MM.text, lineHeight: 1.7, marginBottom: 3 }}>
+                        <span style={{ width: 15, height: 15, borderRadius: "50%", background: MM.green, color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                          <Icon.Check size={9} />
+                        </span>
+                        {it}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             ))}
           </div>
-        </div>
+
+          {/* NO PR */}
+          <div style={{ marginTop: 16, padding: "16px 18px", background: MM.greenBg, borderRadius: 14 }}>
+            <div style={{ fontSize: 9.5, letterSpacing: 2, fontWeight: 800, color: MM.green, marginBottom: 5 }}>NO PR</div>
+            <div style={{ fontFamily: "'Zen Maru Gothic', sans-serif", fontSize: 16, fontWeight: 700, color: MM.ink, lineHeight: 1.5 }}>広告費で順位は変えません。</div>
+            <p style={{ margin: "8px 0 0", fontSize: 11.5, lineHeight: 1.85, color: MM.muted }}>
+              事務所からの広告費は順位に反映していません。スコアが上下するのは「採点項目の事実が変わったとき」だけです。
+            </p>
+          </div>
+        </section>
+
+        {/* ===== 口コミについて・投稿ガイドライン ===== */}
+        <section style={{ paddingTop: 34 }}>
+          <H2 id="kuchikomi">口コミについての考え方と、投稿ガイドライン</H2>
+          <p style={{ fontSize: 13, lineHeight: 1.95, margin: 0 }}>
+            口コミは事務所選びの参考になります。ただ、口コミだけで判断するのは危険です。働く時間・希望収入・スタッフとの相性で感じ方は大きく変わりますし、良いお店でも良い口コミが書かれるとは限りません。だから私たちは、口コミに加えて<strong>基本情報・サポート・報酬・身バレ対策まで確認して総合的に判断</strong>します。
+          </p>
+
+          <div style={{ marginTop: 16, padding: "14px 16px", background: MM.greenBg2, borderRadius: 12 }}>
+            <div style={{ fontSize: 13, fontWeight: 800, color: MM.ink, marginBottom: 8 }}>投稿していただきたいこと</div>
+            <ul style={{ margin: 0, paddingLeft: 18, fontSize: 12.5, lineHeight: 1.9, color: MM.text }}>
+              <li>スタッフの対応・サポートの実態</li>
+              <li>面接と入店後のギャップの有無</li>
+              <li>働き方・シフトの自由度／辞めるときの手続き</li>
+              <li>どんな人に向いていると思うか</li>
+            </ul>
+            <p style={{ margin: "8px 0 0", fontSize: 12, color: MM.muted, lineHeight: 1.8 }}>
+              ※ 匿名でOK。名前・連絡先・勤務エリアなど個人が特定される情報は不要です。良かった点も気になった点も、同じように価値があります。
+            </p>
+          </div>
+
+          <div style={{ marginTop: 12, padding: "14px 16px", background: MM.coralBg, borderRadius: 12, borderLeft: `4px solid ${MM.coral}` }}>
+            <div style={{ fontSize: 13, fontWeight: 800, color: MM.coralDeep, marginBottom: 8 }}>掲載できない内容</div>
+            <ul style={{ margin: 0, paddingLeft: 18, fontSize: 12.5, lineHeight: 1.9, color: MM.text }}>
+              <li>事実ではない内容・噂話</li>
+              <li>感情的な誹謗中傷</li>
+              <li>個人が特定される情報</li>
+              <li>事務所関係者による投稿・広告/勧誘目的の内容</li>
+            </ul>
+          </div>
+
+          <a href={FORM_URL} target="_blank" rel="noopener noreferrer" style={{
+            display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
+            marginTop: 16, padding: "14px 18px", borderRadius: 99,
+            background: MM.green, color: "#fff", fontSize: 13, fontWeight: 800, textDecoration: "none",
+          }}>
+            <Icon.Pencil size={15} />
+            匿名で口コミを投稿する
+          </a>
+        </section>
+
+        {/* ===== FAQ ===== */}
+        <section style={{ paddingTop: 34 }}>
+          <H2>よくある質問</H2>
+          <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+            {FAQS.map((f, i) => (
+              <div key={i} style={{ background: MM.paper, borderRadius: 12, padding: "14px 16px", border: `1px solid ${MM.rule}` }}>
+                <div style={{ display: "flex", gap: 8, alignItems: "flex-start" }}>
+                  <span style={{ fontFamily: "'Zen Maru Gothic', sans-serif", fontSize: 14, fontWeight: 900, color: MM.green, flexShrink: 0 }}>Q.</span>
+                  <span style={{ fontSize: 13, fontWeight: 700, color: MM.ink, lineHeight: 1.55 }}>{f.q}</span>
+                </div>
+                <div style={{ display: "flex", gap: 8, alignItems: "flex-start", marginTop: 7, paddingTop: 7, borderTop: `1px dashed ${MM.rule}` }}>
+                  <span style={{ fontFamily: "'Zen Maru Gothic', sans-serif", fontSize: 14, fontWeight: 900, color: MM.coral, flexShrink: 0 }}>A.</span>
+                  <span style={{ fontSize: 12, color: MM.text, lineHeight: 1.85 }}>{f.a}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
 
         {/* ===== 運営者情報 ===== */}
-        <div style={{ marginTop: 32 }}>
-          <SectionKicker>SITE INFO</SectionKicker>
-          <h2 style={{
-            margin: "8px 0 14px",
-            fontSize: 19, fontWeight: 700, lineHeight: 1.6, color: G.ink,
-          }}>運営者情報。</h2>
-
-          <div style={{
-            background: G.paper, borderRadius: 12, padding: "16px 18px",
-            border: `1px solid ${G.rule}`,
-            fontSize: 12.5, lineHeight: 1.95, color: G.ink,
-          }}>
-            <div style={{ display: "grid", gridTemplateColumns: "100px 1fr", gap: 6, rowGap: 10 }}>
-              <span style={{ color: G.inkSoft, fontWeight: 600 }}>サイト名</span>
-              <span>まるみえチャトレ</span>
-              <span style={{ color: G.inkSoft, fontWeight: 600 }}>運営者</span>
-              <span>みなみ</span>
-              <span style={{ color: G.inkSoft, fontWeight: 600 }}>編集責任者</span>
-              <span>みなみ</span>
-              <span style={{ color: G.inkSoft, fontWeight: 600 }}>主な掲載内容</span>
-              <span>チャットレディ事務所の比較、口コミ、報酬条件、サポート体制、身バレ対策に関する情報</span>
-              <span style={{ color: G.inkSoft, fontWeight: 600 }}>最終更新日</span>
-              <span>2026年6月10日</span>
+        <section style={{ paddingTop: 34 }}>
+          <H2>運営者情報</H2>
+          <div style={{ background: MM.paper, borderRadius: 12, padding: "16px 18px", border: `1px solid ${MM.rule}` }}>
+            <div style={{ display: "grid", gridTemplateColumns: "92px 1fr", gap: 6, rowGap: 10, fontSize: 12.5, lineHeight: 1.8 }}>
+              <span style={{ color: MM.muted, fontWeight: 700 }}>サイト名</span><span>まるみえチャトレ</span>
+              <span style={{ color: MM.muted, fontWeight: 700 }}>運営・編集</span><span>みなみ（元保育士・現役チャットレディ4年目）</span>
+              <span style={{ color: MM.muted, fontWeight: 700 }}>掲載内容</span><span>チャットレディ事務所の比較・口コミ・報酬条件・サポート・身バレ対策</span>
+              <span style={{ color: MM.muted, fontWeight: 700 }}>最終更新</span><span>2026年6月24日</span>
             </div>
           </div>
-        </div>
+        </section>
 
-        {/* ===== REVIEW（投稿） ===== */}
-        <div style={{ marginTop: 30 }}>
-          <SectionKicker>REVIEW</SectionKicker>
-          <h2 style={{
-            margin: "8px 0 14px",
-            fontSize: 19, fontWeight: 700, lineHeight: 1.6, color: G.ink,
-          }}>口コミ・体験談のご投稿。</h2>
-
-          <p style={{
-            margin: "0 0 14px",
-            fontSize: 12, lineHeight: 1.85, color: G.inkSoft,
+        {/* ===== CTA ===== */}
+        <section style={{ paddingTop: 30 }}>
+          <Link href="/jimusho" style={{
+            display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
+            padding: "15px 18px", borderRadius: 99,
+            background: MM.green, color: "#fff", fontSize: 14, fontWeight: 800, textDecoration: "none",
           }}>
-            実際に働いた経験を、匿名で投稿いただけます。<br />
-            良かった点も気になった点も、次に選ぶ誰かの判断材料になります。
-          </p>
-
-          <Link href="/kuchikomi" style={{
-            display: "flex", alignItems: "center", justifyContent: "space-between",
-            padding: "14px 16px", borderRadius: 99,
-            background: G.paper, color: G.brown,
-            border: `1px solid ${G.ruleStrong}`,
-            fontSize: 13, fontWeight: 700, textDecoration: "none",
-          }}>
-            <span style={{ display: "inline-flex", alignItems: "center", gap: 10 }}>
-              <Icon.Pencil size={16} />
-              事務所の口コミを投稿する
-            </span>
-            <Icon.Arrow size={13} />
+            自分に合う事務所を比較ランキングで見る
+            <Icon.Arrow size={14} />
           </Link>
-        </div>
+        </section>
 
       </div>
     </main>

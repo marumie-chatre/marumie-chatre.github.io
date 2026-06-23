@@ -366,7 +366,7 @@ export function OfficeDetailLayout({
               </div>
             ))}
           </div>
-          <Link href="/hyoka-kijun" style={{
+          <Link href="/profile#hyoka" style={{
             marginTop: 12, display: "inline-flex", alignItems: "center", gap: 5,
             fontSize: 11, fontWeight: 600, color: L3G.ink,
             borderBottom: `1px solid ${L3G.ink}`, paddingBottom: 1,

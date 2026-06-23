@@ -123,7 +123,7 @@ export default function JimushoPage() {
             まるみえチャトレでは、採点基準と確認した内容を公開しています。<br />
             なんとなくのおすすめではなく、理由がわかるランキングを目指しています。
           </p>
-          <Link href="/hyoka-kijun" style={{
+          <Link href="/profile#hyoka" style={{
             display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 8,
             padding: "12px 26px",
             background: G.sagePastel, color: G.brown,

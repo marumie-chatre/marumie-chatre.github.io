@@ -8,6 +8,10 @@ const nextConfig: NextConfig = {
       { source: "/column/jimusho-erabi", destination: "/q/jimusho-erabi", permanent: true },
       { source: "/column/mibare-taisaku", destination: "/q/mibare-taisaku", permanent: true },
       { source: "/column/hoikushi-baito", destination: "/q/hoikushi-baito", permanent: true },
+      // 運営方針・評価基準・口コミガイドラインを /profile に統合（301）
+      { source: "/houshin", destination: "/profile", permanent: true },
+      { source: "/hyoka-kijun", destination: "/profile", permanent: true },
+      { source: "/guideline", destination: "/profile", permanent: true },
     ];
   },
 };
