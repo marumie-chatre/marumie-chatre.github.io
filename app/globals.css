@@ -2217,3 +2217,6 @@ body > div > main { padding-top: 68px; }
 .ac-nav--next { transform: rotate(0deg); }
 @media (hover: hover) { .ac-nav:hover { background: var(--green-pale); } }
 .ac-nav:focus-visible { outline: 2px solid var(--color-primary-deep); outline-offset: 2px; }
+
+/* ===== プロフィール: 強調文字に薄いアウトライン下線（タン） ===== */
+.mm-profile strong { background-image: linear-gradient(transparent 64%, rgba(193,154,102,0.28) 64%); padding: 0 1.5px; }
