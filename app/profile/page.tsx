@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Icon } from "../Icon";
+import { IconShieldCheck, IconScale, IconSearch } from "@tabler/icons-react";
 import { BreadcrumbSchema, FAQSchema } from "../StructuredData";
 import { MM } from "../theme";
 
@@ -10,13 +11,11 @@ export const metadata = {
   description: "まるみえチャトレの運営方針とプロフィール。広告費で順位を変えない・良い点も気になる点も両方書く・検証と実体験で書く・口コミは本物だけ。5つの約束と評価基準、口コミ投稿ガイドラインをまとめています。",
 };
 
-// 5つの約束
+// 3つの約束
 const PROMISES = [
-  { n: "01", t: "広告費で順位は変えません", d: "おすすめ順は、公開している5つの評価基準だけで決めます。広告費の多さで順位は動かしません。" },
-  { n: "02", t: "良い点も、気になる点も、両方書きます", d: "お店の魅力だけでなく、応募前に知っておきたい“気になる点”も正直に。片方しか書かないのは、求人広告と同じになってしまうから。" },
-  { n: "03", t: "検証と実体験をもとに書きます", d: "書き手は、業界を実際に見てきた経験者です。調べたこと・体験したことをもとに、感覚ではなく根拠のある言葉でお伝えします。" },
-  { n: "04", t: "口コミは、本物だけ。作りません", d: "いただいた声を、投稿のルールにそってそのまま掲載します。サイト側が口コミを創作することは、絶対にしません。" },
-  { n: "05", t: "競合を品なくけなさず、誇大な数字に流されません", d: "他社をむやみに悪く書くことはしません。報酬も「在宅40%・通勤30%」という業界の標準を正直にお伝えし、「最大時給◯円」のような過度な期待はあおりません。" },
+  { n: "01", t: "広告費で順位は変えません", d: "おすすめ順は、公開している5つの評価基準だけで決めます。広告費の多さで順位は動かしません。", Icon: IconShieldCheck },
+  { n: "02", t: "良い点も、気になる点も、両方書きます", d: "お店の魅力だけでなく、応募前に知っておきたい“気になる点”も正直に。片方しか書かないのは、求人広告と同じになってしまうから。", Icon: IconScale },
+  { n: "03", t: "検証と実体験をもとに書きます", d: "書き手は、業界を実際に見てきた経験者です。調べたこと・体験したことをもとに、感覚ではなく根拠のある言葉でお伝えします。", Icon: IconSearch },
 ];
 
 // 評価の5軸
@@ -47,7 +46,7 @@ function H2({ children, id }: { children: React.ReactNode; id?: string }) {
       fontSize: 19,
       lineHeight: 1.5,
       color: MM.ink,
-      borderLeft: `5px solid ${MM.coral}`,
+      borderLeft: `5px solid ${MM.tan}`,
       paddingLeft: 13,
       margin: "0 0 16px",
     }}>{children}</h2>
@@ -56,7 +55,7 @@ function H2({ children, id }: { children: React.ReactNode; id?: string }) {
 
 export default function ProfilePage() {
   return (
-    <main style={{ background: MM.bg, color: MM.text, paddingBottom: 48 }}>
+    <main className="mm-profile" style={{ background: MM.bg, color: MM.text, paddingBottom: 48 }}>
       <BreadcrumbSchema items={[
         { name: "トップ", path: "/" },
         { name: "運営方針・プロフィール", path: "/profile" },
@@ -111,29 +110,39 @@ export default function ProfilePage() {
             fontSize: 13, lineHeight: 1.85, fontWeight: 700, color: MM.ink,
           }}>
             「とにかく応募してほしい」ではなく、<br />
-            <span style={{ color: MM.green }}>「ちゃんと選んでから決めてほしい」</span>。<br />それが、このサイトの基本方針です。
+            <span style={{ color: MM.green, backgroundImage: "linear-gradient(transparent 64%, rgba(193,154,102,0.30) 64%)" }}>「ちゃんと選んでから決めてほしい」</span>。<br />それが、このサイトの基本方針です。
           </div>
         </section>
 
-        {/* ===== 5つの約束 ===== */}
+        {/* ===== 3つの約束 ===== */}
         <section style={{ paddingTop: 34 }}>
-          <H2 id="yakusoku">まるみえチャトレの、5つの約束</H2>
+          <H2 id="yakusoku">まるみえチャトレの、3つの約束</H2>
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-            {PROMISES.map((p) => (
-              <div key={p.n} style={{
-                background: MM.coralBg, borderRadius: 12, padding: "14px 16px",
-                display: "flex", gap: 14, alignItems: "flex-start",
-              }}>
-                <span style={{
-                  fontFamily: "'Zen Maru Gothic', sans-serif", fontSize: 20, fontWeight: 900,
-                  color: MM.coral, lineHeight: 1, flexShrink: 0, paddingTop: 2,
-                }}>{p.n}</span>
-                <div>
-                  <div style={{ fontSize: 14, fontWeight: 800, color: MM.ink, lineHeight: 1.5 }}>{p.t}</div>
-                  <p style={{ margin: "6px 0 0", fontSize: 12, lineHeight: 1.85, color: MM.text }}>{p.d}</p>
+            {PROMISES.map((p) => {
+              const Ico = p.Icon;
+              return (
+                <div key={p.n} style={{
+                  background: MM.tanBg, borderRadius: 12, padding: "16px 18px",
+                  display: "flex", gap: 14, alignItems: "flex-start",
+                }}>
+                  <span style={{
+                    width: 46, height: 46, borderRadius: "50%", flexShrink: 0,
+                    background: MM.paper, color: MM.tan,
+                    display: "flex", alignItems: "center", justifyContent: "center",
+                    border: `1.5px solid ${MM.tan}`,
+                  }}>
+                    <Ico size={24} stroke={1.7} />
+                  </span>
+                  <div>
+                    <div style={{ display: "flex", alignItems: "baseline", gap: 7 }}>
+                      <span style={{ fontFamily: "'Zen Maru Gothic', sans-serif", fontSize: 16, fontWeight: 900, color: MM.tan, lineHeight: 1 }}>{p.n}</span>
+                      <span style={{ fontSize: 14, fontWeight: 800, color: MM.ink, lineHeight: 1.5 }}>{p.t}</span>
+                    </div>
+                    <p style={{ margin: "7px 0 0", fontSize: 12, lineHeight: 1.85, color: MM.text }}>{p.d}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </section>
 
@@ -202,8 +211,8 @@ export default function ProfilePage() {
             </p>
           </div>
 
-          <div style={{ marginTop: 12, padding: "14px 16px", background: MM.coralBg, borderRadius: 12, borderLeft: `4px solid ${MM.coral}` }}>
-            <div style={{ fontSize: 13, fontWeight: 800, color: MM.coralDeep, marginBottom: 8 }}>掲載できない内容</div>
+          <div style={{ marginTop: 12, padding: "14px 16px", background: MM.tanBg, borderRadius: 12, borderLeft: `4px solid ${MM.tan}` }}>
+            <div style={{ fontSize: 13, fontWeight: 800, color: "#9A7644", marginBottom: 8 }}>掲載できない内容</div>
             <ul style={{ margin: 0, paddingLeft: 18, fontSize: 12.5, lineHeight: 1.9, color: MM.text }}>
               <li>事実ではない内容・噂話</li>
               <li>感情的な誹謗中傷</li>
@@ -233,7 +242,7 @@ export default function ProfilePage() {
                   <span style={{ fontSize: 13, fontWeight: 700, color: MM.ink, lineHeight: 1.55 }}>{f.q}</span>
                 </div>
                 <div style={{ display: "flex", gap: 8, alignItems: "flex-start", marginTop: 7, paddingTop: 7, borderTop: `1px dashed ${MM.rule}` }}>
-                  <span style={{ fontFamily: "'Zen Maru Gothic', sans-serif", fontSize: 14, fontWeight: 900, color: MM.coral, flexShrink: 0 }}>A.</span>
+                  <span style={{ fontFamily: "'Zen Maru Gothic', sans-serif", fontSize: 14, fontWeight: 900, color: MM.tan, flexShrink: 0 }}>A.</span>
                   <span style={{ fontSize: 12, color: MM.text, lineHeight: 1.85 }}>{f.a}</span>
                 </div>
               </div>
