@@ -157,6 +157,7 @@ function ScoreBar({ value, max, height = 5, bg, fill }: { value: number; max: nu
 function RankingCard({ r, idx }: { r: typeof RANKING[0]; idx: number }) {
   const isTop = idx === 0;
   const TAN = "#C19A66", TAN_BG = "#F4EADB", GREEN_BTN = "#6FA858";
+  const MEDAL = ["#E3B23C", "#B7BCC4", "#CB8E5C"];
   const pills = isTop ? ["初心者に最もおすすめ", r.tags[0]] : [r.tags[0]];
   return (
     <Link
@@ -172,21 +173,28 @@ function RankingCard({ r, idx }: { r: typeof RANKING[0]; idx: number }) {
       }}
     >
       <div style={{ display: "flex", gap: 12, alignItems: "flex-start" }}>
-        {/* avatar + rank badge */}
+        {/* ロゴ + 順位バッジ */}
         <div style={{ position: "relative", flexShrink: 0 }}>
           <div style={{
-            width: 54, height: 54, borderRadius: 14,
-            background: G.sageSoft, color: G.sageDeep,
+            width: 56, height: 56, borderRadius: 14,
+            background: "#fff", border: `1px solid ${G.rule}`,
             display: "flex", alignItems: "center", justifyContent: "center",
-            fontSize: 15, fontWeight: 800,
-          }}>{r.name.slice(0, 2)}</div>
+            overflow: "hidden",
+          }}>
+            <Image src={`/logo-${r.id}.png`} alt={r.name} width={48} height={48}
+              style={{ width: "82%", height: "82%", objectFit: "contain" }} />
+          </div>
           <div style={{
-            position: "absolute", top: -7, left: -7,
-            width: 24, height: 24, borderRadius: "50%",
-            background: TAN, color: "#fff",
-            display: "flex", alignItems: "center", justifyContent: "center",
-            fontSize: 12, fontWeight: 800, border: "2px solid #fff",
-          }}>{r.rank}</div>
+            position: "absolute", top: -9, left: -9,
+            minWidth: 30, height: 22, padding: "0 7px",
+            borderRadius: 99, background: MEDAL[idx], color: "#fff",
+            display: "flex", alignItems: "center", justifyContent: "center", gap: 2,
+            fontSize: 11, fontWeight: 800, border: "2px solid #fff",
+            boxShadow: "0 2px 6px rgba(0,0,0,0.18)",
+          }}>
+            {isTop && <Icon.Crown size={11} />}
+            {r.rank}位
+          </div>
         </div>
 
         {/* pills + name + tagline */}
