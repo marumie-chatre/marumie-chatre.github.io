@@ -2188,9 +2188,19 @@ body > div > main { padding-top: 68px; }
   text-decoration: none; color: inherit;
   box-shadow: 0 4px 18px rgba(46,31,16,0.10);
 }
-.ac-featured-body { position: absolute; left: 0; right: 0; bottom: 0; padding: 16px 18px; }
-.ac-card-body { position: absolute; left: 0; right: 0; bottom: 0; padding: 12px 12px 13px; }
+.ac-featured-body { position: absolute; left: 0; right: 0; bottom: 0; padding: 16px 18px; display: flex; flex-direction: column; align-items: flex-start; }
+.ac-card-body { position: absolute; left: 0; right: 0; bottom: 0; padding: 12px 12px 13px; display: flex; flex-direction: column; align-items: flex-start; }
 .ac-scrim { position: absolute; inset: 0; pointer-events: none; }
+/* hero直下「注目の記事」: 横長カードの行（端まで流れる） */
+.ac-track--bleed { padding: 2px 20px 8px; }
+.ac-row-card {
+  position: relative; flex: 0 0 auto; width: 240px; aspect-ratio: 5/4;
+  border-radius: 14px; overflow: hidden; scroll-snap-align: start;
+  display: block; text-decoration: none; color: inherit;
+  box-shadow: 0 3px 12px rgba(46,31,16,0.08); transition: transform .18s ease;
+}
+@media (hover: hover) { .ac-row-card:hover { transform: translateY(-3px); } }
+.ac-row-card:focus-visible { outline: 3px solid var(--color-primary-deep); outline-offset: 3px; }
 @media (hover: hover) {
   .ac-featured:hover { transform: translateY(-2px); }
   .ac-card:hover { transform: translateY(-3px); }
