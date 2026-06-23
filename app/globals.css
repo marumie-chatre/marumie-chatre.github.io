@@ -5,7 +5,7 @@
      参考：MonPetit Natural Kiss（草緑＋水彩葉＋黄バッジ＋淡ミントチップ）*/
 
   /* ===== レガシートークン（既存ページ互換用・Palette E refined v3） ===== */
-  --green: #7BAA3F;                  /* fresh sage（細い線・小アクセント・score bar fill） */
+  --green: #6FA858;                  /* fresh sage（統一・完成版） */
   --green-dark: #587A38;             /* refined moss（限定使用） */
   --green-mid: #9BC25E;              /* mid-tone */
   --green-light: #CDDDB0;            /* mint chip */
@@ -14,7 +14,7 @@
   --green-bg: #DEE9C5;               /* soft bg */
   --cream: #FAFAF5;                  /* near-white cream */
   --white: #ffffff;
-  --text: #241E16;                   /* deep sumi（warm + 重厚） */
+  --text: #2C3326;                   /* 統一・完成版（ink） */
   --text-mid: #5A4E40;
   --text-muted: #87796A;
   --text-light: #B5AC9B;
@@ -29,7 +29,7 @@
   /* ===== Design Refresh v2 トークン（Palette E 適用版） ===== */
 
   /* Primary palette — Fresh Sage（refined v3：narrow usage） */
-  --color-primary: #7BAA3F;          /* score bar fill・kicker line 等の小アクセント */
+  --color-primary: #6FA858;          /* 統一・完成版（緑プライマリ） */
   --color-primary-deep: #587A38;     /* refined moss（限定使用） */
   --color-primary-tint: #CDDDB0;     /* タグ背景・アイコン背景（mint chip） */
   --color-primary-pastel: #A8C49A;   /* CTA background（pastel + ink text） */
@@ -55,7 +55,7 @@
   --color-cream: #F8EFE0;            /* カード内ソフトフィル */
 
   /* Ink（テキスト・deep sumi v3） */
-  --color-ink: #241E16;              /* 本文・見出し（warm sumi） */
+  --color-ink: #2C3326;              /* 統一・完成版（本文・見出し ink） */
   --color-ink-soft: #87796A;         /* 二次・キャプション */
   --color-ink-softer: #B5AC9B;       /* 三次・プレースホルダー */
 
@@ -75,7 +75,7 @@
   --rk-shadow: 0 4px 16px rgba(46,42,32,0.06);
   --rk-shadow-hover: 0 10px 26px rgba(46,70,40,0.13);
   --rk-shadow-first: 0 8px 24px rgba(190,138,60,0.16);
-  --rk-gold: #BE8A3C;          /* 点数・矢印（白地で読める濃さのゴールド） */
+  --rk-gold: #C19A66;          /* 点数・矢印（統一・完成版タン） */
   --rk-gold-bright: #E5B756;   /* 1位の王冠 */
   --rk-gold-line: #E7D3A3;     /* 1位カードの細いライン */
   --rk-first-bg: linear-gradient(180deg, #FFFDF8 0%, #FFFFFF 46%);

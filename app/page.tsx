@@ -18,10 +18,10 @@ const G = {
   bg: "#FBF7F0",            // タイトル画像の実 bg（#FAF6EE〜#FBF7F1 平均）に合わせた淡いクリーム
   bgWarm: "#F5E8C8",        // warm yellow band
   paper: "#FFFFFF",
-  ink: "#2E1F10",           // 濃い目のブラウン（warm dark brown）
+  ink: "#2C3326",           // 統一・完成版 ink
   inkSoft: "#87796A",
   inkSofter: "#B5AC9B",
-  sage: "#7BAA3F",          // fresh forest
+  sage: "#6FA858",          // 統一・完成版 緑
   sageDeep: "#587A38",      // refined moss
   sageSoft: "#CDDDB0",      // mint chip
   sagePastel: "#A8C49A",    // pastel sage (CTA bg)
