@@ -54,22 +54,6 @@ export default function ArticleCarousel({ articles, variant = "featured" }: { ar
         {articles.map((a) => (
           <Link key={a.href} href={a.href} data-card className="ac-row-card" aria-label={a.title}>
             <Image src={a.image} alt={a.title} fill sizes="260px" style={{ objectFit: "cover" }} />
-            <span className="ac-scrim" style={{ background: SCRIM }} />
-            <div className="ac-card-body">
-              <span style={{
-                fontSize: 9.5, fontWeight: 800, letterSpacing: 0.6,
-                padding: "3px 10px", borderRadius: 99, alignSelf: "flex-start",
-                background: a.accent, color: "#fff", boxShadow: "0 2px 8px rgba(0,0,0,0.18)",
-              }}>{a.category}</span>
-              <div style={{
-                marginTop: 8, fontSize: 13.5, fontWeight: 700, lineHeight: 1.45, color: "#fff",
-                textShadow: "0 1px 6px rgba(0,0,0,0.4)",
-                display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden",
-              }}>{a.title}</div>
-              <div style={{ marginTop: 7, fontSize: 9.5, color: "rgba(255,255,255,0.9)", display: "inline-flex", alignItems: "center", gap: 4 }}>
-                <Icon.Clock size={10} /> {a.readTime}
-              </div>
-            </div>
           </Link>
         ))}
       </div>

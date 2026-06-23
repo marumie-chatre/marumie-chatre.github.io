@@ -95,8 +95,14 @@ const ARTICLES = [
   { href: "/yougo", category: "用語", title: "チャットレディ用語辞典｜迷う言葉をやさしく解説", readTime: "約8分", date: "2026.05.16", accent: "#A8893C", image: "/hero-sp.jpg" /* 仮 */ },
 ];
 
-// データ：お悩みカテゴリ（最下部・記事への入口）
-const WORRIES_CHIPS = ["すべて", "身バレ", "家族バレ", "副業バレ", "初心者・選び方", "業界の不安"];
+// データ：お悩み記事リスト（最下部・記事への誘導）
+const WORRIES_ARTICLES = [
+  { href: "/q/jimusho-erabi", title: "チャットレディ事務所の選び方｜失敗しない見極め方" },
+  { href: "/q/mibare-taisaku", title: "身バレのよくある疑問に、ぜんぶ答えます" },
+  { href: "/q/shokuba-bare", title: "職場・会社にバレない副業の始め方" },
+  { href: "/q/ayashii", title: "チャトレって怪しくない？危なくない？" },
+  { href: "/q/shoshinsha", title: "初心者が安心して始められる事務所" },
+];
 
 // ========== サブコンポーネント ==========
 
@@ -816,14 +822,18 @@ export default function Home() {
           title="お悩みからさがす"
           note="始める前の心配ごとから、答える記事を探せます。"
         />
-        <div style={{ marginTop: 14, display: "flex", flexWrap: "wrap", gap: 8 }}>
-          {WORRIES_CHIPS.map((t, i) => (
-            <Link href={i === 0 ? "/q" : `/q?cat=${encodeURIComponent(t)}`} key={t} style={{
-              whiteSpace: "nowrap", fontSize: 12, fontWeight: 700,
-              padding: "9px 16px", borderRadius: 99, textDecoration: "none",
-              background: i === 0 ? G.sagePastel : G.paper, color: G.sageDeep,
-              border: i === 0 ? `1.5px solid ${G.sagePastel}` : `1px solid ${G.rule}`,
-            }}>{t}</Link>
+        <div style={{ marginTop: 14, display: "flex", flexDirection: "column", gap: 8 }}>
+          {WORRIES_ARTICLES.map((a) => (
+            <Link href={a.href} key={a.href} style={{
+              display: "flex", alignItems: "center", gap: 10,
+              padding: "13px 16px", borderRadius: 12,
+              background: G.paper, border: `1px solid ${G.rule}`,
+              textDecoration: "none", color: G.ink,
+            }}>
+              <span style={{ color: G.sageDeep, flexShrink: 0, display: "inline-flex" }}><Icon.Question size={16} /></span>
+              <span style={{ flex: 1, fontSize: 13, fontWeight: 700, lineHeight: 1.4 }}>{a.title}</span>
+              <Icon.Arrow size={13} />
+            </Link>
           ))}
         </div>
         <Link href="/q" style={{
