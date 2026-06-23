@@ -345,7 +345,7 @@ export function OfficeDetailLayout({
           }}>
             <span style={{ fontSize: 11, fontWeight: 800, letterSpacing: ".12em", color: L3G.inkSoft }}>SCORE</span>
             <div style={{ textAlign: "right" }}>
-              <span style={{ fontFamily: '"Zen Maru Gothic", sans-serif', fontSize: 27, fontWeight: 800, color: "#BE8A3C", lineHeight: 1 }}>
+              <span style={{ fontFamily: '"Zen Maru Gothic", sans-serif', fontSize: 27, fontWeight: 800, color: "#C19A66", lineHeight: 1 }}>
                 {o.score}
               </span>
               <span style={{ fontSize: 11, color: L3G.inkSoft, marginLeft: 3 }}>/100</span>
