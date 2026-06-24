@@ -14,10 +14,11 @@ import Link from "next/link";
 export function QABlock({ q, a }: { q: string; a: React.ReactNode }) {
   return (
     <div style={{
-      background: "var(--cream)",
+      background: "#fff",
       padding: "20px 24px",
       borderRadius: "12px",
       marginBottom: "20px",
+      border: "1px solid #E4E8DA",
       borderLeft: "4px solid var(--green-dark)",
     }}>
       <div style={{
@@ -83,14 +84,14 @@ export function QABlock({ q, a }: { q: string; a: React.ReactNode }) {
 export function PointBox({ children, title = "ポイント" }: { children: React.ReactNode; title?: string }) {
   return (
     <div style={{
-      background: "#fff8e1",
+      background: "#fff",
       borderRadius: "10px",
       padding: "16px 20px",
       display: "flex",
       gap: "12px",
       alignItems: "flex-start",
       marginBottom: "16px",
-      border: "1px solid #f5dc80",
+      border: "1.5px solid #EAD58A",
     }}>
       <span style={{fontSize: "22px", lineHeight: 1, flexShrink: 0}}>💡</span>
       <div style={{flex: 1}}>
@@ -113,13 +114,14 @@ export function PointBox({ children, title = "ポイント" }: { children: React
 export function WarningBox({ children, title = "注意" }: { children: React.ReactNode; title?: string }) {
   return (
     <div style={{
-      background: "#fdf0f0",
+      background: "#fff",
       borderRadius: "10px",
       padding: "16px 20px",
       display: "flex",
       gap: "12px",
       alignItems: "flex-start",
       marginBottom: "16px",
+      border: "1px solid #F2D2D2",
       borderLeft: "4px solid #e57373",
     }}>
       <span style={{fontSize: "22px", lineHeight: 1, flexShrink: 0}}>⚠️</span>
@@ -143,13 +145,14 @@ export function WarningBox({ children, title = "注意" }: { children: React.Rea
 export function TipBox({ children, title = "ここがポイント" }: { children: React.ReactNode; title?: string }) {
   return (
     <div style={{
-      background: "#f0f8ec",
+      background: "#fff",
       borderRadius: "10px",
       padding: "16px 20px",
       display: "flex",
       gap: "12px",
       alignItems: "flex-start",
       marginBottom: "16px",
+      border: "1px solid #CDDDB0",
       borderLeft: "4px solid var(--green-dark)",
     }}>
       <span style={{
@@ -209,7 +212,7 @@ export function ReadAlso({ href, children }: { href: string; children: React.Rea
       display: "flex",
       alignItems: "center",
       gap: "12px",
-      background: "#f0f8ec",
+      background: "#fff",
       border: "1px solid #cdddb0",
       borderLeft: "4px solid var(--green-dark)",
       borderRadius: "10px",
@@ -253,7 +256,8 @@ export function MinamiBubble({ children }: { children: React.ReactNode }) {
       <div style={{
         position: "relative",
         flex: 1,
-        background: "var(--green-pale)",
+        background: "#fff",
+        border: "1.5px solid #CDDDB0",
         borderRadius: "12px",
         padding: "12px 16px",
       }}>
@@ -265,7 +269,7 @@ export function MinamiBubble({ children }: { children: React.ReactNode }) {
           height: 0,
           borderTop: "7px solid transparent",
           borderBottom: "7px solid transparent",
-          borderRight: "8px solid var(--green-pale)",
+          borderRight: "8px solid #CDDDB0",
         }} />
         <div style={{ fontSize: "10px", fontWeight: 800, color: "var(--green-dark)", marginBottom: "4px" }}>みなみのひとこと</div>
         <div style={{ fontSize: "13.5px", lineHeight: 1.85, color: "#5e4a3a" }}>{children}</div>
