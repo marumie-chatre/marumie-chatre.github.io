@@ -19,9 +19,25 @@ export type AreaCardData = {
   review: AreaReview; // 実投稿のgood/bad（出典metaつき）
 };
 
+// office-header-{slug}.png の実寸（比率保持用）。画像を差し替えたら、その社の寸法をここで更新する。
+const BANNER_SIZE: Record<string, [number, number]> = {
+  ft: [1901, 918],
+  "bright-group": [1410, 832],
+  chatstyle: [1893, 777],
+  "at-group": [1382, 543],
+  "flavor-group": [1142, 571],
+  "liver-support": [1518, 926],
+  "chatlady-jp": [622, 350],
+  asterisk: [1895, 1051],
+  "pocket-work": [1892, 638],
+  "nmr-group": [1701, 918],
+  allure: [1410, 798],
+};
+
 export function AreaRankingCard({ c }: { c: AreaCardData }) {
   const isTop = c.rank === 1;
   const badge = c.slug === "ft" ? "初心者に最もおすすめ" : `${c.rank}位`;
+  const [bw, bh] = BANNER_SIZE[c.slug] ?? [1600, 800];
 
   return (
     <article
@@ -58,8 +74,8 @@ export function AreaRankingCard({ c }: { c: AreaCardData }) {
         <Image
           src={`/office-header-${c.slug}.png`}
           alt={c.name}
-          width={1901}
-          height={918}
+          width={bw}
+          height={bh}
           sizes="(max-width: 768px) 100vw, 720px"
           style={{ width: "100%", height: "auto", display: "block" }}
         />
