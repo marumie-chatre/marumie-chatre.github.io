@@ -86,27 +86,15 @@ export function PointBox({ children, title = "ポイント" }: { children: React
     <div style={{
       background: "#fff",
       borderRadius: "10px",
-      padding: "16px 20px",
-      display: "flex",
-      gap: "12px",
-      alignItems: "flex-start",
+      padding: "14px 16px",
       marginBottom: "16px",
       border: "1.5px solid #EAD58A",
     }}>
-      <span style={{fontSize: "22px", lineHeight: 1, flexShrink: 0}}>💡</span>
-      <div style={{flex: 1}}>
-        <div style={{
-          fontSize: "13px",
-          fontWeight: 700,
-          color: "#a07a30",
-          marginBottom: "6px",
-        }}>{title}</div>
-        <div style={{
-          fontSize: "14px",
-          lineHeight: 1.95,
-          color: "#5e4a3a",
-        }}>{children}</div>
+      <div style={{ display: "flex", alignItems: "center", gap: "7px", marginBottom: "8px" }}>
+        <span style={{fontSize: "18px", lineHeight: 1, flexShrink: 0}}>💡</span>
+        <div style={{ fontSize: "13px", fontWeight: 700, color: "#a07a30" }}>{title}</div>
       </div>
+      <div style={{ fontSize: "14px", lineHeight: 1.95, color: "#5e4a3a" }}>{children}</div>
     </div>
   );
 }
@@ -116,28 +104,16 @@ export function WarningBox({ children, title = "注意" }: { children: React.Rea
     <div style={{
       background: "#fff",
       borderRadius: "10px",
-      padding: "16px 20px",
-      display: "flex",
-      gap: "12px",
-      alignItems: "flex-start",
+      padding: "14px 16px",
       marginBottom: "16px",
       border: "1px solid #F2D2D2",
       borderLeft: "4px solid #e57373",
     }}>
-      <span style={{fontSize: "22px", lineHeight: 1, flexShrink: 0}}>⚠️</span>
-      <div style={{flex: 1}}>
-        <div style={{
-          fontSize: "13px",
-          fontWeight: 700,
-          color: "#c06060",
-          marginBottom: "6px",
-        }}>{title}</div>
-        <div style={{
-          fontSize: "14px",
-          lineHeight: 1.95,
-          color: "#5e4a3a",
-        }}>{children}</div>
+      <div style={{ display: "flex", alignItems: "center", gap: "7px", marginBottom: "8px" }}>
+        <span style={{fontSize: "18px", lineHeight: 1, flexShrink: 0}}>⚠️</span>
+        <div style={{ fontSize: "13px", fontWeight: 700, color: "#c06060" }}>{title}</div>
       </div>
+      <div style={{ fontSize: "14px", lineHeight: 1.95, color: "#5e4a3a" }}>{children}</div>
     </div>
   );
 }
@@ -147,41 +123,29 @@ export function TipBox({ children, title = "ここがポイント" }: { children
     <div style={{
       background: "#fff",
       borderRadius: "10px",
-      padding: "16px 20px",
-      display: "flex",
-      gap: "12px",
-      alignItems: "flex-start",
+      padding: "14px 16px",
       marginBottom: "16px",
       border: "1px solid #CDDDB0",
       borderLeft: "4px solid var(--green-dark)",
     }}>
-      <span style={{
-        display: "inline-flex",
-        alignItems: "center",
-        justifyContent: "center",
-        width: "22px",
-        height: "22px",
-        background: "var(--green-dark)",
-        color: "#fff",
-        borderRadius: "50%",
-        fontSize: "13px",
-        fontWeight: 900,
-        flexShrink: 0,
-        lineHeight: 1,
-      }}>✓</span>
-      <div style={{flex: 1}}>
-        <div style={{
-          fontSize: "13px",
-          fontWeight: 700,
-          color: "var(--green-dark)",
-          marginBottom: "6px",
-        }}>{title}</div>
-        <div style={{
-          fontSize: "14px",
-          lineHeight: 1.95,
-          color: "#5e4a3a",
-        }}>{children}</div>
+      <div style={{ display: "flex", alignItems: "center", gap: "7px", marginBottom: "8px" }}>
+        <span style={{
+          display: "inline-flex",
+          alignItems: "center",
+          justifyContent: "center",
+          width: "20px",
+          height: "20px",
+          background: "var(--green-dark)",
+          color: "#fff",
+          borderRadius: "50%",
+          fontSize: "12px",
+          fontWeight: 900,
+          flexShrink: 0,
+          lineHeight: 1,
+        }}>✓</span>
+        <div style={{ fontSize: "13px", fontWeight: 700, color: "var(--green-dark)" }}>{title}</div>
       </div>
+      <div style={{ fontSize: "14px", lineHeight: 1.95, color: "#5e4a3a" }}>{children}</div>
     </div>
   );
 }
