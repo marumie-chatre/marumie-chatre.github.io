@@ -33,33 +33,36 @@ export function AreaRankingCard({ c }: { c: AreaCardData }) {
         margin: "20px 0",
       }}
     >
-      {/* バナー画像（事務所ヘッダー）＋1位バッジ */}
-      <div style={{ position: "relative", width: "100%", height: "108px", overflow: "hidden", background: "var(--green-pale)" }}>
+      {/* 1位バッジ（画像に重ねず、上の独立した帯で常に読みやすく） */}
+      {isTop && (
+        <div
+          style={{
+            background: "#587A38",
+            color: "#fff",
+            fontSize: "12px",
+            fontWeight: 700,
+            padding: "7px 16px",
+            letterSpacing: "0.02em",
+            display: "flex",
+            alignItems: "center",
+            gap: "6px",
+          }}
+        >
+          <span aria-hidden="true">★</span>
+          {badge}
+        </div>
+      )}
+
+      {/* バナー画像（事務所ヘッダー・自然な比率で全体表示） */}
+      <div style={{ width: "100%", lineHeight: 0, background: "var(--green-pale)" }}>
         <Image
           src={`/office-header-${c.slug}.png`}
           alt={c.name}
-          fill
-          sizes="(max-width: 768px) 100vw, 680px"
-          style={{ objectFit: "cover" }}
+          width={1901}
+          height={918}
+          sizes="(max-width: 768px) 100vw, 720px"
+          style={{ width: "100%", height: "auto", display: "block" }}
         />
-        {isTop && (
-          <span
-            style={{
-              position: "absolute",
-              left: "12px",
-              top: "12px",
-              background: "#587A38",
-              color: "#fff",
-              fontSize: "11.5px",
-              fontWeight: 700,
-              padding: "4px 12px",
-              borderRadius: "100px",
-              letterSpacing: "0.02em",
-            }}
-          >
-            ★ {badge}
-          </span>
-        )}
       </div>
 
       {/* ヘッダー帯：順位・店名・スコア */}
