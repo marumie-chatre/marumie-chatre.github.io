@@ -33,11 +33,34 @@ export function AreaRankingCard({ c }: { c: AreaCardData }) {
         margin: "20px 0",
       }}
     >
-      {isTop && (
-        <div style={{ background: "#6FA858", color: "#fff", fontSize: "11.5px", fontWeight: 700, padding: "5px 16px", letterSpacing: "0.02em" }}>
-          ★ {badge}
-        </div>
-      )}
+      {/* バナー画像（事務所ヘッダー）＋1位バッジ */}
+      <div style={{ position: "relative", width: "100%", height: "108px", overflow: "hidden", background: "var(--green-pale)" }}>
+        <Image
+          src={`/office-header-${c.slug}.png`}
+          alt={c.name}
+          fill
+          sizes="(max-width: 768px) 100vw, 680px"
+          style={{ objectFit: "cover" }}
+        />
+        {isTop && (
+          <span
+            style={{
+              position: "absolute",
+              left: "12px",
+              top: "12px",
+              background: "#587A38",
+              color: "#fff",
+              fontSize: "11.5px",
+              fontWeight: 700,
+              padding: "4px 12px",
+              borderRadius: "100px",
+              letterSpacing: "0.02em",
+            }}
+          >
+            ★ {badge}
+          </span>
+        )}
+      </div>
 
       {/* ヘッダー帯：順位・店名・スコア */}
       <div style={{ background: "var(--green-pale)", padding: "13px 16px", display: "flex", alignItems: "center", gap: "11px" }}>
@@ -59,13 +82,6 @@ export function AreaRankingCard({ c }: { c: AreaCardData }) {
           <span style={{ fontSize: "8px", letterSpacing: "0.05em" }}>No.</span>
           <span style={{ fontSize: "16px", fontWeight: 800 }}>{c.rank}</span>
         </span>
-        <Image
-          src={`/logo-${c.slug}.png`}
-          alt={`${c.name} ロゴ`}
-          width={38}
-          height={38}
-          style={{ flexShrink: 0, borderRadius: "8px", background: "#fff", border: "1px solid var(--border-green)" }}
-        />
         <h3
           style={{
             flex: 1,
