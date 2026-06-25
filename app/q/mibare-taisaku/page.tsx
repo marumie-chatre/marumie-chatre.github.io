@@ -238,7 +238,7 @@ export default function ColMibareTaisakuPage() {
             なかでも、身バレが不安な人に相性がいいのが<strong>ノンアダルト専門のフェアリーテイル</strong>です。理由は「対策が最強だから」ではなく、
             <MarkerSpan>身バレ対策を“あなたに合わせて”一緒に考えてくれるから。</MarkerSpan>
           </p>
-          <PointBox title="みなみの体験｜FTが身バレを一緒に考えてくれること">
+          <PointBox title="フェアリーテイルがやってくれること">
             <CleanList
               items={[
                 <><strong>会話からバレる要素を教えてくれる</strong>　話の中で身元のヒントになりやすい部分を説明し、どんな設定・話題なら安全かをアドバイスしてくれます。</>,
