@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 // エリアページのランキングカード（全エリア共通の型・中身はページごとに差し替え）
 // スコア/タグ/forYou は app/jimusho/JimushoList.tsx の実データに準拠すること。
@@ -58,6 +59,13 @@ export function AreaRankingCard({ c }: { c: AreaCardData }) {
           <span style={{ fontSize: "8px", letterSpacing: "0.05em" }}>No.</span>
           <span style={{ fontSize: "16px", fontWeight: 800 }}>{c.rank}</span>
         </span>
+        <Image
+          src={`/logo-${c.slug}.png`}
+          alt={`${c.name} ロゴ`}
+          width={38}
+          height={38}
+          style={{ flexShrink: 0, borderRadius: "8px", background: "#fff", border: "1px solid var(--border-green)" }}
+        />
         <h3
           style={{
             flex: 1,
