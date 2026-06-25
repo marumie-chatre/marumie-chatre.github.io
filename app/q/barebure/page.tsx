@@ -67,7 +67,7 @@ export default function QBarebure() {
       <FAQSchema items={FAQS} />
 
       <L3ArticleShell
-        coverImage={{ src: "/q-barebure.png", alt: "配信中にお客さんにばれる？　よくある原因と対策5選" }}
+        coverImage={{ src: "/配信中身バレ対策.jpg", alt: "配信中にお客さんにばれる？　よくある原因と対策5選" }}
         breadcrumb={[
           { l: "トップ", href: "/" },
           { l: "お悩みから探す", href: "/q" },
