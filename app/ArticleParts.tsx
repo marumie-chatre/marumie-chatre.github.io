@@ -256,7 +256,7 @@ export function MinamiBubble({ children }: { children: React.ReactNode }) {
       <div style={{
         position: "relative",
         flex: 1,
-        background: "#fff",
+        background: "var(--green-pale)",
         border: "1.5px solid #CDDDB0",
         borderRadius: "12px",
         padding: "12px 16px",
@@ -269,7 +269,18 @@ export function MinamiBubble({ children }: { children: React.ReactNode }) {
           height: 0,
           borderTop: "7px solid transparent",
           borderBottom: "7px solid transparent",
-          borderRight: "8px solid #CDDDB0",
+          borderRight: "8px solid var(--green-pale)",
+        }} />
+        <span style={{
+          position: "absolute",
+          left: "-9px",
+          top: "14px",
+          width: 0,
+          height: 0,
+          borderTop: "8px solid transparent",
+          borderBottom: "8px solid transparent",
+          borderRight: "9px solid #CDDDB0",
+          zIndex: -1,
         }} />
         <div style={{ fontSize: "10px", fontWeight: 800, color: "var(--green-dark)", marginBottom: "4px" }}>みなみのひとこと</div>
         <div style={{ fontSize: "13.5px", lineHeight: 1.85, color: "#5e4a3a" }}>{children}</div>
