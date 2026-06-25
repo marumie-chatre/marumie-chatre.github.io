@@ -28,7 +28,7 @@ const FAQS = [
 
 const CONDITIONS: { title: string; body: ReactNode }[] = [
   {
-    title: "知り合いが、そもそもライブチャットを見ている",
+    title: "知り合いが同じサイトをよく見てる",
     body: "ライブチャット系のサイトは国内だけでも数多くあり、人気サイトでは1日に数百〜1万人規模の女性が配信しています。あなたはその大勢の一人。たまたま見ている知り合いが、偶然あなたに行き当たることは、めったにありません。",
   },
   {
@@ -58,9 +58,9 @@ const TOC = [
 // 箇条書きを<br />詰めにせず、余白のあるリストで見やすく
 function CleanList({ items }: { items: ReactNode[] }) {
   return (
-    <ul style={{ margin: 0, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: "10px" }}>
+    <ul style={{ margin: 0, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: "9px" }}>
       {items.map((it, i) => (
-        <li key={i} style={{ display: "flex", gap: "8px", fontSize: "14px", lineHeight: 1.8, color: "var(--text-mid)" }}>
+        <li key={i} style={{ display: "flex", gap: "8px", fontSize: "13.5px", lineHeight: 1.95, color: "#5e4a3a" }}>
           <span aria-hidden="true" style={{ color: "var(--green)", fontWeight: 800, flexShrink: 0 }}>・</span>
           <span>{it}</span>
         </li>

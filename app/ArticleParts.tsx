@@ -103,7 +103,7 @@ export function PointBox({ children, title = "ポイント" }: { children: React
         }}>{title}</div>
         <div style={{
           fontSize: "14px",
-          lineHeight: 1.7,
+          lineHeight: 1.95,
           color: "#5e4a3a",
         }}>{children}</div>
       </div>
@@ -134,7 +134,7 @@ export function WarningBox({ children, title = "注意" }: { children: React.Rea
         }}>{title}</div>
         <div style={{
           fontSize: "14px",
-          lineHeight: 1.7,
+          lineHeight: 1.95,
           color: "#5e4a3a",
         }}>{children}</div>
       </div>
@@ -178,7 +178,7 @@ export function TipBox({ children, title = "ここがポイント" }: { children
         }}>{title}</div>
         <div style={{
           fontSize: "14px",
-          lineHeight: 1.7,
+          lineHeight: 1.95,
           color: "#5e4a3a",
         }}>{children}</div>
       </div>
