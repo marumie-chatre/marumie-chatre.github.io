@@ -55,15 +55,12 @@ const TOC = [
   { id: "matome", label: "まとめ" },
 ];
 
-// 箇条書きを<br />詰めにせず、余白のあるリストで見やすく
+// /profile の枠内リストに合わせ、標準の箇条書きで詰めて整列（項目間に余分な余白を入れない）
 function CleanList({ items }: { items: ReactNode[] }) {
   return (
-    <ul style={{ margin: 0, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: "9px" }}>
+    <ul style={{ margin: 0, paddingLeft: 18, fontSize: "13px", lineHeight: 1.9, color: "#5e4a3a" }}>
       {items.map((it, i) => (
-        <li key={i} style={{ display: "flex", gap: "8px", fontSize: "13.5px", lineHeight: 1.95, color: "#5e4a3a" }}>
-          <span aria-hidden="true" style={{ color: "var(--green)", fontWeight: 800, flexShrink: 0 }}>・</span>
-          <span>{it}</span>
-        </li>
+        <li key={i}>{it}</li>
       ))}
     </ul>
   );
