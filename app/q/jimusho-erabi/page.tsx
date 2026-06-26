@@ -108,7 +108,7 @@ export default function ColJimushoErabiPage() {
       <FAQSchema items={FAQS} />
 
       <L3ArticleShell
-        coverImage={{ src: "/col-jimusho-erabi.png", alt: "チャットレディ事務所の選び方｜初めてでも失敗しない見極め方" }}
+        coverImage={{ src: "/col-jimusho-erabi.png", alt: "失敗しない！チャットレディ事務所の選び方｜初心者がつまずく5つのポイント" }}
         breadcrumb={[
           { l: "トップ", href: "/" },
           { l: "お悩みから探す", href: "/q" },
