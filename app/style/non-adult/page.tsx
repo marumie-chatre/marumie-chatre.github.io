@@ -141,7 +141,7 @@ export default function StyleNonAdultPage() {
           ]} />
 
           <div style={{ textAlign: "center", marginTop: "40px" }}>
-            <Link href="/jimusho" className="btn-main">自分に合う事務所を比較ランキングで見る →</Link>
+            <Link href="/jimusho" className="btn-main">自分に合う事務所をさがす →</Link>
           </div>
         </article>
       </L3ArticleShell>

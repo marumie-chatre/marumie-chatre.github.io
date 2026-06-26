@@ -124,7 +124,7 @@ export default function StyleZaitakuPage() {
           <p>在宅は、お店さえちゃんと選べば、自宅で無理なく続けられます。数字に振り回されず、<strong>独りにならず相談できるお店</strong>から、気軽に話を聞いてみてくださいね。あなたに合うお店も、ちゃんと見つかりますよ。</p>
 
           <div style={{ textAlign: "center", marginTop: "32px" }}>
-            <Link href="/jimusho" className="btn-main">自分に合う事務所を比較ランキングで見る →</Link>
+            <Link href="/jimusho" className="btn-main">自分に合う事務所をさがす →</Link>
           </div>
 
           <h2>よくある質問</h2>

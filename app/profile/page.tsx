@@ -272,7 +272,7 @@ export default function ProfilePage() {
             padding: "15px 18px", borderRadius: 99,
             background: MM.green, color: "#fff", fontSize: 14, fontWeight: 800, textDecoration: "none",
           }}>
-            自分に合う事務所を比較ランキングで見る
+            自分に合う事務所をさがす
             <Icon.Arrow size={14} />
           </Link>
         </section>
