@@ -6,7 +6,7 @@ import { PointBox, WarningBox, TipBox, MarkerSpan, MinamiBubble, ReadAlso, QABlo
 export const metadata = {
   alternates: { canonical: "/style/zaitaku" },
   title: "在宅チャットレディは稼げる？報酬率のリアルと安心して選ぶコツ",
-  description: "在宅でチャットレディを始めたい方へ。「報酬率最大60%」の本当のところ、在宅で稼ぐコツ、独りにならず続けられるお店の選び方を、現役4年のみなみが正直に解説します。",
+  description: "在宅でチャットレディを始めたい方へ。「報酬率最大60%」の本当のところ、在宅で稼ぐコツ、独りにならず続けられるお店の選び方を、現役チャットレディ4年のみなみが正直に解説します。",
 };
 
 const FAQS = [
@@ -29,7 +29,7 @@ export default function StyleZaitakuPage() {
     <>
       <ArticleSchema
         title="在宅チャットレディは稼げる？報酬率のリアルと安心して選ぶコツ"
-        description="在宅でチャットレディを始めたい方へ。「報酬率最大60%」の本当のところ、在宅で稼ぐコツ、独りにならず続けられるお店の選び方を、現役4年のみなみが正直に解説します。"
+        description="在宅でチャットレディを始めたい方へ。「報酬率最大60%」の本当のところ、在宅で稼ぐコツ、独りにならず続けられるお店の選び方を、現役チャットレディ4年のみなみが正直に解説します。"
         url="https://marumie-chatre.vercel.app/style/zaitaku"
         datePublished="2026-05-14"
         dateModified="2026-06-24"
@@ -54,7 +54,7 @@ export default function StyleZaitakuPage() {
         <article className="col-article-body">
 
           <p>「育児や家事の合間に」「副業で、自宅の空き時間に」「通うのは難しいから在宅一択」——在宅チャットレディは、<strong>自宅で自分のペースで働ける</strong>のが最大の魅力ですよね。</p>
-          <p>先に安心してほしいことから言いますね。<MarkerSpan>在宅でも、お店さえちゃんと選べば、無理なく続けられます。</MarkerSpan>ただ正直に言うと、在宅は「気軽に始めやすい反面、独学になりがち」という面もあります。だからこそ、現役4年の私が、在宅のリアルと安心して選ぶコツを正直にお伝えします。</p>
+          <p>先に安心してほしいことから言いますね。<MarkerSpan>在宅でも、お店さえちゃんと選べば、無理なく続けられます。</MarkerSpan>ただ正直に言うと、在宅は「気軽に始めやすい反面、独学になりがち」という面もあります。だからこそ、現役チャットレディ4年の私が、在宅のリアルと安心して選ぶコツを正直にお伝えします。</p>
 
           <PointBox title="この記事でわかること">
             <ul style={{ margin: 0, paddingLeft: 18, lineHeight: 1.9 }}>
@@ -133,7 +133,7 @@ export default function StyleZaitakuPage() {
           ))}
 
           <div className="col-article-warn">
-            ※本記事は編集部の調査・現役4年の経験と各事務所の公式情報をもとに作成しています。条件は変わることがあるため、最新は公式サイト・面談でご確認ください。
+            ※本記事は編集部の調査・現役チャットレディ4年の経験と各事務所の公式情報をもとに作成しています。条件は変わることがあるため、最新は公式サイト・面談でご確認ください。
           </div>
 
           <RelatedList items={[
