@@ -102,13 +102,13 @@ export default function ArticleCarousel({ articles, variant = "featured" }: { ar
   );
 }
 
-// 中央に1枚を大きく見せ、左右に前後をチラ見せ。下のドットで枚数と現在地を示す。
+// 中央に1枚を大きく見せ、左右に前後をチラ見せ。先頭↔末尾がつながる無限ループ（手動スワイプも両方向）。
 function RowCarousel({ articles }: { articles: CarouselArticle[] }) {
   const trackRef = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(0);
   const len = articles.length;
-  // 無限ループ用に同じ並びを2セット分並べる（末尾→先頭を巻き戻さず繋ぐ）
-  const loopItems = [...articles, ...articles];
+  // 3セット並べ、常に中央セットに居続けることで先頭↔末尾を両方向につなぐ
+  const loopItems = [...articles, ...articles, ...articles];
 
   const cards = (el: HTMLDivElement) =>
     [...el.querySelectorAll<HTMLElement>("[data-card]")];
@@ -128,7 +128,15 @@ function RowCarousel({ articles }: { articles: CarouselArticle[] }) {
     el.scrollTo({ left: card.offsetLeft - (el.clientWidth - card.offsetWidth) / 2, behavior });
   };
 
-  // スクロール追従：ドット更新＋2セット目に入ったら1セット分だけ無音で巻き戻して無限化
+  // 初期位置：中央セットの先頭へ（瞬時）
+  useEffect(() => {
+    const el = trackRef.current;
+    if (!el) return;
+    const id = requestAnimationFrame(() => centerTo(el, len, "auto"));
+    return () => cancelAnimationFrame(id);
+  }, [len]);
+
+  // スクロール追従：ドット更新＋端のセットに来たら中央セットへ無音ジャンプ（前後どちらもループ）
   useEffect(() => {
     const el = trackRef.current;
     if (!el) return;
@@ -138,11 +146,12 @@ function RowCarousel({ articles }: { articles: CarouselArticle[] }) {
       // ドット更新（rAFで間引き）
       cancelAnimationFrame(raf);
       raf = requestAnimationFrame(() => setActive(nearestIndex(el) % len));
-      // 巻き戻し（rAFに依存させない）：止まったら2セット目→1セット分戻して無限化
+      // 巻き戻し（rAFに依存させない）：止まったら端セット→中央セットへ戻して無限化
       window.clearTimeout(settle);
       settle = window.setTimeout(() => {
         const cur = nearestIndex(el);
-        if (cur >= len) centerTo(el, cur - len, "auto");
+        if (cur < len) centerTo(el, cur + len, "auto");           // 先頭セット → 中央へ
+        else if (cur >= len * 2) centerTo(el, cur - len, "auto");  // 末尾セット → 中央へ
       }, 130);
     };
     el.addEventListener("scroll", onScroll, { passive: true });
@@ -174,11 +183,19 @@ function RowCarousel({ articles }: { articles: CarouselArticle[] }) {
     };
   }, [len]);
 
+  // ドット：いま居るセット内の i 枚目へ
+  const goToDot = (i: number) => {
+    const el = trackRef.current;
+    if (!el) return;
+    const base = Math.floor(nearestIndex(el) / len) * len;
+    centerTo(el, base + i, "smooth");
+  };
+
   return (
     <div>
       <div ref={trackRef} className="ac-center-track">
         {loopItems.map((a, i) => (
-          <Link key={`${a.href}-${i}`} href={a.href} data-card className="ac-center-card" aria-label={a.title} tabIndex={i >= len ? -1 : undefined}>
+          <Link key={`${a.href}-${i}`} href={a.href} data-card className="ac-center-card" aria-label={a.title} tabIndex={(i < len || i >= len * 2) ? -1 : undefined}>
             <Image src={a.image} alt={a.title} fill sizes="(max-width:640px) 80vw, 360px" style={{ objectFit: "cover" }} />
           </Link>
         ))}
@@ -191,7 +208,7 @@ function RowCarousel({ articles }: { articles: CarouselArticle[] }) {
             aria-label={`${i + 1}枚目を見る`}
             aria-current={i === active ? "true" : undefined}
             className={`ac-dot${i === active ? " ac-dot--active" : ""}`}
-            onClick={() => { const el = trackRef.current; if (el) centerTo(el, i); }}
+            onClick={() => goToDot(i)}
           />
         ))}
       </div>
