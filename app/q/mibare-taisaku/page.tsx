@@ -85,7 +85,7 @@ export default function ColMibareTaisakuPage() {
       <FAQSchema items={FAQS} />
 
       <L3ArticleShell
-        coverImage={{ src: "/col-mibare-taisaku.png", alt: "チャットレディの身バレ、よくある疑問にぜんぶ答えます" }}
+        coverImage={{ src: "/身バレ.png", alt: "チャットレディの身バレ、よくある疑問にぜんぶ答えます" }}
         breadcrumb={[
           { l: "トップ", href: "/" },
           { l: "お悩みから探す", href: "/q" },

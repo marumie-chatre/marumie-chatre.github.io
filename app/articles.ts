@@ -35,7 +35,7 @@ export const ARTICLES: Article[] = [
   { href: "/q/jimusho-erabi",  category: "選び方",   title: "チャットレディ事務所の選び方｜初心者が失敗しない見極め方", readTime: "約5分", date: "2026.06.19", accent: "#587A38", image: "/事務所選び.png" },
   { href: "/style/non-adult",  category: "働き方",   title: "ノンアダルトは本当にお話だけ？サポート・収入と安心の選び方", readTime: "約7分", date: "2026.05.14", accent: "#6FA858", image: "/お話しだけって本当？.jpg" },
   { href: "/q/hoikushi-baito", category: "副業バレ", title: "職場にバレない副業の始め方　元保育士の実体験", readTime: "約7分", date: "2026.05.07", accent: "#8FAD7F", image: "/職場ばれ.jpg" },
-  { href: "/q/mibare-taisaku", category: "身バレ",   title: "身バレのよくある疑問に、ぜんぶ答えます", readTime: "約6分", date: "2026.05.06", accent: "#E89B85", image: "/col-mibare-taisaku.png" },
+  { href: "/q/mibare-taisaku", category: "身バレ",   title: "身バレのよくある疑問に、ぜんぶ答えます", readTime: "約6分", date: "2026.05.06", accent: "#E89B85", image: "/身バレ.png" },
 ];
 
 // 日付の新しい順にソートして返す（n を渡すと先頭 n 件）
