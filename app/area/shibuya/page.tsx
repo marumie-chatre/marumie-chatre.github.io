@@ -337,7 +337,7 @@ export default function AreaShibuya() {
           <ul>
             <li><Link href="/q/ayashii">チャトレって怪しくない？危なくない？</Link></li>
             <li><Link href="/q/kazoku-bare">家族・親・彼氏にバレるのが怖い</Link></li>
-            <li><Link href="/q/shokuba-bare">職場・会社にバレない副業の始め方</Link></li>
+            <li><Link href="/q/hoikushi-baito">職場・会社にバレない副業の始め方</Link></li>
           </ul>
 
           <div className="col-article-warn">

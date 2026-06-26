@@ -68,19 +68,11 @@ const ARTICLES: Article[] = [
     image: "/家族、彼氏ばれ.jpg",
   },
   {
-    href: "/q/shokuba-bare",
-    cat: "身バレ対策",
-    title: "職場にバレずに始める、副業チャットレディ",
-    excerpt: "副業として始めたい方へ。住民税対策・マイナンバー誤解・職種別の判断ポイント。",
-    time: "5分", date: "2026.05.07",
-    image: "/q-shokuba-bare.png",
-  },
-  {
     href: "/q/hoikushi-baito",
     cat: "身バレ対策",
-    title: "チャトレは副業にアリ？会社・職場にバレないための全対策",
-    excerpt: "副業として始めたい方へ。住民税・確定申告・職場バレ対策まで一気通貫で整理。",
-    time: "7分", date: "2026.05.07",
+    title: "職場にバレない副業の始め方　元保育士の実体験",
+    excerpt: "本業をしながら始めたい方へ。職場バレの入口は住民税だけ。普通徴収・確定申告まで、元保育士のみなみが正直に。",
+    time: "7分", date: "2026.06.26",
     image: "/col-hoikushi-baito.png",
   },
   {

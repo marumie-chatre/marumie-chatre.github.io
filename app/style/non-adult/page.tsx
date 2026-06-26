@@ -137,7 +137,7 @@ export default function StyleNonAdultPage() {
             { href: "/q/jimusho-erabi", label: "チャットレディ事務所の選び方｜失敗しない見極め方" },
             { href: "/style/virtual", label: "顔出しなし・バーチャル配信で働ける事務所" },
             { href: "/style/tsukin", label: "通勤型チャットレディ事務所｜選び方" },
-            { href: "/q/shokuba-bare", label: "職場・会社にバレない副業の始め方" },
+            { href: "/q/hoikushi-baito", label: "職場・会社にバレない副業の始め方" },
           ]} />
 
           <div style={{ textAlign: "center", marginTop: "40px" }}>

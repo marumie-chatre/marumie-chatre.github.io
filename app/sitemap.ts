@@ -10,9 +10,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "asterisk", "pocket-work", "liver-support",
   ];
 
-  // /q 配下 8 記事（旧 /column 3本も統合済）
+  // /q 配下記事（旧 /column 統合済・shokuba-bare は hoikushi-baito に 301 統合）
   const qArticles = [
-    "barebure", "kazoku-bare", "shokuba-bare", "shoshinsha", "ayashii",
+    "barebure", "kazoku-bare", "shoshinsha", "ayashii",
     "jimusho-erabi", "mibare-taisaku", "hoikushi-baito",
   ];
 
