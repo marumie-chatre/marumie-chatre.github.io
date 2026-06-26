@@ -141,7 +141,7 @@ export default function StyleZaitakuPage() {
             { href: "/style/non-adult", label: "「お話だけ」って本当？サポートと収入を正直に解説" },
             { href: "/style/virtual", label: "顔出しなし・バーチャル配信で働ける事務所" },
             { href: "/q/kazoku-bare", label: "家族・親・彼氏にバレるのが怖い" },
-            { href: "/q/shokuba-bare", label: "職場・会社にバレない副業の始め方" },
+            { href: "/q/hoikushi-baito", label: "職場・会社にバレない副業の始め方" },
           ]} />
 
         </article>

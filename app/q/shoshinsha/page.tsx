@@ -184,7 +184,7 @@ export default function QShoshinsha() {
         <ul>
           <li><Link href="/q/barebure">配信中に客に特定されるのが怖い</Link>（マスク・ウィッグ・バーチャル配信などの対策）</li>
           <li><Link href="/q/kazoku-bare">家族・親・彼氏にバレるのが怖い</Link>（検索履歴・SNS・声・部屋のバレ対策）</li>
-          <li><Link href="/q/shokuba-bare">職場・会社にバレない副業の始め方</Link>（住民税・マイナンバー・副業禁止職種の判断）</li>
+          <li><Link href="/q/hoikushi-baito">職場・会社にバレない副業の始め方</Link>（住民税・マイナンバー・副業禁止職種の判断）</li>
           <li><Link href="/q/ayashii">業界全体への怪しさ・不信感</Link>（怪しい事務所の見分け方・お話だけで稼げる仕組み）</li>
         </ul>
 

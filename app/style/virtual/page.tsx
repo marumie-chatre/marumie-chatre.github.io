@@ -314,7 +314,7 @@ export default function StyleVirtualPage() {
         A. <strong>顔自体は映らない</strong>ため、知り合いに気づかれる心配はほぼありません。声を変調機能で変えれば、さらに身バレリスクを下げられます。</p>
 
         <p><strong>Q. 副業でバーチャル配信はできますか？</strong><br />
-        A. <strong>可能です</strong>。むしろ<strong>副業として最適</strong>です。顔バレリスクがほぼゼロなので、本業に影響を与えずに続けられます。詳しくは <Link href="/q/shokuba-bare">職場バレ対策ページ</Link> へ。</p>
+        A. <strong>可能です</strong>。むしろ<strong>副業として最適</strong>です。顔バレリスクがほぼゼロなので、本業に影響を与えずに続けられます。詳しくは <Link href="/q/hoikushi-baito">職場バレ対策ページ</Link> へ。</p>
 
         <p><strong>Q. バーチャル配信で月10万円稼ぐにはどれくらいの時間が必要ですか？</strong><br />
         A. <strong>一般的に半年〜1年</strong>かかります。最初の3ヶ月は月3-10万円程度で、半年〜1年で月10-20万円が現実的なペースです。月10万円超えを安定させるには、<strong>会話力とキャラ設定の作り込み</strong>が重要です。</p>
@@ -344,7 +344,7 @@ export default function StyleVirtualPage() {
         <ul>
           <li><Link href="/q/barebure">配信中に客に特定されるのが怖い →</Link></li>
           <li><Link href="/q/kazoku-bare">家族・親・彼氏にバレるのが怖い →</Link></li>
-          <li><Link href="/q/shokuba-bare">職場・会社にバレない副業の始め方 →</Link></li>
+          <li><Link href="/q/hoikushi-baito">職場・会社にバレない副業の始め方 →</Link></li>
           <li><Link href="/q/ayashii">チャトレって怪しくない？危なくない？ →</Link></li>
           <li><Link href="/q/shoshinsha">初心者が安心して始められる事務所 →</Link></li>
         </ul>

@@ -382,7 +382,7 @@ export default function StyleTsukinPage() {
         <p>A. 事務所によって異なります。<strong>全額支給・上限あり支給・自己負担</strong>の3パターンがあります。応募前に「通勤手当の有無・上限額」を必ず確認してください。</p>
 
         <h3>Q. 副業バレが心配です</h3>
-        <p>A. 通勤型は配信中の身バレ対策（マスク・ウィッグ・配信フィルター）が手厚く、<strong>身バレリスクは在宅と変わらない</strong>です。職場バレ（住民税経由）の対策は、<strong>ブライトグループの顧問税理士サポート</strong>などが有効です。詳しくは <Link href="/q/shokuba-bare">職場バレ対策ページ</Link> へ。</p>
+        <p>A. 通勤型は配信中の身バレ対策（マスク・ウィッグ・配信フィルター）が手厚く、<strong>身バレリスクは在宅と変わらない</strong>です。職場バレ（住民税経由）の対策は、<strong>ブライトグループの顧問税理士サポート</strong>などが有効です。詳しくは <Link href="/q/hoikushi-baito">職場バレ対策ページ</Link> へ。</p>
 
         <h3>Q. 完全防音個室って本当ですか？</h3>
         <p>A. 主要事務所の店舗は<strong>完全防音個室</strong>です。ただし、<strong>店舗タイプ（オフィスビル型・マンション型）によって防音性に差</strong>があります。応募前に「個室の防音性」を必ず面談で確認してください。</p>
@@ -454,7 +454,7 @@ export default function StyleTsukinPage() {
         <ul>
           <li><Link href="/q/barebure">配信中に客に特定されるのが怖い →</Link></li>
           <li><Link href="/q/kazoku-bare">家族・親・彼氏にバレるのが怖い →</Link></li>
-          <li><Link href="/q/shokuba-bare">職場・会社にバレない副業の始め方 →</Link></li>
+          <li><Link href="/q/hoikushi-baito">職場・会社にバレない副業の始め方 →</Link></li>
           <li><Link href="/q/ayashii">チャトレって怪しくない？危なくない？ →</Link></li>
           <li><Link href="/q/shoshinsha">初心者が安心して始められる事務所 →</Link></li>
         </ul>
