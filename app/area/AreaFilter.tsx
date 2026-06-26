@@ -111,9 +111,9 @@ export default function AreaFilter() {
                 borderRadius: 999,
                 fontSize: 13, fontWeight: 700,
                 cursor: "pointer", whiteSpace: "nowrap",
-                background: isActive ? G.sagePastel : "#fff",
-                color: G.sageDeep,
-                border: isActive ? `1.5px solid ${G.sagePastel}` : `1px solid ${G.border}`,
+                background: isActive ? "#6FA858" : "#fff",
+                color: isActive ? "#fff" : G.sageDeep,
+                border: isActive ? "1.5px solid #6FA858" : `1px solid ${G.border}`,
                 transition: "background 0.18s, border-color 0.18s",
               }}
             >
