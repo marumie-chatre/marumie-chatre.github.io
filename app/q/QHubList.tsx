@@ -73,7 +73,7 @@ const ARTICLES: Article[] = [
     title: "職場にバレない副業の始め方　元保育士の実体験",
     excerpt: "本業をしながら始めたい方へ。職場バレの入口は住民税だけ。普通徴収・確定申告まで、元保育士のみなみが正直に。",
     time: "7分", date: "2026.06.26",
-    image: "/col-hoikushi-baito.png",
+    image: "/職場ばれ.jpg",
   },
   {
     href: "/q/shoshinsha",

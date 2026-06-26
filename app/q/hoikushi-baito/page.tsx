@@ -67,7 +67,7 @@ export default function ColHoikushiBaitoPage() {
       <FAQSchema items={FAQS} />
 
       <L3ArticleShell
-        coverImage={{ src: "/col-hoikushi-baito.png", alt: "チャットレディは職場にバレる？　元保育士が教える、バレない副業の始め方" }}
+        coverImage={{ src: "/職場ばれ.jpg", alt: "チャットレディは職場にバレる？　元保育士が教える、バレない副業の始め方" }}
         breadcrumb={[
           { l: "トップ", href: "/" },
           { l: "お悩みから探す", href: "/q" },
