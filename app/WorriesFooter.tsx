@@ -8,9 +8,9 @@ import { Icon } from "./Icon";
 // 白枠カード＋正方形サムネ＋テキスト（カテゴリ／タイトル／所要時間・日付）のリスト。
 const WORRIES = [
   { href: "/q/jimusho-erabi", cat: "初心者・選び方", title: "チャットレディ事務所の選び方｜失敗しない5つの基準", time: "5分", date: "2026.05.05", image: "/col-jimusho-erabi.png" },
-  { href: "/q/barebure",      cat: "身バレ対策",     title: "身バレが怖い人のための、事務所選び", time: "5分", date: "2026.05.07", image: "/q-barebure.png" },
+  { href: "/q/barebure",      cat: "身バレ対策",     title: "身バレが怖い人のための、事務所選び", time: "5分", date: "2026.05.07", image: "/配信中身バレ対策.jpg" },
   { href: "/q/mibare-taisaku", cat: "身バレ対策",    title: "身バレ、よくある疑問に答えます｜顔バレ・家族バレ・職場バレ", time: "6分", date: "2026.05.06", image: "/col-mibare-taisaku.png" },
-  { href: "/q/kazoku-bare",   cat: "身バレ対策",     title: "家族にバレずに続けるための、安全対策", time: "5分", date: "2026.05.07", image: "/q-kazoku-bare.png" },
+  { href: "/q/kazoku-bare",   cat: "身バレ対策",     title: "家族にバレずに続けるための、安全対策", time: "5分", date: "2026.05.07", image: "/家族、彼氏ばれ.jpg" },
   { href: "/q/shokuba-bare",  cat: "身バレ対策",     title: "職場にバレずに始める、副業チャットレディ", time: "5分", date: "2026.05.07", image: "/q-shokuba-bare.png" },
   { href: "/q/ayashii",       cat: "業界の不安",     title: "業界が怪しく見える方へ、現役が正直に答える", time: "5分", date: "2026.05.07", image: "/q-ayashii.png" },
 ];

@@ -49,7 +49,7 @@ const ARTICLES: Article[] = [
     title: "身バレが怖い人のための、事務所選び",
     excerpt: "配信中の身バレが心配な方へ。マスク・バーチャル・地域ブロックなど対策を具体的に。",
     time: "5分", date: "2026.05.07",
-    image: "/q-barebure.png",
+    image: "/配信中身バレ対策.jpg",
   },
   {
     href: "/q/mibare-taisaku",
@@ -65,7 +65,7 @@ const ARTICLES: Article[] = [
     title: "家族にバレずに続けるための、安全対策",
     excerpt: "同居家族にバレずに続けたい方へ。検索履歴・SNS・声漏れ・部屋の対策まで。",
     time: "5分", date: "2026.05.07",
-    image: "/q-kazoku-bare.png",
+    image: "/家族、彼氏ばれ.jpg",
   },
   {
     href: "/q/shokuba-bare",
