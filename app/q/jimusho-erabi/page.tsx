@@ -1,4 +1,6 @@
 import Link from "next/link";
+import type { ReactNode } from "react";
+import { QABlock, PointBox, TipBox, MarkerSpan } from "../../ArticleParts";
 import { FAQSchema, ArticleSchema, BreadcrumbSchema } from "../../StructuredData";
 import { L3ArticleShell } from "../../L3";
 
@@ -25,7 +27,69 @@ const FAQS = [
     q: "アダルトが不安です。ノンアダルト専門と選択可、どちらがいいですか？",
     a: "アダルトは無理にやらなくて大丈夫です。不安ならノンアダルト専門の事務所（フェアリーテイル等）を選べば、会話メインで自分のペースで安心して始められます。",
   },
+  {
+    q: "全くの未経験でも働けますか？",
+    a: "働けます。チャットレディの大半は未経験スタートです。大事なのは、未経験者向けのサポート（教え方）がある事務所を選ぶこと。最初の数か月は練習期間と割り切れば大丈夫です。",
+  },
+  {
+    q: "容姿に自信がないのですが…",
+    a: "容姿よりも「話のしやすさ」「雰囲気」「清潔感」のほうが評価されます。真面目で優しい雰囲気を求めているお客さんは多いです。顔を出したくない場合は、マスク配信や顔出しなしも選べます。",
+  },
+  {
+    q: "最初に必要なお金はありますか？",
+    a: "通勤型は基本的に初期費用ゼロで、機材は事務所がそろえてくれます。在宅型はカメラ・マイクなどで2〜3万円程度かかる場合があります。",
+  },
+  {
+    q: "シフトはどう決まりますか？",
+    a: "ほとんどの事務所が自由シフト制です。本業の合間や生活リズムに合わせて働けます。ノルマや最低出勤日数がない事務所を選ぶと、副業としても続けやすいです。",
+  },
 ];
+
+const TOC = [
+  { id: "houshu", label: "報酬の「ほんとのところ」" },
+  { id: "support", label: "何で選ぶ？──「サポート」で選ぶ" },
+  { id: "tsumazuki", label: "初心者がつまずく5つのポイント" },
+  { id: "adult", label: "アダルトが不安な人へ" },
+  { id: "nagare", label: "始め方の流れ（応募〜デビュー）" },
+  { id: "checklist", label: "始める前のチェックリスト" },
+  { id: "faq", label: "よくある質問" },
+  { id: "matome", label: "まとめ" },
+];
+
+// 初心者がつまずきやすい5つのポイントと対策（番号カードで縦並び）
+const PITFALLS: { title: string; body: ReactNode }[] = [
+  {
+    title: "最初の1〜2か月は、稼ぎが伸びない",
+    body: <>これはほぼ全員が通る道。チャットは「常連さんを作る仕事」なので、最初は試行錯誤の時期です。<strong>最初の3か月は練習期間と割り切り、月収目標は低め（月3〜5万円）に</strong>。コツを聞ける事務所だと、ここを越えやすいです。</>,
+  },
+  {
+    title: "何を話していいか分からない",
+    body: <>会話に自信がなくても大丈夫。むしろ<strong>聞き上手</strong>のほうが続きます。話題の出し方や好かれる見せ方を「センスではなくやり方」として教えてくれる事務所なら、未経験でも段階的に伸びます。</>,
+  },
+  {
+    title: "配信機材・環境がわからない",
+    body: <>カメラ・照明・背景、初めてだと分からないですよね。<strong>通勤型なら機材は完備で心配ゼロ</strong>。在宅でも、初心者向けに機材リストを用意してくれる事務所を選べば安心です。</>,
+  },
+  {
+    title: "「向いてないかも」のとき、辞めにくい",
+    body: <>意外と多いのが辞めるときの引き止め。<strong>退会手続きが明確・在籍縛りなし・体験入店あり</strong>の事務所を選べば、合わないときもすっと離れられます。</>,
+  },
+  {
+    title: "アダルトを断りきれない",
+    body: <>「ノンアダルトで」と話していたのに、入店後に空気で勧められるパターン。初心者ほど押されがちです。<strong>ノンアダルト専門とはっきり明言している事務所</strong>を選び、最初に希望を伝えておきましょう。</>,
+  },
+];
+
+// /profile の枠内リストに合わせ、標準の箇条書きで詰めて整列
+function CleanList({ items }: { items: ReactNode[] }) {
+  return (
+    <ul style={{ margin: 0, paddingLeft: 18, fontSize: "13px", lineHeight: 1.9, color: "#5e4a3a" }}>
+      {items.map((it, i) => (
+        <li key={i}>{it}</li>
+      ))}
+    </ul>
+  );
+}
 
 export default function ColJimushoErabiPage() {
   return (
@@ -52,14 +116,30 @@ export default function ColJimushoErabiPage() {
         ]}
         kicker="お悩み｜事務所の選び方"
         title={<>チャットレディ事務所の選び方｜<br />初めてでも失敗しない見極め方</>}
-        meta={{ date: "2026.06.19", readTime: "約4分で読めます" }}
+        meta={{ date: "2026.06.19", readTime: "約6分で読めます" }}
       >
         <article className="col-article-body">
 
           <p>「興味はあるけど、どの事務所を選べばいいんだろう」「失敗したらどうしよう」——その不安、すごく分かります。私も元保育士で、4年前に初めて応募するときは、本当にドキドキしながらパソコンの前にいました。</p>
           <p>でも、大丈夫。事務所選びは、見るところさえ分かっていれば、そんなに難しくありません。初めてのあなたが安心して選べるように、現役4年の私が知っていることを、正直にお話ししていきますね。</p>
 
-          <h2>報酬の「ほんとのところ」だけ、先に知っておこう</h2>
+          <nav
+            aria-label="もくじ"
+            style={{ background: "var(--cream)", border: "1px solid var(--border-green)", borderRadius: "12px", padding: "16px 18px", margin: "24px 0" }}
+          >
+            <div style={{ fontSize: "12px", fontWeight: 800, color: "var(--green-dark)", marginBottom: "10px" }}>もくじ</div>
+            <ol style={{ margin: 0, paddingLeft: "18px", display: "flex", flexDirection: "column", gap: "8px" }}>
+              {TOC.map((t) => (
+                <li key={t.id}>
+                  <a href={`#${t.id}`} style={{ color: "var(--text)", textDecoration: "none", fontWeight: 700, fontSize: "13.5px" }}>
+                    {t.label}
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </nav>
+
+          <h2 id="houshu">報酬の「ほんとのところ」だけ、先に知っておこう</h2>
           <p>まずお金の仕組みだけ先に。チャットの報酬は完全歩合制で、報酬率は<strong>通勤で30%、在宅で40%</strong>が相場です。一部のお店だけじゃなく、業界全体でだいたい決まっている数字なんです。</p>
 
           <h3>「報酬率60%」「最大時給◯円」に惑わされないで</h3>
@@ -71,7 +151,7 @@ export default function ColJimushoErabiPage() {
           <p>でも、チャットは会話の技術がいる世界で、最初から一人で稼いでいくのは、正直かなり難しいんです。逆に言うと、ノウハウさえ身につければ、頑張りがちゃんと返ってくる仕事。そして事務所は、何千人もの女の子のデータやお客さんの分析を持っていて、その稼ぎ方を教えてくれます。</p>
           <p>だから、ひとりで50%もらっても続かずに終わるより、30%でも“教わりながら自分のペースで続けられる”方が、結果的に長く稼げることが多いんです。もちろん、入れば誰でも簡単に伸びる、という話ではありません。だからこそ<strong>「ちゃんと教えてくれて、無理なく続けさせてくれるか」で選んでほしい</strong>んです。</p>
 
-          <h2>じゃあ、何で選べばいいの？ ——「サポート」で選ぶ</h2>
+          <h2 id="support">じゃあ、何で選べばいいの？ ——「サポート」で選ぶ</h2>
           <p>いちばん大事なのは、サポートが手厚いかどうか。ちゃんと教えてくれるお店を選べば、初めてでも大丈夫です。</p>
           <p>逆に気をつけたいのは、サポートが雑で、無理にアダルトをすすめてきたり、女の子の気持ちに寄り添ってくれないお店。こういうところは、初めての子が安心して続けるのは難しいです。</p>
 
@@ -82,7 +162,34 @@ export default function ColJimushoErabiPage() {
           </div>
           <p>特に最後の2つ。質問に嫌な顔をせず答えてくれて、希望を聞いてくれるお店は、入ってからも安心です。逆に、希望を流したり質問を面倒くさそうにするお店だったら、無理に決めず、いったん持ち帰って考えてみましょう。</p>
 
-          <h2>アダルトが不安な人へ</h2>
+          <h2 id="tsumazuki">初心者がつまずく5つのポイント</h2>
+          <p>4年見てきて分かったのは、<MarkerSpan>初心者がつまずくところは、ほぼ決まっている</MarkerSpan>ということ。先に知っておくだけで、続けられる確率がぐっと上がります。どれも、対策があるので大丈夫です。</p>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: "10px", margin: "22px 0" }}>
+            {PITFALLS.map((p, i) => (
+              <div
+                key={i}
+                style={{ background: "#fff", border: "1px solid var(--border-green)", borderRadius: "12px", padding: "16px 18px" }}
+              >
+                <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "8px" }}>
+                  <span
+                    style={{
+                      flexShrink: 0, width: "28px", height: "28px", borderRadius: "8px",
+                      background: "var(--green-pale)", color: "var(--green-dark)",
+                      display: "inline-flex", alignItems: "center", justifyContent: "center",
+                      fontWeight: 700, fontSize: "15px",
+                    }}
+                  >
+                    {i + 1}
+                  </span>
+                  <span style={{ fontSize: "15px", fontWeight: 700, color: "var(--text)", lineHeight: 1.5 }}>{p.title}</span>
+                </div>
+                <p style={{ fontSize: "13.5px", lineHeight: 1.85, color: "var(--text-mid)", margin: 0, paddingLeft: "38px" }}>{p.body}</p>
+              </div>
+            ))}
+          </div>
+
+          <h2 id="adult">アダルトが不安な人へ</h2>
           <p>「アダルトがあるのかな」と不安な方も多いと思います。先に言っておくと、<strong>無理にやらなくて大丈夫</strong>です。不安なら、最初からノンアダルト専門のお店を選べば、安心して始められます。会話メインで、自分のペースで続けられますよ。</p>
 
           <h2>こんな人には、フェアリーテイルが合います</h2>
@@ -95,7 +202,40 @@ export default function ColJimushoErabiPage() {
             <Link href="/jimusho/ft" className="btn-main">フェアリーテイルの詳細を見る →</Link>
           </p>
 
-          <h2>まとめ：焦らなくて大丈夫</h2>
+          <h2 id="nagare">始め方の流れ（応募〜デビューまで）</h2>
+          <p>実際に始めるときの流れも、ざっくり知っておくと安心です。どのステップも「合わなければ無理に進めなくていい」のが基本です。</p>
+          <TipBox title="応募〜デビューの5ステップ">
+            <CleanList
+              items={[
+                <><strong>① 連絡する</strong>　公式サイトやLINEで「説明だけ聞きたい」でOK。応募の強要はありません。</>,
+                <><strong>② 面談に行く</strong>　仕事内容・報酬・配信ルーム見学・質問の時間。合わなければその場で帰って大丈夫。</>,
+                <><strong>③ 本登録・身分証</strong>　年齢確認のため身分証を提示します。個人情報の扱いもここで確認。</>,
+                <><strong>④ 体験入店 or デビュー</strong>　お試しできる事務所も。合わなければ辞められます。</>,
+                <><strong>⑤ 配信開始</strong>　最初はスタッフがサポートしてくれます。自分のできる範囲で無理なく。</>,
+              ]}
+            />
+          </TipBox>
+
+          <h2 id="checklist">始める前のチェックリスト</h2>
+          <p>応募・相談の前に、これだけ確認しておくと話がスムーズです。</p>
+          <PointBox title="始める前に決めておくこと">
+            <CleanList
+              items={[
+                "「ノンアダルト」か「アダルト選択可」か、自分の希望を決めた",
+                "在宅か通勤か考えた（迷うなら、まずは通勤がおすすめ）",
+                "最初の3か月の月収目標を、現実的な数字にした（月3〜10万円）",
+                "最低3か月は続けてみる、と心づもりした",
+                "確定申告のことを少し調べた（年間20万円を超えたら必要）",
+              ]}
+            />
+          </PointBox>
+
+          <h2 id="faq">よくある質問</h2>
+          {FAQS.map((f) => (
+            <QABlock key={f.q} q={f.q} a={f.a} />
+          ))}
+
+          <h2 id="matome">まとめ：焦らなくて大丈夫</h2>
           <div className="col-article-box">
             <p>□ 報酬率の高い数字（60%・最大時給）に惑わされない<br />□ 「%の高さ」より「ちゃんと教えてくれるか」で選ぶ<br />□ 面談で、掃除・説明・質問への対応・希望を聞く姿勢を見る<br />□ アダルトが不安なら、ノンアダルト専門を選ぶ</p>
           </div>
