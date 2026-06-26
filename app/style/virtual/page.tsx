@@ -74,6 +74,7 @@ export default function StyleVirtualPage() {
       <FAQSchema items={FAQS} />
 
       <L3ArticleShell
+        coverImage={{ src: "/バーチャル.jpg", alt: "顔出しなしで働ける？　バーチャル配信チャットレディのすべて" }}
         breadcrumb={[
           { l: "トップ", href: "/" },
           { l: "働き方から探す", href: "/style" },
