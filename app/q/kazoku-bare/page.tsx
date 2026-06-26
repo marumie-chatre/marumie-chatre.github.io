@@ -300,7 +300,7 @@ export default function QKazokuBare() {
 
           <div style={{ textAlign: "center", marginTop: "32px" }}>
             <Link href="/jimusho" className="btn-main">
-              自分に合う事務所を比較ランキングで見る →
+              自分に合う事務所をさがす →
             </Link>
           </div>
 

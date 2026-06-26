@@ -195,7 +195,7 @@ export default function QShoshinsha() {
         <div style={{textAlign:"center", marginTop:"48px"}}>
           <p style={{marginBottom:"24px"}}><strong>「初めてだから、まずは説明を聞いてみたい」という方へ</strong></p>
           <p style={{marginBottom:"24px"}}>応募ではなく、<strong>「説明だけ聞いてみる」「こんな働き方ができるのか質問してみる」</strong>、くらいの軽い気持ちで大丈夫です。</p>
-          <Link href="/jimusho" className="btn-main">自分に合う事務所を比較ランキングで見る →</Link>
+          <Link href="/jimusho" className="btn-main">自分に合う事務所をさがす →</Link>
         </div>
       </article>
       </L3ArticleShell>

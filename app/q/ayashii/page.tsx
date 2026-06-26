@@ -128,7 +128,7 @@ export default function QAyashii() {
           <p>「怪しいかも」と立ち止まれたあなたは、いい入り口に立っています。あとは<strong>見分け方を持って、安心して話を聞ける一社から</strong>。私も3社目でやっと納得できるお店に出会えました。あなたに合うお店も、ちゃんと見つかりますよ。</p>
 
           <div style={{ textAlign: "center", marginTop: "32px" }}>
-            <Link href="/jimusho" className="btn-main">自分に合う事務所を比較ランキングで見る →</Link>
+            <Link href="/jimusho" className="btn-main">自分に合う事務所をさがす →</Link>
           </div>
 
           <h2>よくある質問</h2>
