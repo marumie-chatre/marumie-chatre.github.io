@@ -40,7 +40,7 @@ const ARTICLES: Article[] = [
     title: "チャットレディ事務所の選び方｜初心者が失敗しない見極め方",
     excerpt: "「なんとなく良さそう」で選ぶと後悔します。安全な事務所を見極める5つの基準を、現役の視点で解説します。",
     time: "5分", date: "2026.05.05",
-    image: "/col-jimusho-erabi.png",
+    image: "/事務所選び.png",
     featured: true,
   },
   {

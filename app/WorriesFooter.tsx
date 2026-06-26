@@ -7,7 +7,7 @@ import { Icon } from "./Icon";
 // お悩みから探す（全ページ共通フッター）
 // 白枠カード＋正方形サムネ＋テキスト（カテゴリ／タイトル／所要時間・日付）のリスト。
 const WORRIES = [
-  { href: "/q/jimusho-erabi", cat: "初心者・選び方", title: "チャットレディ事務所の選び方｜初心者が失敗しない見極め方", time: "5分", date: "2026.05.05", image: "/col-jimusho-erabi.png" },
+  { href: "/q/jimusho-erabi", cat: "初心者・選び方", title: "チャットレディ事務所の選び方｜初心者が失敗しない見極め方", time: "5分", date: "2026.05.05", image: "/事務所選び.png" },
   { href: "/q/barebure",      cat: "身バレ対策",     title: "配信中にお客さんにばれる？　よくある原因と対策5選", time: "5分", date: "2026.05.07", image: "/配信中身バレ対策.jpg" },
   { href: "/q/mibare-taisaku", cat: "身バレ対策",    title: "身バレのよくある疑問に、ぜんぶ答えます", time: "6分", date: "2026.05.06", image: "/col-mibare-taisaku.png" },
   { href: "/q/kazoku-bare",   cat: "身バレ対策",     title: "家族や彼氏にバレる？　よくある原因とバレない対策", time: "5分", date: "2026.05.07", image: "/家族、彼氏ばれ.jpg" },
