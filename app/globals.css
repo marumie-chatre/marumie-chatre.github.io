@@ -1019,6 +1019,14 @@ body > div > main { padding-top: 68px; }
   font-size: 15px; color: var(--text-mid);
   line-height: 1.85; margin-bottom: 8px;
 }
+/* 本文中のリンクは「緑＋下線」で明確にクリック可能と分かるように
+   （ReadAlso/RelatedList はインラインで text-decoration:none を指定済みなので影響しない） */
+.col-article-body a {
+  color: var(--green-dark);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-weight: 700;
+}
 .col-article-box {
   background: #fff; border: 1px solid var(--border-green);
   border-radius: var(--radius); padding: 20px 24px;

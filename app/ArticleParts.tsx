@@ -176,24 +176,35 @@ export function ReadAlso({ href, children }: { href: string; children: React.Rea
       display: "flex",
       alignItems: "center",
       gap: "12px",
-      background: "#fff",
+      background: "var(--green-pale)",
       border: "1px solid #cdddb0",
       borderLeft: "4px solid var(--green-dark)",
       borderRadius: "10px",
       padding: "12px 16px",
       margin: "22px 0",
       textDecoration: "none",
-      color: "var(--text)",
+      color: "var(--green-dark)",
     }}>
       <span style={{
-        fontSize: "10.5px",
+        fontSize: "10px",
         fontWeight: 800,
-        color: "var(--green-dark)",
+        color: "#fff",
+        background: "var(--green-dark)",
+        padding: "3px 8px",
+        borderRadius: "999px",
         whiteSpace: "nowrap",
         letterSpacing: "0.04em",
+        flexShrink: 0,
       }}>あわせて読みたい</span>
-      <span style={{ fontSize: "13px", fontWeight: 700, lineHeight: 1.45, flex: 1 }}>{children}</span>
-      <span style={{ color: "var(--green-dark)", fontWeight: 800, flexShrink: 0 }}>→</span>
+      <span style={{
+        fontSize: "13px", fontWeight: 700, lineHeight: 1.45, flex: 1,
+        color: "var(--green-dark)", textDecoration: "underline", textUnderlineOffset: "2px",
+      }}>{children}</span>
+      <span style={{
+        flexShrink: 0, width: 22, height: 22, borderRadius: "50%",
+        background: "var(--green-dark)", color: "#fff", fontWeight: 800, fontSize: 12,
+        display: "inline-flex", alignItems: "center", justifyContent: "center",
+      }}>→</span>
     </Link>
   );
 }
@@ -271,12 +282,12 @@ export function RelatedList({ title = "あわせて読みたい記事", items }:
               gap: "8px",
               fontSize: "13px",
               fontWeight: 700,
-              color: "var(--text)",
+              color: "var(--green-dark)",
               textDecoration: "none",
               lineHeight: 1.4,
             }}>
-              <span style={{ color: "var(--green-dark)", flexShrink: 0 }}>›</span>
-              {it.label}
+              <span style={{ flexShrink: 0 }}>›</span>
+              <span style={{ textDecoration: "underline", textUnderlineOffset: "2px" }}>{it.label}</span>
             </Link>
           </li>
         ))}
