@@ -49,6 +49,7 @@ export default function Houshu60Page() {
         kicker="用語辞典｜お金の話"
         title={<>報酬率「最大60%」って本当？<br />数字でわかる、安心できる事務所選び</>}
         meta={{ date: "2026.06.23", readTime: "約3分で読めます" }}
+        coverImage={{ src: "/報酬率60％って本当？.jpg", alt: "報酬率「最大60%」って本当？数字でわかる、安心できる事務所選び" }}
       >
         <article className="col-article-body">
 
