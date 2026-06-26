@@ -92,6 +92,7 @@ export default function QMensetsu() {
       <FAQSchema items={FAQS} />
 
       <L3ArticleShell
+        coverImage={{ src: "/面接から体験入店の流れ.jpg", alt: "チャットレディの面接って何するの？　流れ・持ち物・体験入店まで" }}
         breadcrumb={[
           { l: "トップ", href: "/" },
           { l: "お悩みから探す", href: "/q" },

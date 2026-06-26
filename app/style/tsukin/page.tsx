@@ -74,6 +74,7 @@ export default function StyleTsukinPage() {
       <FAQSchema items={FAQS} />
 
       <L3ArticleShell
+        coverImage={{ src: "/通勤型.jpg", alt: "通勤型チャットレディってどう？　環境とサポートで無理なく続けられる働き方" }}
         breadcrumb={[
           { l: "トップ", href: "/" },
           { l: "働き方から探す", href: "/style" },
