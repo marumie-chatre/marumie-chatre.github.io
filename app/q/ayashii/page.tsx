@@ -5,8 +5,8 @@ import { PointBox, WarningBox, TipBox, MarkerSpan, MinamiBubble, ReadAlso, QABlo
 
 export const metadata = {
   alternates: { canonical: "/q/ayashii" },
-  title: "チャットレディは怪しい？危ない？現役4年が正直に答えます",
-  description: "「チャットレディって怪しい・危ない？」その不安に、元保育士の現役4年が正直にお答えします。怪しさの正体・本当に危ない事務所の見分け方・お話だけで稼げるのか。安心して始めるための見極め方が分かります。",
+  title: "チャットレディは怪しい？危ない？4年目の現役チャットレディが正直に答えます",
+  description: "「チャットレディって怪しい・危ない？」その不安に、元保育士の現役チャットレディ4年が正直にお答えします。怪しさの正体・本当に危ない事務所の見分け方・お話だけで稼げるのか。安心して始めるための見極め方が分かります。",
 };
 
 const FAQS = [
@@ -28,8 +28,8 @@ export default function QAyashii() {
   return (
     <>
       <ArticleSchema
-        title="チャットレディは怪しい？危ない？現役4年が正直に答えます"
-        description="「チャットレディって怪しい・危ない？」その不安に、元保育士の現役4年が正直にお答えします。怪しさの正体・本当に危ない事務所の見分け方・お話だけで稼げるのか。"
+        title="チャットレディは怪しい？危ない？4年目の現役チャットレディが正直に答えます"
+        description="「チャットレディって怪しい・危ない？」その不安に、元保育士の現役チャットレディ4年が正直にお答えします。怪しさの正体・本当に危ない事務所の見分け方・お話だけで稼げるのか。"
         url="https://marumie-chatre.vercel.app/q/ayashii"
         datePublished="2026-05-10"
         dateModified="2026-06-24"
@@ -42,20 +42,20 @@ export default function QAyashii() {
       <FAQSchema items={FAQS} />
 
       <L3ArticleShell
-        coverImage={{ src: "/q-ayashii.png", alt: "チャットレディは怪しい？危ない？現役4年が正直に答えます" }}
+        coverImage={{ src: "/q-ayashii.png", alt: "チャットレディは怪しい？危ない？4年目の現役チャットレディが正直に答えます" }}
         breadcrumb={[
           { l: "トップ", href: "/" },
           { l: "お悩みから探す", href: "/q" },
           { l: "怪しい？危ない？" },
         ]}
         kicker="お悩み｜怪しさ・危なさ"
-        title={<>チャットレディは怪しい？危ない？<br />現役4年が正直に答えます</>}
+        title={<>チャットレディは怪しい？危ない？<br />4年目の現役チャットレディが正直に答えます</>}
         meta={{ date: "2026.06.24", readTime: "約5分で読めます" }}
       >
         <article className="col-article-body">
 
           <p>「チャットレディ、興味はあるけど、なんか怪しい…」「『簡単に稼げる』って書いてある時点で逆に不安」——その警戒心、まったく正しいです。</p>
-          <p>先に安心してほしいことから言いますね。<MarkerSpan>“なんとなく怪しい”は、正体を分解すれば怖くなくなります。</MarkerSpan>私自身、4年前に始める前は同じ不安で、応募ボタンを押すまで2週間悩みました。だからこそ、現役4年の立場で正直にお話しします。良いことばかりは書きません。<strong>見分ける目さえ持てば、安心して始められます。</strong></p>
+          <p>先に安心してほしいことから言いますね。<MarkerSpan>“なんとなく怪しい”は、正体を分解すれば怖くなくなります。</MarkerSpan>私自身、4年前に始める前は同じ不安で、応募ボタンを押すまで2週間悩みました。だからこそ、現役チャットレディ4年の立場で正直にお話しします。良いことばかりは書きません。<strong>見分ける目さえ持てば、安心して始められます。</strong></p>
 
           <PointBox title="この記事でわかること">
             <ul style={{ margin: 0, paddingLeft: 18, lineHeight: 1.9 }}>
@@ -137,7 +137,7 @@ export default function QAyashii() {
           ))}
 
           <div className="col-article-warn">
-            ※本記事は編集部の調査・現役4年の経験をもとに作成しています。お店の状況は変わることがあるため、最終的にはご自身で確認してください。
+            ※本記事は編集部の調査・現役チャットレディ4年の経験をもとに作成しています。お店の状況は変わることがあるため、最終的にはご自身で確認してください。
           </div>
 
           <RelatedList items={[
