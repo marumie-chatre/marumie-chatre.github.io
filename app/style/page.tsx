@@ -5,7 +5,7 @@ import { BreadcrumbSchema } from "../StructuredData";
 
 export const metadata = {
   alternates: { canonical: "/style" },
-  title: "働き方から選ぶ｜まるみえチャトレ",
+  title: "働き方から選ぶ",
   description: "在宅・通勤・副業・ノンアダルト（お話し）・本気で稼ぐなど、働き方ごとに「向いている人・確認ポイント・注意点」を整理。自分に無理なく続けられる働き方から事務所を選べます。",
 };
 

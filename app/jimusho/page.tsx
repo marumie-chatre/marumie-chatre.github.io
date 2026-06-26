@@ -6,7 +6,7 @@ import JimushoList from "./JimushoList";
 
 export const metadata = {
   alternates: { canonical: "/jimusho" },
-  title: "事務所ランキングを見る｜まるみえチャトレ",
+  title: "事務所ランキングを見る",
   description: "なんとなくのおすすめではなく、安全性・サポート・初心者向け・働きやすさ・稼ぎやすさの5つの基準で11事務所を比較しています。応募する前に、お店の中身を見て選びたい方のためのランキングです。",
 };
 

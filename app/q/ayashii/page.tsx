@@ -5,7 +5,7 @@ import { PointBox, WarningBox, TipBox, MarkerSpan, MinamiBubble, ReadAlso, QABlo
 
 export const metadata = {
   alternates: { canonical: "/q/ayashii" },
-  title: "チャットレディは怪しい？危ない？現役4年が正直に答えます｜まるみえチャトレ",
+  title: "チャットレディは怪しい？危ない？現役4年が正直に答えます",
   description: "「チャットレディって怪しい・危ない？」その不安に、元保育士の現役4年が正直にお答えします。怪しさの正体・本当に危ない事務所の見分け方・お話だけで稼げるのか。安心して始めるための見極め方が分かります。",
 };
 

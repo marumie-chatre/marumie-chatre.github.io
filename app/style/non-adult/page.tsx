@@ -6,7 +6,7 @@ import { PointBox, TipBox, MarkerSpan, MinamiBubble, ReadAlso, RelatedList } fro
 
 export const metadata = {
   alternates: { canonical: "/style/non-adult" },
-  title: "ノンアダルトは本当にお話だけ？サポート・収入と安心の選び方｜まるみえチャトレ",
+  title: "ノンアダルトは本当にお話だけ？サポート・収入と安心の選び方",
   description: "「ノンアダルトはお話だけで稼げる」って本当？怪しくない？現役4年のみなみが、お話だけで働ける仕組みの本当のところと、収入・サポートのリアル、安心して選ぶコツを正直に解説します。",
 };
 

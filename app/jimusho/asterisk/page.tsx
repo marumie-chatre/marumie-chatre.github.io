@@ -4,7 +4,7 @@ import { OfficeDetailLayout, type OfficeDetailData } from "../../L3";
 
 export const metadata = {
   alternates: { canonical: "/jimusho/asterisk" },
-  title: "アスタリスクの口コミ・評判【まるみえチャトレ】",
+  title: "アスタリスクの口コミ・評判",
   description: "アスタリスクの編集部調査と口コミ。全店を女性スタッフが運営する高収入向けの事務所。アダルト寄りの色も含めて正直にまとめました。",
 };
 

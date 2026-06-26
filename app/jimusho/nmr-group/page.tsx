@@ -4,7 +4,7 @@ import { OfficeDetailLayout, type OfficeDetailData } from "../../L3";
 
 export const metadata = {
   alternates: { canonical: "/jimusho/nmr-group" },
-  title: "NMRグループの口コミ・評判【まるみえチャトレ】",
+  title: "NMRグループの口コミ・評判",
   description: "NMRグループの編集部調査と口コミ。年1回の在籍アンケートを公開する事務所。完全防音個室・在宅通勤の切替OK。中堅事務所の評判を正直にまとめました。",
 };
 

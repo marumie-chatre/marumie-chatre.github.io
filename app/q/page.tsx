@@ -3,7 +3,7 @@ import QHubList from "./QHubList";
 
 export const metadata = {
   alternates: { canonical: "/q" },
-  title: "お悩みから探す｜まるみえチャトレ",
+  title: "お悩みから探す",
   description: "身バレ・家族バレ・職場バレ・初心者の不安など、応募前後の不安にカテゴリ別に答える編集部記事と Q&A をまとめています。元保育士の現役チャットレディが運営しています。",
 };
 

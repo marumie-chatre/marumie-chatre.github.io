@@ -4,7 +4,7 @@ import { OfficeDetailLayout, type OfficeDetailData } from "../../L3";
 
 export const metadata = {
   alternates: { canonical: "/jimusho/chatstyle" },
-  title: "チャットスタイルの口コミ・評判【まるみえチャトレ】",
+  title: "チャットスタイルの口コミ・評判",
   description: "チャットスタイルの編集部調査と口コミ。ノンアダルトでも稼ぎ方を教えてくれるサポート重視の事務所。バーチャル配信OK。初心者向けの評判を正直にまとめました。",
 };
 

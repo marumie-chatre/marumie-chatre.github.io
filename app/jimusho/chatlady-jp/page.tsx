@@ -4,7 +4,7 @@ import { OfficeDetailLayout, type OfficeDetailData } from "../../L3";
 
 export const metadata = {
   alternates: { canonical: "/jimusho/chatlady-jp" },
-  title: "チャットレディJPの口コミ・評判【まるみえチャトレ】",
+  title: "チャットレディJPの口コミ・評判",
   description: "チャットレディJPの編集部調査と口コミ。全国の事務所を条件で見比べられる比較窓口。ノンアダルト可・顔出し強制なし。使い方の注意点も正直にまとめました。",
 };
 

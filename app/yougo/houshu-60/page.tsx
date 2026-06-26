@@ -5,7 +5,7 @@ import { L3ArticleShell } from "../../L3";
 
 export const metadata = {
   alternates: { canonical: "/yougo/houshu-60" },
-  title: "報酬率「最大60%」って本当？数字でわかる、安心できる事務所選び｜まるみえチャトレ",
+  title: "報酬率「最大60%」って本当？数字でわかる、安心できる事務所選び",
   description: "「報酬率60%」「最大時給◯円」の数字に戸惑っていませんか。現役4年のみなみが、業界標準の仕組みをやさしく解説。数字に振り回されず、安心して選ぶコツが分かります。",
 };
 
