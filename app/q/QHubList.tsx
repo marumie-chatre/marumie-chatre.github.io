@@ -57,7 +57,7 @@ const ARTICLES: Article[] = [
     title: "身バレのよくある疑問に、ぜんぶ答えます",
     excerpt: "配信中の身バレが心配な方へ。マスク・バーチャル・地域ブロックなど、よく聞かれる質問を一気に整理。",
     time: "6分", date: "2026.05.06",
-    image: "/col-mibare-taisaku.png",
+    image: "/身バレ.png",
   },
   {
     href: "/q/kazoku-bare",
