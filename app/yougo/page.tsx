@@ -161,7 +161,7 @@ export default function YougoPage() {
             <li><Link href="/style/virtual">バーチャル配信対応事務所</Link></li>
             <li><Link href="/q/barebure">配信中に客に特定されるのが怖い</Link></li>
             <li><Link href="/q/hoikushi-baito">職場・会社にバレない副業の始め方</Link></li>
-            <li><Link href="/q/shoshinsha">初心者が安心して始められる事務所</Link></li>
+            <li><Link href="/q/jimusho-erabi">チャットレディ事務所の選び方｜初めてでも失敗しない見極め方</Link></li>
           </ul>
 
           <div className="col-article-warn">
