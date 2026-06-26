@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import HamburgerMenu from "./HamburgerMenu";
 import FloatingCTA from "./FloatingCTA";
+import WorkedBeforeCTA from "./WorkedBeforeCTA";
+import EditorProfile from "./EditorProfile";
+import WorriesFooter from "./WorriesFooter";
 import { WebSiteSchema, OrganizationSchema } from "./StructuredData";
 import { Icon } from "./Icon";
 import "./globals.css";
@@ -86,8 +89,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 alignItems: "center",
                 gap: "6px",
                 padding: "8px 14px",
-                background: "#A8C49A",
-                color: "#5C3D1F",
+                background: "#6FA858",
+                color: "#fff",
                 textDecoration: "none",
                 borderRadius: "100px",
                 fontSize: "13px",
@@ -109,6 +112,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         {/* スマホ固定CTA */}
         <FloatingCTA />
+
+        {/* 働いた経験がある方へ（全ページ共通CTA・フッターゾーン先頭） */}
+        <WorkedBeforeCTA />
+
+        {/* まるみえチャトレ編集部の情報（みなみ）→ お悩みから探すの直上 */}
+        <EditorProfile />
+
+        {/* お悩みから探す（全ページ共通フッター） */}
+        <WorriesFooter />
 
         {/* FOOTER */}
         <footer className="site-footer">

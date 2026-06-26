@@ -29,8 +29,8 @@ function renderMarker(text: string) {
   return text.split(/【(.+?)】/g).map((part, i) =>
     i % 2 === 1 ? (
       <span key={i} style={{
-        backgroundImage: "linear-gradient(transparent 60%, rgba(111,155,94,0.25) 60%)",
-        color: "#241E16", fontWeight: 700, padding: "0 2px",
+        backgroundImage: "linear-gradient(transparent 60%, rgba(111,168,88,0.22) 60%)",
+        color: "#2C3326", fontWeight: 700, padding: "0 2px",
       }}>{part}</span>
     ) : part
   );
@@ -42,16 +42,16 @@ export const L3G = {
   bg: "#FAFAF5",
   bgWarm: "#F5E8C8",
   paper: "#FFFFFF",
-  ink: "#241E16",          // deep sumi（warm sumi）
-  inkSoft: "#87796A",
+  ink: "#2C3326",          // 統一・完成版 ink
+  inkSoft: "#8E9882",
   inkSofter: "#B5AC9B",
-  sage: "#7BAA3F",         // 細い線・score bar fill のみ
+  sage: "#6FA858",         // 統一・完成版 緑（細い線・score bar fill）
   sageDeep: "#587A38",     // refined moss（限定使用）
   sageSoft: "#CDDDB0",     // タグ背景・アイコン背景
   sagePastel: "#A8C49A",   // CTA background（パステル + ink text）
   cream: "#F8EFE0",
-  accent: "#F4B5A0",
-  accentDeep: "#E89B85",
+  accent: "#EC9B86",       // 統一・完成版 コーラル
+  accentDeep: "#D17F66",
   rule: "rgba(36,30,22,0.10)",
   ruleStrong: "rgba(36,30,22,0.20)",
 };
@@ -180,7 +180,7 @@ export function L3ScoreBar({ value, max }: { value: number; max: number }) {
   const pct = (value / max) * 100;
   return (
     <div style={{ background: "#E7E2D6", borderRadius: 99, height: 6, overflow: "hidden" }}>
-      <div style={{ width: `${pct}%`, height: "100%", background: L3G.sagePastel, borderRadius: 99 }} />
+      <div style={{ width: `${pct}%`, height: "100%", background: "#6FA858", borderRadius: 99 }} />
     </div>
   );
 }
@@ -383,9 +383,9 @@ export function OfficeDetailLayout({
         <a href={o.applyUrl} target="_blank" rel="noopener noreferrer" style={{
           display: "flex", alignItems: "center", justifyContent: "space-between",
           padding: "15px 18px", borderRadius: 99,
-          background: L3G.sagePastel, color: "#5C3D1F",
-          fontSize: 14, fontWeight: 700, textDecoration: "none",
-          boxShadow: "0 4px 14px rgba(36,30,22,0.10)",
+          background: "#6FA858", color: "#fff",
+          fontSize: 14, fontWeight: 800, textDecoration: "none",
+          boxShadow: "0 6px 18px rgba(111,168,88,0.28)",
         }}>
           <span>{o.name}の公式サイトを見る</span>
           <Icon.Arrow size={14} />
@@ -529,7 +529,7 @@ export function OfficeDetailLayout({
       </div>
 
       {/* ===== REVIEWS ===== */}
-      <div style={{ marginTop: 30 }}>
+      <div id="koe" style={{ marginTop: 30, scrollMarginTop: 80 }}>
         <L3SectionHeader kicker="REVIEWS" title="実際に働いた方の声" />
         <div style={{ padding: "0 22px", maxWidth: 720, margin: "0 auto" }}>
           {reviewsSlot}
@@ -540,7 +540,7 @@ export function OfficeDetailLayout({
       <div style={{ padding: "0 22px", maxWidth: 720, margin: "30px auto 0" }}>
         <div style={{
           padding: "22px 22px",
-          background: L3G.sagePastel, color: "#5C3D1F",
+          background: "#EAF1E0", color: "#2C3326",
           borderRadius: 14,
         }}>
           <div style={{
@@ -555,8 +555,8 @@ export function OfficeDetailLayout({
           <a href={o.applyUrl} target="_blank" rel="noopener noreferrer" style={{
             display: "flex", alignItems: "center", justifyContent: "space-between",
             padding: "12px 16px", borderRadius: 99,
-            background: "#fff", color: "#5C3D1F",
-            fontSize: 12, fontWeight: 700, textDecoration: "none",
+            background: "#6FA858", color: "#fff",
+            fontSize: 12, fontWeight: 800, textDecoration: "none",
           }}>
             公式サイトを見る
             <Icon.Arrow size={13} />

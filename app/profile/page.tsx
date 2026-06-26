@@ -49,6 +49,7 @@ function H2({ children, id }: { children: React.ReactNode; id?: string }) {
       borderLeft: `5px solid ${MM.tan}`,
       paddingLeft: 13,
       margin: "0 0 16px",
+      scrollMarginTop: 84, // 固定ヘッダー(68px)分のオフセット。#リンクで見出しが隠れないように
     }}>{children}</h2>
   );
 }

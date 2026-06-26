@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Icon } from "../Icon";
@@ -8,7 +7,7 @@ import { Icon } from "../Icon";
 // Palette E カラー（並び替えタブのインライン使用用）
 const G = {
   paper: "#FFFFFF",
-  inkSoft: "#87796A",
+  inkSoft: "#8E9882",
   sageDeep: "#587A38",
   sagePastel: "#A8C49A",
   border: "#E2EBDD",
@@ -149,21 +148,9 @@ const AXIS_META: { key: Exclude<ScoreKey, "total">; label: string; max: number }
   { key: "earning",  label: "稼ぎ",       max: 10 },
 ];
 
-// タブ
-const TABS: { id: ScoreKey; label: string; desc: string }[] = [
-  { id: "total",    label: "おすすめ順",   desc: "総合的にバランスよく見たい方に" },
-  { id: "safety",   label: "安全性",       desc: "身バレや強要から守ってくれるかをチェック" },
-  { id: "support",  label: "サポート",     desc: "困ったときに相談しやすいかをチェック" },
-  { id: "beginner", label: "初心者向け",   desc: "はじめてでも無理なく続けやすいかをチェック" },
-  { id: "work",     label: "働きやすさ",   desc: "通いやすさや続けやすさをチェック" },
-  { id: "earning",  label: "稼ぎやすさ",   desc: "報酬アップを目指しやすい環境かをチェック" },
-];
-
 export default function JimushoList() {
-  const [sortKey, setSortKey] = useState<ScoreKey>("total");
-
-  // 選択中タブの説明文
-  const activeTabDesc = TABS.find(t => t.id === sortKey)?.desc ?? "";
+  // おすすめ順（公開した5基準の総合スコア）に固定。並べ替えタブは廃止し、各社の5軸スコアは各カードに表示。
+  const sortKey: ScoreKey = "total";
 
   // ソート（安定ソートで同点は defaultRank 順）
   const sorted = [...OFFICES]
@@ -177,64 +164,15 @@ export default function JimushoList() {
 
   return (
     <>
-      {/* ===== 並び替えタブ（SP横スクロール chip UI） ===== */}
-      <div
-        role="group"
-        aria-label="事務所の並び替え"
-        style={{
-          display: "flex",
-          gap: 8,
-          overflowX: "auto",
-          padding: "4px 20px 12px",
-          maxWidth: 760,
-          margin: "0 auto",
-          WebkitOverflowScrolling: "touch",
-          scrollbarWidth: "none",
-        }}
-      >
-        {TABS.map(tab => {
-          const isActive = sortKey === tab.id;
-          return (
-            <button
-              key={tab.id}
-              type="button"
-              aria-pressed={isActive}
-              onClick={() => setSortKey(tab.id)}
-              style={{
-                flexShrink: 0,
-                padding: "8px 16px",
-                borderRadius: 999,
-                fontSize: 13,
-                fontWeight: 700,
-                cursor: "pointer",
-                whiteSpace: "nowrap",
-                transition: "background 0.18s, color 0.18s, border-color 0.18s",
-                background: isActive ? G.sagePastel : "#fff",
-                color: G.sageDeep,
-                border: isActive
-                  ? `1.5px solid ${G.sagePastel}`
-                  : `1px solid ${G.border}`,
-              }}
-            >
-              {tab.label}
-            </button>
-          );
-        })}
-      </div>
-
-      {/* ===== 選択中タブの説明文（aria-live で SR にも通知） ===== */}
-      <p
-        aria-live="polite"
-        style={{
-          margin: "0 auto 16px",
-          maxWidth: 760,
-          padding: "0 20px",
-          fontSize: 12, lineHeight: 1.7, color: G.inkSoft,
-          textAlign: "center",
-          transition: "opacity 0.18s",
-        }}
-      >
-        {activeTabDesc}
+      {/* ===== ランキング基準の説明（透明性：広告順位ではないことを明示） ===== */}
+      <p style={{
+        margin: "0 auto 16px",
+        maxWidth: 760,
+        padding: "4px 20px 0",
+        fontSize: 12, lineHeight: 1.7, color: G.inkSoft,
+        textAlign: "center",
+      }}>
+        公開している<Link href="/profile#hyoka" style={{ color: G.sageDeep, fontWeight: 700, textDecoration: "underline" }}>5つの評価基準</Link>による総合スコア順に掲載しています。
       </p>
 
       {/* ===== カード一覧（ランキング v3・クラスベース） ===== */}

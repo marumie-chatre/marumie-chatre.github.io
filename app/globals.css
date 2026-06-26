@@ -130,7 +130,7 @@ img { display: block; max-width: 100%; }
   --fv-side-pad: 16px;
   --fv-card-bg: #FFFFFF;
   --fv-card-border: #E8EFE3;
-  --fv-cta-area-bg: #F8FCF7;
+  --fv-cta-area-bg: #FBF7F0;
   --fv-cta-primary-bg: #B8D6AA;
   --fv-cta-sub-border: #DDE8D7;
   --fv-intro-color: #6F7F68;
@@ -148,7 +148,7 @@ img { display: block; max-width: 100%; }
 .top-hero-card-img {
   position: relative;
   width: 100%;
-  aspect-ratio: 5/3;
+  aspect-ratio: 5/4;
   overflow: hidden;
   background: var(--cream);
 }
@@ -169,10 +169,10 @@ img { display: block; max-width: 100%; }
   height: 42%;
   background: linear-gradient(
     180deg,
-    rgba(248,252,247,0) 0%,
-    rgba(248,252,247,0.35) 40%,
-    rgba(248,252,247,0.82) 78%,
-    #F8FCF7 100%
+    rgba(251,247,240,0) 0%,
+    rgba(251,247,240,0.35) 40%,
+    rgba(251,247,240,0.82) 78%,
+    #FBF7F0 100%
   );
   pointer-events: none;
   z-index: 1;
@@ -183,44 +183,49 @@ img { display: block; max-width: 100%; }
   position: absolute;
   inset: 0;
   z-index: 2;
-  padding: 18px 20px 0;
+  padding: 18px 20px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .top-hero-card-text-content {
-  max-width: 62%;
+  max-width: 76%;
 }
 
 /* CTA エリア（カード内・画像下） */
 .top-hero-card-cta {
   background: var(--fv-cta-area-bg);
-  padding: 16px 20px 20px;
+  padding: 12px 20px 16px;
   display: flex;
   flex-direction: column;
-  gap: 11px;
+  gap: 10px;
 }
 
-/* 主CTA（pastel sage bg + ブラウン text - Hamburger と統一） */
+/* 主CTA（指定トーンのプライマリ緑＋白・一回り小さく） */
 .top-hero-cta-primary {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 60px;
-  padding: 0 22px;
-  background: #A8C49A;
-  color: #5C3D1F;
+  flex-shrink: 0;
+  height: 46px;
+  padding: 0 18px;
+  background: #6FA858;
+  color: #FFFFFF;
   border-radius: var(--fv-btn-radius);
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 700;
   text-decoration: none;
+  box-shadow: 0 6px 18px rgba(46,31,16,0.18);
 }
 .top-hero-cta-primary-arrow {
-  width: 30px;
-  height: 30px;
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
   background: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #5C3D1F;
+  color: #6FA858;
   flex-shrink: 0;
 }
 
@@ -337,7 +342,7 @@ img { display: block; max-width: 100%; }
 /* ===== TOP FIND セクション（背景削除版・透明）===== */
 .top-find-section {
   position: relative;
-  padding: 24px 20px 24px;
+  padding: 14px 20px 20px;
   overflow: hidden;
 }
 .top-find-inner {
@@ -2101,7 +2106,7 @@ body > div > main { padding-top: 68px; }
 .rk-bar { display: flex; align-items: center; gap: 8px; font-size: 10.5px; }
 .rk-bar-label { width: 58px; flex-shrink: 0; color: var(--color-ink-soft); font-weight: 600; }
 .rk-bar-track { display: block; flex: 1; height: 5px; border-radius: var(--radius-pill); background: #E7E2D6; overflow: hidden; }
-.rk-bar-fill { display: block; height: 100%; border-radius: var(--radius-pill); background: var(--color-primary-pastel); }
+.rk-bar-fill { display: block; height: 100%; border-radius: var(--radius-pill); background: var(--color-primary); }
 .rk-bar-val { width: 36px; flex-shrink: 0; text-align: right; font-weight: 700; color: var(--color-ink); }
 .rk-bar-val small { font-size: 9px; font-weight: 500; color: var(--color-ink-softer); }
 
@@ -2114,13 +2119,13 @@ body > div > main { padding-top: 68px; }
 .rk-cta {
   margin-top: 16px; display: flex; align-items: center; justify-content: space-between;
   padding: 13px 14px 13px 18px; border-radius: 14px;
-  background: var(--color-primary-pastel); color: #5C3D1F;
-  font-size: 13px; font-weight: 700;
+  background: var(--color-primary); color: #fff;
+  font-size: 13px; font-weight: 800;
   transition: background .18s ease, color .18s ease;
 }
 .rk-cta-arrow {
   flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%; background: #fff;
-  display: flex; align-items: center; justify-content: center; color: var(--rk-gold);
+  display: flex; align-items: center; justify-content: center; color: var(--color-primary);
 }
 @media (hover: hover) {
   .rk-card:hover .rk-cta { background: var(--color-primary-mid); color: #fff; }
@@ -2171,7 +2176,7 @@ body > div > main { padding-top: 68px; }
 .oo-more {
   margin-top: 16px; display: flex; align-items: center; justify-content: center; gap: 10px;
   padding: 16px 20px; border-radius: var(--radius-pill);
-  background: var(--color-primary-pastel); color: #5C3D1F;
+  background: var(--green-pale); color: var(--color-primary-deep);
   font-size: 13.5px; font-weight: 800; letter-spacing: .01em; text-decoration: none;
   box-shadow: 0 4px 14px rgba(46,70,40,0.12);
   transition: transform .18s ease, box-shadow .18s ease;
@@ -2225,6 +2230,57 @@ body > div > main { padding-top: 68px; }
   cursor: pointer; transition: background .2s ease; transform: rotate(180deg);
 }
 .ac-nav--next { transform: rotate(0deg); }
+
+/* 注目の記事: 中央1枚＋左右チラ見せ＋ドット */
+.ac-center-track {
+  display: flex; gap: 14px; overflow-x: auto;
+  scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; -ms-overflow-style: none;
+  padding: 4px 0 4px;
+}
+.ac-center-track::-webkit-scrollbar { display: none; }
+/* 先頭/末尾のカードも中央に来られるよう左右にスペーサ */
+.ac-center-track::before,
+.ac-center-track::after { content: ""; flex: 0 0 11%; }
+.ac-center-card {
+  position: relative; flex: 0 0 78%; max-width: 360px;
+  aspect-ratio: 3/2; border-radius: 16px; overflow: hidden;
+  scroll-snap-align: center; scroll-snap-stop: always;
+  display: block; text-decoration: none; color: inherit;
+  box-shadow: 0 6px 20px rgba(46,31,16,0.12);
+}
+@media (hover: hover) { .ac-center-card:hover { transform: translateY(-2px); } }
+.ac-center-card { transition: transform .18s ease; }
+.ac-center-card:focus-visible { outline: 3px solid var(--color-primary-deep); outline-offset: 3px; }
+.ac-dots { display: flex; gap: 7px; justify-content: center; margin-top: 12px; }
+.ac-dot {
+  width: 6px; height: 6px; border-radius: 99px;
+  background: rgba(46,31,16,0.20); border: none; padding: 0; cursor: pointer;
+  transition: width .2s ease, background .2s ease;
+}
+.ac-dot--active { width: 18px; background: var(--color-primary); }
+
+/* TOP 口コミの横スライド カルーセル（カード＝事務所リンク） */
+.rc-track {
+  display: flex; gap: 12px; overflow-x: auto;
+  align-items: flex-start; /* 1枚展開しても他カードの高さを引っ張らない */
+  scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; -ms-overflow-style: none;
+  padding: 4px 0 4px;
+}
+.rc-track::-webkit-scrollbar { display: none; }
+.rc-track::before,
+.rc-track::after { content: ""; flex: 0 0 11%; }
+.rc-card {
+  position: relative; flex: 0 0 80%; max-width: 360px;
+  scroll-snap-align: center; display: block;
+  background: #fff; border: 1px solid #E4E8DA; border-radius: 16px;
+  padding: 16px; box-shadow: 0 4px 14px rgba(46,31,16,0.08);
+  text-decoration: none; color: inherit;
+  transition: transform .18s ease;
+}
+@media (hover: hover) { .rc-card:hover { transform: translateY(-2px); } }
+.rc-card:focus-visible { outline: 3px solid var(--color-primary-deep); outline-offset: 3px; }
 @media (hover: hover) { .ac-nav:hover { background: var(--green-pale); } }
 .ac-nav:focus-visible { outline: 2px solid var(--color-primary-deep); outline-offset: 2px; }
 

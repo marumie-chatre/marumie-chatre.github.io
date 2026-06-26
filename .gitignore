@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local logs / stray build output
+cowork_vm_node.log
+/public/.next/
