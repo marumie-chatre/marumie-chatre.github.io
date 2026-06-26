@@ -11,7 +11,7 @@ const WORRIES = [
   { href: "/q/barebure",      cat: "身バレ対策",     title: "身バレが怖い人のための、事務所選び", time: "5分", date: "2026.05.07", image: "/配信中身バレ対策.jpg" },
   { href: "/q/mibare-taisaku", cat: "身バレ対策",    title: "身バレ、よくある疑問に答えます｜顔バレ・家族バレ・職場バレ", time: "6分", date: "2026.05.06", image: "/col-mibare-taisaku.png" },
   { href: "/q/kazoku-bare",   cat: "身バレ対策",     title: "家族にバレずに続けるための、安全対策", time: "5分", date: "2026.05.07", image: "/家族、彼氏ばれ.jpg" },
-  { href: "/q/hoikushi-baito", cat: "身バレ対策",     title: "職場にバレない副業の始め方　元保育士の実体験", time: "7分", date: "2026.06.26", image: "/col-hoikushi-baito.png" },
+  { href: "/q/hoikushi-baito", cat: "身バレ対策",     title: "職場にバレない副業の始め方　元保育士の実体験", time: "7分", date: "2026.06.26", image: "/職場ばれ.jpg" },
   { href: "/q/ayashii",       cat: "業界の不安",     title: "業界が怪しく見える方へ、現役が正直に答える", time: "5分", date: "2026.05.07", image: "/q-ayashii.png" },
 ];
 
