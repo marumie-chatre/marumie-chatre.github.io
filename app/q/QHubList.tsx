@@ -76,14 +76,6 @@ const ARTICLES: Article[] = [
     image: "/職場ばれ.jpg",
   },
   {
-    href: "/q/shoshinsha",
-    cat: "初心者・選び方",
-    title: "初心者が安心して始めるための、総合ガイド",
-    excerpt: "これから始める方へ。初心者がつまずく5つのポイントと、サポートが手厚い事務所選び。",
-    time: "5分", date: "2026.05.07",
-    image: "/q-shoshinsha.png",
-  },
-  {
     href: "/q/ayashii",
     cat: "業界の不安",
     title: "業界が怪しく見える方へ、現役が正直に答える",

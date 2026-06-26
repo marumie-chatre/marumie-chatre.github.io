@@ -10,6 +10,8 @@ const nextConfig: NextConfig = {
       { source: "/column/hoikushi-baito", destination: "/q/hoikushi-baito", permanent: true },
       // 職場バレ記事を hoikushi-baito（元保育士の一人称）に統合（301）
       { source: "/q/shokuba-bare", destination: "/q/hoikushi-baito", permanent: true },
+      // 初心者向け記事を jimusho-erabi（事務所の選び方）に統合（301）
+      { source: "/q/shoshinsha", destination: "/q/jimusho-erabi", permanent: true },
       // 運営方針・評価基準・口コミガイドラインを /profile に統合（301）
       { source: "/houshin", destination: "/profile", permanent: true },
       { source: "/hyoka-kijun", destination: "/profile", permanent: true },

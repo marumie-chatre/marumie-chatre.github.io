@@ -142,7 +142,7 @@ export default function QAyashii() {
 
           <RelatedList items={[
             { href: "/style/non-adult", label: "「お話だけ」って本当？サポートと収入を正直に解説" },
-            { href: "/q/shoshinsha", label: "初心者が安心して始められる事務所" },
+            { href: "/q/jimusho-erabi", label: "チャットレディ事務所の選び方｜初めてでも失敗しない見極め方" },
             { href: "/q/barebure", label: "配信中に客に特定されるのが怖い" },
             { href: "/q/hoikushi-baito", label: "職場・会社にバレない副業の始め方" },
           ]} />
