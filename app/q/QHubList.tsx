@@ -37,7 +37,7 @@ const ARTICLES: Article[] = [
   {
     href: "/q/jimusho-erabi",
     cat: "初心者・選び方",
-    title: "チャットレディ事務所の選び方｜失敗しない5つの基準",
+    title: "チャットレディ事務所の選び方｜初心者が失敗しない見極め方",
     excerpt: "「なんとなく良さそう」で選ぶと後悔します。安全な事務所を見極める5つの基準を、現役の視点で解説します。",
     time: "5分", date: "2026.05.05",
     image: "/col-jimusho-erabi.png",
@@ -46,7 +46,7 @@ const ARTICLES: Article[] = [
   {
     href: "/q/barebure",
     cat: "身バレ対策",
-    title: "身バレが怖い人のための、事務所選び",
+    title: "配信中にお客さんにばれる？　よくある原因と対策5選",
     excerpt: "配信中の身バレが心配な方へ。マスク・バーチャル・地域ブロックなど対策を具体的に。",
     time: "5分", date: "2026.05.07",
     image: "/配信中身バレ対策.jpg",
@@ -54,7 +54,7 @@ const ARTICLES: Article[] = [
   {
     href: "/q/mibare-taisaku",
     cat: "身バレ対策",
-    title: "身バレ、よくある疑問に答えます｜顔バレ・家族バレ・職場バレ",
+    title: "身バレのよくある疑問に、ぜんぶ答えます",
     excerpt: "配信中の身バレが心配な方へ。マスク・バーチャル・地域ブロックなど、よく聞かれる質問を一気に整理。",
     time: "6分", date: "2026.05.06",
     image: "/col-mibare-taisaku.png",
@@ -62,7 +62,7 @@ const ARTICLES: Article[] = [
   {
     href: "/q/kazoku-bare",
     cat: "身バレ対策",
-    title: "家族にバレずに続けるための、安全対策",
+    title: "家族や彼氏にバレる？　よくある原因とバレない対策",
     excerpt: "同居家族にバレずに続けたい方へ。検索履歴・SNS・声漏れ・部屋の対策まで。",
     time: "5分", date: "2026.05.07",
     image: "/家族、彼氏ばれ.jpg",
@@ -78,7 +78,7 @@ const ARTICLES: Article[] = [
   {
     href: "/q/ayashii",
     cat: "業界の不安",
-    title: "業界が怪しく見える方へ、現役が正直に答える",
+    title: "チャットレディは怪しい？危ない？現役4年が正直に答えます",
     excerpt: "アダルト強要・ノルマ・怪しい事務所の見分け方を、現役4年の視点で正直に解説。",
     time: "5分", date: "2026.05.07",
     image: "/q-ayashii.png",
