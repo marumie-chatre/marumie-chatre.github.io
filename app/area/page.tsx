@@ -5,7 +5,7 @@ import AreaFilter from "./AreaFilter";
 
 export const metadata = {
   alternates: { canonical: "/area" },
-  title: "エリアから探す｜まるみえチャトレ",
+  title: "エリアから探す",
   description: "通勤・在宅問わず、住んでいる地域からチャットレディ事務所を選びたい方へ。地方タブから主要都市の事務所選びをご覧いただけます。",
 };
 

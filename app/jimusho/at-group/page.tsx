@@ -4,7 +4,7 @@ import { OfficeDetailLayout, type OfficeDetailData } from "../../L3";
 
 export const metadata = {
   alternates: { canonical: "/jimusho/at-group" },
-  title: "アットグループの口コミ・評判【まるみえチャトレ】",
+  title: "アットグループの口コミ・評判",
   description: "アットグループの編集部調査と口コミ。居心地のよさを大事にするアダルトもノンアダルトも扱う事務所。完全個室・顔出しなしOK。店舗差も含めて正直にまとめました。",
 };
 

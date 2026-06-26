@@ -3,7 +3,7 @@ import { L3ArticleShell } from "../L3";
 
 export const metadata = {
   alternates: { canonical: "/terms" },
-  title: "利用規約｜まるみえチャトレ",
+  title: "利用規約",
   description: "まるみえチャトレの利用規約。",
 };
 

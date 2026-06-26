@@ -4,7 +4,7 @@ import { OfficeDetailLayout, type OfficeDetailData } from "../../L3";
 
 export const metadata = {
   alternates: { canonical: "/jimusho/bright-group" },
-  title: "ブライトグループの口コミ・評判【まるみえチャトレ】",
+  title: "ブライトグループの口コミ・評判",
   description: "ブライトグループの編集部調査と口コミ。住める寮がある全国規模の大手グループ。アダルトもある大手で、未経験スタートが多い事務所の評判を、正直にまとめました。",
 };
 

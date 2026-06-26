@@ -4,7 +4,7 @@ import { OfficeDetailLayout, type OfficeDetailData } from "../../L3";
 
 export const metadata = {
   alternates: { canonical: "/jimusho/allure" },
-  title: "アリュールの口コミ・評判【まるみえチャトレ】",
+  title: "アリュールの口コミ・評判",
   description: "アリュールの編集部調査と口コミ。5時間で日給1万円保証・体験は条件なしで保証適用。保証重視で始めたい人向けの評判を正直にまとめました。",
 };
 

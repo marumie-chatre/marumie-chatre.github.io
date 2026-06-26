@@ -4,7 +4,7 @@ import { OfficeDetailLayout, type OfficeDetailData } from "../../L3";
 
 export const metadata = {
   alternates: { canonical: "/jimusho/ft" },
-  title: "フェアリーテイルの口コミ・評判｜ノンアダルト専門店【まるみえチャトレ】",
+  title: "フェアリーテイルの口コミ・評判｜ノンアダルト専門店",
   description: "フェアリーテイルの編集部調査レポート・口コミを掲載。ノンアダルト専門店。安全性29点・初心者向け19点・総合89点。",
 };
 

@@ -3,7 +3,7 @@ import { L3ArticleShell } from "../L3";
 
 export const metadata = {
   alternates: { canonical: "/privacy" },
-  title: "プライバシーポリシー｜まるみえチャトレ",
+  title: "プライバシーポリシー",
   description: "まるみえチャトレのプライバシーポリシー。個人情報の取り扱い・Cookieの使用・第三者提供等について明記しています。",
 };
 

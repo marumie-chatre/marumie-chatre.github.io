@@ -4,7 +4,7 @@ import { OfficeDetailLayout, type OfficeDetailData } from "../../L3";
 
 export const metadata = {
   alternates: { canonical: "/jimusho/liver-support" },
-  title: "ライバーサポートグループの口コミ・評判【まるみえチャトレ】",
+  title: "ライバーサポートグループの口コミ・評判",
   description: "ライバーサポートグループの編集部調査と口コミ。FANZA正規代理店の大手で、寮や福利厚生・税務相談まで。店舗差も含めて正直にまとめました。",
 };
 

@@ -5,7 +5,7 @@ import { PointBox, WarningBox, TipBox, MarkerSpan, MinamiBubble, ReadAlso, QABlo
 
 export const metadata = {
   alternates: { canonical: "/style/zaitaku" },
-  title: "在宅チャットレディは稼げる？報酬率のリアルと安心して選ぶコツ｜まるみえチャトレ",
+  title: "在宅チャットレディは稼げる？報酬率のリアルと安心して選ぶコツ",
   description: "在宅でチャットレディを始めたい方へ。「報酬率最大60%」の本当のところ、在宅で稼ぐコツ、独りにならず続けられるお店の選び方を、現役4年のみなみが正直に解説します。",
 };
 

@@ -4,7 +4,7 @@ import { OfficeDetailLayout, type OfficeDetailData } from "../../L3";
 
 export const metadata = {
   alternates: { canonical: "/jimusho/flavor-group" },
-  title: "フレイバーグループの口コミ・評判【まるみえチャトレ】",
+  title: "フレイバーグループの口コミ・評判",
   description: "フレイバーグループの編集部調査と口コミ。店舗数が随一の老舗グループで、地方でも通勤先を探しやすい。店舗差も含めて正直にまとめました。",
 };
 

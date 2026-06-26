@@ -4,7 +4,7 @@ import { OfficeDetailLayout, type OfficeDetailData } from "../../L3";
 
 export const metadata = {
   alternates: { canonical: "/jimusho/pocket-work" },
-  title: "ポケットワークの口コミ・評判【まるみえチャトレ】",
+  title: "ポケットワークの口コミ・評判",
   description: "ポケットワークの編集部調査と口コミ。在宅メインの大手だが、広告の高料率には注意。在宅1か月の実体験をもとに正直にまとめました。",
 };
 

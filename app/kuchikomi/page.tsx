@@ -5,7 +5,7 @@ import { BreadcrumbSchema } from "../StructuredData";
 
 export const metadata = {
   alternates: { canonical: "/kuchikomi" },
-  title: "口コミ｜まるみえチャトレ",
+  title: "口コミ",
   description: "チャットレディ事務所で働いた方のリアルな口コミ。良いことだけじゃない、リアルな声を読んでください。",
 };
 
