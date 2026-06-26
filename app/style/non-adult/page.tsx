@@ -45,6 +45,7 @@ export default function StyleNonAdultPage() {
       <FAQSchema items={FAQS} />
 
       <L3ArticleShell
+        coverImage={{ src: "/お話しだけって本当？.jpg", alt: "ノンアダルトは本当にお話だけ？　サポートと収入を正直に解説" }}
         breadcrumb={[
           { l: "トップ", href: "/" },
           { l: "働き方から探す", href: "/style" },
