@@ -407,7 +407,7 @@ body > div > main { padding-top: 68px; }
 }
 .hero-h1 em {
   font-style: normal; color: var(--green);
-  background: linear-gradient(180deg, transparent 65%, rgba(122,181,72,.2) 65%);
+  background: linear-gradient(180deg, transparent 65%, rgba(111,168,88,.2) 65%);
 }
 .hero-lead {
   font-size: 13px; color: var(--text-mid);
@@ -422,10 +422,10 @@ body > div > main { padding-top: 68px; }
   font-family: "M PLUS Rounded 1c", sans-serif;
   font-weight: 700; font-size: 15px;
   padding: 15px 36px; border-radius: 100px;
-  box-shadow: 0 4px 18px rgba(122,181,72,.38);
+  box-shadow: 0 4px 18px rgba(111,168,88,.38);
   transition: all .2s;
 }
-.btn-main:hover { background: var(--green-dark); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(122,181,72,.42); }
+.btn-main:hover { background: var(--green-dark); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(111,168,88,.42); }
 .btn-sub {
   display: inline-flex; align-items: center; gap: 8px;
   background: var(--white); color: var(--text-mid);
@@ -582,7 +582,7 @@ body > div > main { padding-top: 68px; }
   font-family: "M PLUS Rounded 1c", sans-serif;
   font-weight: 700; font-size: 15px;
   padding: 15px 32px; border-radius: 100px;
-  box-shadow: 0 4px 18px rgba(122,181,72,.38);
+  box-shadow: 0 4px 18px rgba(111,168,88,.38);
   transition: all .2s; margin-bottom: 8px;
 }
 .detail-apply-btn:hover { background: var(--green-dark); transform: translateY(-2px); }
@@ -1361,7 +1361,7 @@ body > div > main { padding-top: 68px; }
 .col-tag {
   font-size: 11px; font-weight: 700;
   color: #fff;
-  background: rgba(122,181,72,0.85);
+  background: rgba(111,168,88,0.85);
   padding: 3px 10px; border-radius: 100px;
   backdrop-filter: blur(4px);
 }
@@ -1393,7 +1393,7 @@ body > div > main { padding-top: 68px; }
 }
 .column-list-cat {
   font-size: 12px; font-weight: 700; color: #fff;
-  background: rgba(122,181,72,0.85);
+  background: rgba(111,168,88,0.85);
   padding: 4px 12px; border-radius: 100px;
 }
 .column-list-arrow {
@@ -2026,7 +2026,7 @@ body > div > main { padding-top: 68px; }
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(135deg, rgba(122, 181, 72, 0.92), rgba(122, 181, 72, 0.85));
+  background: linear-gradient(135deg, rgba(111, 168, 88, 0.92), rgba(111, 168, 88, 0.85));
 }
 .kuchi-sec-with-bg .kuchi-inner {
   position: relative;
