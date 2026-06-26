@@ -13,7 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // /q 配下記事（旧 /column 統合済・shokuba-bare は hoikushi-baito に 301 統合）
   const qArticles = [
     "barebure", "kazoku-bare", "ayashii",
-    "jimusho-erabi", "mibare-taisaku", "hoikushi-baito",
+    "jimusho-erabi", "mibare-taisaku", "hoikushi-baito", "mensetsu",
   ];
 
   const areas = [

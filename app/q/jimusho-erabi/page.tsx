@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { QABlock, PointBox, TipBox, MarkerSpan } from "../../ArticleParts";
+import { QABlock, PointBox, TipBox, MarkerSpan, ReadAlso } from "../../ArticleParts";
 import { FAQSchema, ArticleSchema, BreadcrumbSchema } from "../../StructuredData";
 import { L3ArticleShell } from "../../L3";
 
@@ -215,6 +215,7 @@ export default function ColJimushoErabiPage() {
               ]}
             />
           </TipBox>
+          <ReadAlso href="/q/mensetsu">チャットレディの面接って何するの？　流れ・持ち物・体験入店まで</ReadAlso>
 
           <h2 id="checklist">始める前のチェックリスト</h2>
           <p>応募・相談の前に、これだけ確認しておくと話がスムーズです。</p>

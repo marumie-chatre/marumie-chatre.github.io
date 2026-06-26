@@ -87,9 +87,8 @@ export default function Houshu60Page() {
 
           <h2>つづけて読む</h2>
           <ul>
-            <li><Link href="/q/jimusho-erabi">チャットレディ事務所の選び方｜失敗しない見極め方</Link></li>
-            <li><Link href="/style/non-adult">ノンアダルト専門で安心して始めるには</Link></li>
-            <li><Link href="/yougo">チャットレディ用語辞典</Link></li>
+            <li><Link href="/q/jimusho-erabi">失敗しない！チャットレディ事務所の選び方｜初心者がつまずく5つのポイント</Link></li>
+            <li><Link href="/style/non-adult">ノンアダルトは本当にお話だけ？サポート・収入と安心の選び方</Link></li>
           </ul>
 
           <div style={{textAlign:"center", marginTop:"40px"}}>
