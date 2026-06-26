@@ -70,10 +70,10 @@ export default function HamburgerMenu() {
         {/* サイトロゴ（ブラウン + ゴールド） */}
         <div style={{marginBottom:"32px", textAlign:"center"}}>
           <div style={{
-            fontSize:"22px", fontWeight:900, color:"#5C3D1F",
+            fontSize:"22px", fontWeight:900, color:"#2C3326",
             letterSpacing:"0.1em", marginBottom:"4px",
           }}>まるみえチャトレ</div>
-          <div style={{fontSize:"12px", color:"#C9923F", letterSpacing:"0.15em", fontWeight:700}}>
+          <div style={{fontSize:"12px", color:"#C19A66", letterSpacing:"0.15em", fontWeight:700}}>
             REAL CHATRE REVIEW
           </div>
         </div>
@@ -90,7 +90,7 @@ export default function HamburgerMenu() {
               display:"flex", alignItems:"center", justifyContent:"center",
               padding:"14px 20px",
               fontSize:"19px", fontWeight:700,
-              color:"#587A38", textDecoration:"none",
+              color:"#2C3326", textDecoration:"none",
               width:"100%",
               borderBottom:"1px solid rgba(36,30,22,0.10)",
             }}>
@@ -106,7 +106,7 @@ export default function HamburgerMenu() {
           style={{
             display:"inline-flex", alignItems:"center", justifyContent:"center",
             gap:"8px",
-            background:"#A8C49A", color:"#5C3D1F",
+            background:"#6FA858", color:"#fff",
             fontWeight:700, fontSize:"15px",
             padding:"14px 32px", borderRadius:"100px",
             textDecoration:"none",

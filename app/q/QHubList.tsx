@@ -8,14 +8,14 @@ import { Icon } from "../Icon";
 
 const G = {
   paper: "#FFFFFF",
-  ink: "#3A2A20",
-  inkSoft: "#87796A",
-  sage: "#7BAA3F",
+  ink: "#2C3326",
+  inkSoft: "#8E9882",
+  sage: "#6FA858",
   sageDeep: "#587A38",
   sageSoft: "#CDDDB0",
   sagePastel: "#A8C49A",
   bgPale: "#F0F5E8",
-  brown: "#5C3D1F",
+  brown: "#2C3326",
   border: "#E2EBDD",
 };
 
@@ -45,7 +45,7 @@ const ARTICLES: Article[] = [
   },
   {
     href: "/q/barebure",
-    cat: "身バレ",
+    cat: "身バレ対策",
     title: "身バレが怖い人のための、事務所選び",
     excerpt: "配信中の身バレが心配な方へ。マスク・バーチャル・地域ブロックなど対策を具体的に。",
     time: "5分", date: "2026.05.07",
@@ -53,7 +53,7 @@ const ARTICLES: Article[] = [
   },
   {
     href: "/q/mibare-taisaku",
-    cat: "身バレ",
+    cat: "身バレ対策",
     title: "身バレ、よくある疑問に答えます｜顔バレ・家族バレ・職場バレ",
     excerpt: "配信中の身バレが心配な方へ。マスク・バーチャル・地域ブロックなど、よく聞かれる質問を一気に整理。",
     time: "6分", date: "2026.05.06",
@@ -61,7 +61,7 @@ const ARTICLES: Article[] = [
   },
   {
     href: "/q/kazoku-bare",
-    cat: "家族バレ",
+    cat: "身バレ対策",
     title: "家族にバレずに続けるための、安全対策",
     excerpt: "同居家族にバレずに続けたい方へ。検索履歴・SNS・声漏れ・部屋の対策まで。",
     time: "5分", date: "2026.05.07",
@@ -69,7 +69,7 @@ const ARTICLES: Article[] = [
   },
   {
     href: "/q/shokuba-bare",
-    cat: "副業バレ",
+    cat: "身バレ対策",
     title: "職場にバレずに始める、副業チャットレディ",
     excerpt: "副業として始めたい方へ。住民税対策・マイナンバー誤解・職種別の判断ポイント。",
     time: "5分", date: "2026.05.07",
@@ -77,7 +77,7 @@ const ARTICLES: Article[] = [
   },
   {
     href: "/q/hoikushi-baito",
-    cat: "副業バレ",
+    cat: "身バレ対策",
     title: "チャトレは副業にアリ？会社・職場にバレないための全対策",
     excerpt: "副業として始めたい方へ。住民税・確定申告・職場バレ対策まで一気通貫で整理。",
     time: "7分", date: "2026.05.07",
@@ -101,11 +101,11 @@ const ARTICLES: Article[] = [
   },
 ];
 
+// タグは中身（記事数）に合わせて4分類に集約。
+// 旧「身バレ／家族バレ／副業バレ」は実質すべて“バレ対策”なので「身バレ対策」に統合。
 const CATEGORIES = [
   "すべて",
-  "身バレ",
-  "家族バレ",
-  "副業バレ",
+  "身バレ対策",
   "初心者・選び方",
   "業界の不安",
 ];
@@ -166,9 +166,9 @@ function QHubListInner() {
                 fontSize: 12, fontWeight: 700,
                 padding: "8px 16px", borderRadius: 99,
                 cursor: "pointer",
-                background: isActive ? G.sagePastel : G.paper,
-                color: G.sageDeep,
-                border: isActive ? `1.5px solid ${G.sagePastel}` : `1px solid ${G.border}`,
+                background: isActive ? "#6FA858" : G.paper,
+                color: isActive ? "#fff" : G.sageDeep,
+                border: isActive ? "1.5px solid #6FA858" : `1px solid ${G.border}`,
                 transition: "background 0.18s, border-color 0.18s",
               }}
             >

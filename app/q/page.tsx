@@ -1,5 +1,3 @@
-import Link from "next/link";
-import { Icon } from "../Icon";
 import { BreadcrumbSchema } from "../StructuredData";
 import QHubList from "./QHubList";
 
@@ -12,12 +10,12 @@ export const metadata = {
 const G = {
   bg: "#FBF7F0",
   paper: "#FFFFFF",
-  ink: "#3A2A20",
-  inkSoft: "#87796A",
-  sage: "#7BAA3F",
+  ink: "#2C3326",
+  inkSoft: "#8E9882",
+  sage: "#6FA858",
   sageDeep: "#587A38",
   sagePastel: "#A8C49A",
-  brown: "#5C3D1F",
+  brown: "#2C3326",
 };
 
 export default function QHubPage() {
@@ -60,45 +58,7 @@ export default function QHubPage() {
       {/* ===== カテゴリチップ + 記事一覧（クライアントフィルタ） ===== */}
       <QHubList />
 
-      {/* ===== 口コミ投稿 CTA ===== */}
-      <section style={{
-        margin: "28px auto 0",
-        padding: "0 22px",
-        maxWidth: 720,
-      }}>
-        <div style={{
-          padding: "20px 22px",
-          background: G.sagePastel, color: G.brown,
-          borderRadius: 14,
-        }}>
-          <div style={{
-            fontSize: 9.5, letterSpacing: 2, fontWeight: 700,
-            color: G.sageDeep, marginBottom: 6,
-          }}>FOR YOU</div>
-          <div style={{
-            fontSize: 16, fontWeight: 700, lineHeight: 1.5,
-          }}>働いた経験がある方へ</div>
-          <p style={{
-            margin: "8px 0 14px",
-            fontSize: 11.5, lineHeight: 1.85,
-            color: G.inkSoft,
-          }}>
-            匿名・個人情報不要で投稿できます。良かった点も、気になった点も歓迎です。
-          </p>
-          <Link href="/kuchikomi" style={{
-            display: "flex", alignItems: "center", justifyContent: "space-between",
-            padding: "11px 14px", borderRadius: 99,
-            background: "#fff", color: G.brown,
-            fontSize: 12, fontWeight: 700, textDecoration: "none",
-          }}>
-            <span style={{ display: "inline-flex", alignItems: "center", gap: 6 }}>
-              <Icon.Pencil size={13} />
-              口コミを投稿する
-            </span>
-            <Icon.Arrow size={13} />
-          </Link>
-        </div>
-      </section>
+      {/* 「働いた経験がある方へ」は全ページ共通フッター（WorkedBeforeCTA）へ集約 */}
 
     </main>
   );

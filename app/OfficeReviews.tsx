@@ -1,5 +1,6 @@
 "use client";
-import { useState } from "react";
+import { useState, type CSSProperties } from "react";
+import Link from "next/link";
 
 type Review = {
   id: number;
@@ -46,13 +47,9 @@ function StarRow({ rating, size = 16 }: { rating: number; size?: number }) {
   );
 }
 
-function ReviewCard({ review }: { review: Review }) {
-  const [expanded, setExpanded] = useState(false);
-  const maxLen = 60;
-  const isLong = review.good.length > maxLen || review.bad.length > maxLen;
-  const goodText = expanded ? review.good : review.good.slice(0, maxLen) + (review.good.length > maxLen ? "…" : "");
-  const badText = expanded ? review.bad : review.bad.slice(0, maxLen) + (review.bad.length > maxLen ? "…" : "");
-
+function ReviewCard({ review, showOfficeLink = false }: { review: Review; showOfficeLink?: boolean }) {
+  // 口コミは常に全文表示（1件ずつタップして開く方式はやめ、読む人が一覧でそのまま読める）
+  const pBase: CSSProperties = { fontSize: "13px", color: "var(--text-mid)", lineHeight: "1.75", margin: 0 };
   return (
     <div style={{
       background: "var(--white)", border: "1px solid var(--border)",
@@ -88,27 +85,30 @@ function ReviewCard({ review }: { review: Review }) {
       <div style={{ display: "flex", flexDirection: "column", gap: "8px", marginTop: "0" }}>
         <div>
           <div style={{ fontSize: "11px", fontWeight: 700, color: "var(--green)", marginBottom: "3px" }}>良かったこと</div>
-          <p style={{ fontSize: "13px", color: "var(--text-mid)", lineHeight: "1.75", margin: 0 }}>{goodText}</p>
+          <p style={pBase}>{review.good}</p>
         </div>
         <div>
           <div style={{ fontSize: "11px", fontWeight: 700, color: "var(--color-accent-deep)", marginBottom: "3px" }}>気になったこと</div>
-          <p style={{ fontSize: "13px", color: "var(--text-mid)", lineHeight: "1.75", margin: 0 }}>{badText}</p>
+          <p style={pBase}>{review.bad}</p>
         </div>
       </div>
-      {isLong && (
-        <button onClick={() => setExpanded(!expanded)} style={{
-          marginTop: "10px", background: "none", border: "none",
-          color: "var(--green)", fontSize: "12px", fontWeight: 700,
-          cursor: "pointer", padding: "0", textAlign: "left",
-        }}>
-          {expanded ? "▲ 閉じる" : "▼ もっと見る"}
-        </button>
-      )}
-      {expanded && (
+      {review.recommend && (
         <div style={{ background: "var(--cream)", borderRadius: "8px", padding: "8px 12px", marginTop: "8px" }}>
           <span style={{ fontSize: "11px", fontWeight: 700, color: "var(--text-muted)" }}>向いている人：</span>
           <span style={{ fontSize: "12px", color: "var(--text-mid)" }}>{review.recommend}</span>
         </div>
+      )}
+      {/* この事務所を見る（口コミ一覧ページのみ：その事務所の詳細＝スコア・強み・口コミを上から確認できる） */}
+      {showOfficeLink && (
+        <Link href={`/jimusho/${review.slug}`} style={{
+          marginTop: "12px",
+          display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "6px",
+          padding: "10px 12px", borderRadius: "10px",
+          background: "var(--green-pale)", color: "var(--green-dark)",
+          fontSize: "12px", fontWeight: 800, textDecoration: "none",
+        }}>
+          この事務所を見る →
+        </Link>
       )}
       {/* 投稿日時：右下 */}
       {review.submittedAt && (
@@ -132,10 +132,12 @@ export default function OfficeReviews({
   reviews,
   officeName,
   excludeHiddenInInitial = false,
+  linkToOffice = false,
 }: {
   reviews: Review[];
   officeName: string;
   excludeHiddenInInitial?: boolean;
+  linkToOffice?: boolean;
 }) {
   const [showAll, setShowAll] = useState(false);
   // 初期表示用：hideInInitial を除外（指定された場合のみ）→ 上から INITIAL_COUNT 件
@@ -183,7 +185,7 @@ export default function OfficeReviews({
 
       <div className="review-grid" style={{ marginBottom: "20px" }}>
         {displayed.map(review => (
-          <ReviewCard key={review.id} review={review} />
+          <ReviewCard key={review.id} review={review} showOfficeLink={linkToOffice} />
         ))}
       </div>
 
@@ -207,7 +209,7 @@ export default function OfficeReviews({
           </button>
         )}
         <a href={FORM_URL} target="_blank" rel="noopener noreferrer" className="btn-sub">
-          {officeName}の口コミを投稿する →
+          {linkToOffice ? "匿名で口コミを投稿する" : `${officeName}の口コミを投稿する`} →
         </a>
       </div>
     </div>

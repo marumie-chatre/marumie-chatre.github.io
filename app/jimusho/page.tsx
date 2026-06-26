@@ -14,14 +14,14 @@ export const metadata = {
 const G = {
   bg: "#FBF7F0",
   paper: "#FFFFFF",
-  ink: "#3A2A20",
-  inkSoft: "#87796A",
-  sage: "#7BAA3F",
+  ink: "#2C3326",
+  inkSoft: "#8E9882",
+  sage: "#6FA858",
   sageDeep: "#587A38",
   sageSoft: "#CDDDB0",
   sagePastel: "#A8C49A",
   bgPale: "#F0F5E8",
-  brown: "#5C3D1F",
+  brown: "#2C3326",
   border: "#E2EBDD",
 };
 
@@ -87,8 +87,8 @@ export default function JimushoPage() {
         }}>
           応募する前に、
           <span style={{
-            color: "#3A2A20",
-            backgroundImage: "linear-gradient(transparent 62%, rgba(168,196,154,0.30) 62%)",
+            color: "#2C3326",
+            backgroundImage: "linear-gradient(transparent 62%, rgba(111,168,88,0.22) 62%)",
             padding: "0 3px", fontWeight: 600,
           }}>お店の中身を見て選びたい方</span>
           のためのランキングです。

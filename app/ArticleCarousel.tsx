@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Icon } from "./Icon";
@@ -47,17 +47,9 @@ export default function ArticleCarousel({ articles, variant = "featured" }: { ar
   const trackRef = useRef<HTMLDivElement>(null);
   useAutoSlide(trackRef);
 
-  // 横長カードの自動スライド行（hero直下の「注目の記事」用）
+  // hero直下の「注目の記事」：中央1枚＋左右チラ見せ＋下のドットで枚数を示す
   if (variant === "row") {
-    return (
-      <div ref={trackRef} className="ac-track ac-track--bleed">
-        {articles.map((a) => (
-          <Link key={a.href} href={a.href} data-card className="ac-row-card" aria-label={a.title}>
-            <Image src={a.image} alt={a.title} fill sizes="260px" style={{ objectFit: "cover" }} />
-          </Link>
-        ))}
-      </div>
-    );
+    return <RowCarousel articles={articles} />;
   }
 
   // featured（大カード）＋縦長スライダー
@@ -105,6 +97,103 @@ export default function ArticleCarousel({ articles, variant = "featured" }: { ar
             </Link>
           ))}
         </div>
+      </div>
+    </div>
+  );
+}
+
+// 中央に1枚を大きく見せ、左右に前後をチラ見せ。下のドットで枚数と現在地を示す。
+function RowCarousel({ articles }: { articles: CarouselArticle[] }) {
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [active, setActive] = useState(0);
+  const len = articles.length;
+  // 無限ループ用に同じ並びを2セット分並べる（末尾→先頭を巻き戻さず繋ぐ）
+  const loopItems = [...articles, ...articles];
+
+  const cards = (el: HTMLDivElement) =>
+    [...el.querySelectorAll<HTMLElement>("[data-card]")];
+  const nearestIndex = (el: HTMLDivElement) => {
+    const c = el.scrollLeft + el.clientWidth / 2;
+    let best = 0, bestDist = Infinity;
+    cards(el).forEach((card, i) => {
+      const cc = card.offsetLeft + card.offsetWidth / 2;
+      const d = Math.abs(cc - c);
+      if (d < bestDist) { bestDist = d; best = i; }
+    });
+    return best;
+  };
+  const centerTo = (el: HTMLDivElement, i: number, behavior: ScrollBehavior = "smooth") => {
+    const card = cards(el)[i];
+    if (!card) return;
+    el.scrollTo({ left: card.offsetLeft - (el.clientWidth - card.offsetWidth) / 2, behavior });
+  };
+
+  // スクロール追従：ドット更新＋2セット目に入ったら1セット分だけ無音で巻き戻して無限化
+  useEffect(() => {
+    const el = trackRef.current;
+    if (!el) return;
+    let raf = 0;
+    let settle = 0;
+    const onScroll = () => {
+      // ドット更新（rAFで間引き）
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => setActive(nearestIndex(el) % len));
+      // 巻き戻し（rAFに依存させない）：止まったら2セット目→1セット分戻して無限化
+      window.clearTimeout(settle);
+      settle = window.setTimeout(() => {
+        const cur = nearestIndex(el);
+        if (cur >= len) centerTo(el, cur - len, "auto");
+      }, 130);
+    };
+    el.addEventListener("scroll", onScroll, { passive: true });
+    return () => { el.removeEventListener("scroll", onScroll); cancelAnimationFrame(raf); window.clearTimeout(settle); };
+  }, [len]);
+
+  // 自動スライド（常に前進・末尾でも先頭へ巻き戻さずシームレスにループ）
+  useEffect(() => {
+    const el = trackRef.current;
+    if (!el) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    let paused = false;
+    const onEnter = () => { paused = true; };
+    const onLeave = () => { paused = false; };
+    el.addEventListener("pointerenter", onEnter);
+    el.addEventListener("pointerdown", onEnter);
+    el.addEventListener("pointerleave", onLeave);
+    el.addEventListener("pointerup", onLeave);
+    const id = window.setInterval(() => {
+      if (paused) return;
+      centerTo(el, nearestIndex(el) + 1, "smooth");
+    }, 3500);
+    return () => {
+      window.clearInterval(id);
+      el.removeEventListener("pointerenter", onEnter);
+      el.removeEventListener("pointerdown", onEnter);
+      el.removeEventListener("pointerleave", onLeave);
+      el.removeEventListener("pointerup", onLeave);
+    };
+  }, [len]);
+
+  return (
+    <div>
+      <div ref={trackRef} className="ac-center-track">
+        {loopItems.map((a, i) => (
+          <Link key={`${a.href}-${i}`} href={a.href} data-card className="ac-center-card" aria-label={a.title} tabIndex={i >= len ? -1 : undefined}>
+            <Image src={a.image} alt={a.title} fill sizes="(max-width:640px) 80vw, 360px" style={{ objectFit: "cover" }} />
+          </Link>
+        ))}
+      </div>
+      <div className="ac-dots" aria-label="記事の枚数">
+        {articles.map((a, i) => (
+          <button
+            key={a.href}
+            type="button"
+            aria-label={`${i + 1}枚目を見る`}
+            aria-current={i === active ? "true" : undefined}
+            className={`ac-dot${i === active ? " ac-dot--active" : ""}`}
+            onClick={() => { const el = trackRef.current; if (el) centerTo(el, i); }}
+          />
+        ))}
       </div>
     </div>
   );

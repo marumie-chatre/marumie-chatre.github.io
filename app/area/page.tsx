@@ -12,13 +12,13 @@ export const metadata = {
 const G = {
   bg: "#FBF7F0",
   paper: "#FFFFFF",
-  ink: "#3A2A20",
-  inkSoft: "#87796A",
-  sage: "#7BAA3F",
+  ink: "#2C3326",
+  inkSoft: "#8E9882",
+  sage: "#6FA858",
   sageDeep: "#587A38",
   sageSoft: "#CDDDB0",
   sagePastel: "#A8C49A",
-  brown: "#5C3D1F",
+  brown: "#2C3326",
   border: "#E2EBDD",
 };
 
