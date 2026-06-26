@@ -6,7 +6,7 @@ import { L3ArticleShell } from "../../L3";
 
 export const metadata = {
   alternates: { canonical: "/q/mibare-taisaku" },
-  title: "身バレが怖くて踏み出せない人へ｜チャットレディの身バレ、仕組みと対策のすべて",
+  title: "チャットレディの身バレ、よくある疑問にぜんぶ答えます",
   description:
     "「身バレが怖くて始められない」方へ。なぜ身バレは起きにくいのか、顔を出さずに働けること、サイトや事務所が守ってくれること、自分に合った対策を相談できることまで、現役チャットレディ4年のみなみがやさしく解説します。",
 };
@@ -70,7 +70,7 @@ export default function ColMibareTaisakuPage() {
   return (
     <>
       <ArticleSchema
-        title="身バレが怖くて踏み出せない人へ｜チャットレディの身バレ、仕組みと対策のすべて"
+        title="チャットレディの身バレ、よくある疑問にぜんぶ答えます"
         description="なぜ身バレは起きにくいのか、顔を出さずに働けること、サイトや事務所が守ってくれること、自分に合った対策を相談できることまで、現役チャットレディ4年のみなみがやさしく解説します。"
         url="https://marumie-chatre.vercel.app/q/mibare-taisaku"
         datePublished="2026-06-26"
@@ -85,7 +85,7 @@ export default function ColMibareTaisakuPage() {
       <FAQSchema items={FAQS} />
 
       <L3ArticleShell
-        coverImage={{ src: "/col-mibare-taisaku.png", alt: "チャットレディの身バレ、仕組みと対策のすべて" }}
+        coverImage={{ src: "/col-mibare-taisaku.png", alt: "チャットレディの身バレ、よくある疑問にぜんぶ答えます" }}
         breadcrumb={[
           { l: "トップ", href: "/" },
           { l: "お悩みから探す", href: "/q" },
@@ -94,9 +94,9 @@ export default function ColMibareTaisakuPage() {
         kicker="お悩み｜安全・身バレ対策"
         title={
           <>
-            身バレが怖くて踏み出せない人へ
+            チャットレディの身バレ、
             <br />
-            チャットレディの身バレ、仕組みと対策のすべて
+            よくある疑問にぜんぶ答えます
           </>
         }
         meta={{ date: "2026.06.26", readTime: "約7分で読めます" }}
