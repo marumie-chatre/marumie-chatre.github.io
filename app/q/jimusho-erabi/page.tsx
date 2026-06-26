@@ -6,7 +6,7 @@ import { L3ArticleShell } from "../../L3";
 
 export const metadata = {
   alternates: { canonical: "/q/jimusho-erabi" },
-  title: "チャットレディ事務所の選び方｜初心者が失敗しない見極め方",
+  title: "失敗しない！チャットレディ事務所の選び方｜初心者がつまずく5つのポイント",
   description: "初めてのチャットレディ事務所選びで失敗しないために。報酬の仕組み・サポートの見抜き方・初心者がつまずく5つのポイントと対策・始め方の流れまで、現役4年のみなみが正直に解説します。",
 };
 
@@ -95,7 +95,7 @@ export default function ColJimushoErabiPage() {
   return (
     <>
       <ArticleSchema
-        title="チャットレディ事務所の選び方｜初心者が失敗しない見極め方"
+        title="失敗しない！チャットレディ事務所の選び方｜初心者がつまずく5つのポイント"
         description="初めてのチャットレディ事務所選びで失敗しないために。報酬の仕組み・サポートの見抜き方・初心者がつまずくポイントと対策・始め方の流れまで、現役4年のみなみが正直に解説します。"
         url="https://marumie-chatre.vercel.app/q/jimusho-erabi"
         datePublished="2026-06-19"
@@ -115,7 +115,7 @@ export default function ColJimushoErabiPage() {
           { l: "事務所の選び方" },
         ]}
         kicker="お悩み｜事務所の選び方"
-        title={<>チャットレディ事務所の選び方｜<br />初心者が失敗しない見極め方</>}
+        title={<>失敗しない！チャットレディ事務所の選び方<br />初心者がつまずく5つのポイント</>}
         meta={{ date: "2026.06.19", readTime: "約6分で読めます" }}
       >
         <article className="col-article-body">
