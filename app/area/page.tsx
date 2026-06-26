@@ -75,10 +75,10 @@ export default function AreaPage() {
         <Link href="/jimusho" style={{
           display: "flex", alignItems: "center", justifyContent: "space-between",
           padding: "14px 20px",
-          background: G.sagePastel,
-          color: G.brown,
+          background: "#6FA858",
+          color: "#fff",
           borderRadius: 99,
-          fontSize: 13.5, fontWeight: 700, textDecoration: "none",
+          fontSize: 13.5, fontWeight: 800, textDecoration: "none",
         }}>
           <span>事務所のランキングを見る</span>
           <Icon.Arrow size={14} />
