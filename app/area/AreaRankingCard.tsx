@@ -117,7 +117,7 @@ export function AreaRankingCard({ c }: { c: AreaCardData }) {
         </h3>
         <span style={{ flexShrink: 0, color: "var(--green-dark)", fontWeight: 800, lineHeight: 1 }}>
           <span style={{ fontSize: "22px" }}>{c.score}</span>
-          <span style={{ fontSize: "11px", color: "#9aa886" }}>/100</span>
+          <span style={{ fontSize: "11px", color: "#8E9882" }}>/100</span>
         </span>
       </div>
 
@@ -147,7 +147,7 @@ export function AreaRankingCard({ c }: { c: AreaCardData }) {
 
         {/* 向いている人（緑） */}
         <div style={{ background: "#F2F7E8", border: "1px solid var(--border-green)", borderRadius: "12px", padding: "12px 14px", marginBottom: "11px" }}>
-          <div style={{ fontSize: "12px", fontWeight: 700, color: "#3B6D11", marginBottom: "8px" }}>
+          <div style={{ fontSize: "12px", fontWeight: 700, color: "#587A38", marginBottom: "8px" }}>
             <span aria-hidden="true" style={{ marginRight: "5px" }}>✓</span>向いている人
           </div>
           <ul style={{ margin: 0, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: "6px" }}>
@@ -161,8 +161,8 @@ export function AreaRankingCard({ c }: { c: AreaCardData }) {
         </div>
 
         {/* 気になる点（アンバー） */}
-        <div style={{ background: "#FEF7E7", border: "1px solid #F0E3BE", borderRadius: "12px", padding: "12px 14px", marginBottom: "11px" }}>
-          <div style={{ fontSize: "12px", fontWeight: 700, color: "#8a6206", marginBottom: "8px" }}>
+        <div style={{ background: "#FDF3EF", border: "1px solid #F3C9BC", borderRadius: "12px", padding: "12px 14px", marginBottom: "11px" }}>
+          <div style={{ fontSize: "12px", fontWeight: 700, color: "#D17F66", marginBottom: "8px" }}>
             <span aria-hidden="true" style={{ marginRight: "5px" }}>⚠️</span>気になる点
           </div>
           <p style={{ fontSize: "13px", lineHeight: 1.7, color: "var(--text-mid)", margin: 0 }}>{c.concern}</p>
@@ -176,9 +176,9 @@ export function AreaRankingCard({ c }: { c: AreaCardData }) {
             gap: "8px",
             fontSize: "12.5px",
             lineHeight: 1.6,
-            color: "#6f6a60",
+            color: "#8E9882",
             background: "var(--cream)",
-            border: "1px solid #ECEEE4",
+            border: "1px solid #E4E8DA",
             borderRadius: "10px",
             padding: "10px 12px",
             marginBottom: "11px",
@@ -192,14 +192,14 @@ export function AreaRankingCard({ c }: { c: AreaCardData }) {
         </div>
 
         {/* 実在口コミ（good＋bad・出典つき） */}
-        <div style={{ background: "#FAF6EE", border: "1px solid #EBE3D2", borderRadius: "12px", padding: "12px 14px", marginBottom: "14px" }}>
-          <div style={{ fontSize: "11.5px", fontWeight: 700, color: "#9c7a3e", marginBottom: "9px" }}>{c.review.meta}</div>
+        <div style={{ background: "#FBFCF6", border: "1px solid #E4E8DA", borderRadius: "12px", padding: "12px 14px", marginBottom: "14px" }}>
+          <div style={{ fontSize: "11.5px", fontWeight: 700, color: "#8E9882", marginBottom: "9px" }}>{c.review.meta}</div>
           <p style={{ fontSize: "13px", lineHeight: 1.7, color: "var(--text-mid)", margin: "0 0 8px" }}>
             <span style={{ display: "inline-block", fontSize: "11px", fontWeight: 700, color: "#fff", background: "var(--green)", borderRadius: "5px", padding: "1px 7px", marginRight: "6px", verticalAlign: "1px" }}>よかった</span>
             {c.review.good}
           </p>
           <p style={{ fontSize: "13px", lineHeight: 1.7, color: "var(--text-mid)", margin: 0 }}>
-            <span style={{ display: "inline-block", fontSize: "11px", fontWeight: 700, color: "#fff", background: "#C7972F", borderRadius: "5px", padding: "1px 7px", marginRight: "6px", verticalAlign: "1px" }}>気になった</span>
+            <span style={{ display: "inline-block", fontSize: "11px", fontWeight: 700, color: "#fff", background: "#D17F66", borderRadius: "5px", padding: "1px 7px", marginRight: "6px", verticalAlign: "1px" }}>気になった</span>
             {c.review.bad}
           </p>
         </div>
