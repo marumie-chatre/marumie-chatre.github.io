@@ -65,7 +65,18 @@ export default function StyleZaitakuPage() {
             </ul>
           </PointBox>
 
-          <h2>在宅のメリットと、気になるところ</h2>
+          <nav aria-label="もくじ" style={{ background: "var(--cream)", border: "1px solid var(--border-green)", borderRadius: "12px", padding: "16px 18px", margin: "24px 0" }}>
+            <div style={{ fontSize: "12px", fontWeight: 800, color: "var(--green-dark)", marginBottom: "10px" }}>もくじ</div>
+            <ol style={{ margin: 0, paddingLeft: "18px", display: "flex", flexDirection: "column", gap: "8px" }}>
+              <li><a href="#merit" style={{ color: "var(--text)", textDecoration: "none", fontWeight: 700, fontSize: "13.5px" }}>在宅のメリットと、気になるところ</a></li>
+              <li><a href="#rate" style={{ color: "var(--text)", textDecoration: "none", fontWeight: 700, fontSize: "13.5px" }}>「報酬率 最大60%」って本当？</a></li>
+              <li><a href="#self" style={{ color: "var(--text)", textDecoration: "none", fontWeight: 700, fontSize: "13.5px" }}>在宅は「自己管理」が9割</a></li>
+              <li><a href="#erabi" style={{ color: "var(--text)", textDecoration: "none", fontWeight: 700, fontSize: "13.5px" }}>独りにならず続けられる、お店の選び方</a></li>
+              <li><a href="#faq" style={{ color: "var(--text)", textDecoration: "none", fontWeight: 700, fontSize: "13.5px" }}>よくある質問</a></li>
+            </ol>
+          </nav>
+
+          <h2 id="merit">在宅のメリットと、気になるところ</h2>
           <TipBox title="在宅のいいところ">
             ・通勤ゼロ。空いた30分でもログインできる<br />
             ・自分の部屋でリラックスして働ける<br />
@@ -81,7 +92,7 @@ export default function StyleZaitakuPage() {
 
           <ReadAlso href="/style/tsukin">通勤型はどんな感じ？選び方</ReadAlso>
 
-          <h2>「報酬率 最大60%」って本当？</h2>
+          <h2 id="rate">「報酬率 最大60%」って本当？</h2>
           <p>在宅の求人を見ると「<strong>報酬率 最大60%</strong>」「<strong>時給 最大1万円</strong>」が並びます。先に結論を。</p>
           <p>在宅の報酬率の<strong>標準は40%</strong>。それを超える「最大60%」は、たくさん稼いだ人が時間をかけて届く<strong>“上限”</strong>で、最初から出る数字ではありません。</p>
 
@@ -93,7 +104,7 @@ export default function StyleZaitakuPage() {
 
           <ReadAlso href="/yougo/houshu-60">報酬率「最大60%」って本当？数字の見方</ReadAlso>
 
-          <h2>在宅は「自己管理」が9割</h2>
+          <h2 id="self">在宅は「自己管理」が9割</h2>
           <p>在宅で伸びる人は、<strong>自分でコツコツ改善できる人</strong>です。配信を振り返って次に活かす、決めた配信時間を守る——これを独学でやるのは、正直しんどい面もあります。</p>
           <PointBox title="だから、在宅こそ“相談できるサポート”が大事">
             24時間相談できる・元チャットレディの女性スタッフがいる、といったお店だと、独りで抱え込まずに続けられます。
@@ -104,7 +115,7 @@ export default function StyleZaitakuPage() {
 
           <ReadAlso href="/style/non-adult">「お話だけ」って本当？サポートと収入を正直に解説</ReadAlso>
 
-          <h2>独りにならず続けられる、お店の選び方</h2>
+          <h2 id="erabi">独りにならず続けられる、お店の選び方</h2>
           <p>在宅で大事なのは「<strong>独りにならない</strong>こと」。次を確認すれば、安心して選べます。</p>
           <TipBox title="在宅のお店、ここを見る">
             ・<strong>入店直後の料率</strong>（「最大60%」でなく今の率／在宅標準は40%）<br />
@@ -127,7 +138,7 @@ export default function StyleZaitakuPage() {
             <Link href="/jimusho" className="btn-main">自分に合う事務所をさがす →</Link>
           </div>
 
-          <h2>よくある質問</h2>
+          <h2 id="faq">よくある質問</h2>
           {FAQS.map((f) => (
             <QABlock key={f.q} q={f.q} a={f.a} />
           ))}
