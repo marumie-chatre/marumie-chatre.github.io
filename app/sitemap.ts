@@ -21,7 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   const styles = [
-    "non-adult", "tsukin", "zaitaku", "virtual",
+    "non-adult", "tsukin", "zaitaku", "virtual", "honki",
   ];
 
   // /yougo 配下の辞書エントリ（深掘り記事）
