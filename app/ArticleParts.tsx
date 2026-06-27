@@ -219,11 +219,12 @@ export function MinamiBubble({ children }: { children: React.ReactNode }) {
         borderRadius: "50%",
         flexShrink: 0,
         overflow: "hidden",
-        border: "2px solid #cdddb0",
+        border: "2.5px solid #fff",
+        boxShadow: "0 2px 8px rgba(46,31,16,0.16)",
         display: "block",
       }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/minami-icon.png" alt="みなみ" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+        <img src="/minami-icon.jpg" alt="みなみ" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
       </span>
       <div style={{
         position: "relative",
