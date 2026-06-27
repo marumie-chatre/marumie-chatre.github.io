@@ -62,7 +62,27 @@ export default function StyleNonAdultPage() {
 
           <p>だからこそ、現役チャットレディ4年の私が正直にお話しします。<MarkerSpan>結論から言うと、“お話だけ”で働く仕組みは本当にあります。</MarkerSpan>ただし、お店によって中身がちがうので、その見分け方まで、まるごとお伝えしますね。</p>
 
-          <h2>「お話だけ」は本当。でも、お店の方針で中身がちがいます</h2>
+          <TipBox title="この記事でわかること">
+            <ul style={{ margin: 0, paddingLeft: 18, lineHeight: 1.9 }}>
+              <li>「お話だけ」で働く仕組みは本当にあるのか</li>
+              <li>お店の方針による中身のちがいと、面談での見分け方</li>
+              <li>お話だけの収入のリアル（単価は控えめ・でも長く続く）</li>
+              <li>サポートで選ぶ理由と、顔出しなしで働く方法</li>
+            </ul>
+          </TipBox>
+
+          <nav aria-label="もくじ" style={{ background: "var(--cream)", border: "1px solid var(--border-green)", borderRadius: "12px", padding: "16px 18px", margin: "24px 0" }}>
+            <div style={{ fontSize: "12px", fontWeight: 800, color: "var(--green-dark)", marginBottom: "10px" }}>もくじ</div>
+            <ol style={{ margin: 0, paddingLeft: "18px", display: "flex", flexDirection: "column", gap: "8px" }}>
+              <li><a href="#honto" style={{ color: "var(--text)", textDecoration: "none", fontWeight: 700, fontSize: "13.5px" }}>「お話だけ」は本当？お店の方針で変わる</a></li>
+              <li><a href="#mendan" style={{ color: "var(--text)", textDecoration: "none", fontWeight: 700, fontSize: "13.5px" }}>面談で見分ける、やさしいコツ</a></li>
+              <li><a href="#income" style={{ color: "var(--text)", textDecoration: "none", fontWeight: 700, fontSize: "13.5px" }}>収入のリアル</a></li>
+              <li><a href="#support" style={{ color: "var(--text)", textDecoration: "none", fontWeight: 700, fontSize: "13.5px" }}>お話だけで稼ぐにはサポートが9割</a></li>
+              <li><a href="#kao" style={{ color: "var(--text)", textDecoration: "none", fontWeight: 700, fontSize: "13.5px" }}>「顔は出したくない」も大丈夫</a></li>
+            </ol>
+          </nav>
+
+          <h2 id="honto">「お話だけ」は本当。でも、お店の方針で中身がちがいます</h2>
           <p>脱いだり際どいことをせず、<strong>会話で常連さんを作って稼ぐ</strong>——そういう働き方は、ちゃんとあります。実際に、お話メインで何年も続けている子はたくさんいます。</p>
           <p>ただ正直に言うと、お客さんの要望で<strong>ちょっときわどいお願いがくること自体は、どのお店でもあります</strong>。大事なのは、それに<strong>お店がどう向き合ってくれるか</strong>。ここがお店の方針で分かれてきます。</p>
 
@@ -73,7 +93,7 @@ export default function StyleNonAdultPage() {
 
           <p>つまり、同じ「お話だけOK」でも、<strong>きわどい要望を“あなたにやらせる方向”か、“会話でかわす方向”か</strong>で、まるで違うお店になるんです。「アダルトは一切いや」という方は、後者のお店を選べば安心。むずかしい知識はいりません、<strong>見分け方さえ知っていれば大丈夫</strong>ですよ。</p>
 
-          <h2>面談で見分ける、やさしいコツ</h2>
+          <h2 id="mendan">面談で見分ける、やさしいコツ</h2>
           <p>お店選びで迷ったら、面談（オンライン面接や見学）でこのあたりを見てみてください。</p>
 
           <TipBox title="ここを見れば大丈夫">
@@ -86,7 +106,7 @@ export default function StyleNonAdultPage() {
 
           <ReadAlso href="/q/jimusho-erabi">失敗しない事務所の選び方｜見極めの基準</ReadAlso>
 
-          <h2>収入のリアル：正直に言います</h2>
+          <h2 id="income">収入のリアル：正直に言います</h2>
           <p>気になるお金の話も、盛らずにお伝えしますね。</p>
           <p>正直、お話だけのお仕事は、<strong>1回あたりの単価はアダルトより控えめ</strong>です。最初の3〜6ヶ月は、伸びがゆっくりな時期でもあります。ここだけ聞くと「なんだ」と思うかもしれません。でも——</p>
 
@@ -98,7 +118,7 @@ export default function StyleNonAdultPage() {
 
           <ReadAlso href="/yougo/houshu-60">報酬率「最大60%」って本当？数字の見方と安心の選び方</ReadAlso>
 
-          <h2>お話だけで稼ぐには「サポート」が9割</h2>
+          <h2 id="support">お話だけで稼ぐには「サポート」が9割</h2>
           <p>お話だけで稼ぐのは、実は技術がいります。待機中の見せ方、プロフィール、会話の広げ方……。これを独学で身につけるのは、正直しんどいんです。</p>
 
           <MinamiBubble>
@@ -107,7 +127,7 @@ export default function StyleNonAdultPage() {
 
           <p>逆に言うと、<strong>常連さんの育て方をちゃんと教えてくれるお店</strong>を選べば、未経験でも段階的に身につきます。「お話だけで稼げる」とうたうだけで教え方がないお店ではなく、<strong>お話で稼ぐコツを具体的に持っているお店</strong>を選んでくださいね。お店選び＝サポート選び、くらいに思って大丈夫です。</p>
 
-          <h2>「顔は出したくない」——それも大丈夫</h2>
+          <h2 id="kao">「顔は出したくない」——それも大丈夫</h2>
           <p>「お話だけでも、顔は出したくない」という方も多いです。マスクをつけての配信や、顔出しなしに対応しているお店なら、<strong>顔を見せずにお話メインで働けます</strong>。</p>
 
           <ReadAlso href="/style/virtual">顔出しなし・バーチャル配信で働ける事務所</ReadAlso>

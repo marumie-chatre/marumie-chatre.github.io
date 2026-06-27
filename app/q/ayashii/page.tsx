@@ -66,7 +66,18 @@ export default function QAyashii() {
             </ul>
           </PointBox>
 
-          <h2>「怪しい」の正体は、3つに分けられます</h2>
+          <nav aria-label="もくじ" style={{ background: "var(--cream)", border: "1px solid var(--border-green)", borderRadius: "12px", padding: "16px 18px", margin: "24px 0" }}>
+            <div style={{ fontSize: "12px", fontWeight: 800, color: "var(--green-dark)", marginBottom: "10px" }}>もくじ</div>
+            <ol style={{ margin: 0, paddingLeft: "18px", display: "flex", flexDirection: "column", gap: "8px" }}>
+              <li><a href="#seitai" style={{ color: "var(--text)", textDecoration: "none", fontWeight: 700, fontSize: "13.5px" }}>「怪しい」の正体は、3つに分けられます</a></li>
+              <li><a href="#abunai" style={{ color: "var(--text)", textDecoration: "none", fontWeight: 700, fontSize: "13.5px" }}>本当に危ない事務所って、あるの？</a></li>
+              <li><a href="#kasegu" style={{ color: "var(--text)", textDecoration: "none", fontWeight: 700, fontSize: "13.5px" }}>「お話だけで本当に稼げるの？」</a></li>
+              <li><a href="#erabi" style={{ color: "var(--text)", textDecoration: "none", fontWeight: 700, fontSize: "13.5px" }}>アダルトを勧められないお店の、選び方</a></li>
+              <li><a href="#faq" style={{ color: "var(--text)", textDecoration: "none", fontWeight: 700, fontSize: "13.5px" }}>よくある質問</a></li>
+            </ol>
+          </nav>
+
+          <h2 id="seitai">「怪しい」の正体は、3つに分けられます</h2>
           <p>「なんとなく怖い」を、3つに分解してみましょう。ひとつずつ見れば、対処できます。</p>
 
           <h3>①「簡単に高収入」の誇大広告が多い</h3>
@@ -83,7 +94,7 @@ export default function QAyashii() {
 
           <ReadAlso href="/yougo/houshu-60">報酬率「最大60%」って本当？数字の見方と安心の選び方</ReadAlso>
 
-          <h2>本当に危ない事務所って、あるの？</h2>
+          <h2 id="abunai">本当に危ない事務所って、あるの？</h2>
           <p>正直に言うと、チャットレディの事務所で「お金を先に払わせる」ような露骨に怪しいお店は、ほとんど見かけません。多くのお店はちゃんと運営しています。だから「業界＝危ない」と身構えなくて大丈夫です。</p>
           <p>強いて気をつけるなら、ひとつだけ。</p>
 
@@ -101,14 +112,14 @@ export default function QAyashii() {
 
           <p>このあたりが見えれば、安心して話を聞きにいけます。</p>
 
-          <h2>「お話だけで本当に稼げるの？」——現役のリアル</h2>
+          <h2 id="kasegu">「お話だけで本当に稼げるの？」——現役のリアル</h2>
           <p><strong>結論：お話だけで稼げます。ただし、最初の3ヶ月はゆっくりです。</strong></p>
           <p>ノンアダルトは<strong>常連さんを作るお仕事</strong>。最初の1〜2ヶ月はまだ常連さんがいないので伸びにくく、ここで辞める人が多いんです。でも、お客さん一人ひとりを大事にしていくと「自分を覚えてくれている」と感じてくれる方が少しずつ増えます。</p>
           <p>私自身も最初の1ヶ月は本当に稼げませんでした。でも続けたら、3ヶ月目に月10万円を超え、半年で月20万円くらいに安定。さらに上を目指す人は、1年以上かけて常連さんを増やし、<strong>月50万・100万を狙っていきます</strong>。最初はゆっくりでも、<strong>続けるほど伸びしろがある</strong>のがこの仕事です（人によります）。</p>
 
           <ReadAlso href="/style/non-adult">「お話だけ」って本当？サポートと収入を正直に解説</ReadAlso>
 
-          <h2>アダルトを勧められないお店の、選び方</h2>
+          <h2 id="erabi">アダルトを勧められないお店の、選び方</h2>
           <p>「ノンアダルトで始めたいのに、強要が怖い」という方は、ここを確認してください。</p>
           <TipBox title="面談でここを見る">
             ・「稼ぎたいならアダルトも」のような発言が出ないか<br />
@@ -131,7 +142,7 @@ export default function QAyashii() {
             <Link href="/jimusho" className="btn-main">自分に合う事務所をさがす →</Link>
           </div>
 
-          <h2>よくある質問</h2>
+          <h2 id="faq">よくある質問</h2>
           {FAQS.map((f) => (
             <QABlock key={f.q} q={f.q} a={f.a} />
           ))}

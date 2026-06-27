@@ -43,6 +43,27 @@ const FAQS = [
   },
 ];
 
+// この記事でわかること用の整列リスト（barebure型）
+function CleanList({ items }: { items: string[] }) {
+  return (
+    <ul style={{ margin: 0, paddingLeft: "1.1em", display: "flex", flexDirection: "column", gap: "6px" }}>
+      {items.map((t, i) => (
+        <li key={i} style={{ lineHeight: 1.7 }}>{t}</li>
+      ))}
+    </ul>
+  );
+}
+
+// もくじ（本文h2のidと対応）
+const TOC = [
+  { id: "points", label: "早く軌道に乗る9つのポイント" },
+  { id: "genre", label: "自分に合うジャンルを選ぶ" },
+  { id: "income", label: "収入の目安" },
+  { id: "tsumazuki", label: "つまずかないための注意点" },
+  { id: "kankyo", label: "軌道に乗るいちばんの近道は「教われる環境」" },
+  { id: "faq", label: "よくある質問" },
+];
+
 export default function StyleHonkiPage() {
   const r1 = reviews.find((r) => r.id === 1);
   const r66 = reviews.find((r) => r.id === 66);
@@ -82,7 +103,28 @@ export default function StyleHonkiPage() {
 
           <p>先に正直なことを。お話（ノンアダルト）は、1回あたりの単価がアダルトより控えめで、<MarkerSpan>“いきなり高収入”より“続けて伸ばす”タイプ</MarkerSpan>です。だからこそ、最初の立ち上がりを丁寧にやると、その後がぐっと楽になります。この記事は、アダルトは避けたい、堅実に伸ばしたいあなた向け。焦らず軌道に乗せたい方は、このまま読み進めてくださいね。</p>
 
-          <h2>早く軌道に乗る9つのポイント</h2>
+          <TipBox title="この記事でわかること">
+            <CleanList items={[
+              "お話だけで「早く軌道に乗る」9つのコツ",
+              "自分に合うジャンルの選び方",
+              "最初の3か月でやること",
+              "収入の目安（時給で・条件つき・保証ではない）",
+              "つまずかないための注意点",
+            ]} />
+          </TipBox>
+
+          <nav aria-label="もくじ" style={{ background: "var(--cream)", border: "1px solid var(--border-green)", borderRadius: "12px", padding: "16px 18px", margin: "24px 0" }}>
+            <div style={{ fontSize: "12px", fontWeight: 800, color: "var(--green-dark)", marginBottom: "10px" }}>もくじ</div>
+            <ol style={{ margin: 0, paddingLeft: "18px", display: "flex", flexDirection: "column", gap: "8px" }}>
+              {TOC.map((t) => (
+                <li key={t.id}>
+                  <a href={`#${t.id}`} style={{ color: "var(--text)", textDecoration: "none", fontWeight: 700, fontSize: "13.5px" }}>{t.label}</a>
+                </li>
+              ))}
+            </ol>
+          </nav>
+
+          <h2 id="points">早く軌道に乗る9つのポイント</h2>
           <p>私や、伸びていく子たちが実際にやっていることです。どれも特別な才能はいりません。ひとつずつ、なぜ効くのかも添えて説明しますね。</p>
 
           <div style={{ display: "flex", flexDirection: "column", gap: "12px", margin: "18px 0 8px" }}>
@@ -107,7 +149,7 @@ export default function StyleHonkiPage() {
             ))}
           </div>
 
-          <h2>自分に合うジャンルを選ぶ</h2>
+          <h2 id="genre">自分に合うジャンルを選ぶ</h2>
           <p>同じお話でも、自分の雰囲気に合うジャンルを選ぶと、ぐっと楽になります。</p>
 
           <TipBox title="ジャンルの目安（どちらもノンアダルトで成立します）">
@@ -128,7 +170,7 @@ export default function StyleHonkiPage() {
 
           <p>なお、瞬発的な単価で言えばアダルトジャンルのほうが上です。ただ、このサイトは「アダルトは避けたい」あなたを前提にしています。<MarkerSpan>アダルトを無理に勧めることはしません</MarkerSpan>。お話で、自分のペースで伸ばす道をいっしょに見ていきましょう。</p>
 
-          <h2>収入の目安｜“時給”で、条件つきで、正直に</h2>
+          <h2 id="income">収入の目安｜“時給”で、条件つきで、正直に</h2>
           <p>いちばん気になるお金の話。誇張せず、条件つきでお伝えします。あくまで私の経験で、個人差が大きく、保証できる数字ではありません。</p>
 
           <div style={{ width: "100%", borderRadius: "12px", overflow: "hidden", margin: "18px 0" }}>
@@ -155,7 +197,7 @@ export default function StyleHonkiPage() {
             </div>
           )}
 
-          <h2>つまずかないための注意点</h2>
+          <h2 id="tsumazuki">つまずかないための注意点</h2>
           <p>本気な人ほど、頑張る方向を間違えると空回りします。正直に。</p>
 
           <TipBox title="ありがちなつまずき">
@@ -167,7 +209,7 @@ export default function StyleHonkiPage() {
 
           <p>見抜くポイントはシンプル。<MarkerSpan>サポートより「報酬の高さ」を強く押し出すお店は、アダルトを勧められやすい傾向</MarkerSpan>があります。逆に、稼ぎ方を一から教えてくれるお店なら、こうしたつまずきは起きにくいですよ。</p>
 
-          <h2>軌道に乗るいちばんの近道は「教われる環境」</h2>
+          <h2 id="kankyo">軌道に乗るいちばんの近道は「教われる環境」</h2>
 
           <div style={{ width: "100%", borderRadius: "12px", overflow: "hidden", margin: "18px 0" }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -204,7 +246,7 @@ export default function StyleHonkiPage() {
           <h2>みなみの経験｜順番どおりにやったら、ちゃんと伸びた</h2>
           <p>最後に私の話を少しだけ。元保育士の私も、最初は何も分かりませんでした。でも、スタッフに相談しながら、時間帯を合わせて、メールを丁寧に書いて、常連さんを大事にして——<MarkerSpan>順番どおりにやっていったら、3か月を過ぎたあたりから、ちゃんと手応えが出てきました</MarkerSpan>。一発で大きく、ではなく、軌道に乗せて伸ばす。これがお話で稼ぐいちばん確実な道だと、4年続けて実感しています。焦らなくて大丈夫。まずは話を聞いてみてくださいね。</p>
 
-          <h2>よくある質問</h2>
+          <h2 id="faq">よくある質問</h2>
           {FAQS.map((f) => (
             <div key={f.q} className="col-article-box">
               <p style={{ fontWeight: 700, color: "var(--green-dark)", marginBottom: "6px" }}>Q. {f.q}</p>
