@@ -76,10 +76,10 @@ const STYLES: StyleItem[] = [
     caution: "短時間だと成果まで時間がかかるため、初月の目標設定が大切です。",
   },
   {
-    href: "/jimusho", kicker: "EARN", title: "本気で稼ぎたい", icon: IconCoins,
-    summary: "収入をしっかり伸ばしたい人向け。報酬率だけでなく、教育・分析・イベント体制まで。",
+    href: "/style/honki", kicker: "EARN", title: "本気で稼ぎたい", icon: IconCoins,
+    summary: "お話だけでちゃんと稼ぎたい人向け。早く軌道に乗る順番と、最初の3か月でやることを正直に解説します。",
     forWhom: "目標金額がある／改善しながら続けたい",
-    check: "指導力・実績・イベント・振り返り体制",
+    check: "指導力・実績・振り返り体制・続けやすさ",
     caution: "高収入をうたう求人ほど、実際の条件とサポートを冷静に確認してください。",
   },
 ];
