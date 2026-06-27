@@ -175,21 +175,24 @@ export function ReadAlso({ href, children }: { href: string; children: React.Rea
   const thumb = ARTICLE_THUMBS[href];
   return (
     <Link href={href} style={{
+      position: "relative",
       display: "block",
-      margin: "22px 0",
-      padding: "12px",
+      margin: "28px 0 22px",
+      padding: "14px 12px 12px",
       background: "var(--green-pale)",
       border: "1px solid #cdddb0",
       borderRadius: "12px",
       textDecoration: "none",
     }}>
       <span style={{
+        position: "absolute", top: "-11px", left: "14px",
         display: "inline-flex", alignItems: "center", gap: "5px",
         fontSize: "10px", fontWeight: 800, letterSpacing: "0.04em",
         color: "#fff", background: "var(--green-dark)",
         padding: "3px 9px", borderRadius: "999px",
+        boxShadow: "0 1px 3px rgba(46,31,16,0.18)",
       }}>✓ あわせて読みたい</span>
-      <span style={{ display: "flex", gap: "12px", alignItems: "center", marginTop: "9px" }}>
+      <span style={{ display: "flex", gap: "12px", alignItems: "center" }}>
         {thumb && (
           <span style={{ flexShrink: 0, width: 104, height: 70, borderRadius: "8px", overflow: "hidden", background: "#fff" }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
