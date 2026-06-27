@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { PointBox, TipBox, MarkerSpan } from "../../ArticleParts";
+import { PointBox, TipBox, MarkerSpan, RelatedList } from "../../ArticleParts";
 import { ArticleSchema, BreadcrumbSchema, FAQSchema } from "../../StructuredData";
 import { L3ArticleShell } from "../../L3";
 
@@ -85,11 +85,10 @@ export default function Houshu60Page() {
             ※この用語解説は編集部の調査・現役チャットレディ4年の経験をもとに作成しています。報酬条件は事務所・サイトにより変わるため、最新の条件は各事務所の公式サイト・面接でご確認ください。
           </div>
 
-          <h2>つづけて読む</h2>
-          <ul>
-            <li><Link href="/q/jimusho-erabi">失敗しない！チャットレディ事務所の選び方｜初心者がつまずく5つのポイント</Link></li>
-            <li><Link href="/style/non-adult">ノンアダルトは本当にお話だけ？サポート・収入と安心の選び方</Link></li>
-          </ul>
+          <RelatedList title="つづけて読む" items={[
+            { href: "/q/jimusho-erabi", label: "失敗しない！チャットレディ事務所の選び方｜初心者がつまずく5つのポイント" },
+            { href: "/style/non-adult", label: "ノンアダルトは本当にお話だけ？サポート・収入と安心の選び方" },
+          ]} />
 
           <div style={{textAlign:"center", marginTop:"40px"}}>
             <Link href="/jimusho" className="btn-main">自分に合う事務所をさがす →</Link>
