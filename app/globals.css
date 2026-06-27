@@ -1027,6 +1027,9 @@ body > div > main { padding-top: 68px; }
   text-underline-offset: 2px;
   font-weight: 700;
 }
+/* 記事末CTAボタンは本文リンク色に上書きされないよう白文字・下線なしを明示（全記事共通） */
+.col-article-body a.btn-main { color: #fff; text-decoration: none; }
+.col-article-body a.btn-main:hover { color: #fff; }
 .col-article-box {
   background: #fff; border: 1px solid var(--border-green);
   border-radius: var(--radius); padding: 20px 24px;
