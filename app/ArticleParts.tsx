@@ -176,12 +176,13 @@ export function ReadAlso({ href, children }: { href: string; children: React.Rea
   return (
     <Link href={href} style={{
       position: "relative",
-      display: "block",
-      margin: "28px 0 22px",
-      padding: "14px 12px 12px",
-      background: "var(--green-pale)",
-      border: "1px solid #cdddb0",
-      borderRadius: "12px",
+      display: "flex", gap: "14px", alignItems: "center",
+      margin: "30px 0 22px",
+      padding: "12px 14px",
+      background: "#fff",
+      border: "1px solid var(--border-green)",
+      borderRadius: "14px",
+      boxShadow: "0 2px 10px rgba(70,80,62,0.06)",
       textDecoration: "none",
     }}>
       <span style={{
@@ -192,23 +193,21 @@ export function ReadAlso({ href, children }: { href: string; children: React.Rea
         padding: "3px 9px", borderRadius: "999px",
         boxShadow: "0 1px 3px rgba(46,31,16,0.18)",
       }}>✓ あわせて読みたい</span>
-      <span style={{ display: "flex", gap: "12px", alignItems: "center" }}>
-        {thumb && (
-          <span style={{ flexShrink: 0, width: 104, height: 70, borderRadius: "8px", overflow: "hidden", background: "#fff" }}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={thumb} alt="" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
-          </span>
-        )}
-        <span style={{
-          flex: 1, minWidth: 0, fontSize: "13.5px", fontWeight: 700, lineHeight: 1.5,
-          color: "var(--green-dark)", textDecoration: "underline", textUnderlineOffset: "2px",
-        }}>{children}</span>
-        <span style={{
-          flexShrink: 0, width: 22, height: 22, borderRadius: "50%",
-          background: "var(--green-dark)", color: "#fff", fontWeight: 800, fontSize: 12,
-          display: "inline-flex", alignItems: "center", justifyContent: "center",
-        }}>→</span>
-      </span>
+      {thumb && (
+        <span style={{ flexShrink: 0, width: 116, height: 78, borderRadius: "8px", overflow: "hidden", background: "var(--cream)" }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={thumb} alt="" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+        </span>
+      )}
+      <span style={{
+        flex: 1, minWidth: 0, fontSize: "14.5px", fontWeight: 700, lineHeight: 1.5,
+        color: "#2C3326",
+      }}>{children}</span>
+      <span style={{
+        flexShrink: 0, width: 26, height: 26, borderRadius: "50%",
+        background: "var(--green-pale)", color: "var(--green-dark)", fontWeight: 800, fontSize: 13,
+        display: "inline-flex", alignItems: "center", justifyContent: "center",
+      }}>→</span>
     </Link>
   );
 }
@@ -281,20 +280,25 @@ export function RelatedList({ title = "あわせて読みたい", items }: { tit
           return (
             <Link key={it.href} href={it.href} style={{
               display: "flex", gap: "14px", alignItems: "center",
-              background: "#fff", border: "1px solid var(--border-green)", borderRadius: "12px",
-              padding: "10px", textDecoration: "none",
+              background: "#fff", border: "1px solid var(--border-green)", borderRadius: "14px",
+              padding: "12px 14px", textDecoration: "none",
+              boxShadow: "0 2px 10px rgba(70,80,62,0.06)",
             }}>
               {thumb && (
-                <span style={{ flexShrink: 0, width: 104, height: 70, borderRadius: "8px", overflow: "hidden", background: "var(--cream)" }}>
+                <span style={{ flexShrink: 0, width: 116, height: 78, borderRadius: "8px", overflow: "hidden", background: "var(--cream)" }}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={thumb} alt="" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
                 </span>
               )}
               <span style={{
-                flex: 1, minWidth: 0, fontSize: "13.5px", fontWeight: 700, lineHeight: 1.5,
-                color: "var(--green-dark)",
+                flex: 1, minWidth: 0, fontSize: "14.5px", fontWeight: 700, lineHeight: 1.5,
+                color: "#2C3326",
               }}>{it.label}</span>
-              <span style={{ flexShrink: 0, color: "var(--green-dark)", fontWeight: 800, fontSize: 14 }}>›</span>
+              <span style={{
+                flexShrink: 0, width: 26, height: 26, borderRadius: "50%",
+                background: "var(--green-pale)", color: "var(--green-dark)", fontWeight: 800, fontSize: 13,
+                display: "inline-flex", alignItems: "center", justifyContent: "center",
+              }}>→</span>
             </Link>
           );
         })}

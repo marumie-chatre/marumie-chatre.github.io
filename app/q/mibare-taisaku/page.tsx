@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
-import { QABlock, PointBox, TipBox, MarkerSpan, MinamiBubble, ReadAlso } from "../../ArticleParts";
+import { QABlock, PointBox, TipBox, MarkerSpan, MinamiBubble, RelatedList } from "../../ArticleParts";
 import { FAQSchema, ArticleSchema, BreadcrumbSchema } from "../../StructuredData";
 import { L3ArticleShell } from "../../L3";
 
@@ -216,9 +216,11 @@ export default function ColMibareTaisakuPage() {
 
           <h2 id="funnel">あなたの不安はどれ？　くわしくは別ページへ</h2>
           <p>身バレといっても、不安の中身は人それぞれ。あなたの「いちばん気になる」に合わせて、対策をまとめています。</p>
-          <ReadAlso href="/q/barebure">配信中に、お客さんに特定されるのが怖い</ReadAlso>
-          <ReadAlso href="/q/kazoku-bare">家族・親・彼氏にバレるのが怖い</ReadAlso>
-          <ReadAlso href="/q/hoikushi-baito">職場・会社にバレたくない人へ</ReadAlso>
+          <RelatedList items={[
+            { href: "/q/barebure", label: "配信中に、お客さんに特定されるのが怖い" },
+            { href: "/q/kazoku-bare", label: "家族・親・彼氏にバレるのが怖い" },
+            { href: "/q/hoikushi-baito", label: "職場・会社にバレたくない人へ" },
+          ]} />
 
           <h2 id="jimusho">事務所選びで身バレリスクは変わる？</h2>
           <p>
