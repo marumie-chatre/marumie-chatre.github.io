@@ -65,7 +65,7 @@ export default function StyleHonkiPage() {
       <FAQSchema items={FAQS} />
 
       <L3ArticleShell
-        coverImage={{ src: "/3か月ロードマップ.jpg", alt: "最初の3か月が大事。お話だけで稼ぐロードマップ" }}
+        coverImage={{ src: "/本気で稼ぐ.jpg", alt: "最初の3か月が大事。お話だけで稼ぐロードマップ" }}
         breadcrumb={[
           { l: "トップ", href: "/" },
           { l: "働き方から探す", href: "/style" },
@@ -130,6 +130,11 @@ export default function StyleHonkiPage() {
 
           <h2>収入の目安｜“時給”で、条件つきで、正直に</h2>
           <p>いちばん気になるお金の話。誇張せず、条件つきでお伝えします。あくまで私の経験で、個人差が大きく、保証できる数字ではありません。</p>
+
+          <div style={{ width: "100%", borderRadius: "12px", overflow: "hidden", margin: "18px 0" }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/3か月ロードマップ.jpg" alt="最初の3か月のロードマップ：1か月目は基礎づくり、2か月目はアドバイスを実行、3か月目で軌道に乗る" style={{ width: "100%", height: "auto", display: "block" }} />
+          </div>
 
           <PointBox title="最初の3か月の目安（みなみの基準・個人差あり・保証ではない）">
             <strong>基準ペース</strong>：週2〜3回 × 5時間くらいから<br />
