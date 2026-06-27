@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { ARTICLE_THUMBS } from "./relatedThumbs";
 
 /**
  * 記事内で使う装飾コンポーネント群
@@ -169,42 +170,42 @@ export function HighlightText({ children }: { children: React.ReactNode }) {
   );
 }
 
-/** あわせて読みたい（本文中インラインの回遊ボタン） */
+/** あわせて読みたい（本文中インライン／タグ＋サムネ＋タイトルのカード） */
 export function ReadAlso({ href, children }: { href: string; children: React.ReactNode }) {
+  const thumb = ARTICLE_THUMBS[href];
   return (
     <Link href={href} style={{
-      display: "flex",
-      alignItems: "center",
-      gap: "12px",
+      display: "block",
+      margin: "22px 0",
+      padding: "12px",
       background: "var(--green-pale)",
       border: "1px solid #cdddb0",
-      borderLeft: "4px solid var(--green-dark)",
-      borderRadius: "10px",
-      padding: "12px 16px",
-      margin: "22px 0",
+      borderRadius: "12px",
       textDecoration: "none",
-      color: "var(--green-dark)",
     }}>
       <span style={{
-        fontSize: "10px",
-        fontWeight: 800,
-        color: "#fff",
-        background: "var(--green-dark)",
-        padding: "3px 8px",
-        borderRadius: "999px",
-        whiteSpace: "nowrap",
-        letterSpacing: "0.04em",
-        flexShrink: 0,
-      }}>あわせて読みたい</span>
-      <span style={{
-        fontSize: "13px", fontWeight: 700, lineHeight: 1.45, flex: 1,
-        color: "var(--green-dark)", textDecoration: "underline", textUnderlineOffset: "2px",
-      }}>{children}</span>
-      <span style={{
-        flexShrink: 0, width: 22, height: 22, borderRadius: "50%",
-        background: "var(--green-dark)", color: "#fff", fontWeight: 800, fontSize: 12,
-        display: "inline-flex", alignItems: "center", justifyContent: "center",
-      }}>→</span>
+        display: "inline-flex", alignItems: "center", gap: "5px",
+        fontSize: "10px", fontWeight: 800, letterSpacing: "0.04em",
+        color: "#fff", background: "var(--green-dark)",
+        padding: "3px 9px", borderRadius: "999px",
+      }}>✓ あわせて読みたい</span>
+      <span style={{ display: "flex", gap: "12px", alignItems: "center", marginTop: "9px" }}>
+        {thumb && (
+          <span style={{ flexShrink: 0, width: 104, height: 70, borderRadius: "8px", overflow: "hidden", background: "#fff" }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={thumb} alt="" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+          </span>
+        )}
+        <span style={{
+          flex: 1, minWidth: 0, fontSize: "13.5px", fontWeight: 700, lineHeight: 1.5,
+          color: "var(--green-dark)", textDecoration: "underline", textUnderlineOffset: "2px",
+        }}>{children}</span>
+        <span style={{
+          flexShrink: 0, width: 22, height: 22, borderRadius: "50%",
+          background: "var(--green-dark)", color: "#fff", fontWeight: 800, fontSize: 12,
+          display: "inline-flex", alignItems: "center", justifyContent: "center",
+        }}>→</span>
+      </span>
     </Link>
   );
 }
@@ -261,35 +262,40 @@ export function MinamiBubble({ children }: { children: React.ReactNode }) {
   );
 }
 
-/** 記事末の関連記事リスト */
-export function RelatedList({ title = "あわせて読みたい記事", items }: { title?: string; items: { href: string; label: string }[] }) {
+/** 記事末の関連記事（タグ見出し＋サムネ＋タイトルのみのカード） */
+export function RelatedList({ title = "あわせて読みたい", items }: { title?: string; items: { href: string; label: string }[] }) {
   return (
-    <div style={{
-      background: "var(--cream)",
-      borderRadius: "12px",
-      padding: "16px 18px",
-      margin: "28px 0",
-    }}>
-      <div style={{ fontSize: "12px", fontWeight: 800, color: "var(--green-dark)", marginBottom: "10px" }}>{title}</div>
-      <ul style={{ margin: 0, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: "9px" }}>
-        {items.map((it) => (
-          <li key={it.href}>
-            <Link href={it.href} style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "8px",
-              fontSize: "13px",
-              fontWeight: 700,
-              color: "var(--green-dark)",
-              textDecoration: "none",
-              lineHeight: 1.4,
+    <div style={{ margin: "28px 0" }}>
+      <div style={{
+        display: "inline-flex", alignItems: "center", gap: "5px",
+        fontSize: "12px", fontWeight: 800, color: "var(--green-dark)",
+        background: "var(--green-pale)", border: "1px solid #cdddb0",
+        padding: "5px 12px", borderRadius: "999px", marginBottom: "12px",
+      }}>✓ {title}</div>
+      <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+        {items.map((it) => {
+          const thumb = ARTICLE_THUMBS[it.href];
+          return (
+            <Link key={it.href} href={it.href} style={{
+              display: "flex", gap: "14px", alignItems: "center",
+              background: "#fff", border: "1px solid var(--border-green)", borderRadius: "12px",
+              padding: "10px", textDecoration: "none",
             }}>
-              <span style={{ flexShrink: 0 }}>›</span>
-              <span style={{ textDecoration: "underline", textUnderlineOffset: "2px" }}>{it.label}</span>
+              {thumb && (
+                <span style={{ flexShrink: 0, width: 104, height: 70, borderRadius: "8px", overflow: "hidden", background: "var(--cream)" }}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={thumb} alt="" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                </span>
+              )}
+              <span style={{
+                flex: 1, minWidth: 0, fontSize: "13.5px", fontWeight: 700, lineHeight: 1.5,
+                color: "var(--green-dark)",
+              }}>{it.label}</span>
+              <span style={{ flexShrink: 0, color: "var(--green-dark)", fontWeight: 800, fontSize: 14 }}>›</span>
             </Link>
-          </li>
-        ))}
-      </ul>
+          );
+        })}
+      </div>
     </div>
   );
 }

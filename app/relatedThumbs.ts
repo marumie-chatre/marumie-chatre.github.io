@@ -1,0 +1,23 @@
+// 記事href → サムネイル（カバー画像）。「あわせて読みたい」カードのサムネ表示に使う。
+// 新規記事を作ったら、ここに href: カバー画像 を1行足す。
+export const ARTICLE_THUMBS: Record<string, string> = {
+  "/q/ayashii": "/怪しい危ない.png",
+  "/q/barebure": "/配信中身バレ対策.jpg",
+  "/q/hoikushi-baito": "/職場ばれ.jpg",
+  "/q/jimusho-erabi": "/事務所選び.png",
+  "/q/kazoku-bare": "/家族、彼氏ばれ.jpg",
+  "/q/mensetsu": "/面接から体験入店の流れ.jpg",
+  "/q/mibare-taisaku": "/身バレ.png",
+  "/style/honki": "/本気で稼ぐ.jpg",
+  "/style/non-adult": "/お話しだけって本当？.jpg",
+  "/style/tsukin": "/通勤型.jpg",
+  "/style/virtual": "/バーチャル.jpg",
+  "/style/fukugyo": "/副業スキマ時間.jpg",
+  "/yougo/houshu-60": "/報酬率60％って本当？.jpg",
+  "/area/fukuoka": "/area-fukuoka.jpg",
+  "/area/ikebukuro": "/area-ikebukuro.jpg",
+  "/area/kinshicho": "/area-kinshicho.jpg",
+  "/area/shibuya": "/area-shibuya.jpg",
+  "/area/shinjuku": "/area-shinjuku.jpg",
+  "/area/ueno": "/area-ueno.jpg",
+};
