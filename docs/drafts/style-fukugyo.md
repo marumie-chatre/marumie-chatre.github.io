@@ -195,10 +195,18 @@
 - ファイル名案：`public/副業スキマ時間.jpg`（日本語の説明的名）。L3カバーは素の`<img>`で高さ自動。
 - 張替先（公開時）：記事`page.tsx`の`coverImage`／TOPカルーセル`app/articles.ts`の`image`／style一覧の該当カード。
 
-### ② 本文中の画像（任意・1点）
-- 設置：「在宅と通勤、副業ならどっち？」付近。夜の自宅でノートPCに向かう私服の女性（顔は伏せ気味でも可・健全）。または通勤の整った個室でひと息。
-  > Photorealistic, wholesome, a modest young Japanese woman in casual home clothes at night, sitting at a tidy desk with a laptop and a small ring light, warm indoor lighting, calm dark-blue window behind, soft pastel-green accents, relaxed and safe atmosphere, no exposure, no nightlife vibe. --no text, watermark, logo
-  - ファイル名案 `public/夜の在宅-副業.jpg`・横長・圧縮数百KB。
+### ② 本文中の画像（2点）
+
+**②-1「お仕事終わりの時間が、実は効率いいんです」付近｜外・通勤の様子**
+- 内容：夕方〜夜、仕事帰りの私服〜きれいめの若い日本人女性が、駅前やオフィス街を歩く**後ろ姿／横顔**（これから事務所へ向かう・帰宅する“お仕事終わり”の雰囲気）。健全・前向き・露出なし・歓楽街/水商売感は出さない。顔は写さなくてOK（後ろ姿・横顔＝身バレ配慮にもなる）。
+  > Photorealistic, wholesome, a modest young Japanese woman in neat smart-casual clothes walking through a calm city street near a station in the early evening after work, soft dusk-to-night lighting, tidy office-district background with gentle bokeh streetlights, seen from behind or in profile, carrying a small bag, hopeful and relaxed, no exposure, NOT a nightlife / red-light vibe, soft pastel-green accents. --no text, watermark, logo
+  - ファイル名案 `public/お仕事終わり-通勤.jpg`・横長・圧縮数百KB。
+
+**②-2「在宅と通勤、副業ならどっち？」付近｜在宅と通勤の左右対比**
+- 設置：「在宅と通勤、副業ならどっち？」付近。**横長を左右に分割し、片側＝通勤（整った配信ブース／個室にいる女性）、もう片側＝在宅（自宅でノートPCに向かう私服の女性）**を並べ、“2つの働き方の比較”を一目で見せる。どちらも健全・顔は伏せ気味でも可・露出なし・水商売感は出さない。
+  > Photorealistic, wholesome side-by-side diptych composition, 16:9 horizontal, a thin soft divider in the middle. LEFT HALF: a modest young Japanese woman at a tidy commute streaming booth / private room — clean desk, ring light, soft professional lighting, neat interior, calm and reassuring. RIGHT HALF: a similarly modest young Japanese woman at home in casual clothes, sitting at a tidy desk with a laptop, warm indoor lighting, a calm window behind her. Both halves share soft pastel-green (#CDE6A8) accents, relaxed and safe atmosphere, no exposure, no nightlife vibe. --no text, watermark, logo
+  - ファイル名案 `public/在宅と通勤-比較.jpg`・横長（例 1600×900）・圧縮数百KB。
+  - ※左右の振り分けは入れ替え可（左=在宅／右=通勤でも可）。本文の「通勤のほうが続けやすい人が多い」に合わせ、通勤側をやや明るく見せてもよい。
 
 ### ③ 実務手順（生成後）
 1. 背景＋女性を生成 → Canva等で4行テキストを後のせ。2. 1200×900で書き出し → 圧縮（数百KB目安）。3. `public/` に日本語の説明的ファイル名で配置。4. page.tsx化時に`coverImage`／`articles.ts`へ。**画像も必ず `git add`**。

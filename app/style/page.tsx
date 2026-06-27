@@ -69,11 +69,11 @@ const STYLES: StyleItem[] = [
     caution: "対応事務所はまだ限られるため、設備や運用実績を確認しましょう。",
   },
   {
-    href: "/jimusho", kicker: "SIDE JOB", title: "副業・夜だけ", icon: IconMoon,
-    summary: "本業や学校の後に短時間から。シフトの自由度と夜のサポート体制が重要です。",
-    forWhom: "週1〜2回から試したい／夜だけ働きたい",
-    check: "シフト自由度・短時間稼働・深夜対応",
-    caution: "短時間だと成果まで時間がかかるため、初月の目標設定が大切です。",
+    href: "/style/fukugyo", kicker: "SIDE JOB", title: "副業・スキマ時間", icon: IconMoon,
+    summary: "本業や学校のあと、お仕事終わりのスキマ時間から。短時間でも続けやすい工夫とサポートが大切です。",
+    forWhom: "週1〜2回から試したい／お仕事終わりに少しだけ",
+    check: "シフト自由度・短時間稼働・続けやすさ",
+    caution: "短時間だと成果まで時間がかかるので、最初の数か月は基礎づくりと割り切るのが大切です。",
   },
   {
     href: "/style/honki", kicker: "EARN", title: "本気で稼ぎたい", icon: IconCoins,
