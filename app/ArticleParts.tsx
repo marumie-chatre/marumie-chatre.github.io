@@ -218,16 +218,13 @@ export function MinamiBubble({ children }: { children: React.ReactNode }) {
         height: 42,
         borderRadius: "50%",
         flexShrink: 0,
-        background: "var(--green-pale)",
-        color: "var(--green-dark)",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        fontWeight: 800,
-        fontSize: 15,
+        overflow: "hidden",
         border: "2px solid #cdddb0",
-        fontFamily: '"Zen Maru Gothic", sans-serif',
-      }}>み</span>
+        display: "block",
+      }}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/minami-icon.png" alt="みなみ" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+      </span>
       <div style={{
         position: "relative",
         flex: 1,
