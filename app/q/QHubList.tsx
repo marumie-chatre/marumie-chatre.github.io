@@ -32,7 +32,7 @@ type Article = {
   featured?: boolean;
 };
 
-// 8記事：旧 /q × 5 + 旧 /column × 3 を統合
+// 7記事（旧 /q × 5 + 旧 /column × 3 を統合し、面接記事を追加）
 const ARTICLES: Article[] = [
   {
     href: "/q/jimusho-erabi",
@@ -42,6 +42,14 @@ const ARTICLES: Article[] = [
     time: "5分", date: "2026.05.05",
     image: "/事務所選び.png",
     featured: true,
+  },
+  {
+    href: "/q/mensetsu",
+    cat: "初心者・選び方",
+    title: "チャットレディの面接って何するの？　流れ・持ち物・体験入店まで",
+    excerpt: "落とす試験ではなく面談に近いもの。応募から面接・体験入店までの流れ、持ち物、聞かれることを、元保育士のみなみが正直に解説します。",
+    time: "6分", date: "2026.06.27",
+    image: "/面接から体験入店の流れ.jpg",
   },
   {
     href: "/q/barebure",
