@@ -32,7 +32,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // 静的ページ（法務・概要系）
   const staticPages: { slug: string; priority: number; freq: "weekly" | "monthly" | "yearly" }[] = [
     { slug: "profile",     priority: 0.6, freq: "monthly" },
-    { slug: "yougo",       priority: 0.5, freq: "monthly" },
+    // /yougo は noindex のため sitemap から除外（/yougo/houshu-60 は残す）
     { slug: "privacy",     priority: 0.3, freq: "yearly" },
     { slug: "terms",       priority: 0.3, freq: "yearly" },
     { slug: "tokushoho",   priority: 0.3, freq: "yearly" },
