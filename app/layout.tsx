@@ -135,11 +135,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               </div>
               <div className="footer-links">
                 <Link href="/profile">運営方針・プロフィール</Link>
+                <Link href="/privacy">プライバシーポリシー</Link>
                 <Link href="/terms">利用規約</Link>
               </div>
             </div>
             <div className="footer-bottom">
-              <span>© 2025 まるみえチャトレ</span>
+              <span>© 2026 まるみえチャトレ</span>
               <span>当サイトの評価スコアは独自調査に基づきます</span>
             </div>
           </div>
