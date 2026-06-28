@@ -45,27 +45,27 @@ type City = {
 const CITIES: City[] = [
   {
     slug: "shinjuku", name: "新宿", region: "kanto",
-    image: "/area-shinjuku.jpg", count: 5,
+    image: "/area-shinjuku.jpg", count: 7,
     desc: "都内でもチャットレディ事務所が多いエリア",
   },
   {
     slug: "shibuya", name: "渋谷", region: "kanto",
-    image: "/area-shibuya.jpg", count: 4,
+    image: "/area-shibuya.jpg", count: 5,
     desc: "東京屈指の繁華街で通勤の利便性抜群のエリア",
   },
   {
     slug: "ikebukuro", name: "池袋", region: "kanto",
-    image: "/area-ikebukuro.jpg", count: 4,
+    image: "/area-ikebukuro.jpg", count: 5,
     desc: "埼玉エリアからの応募も多数。人気エリア。",
   },
   {
     slug: "kinshicho", name: "錦糸町", region: "kanto",
-    image: "/area-kinshicho.jpg", count: 3,
+    image: "/area-kinshicho.jpg", count: 5,
     desc: "居心地のいい店を選びたい人におすすめのエリア",
   },
   {
     slug: "ueno", name: "上野", region: "kanto",
-    image: "/area-ueno.jpg", count: 3,
+    image: "/area-ueno.jpg", count: 4,
     desc: "距離感の近いサポートが売りのエリア",
   },
   {
