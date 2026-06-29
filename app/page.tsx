@@ -302,6 +302,7 @@ export default function Home() {
               alt="まるみえチャトレ"
               fill
               priority
+              quality={90}
               sizes="(max-width:640px) 100vw, 608px"
             />
             <div className="top-hero-card-text">
