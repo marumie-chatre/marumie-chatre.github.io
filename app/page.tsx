@@ -298,7 +298,7 @@ export default function Home() {
           {/* 画像エリア（テキストオーバーレイ＋下端グラデ） */}
           <div className="top-hero-card-img">
             <Image
-              src="/top-hero-自宅配信.jpg"
+              src="/top-hero-photo2.jpg"
               alt="まるみえチャトレ"
               fill
               priority
