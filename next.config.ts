@@ -1,6 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Next 16 では qualities のデフォルトが [75] のみに制限されたため、
+  // ヒーロー等の高画質画像用に 90 を許可リストへ追加する
+  images: {
+    qualities: [75, 90],
+  },
   async redirects() {
     return [
       // /column 系を /q 配下に統合（SEO equity 引継ぎ用 301）
