@@ -297,8 +297,19 @@ export default function AreaOsaka() {
               <div style={{ fontSize: 12, color: "#8E9882", margin: "4px 0 10px", lineHeight: 1.7 }}>{blk.note}</div>
               <div style={{ display: "flex", flexDirection: "column", gap: 7 }}>
                 {blk.rows.map((r) => (
-                  <div key={r.office} style={{ fontSize: 13, lineHeight: 1.7 }}>
-                    <span style={{ fontWeight: 700, color: r.nonadult ? "var(--green-dark)" : "#2C3326" }}>
+                  <div key={r.office} style={{ fontSize: 13, lineHeight: 1.9 }}>
+                    <span
+                      style={
+                        r.nonadult
+                          ? {
+                              fontWeight: 800,
+                              color: "#2C3326",
+                              backgroundImage: "linear-gradient(transparent 62%, rgba(111,168,88,0.35) 62%)",
+                              padding: "0 3px",
+                            }
+                          : { fontWeight: 700, color: "#2C3326" }
+                      }
+                    >
                       {r.nonadult ? "◎ " : ""}{r.office}
                     </span>
                     <span style={{ color: "#5e4a3a" }}>：{r.stores}</span>
