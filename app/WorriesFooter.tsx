@@ -14,6 +14,7 @@ const WORRIES = [
   { href: "/q/kazoku-bare",   cat: "身バレ対策",     title: "家族や彼氏にバレる？　よくある原因とバレない対策", time: "5分", date: "2026.06.26", image: "/家族、彼氏ばれ.jpg" },
   { href: "/q/hoikushi-baito", cat: "身バレ対策",     title: "職場にバレない副業の始め方　元保育士の実体験", time: "7分", date: "2026.06.26", image: "/職場ばれ.jpg" },
   { href: "/q/ayashii",       cat: "業界の不安",     title: "チャットレディは怪しい？危ない？4年目の現役チャットレディが正直に答えます", time: "5分", date: "2026.06.24", image: "/怪しい危ない.png" },
+  { href: "/q/man100",        cat: "お金・稼ぎ方",   title: "チャットレディで月収100万はなんだかあやしい…どんな人が届くのか正直に", time: "8分", date: "2026.07.04", image: "/月収100万って本当？.jpg" },
 ];
 
 export default function WorriesFooter() {

@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const qArticles = [
     "barebure", "kazoku-bare", "ayashii",
     "jimusho-erabi", "mibare-taisaku", "hoikushi-baito", "mensetsu",
+    "man100",
   ];
 
   const areas = [
