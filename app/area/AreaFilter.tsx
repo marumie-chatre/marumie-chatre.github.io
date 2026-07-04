@@ -73,6 +73,16 @@ const CITIES: City[] = [
     image: "/area-fukuoka.jpg", count: 5,
     desc: "九州最大のチャットレディ事務所が多いエリア",
   },
+  {
+    slug: "osaka", name: "大阪", region: "kansai",
+    image: "/area-osaka.jpg", count: 5,
+    desc: "梅田・難波・心斎橋・堺と通勤圏が広いエリア",
+  },
+  {
+    slug: "umeda", name: "梅田", region: "kansai",
+    image: "/area-umeda.jpg", count: 5,
+    desc: "仕事帰りに寄りやすい駅近店が集まる激戦区",
+  },
 ];
 
 export default function AreaFilter() {
