@@ -14,10 +14,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const qArticles = [
     "barebure", "kazoku-bare", "ayashii",
     "jimusho-erabi", "mibare-taisaku", "hoikushi-baito", "mensetsu",
+    "man100",
   ];
 
   const areas = [
     "shibuya", "shinjuku", "ikebukuro", "kinshicho", "ueno", "fukuoka",
+    "osaka", "umeda",
   ];
 
   const styles = [
