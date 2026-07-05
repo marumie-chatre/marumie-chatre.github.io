@@ -31,9 +31,9 @@ export const metadata: Metadata = {
     description: "事務所選びで失敗したくない初心者のための口コミサイト。広告費では順位を決めず、良い点・気になる点の両方を公開しています。",
     images: [
       {
-        url: "/top-hero-photo.jpg",
+        url: "/top-hero-photo2.jpg",
         width: 1200,
-        height: 630,
+        height: 901,
         alt: "まるみえチャトレ",
       },
     ],
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "まるみえチャトレ｜中身で選ぶチャトレ事務所",
     description: "事務所選びで失敗したくない初心者のための口コミサイト。",
-    images: ["/top-hero-photo.jpg"],
+    images: ["/top-hero-photo2.jpg"],
   },
   robots: {
     index: true,
