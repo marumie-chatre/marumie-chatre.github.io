@@ -13,11 +13,10 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://marumie-chatre.vercel.app"),
   icons: {
     icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/marumie-icon.png", type: "image/png" },
+      { url: "/marumie-favicon.png", type: "image/png" },
       { url: "/marumie-icon.ico" },
     ],
-    shortcut: "/marumie-icon.ico",
+    shortcut: "/marumie-favicon.png",
   },
   title: {
     default: "まるみえチャトレ｜中身で選ぶチャトレ事務所",
