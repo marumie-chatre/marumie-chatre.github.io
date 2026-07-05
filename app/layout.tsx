@@ -11,6 +11,13 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://marumie-chatre.vercel.app"),
+  icons: {
+    icon: [
+      { url: "/marumie-icon.png", type: "image/png" },
+      { url: "/marumie-icon.ico" },
+    ],
+    shortcut: "/marumie-icon.ico",
+  },
   title: {
     default: "まるみえチャトレ｜中身で選ぶチャトレ事務所",
     template: "%s｜まるみえチャトレ",
@@ -69,9 +76,29 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* HEADER */}
         <header className="site-header">
           <div className="header-inner">
-            <Link href="/" className="logo">
+            <Link
+              href="/"
+              className="logo"
+              style={{ display: "inline-flex", alignItems: "center", gap: "3px", textDecoration: "none" }}
+            >
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/logo.png" alt="まるみえチャトレ" height={44} />
+              <img
+                src="/marumie-icon.png"
+                alt=""
+                style={{ height: "42px", width: "auto" }}
+              />
+              <span
+                style={{
+                  fontFamily: '"Zen Maru Gothic", sans-serif',
+                  fontWeight: 500,
+                  fontSize: "18px",
+                  lineHeight: 1,
+                  whiteSpace: "nowrap",
+                }}
+              >
+                <span style={{ color: "#6FA858" }}>まるみえ</span>
+                <span style={{ color: "#5C3D1F" }}>チャトレ</span>
+              </span>
             </Link>
             {/* PC ナビ */}
             <nav className="gnav">
@@ -127,9 +154,25 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="footer-inner">
             <div className="footer-top">
               <div>
-                <div className="footer-logo">
+                <div className="footer-logo" style={{ display: "inline-flex", alignItems: "center", gap: "3px", marginBottom: "8px" }}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/logo.png" alt="まるみえチャトレ" height={36} />
+                  <img
+                    src="/marumie-icon.png"
+                    alt=""
+                    style={{ height: "36px", width: "auto", marginBottom: 0 }}
+                  />
+                  <span
+                    style={{
+                      fontFamily: '"Zen Maru Gothic", sans-serif',
+                      fontWeight: 500,
+                      fontSize: "16px",
+                      lineHeight: 1,
+                      whiteSpace: "nowrap",
+                    }}
+                  >
+                    <span style={{ color: "#6FA858" }}>まるみえ</span>
+                    <span style={{ color: "#5C3D1F" }}>チャトレ</span>
+                  </span>
                 </div>
                 <div className="footer-tag">ちゃんと選びたい人のための事務所比較サイト</div>
               </div>
