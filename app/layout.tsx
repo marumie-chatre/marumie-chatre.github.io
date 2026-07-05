@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://marumie-chatre.vercel.app"),
   icons: {
     icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
       { url: "/marumie-icon.png", type: "image/png" },
       { url: "/marumie-icon.ico" },
     ],
