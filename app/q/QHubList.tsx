@@ -136,9 +136,10 @@ function QHubListInner() {
   const featured = isAll && filtered.length > 0
     ? (ARTICLES.find(a => a.featured) ?? filtered[0])
     : null;
-  const list = isAll && featured
+  const list = (isAll && featured
     ? filtered.filter(a => a.href !== featured.href)
-    : filtered;
+    : filtered
+  ).slice().sort((a, b) => b.date.localeCompare(a.date));
 
   return (
     <>
