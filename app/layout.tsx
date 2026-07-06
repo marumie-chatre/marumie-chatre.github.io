@@ -75,6 +75,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <OrganizationSchema />
         {/* HEADER */}
         <header className="site-header">
+          {/* スマホ幅ではヘッダーCTAのテキストを隠してアイコンのみの丸ボタンに（ロゴとの重なり回避） */}
+          <style dangerouslySetInnerHTML={{ __html: "@media (max-width:560px){.header-cta{padding:8px!important;gap:0!important;}.header-cta .header-cta-label{display:none;}}" }} />
           <div className="header-inner">
             <Link
               href="/"
@@ -108,9 +110,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <Link href="/q">お悩みから探す</Link>
               <Link href="/kuchikomi">口コミ</Link>
             </nav>
-            {/* 口コミを見るボタン（CTA・常時表示・pastel sage で統一） */}
+            {/* 口コミを見るボタン（CTA・狭い画面ではロゴと重なるため非表示。口コミはハンバーガー/固定CTAから） */}
             <Link
               href="/kuchikomi"
+              className="header-cta"
               style={{
                 display: "inline-flex",
                 alignItems: "center",
@@ -128,7 +131,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               }}
             >
               <Icon.Chat size={15} />
-              口コミを見る
+              <span className="header-cta-label">口コミを見る</span>
             </Link>
             {/* ハンバーガーメニュー（スマホのみ） */}
             <HamburgerMenu />
