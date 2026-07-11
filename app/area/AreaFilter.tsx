@@ -83,6 +83,11 @@ const CITIES: City[] = [
     image: "/area-umeda.jpg", count: 5,
     desc: "仕事帰りに寄りやすい駅近店が集まる激戦区",
   },
+  {
+    slug: "yokohama", name: "横浜", region: "kanto",
+    image: "/area-yokohama.jpg", count: 5,
+    desc: "みなとみらい・横浜駅・関内。お話で始めやすいエリア",
+  },
 ];
 
 export default function AreaFilter() {
