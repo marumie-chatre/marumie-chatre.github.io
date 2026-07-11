@@ -6,7 +6,7 @@ import { AreaRankingCard, type AreaCardData } from "../AreaRankingCard";
 
 export const metadata = {
   alternates: { canonical: "/area/yokohama" },
-  title: "横浜でお話だけで稼げる？チャットレディ事務所おすすめ5選｜口コミで確認",
+  title: "お話だけで稼げるチャットレディ事務所は？横浜のおすすめ店舗5選",
   description:
     "横浜でお話（ノンアダルト）で稼げるチャットレディ事務所を探す方へ。現役チャットレディ4年のみなみが、横浜駅・みなとみらい・関内の主要事務所の店舗早見表と、安全性・サポートなど5つの基準で評価したおすすめ5選、失敗しない選び方、口コミまで正直に。「稼げるランキング」「高還元率」に振り回されない見方もわかります。",
 };
@@ -156,7 +156,7 @@ export default function AreaYokohama() {
   return (
     <>
       <ArticleSchema
-        title="横浜でお話だけで稼げる？チャットレディ事務所おすすめ5選"
+        title="お話だけで稼げるチャットレディ事務所は？横浜のおすすめ店舗5選"
         description="現役チャットレディ4年のみなみが、横浜駅・みなとみらい・関内の主要事務所の店舗早見表と、5つの基準で評価したおすすめ5選、失敗しない選び方、口コミまで正直にまとめました。"
         url="https://marumie-chatre.vercel.app/area/yokohama"
         datePublished="2026-07-11"
@@ -181,9 +181,9 @@ export default function AreaYokohama() {
         kicker="エリア｜横浜"
         title={
           <>
-            横浜でお話だけで稼げる事務所は？
+            お話だけで稼げるチャットレディ事務所は？
             <br />
-            店舗早見表と選び方・口コミ
+            横浜のおすすめ店舗5選
           </>
         }
         meta={{ date: "2026.07.11", readTime: "約10分で読めます" }}
