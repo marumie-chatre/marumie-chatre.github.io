@@ -60,7 +60,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="ja">
       <head>
-        <meta name="google-site-verification" content="dYhQMC8PxfBr0tehcNhY7KshfWBC4ttu_QuHf26DuUw" />
+        <meta name="google-site-verification" content="6S1uLoBi2dEk5T_g_U-jypJ-GKCs9vPfWkOfK-b3b18" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         {/* eslint-disable-next-line @next/next/no-page-custom-font */}
