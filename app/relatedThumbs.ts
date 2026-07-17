@@ -23,4 +23,5 @@ export const ARTICLE_THUMBS: Record<string, string> = {
   "/area/ueno": "/area-ueno.jpg",
   "/area/osaka": "/area-osaka.jpg",
   "/area/umeda": "/area-umeda.jpg",
+  "/area/sapporo": "/area-sapporo.jpg",
 };

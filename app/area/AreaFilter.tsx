@@ -88,6 +88,11 @@ const CITIES: City[] = [
     image: "/area-yokohama.jpg", count: 5,
     desc: "みなとみらい・横浜駅・関内。お話で始めやすいエリア",
   },
+  {
+    slug: "sapporo", name: "札幌", region: "hokkaido",
+    image: "/area-sapporo.jpg", count: 5,
+    desc: "すすきの・札幌駅・大通。冬でも通いやすさで選ぶエリア",
+  },
 ];
 
 export default function AreaFilter() {

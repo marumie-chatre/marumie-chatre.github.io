@@ -21,7 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const areas = [
     "shibuya", "shinjuku", "ikebukuro", "kinshicho", "ueno", "fukuoka",
-    "osaka", "umeda", "yokohama",
+    "osaka", "umeda", "yokohama", "sapporo",
   ];
 
   const styles = [
