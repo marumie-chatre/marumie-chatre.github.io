@@ -30,7 +30,7 @@ export default function Houshu60Page() {
       <ArticleSchema
         title="報酬率「最大60%」って本当？数字でわかる、安心できる事務所選び"
         description="「報酬率60%」「最大時給◯円」の数字に戸惑う方へ。業界標準の仕組みをやさしく解説し、数字に振り回されず安心して選ぶコツをお伝えします。"
-        url="https://marumie-chatre.vercel.app/yougo/houshu-60"
+        url="https://marumie-chatre.github.io/yougo/houshu-60"
         datePublished="2026-06-23"
       />
       <BreadcrumbSchema items={[

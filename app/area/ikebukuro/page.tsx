@@ -127,7 +127,7 @@ export default function AreaIkebukuro() {
       <ArticleSchema
         title="本当にお話でできる！池袋のチャットレディ事務所おすすめ5選"
         description="埼玉・北関東から通いやすく、学生・若年層が多いのが池袋の特徴。現役チャットレディ4年のみなみが5つの基準で評価したおすすめ5選、失敗しない選び方、体験入店の流れ、実際に働いた方の口コミまで正直にまとめました。"
-        url="https://marumie-chatre.vercel.app/area/ikebukuro"
+        url="https://marumie-chatre.github.io/area/ikebukuro"
         datePublished="2026-05-08"
       />
       <BreadcrumbSchema

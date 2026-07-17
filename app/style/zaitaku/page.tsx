@@ -30,7 +30,7 @@ export default function StyleZaitakuPage() {
       <ArticleSchema
         title="在宅チャットレディは稼げる？報酬率のリアルと安心して選ぶコツ"
         description="在宅でチャットレディを始めたい方へ。「報酬率最大60%」の本当のところ、在宅で稼ぐコツ、独りにならず続けられるお店の選び方を、現役チャットレディ4年のみなみが正直に解説します。"
-        url="https://marumie-chatre.vercel.app/style/zaitaku"
+        url="https://marumie-chatre.github.io/style/zaitaku"
         datePublished="2026-05-14"
         dateModified="2026-06-24"
       />

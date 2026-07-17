@@ -61,7 +61,7 @@ export default function StyleVirtualPage() {
       <ArticleSchema
         title="顔出しなしで働ける？　バーチャル配信チャットレディのすべて"
         description="バーチャル配信はアバターと声で接客するスタイルで、顔バレの不安がいちばん強い人の選択肢です。仕組み・良いところと気になるところ・収入の相場観・事務所の選び方を、元保育士で現役チャットレディ4年のみなみが正直に解説します。"
-        url="https://marumie-chatre.vercel.app/style/virtual"
+        url="https://marumie-chatre.github.io/style/virtual"
         datePublished="2026-06-26"
       />
       <BreadcrumbSchema

@@ -158,9 +158,9 @@ export default function AreaYokohama() {
       <ArticleSchema
         title="お話だけで稼げるチャットレディ事務所は？横浜のおすすめ店舗5選"
         description="現役チャットレディ4年のみなみが、横浜駅・みなとみらい・関内の主要事務所の店舗早見表と、5つの基準で評価したおすすめ5選、失敗しない選び方、口コミまで正直にまとめました。"
-        url="https://marumie-chatre.vercel.app/area/yokohama"
+        url="https://marumie-chatre.github.io/area/yokohama"
         datePublished="2026-07-11"
-        imageUrl="https://marumie-chatre.vercel.app/area-yokohama.jpg"
+        imageUrl="https://marumie-chatre.github.io/area-yokohama.jpg"
       />
       <BreadcrumbSchema
         items={[

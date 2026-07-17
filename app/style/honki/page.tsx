@@ -74,7 +74,7 @@ export default function StyleHonkiPage() {
       <ArticleSchema
         title="お話だけで稼ぐロードマップ｜最初の3か月でやること"
         description="アダルトは避けたいけれど、ちゃんと稼ぎたい。お話で早く軌道に乗るコツと最初の3か月でやることを、元保育士で現役チャットレディ4年目のみなみが正直に解説します。収入は時給で、条件つき・保証ではないとお伝えします。"
-        url="https://marumie-chatre.vercel.app/style/honki"
+        url="https://marumie-chatre.github.io/style/honki"
         datePublished="2026-06-28"
         dateModified="2026-06-28"
       />

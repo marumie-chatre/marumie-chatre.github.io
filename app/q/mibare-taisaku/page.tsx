@@ -72,7 +72,7 @@ export default function ColMibareTaisakuPage() {
       <ArticleSchema
         title="チャットレディの身バレ、よくある疑問にぜんぶ答えます"
         description="なぜ身バレは起きにくいのか、顔を出さずに働けること、サイトや事務所が守ってくれること、自分に合った対策を相談できることまで、現役チャットレディ4年のみなみがやさしく解説します。"
-        url="https://marumie-chatre.vercel.app/q/mibare-taisaku"
+        url="https://marumie-chatre.github.io/q/mibare-taisaku"
         datePublished="2026-06-26"
       />
       <BreadcrumbSchema

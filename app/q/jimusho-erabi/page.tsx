@@ -97,7 +97,7 @@ export default function ColJimushoErabiPage() {
       <ArticleSchema
         title="失敗しない！チャットレディ事務所の選び方｜初心者がつまずく5つのポイント"
         description="初めてのチャットレディ事務所選びで失敗しないために。報酬の仕組み・サポートの見抜き方・初心者がつまずくポイントと対策・始め方の流れまで、現役チャットレディ4年のみなみが正直に解説します。"
-        url="https://marumie-chatre.vercel.app/q/jimusho-erabi"
+        url="https://marumie-chatre.github.io/q/jimusho-erabi"
         datePublished="2026-06-19"
       />
       <BreadcrumbSchema items={[

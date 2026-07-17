@@ -162,7 +162,7 @@ export default function AreaShinjuku() {
       <ArticleSchema
         title="本当にお話でできる！新宿のチャットレディ事務所おすすめ7選"
         description="新宿は派手な数字の広告が特に多い激戦区。現役チャットレディ4年のみなみが5つの基準で評価したおすすめ7選、「最大時給」の本当の見方、体験入店の流れ、実際に新宿で働いた方の口コミまで正直にまとめました。"
-        url="https://marumie-chatre.vercel.app/area/shinjuku"
+        url="https://marumie-chatre.github.io/area/shinjuku"
         datePublished="2026-05-16"
       />
       <BreadcrumbSchema

@@ -61,7 +61,7 @@ export default function StyleTsukinPage() {
       <ArticleSchema
         title="通勤型チャットレディってどう？　環境とサポートで無理なく続けられる働き方"
         description="整った個室・スタッフのサポート・同じ立場の仲間がいる環境で、初心者でも無理なく続けられます。在宅との違い、収入の相場観、事務所の選び方を、元保育士で現役チャットレディ4年のみなみが正直に解説します。"
-        url="https://marumie-chatre.vercel.app/style/tsukin"
+        url="https://marumie-chatre.github.io/style/tsukin"
         datePublished="2026-06-26"
       />
       <BreadcrumbSchema

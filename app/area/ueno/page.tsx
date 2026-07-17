@@ -108,7 +108,7 @@ export default function AreaUeno() {
       <ArticleSchema
         title="本当にお話でできる！上野のチャットレディ事務所おすすめ4選"
         description="山手線・常磐線・京浜東北線から乗り換えなしで通え、人通りが多く目立たないので身バレが気になる方にも向くのが上野。現役チャットレディ4年のみなみが5つの基準で評価したおすすめ4選、失敗しない選び方、体験入店の流れ、実際に働いた方の口コミまで正直にまとめました。"
-        url="https://marumie-chatre.vercel.app/area/ueno"
+        url="https://marumie-chatre.github.io/area/ueno"
         datePublished="2026-05-08"
       />
       <BreadcrumbSchema

@@ -126,7 +126,7 @@ export default function AreaFukuoka() {
       <ArticleSchema
         title="本当にお話でできる！福岡のチャットレディ事務所おすすめ5選"
         description="天神・博多を中心に事務所が多い福岡は、地方でも通勤先を見つけやすいエリア。現役チャットレディ4年のみなみが5つの基準で評価したおすすめ5選、失敗しない選び方、体験入店の流れ、実際に働いた方の口コミまで正直にまとめました。"
-        url="https://marumie-chatre.vercel.app/area/fukuoka"
+        url="https://marumie-chatre.github.io/area/fukuoka"
         datePublished="2026-05-08"
       />
       <BreadcrumbSchema

@@ -10,7 +10,7 @@ import { Icon } from "./Icon";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://marumie-chatre.vercel.app"),
+  metadataBase: new URL("https://marumie-chatre.github.io"),
   icons: {
     icon: [
       { url: "/marumie-favicon.png", type: "image/png" },

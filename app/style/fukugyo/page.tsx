@@ -61,7 +61,7 @@ export default function StyleFukugyoPage() {
       <ArticleSchema
         title="副業チャットレディ｜お仕事終わりのスキマ時間で無理なく"
         description="本業や学校のあと、お仕事終わりのスキマ時間から。短時間で無理なく続けるコツと、在宅・通勤の選び方、会社にバレないための考え方を、元保育士で現役チャットレディ4年目のみなみが正直に解説します。"
-        url="https://marumie-chatre.vercel.app/style/fukugyo"
+        url="https://marumie-chatre.github.io/style/fukugyo"
         datePublished="2026-06-28"
         dateModified="2026-06-28"
       />

@@ -82,7 +82,7 @@ export default function QKazokuBare() {
       <ArticleSchema
         title="チャットレディは家族や彼氏にバレる？　よくある原因とバレない対策"
         description="身近な人は配信そのものより“いつもと違う行動”で気づきます。画面・SNS・行動・声の押さえどころと、聞かれたときの自然な答え方、同居・同棲でも安心な方法を、現役チャットレディ4年のみなみがやさしく解説します。"
-        url="https://marumie-chatre.vercel.app/q/kazoku-bare"
+        url="https://marumie-chatre.github.io/q/kazoku-bare"
         datePublished="2026-06-26"
       />
       <BreadcrumbSchema

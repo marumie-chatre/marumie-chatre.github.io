@@ -126,7 +126,7 @@ export default function AreaShibuya() {
       <ArticleSchema
         title="本当にお話でできる！渋谷のチャットレディ事務所おすすめ5選"
         description="現役チャットレディ4年のみなみが5つの基準で評価した渋谷のおすすめ5選、失敗しない選び方、体験入店の流れ、実際に働いた方の口コミまで正直にまとめました。"
-        url="https://marumie-chatre.vercel.app/area/shibuya"
+        url="https://marumie-chatre.github.io/area/shibuya"
         datePublished="2026-05-16"
       />
       <BreadcrumbSchema

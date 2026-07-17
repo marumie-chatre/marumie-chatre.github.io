@@ -184,9 +184,9 @@ export default function AreaOsaka() {
       <ArticleSchema
         title="本当にお話でできる！大阪のチャットレディ事務所おすすめ5選"
         description="現役チャットレディ4年のみなみが5つの基準で評価した大阪（梅田・難波・心斎橋・堺）のおすすめ5選、主要事務所の店舗早見表、失敗しない選び方、口コミまで正直にまとめました。"
-        url="https://marumie-chatre.vercel.app/area/osaka"
+        url="https://marumie-chatre.github.io/area/osaka"
         datePublished="2026-07-04"
-        imageUrl="https://marumie-chatre.vercel.app/area-osaka.jpg"
+        imageUrl="https://marumie-chatre.github.io/area-osaka.jpg"
       />
       <BreadcrumbSchema
         items={[

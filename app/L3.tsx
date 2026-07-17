@@ -235,7 +235,7 @@ export function OfficeDetailLayout({
 }) {
   // 構造化データ用：この事務所宛の口コミだけ抜き出し
   const officeReviewsForSchema = reviews.filter((r) => r.slug === o.slug);
-  const officeUrl = `https://marumie-chatre.vercel.app/jimusho/${o.slug}`;
+  const officeUrl = `https://marumie-chatre.github.io/jimusho/${o.slug}`;
 
   return (
     <main style={{ background: L3G.bg, color: L3G.ink, paddingBottom: 40 }}>
@@ -250,7 +250,7 @@ export function OfficeDetailLayout({
         name={o.name}
         description={o.tagline.replace(/\n/g, " ")}
         url={officeUrl}
-        imageUrl={o.headerImage ? `https://marumie-chatre.vercel.app${o.headerImage}` : undefined}
+        imageUrl={o.headerImage ? `https://marumie-chatre.github.io${o.headerImage}` : undefined}
         reviews={officeReviewsForSchema}
       />
 

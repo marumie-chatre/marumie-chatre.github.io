@@ -54,7 +54,7 @@ export default function QBarebure() {
       <ArticleSchema
         title="配信中にお客さんにばれる？！　よくある原因と対策5選"
         description="チャットレディの配信中に、お客さんに特定されるのが不安な方へ。顔・背景・会話・SNS・流出の「よくある原因と対策」を5つに整理。手段はたくさんあって自分で防げます。"
-        url="https://marumie-chatre.vercel.app/q/barebure"
+        url="https://marumie-chatre.github.io/q/barebure"
         datePublished="2026-06-26"
       />
       <BreadcrumbSchema

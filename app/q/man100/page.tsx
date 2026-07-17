@@ -43,10 +43,10 @@ export default function QMan100() {
       <ArticleSchema
         title="チャットレディで月収100万はあやしい？どんな人が届くのか正直に"
         description="チャットレディで月収100万円ってあやしい？　現役チャットレディ4年が正直に。求人に並ぶ数字の見方から、稼働時間・常連さんを作る力・改善し続ける力まで、届く人の条件をやさしく解説します。"
-        url="https://marumie-chatre.vercel.app/q/man100"
+        url="https://marumie-chatre.github.io/q/man100"
         datePublished="2026-07-04"
         dateModified="2026-07-04"
-        imageUrl="https://marumie-chatre.vercel.app/月収100万って本当？.jpg"
+        imageUrl="https://marumie-chatre.github.io/月収100万って本当？.jpg"
       />
       <BreadcrumbSchema items={[
         { name: "トップ", path: "/" },

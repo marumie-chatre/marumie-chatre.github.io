@@ -33,7 +33,7 @@ export default function StyleNonAdultPage() {
       <ArticleSchema
         title="ノンアダルトは本当にお話だけ？サポート・収入と安心の選び方"
         description="「ノンアダルトはお話だけで稼げる」って本当？お話だけで働ける仕組みの本当のところと、収入・サポートのリアル、安心して選ぶコツを、現役チャットレディ4年のみなみが正直に解説します。"
-        url="https://marumie-chatre.vercel.app/style/non-adult"
+        url="https://marumie-chatre.github.io/style/non-adult"
         datePublished="2026-05-14"
         dateModified="2026-06-24"
       />

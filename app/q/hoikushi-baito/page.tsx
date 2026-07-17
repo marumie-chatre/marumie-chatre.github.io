@@ -54,7 +54,7 @@ export default function ColHoikushiBaitoPage() {
       <ArticleSchema
         title="チャットレディは職場にバレる？　元保育士が教える、バレない副業の始め方"
         description="職場バレの最大の入口は住民税で、普通徴収を選べば防げます。マイナンバーの誤解、確定申告は経費でむしろお得なこと、バレても被害を小さくする選び方まで、元保育士で現役チャットレディ4年のみなみが正直に解説します。"
-        url="https://marumie-chatre.vercel.app/q/hoikushi-baito"
+        url="https://marumie-chatre.github.io/q/hoikushi-baito"
         datePublished="2026-06-26"
       />
       <BreadcrumbSchema

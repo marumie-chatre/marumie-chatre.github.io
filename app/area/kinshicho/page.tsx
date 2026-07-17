@@ -126,7 +126,7 @@ export default function AreaKinshicho() {
       <ArticleSchema
         title="本当にお話でできる！錦糸町のチャットレディ事務所おすすめ5選"
         description="新宿・池袋ほど数が多くないからこそ、居心地で選んで落ち着いて長く続けられるのが錦糸町。現役チャットレディ4年のみなみが5つの基準で評価したおすすめ5選、失敗しない選び方、体験入店の流れ、実際に働いた方の口コミまで正直にまとめました。"
-        url="https://marumie-chatre.vercel.app/area/kinshicho"
+        url="https://marumie-chatre.github.io/area/kinshicho"
         datePublished="2026-05-08"
       />
       <BreadcrumbSchema

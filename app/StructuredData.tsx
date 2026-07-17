@@ -8,7 +8,7 @@
  * - LocalBusinessSchema：エリアページの地域情報
  */
 
-const SITE_URL = "https://marumie-chatre.vercel.app";
+const SITE_URL = "https://marumie-chatre.github.io";
 const SITE_NAME = "まるみえチャトレ";
 const LOGO_URL = `${SITE_URL}/logo.png`;
 

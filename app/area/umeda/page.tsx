@@ -129,9 +129,9 @@ export default function AreaUmeda() {
       <ArticleSchema
         title="本当にお話でできる！梅田のチャットレディ事務所おすすめ5選"
         description="現役チャットレディ4年のみなみが5つの基準で評価した梅田のおすすめ5選、失敗しない選び方、体験入店の流れ、口コミまで正直にまとめました。"
-        url="https://marumie-chatre.vercel.app/area/umeda"
+        url="https://marumie-chatre.github.io/area/umeda"
         datePublished="2026-07-04"
-        imageUrl="https://marumie-chatre.vercel.app/area-umeda.jpg"
+        imageUrl="https://marumie-chatre.github.io/area-umeda.jpg"
       />
       <BreadcrumbSchema
         items={[

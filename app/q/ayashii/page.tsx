@@ -30,7 +30,7 @@ export default function QAyashii() {
       <ArticleSchema
         title="チャットレディは怪しい？危ない？4年目の現役チャットレディが正直に答えます"
         description="「チャットレディって怪しい・危ない？」その不安に、元保育士の現役チャットレディ4年が正直にお答えします。怪しさの正体・本当に危ない事務所の見分け方・お話だけで稼げるのか。"
-        url="https://marumie-chatre.vercel.app/q/ayashii"
+        url="https://marumie-chatre.github.io/q/ayashii"
         datePublished="2026-05-10"
         dateModified="2026-06-24"
       />

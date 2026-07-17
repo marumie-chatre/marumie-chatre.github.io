@@ -79,7 +79,7 @@ export default function QMensetsu() {
       <ArticleSchema
         title="チャットレディの面接って何するの？　流れ・持ち物・体験入店まで"
         description="応募から面接・体験入店までの流れ、持ち物、聞かれること、こちらが聞いて見極めるポイントを、元保育士で現役チャットレディ4年のみなみが正直に解説。落とす試験ではないので、怖がらなくて大丈夫です。"
-        url="https://marumie-chatre.vercel.app/q/mensetsu"
+        url="https://marumie-chatre.github.io/q/mensetsu"
         datePublished="2026-06-27"
       />
       <BreadcrumbSchema
