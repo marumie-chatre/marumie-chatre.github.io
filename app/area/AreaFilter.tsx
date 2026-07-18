@@ -93,6 +93,11 @@ const CITIES: City[] = [
     image: "/area-sapporo.jpg", count: 5,
     desc: "すすきの・札幌駅・大通。冬でも通いやすさで選ぶエリア",
   },
+  {
+    slug: "nagoya", name: "名古屋", region: "chubu",
+    image: "/area-nagoya.jpg", count: 5,
+    desc: "名古屋駅・栄・金山。お話で始めやすい東海最大のエリア",
+  },
 ];
 
 export default function AreaFilter() {

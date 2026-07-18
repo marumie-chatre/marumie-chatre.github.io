@@ -9,6 +9,7 @@ export const ARTICLE_THUMBS: Record<string, string> = {
   "/q/mensetsu": "/面接から体験入店の流れ.jpg",
   "/q/mibare-taisaku": "/身バレ.png",
   "/q/man100": "/月収100万って本当？.jpg",
+  "/q/shigoto-naiyou": "/仕事内容.jpg",
   "/style/honki": "/本気で稼ぐ.jpg",
   "/style/non-adult": "/お話しだけって本当？.jpg",
   "/style/tsukin": "/通勤型.jpg",
@@ -24,4 +25,5 @@ export const ARTICLE_THUMBS: Record<string, string> = {
   "/area/osaka": "/area-osaka.jpg",
   "/area/umeda": "/area-umeda.jpg",
   "/area/sapporo": "/area-sapporo.jpg",
+  "/area/nagoya": "/area-nagoya.jpg",
 };
