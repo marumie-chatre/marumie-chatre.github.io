@@ -178,6 +178,7 @@ export default function AreaSapporo() {
       <FAQSchema items={FAQS} />
 
       <L3ArticleShell
+        coverImage={{ src: "/area-sapporo.jpg", alt: "札幌駅の街並み（すすきの・札幌駅・大通エリア）" }}
         breadcrumb={[
           { l: "トップ", href: "/" },
           { l: "エリアから探す", href: "/area" },
