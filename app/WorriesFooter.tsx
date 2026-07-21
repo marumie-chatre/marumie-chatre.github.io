@@ -11,6 +11,7 @@ import { Icon } from "./Icon";
 const WORRIES = [
   { href: "/q/jimusho-erabi", cat: "初心者・選び方", title: "チャットレディ事務所の選び方｜初心者が失敗しない見極め方", time: "5分", date: "2026.06.19", image: "/事務所選び.png" },
   { href: "/q/mensetsu",      cat: "初心者・選び方", title: "チャットレディの面接って何するの？　流れ・持ち物・体験入店まで", time: "6分", date: "2026.06.27", image: "/面接から体験入店の流れ.jpg" },
+  { href: "/q/shigoto-naiyou", cat: "初心者・選び方", title: "チャットレディの仕事内容って実際どんな感じ？　1日の流れ・話す内容を正直に", time: "7分", date: "2026.07.18", image: "/仕事内容.jpg" },
   { href: "/q/ayashii",       cat: "業界の不安",     title: "チャットレディは怪しい？危ない？4年目の現役チャットレディが正直に答えます", time: "5分", date: "2026.06.24", image: "/怪しい危ない.png" },
   { href: "/q/man100",        cat: "お金・稼ぎ方",   title: "チャットレディで月収100万はなんだかあやしい…どんな人が届くのか正直に", time: "8分", date: "2026.07.04", image: "/月収100万って本当？.jpg" },
   { href: "/q/mibare-taisaku", cat: "身バレ対策",    title: "身バレのよくある疑問に、ぜんぶ答えます", time: "6分", date: "2026.06.26", image: "/身バレ.png" },
