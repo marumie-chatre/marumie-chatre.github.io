@@ -98,6 +98,11 @@ const CITIES: City[] = [
     image: "/area-nagoya.jpg", count: 5,
     desc: "名古屋駅・栄・金山。お話で始めやすい東海最大のエリア",
   },
+  {
+    slug: "sendai", name: "仙台", region: "tohoku",
+    image: "/area-sendai.jpg", count: 5,
+    desc: "仙台駅・青葉区・広瀬通。杜の都でお話から始めやすいエリア",
+  },
 ];
 
 export default function AreaFilter() {
