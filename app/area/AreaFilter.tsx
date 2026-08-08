@@ -103,6 +103,11 @@ const CITIES: City[] = [
     image: "/area-sendai.jpg", count: 5,
     desc: "仙台駅・青葉区・広瀬通。杜の都でお話から始めやすいエリア",
   },
+  {
+    slug: "omiya", name: "大宮", region: "kanto",
+    image: "/area-omiya.jpg", count: 5,
+    desc: "大宮駅前に事務所が集中。都内に出ずに通える埼玉最大のエリア",
+  },
 ];
 
 export default function AreaFilter() {

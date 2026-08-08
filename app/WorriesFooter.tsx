@@ -14,6 +14,7 @@ const WORRIES = [
   { href: "/q/shigoto-naiyou", cat: "初心者・選び方", title: "チャットレディの仕事内容って実際どんな感じ？　1日の流れ・話す内容を正直に", time: "7分", date: "2026.07.18", image: "/仕事内容.jpg" },
   { href: "/q/ayashii",       cat: "業界の不安",     title: "チャットレディは怪しい？危ない？4年目の現役チャットレディが正直に答えます", time: "5分", date: "2026.06.24", image: "/怪しい危ない.png" },
   { href: "/q/koukai",        cat: "業界の不安",     title: "チャットレディで後悔する人の共通点｜先に知れば防げる失敗パターン", time: "8分", date: "2026.08.01", image: "/チャットレディ後悔.jpg" },
+  { href: "/q/ranking-mikata", cat: "業界の不安",     title: "チャットレディのおすすめランキングの見方｜数字に釣られない選び方", time: "8分", date: "2026.08.08", image: "/チャットレディランキング.jpg" },
   { href: "/q/man100",        cat: "お金・稼ぎ方",   title: "チャットレディで月収100万はなんだかあやしい…どんな人が届くのか正直に", time: "8分", date: "2026.07.04", image: "/月収100万って本当？.jpg" },
   { href: "/q/mibare-taisaku", cat: "身バレ対策",    title: "身バレのよくある疑問に、ぜんぶ答えます", time: "6分", date: "2026.06.26", image: "/身バレ.png" },
   { href: "/q/barebure",      cat: "身バレ対策",     title: "配信中にお客さんにばれる？　よくある原因と対策5選", time: "5分", date: "2026.06.26", image: "/配信中身バレ対策.jpg" },

@@ -36,6 +36,8 @@ export const ARTICLES: Article[] = [
   { href: "/style/non-adult",  category: "働き方",   title: "ノンアダルトは本当にお話だけ？サポート・収入と安心の選び方", readTime: "約7分", date: "2026.06.24", accent: "#6FA858", image: "/お話しだけって本当？.jpg" },
   { href: "/style/honki", category: "働き方", title: "最初の3か月が大事｜お話だけで稼ぐロードマップ", readTime: "約7分", date: "2026.06.28", accent: "#6FA858", image: "/本気で稼ぐ.jpg" },
   { href: "/q/koukai",         category: "選び方",   title: "チャットレディで後悔する人の共通点｜先に知れば防げる失敗パターン", readTime: "約8分", date: "2026.08.01", accent: "#6FA858", image: "/チャットレディ後悔.jpg" },
+  { href: "/q/ranking-mikata", category: "選び方",   title: "チャットレディのおすすめランキングの見方｜数字に釣られない選び方", readTime: "約8分", date: "2026.08.08", accent: "#587A38", image: "/チャットレディランキング.jpg" },
+  { href: "/area/omiya",       category: "エリア",   title: "お話だけで稼げるチャットレディ事務所は？大宮のおすすめ店舗5選", readTime: "約10分", date: "2026.08.08", accent: "#6FA858", image: "/area-omiya.jpg" },
   { href: "/q/mibare-taisaku", category: "身バレ",   title: "身バレのよくある疑問に、ぜんぶ答えます", readTime: "約6分", date: "2026.06.26", accent: "#E89B85", image: "/身バレ.png" },
 ];
 
