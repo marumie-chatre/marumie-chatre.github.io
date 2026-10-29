@@ -43,10 +43,10 @@ export default function QShigotoNaiyou() {
       <ArticleSchema
         title="チャットレディの仕事内容って実際どんな感じ？1日の流れ・話す内容を正直に"
         description="現役チャットレディ4年・元保育士のみなみが、チャットレディの仕事内容、通勤の1日の流れ、実際に話す内容、会話が続かないときのこと、始め方まで正直に解説します。"
-        url="https://marumie-chatre.github.io/q/shigoto-naiyou"
+        url="https://marumiechat.jp/q/shigoto-naiyou"
         datePublished="2026-07-18"
         dateModified="2026-07-18"
-        imageUrl="https://marumie-chatre.github.io/仕事内容.jpg"
+        imageUrl="https://marumiechat.jp/仕事内容.jpg"
       />
       <BreadcrumbSchema items={[
         { name: "トップ", path: "/" },

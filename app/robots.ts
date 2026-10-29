@@ -3,7 +3,7 @@ import { MetadataRoute } from "next";
 export const dynamic = "force-static";
 
 export default function robots(): MetadataRoute.Robots {
-  const base = "https://marumie-chatre.github.io";
+  const base = "https://marumiechat.jp";
   return {
     rules: [
       {

@@ -154,9 +154,9 @@ export default function AreaNagoya() {
       <ArticleSchema
         title="お話だけで稼げるチャットレディ事務所は？名古屋のおすすめ店舗5選"
         description="現役チャットレディ4年のみなみが、名古屋駅・栄・金山の主要事務所の店舗早見表と、5つの基準で評価したおすすめ5選、失敗しない選び方、口コミまで正直にまとめました。"
-        url="https://marumie-chatre.github.io/area/nagoya"
+        url="https://marumiechat.jp/area/nagoya"
         datePublished="2026-07-18"
-        imageUrl="https://marumie-chatre.github.io/area-nagoya.jpg"
+        imageUrl="https://marumiechat.jp/area-nagoya.jpg"
       />
       <BreadcrumbSchema
         items={[

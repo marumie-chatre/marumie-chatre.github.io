@@ -164,9 +164,9 @@ export default function AreaSapporo() {
       <ArticleSchema
         title="お話だけで稼げるチャットレディ事務所は？札幌のおすすめ店舗5選"
         description="現役チャットレディ4年のみなみが、すすきの・札幌駅・大通の主要事務所の店舗早見表と、5つの基準で評価したおすすめ5選、失敗しない選び方、口コミまで正直にまとめました。"
-        url="https://marumie-chatre.github.io/area/sapporo"
+        url="https://marumiechat.jp/area/sapporo"
         datePublished="2026-07-18"
-        imageUrl="https://marumie-chatre.github.io/area-sapporo.jpg"
+        imageUrl="https://marumiechat.jp/area-sapporo.jpg"
       />
       <BreadcrumbSchema
         items={[
