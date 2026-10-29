@@ -1,0 +1,24 @@
+name: one-time domain fix
+on: workflow_dispatch
+permissions:
+  contents: write
+  actions: write
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: replace canonical domain
+        run: |
+          grep -rl "https://marumie-chatre.github.io" app public | xargs sed -i 's#https://marumie-chatre.github.io#https://marumiechat.jp#g'
+          echo "remaining:"; grep -rl "marumie-chatre.github.io" app public || true
+          git rm -q .github/workflows/domain-fix.yml
+          git config user.name "marumie-chatre"
+          git config user.email "marumie-chatre@users.noreply.github.com"
+          git add -A
+          git commit -m "正式URLを marumiechat.jp に変更（独自ドメイン化）"
+          git push
+      - name: redeploy
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy.yml --ref main
